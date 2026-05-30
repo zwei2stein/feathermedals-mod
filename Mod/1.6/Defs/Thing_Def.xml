@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--  BASE  -->
+
+	<ThingDef ParentName="ApparelBase" Name="FeatherMedal_MedalBase" Abstract="True">
+		<thingClass>MedalMod.RocketMedal</thingClass>
+		<smeltable>false</smeltable>
+		<inspectorTabs>
+			<li>MedalMod.ITab_MedalRecord</li>
+		</inspectorTabs>
+		<comps Inherit="False">
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<equippedStatOffsets>
+			<PawnBeauty>0.1</PawnBeauty>
+		</equippedStatOffsets>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToMake>10000</WorkToMake>
+			<Mass>0.01</Mass>
+			<EquipDelay>0.5</EquipDelay>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Bulk MayRequire="CETeam.CombatExtended">0.1</Bulk>
+			<WornBulk MayRequire="CETeam.CombatExtended">0</WornBulk>
+		</statBases>
+		<thingCategories Inherit="False">
+			<li>ROCKET_Apparel_Medals</li>
+		</thingCategories>
+		<apparel>
+		    <renderSkipFlags>
+		        <li>None</li>
+		    </renderSkipFlags>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<layers>
+				<li>ROCKET_MedalLayer</li>
+			</layers>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+		</apparel>
+	</ThingDef>
+
+	<!--  TIER BASES  -->
+
+	<ThingDef ParentName="FeatherMedal_MedalBase" Name="FeatherMedal_SimpleMedalBase" Abstract="True">
+		<statBases>
+			<MarketValue>200</MarketValue>
+		</statBases>
+	</ThingDef>
+
+	<!-- wounded in combat - red feather-->
+
+    <!-- killed an enemy - black top, white with red dot -->
+
+    <!-- wounded or killed an enemy - black top, white with notches in black section -->
+
+	<!-- slit throat and took scalp - black top, white with notch in white section -->
+
+    <!-- wounded many times - black top, white , split feather -->
+
+    <!-- slit a throat - black top, slit on top -->
+
+	<!-- touched an enemy without being injured - black top, white, missing top vedge and added horse hair -->
+
+	<!-- stucks 5 coups in combat - black top, white, missing vedge of black and white -->
+
+	<!-- stucks 4 blows in combat - black top, white, serrated edges -->
+
+	<!--  SIMPLE MEDALS  -->
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_WoundedInCombat</defName>
+		<label>feather: wounded in combat</label>
+		<description>Trophy for injury in combat with foe.</description>
+		<graphicData>
+			<texPath>Things/Medals/WoundedInCombat</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/WoundedInCombat</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>Delicate</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Tough</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_KilledAnEnemy</defName>
+		<label>feather: killed an enemy</label>
+		<description>Trophy for killing foe.</description>
+		<graphicData>
+			<texPath>Things/Medals/KilledAnEnemy</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/KilledAnEnemy</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.01</PainShockThreshold>
+			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+			<RangedCooldownFactor>0.01</RangedCooldownFactor>
+		</equippedStatOffsets>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_WoundedOrKilledAnEnemy</defName>
+		<label>feather: wounded or killed an enemy</label>
+		<description>Trophy for wounding or killing foe.</description>
+		<graphicData>
+			<texPath>Things/Medals/WoundedOrKilledAnEnemy</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/WoundedOrKilledAnEnemy</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.02</PainShockThreshold>
+			<MeleeHitChance>0.02</MeleeHitChance>
+		</equippedStatOffsets>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_SlitThroatAndTookScalp</defName>
+		<label>feather: slit throat and took scalp</label>
+		<description>Trophy for slitting throat of an enemy and taking their scalp.</description>
+		<graphicData>
+			<texPath>Things/Medals/SlitThroatAndTookScalp</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/SlitThroatAndTookScalp</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.02</SocialImpact>
+			<MedicalSurgerySuccessChance>0.01</MedicalSurgerySuccessChance>
+			<MedicalTendQuality>0.04</MedicalTendQuality>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-2</degree> <!-- Volatile -->
+						<chance>0.1</chance>
+					</li>					
+					<li>
+						<trait>Nerves</trait>
+						<degree>-1</degree> <!-- Nervous -->
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>1</degree> <!-- Steady -->
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Nerves</trait>
+						<degree>2</degree> <!-- Iron-Willed -->
+						<chance>0.05</chance>
+					</li>					
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_WoundedManyTimes</defName>
+		<label>feather: wounded in combat many times</label>
+		<description>Trophy boasting numerouns combat wounds.</description>
+		<graphicData>
+			<texPath>Things/Medals/WoundedManyTimes</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/WoundedManyTimes</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.03</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>Delicate</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Tough</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_SlitThroat</defName>
+		<label>feather: slit throat of an enemy</label>
+		<description>Trophy boasting slitting throat of an enemy</description>
+		<graphicData>
+			<texPath>Things/Medals/SlitThroat</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/SlitThroat</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.02</SocialImpact>
+			<PainShockThreshold>0.01</PainShockThreshold>
+			<MedicalTendQuality>0.01</MedicalTendQuality>			
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-1</degree> <!-- nervous -->
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>1</degree> <!-- steadfast -->
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>	
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_TouchedAnEnemy</defName>
+		<label>feather: touched an enemy</label>
+		<description>Trophy boasting coup - coup is touching an enemy in combat without being hurt.</description>
+		<graphicData>
+			<texPath>Things/Medals/TouchedAnEnemy</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/TouchedAnEnemy</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.03</SocialImpact>
+			<MoveSpeed>0.01</MoveSpeed>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>Nimble</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>					
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>	
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_TouchedAnEnemy5Times</defName>
+		<label>feather: touched an enemy five times</label>
+		<description>Trophy boasting five coups at distinct times - coup is touching an enemy in combat without being hurt.</description>
+		<graphicData>
+			<texPath>Things/Medals/TouchedAnEnemy5Times</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/TouchedAnEnemy5Times</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.04</SocialImpact>
+			<MoveSpeed>0.02</MoveSpeed>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>SpeedOffset</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>SpeedOffset</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>SpeedOffset</trait>
+						<degree>2</degree>
+						<chance>0.1</chance>
+					</li>					
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>	
+
+	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_Struck4BlowsInCombat</defName>
+		<label>feather: struck an enemy blow four times</label>
+		<description>Trophy boasting striking enemy four times in combat</description>
+		<graphicData>
+			<texPath>Things/Medals/Struck4BlowsInCombat</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/Struck4BlowsInCombat</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>Nimble</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>					
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>	
+
+    <!-- wisdom - black feather -->
+
+    <ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+		<defName>FeatherMedal_Medal_CunningAndWisdom</defName>
+		<label>feather: cunning and wisdom</label>
+		<description>Trophy boasting cunning during combat and wisdom in peacetime</description>
+		<graphicData>
+			<texPath>Things/Medals/CunningAndWisdom</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Medals/CunningAndWisdom</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<ResearchSpeed>0.05</ResearchSpeed>
+			<MedicalTendQuality>0.01</MedicalTendQuality>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="MedalMod.MedalExtension">
+				<removesTraits>
+					<li>
+						<trait>SlowLearner</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>FastLearner</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>GreatMemory</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>					
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

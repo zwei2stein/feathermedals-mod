@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============================== Tier 1: pre-electricity ===================================-->
+  
+  <ResearchProjectDef>
+    <defName>FeatherMedal_TribalWarriorHonour</defName>
+    <label>warrior honour</label>
+    <description>Tibal code for honoring warriors.</description>
+    <baseCost>200</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <tags>
+      <li>TribalStart</li>
+    </tags>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.80</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->honour</li>
+        <li>subject->trophies</li>
+
+        <li>subject_story->wrote epic about heoric deeds</li>
+        <li>subject_story->discussed ways to exalt warriors</li>
+        <li>subject_story->participated in battle, touched an enemy and was victorious without recieving injury</li>
+        <li>subject_story->took scalp of hated enemy as a trophy</li>
+        <li>subject_story->was wounded in combat many times, earning respect of his tribe members</li>
+        <li>subject_story->observed ritual where archers recieved feathers to honour their deeds.</li>
+
+        <li>subject_gerund->honouring warriors</li>
+        <li>subject_gerund->boasting warrior deeds</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+</Defs>

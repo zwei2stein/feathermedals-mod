@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Tribal Medals</name>
+  <author>zwei2stein</author>
+  <supportedVersions>
+	<li>1.6</li>
+  </supportedVersions>
+  <packageId>zwei2stein.FeatherMedals</packageId>
+  <description>Addon to Rocket's Medals - tribal medals (feather headdress), craftable for tribals.</description>
+  <modDependencies>
+    <li>
+      <packageId>Rockets.Medals</packageId>
+      <displayName>Rocket's Medals</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3692393053</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+</ModMetaData>
