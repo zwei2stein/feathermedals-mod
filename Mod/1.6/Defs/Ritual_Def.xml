@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RitualOutcomeEffectDef>
+		<defName>FeatherMedals_AwardTrophyOutcome</defName>
+		<description>The warrior is adorned with the trophy.</description>
+		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAwardTrophy</workerClass>
+		<comps>
+			<li Class="FeatherMedals.RitualOutcomeComp_TrophyPreview"/>
+			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyAttendance"/>
+			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyRoom"/>
+			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyCitation"/>
+		</comps>
+	</RitualOutcomeEffectDef>
+	
+	<PreceptDef>
+		<defName>FeatherMedals_MedalCeremonyPrecept</defName>
+		<issue>Ritual</issue>
+		<label>award ceremony</label>
+		<description>An official ceremony to bestow a medal upon a deserving colonist.</description>
+		<preceptClass>Precept_Ritual</preceptClass>
+		<ritualPatternBase>FeatherMedal_AwardTrophyPattern</ritualPatternBase>
+		<visible>false</visible>
+		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+	</PreceptDef>
+	
+	<DutyDef>
+		<defName>SpeakOnCellAward</defName>
+		<hook>HighPriority</hook>
+		<socialModeMax>Off</socialModeMax>
+		<ritualSpectateTarget>true</ritualSpectateTarget>
+		<thinkNode Class="ThinkNode_Priority">
+			<subNodes>
+				<!-- Goto my spot -->
+				<li Class="JobGiver_GotoTravelDestination">
+					<exactCell>true</exactCell>
+					<locomotionUrgency>Jog</locomotionUrgency>
+					<ritualTagOnArrival>Arrived</ritualTagOnArrival>
+				</li>
+
+				<!-- Arrived -->
+				<li Class="ThinkNode_ConditionalAtDutyLocation">
+					<subNodes>
+						<li Class="FeatherMedals.JobGiver_AwardSpeech">
+							<soundDefMale>Speech_Funeral_Male</soundDefMale>
+							<soundDefFemale>Speech_Funeral_Female</soundDefFemale>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkNode>
+	</DutyDef>
+	
+	<RitualBehaviorDef>
+		<defName>FeatherMedal_AwardMedalBehavior</defName>
+		<durationTicks>2500</durationTicks>
+		<spectatorsLabel>Spectators</spectatorsLabel>
+		<spectatorGerund>spectate</spectatorGerund>
+		<roles>
+			<li Class="FeatherMedals.RitualRole_Presenter">
+				<label>presenter</label>
+				<id>leader</id>
+				<required>True</required>
+				<maxCount>1</maxCount>
+				<countsAsParticipant>False</countsAsParticipant>
+				<allowChild>false</allowChild>
+				<mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
+			</li>
+			<li Class="RitualRoleColonist">
+				<id>awardee</id>
+				<label>Awardee</label>
+				<required>True</required>
+				<maxCount>1</maxCount>
+				<countsAsParticipant>False</countsAsParticipant>
+				<mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
+			</li>
+		</roles>
+		<stages>
+			<li>
+				<defaultDuty>Spectate</defaultDuty>
+				<allowedSpectateSidesOverride>Vertical</allowedSpectateSidesOverride>
+				<spectateDistanceOverride>1</spectateDistanceOverride>
+				<spectatorsRequired>false</spectatorsRequired>
+				<endTriggers>
+					<li Class="StageEndTrigger_RolesArrived">
+						<roleIds>
+							<li>leader</li>
+							<li>awardee</li>
+						</roleIds>
+					</li>
+				</endTriggers>
+				<roleBehaviors>
+					<li>
+						<roleId>leader</roleId>
+						<dutyDef>ArriveToCell</dutyDef>
+						<customPositions>
+							<li Class="RitualPosition_BehindThingCenter"/>
+						</customPositions>
+					</li>
+					<li>
+						<roleId>awardee</roleId>
+						<dutyDef>ArriveToCell</dutyDef>
+						<customPositions>
+							<li Class="RitualPosition_InFrontThingCenter"/>
+						</customPositions>
+					</li>
+				</roleBehaviors>
+				<preAction Class="FeatherMedals.RitualStageAction_StartAdorning"/>
+				<highlightRolePawns>
+					<li>awardee</li>
+					<li>leader</li>
+				</highlightRolePawns>
+			</li>
+			<li>
+				<defaultDuty>Spectate</defaultDuty>
+				<allowedSpectateSidesOverride>Vertical</allowedSpectateSidesOverride>
+				<spectateDistanceOverride>1</spectateDistanceOverride>
+				<spectatorsRequired>false</spectatorsRequired>
+				<endTriggers>
+					<li Class="StageEndTrigger_DurationPercentage">
+						<percentage>1</percentage>
+					</li>
+				</endTriggers>
+				<roleBehaviors>
+					<li>
+						<roleId>leader</roleId>
+						<dutyDef>SpeakOnCellAward</dutyDef>
+						<speakerInteraction>Speech_Leader</speakerInteraction>
+						<customPositions>
+							<li Class="RitualPosition_BesideThing"/>
+						</customPositions>
+					</li>
+					<li>
+						<roleId>awardee</roleId>
+						<dutyDef>ArriveToCell</dutyDef>
+						<customPositions>
+							<li Class="RitualPosition_InFrontThingCenter"/>
+						</customPositions>
+					</li>
+				</roleBehaviors>
+				<visualEffectDef>Speech</visualEffectDef>
+			</li>
+		</stages>
+	</RitualBehaviorDef>
+	
+	<RitualPatternDef>
+		<defName>FeatherMedal_AwardTrophyPattern</defName>
+		<ritualBehavior>FeatherMedal_AwardMedalBehavior</ritualBehavior>
+		<ritualOutcomeEffect>FeatherMedals_AwardTrophyOutcome</ritualOutcomeEffect>
+		<ritualExpectedDesc>The tribe's leader will bestow a medal upon a deserving tribe member.</ritualExpectedDesc>
+	</RitualPatternDef>
+</Defs>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>	
+
+    <FeatherMedals_ModName>Tribal Trophies</FeatherMedals_ModName>
+
+	<FeatherMedals_TrophiesTab>Trophies</FeatherMedals_TrophiesTab>
+	<FeatherMedals_NoTrophies>This warrior is not yet adorned with a trophy.</FeatherMedals_NoTrophies>
+
+	<FeatherMedals_Record>Tale</FeatherMedals_Record>
+
+	<FeatherMedals_AwardCeremony>Trophy Adorning</FeatherMedals_AwardCeremony>
+	<FeatherMedals_CeremonyDesc>Gather the tribe to adorn a warrior with this trophy.</FeatherMedals_CeremonyDesc>
+	<FeatherMedals_DisabledAlreadyAwarded>A warrior was already honored with this trophy.</FeatherMedals_DisabledAlreadyAwarded>
+	<FeatherMedals_DisabledRequiresPresenter>Requires a speaker.</FeatherMedals_DisabledRequiresPresenter>
+	
+	<FeatherMedals_WriteCitation>Write the Tale of Honor</FeatherMedals_WriteCitation>
+	<FeatherMedals_EditCitation>Edit the Tale of Honor</FeatherMedals_EditCitation>
+	<FeatherMedals_CitationDesc>Write or edit the Tale of Honor about the deeds this trophy represents.</FeatherMedals_CitationDesc>
+
+	<FeatherMedals_WriteCitation_Written>has a Tale of Honor</FeatherMedals_WriteCitation_Written>
+	<FeatherMedals_WriteCitation_NotWritten>without a Tale of Honor</FeatherMedals_WriteCitation_NotWritten>
+
+	<FeatherMedals_BeginCeremony>Begin Adorning</FeatherMedals_BeginCeremony>
+
+	<FeatherMedals_CeremonyAttendance>Adorning attendance</FeatherMedals_CeremonyAttendance>
+	<FeatherMedals_CeremonyAttendance_ToolTip>Up to 40% of adorning quality. More colonists means a more meaningful adorning.</FeatherMedals_CeremonyAttendance_ToolTip>
+	<FeatherMedals_CeremonyVenue>Adorning venue</FeatherMedals_CeremonyVenue>
+	<FeatherMedals_CeremonyVenue_ToolTip>Up to 40% of adorning quality. Hold the adorning in an impressive room for a better outcome.</FeatherMedals_CeremonyVenue_ToolTip>
+	<FeatherMedals_CeremonyCitation>Tale of Honor</FeatherMedals_CeremonyCitation>
+	<FeatherMedals_CeremonyCitation_Written>Written</FeatherMedals_CeremonyCitation_Written>
+	<FeatherMedals_CeremonyCitation_Written_ToolTip>"20% of adorning quality. The Tale of Honor adds weight and meaning to the trophy."</FeatherMedals_CeremonyCitation_Written_ToolTip>
+	<FeatherMedals_CeremonyCitation_None>None</FeatherMedals_CeremonyCitation_None>
+	<FeatherMedals_CeremonyCitation_None_ToolTip>"No Tale of honor written. You will be prompted during the adorning, or write one before the adorning for 20% bonus to adorning quality."</FeatherMedals_CeremonyCitation_None_ToolTip>
+
+	<FeatherMedals_Quality_Legendary>legendary</FeatherMedals_Quality_Legendary>
+	<FeatherMedals_Quality_Grand>grand</FeatherMedals_Quality_Grand>
+	<FeatherMedals_Quality_Decent>decent</FeatherMedals_Quality_Decent>
+	<FeatherMedals_Quality_Poor>poor</FeatherMedals_Quality_Poor>
+
+	<FeatherMedals_Ceremony_Started>{LEADER_labelShort} has begun the adorning ritual of a trophy upon {PAWN_labelShort}.</FeatherMedals_Ceremony_Started>
+
+	<FeatherMedals_Inspector_AwardedTo>Honouring deeds of: {PAWN_labelShort}</FeatherMedals_Inspector_AwardedTo>
+	<FeatherMedals_Inspector_PresentedBy>Adorned by: {PAWN_labelShort}</FeatherMedals_Inspector_PresentedBy>
+	<FeatherMedals_Inspector_PresentedBy_Dead>Adorned by: {PAWN_labelShort} (Deceased)</FeatherMedals_Inspector_PresentedBy_Dead>
+	<FeatherMedals_Inspector_AwardedDate>Adorned at : </FeatherMedals_Inspector_AwardedDate>
+	<FeatherMedals_Inspector_AwardedCeremonyQuality>Adorning ritual success: </FeatherMedals_Inspector_AwardedCeremonyQuality>
+	
+	<FeatherMedals_CloseButton>Close</FeatherMedals_CloseButton>
+
+	<FeatherMedals_MedalCatalog>Trophies</FeatherMedals_MedalCatalog>
+	<FeatherMedals_MedalLockedResearch>Locked. Required research: {0}</FeatherMedals_MedalLockedResearch>
+
+    <FeatherMedals_HonorLabel>honor +{0}</FeatherMedals_HonorLabel>
+	
+	<FeatherMedals_WriteCitationDesc>Tell the Tale of Honor, boast the deeds of a warrior. This tale will be untouchable once the trophy is adorned.</FeatherMedals_WriteCitationDesc>
+
+	<FeatherMedals_TakeOfHonorLetterLabel>{0} trophy adorned</FeatherMedals_TakeOfHonorLetterLabel>
+	<FeatherMedals_TakeOfHonorLetterLine1>{PAWN_labelShort} has been ceremonially adorned with a {MEDAL} by {PRESENTER_labelShort}.</FeatherMedals_TakeOfHonorLetterLine1>
+	<FeatherMedals_TakeOfHonorLetterLine2>The {QUALITY} adorning ceremony was attended by {ATTENDEES} tribe members, and the deeds of {PAWN_labelShort} have been recognized by the tribe.</FeatherMedals_TakeOfHonorLetterLine2>
+
+	<FeatherMedals_TrophyAdornedWithoutRitual>{PAWN_labelShort} has been adorned with the {TROPHY}</FeatherMedals_TrophyAdornedWithoutRitual>
+
+	<FeatherMedals_TakeOfHonorLetter>Tale of Honor: "{0}"</FeatherMedals_TakeOfHonorLetter>
+	
+	<FeatherMedals_ConfirmButton>Confirm</FeatherMedals_ConfirmButton>
+	<FeatherMedals_ClearButton>Clear</FeatherMedals_ClearButton>
+	
+	<FeatherMedals_TrophyLocked>This trophy is locked and cannot be removed from the pawn. Click to unlock.</FeatherMedals_TrophyLocked>
+	<FeatherMedals_TrophyUnlocked>This trophy is unlocked and can be removed from the pawn. Click to lock.</FeatherMedals_TrophyUnlocked>
+
+	<FeatherMedals_MustBeLeaderOrGuide>Must be the Leader, Moral Guide, Lead warrior or Lead sage.</FeatherMedals_MustBeLeaderOrGuide>
+
+	<FeatherMedals_FailTrophyNeedsCeremony>Trophies can only be adorned via ceremonies</FeatherMedals_FailTrophyNeedsCeremony>
+	<FeatherMedals_FailTrophyBiocoded>Trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} can not equip it.</FeatherMedals_FailTrophyBiocoded>
+		
+	<FeatherMedals_MedalWornFor>Worn for {0} days</FeatherMedals_MedalWornFor>
+	<FeatherMedals_AwardedAtQualityCeremony> at a {0} adorning</FeatherMedals_AwardedAtQualityCeremony>
+	<FeatherMedals_AwardingMayRemove>May remove {0} ({1})</FeatherMedals_AwardingMayRemove>
+	<FeatherMedals_AwardingMayGrant>May grant {0} ({1})</FeatherMedals_AwardingMayGrant>
+
+	<FeatherMedals_TrophyGrantedTrait>{PAWN_labelShort} is now known as {TRAIT}.</FeatherMedals_TrophyGrantedTrait>
+	<FeatherMedals_TrophyRemovedTrait>{PAWN_labelShort} has overcome the {TRAIT} trait by facing their fears.</FeatherMedals_TrophyRemovedTrait>
+	<FeatherMedals_TrophyAddedTrait>{PAWN_labelShort} has gained the {TRAIT} trait by facing their fears.</FeatherMedals_TrophyAddedTrait>
+
+	<!-- settings -->
+
+	<FeatherMedals_Settings_Section_General>General</FeatherMedals_Settings_Section_General>
+	<FeatherMedals_Settings_Section_Display>Display</FeatherMedals_Settings_Section_Display>
+
+	<FeatherMedals_Settings_TrophiesRequireCeremony>Require Ceremony</FeatherMedals_Settings_TrophiesRequireCeremony>
+	<FeatherMedals_Settings_TrophiesRequireCeremony_Tooltip>If enabled, trophies can only be awarded to colonists via an adorning ceremony. If disabled, trophies will be considered awarded by the first person to wear them. Default: ON</FeatherMedals_Settings_TrophiesRequireCeremony_Tooltip>
+
+	<FeatherMedals_Settings_LockTrophyUponAward>Lock Trophies upon Award</FeatherMedals_Settings_LockTrophyUponAward>
+	<FeatherMedals_Settings_LockTrophyUponAward_Tooltip>If enabled, once a trophy is adorned to a pawn, it will default to being locked to the pawn inventory. This can be toggled individually on the dedicated tab. This setting does not affect biocoding. Default: ON</FeatherMedals_Settings_LockTrophyUponAward_Tooltip>
+
+	<FeatherMedals_Settings_PromptForCitationDuringRitual>Prompt for Tale of Honor during Ceremony</FeatherMedals_Settings_PromptForCitationDuringRitual>
+	<FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip>If enabled, a dialog will appear during adorning ceremonies to allow the user to enter a Tale of Honor for the trophy if one has not already been added to the trophy. If disable a window will not appear, but Tale of Honor can still be added prior to ceremony commencing. Default: ON</FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip>
+	
+	<FeatherMedals_Settings_TrophyDynamicTraits>Dynamic Traits</FeatherMedals_Settings_TrophyDynamicTraits>
+	<FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining a elder trait, or losing wimp when receiving bravery awards.</FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>
+
+	<FeatherMedals_Settings_ShowTrophyCatalog>Show Trophy Catalog Button</FeatherMedals_Settings_ShowTrophyCatalog>
+	<FeatherMedals_Settings_ShowTrophyCatalog_Tooltip>If enabled, a menu button will show to open a catalog of all trophies in the game, including those added by mods. The catalog shows stats and effects of each trophy. Default: ON</FeatherMedals_Settings_ShowTrophyCatalog_Tooltip>
+
+	<FeatherMedals_Settings_DrawTrophiesOnPawns>Draw Trophies on Pawns</FeatherMedals_Settings_DrawTrophiesOnPawns>
+	<FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>If enabled, trophies will be rendered on pawns. Disabling this will stop trophies being drawn on pawns. Use this to turn their rendering off. Default: ON</FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>
+
+</LanguageData>
+
+<!-- medal = trophy -->
+<!-- award = honor, adorn -->
+<!-- citation = Tale of Honor  -->
+<!-- bestower = speaker -->
