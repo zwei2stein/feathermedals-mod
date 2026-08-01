@@ -20,8 +20,7 @@ public class JobGiver_AwardSpeech : JobGiver_GiveSpeechFacingTarget
         lordJob.Ritual.outcomeEffect.compDatas ??= new();
         var awardee = lordJob.assignments.FirstAssignedPawn("awardee");
         if (awardee is not { Spawned: true }) return null;
-        var targetB = (LocalTargetInfo)awardee;
-        var job = JobMaker.MakeJob(JobDefOf.GiveSpeech, (LocalTargetInfo)pawn.Position, targetB);
+        var job = JobMaker.MakeJob(JobDefOf.GiveSpeech, pawn.Position, awardee);
         job.showSpeechBubbles = true;
         job.speechFaceSpectatorsIfPossible = this.faceSpectatorsIfPossible;
         var interactDef = FeatherMedalDefOf.FeatherMedals_Speech_AwardMedal;

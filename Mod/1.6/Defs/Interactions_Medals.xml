@@ -4,8 +4,8 @@
 		<defName>FeatherMedals_Speech_AwardTrophy_Rules</defName>
 		<rulePack>
 			<rulesStrings>
-				<li>r_logentry->[INITIATOR_nameDef] [speech_verb] [RECIPIENT_nameFull] for [their_actions].</li>
-				<li>r_logentry->[INITIATOR_nameDef] gave a [speech_adjective] speech honoring [RECIPIENT_nameFull]'s [heroic_trait].</li>
+				<li>r_logentry->[INITIATOR_nameDef] [speech_verb] a warrior for [their_actions].</li>
+				<li>r_logentry->[INITIATOR_nameDef] gave a [speech_adjective] speech honoring warrior for [heroic_trait].</li>
 				
 				<li>speech_verb->praised</li>
 				<li>speech_verb->commended</li>
@@ -53,16 +53,16 @@
         <secondPawnSymbol>AWARDEE</secondPawnSymbol>
 		<rulePack>
 			<rulesStrings>
-				<li>tale_noun->[PRESENTER_nameDef] adjourning a trophy to [AWARDEE_nameDef]</li>
+				<li>tale_noun->[PRESENTER_nameDef] adorning a trophy to [AWARDEE_nameDef]</li>
 				<li>tale_noun->[AWARDEE_nameDef] receiving a trophy from [PRESENTER_nameDef]</li>
 				<li>tale_noun->the honoring of [AWARDEE_nameDef]</li>
 
-				<li>image->[PRESENTER_nameFull] is standing firm, proudly adjouring [AWARDEE_nameFull]'s head. [circumstance_group]</li>
+				<li>image->[PRESENTER_nameFull] is standing firm, proudly adorning [AWARDEE_nameFull]'s head. [circumstance_group]</li>
 				<li>image->[PRESENTER_nameFull] is saluting [AWARDEE_nameFull], who is wearing a newly awarded trophy. [circumstance_group]</li>
 				<li>image->[AWARDEE_nameFull] looks [AWARDEE_adjective] as they are adjourned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
                 
 				<li>circumstance_phrase->The tribe watches in silent awe.</li>
-				<li>circumstance_phrase->The medal shines brightly in the light.</li>
+				<li>circumstance_phrase->The feather trophy indirescense.</li>
 				<li>circumstance_phrase->Confetti appears to be falling around them.</li>
                 
 				<li>desc_sentence->[AWARDEE_nameDef] looks incredibly proud.</li>

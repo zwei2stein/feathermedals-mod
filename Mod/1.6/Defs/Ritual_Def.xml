@@ -16,7 +16,7 @@
 		<defName>FeatherMedals_MedalCeremonyPrecept</defName>
 		<issue>Ritual</issue>
 		<label>award ceremony</label>
-		<description>An official ceremony to bestow a medal upon a deserving colonist.</description>
+		<description>An official ceremony to adorn a trophy upon a deserving warrior.</description>
 		<preceptClass>Precept_Ritual</preceptClass>
 		<ritualPatternBase>FeatherMedal_AwardTrophyPattern</ritualPatternBase>
 		<visible>false</visible>
@@ -146,6 +146,6 @@
 		<defName>FeatherMedal_AwardTrophyPattern</defName>
 		<ritualBehavior>FeatherMedal_AwardMedalBehavior</ritualBehavior>
 		<ritualOutcomeEffect>FeatherMedals_AwardTrophyOutcome</ritualOutcomeEffect>
-		<ritualExpectedDesc>The tribe's leader will bestow a medal upon a deserving tribe member.</ritualExpectedDesc>
+		<ritualExpectedDesc>The tribe's leader will adorn a trophy to a deserving tribe member.</ritualExpectedDesc>
 	</RitualPatternDef>
 </Defs>

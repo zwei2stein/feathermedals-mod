@@ -21,33 +21,6 @@ public class HarmonyPatches
         return role != null;
     }
     
-    [HarmonyPatch]
-    public static class PatchSpeechGrammar
-    {
-// Cache the private fields once when the game loads
-        private static readonly AccessTools.FieldRef<PlayLogEntry_InteractionWithMany, InteractionDef> IntDefRef =
-            AccessTools.FieldRefAccess<PlayLogEntry_InteractionWithMany, InteractionDef>("intDef");
-
-        private static readonly AccessTools.FieldRef<PlayLogEntry_InteractionWithMany, Pawn> InitiatorRef =
-            AccessTools.FieldRefAccess<PlayLogEntry_InteractionWithMany, Pawn>("initiator");
-        
-        public static MethodBase TargetMethod() => AccessTools.Method(typeof(PlayLogEntry_InteractionWithMany), "GenerateGrammarRequest");
-
-        public static void Postfix(Verse.LogEntry __instance, ref GrammarRequest __result)
-        {
-            if (__instance is not PlayLogEntry_InteractionWithMany manyLog) return;
-            var intDef = IntDefRef(manyLog);
-            if (intDef != FeatherMedalDefOf.FeatherMedals_Speech_AwardMedal) return;
-
-            var initiator = InitiatorRef(manyLog);
-            var lordJob = initiator?.GetLord()?.LordJob as LordJob_Ritual;
-            var awardee = lordJob?.assignments.FirstAssignedPawn("awardee");
-            if (awardee == null) return;
-            var rules = GrammarUtility.RulesForPawn("RECIPIENT", awardee, __result.Constants);
-            __result.Rules.AddRange(rules);
-        }
-    }
-    
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
     public static class PatchMedalBiocodeManual
     {
@@ -137,7 +110,7 @@ public class HarmonyPatches
         }
     }
     
-        [HarmonyPatch(typeof(Pawn), nameof(Pawn.Strip))]
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.Strip))]
     public static class PatchPawnStripMedals
     {
         public static void Prefix(Pawn __instance, out List<FeatherMedal> __state)
