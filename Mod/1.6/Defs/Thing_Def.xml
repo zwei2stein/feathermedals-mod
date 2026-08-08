@@ -50,7 +50,7 @@
 			<bodyPartGroups>
 				<li>UpperHead</li>
 			</bodyPartGroups>
-			<scoreOffset>-1000</scoreOffset> <!-- do not autowear -->
+			<scoreOffset>-1000</scoreOffset>
 		</apparel>
 	</ThingDef>
 

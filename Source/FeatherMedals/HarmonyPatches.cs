@@ -71,10 +71,15 @@ public class HarmonyPatches
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.IsLocked))]
     public static class PatchRankAlwaysForced
     {
-        public static void Postfix(Apparel __0, ref bool __result)
+        public static bool Prefix(Apparel apparel, ref bool __result)
         {
-            if (__0 is FeatherMedal medal)
+            if (apparel is FeatherMedal medal)
+            {
                 __result = medal.isLocked;
+                return true;
+            }
+            
+            return false;
         }
     }
     
