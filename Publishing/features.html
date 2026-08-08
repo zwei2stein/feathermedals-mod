@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <title>Tribal Trophies - Features</title>
     <style>
-        body { width: 950px; margin: 0; padding: 20px; font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: #e0e0e0; }
-        .header { text-align: center; margin-bottom: 30px; padding: 20px; background: linear-gradient(180deg, rgba(40,20,10,0.9), rgba(80,40,20,0.9)); border: 1px solid rgba(200,150,100,0.3); border-radius: 8px; }
-        .header h1 { margin: 0; font-size: 2.5em; color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.5); }
-        .header .subtitle { font-size: 1.1em; color: #f5deb3; font-style: italic; }
-        .requirements { margin-top: 15px; font-size: 0.95em; color: #aaa; }
-        .requirements span { display: inline-block; margin: 0 10px; padding: 4px 12px; background: rgba(0,0,0,0.3); border-radius: 4px; border: 1px solid rgba(200,150,100,0.2); }
+        body { width: 950px; margin: 0; padding: 20px; font-family: 'Segoe UI', sans-serif; background: #f8f4e8; color: #3a3a3a; }
+        .header { text-align: center; margin-bottom: 30px; padding: 20px; background: linear-gradient(180deg, #e8d8b0, #d0b890); border: 1px solid #b89860; border-radius: 8px; }
+        .header h1 { margin: 0; font-size: 2.5em; color: #8b4513; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header .subtitle { font-size: 1.1em; color: #654321; font-style: italic; }
+        .requirements { margin-top: 15px; font-size: 0.95em; color: #5a4a3a; }
+        .requirements span { display: inline-block; margin: 0 10px; padding: 4px 12px; background: rgba(255,255,255,0.6); border-radius: 4px; border: 1px solid #b89860; }
         .section { margin-bottom: 40px; }
-        .section-title { font-size: 1.8em; color: #ffb347; margin: 0 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid rgba(200,150,100,0.4); display: flex; align-items: center; gap: 12px; }
+        .section-title { font-size: 1.8em; color: #8b4513; margin: 0 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #b89860; display: flex; align-items: center; gap: 12px; }
         .section-title .icon { width: 32px; height: 32px; background-size: contain; background-repeat: no-repeat; background-position: center; }
         .tier-key { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
         .tier-item { display: flex; align-items: center; gap: 8px; }
-        .tier-color { width: 16px; height: 16px; border-radius: 4px; border: 1px solid #444; }
+        .tier-color { width: 16px; height: 16px; border-radius: 4px; border: 1px solid #8a6d3b; }
         .tier-simple .tier-color { background: linear-gradient(135deg, #c0c0c0, #808080); }
         .tier-ornate .tier-color { background: linear-gradient(135deg, #ffd700, #ffb347); }
-        .tier-item span { font-size: 0.9em; color: #bbb; }
-        .feathers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 25px; }
-        .feather-card { background: rgba(50,25,12,0.7); border: 1px solid rgba(200,150,100,0.2); border-radius: 6px; padding: 12px; text-align: center; }
-        .feather-graphic { width: 100%; height: 64px; background-size: contain; background-repeat: no-repeat; background-position: center; }
-        .feather-name { font-size: 1em; color: #ffd700; margin: 8px 0 4px 0; }
-        .feather-desc { font-size: 0.8em; color: #bbb; margin: 0; }
+        .tier-item span { font-size: 0.9em; color: #5a4a3a; }
         .crafting-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.88em; }
-        .crafting-table th { text-align: left; padding: 12px 12px; color: #ffb347; font-weight: 600; background: rgba(60,30,15,0.5); border-bottom: 2px solid rgba(200,150,100,0.4); }
-        .crafting-table td { padding: 10px 12px; border-bottom: 1px solid rgba(200,150,100,0.1); }
+        .crafting-table th { text-align: left; padding: 12px 12px; color: #8b4513; font-weight: 600; background: #e8d8b0; border-bottom: 2px solid #b89860; }
+        .crafting-table td { padding: 10px 12px; border-bottom: 1px solid #d0b890; }
         .crafting-table tr:last-child td { border-bottom: none; }
-        .crafting-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-        .crafting-table .col-graphic { width: 45px; text-align: center; }
-        .crafting-table .col-graphic div { width: 36px; height: 36px; background-size: contain; background-repeat: no-repeat; background-position: center; margin: 0 auto; }
-        .crafting-table .col-name { width: 220px; color: #e0e0e0; }
+        .crafting-table tr:nth-child(even) { background: rgba(248,244,232,0.8); }
+        .crafting-table .col-graphic { width: 64px; text-align: center; }
+        .crafting-table .col-graphic div { width: 48px; height: 48px; background-size: contain; background-repeat: no-repeat; background-position: center; margin: 0 auto; }
+        .crafting-table .col-name { width: 220px; color: #3a3a3a; font-weight: 500; }
         .crafting-table .col-costs { width: 180px; }
-        .crafting-table .col-features { color: #bbb; }
+        .crafting-table .col-features { color: #4a4a4a; }
         .cost-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
         .cost-table td { padding: 3px 6px; border: none; }
-        .cost-table .cost-amount { text-align: right; color: #ffd700; font-weight: bold; }
-        .cost-table .cost-materials { text-align: left; color: #e0e0e0; }
-        .cost-table .cost-icon { width: 16px; height: 16px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .cost-table .cost-amount { text-align: right; color: #8b4513; font-weight: bold; }
+        .cost-table .cost-materials { text-align: left; color: #3a3a3a; }
+        .cost-table .cost-icon { width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat; background-position: center; }
         .stats-list { margin: 0; padding: 0; list-style: none; }
         .stats-list li { padding: 2px 0; position: relative; padding-left: 16px; }
-        .stats-list li::before { content: '\2022'; position: absolute; left: 0; color: #ffb347; font-size: 1.2em; line-height: 1; }
-        .stats-list .stat-positive { color: #4CAF50; }
-        .stats-list .stat-neutral { color: #bbb; }
-        small { color: #888; }
-        .footer { text-align: center; margin-top: 40px; padding: 15px; border-top: 1px solid rgba(200,150,100,0.2); color: #888; font-size: 0.85em; }
-        .footer a { color: #ffb347; text-decoration: none; }
+        .stats-list li::before { content: '\2022'; position: absolute; left: 0; color: #8b4513; font-size: 1.2em; line-height: 1; }
+        .stats-list .stat-positive { color: #2e7d32; }
+        .stats-list .stat-neutral { color: #5a4a3a; }
+        small { color: #7a6a5a; }
+        .footer { text-align: center; margin-top: 40px; padding: 15px; border-top: 1px solid #b89860; color: #7a6a5a; font-size: 0.85em; }
+        .footer a { color: #8b4513; text-decoration: none; }
     </style>
 </head>
 <body>
