@@ -6,7 +6,7 @@
   <ResearchProjectDef>
     <defName>FeatherMedal_TribalWarriorHonour</defName>
     <label>warrior honour</label>
-    <description>Tibal code for honoring warriors.</description>
+    <description>Tribal code for honoring warriors.</description>
     <baseCost>200</baseCost>
     <techLevel>Neolithic</techLevel>
     <tags>

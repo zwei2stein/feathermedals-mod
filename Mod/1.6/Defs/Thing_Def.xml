@@ -9,7 +9,7 @@
 
 	<!--  BASE  -->
 
-	<ThingDef ParentName="ApparelBase" Name="FeatherMedal_MedalBase" Abstract="True">
+	<ThingDef ParentName="ApparelBase" Name="FeatherTrophy_Base" Abstract="True">
 		<thingClass>FeatherMedals.FeatherMedal</thingClass>
 		<smeltable>false</smeltable>
 		<inspectorTabs>
@@ -50,12 +50,13 @@
 			<bodyPartGroups>
 				<li>UpperHead</li>
 			</bodyPartGroups>
+			<scoreOffset>-1000</scoreOffset> <!-- do not autowear -->
 		</apparel>
 	</ThingDef>
 
 	<!--  TIER BASES  -->
 
-	<ThingDef ParentName="FeatherMedal_MedalBase" Name="FeatherMedal_SimpleMedalBase" Abstract="True">
+	<ThingDef ParentName="FeatherTrophy_Base" Name="FeatherTrophy_BaseSimple" Abstract="True">
 		<statBases>
 			<MarketValue>200</MarketValue>
 		</statBases>
@@ -81,7 +82,7 @@
 
 	<!--  SIMPLE MEDALS  -->
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedInCombat</defName>
 		<label>feather: wounded in combat</label>
 		<description>Trophy for injury in combat with foe.</description>
@@ -115,7 +116,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
 		<description>Trophy for killing foe.</description>
@@ -133,7 +134,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedOrKilledAnEnemy</defName>
 		<label>feather: wounded or killed an enemy</label>
 		<description>Trophy for wounding or killing foe.</description>
@@ -150,7 +151,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_SlitThroatAndTookScalp</defName>
 		<label>feather: slit throat and took scalp</label>
 		<description>Trophy for slitting throat of an enemy and taking their scalp.</description>
@@ -196,7 +197,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedManyTimes</defName>
 		<label>feather: wounded in combat many times</label>
 		<description>Trophy boasting numerouns combat wounds.</description>
@@ -230,7 +231,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_SlitThroat</defName>
 		<label>feather: slit throat of an enemy</label>
 		<description>Trophy boasting slitting throat of an enemy</description>
@@ -266,7 +267,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>	
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy</defName>
 		<label>feather: touched an enemy</label>
 		<description>Trophy boasting coup - coup is touching an enemy in combat without being hurt.</description>
@@ -306,7 +307,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>	
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy5Times</defName>
 		<label>feather: touched an enemy five times</label>
 		<description>Trophy boasting five coups at distinct times - coup is touching an enemy in combat without being hurt.</description>
@@ -346,7 +347,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>	
 
-	<ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_Struck4BlowsInCombat</defName>
 		<label>feather: struck an enemy blow four times</label>
 		<description>Trophy boasting striking enemy four times in combat</description>
@@ -387,7 +388,7 @@
 
     <!-- wisdom - black feather -->
 
-    <ThingDef ParentName="FeatherMedal_SimpleMedalBase">
+    <ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_CunningAndWisdom</defName>
 		<label>feather: cunning and wisdom</label>
 		<description>Trophy boasting cunning during combat and wisdom in peacetime</description>

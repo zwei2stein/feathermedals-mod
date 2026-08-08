@@ -66,14 +66,12 @@
     <ItemGroup>
         <Compile Include="AdorningQuality.cs" />
         <Compile Include="Dialog_TrophyAwarded.cs" />
-        <Compile Include="Dialog_TrophyCatalog.cs" />
         <Compile Include="Dialog_WriteCitation.cs" />
         <Compile Include="FeatherMedalDefOf.cs" />
         <Compile Include="HarmonyPatches.cs" />
         <Compile Include="ITab_TrophyRecord.cs" />
         <Compile Include="ITab_PawnTrophies.cs" />
         <Compile Include="JobGiver_AwardSpeech.cs" />
-        <Compile Include="MainButtonWorker_TrophyCatalog.cs" />
         <Compile Include="RitualOutcomeEffectWorkerAwardTrophy.cs" />
         <Compile Include="RitualRole_Presenter.cs" />
         <Compile Include="RitualStageAction_StartAdorning.cs" />
@@ -89,12 +87,9 @@
       <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
     <Target Name="AfterBuild">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\pri\Proton\My files\Code\rimworld_mods\FeatherMedals\Mod\1.6\Assemblies"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="C:\pri\Proton\My files\Code\rimworld_mods\FeatherMedals\Mod\1.6\Assemblies" Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
     </Target>
-    -->
 
 </Project>

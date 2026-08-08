@@ -17,14 +17,25 @@ namespace FeatherMedals
         public bool isLocked = true;
         public Pawn awardedBy;
         public int awardedTick = -1;
+
+        public TraitDef addedTrait = null;
+        public int addedTraitDegree = 0;
+        public TraitDef removedTrait = null;
+        public int removedTraitDegree = 0;
             
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref citation, "citation");
-            Scribe_Values.Look(ref isLocked, "isLocked", true);
             Scribe_Values.Look(ref ceremonyQuality, "ceremonyQuality", -1);
+            Scribe_Values.Look(ref isLocked, "isLocked", true);
             Scribe_References.Look(ref awardedBy, "awardedBy", true);
+            Scribe_Values.Look(ref awardedTick, "awardedTick", -1);
+            
+            Scribe_Defs.Look(ref addedTrait, "addedTrait");
+            Scribe_Values.Look(ref addedTraitDegree, "addedTraitDegree", 0);
+            Scribe_Defs.Look(ref removedTrait, "removedTrait");
+            Scribe_Values.Look(ref removedTraitDegree, "removedTraitDegree", 0);
         }
 
         private void OpenCitationDialog()
@@ -183,6 +194,40 @@ namespace FeatherMedals
                 ? "FeatherMedals_Inspector_PresentedBy_Dead".Translate(awardedBy.Named("PAWN"))
                 : "FeatherMedals_Inspector_PresentedBy".Translate(awardedBy.Named("PAWN"));
         }
+
+        public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
+        {
+            foreach (StatDrawEntry specialDisplayStat in base.SpecialDisplayStats())
+                yield return specialDisplayStat;
+            
+            var ext = def.GetModExtension<ThrophyExtension>();
+
+            if (ext != null)
+            {
+                if (ext.addsTraits != null)
+                    foreach (var trait in ext.addsTraits)
+                    {
+                        yield return new StatDrawEntry(
+                            StatCategoryDefOf.Apparel,
+                            (string)"FeatherMedals_StatDraw_AddTrait".Translate(),
+                            trait.Label.CapitalizeFirst(),
+                            (string)"FeatherMedals_StatDraw_AddTrait_Desc".Translate(trait.Label.Named("TRAIT")), 3752);
+                    }
+                
+                if (ext.removesTraits != null)
+                    foreach (var trait in ext.removesTraits)
+                    {
+                        yield return new StatDrawEntry(
+                            StatCategoryDefOf.Apparel,
+                            (string)"FeatherMedals_StatDraw_RemoveTrait".Translate(),
+                            trait.Label.CapitalizeFirst(),
+                            (string)"FeatherMedals_StatDraw_RemoveTrait_Desc".Translate(trait.Label.Named("TRAIT")), 3753);
+                    }
+            }
+            
+            
+            
+        }
         
         public override string GetInspectString()
         {
@@ -232,8 +277,6 @@ namespace FeatherMedals
 
             return sb.ToString();
         }
-
-    // Custom ITab for the full medal history card
 
     }
 }

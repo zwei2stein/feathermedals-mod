@@ -150,6 +150,40 @@ public class UIHelper
             Text.Font = GameFont.Small;
         }
     }
+    
+    public static void DrawTraitChangeSummary(FeatherMedal featherMedal, Rect rect, ref float curY)
+    {
+
+        if (featherMedal.addedTrait != null)
+        {
+            Text.Font = GameFont.Tiny;
+            GUI.color = GreenColor;
+            Text.Anchor = TextAnchor.MiddleCenter;
+            
+            Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), "FeatherMedals_Summary_TraitAdded".Translate(
+                featherMedal.addedTrait.DataAtDegree(featherMedal.addedTraitDegree).LabelCap.Named("TRAIT")
+                ));
+            
+            GUI.color = Color.white;
+            curY += 8f;
+            Text.Font = GameFont.Small;
+        }
+        
+        if (featherMedal.removedTrait != null)
+        {
+            Text.Font = GameFont.Tiny;
+            GUI.color = GreenColor;
+            Text.Anchor = TextAnchor.MiddleCenter;
+            
+            Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), "FeatherMedals_Summary_TraitAdded".Translate(
+                featherMedal.removedTrait.DataAtDegree(featherMedal.removedTraitDegree).LabelCap.Named("TRAIT")
+            ));
+            
+            GUI.color = Color.white;
+            curY += 8f;
+            Text.Font = GameFont.Small;
+        }
+    }
 
     public static string GetStatSummary(ThingDef def)
     {

@@ -3,7 +3,7 @@
 
 	<!--  RECIPE BASE  -->
 
-	<RecipeDef Name="FeatherMedal_MedalRecipeBase" Abstract="True">
+	<RecipeDef Name="FeatherTrophy_RecipeBase" Abstract="True">
 		<workAmount>8000</workAmount>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<workSkill>Crafting</workSkill>
@@ -21,7 +21,7 @@
 
 	<!--  TIER RECIPE BASES  -->
 
-	<RecipeDef ParentName="FeatherMedal_MedalRecipeBase" Name="FeatherMedal_SimpleMedalRecipeBase" Abstract="True">
+	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="FeatherTrophy_SimpleRecipeBase" Abstract="True">
 		<skillRequirements>
 			<Crafting>3</Crafting>
 		</skillRequirements>
@@ -36,9 +36,6 @@
 				<filter>
 					<thingDefs>
 						<li>Leather_Bird</li>
-						<!-- <li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Harpeagle</li>
-						<li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Raptorkhan</li>
-						<li MayRequire="Van.Beasts">DA_Leather_Crestel</li> -->
 					</thingDefs>
 				</filter>
 				<count>20</count>
@@ -59,7 +56,7 @@
 		</fixedIngredientFilter>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_MedalRecipeBase" Name="FeatherMedal_OrnateMedalRecipeBase" Abstract="True">
+	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="FeatherTrophy_OrnateRecipeBase" Abstract="True">
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
@@ -74,9 +71,6 @@
 				<filter>
 					<thingDefs>
 						<li>Leather_Bird</li>
-						<!-- <li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Harpeagle</li>
-						<li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Raptorkhan</li>
-						<li MayRequire="Van.Beasts">DA_Leather_Crestel</li> -->
 					</thingDefs>
 				</filter>
 				<count>20</count>
@@ -99,7 +93,7 @@
 
 	<!--  SIMPLE RECIPES  -->
 
-	<RecipeDef ParentName="FeatherMedal_SimpleMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedInCombat</defName>
 		<label>feather: wounded in combat</label>
 		<jobString>Crafting feather boasting combat wound.</jobString>
@@ -108,7 +102,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_OrnateMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
 		<jobString>Crafting feather boasting slaying enemy.</jobString>
@@ -117,7 +111,7 @@
 		</products>
 	</RecipeDef>	
 
-	<RecipeDef ParentName="FeatherMedal_SimpleMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedOrKilledAnEnemy</defName>
 		<label>feather: wounded or killed an enemy</label>
 		<jobString>Crafting feather boasting wounding or slaying enemy.</jobString>
@@ -126,7 +120,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_OrnateMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_SlitThroatAndTookScalp</defName>
 		<label>craft feather: slit throat and took scalp</label>
 		<jobString>Crafting feather boasting slitting throat and scapling enemy.</jobString>
@@ -135,7 +129,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_OrnateMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedManyTimes</defName>
 		<label>craft feather: wounded in combat many times</label>
 		<jobString>Crafting feather boasting many combat wounds.</jobString>
@@ -144,7 +138,7 @@
 		</products>
 	</RecipeDef>	
 
-	<RecipeDef ParentName="FeatherMedal_SimpleMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_SlitThroat</defName>
 		<label>craft feather: slit throat of an enemy</label>
 		<jobString>Crafting feather boasting slitting throat of an enemy.</jobString>
@@ -153,7 +147,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_SimpleMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_TouchedAnEnemy</defName>
 		<label>craft feather: touched an enemy</label>
 		<jobString>Crafting feather boasting touching an enemy in combat without being hurt.</jobString>
@@ -162,7 +156,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_OrnateMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_TouchedAnEnemy5Times</defName>
 		<label>craft feather: touched an enemy five times</label>
 		<jobString>Crafting feather boasting touching an enemy in combat without being hurt five distinc times.</jobString>
@@ -171,7 +165,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_OrnateMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_Struck4BlowsInCombat</defName>
 		<label>craft feather: struck an enemy blow four times</label>
 		<jobString>Crafting feather boasting striking enemy four times in combat.</jobString>
@@ -180,7 +174,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="FeatherMedal_SimpleMedalRecipeBase">
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_CunningAndWisdom</defName>
 		<label>craft feather: cunning and wisdom</label>
 		<jobString>Crafting feather boasting cunning during combat and wisdom in peacetime.</jobString>

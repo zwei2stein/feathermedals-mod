@@ -163,6 +163,12 @@ namespace FeatherMedals
             {
                 height += Text.CalcHeight(GetAwardInfo(medal), textWidth) + 2f;
             }
+
+            if (medal.addedTrait != null)
+                height += 8f;
+
+            if (medal.removedTrait != null)
+                height += 8f;
             
             var ext = medal.def.GetModExtension<ThrophyExtension>();
             var honor = ext?.honorAwarded ?? 0;
@@ -258,6 +264,8 @@ namespace FeatherMedals
                 GUI.color = Color.white;
                 statsBottom = statsRect.yMax;
             }
+            
+            UIHelper.DrawTraitChangeSummary(medal, rowRect, ref statsBottom);
             
             // Award info
             if (HasAwardInfo(medal))
