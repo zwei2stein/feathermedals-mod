@@ -132,6 +132,8 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
                         awardee,
                         MessageTypeDefOf.PositiveEvent
                     );
+                    medal.removedTrait = existing.def;
+                    medal.removedTraitDegree = existing.Degree;
                 }
             }
 
@@ -157,6 +159,8 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
                         awardee,
                         MessageTypeDefOf.PositiveEvent
                     );
+                    medal.addedTrait = newTrait.def;
+                    medal.addedTraitDegree = newTrait.Degree;
                 }
             }
         }

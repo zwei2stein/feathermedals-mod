@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
-using Verse.Grammar;
 
 namespace FeatherMedals;
 
@@ -71,10 +69,15 @@ public class HarmonyPatches
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.IsLocked))]
     public static class PatchRankAlwaysForced
     {
-        public static void Postfix(Apparel __0, ref bool __result)
+        public static bool Prefix(Apparel apparel, ref bool __result)
         {
-            if (__0 is FeatherMedal medal)
+            if (apparel is FeatherMedal medal)
+            {
                 __result = medal.isLocked;
+                return true;
+            }
+            
+            return false;
         }
     }
     
@@ -137,16 +140,6 @@ public class HarmonyPatches
                 if (medal.Spawned) medal.DeSpawn();
                 __instance.apparel.Wear(medal, false, true);
             }
-        }
-    }
-    
-    [HarmonyPatch(typeof(JobGiver_OptimizeApparel), nameof(JobGiver_OptimizeApparel.ApparelScoreRaw))]
-    public static class PatchMedalNoAutoEquip
-    {
-        public static void Postfix(Pawn pawn, Apparel ap, ref float __result)
-        {
-            if (ap is FeatherMedal)
-                __result = -10000f;
         }
     }
 

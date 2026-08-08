@@ -77,6 +77,15 @@
 	<FeatherMedals_AwardedAtQualityCeremony> at a {0} adorning</FeatherMedals_AwardedAtQualityCeremony>
 	<FeatherMedals_AwardingMayRemove>May remove {0} ({1})</FeatherMedals_AwardingMayRemove>
 	<FeatherMedals_AwardingMayGrant>May grant {0} ({1})</FeatherMedals_AwardingMayGrant>
+	
+	<FeatherMedals_StatDraw_AddTrait>May grant</FeatherMedals_StatDraw_AddTrait>
+	<FeatherMedals_StatDraw_AddTrait_Desc>May grant {TRAIT} trait when adorned</FeatherMedals_StatDraw_AddTrait_Desc>
+	
+	<FeatherMedals_StatDraw_RemoveTrait>May remove</FeatherMedals_StatDraw_RemoveTrait>
+	<FeatherMedals_StatDraw_RemoveTrait_Desc>May remove {TRAIT} trait when adorned</FeatherMedals_StatDraw_RemoveTrait_Desc>
+	
+	<FeatherMedals_Summary_TraitAdded>Added trait: {TRAIT}</FeatherMedals_Summary_TraitAdded>
+	<FeatherMedals_Summary_TraitRemoved>Removed trait: {TRAIT}</FeatherMedals_Summary_TraitRemoved>
 
 	<FeatherMedals_TrophyGrantedTrait>{PAWN_labelShort} is now known as {TRAIT}.</FeatherMedals_TrophyGrantedTrait>
 	<FeatherMedals_TrophyRemovedTrait>{PAWN_labelShort} has overcome the {TRAIT} trait by facing their fears.</FeatherMedals_TrophyRemovedTrait>

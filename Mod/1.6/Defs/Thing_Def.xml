@@ -50,6 +50,7 @@
 			<bodyPartGroups>
 				<li>UpperHead</li>
 			</bodyPartGroups>
+			<scoreOffset>-1000</scoreOffset>
 		</apparel>
 	</ThingDef>
 
