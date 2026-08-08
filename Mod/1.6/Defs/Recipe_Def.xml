@@ -105,7 +105,7 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
-		<jobString>Crafting feather boasting slaying enemy.</jobString>
+		<jobString>Crafting feather boasting slaying an enemy.</jobString>
 		<products>
 			<FeatherMedal_Medal_KilledAnEnemy>1</FeatherMedal_Medal_KilledAnEnemy>
 		</products>
@@ -114,7 +114,7 @@
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedOrKilledAnEnemy</defName>
 		<label>feather: wounded or killed an enemy</label>
-		<jobString>Crafting feather boasting wounding or slaying enemy.</jobString>
+		<jobString>Crafting feather boasting wounding or slaying an enemy.</jobString>
 		<products>
 			<FeatherMedal_Medal_WoundedOrKilledAnEnemy>1</FeatherMedal_Medal_WoundedOrKilledAnEnemy>
 		</products>
@@ -122,8 +122,8 @@
 
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_SlitThroatAndTookScalp</defName>
-		<label>craft feather: slit throat and took scalp</label>
-		<jobString>Crafting feather boasting slitting throat and scapling enemy.</jobString>
+		<label>feather: slit throat and took scalp</label>
+		<jobString>Crafting feather boasting slitting throats and scalping enemies.</jobString>
 		<products>
 			<FeatherMedal_Medal_SlitThroatAndTookScalp>1</FeatherMedal_Medal_SlitThroatAndTookScalp>
 		</products>
@@ -131,7 +131,7 @@
 
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedManyTimes</defName>
-		<label>craft feather: wounded in combat many times</label>
+		<label>feather: wounded in combat many times</label>
 		<jobString>Crafting feather boasting many combat wounds.</jobString>
 		<products>
 			<FeatherMedal_Medal_WoundedManyTimes>1</FeatherMedal_Medal_WoundedManyTimes>
@@ -140,8 +140,8 @@
 
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_SlitThroat</defName>
-		<label>craft feather: slit throat of an enemy</label>
-		<jobString>Crafting feather boasting slitting throat of an enemy.</jobString>
+		<label>feather: slit throat of an enemy</label>
+		<jobString>Crafting feather for slitting the throat of an enemy.</jobString>
 		<products>
 			<FeatherMedal_Medal_SlitThroat>1</FeatherMedal_Medal_SlitThroat>
 		</products>
@@ -149,8 +149,8 @@
 
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_TouchedAnEnemy</defName>
-		<label>craft feather: touched an enemy</label>
-		<jobString>Crafting feather boasting touching an enemy in combat without being hurt.</jobString>
+		<label>feather: touched an enemy</label>
+		<jobString>Crafting feather for touching an enemy in combat without being hurt.</jobString>
 		<products>
 			<FeatherMedal_Medal_TouchedAnEnemy>1</FeatherMedal_Medal_TouchedAnEnemy>
 		</products>
@@ -158,8 +158,8 @@
 
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_TouchedAnEnemy5Times</defName>
-		<label>craft feather: touched an enemy five times</label>
-		<jobString>Crafting feather boasting touching an enemy in combat without being hurt five distinc times.</jobString>
+		<label>feather: touched an enemy five times</label>
+		<jobString>Crafting feather boasting touching an enemy in combat without being hurt five distinct times.</jobString>
 		<products>
 			<FeatherMedal_Medal_TouchedAnEnemy5Times>1</FeatherMedal_Medal_TouchedAnEnemy5Times>
 		</products>
@@ -167,8 +167,8 @@
 
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_Struck4BlowsInCombat</defName>
-		<label>craft feather: struck an enemy blow four times</label>
-		<jobString>Crafting feather boasting striking enemy four times in combat.</jobString>
+		<label>feather: struck an enemy four times in combat</label>
+		<jobString>Crafting feather boasting striking an enemy four times in combat.</jobString>
 		<products>
 			<FeatherMedal_Medal_Struck4BlowsInCombat>1</FeatherMedal_Medal_Struck4BlowsInCombat>
 		</products>
@@ -176,8 +176,8 @@
 
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_CunningAndWisdom</defName>
-		<label>craft feather: cunning and wisdom</label>
-		<jobString>Crafting feather boasting cunning during combat and wisdom in peacetime.</jobString>
+		<label>feather: cunning and wisdom</label>
+		<jobString>Crafting feather boasting cunning in combat and wisdom in peacetime.</jobString>
 		<products>
 			<FeatherMedal_Medal_CunningAndWisdom>1</FeatherMedal_Medal_CunningAndWisdom>
 		</products>

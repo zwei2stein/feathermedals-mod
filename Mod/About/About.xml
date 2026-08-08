@@ -6,7 +6,7 @@
 	<li>1.6</li>
   </supportedVersions>
   <packageId>zwei2stein.FeatherMedals</packageId>
-  <description>Tribal medals (feather headdress), a craftable trophies and awards for tribal era.</description>
+  <description>Tribal medals (feather headdresses), craftable trophies and awards for the tribal era.</description>
   <modVersion>1.0</modVersion>
   <modDependencies>
     <li>

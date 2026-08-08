@@ -74,18 +74,18 @@
 
     <!-- slit a throat - black top, slit on top -->
 
-	<!-- touched an enemy without being injured - black top, white, missing top vedge and added horse hair -->
+	<!-- touched an enemy without being injured - black top, white, missing top edge and added horse hair -->
 
-	<!-- stucks 5 coups in combat - black top, white, missing vedge of black and white -->
+	<!-- struck 5 coups in combat - black top, white, missing edge of black and white -->
 
-	<!-- stucks 4 blows in combat - black top, white, serrated edges -->
+	<!-- struck 4 blows in combat - black top, white, serrated edges -->
 
 	<!--  SIMPLE MEDALS  -->
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedInCombat</defName>
 		<label>feather: wounded in combat</label>
-		<description>Trophy for injury in combat with foe.</description>
+		<description>Trophy for being injured in combat with a foe.</description>
 		<graphicData>
 			<texPath>Things/Feathers/WoundedInCombat</texPath>
 		</graphicData>
@@ -119,7 +119,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
-		<description>Trophy for killing foe.</description>
+		<description>Trophy for killing a foe.</description>
 		<graphicData>
 			<texPath>Things/Feathers/KilledAnEnemy</texPath>
 		</graphicData>
@@ -137,7 +137,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedOrKilledAnEnemy</defName>
 		<label>feather: wounded or killed an enemy</label>
-		<description>Trophy for wounding or killing foe.</description>
+		<description>Trophy for wounding or killing a foe.</description>
 		<graphicData>
 			<texPath>Things/Feathers/WoundedOrKilledAnEnemy</texPath>
 		</graphicData>
@@ -154,7 +154,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_SlitThroatAndTookScalp</defName>
 		<label>feather: slit throat and took scalp</label>
-		<description>Trophy for slitting throat of an enemy and taking their scalp.</description>
+		<description>Trophy for slitting the throat of an enemy and taking their scalp.</description>
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroatAndTookScalp</texPath>
 		</graphicData>
@@ -200,7 +200,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedManyTimes</defName>
 		<label>feather: wounded in combat many times</label>
-		<description>Trophy boasting numerouns combat wounds.</description>
+		<description>Trophy boasting numerous combat wounds.</description>
 		<graphicData>
 			<texPath>Things/Feathers/WoundedManyTimes</texPath>
 		</graphicData>
@@ -234,7 +234,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_SlitThroat</defName>
 		<label>feather: slit throat of an enemy</label>
-		<description>Trophy boasting slitting throat of an enemy</description>
+		<description>Trophy boasting slitting the throat of an enemy</description>
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroat</texPath>
 		</graphicData>
@@ -270,7 +270,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy</defName>
 		<label>feather: touched an enemy</label>
-		<description>Trophy boasting coup - coup is touching an enemy in combat without being hurt.</description>
+		<description>Trophy boasting a coup - coup is touching an enemy in combat without being hurt.</description>
 		<graphicData>
 			<texPath>Things/Feathers/TouchedAnEnemy</texPath>
 		</graphicData>
@@ -349,8 +349,8 @@
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_Struck4BlowsInCombat</defName>
-		<label>feather: struck an enemy blow four times</label>
-		<description>Trophy boasting striking enemy four times in combat</description>
+		<label>feather: struck an enemy four times in combat</label>
+		<description>Trophy boasting striking an enemy four times in combat</description>
 		<graphicData>
 			<texPath>Things/Feathers/Struck4BlowsInCombat</texPath>
 		</graphicData>
@@ -391,7 +391,7 @@
     <ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_CunningAndWisdom</defName>
 		<label>feather: cunning and wisdom</label>
-		<description>Trophy boasting cunning during combat and wisdom in peacetime</description>
+		<description>Trophy boasting cunning in combat and wisdom in peacetime</description>
 		<graphicData>
 			<texPath>Things/Feathers/CunningAndWisdom</texPath>
 		</graphicData>

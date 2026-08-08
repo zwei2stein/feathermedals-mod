@@ -2,7 +2,7 @@
 <Defs>
 	<RitualOutcomeEffectDef>
 		<defName>FeatherMedals_AwardTrophyOutcome</defName>
-		<description>The warrior is adorned with the trophy.</description>
+		<description>The warrior is adorned with a trophy.</description>
 		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAwardTrophy</workerClass>
 		<comps>
 			<li Class="FeatherMedals.RitualOutcomeComp_TrophyPreview"/>
@@ -54,7 +54,7 @@
 		<defName>FeatherMedal_AwardMedalBehavior</defName>
 		<durationTicks>2500</durationTicks>
 		<spectatorsLabel>Spectators</spectatorsLabel>
-		<spectatorGerund>spectate</spectatorGerund>
+		<spectatorGerund>spectating</spectatorGerund>
 		<roles>
 			<li Class="FeatherMedals.RitualRole_Presenter">
 				<label>presenter</label>
@@ -146,6 +146,6 @@
 		<defName>FeatherMedal_AwardTrophyPattern</defName>
 		<ritualBehavior>FeatherMedal_AwardMedalBehavior</ritualBehavior>
 		<ritualOutcomeEffect>FeatherMedals_AwardTrophyOutcome</ritualOutcomeEffect>
-		<ritualExpectedDesc>The tribe's leader will adorn a trophy to a deserving tribe member.</ritualExpectedDesc>
+		<ritualExpectedDesc>The tribe's leader will adorn a trophy upon a deserving tribe member.</ritualExpectedDesc>
 	</RitualPatternDef>
 </Defs>

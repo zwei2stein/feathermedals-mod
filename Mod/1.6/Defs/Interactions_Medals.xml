@@ -53,7 +53,7 @@
         <secondPawnSymbol>AWARDEE</secondPawnSymbol>
 		<rulePack>
 			<rulesStrings>
-				<li>tale_noun->[PRESENTER_nameDef] adorning a trophy to [AWARDEE_nameDef]</li>
+				<li>tale_noun->[PRESENTER_nameDef] adorning a trophy upon [AWARDEE_nameDef]</li>
 				<li>tale_noun->[AWARDEE_nameDef] receiving a trophy from [PRESENTER_nameDef]</li>
 				<li>tale_noun->the honoring of [AWARDEE_nameDef]</li>
 
@@ -62,7 +62,7 @@
 				<li>image->[AWARDEE_nameFull] looks [AWARDEE_adjective] as they are adjourned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
                 
 				<li>circumstance_phrase->The tribe watches in silent awe.</li>
-				<li>circumstance_phrase->The feather trophy indirescense.</li>
+				<li>circumstance_phrase->The feather trophy indiscernible.</li>
 				<li>circumstance_phrase->Confetti appears to be falling around them.</li>
                 
 				<li>desc_sentence->[AWARDEE_nameDef] looks incredibly proud.</li>

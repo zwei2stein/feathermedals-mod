@@ -1,28 +1,24 @@
 
 [h1]Tribal Trophies[/h1]
 
-"Medals" for tribal playthrough. Feathers worn as a headdress, reminder of bravery and skill.
+"Medals" for tribal playthrough. Feathers worn as headdresses, reminders of bravery and skill.
 
 [h2]Features[/h2] 
 
 [list]
-    [*]Wearable feather trophies immortalizing pawns deeds
-    [*]Ceremony to award feathers to deserving warriors.
-    [*]Crafting feathers is unlocked by researching "warrior honour", done at 
+    [*]Wearable feather trophies immortalizing pawns' deeds
+    [*]Ceremony to award feathers to deserving warriors
+    [*]Crafting feathers is unlocked by researching "Warrior Honour", done at the
 [/list]
 
 [hr][/hr]
 
-[h2]Feathers[/h2]
-
-
-
 [h2]Disclaimers[/h2]
 
-This mod is heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url], both mods do similar things and can be used along each other. This mod got rid of most of AI code crud, all of AI art, UI bloat and was reconceptualized for tribal setting.
+This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url]. Both mods do similar things and can be used alongside each other. This mod removes most of the AI code crud, all the AI art, and UI bloat, and was reconceptualized for a tribal setting.
 
-This mod draws deeply from actual history, but is fictional take on it. Since there are no eagles in RimWorld, those are not eagle feathers. 
+This mod draws deeply from actual history, but is a fictional take on it. Since there are no eagles in RimWorld, these are not eagle feathers. 
 
-[url=https://sites.gsu.edu/psyc4030/2018/10/29/some-native-american-feathers/] source [/url] 
+[url=https://sites.gsu.edu/psyc4030/2018/10/29/some-native-american-feathers/]Source[/url] 
 
-[url=https://www.ya-native.com/Culture_GreatPlains/resources/countingcoup.html] source [/url] 
+[url=https://www.ya-native.com/Culture_GreatPlains/resources/countingcoup.html]Source[/url] 
