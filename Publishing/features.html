@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tribal Trophies - Features</title>
+    <style>
+        body { width: 950px; margin: 0; padding: 20px; font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: #e0e0e0; }
+        .header { text-align: center; margin-bottom: 30px; padding: 20px; background: linear-gradient(180deg, rgba(40,20,10,0.9), rgba(80,40,20,0.9)); border: 1px solid rgba(200,150,100,0.3); border-radius: 8px; }
+        .header h1 { margin: 0; font-size: 2.5em; color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+        .header .subtitle { font-size: 1.1em; color: #f5deb3; font-style: italic; }
+        .requirements { margin-top: 15px; font-size: 0.95em; color: #aaa; }
+        .requirements span { display: inline-block; margin: 0 10px; padding: 4px 12px; background: rgba(0,0,0,0.3); border-radius: 4px; border: 1px solid rgba(200,150,100,0.2); }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 1.8em; color: #ffb347; margin: 0 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid rgba(200,150,100,0.4); display: flex; align-items: center; gap: 12px; }
+        .section-title .icon { width: 32px; height: 32px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .tier-key { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .tier-item { display: flex; align-items: center; gap: 8px; }
+        .tier-color { width: 16px; height: 16px; border-radius: 4px; border: 1px solid #444; }
+        .tier-simple .tier-color { background: linear-gradient(135deg, #c0c0c0, #808080); }
+        .tier-ornate .tier-color { background: linear-gradient(135deg, #ffd700, #ffb347); }
+        .tier-item span { font-size: 0.9em; color: #bbb; }
+        .feathers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 25px; }
+        .feather-card { background: rgba(50,25,12,0.7); border: 1px solid rgba(200,150,100,0.2); border-radius: 6px; padding: 12px; text-align: center; }
+        .feather-graphic { width: 100%; height: 64px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .feather-name { font-size: 1em; color: #ffd700; margin: 8px 0 4px 0; }
+        .feather-desc { font-size: 0.8em; color: #bbb; margin: 0; }
+        .crafting-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.88em; }
+        .crafting-table th { text-align: left; padding: 12px 12px; color: #ffb347; font-weight: 600; background: rgba(60,30,15,0.5); border-bottom: 2px solid rgba(200,150,100,0.4); }
+        .crafting-table td { padding: 10px 12px; border-bottom: 1px solid rgba(200,150,100,0.1); }
+        .crafting-table tr:last-child td { border-bottom: none; }
+        .crafting-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+        .crafting-table .col-graphic { width: 45px; text-align: center; }
+        .crafting-table .col-graphic div { width: 36px; height: 36px; background-size: contain; background-repeat: no-repeat; background-position: center; margin: 0 auto; }
+        .crafting-table .col-name { width: 220px; color: #e0e0e0; }
+        .crafting-table .col-costs { width: 180px; }
+        .crafting-table .col-features { color: #bbb; }
+        .cost-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
+        .cost-table td { padding: 3px 6px; border: none; }
+        .cost-table .cost-amount { text-align: right; color: #ffd700; font-weight: bold; }
+        .cost-table .cost-materials { text-align: left; color: #e0e0e0; }
+        .cost-table .cost-icon { width: 16px; height: 16px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+        .stats-list { margin: 0; padding: 0; list-style: none; }
+        .stats-list li { padding: 2px 0; position: relative; padding-left: 16px; }
+        .stats-list li::before { content: '\2022'; position: absolute; left: 0; color: #ffb347; font-size: 1.2em; line-height: 1; }
+        .stats-list .stat-positive { color: #4CAF50; }
+        .stats-list .stat-neutral { color: #bbb; }
+        small { color: #888; }
+        .footer { text-align: center; margin-top: 40px; padding: 15px; border-top: 1px solid rgba(200,150,100,0.2); color: #888; font-size: 0.85em; }
+        .footer a { color: #ffb347; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tribal Trophies</h1>
+        <div class="subtitle">Feathers of Honor for the Warrior's Path</div>
+        <div class="requirements">
+            <span>Requires: Ideology DLC</span>
+            <span>Requires: Harmony</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            <span class="icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Research.png/32px-Research.png');"></span>
+            Research
+        </h2>
+        <p style="color: #bbb; margin: 0 0 15px 0;">Unlocks feather crafting at tailoring benches:</p>
+        <div style="display: flex; gap: 15px; align-items: center; padding: 12px; background: rgba(60,30,15,0.4); border: 1px solid rgba(200,150,100,0.2); border-radius: 6px;">
+            <div style="width: 48px; height: 48px; background: url('https://rimworldwiki.com/images/thumb/d/d4/TribalStart.png/48px-TribalStart.png') center/contain no-repeat;"></div>
+            <div>
+                <strong style="color: #ffd700;">Warrior Honour</strong><br>
+                <span style="color: #aaa;">Cost: 200 | Tech: Neolithic | TribalStart</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            <span class="icon" style="background-image: url('../SVG/IconFeathers.png');"></span>
+            Feather Trophies
+        </h2>
+        <p style="color: #bbb; margin: 0 0 20px 0;">Wearable head apparel honoring combat achievements. Crafted and adorned through ceremony.</p>
+        
+        <div class="tier-key">
+            <div class="tier-item tier-simple">
+                <div class="tier-color"></div>
+                <span><strong>Simple:</strong> 10x Silver, 20x Bird Leather, 10x Dye | Crafting 3</span>
+            </div>
+            <div class="tier-item tier-ornate">
+                <div class="tier-color"></div>
+                <span><strong>Ornate:</strong> 10x Gold, 20x Bird Leather, 10x Dye | Crafting 5</span>
+            </div>
+        </div>
+
+        <div class="feathers-grid">
+            <div class="feather-card">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/WoundedInCombat.png');"></div>
+                <div class="feather-name">Wounded in Combat</div>
+                <div class="feather-desc">Injured in battle</div>
+            </div>
+            <div class="feather-card">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/WoundedOrKilledAnEnemy.png');"></div>
+                <div class="feather-name">Wounded or Killed</div>
+                <div class="feather-desc">Wounded/killed foe</div>
+            </div>
+            <div class="feather-card">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/WoundedManyTimes.png');"></div>
+                <div class="feather-name">Wounded Many Times</div>
+                <div class="feather-desc">Numerous wounds</div>
+            </div>
+            <div class="feather-card">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroat.png');"></div>
+                <div class="feather-name">Slit Throat</div>
+                <div class="feather-desc">Throat slitting</div>
+            </div>
+            <div class="feather-card">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy.png');"></div>
+                <div class="feather-name">Touched Enemy</div>
+                <div class="feather-desc">Coup: touched without injury</div>
+            </div>
+            <div class="feather-card">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/Struck4BlowsInCombat.png');"></div>
+                <div class="feather-name">Struck 4 Blows</div>
+                <div class="feather-desc">4 strikes in combat</div>
+            </div>
+            <div class="feather-card" style="border-color: #ffd70044;">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/KilledAnEnemy.png');"></div>
+                <div class="feather-name">Killed Enemy</div>
+                <div class="feather-desc">Slaying a foe</div>
+            </div>
+            <div class="feather-card" style="border-color: #ffd70044;">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroatAndTookScalp.png');"></div>
+                <div class="feather-name">Slit Throat + Scalp</div>
+                <div class="feather-desc">Ultimate coup</div>
+            </div>
+            <div class="feather-card" style="border-color: #ffd70044;">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy5Times.png');"></div>
+                <div class="feather-name">Touched 5 Times</div>
+                <div class="feather-desc">5 coups</div>
+            </div>
+            <div class="feather-card" style="border-color: #ffd70044;">
+                <div class="feather-graphic" style="background-image: url('../Mod/Textures/Things/Feathers/CunningAndWisdom.png');"></div>
+                <div class="feather-name">Cunning & Wisdom</div>
+                <div class="feather-desc">Combat & peace</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            <span class="icon" style="background-image: url('https://rimworldwiki.com/images/thumb/c/c0/Crafting.png/32px-Crafting.png');"></span>
+            Crafting Information
+        </h2>
+        <p style="color: #bbb; margin: 0 0 10px 0;"><strong>Locations:</strong> Crafting Spot, Hand Tailoring Bench, Electric Tailoring Bench</p>
+        
+        <table class="crafting-table">
+            <thead>
+                <tr>
+                    <th class="col-graphic"></th>
+                    <th class="col-name">Feather Trophy</th>
+                    <th class="col-costs">Costs</th>
+                    <th class="col-features">Features & Stats</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedInCombat.png');"></div></td>
+                    <td class="col-name"><strong>Wounded in Combat</strong><br><small>Simple</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Silver</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d6/Silver.png/16px-Silver.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 3</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+2% Pain Shock Threshold</li>
+                            <li class="stat-positive">May remove <strong>Delicate</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
+                            <li class="stat-neutral">Beauty +0.1</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedOrKilledAnEnemy.png');"></div></td>
+                    <td class="col-name"><strong>Wounded or Killed an Enemy</strong><br><small>Simple</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Silver</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d6/Silver.png/16px-Silver.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 3</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+2% Pain Shock Threshold</li>
+                            <li class="stat-positive">+2% Melee Hit Chance</li>
+                            <li class="stat-neutral">Beauty +0.1</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedManyTimes.png');"></div></td>
+                    <td class="col-name"><strong>Wounded Many Times</strong><br><small>Simple</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Silver</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d6/Silver.png/16px-Silver.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 3</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+3% Pain Shock Threshold</li>
+                            <li class="stat-positive">May remove <strong>Delicate</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroat.png');"></div></td>
+                    <td class="col-name"><strong>Slit Throat</strong><br><small>Simple</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Silver</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d6/Silver.png/16px-Silver.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 3</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+2% Social Impact</li>
+                            <li class="stat-positive">+1% Pain Shock Threshold</li>
+                            <li class="stat-positive">+1% Medical Tend Quality</li>
+                            <li class="stat-positive">May remove <strong>Nervous</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Steadfast</strong> (5%)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy.png');"></div></td>
+                    <td class="col-name"><strong>Touched an Enemy</strong><br><small>Simple</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Silver</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d6/Silver.png/16px-Silver.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 3</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+3% Social Impact</li>
+                            <li class="stat-positive">+1% Move Speed</li>
+                            <li class="stat-positive">May remove <strong>Wimp</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Brawler</strong>/<strong>Nimble</strong> (10%)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Struck4BlowsInCombat.png');"></div></td>
+                    <td class="col-name"><strong>Struck 4 Blows</strong><br><small>Simple</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Silver</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d6/Silver.png/16px-Silver.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 3</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+2% Pain Shock Threshold</li>
+                            <li class="stat-positive">May remove <strong>Wimp</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Brawler</strong>/<strong>Nimble</strong> (10%)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/KilledAnEnemy.png');"></div></td>
+                    <td class="col-name"><strong>Killed an Enemy</strong><br><small style="color: #ffd700;">Ornate</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Gold</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d4/Gold.png/16px-Gold.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 5</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+1% Pain Shock Threshold</li>
+                            <li class="stat-positive">+10% Shooting Accuracy</li>
+                            <li class="stat-positive">+1% Ranged Cooldown</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroatAndTookScalp.png');"></div></td>
+                    <td class="col-name"><strong>Slit Throat + Took Scalp</strong><br><small style="color: #ffd700;">Ornate</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Gold</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d4/Gold.png/16px-Gold.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 5</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+2% Social Impact</li>
+                            <li class="stat-positive">+1% Med Surgery Success</li>
+                            <li class="stat-positive">+4% Med Tend Quality</li>
+                            <li class="stat-positive">May remove <strong>Volatile</strong>/<strong>Nervous</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Steady</strong>/<strong>Iron-Willed</strong> (5%)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy5Times.png');"></div></td>
+                    <td class="col-name"><strong>Touched an Enemy 5 Times</strong><br><small style="color: #ffd700;">Ornate</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Gold</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d4/Gold.png/16px-Gold.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 5</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+4% Social Impact</li>
+                            <li class="stat-positive">+2% Move Speed</li>
+                            <li class="stat-positive">May remove <strong>Slow</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Fast</strong>/<strong>Very Fast</strong> (10%)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/CunningAndWisdom.png');"></div></td>
+                    <td class="col-name"><strong>Cunning and Wisdom</strong><br><small style="color: #ffd700;">Ornate</small></td>
+                    <td class="col-costs">
+                        <table class="cost-table">
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Gold</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d4/Gold.png/16px-Gold.png');"></td></tr>
+                            <tr><td class="cost-amount">20</td><td class="cost-materials">Bird Leather</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/6/6c/Leather_Bird.png/16px-Leather_Bird.png');"></td></tr>
+                            <tr><td class="cost-amount">10</td><td class="cost-materials">Dye</td><td class="cost-icon" style="background-image: url('https://rimworldwiki.com/images/thumb/e/e0/Dye.png/16px-Dye.png');"></td></tr>
+                        </table>
+                        <small>Crafting 5</small>
+                    </td>
+                    <td class="col-features">
+                        <ul class="stats-list">
+                            <li class="stat-positive">+5% Research Speed</li>
+                            <li class="stat-positive">+1% Med Tend Quality</li>
+                            <li class="stat-positive">May remove <strong>Slow Learner</strong> (10%)</li>
+                            <li class="stat-positive">May grant <strong>Fast Learner</strong>/<strong>Great Memory</strong> (10%)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            <span class="icon" style="background-image: url('https://rimworldwiki.com/images/thumb/f/f0/Ritual.png/32px-Ritual.png');"></span>
+            Adorning Ceremony
+        </h2>
+        <p style="color: #bbb; margin: 0 0 15px 0;">
+            Requires a <strong>Leader, Moral Guide, Lead Warrior, or Lead Sage</strong>. Tribe members can spectate for +quality.
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+            <span style="padding: 6px 12px; background: rgba(200,150,100,0.2); border-radius: 4px; border: 1px solid rgba(200,150,100,0.3);">
+                <strong>Attendance:</strong> Up to 40% of quality
+            </span>
+            <span style="padding: 6px 12px; background: rgba(200,150,100,0.2); border-radius: 4px; border: 1px solid rgba(200,150,100,0.3);">
+                <strong>Venue:</strong> Up to 40% of quality
+            </span>
+            <span style="padding: 6px 12px; background: rgba(200,150,100,0.2); border-radius: 4px; border: 1px solid rgba(200,150,100,0.3);">
+                <strong>Tale of Honor:</strong> 20% of quality
+            </span>
+        </div>
+        <p style="color: #bbb; margin: 0;">
+            <strong>Awardee mood:</strong> +4 (Poor) to +20 (Legendary) for 15 days | <strong>Witnesses:</strong> +3 mood for 5 days
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            <span class="icon" style="background-image: url('https://rimworldwiki.com/images/thumb/d/d0/Trait.png/32px-Trait.png');"></span>
+            Dynamic Trait System
+        </h2>
+        
+        <h3 style="color: #ffb347; margin: 0 0 15px 0; font-size: 1.1em;">Trait Removal (10% chance unless noted):</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+            <div style="padding: 8px; background: rgba(244,67,54,0.1); border-radius: 4px;">
+                <strong>Delicate</strong> → <strong>Tough</strong> <small>(Wounded in Combat, Wounded Many Times)</small>
+            </div>
+            <div style="padding: 8px; background: rgba(244,67,54,0.1); border-radius: 4px;">
+                <strong>Nervous/Volatile</strong> → <strong>Steady/Iron-Willed</strong> <small>(Slit Throat + Scalp, 5% for Iron-Willed)</small>
+            </div>
+            <div style="padding: 8px; background: rgba(244,67,54,0.1); border-radius: 4px;">
+                <strong>Wimp</strong> → <strong>Brawler/Nimble</strong> <small>(Touched Enemy, Struck 4 Blows)</small>
+            </div>
+            <div style="padding: 8px; background: rgba(244,67,54,0.1); border-radius: 4px;">
+                <strong>Slow</strong> → <strong>Fast/Very Fast</strong> <small>(Touched Enemy 5 Times)</small>
+            </div>
+            <div style="padding: 8px; background: rgba(244,67,54,0.1); border-radius: 4px;">
+                <strong>Slow Learner</strong> → <strong>Fast Learner/Great Memory</strong> <small>(Cunning and Wisdom)</small>
+            </div>
+        </div>
+        
+        <p style="color: #bbb; margin: 20px 0 5px 0;"><strong>All feathers provide:</strong> Beauty +0.1, No nudity penalty</p>
+    </div>
+
+    <div class="footer">
+        <strong>Tribal Trophies</strong> - Inspired by Native American feather honors | Requires: <a>Ideology DLC</a> + <a>Harmony</a>
+    </div>
+</body>
+</html>
