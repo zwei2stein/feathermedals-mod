@@ -67,7 +67,7 @@
 			</li>
 			<li Class="RitualRoleColonist">
 				<id>awardee</id>
-				<label>Awardee</label>
+				<label>awardee</label>
 				<required>True</required>
 				<maxCount>1</maxCount>
 				<countsAsParticipant>False</countsAsParticipant>

@@ -200,7 +200,7 @@ namespace FeatherMedals
             foreach (StatDrawEntry specialDisplayStat in base.SpecialDisplayStats())
                 yield return specialDisplayStat;
             
-            var ext = def.GetModExtension<ThrophyExtension>();
+            var ext = def.GetModExtension<TrophyExtension>();
 
             if (ext != null)
             {

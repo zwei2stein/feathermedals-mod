@@ -81,7 +81,7 @@ public class Dialog_TrophyAwarded : Window
         }
         
         
-        var ext = medal.def.GetModExtension<ThrophyExtension>();
+        var ext = medal.def.GetModExtension<TrophyExtension>();
         var honor = ext?.honorAwarded ?? 0;
         if (ModsConfig.RoyaltyActive && honor > 0)
         {

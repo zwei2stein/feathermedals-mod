@@ -41,8 +41,10 @@ public class HarmonyPatches
             
             if (comp.Biocoded && comp.CodedPawn != __instance.pawn)
             {
-                Messages.Message("FeatherMedals_FailTrophyBiocoded".Translate(comp.CodedPawn.Named("PAWN"), __instance.pawn.Named("IMPOSTOR")),
-                    (LookTargets) (Thing) comp.CodedPawn,
+                Messages.Message("FeatherMedals_FailTrophyBiocoded".Translate(
+                        comp.CodedPawn.Named("PAWN"),
+                        __instance.pawn.Named("IMPOSTOR")),
+                    comp.CodedPawn,
                     MessageTypeDefOf.RejectInput, 
                     false);
                 return false; 

@@ -5,7 +5,7 @@
 		<rulePack>
 			<rulesStrings>
 				<li>r_logentry->[INITIATOR_nameDef] [speech_verb] a warrior for [their_actions].</li>
-				<li>r_logentry->[INITIATOR_nameDef] gave a [speech_adjective] speech honoring warrior for [heroic_trait].</li>
+				<li>r_logentry->[INITIATOR_nameDef] gave a [speech_adjective] speech honoring a warrior for [heroic_trait].</li>
 				
 				<li>speech_verb->praised</li>
 				<li>speech_verb->commended</li>
@@ -59,10 +59,10 @@
 
 				<li>image->[PRESENTER_nameFull] is standing firm, proudly adorning [AWARDEE_nameFull]'s head. [circumstance_group]</li>
 				<li>image->[PRESENTER_nameFull] is saluting [AWARDEE_nameFull], who is wearing a newly awarded trophy. [circumstance_group]</li>
-				<li>image->[AWARDEE_nameFull] looks [AWARDEE_adjective] as they are adjourned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
+				<li>image->[AWARDEE_nameFull] looks [AWARDEE_adjective] as they are adorned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
                 
 				<li>circumstance_phrase->The tribe watches in silent awe.</li>
-				<li>circumstance_phrase->The feather trophy indiscernible.</li>
+				<li>circumstance_phrase->The feather trophy is iridescent.</li>
 				<li>circumstance_phrase->Confetti appears to be falling around them.</li>
                 
 				<li>desc_sentence->[AWARDEE_nameDef] looks incredibly proud.</li>

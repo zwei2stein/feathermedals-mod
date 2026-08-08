@@ -22,10 +22,14 @@ public class PreceptDefOf
             IdeoRole_ResearchSpecialist,
             IdeoRole_MedicalSpecialist
         ];
+
+#if DEBUG
         Log.Message(pawn.Name);
         Log.Message(role);
         Log.Message(role.def);
         Log.Message(IdeoRole_ShootingSpecialist);
+#endif
+
         return speakerRoleList.Contains(role.def);
     }
     

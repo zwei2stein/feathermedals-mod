@@ -70,7 +70,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             }
         }
             
-        var ext = medal.def.GetModExtension<ThrophyExtension>();
+        var ext = medal.def.GetModExtension<TrophyExtension>();
         if (ext is not null && ModsConfig.RoyaltyActive && Faction.OfEmpire != null) 
             awardee.royalty.GainFavor(Faction.OfEmpire, ext.honorAwarded);
 

@@ -8,9 +8,9 @@ using Verse;
 namespace FeatherMedals
 {
     [StaticConstructorOnStartup]
-    public static class InjectThophyTab
+    public static class InjectTrophyTab
     {
-        static InjectThophyTab()
+        static InjectTrophyTab()
         {
             var tabType = typeof(ITab_PawnTrophies);
             var tabInstance = InspectTabManager.GetSharedInstance(tabType);
@@ -42,6 +42,7 @@ namespace FeatherMedals
         private const float PADDING = 10f;
         private const float TAB_WIDTH = 400f;
         private const float TAB_HEIGHT = 480f;
+        private const float LOCK_BTN_SIZE = 24f;
 
         public ITab_PawnTrophies()
         {
@@ -73,7 +74,7 @@ namespace FeatherMedals
             {
                 sb.Append(medal.GetAwardedByLabel());
             }
-            if (medal.awardedTick >= 0)
+            if (medal.awardedTick >= 0 && Find.CurrentMap != null)
             {
                 if (sb.Length > 0) sb.Append(" on ");
                 sb.Append(GenDate.DateFullStringAt(
@@ -170,7 +171,7 @@ namespace FeatherMedals
             if (medal.removedTrait != null)
                 height += 8f;
             
-            var ext = medal.def.GetModExtension<ThrophyExtension>();
+            var ext = medal.def.GetModExtension<TrophyExtension>();
             var honor = ext?.honorAwarded ?? 0;
             if (honor > 0)
                 height += Text.CalcHeight("0", textWidth) + 2f;
@@ -184,8 +185,6 @@ namespace FeatherMedals
         {
             return availableWidth - ICON_SIZE - (PADDING * 3) - LOCK_BTN_SIZE - PADDING;
         }
-
-        private const float LOCK_BTN_SIZE = 24f;
 
         private void DrawMedalRow(float width, ref float curY, FeatherMedal medal)
         {
@@ -244,7 +243,7 @@ namespace FeatherMedals
             }
             
             var statsBottom = descBottom;
-            var ext = medal.def.GetModExtension<ThrophyExtension>();
+            var ext = medal.def.GetModExtension<TrophyExtension>();
             var honor = ext?.honorAwarded ?? 0;
             if (ModsConfig.RoyaltyActive && honor > 0)
             {

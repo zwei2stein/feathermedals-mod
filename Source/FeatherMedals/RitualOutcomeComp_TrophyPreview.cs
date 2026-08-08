@@ -45,7 +45,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
         if (MedalMod.Settings.TrophyDynamicTraits)
         {
-            var ext = medal.def.GetModExtension<ThrophyExtension>();
+            var ext = medal.def.GetModExtension<TrophyExtension>();
             if (ext != null)
             {
                 if (ext.removesTraits is { Count: > 0 })

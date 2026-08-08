@@ -65,7 +65,7 @@ public class Dialog_WriteCitation : Window
         GUI.color = Color.white;
         var statsY = descRect.yMax + 10f;
         
-        var ext = medal.def.GetModExtension<ThrophyExtension>();
+        var ext = medal.def.GetModExtension<TrophyExtension>();
         var honor = ext?.honorAwarded ?? 0;
         if (ModsConfig.RoyaltyActive && honor > 0)
         {

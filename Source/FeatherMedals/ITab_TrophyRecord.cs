@@ -106,7 +106,7 @@ public class ITab_TrophyRecord : ITab
         }
 
         // honor bonus, gold, centered
-        var ext = medal.def.GetModExtension<ThrophyExtension>();
+        var ext = medal.def.GetModExtension<TrophyExtension>();
         var honor = ext?.honorAwarded ?? 0;
         if (ModsConfig.RoyaltyActive && honor > 0)
         {

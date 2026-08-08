@@ -3,7 +3,7 @@
 
 	<ThingCategoryDef>
 		<defName>FeatherMedals_Apparel_Feathers</defName>
-		<label>Trophy Feathers</label>
+		<label>Feather trophies</label>
 		<parent>Apparel</parent>
     </ThingCategoryDef>
 

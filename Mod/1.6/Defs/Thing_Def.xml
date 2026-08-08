@@ -96,7 +96,7 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Delicate</trait>
@@ -167,7 +167,7 @@
 			<MedicalTendQuality>0.04</MedicalTendQuality>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -211,7 +211,7 @@
 			<PainShockThreshold>0.03</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Delicate</trait>
@@ -247,7 +247,7 @@
 			<MedicalTendQuality>0.01</MedicalTendQuality>			
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -282,7 +282,7 @@
 			<MoveSpeed>0.01</MoveSpeed>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Wimp</trait>
@@ -322,7 +322,7 @@
 			<MoveSpeed>0.02</MoveSpeed>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>SpeedOffset</trait>
@@ -361,7 +361,7 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Wimp</trait>
@@ -403,7 +403,7 @@
 			<MedicalTendQuality>0.01</MedicalTendQuality>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.ThrophyExtension">
+			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>SlowLearner</trait>

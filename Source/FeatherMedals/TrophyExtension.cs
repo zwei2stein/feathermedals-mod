@@ -4,7 +4,7 @@ using Verse;
 
 namespace FeatherMedals;
 
-public class ThrophyExtension : DefModExtension
+public class TrophyExtension : DefModExtension
 {
     public int honorAwarded = 0;
     public List<MedalDynamicTrait> addsTraits;

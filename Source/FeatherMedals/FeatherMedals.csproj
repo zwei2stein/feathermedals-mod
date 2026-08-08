@@ -75,7 +75,7 @@
         <Compile Include="RitualOutcomeEffectWorkerAwardTrophy.cs" />
         <Compile Include="RitualRole_Presenter.cs" />
         <Compile Include="RitualStageAction_StartAdorning.cs" />
-        <Compile Include="ThrophyExtension.cs" />
+        <Compile Include="TrophyExtension.cs" />
         <Compile Include="MedalMod.cs" />
         <Compile Include="PreceptDefOf.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
