@@ -19,4 +19,18 @@
       <displayName>Ideology</displayName>
     </li>
   </modDependencies>
+  <loadAfter>
+    <li>veterano.mythicages.megafaunabestiary</li>
+    <li>Van.Beasts</li>
+    <li>Erin.Auraeyl</li>
+    <li>ReGrowth.BOTR.BoilingForest</li>
+    <li>BiomesTeam.BiomesCaverns</li>
+    <li>BiomesTeam.BiomesCore</li>
+    <li>BiomesTeam.Oasis</li>
+    <li>SirMashedPotato.Spiribirds</li>
+    <li>tug.minotaur</li>
+    <li>zal.eldersfaction</li>
+    <li>sirmashedpotato.ashlands</li>
+    <li>ra.ecotech</li>
+  </loadAfter>
 </ModMetaData>
