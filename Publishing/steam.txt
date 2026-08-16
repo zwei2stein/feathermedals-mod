@@ -6,19 +6,82 @@
 [h2]Features[/h2] 
 
 [list]
-    [*]Wearable feather trophies immortalizing pawns' deeds
+    [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
     [*]Ceremony to award feathers to deserving warriors
-    [*]Crafting feathers is unlocked by researching "Warrior Honour", done at the
+[/list]
+
+[h3]Crafting[/h3]
+
+[list]
+    [*]Crafting feathers is unlocked by researching "Warrior Honour".
+    [*]Crafted at Crafting Spot, Hand Tailoring Bench, or Electric Tailoring Bench.
+    [*]Requires Pristine Feather, obtained when butchering birds or by refining bird leather.
 [/list]
 
 [hr][/hr]
 
+[h2]Trophies[/h2]
+
+[h3]Simple Tier[/h3]
+Cost: 10 Silver, 1 Pristine feather, 10 Dye | Crafting 3
+
+[table]
+[tr][th]Feather[/th][th]Effects[/th][/tr]
+[tr][td][b]Wounded in Combat[/b][/td][td]+2% Pain Shock Threshold | May remove Delicate (10%) | May grant Tough (10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Wounded or Killed an Enemy[/b][/td][td]+2% Pain Shock Threshold | +2% Melee Hit Chance | Beauty +0.1[/td][/tr]
+[tr][td][b]Wounded Many Times[/b][/td][td]+3% Pain Shock Threshold | May remove Delicate (10%) | May grant Tough (10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Slit Throat[/b][/td][td]+2% Social Impact | +1% Pain Shock Threshold | +1% Med Tend Quality | May remove Nervous (10%) | May grant Steadfast (5%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Touched an Enemy[/b][/td][td]+3% Social Impact | +1% Move Speed | May remove Wimp (10%) | May grant Brawler/Nimble (10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Struck 4 Blows[/b][/td][td]+2% Pain Shock Threshold | May remove Wimp (10%) | May grant Brawler/Nimble (10%) | Beauty +0.1[/td][/tr]
+[/table]
+
+[h3]Ornate Tier[/h3]
+Cost: 10 Gold, 1 Pristine feather, 10 Dye | Crafting 5
+
+[table]
+[tr][th]Feather[/th][th]Effects[/th][/tr]
+[tr][td][b]Killed an Enemy[/b][/td][td]+1% Pain Shock Threshold | +10% Shooting Accuracy | +1% Ranged Cooldown | Beauty +0.1[/td][/tr]
+[tr][td][b]Slit Throat + Took Scalp[/b][/td][td]+2% Social Impact | +1% Med Surgery Success | +4% Med Tend Quality | May remove Volatile/Nervous (10%) | May grant Steady/Iron-Willed (5%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Touched an Enemy 5 Times[/b][/td][td]+4% Social Impact | +2% Move Speed | May remove Slow (10%) | May grant Fast/Very Fast (10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Cunning and Wisdom[/b][/td][td]+5% Research Speed | +1% Med Tend Quality | May remove Slow Learner (10%) | May grant Fast Learner/Great Memory (10%) | Beauty +0.1[/td][/tr]
+[/table]
+
+[h2]Mod compatibility[/h2]
+
+[h3]Bonus feathers with[/h3]
+
+[list]
+    [*]Roo's Minotaur Xenotype
+    [*]Elders Faction (Continued), bonus content with Allergies 
+    [*]Mashed's Ashlands
+    [*]Ecotech
+[/list]
+
+[h3]Pristine Feather sources[/h3]
+
+These mods have birds/avians who can either drop pristine feathers when butchered or whose leather can be refined for feathers.
+
+[list]
+    [*]Mythic Ages: Megafauna Bestiary
+    [*]Dark Ages : Beasts and Monsters
+    [*]Erin's Auraeyl
+    [*]ReGrowth: Boiling
+    [*]Biomes! Core
+    [*]Biomes! Caverns
+    [*]Biomes! Oasis
+    [*]Mashed's Spiribirds
+[/list]
+
 [h2]Disclaimers[/h2]
 
-This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url]. Both mods do similar things and can be used alongside each other. This mod removes most of the AI code crud, all the AI art, and UI bloat, and was reconceptualized for a tribal setting.
+[h3]Fork[/h3]
 
-This mod draws deeply from actual history, but is a fictional take on it. Since there are no eagles in RimWorld, these are not eagle feathers. 
+This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url]. Both mods do similar things and can be used alongside each other. This mod was reconceptualized for a neolithic/tribal setting and has slightly different features.
 
-[url=https://sites.gsu.edu/psyc4030/2018/10/29/some-native-american-feathers/]Source[/url] 
+[h3]Cultural heritage[/h3]
 
-[url=https://www.ya-native.com/Culture_GreatPlains/resources/countingcoup.html]Source[/url] 
+This mod draws deeply from actual history (1), (2), but is a fictional take on it. Since there are no eagles in RimWorld, these are not eagle feathers.
+
+(1) [url=https://sites.gsu.edu/psyc4030/2018/10/29/some-native-american-feathers/]Source[/url] 
+
+(2) [url=https://www.ya-native.com/Culture_GreatPlains/resources/countingcoup.html]Source[/url] 
