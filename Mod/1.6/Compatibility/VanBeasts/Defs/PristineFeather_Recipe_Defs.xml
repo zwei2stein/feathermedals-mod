@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
+        <defName>FeatherTrophy_Recipe_PristineFeather_DA_Leather_Crestel</defName>
+        <label>refine crestel leather to pristine feather</label>
+        <jobString>Refining crestel leather to pristine feather</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DA_Leather_Crestel</li>
+                    </thingDefs>
+                </filter>
+                <count>20</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DA_Leather_Crestel</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+    
+</Defs>

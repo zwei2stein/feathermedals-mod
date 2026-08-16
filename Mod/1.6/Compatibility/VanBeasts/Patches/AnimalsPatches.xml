@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="DA_Crestel"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_Crestel"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_Crestel"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="DA_Taraal"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_Taraal"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_Taraal"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="DA_Pilgrim"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_Pilgrim"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_Pilgrim"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="DA_OwlcatThingBase"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_OwlcatThingBase"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DA_OwlcatThingBase"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+    
+</Patch>

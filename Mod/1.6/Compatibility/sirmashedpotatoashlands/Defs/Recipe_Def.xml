@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="FeatherTrophy_AshlandsRecipeBase" Abstract="True">
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Mashed_Ashlands_BlocksBasalt</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FeatherTrophy_Precursor_PristineFeather</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Mashed_Ashlands_BlocksBasalt</li>
+				<li>FeatherTrophy_Precursor_PristineFeather</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="FeatherTrophy_AshlandsRecipeBase">
+		<defName>FeatherTrophy_Recipe_Mashed_Ashlands_AshStormLover_Feather</defName>
+		<label>feather: braved ash storm</label>
+		<jobString>Crafting feather telling story of wielder braving ash storm.</jobString>
+		<products>
+			<FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather>1</FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather>
+		</products>
+	</RecipeDef>
+
+</Defs>

@@ -35,10 +35,10 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Leather_Bird</li>
+						<li>FeatherTrophy_Precursor_PristineFeather</li>
 					</thingDefs>
 				</filter>
-				<count>20</count>
+				<count>1</count>
 			</li>
 			<li>
 				<filter>
@@ -50,7 +50,7 @@
 		<fixedIngredientFilter>
 			<thingDefs>
 				<li>Silver</li>
-				<li>Leather_Bird</li>
+				<li>FeatherTrophy_Precursor_PristineFeather</li>
 				<li>Dye</li>
 			</thingDefs>
 		</fixedIngredientFilter>
@@ -70,10 +70,10 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Leather_Bird</li>
+						<li>FeatherTrophy_Precursor_PristineFeather</li>
 					</thingDefs>
 				</filter>
-				<count>20</count>
+				<count>1</count>
 			</li>
 			<li>
 				<filter>
@@ -85,7 +85,7 @@
 		<fixedIngredientFilter>
 			<thingDefs>
 				<li>Gold</li>
-				<li>Leather_Bird</li>
+				<li>FeatherTrophy_Precursor_PristineFeather</li>
 				<li>Dye</li>
 			</thingDefs>
 		</fixedIngredientFilter>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
+        <defName>FeatherTrophy_Recipe_PristineFeather_BiomesIslands_Leather_Flamingo</defName>
+        <label>refine flamingo leather to pristine feather</label>
+        <jobString>Refining flamingo leather to pristine feather</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>BiomesIslands_Leather_Flamingo</li>
+                    </thingDefs>
+                </filter>
+                <count>20</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>BiomesIslands_Leather_Flamingo</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+    
+</Defs>

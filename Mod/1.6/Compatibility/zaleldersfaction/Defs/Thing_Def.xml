@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_NatureHarmony_Feather</defName>
+		<label>feather: in harmony with nature</label>
+		<description>Feather symbolizing the warrior's unity with nature</description>
+		<graphicData>
+			<texPath>Things/Feathers/NatureHarmony_Feather</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/NatureHarmony_Feather</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PsychicSensitivity MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.05</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.033</PsychicEntropyRecoveryRate>
+			<P42_AllergicSensitivity MayRequire="phil42.allergies">-0.05</P42_AllergicSensitivity>
+			<SocialImpact>0.01</SocialImpact>
+			<InjuryHealingFactor>0.05</InjuryHealingFactor>
+			<PlantHarvestYield>0.02</PlantHarvestYield>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="FeatherMedals.TrophyExtension">
+				<removesTraits>
+					<li MayRequire="phil42.allergies">
+						<trait>P42_Allergy</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>NatureHarmony</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>	
+					<li MayRequire="phil42.allergies">
+						<trait>P42_Allergy</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

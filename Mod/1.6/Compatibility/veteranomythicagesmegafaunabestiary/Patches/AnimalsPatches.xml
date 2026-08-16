@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="MA_Raptorkhan"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="MA_Raptorkhan"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="MA_Raptorkhan"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+    
+</Patch>

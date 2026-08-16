@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_TerratechAncestry_Feather</defName>
+		<label>feather: terratech bloodline</label>
+		<description>Feather celebrating ancient terratech bloodline of a warrior</description>
+		<graphicData>
+			<texPath>Things/Feathers/TerratechAncestry_Feather</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/TerratechAncestry_Feather</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.05</SocialImpact>
+			<PlantHarvestYield>0.02</PlantHarvestYield>
+			<GlobalLearningFactor>0.05</GlobalLearningFactor>
+			<ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="FeatherMedals.TrophyExtension">
+				<addsTraits>
+					<li>
+						<trait>ET_SkytouchedTrait</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>ET_GrovetouchedTrait</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>ET_WatertouchedTrait</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>ET_EarthtouchedTrait</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>ET_SpacetouchedTrait</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+	
+</Defs>

@@ -116,7 +116,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
             if (ext?.removesTraits != null)
             {
-                foreach (var entry in ext.removesTraits)
+                foreach (var entry in ext.removesTraits.InRandomOrder())
                 {
                     if (!Rand.Chance(entry.chance)) continue;
 
@@ -139,7 +139,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
             if (ext?.addsTraits != null)
             {
-                foreach (var entry in ext.addsTraits)
+                foreach (var entry in ext.addsTraits.InRandomOrder())
                 {
                     if (!Rand.Chance(entry.chance)) continue;
 

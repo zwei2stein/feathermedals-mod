@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
+		<defName>FeatherMedal_Recipe_RBM_Herculean_Feather</defName>
+		<label>feather: herculean strength</label>
+		<jobString>Crafting feather representing the wielder's great strength.</jobString>
+		<products>
+			<FeatherTrophy_RBM_Herculean_Feather>1</FeatherTrophy_RBM_Herculean_Feather>
+		</products>
+	</RecipeDef>
+
+</Defs>

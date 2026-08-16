@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+    <v1.6>
+        <li>/</li>
+        <li>1.6</li>
+
+        <li IfModActive="Ludeon.RimWorld.Odyssey">1.6/Compatibility/Odyssey</li>
+        
+        <li IfModActive="veterano.mythicages.megafaunabestiary">1.6/Compatibility/veteranomythicagesmegafaunabestiary</li>
+        <li IfModActive="Van.Beasts">1.6/Compatibility/VanBeasts</li>
+        <li IfModActive="Erin.Auraeyl">1.6/Compatibility/ErinAuraeyl</li>
+        <li IfModActive="ReGrowth.BOTR.BoilingForest">1.6/Compatibility/ReGrowthBOTRBoilingForest</li>
+        <li IfModActive="BiomesTeam.BiomesCaverns">1.6/Compatibility/BiomesTeamBiomesCaverns</li>
+        <li IfModActive="BiomesTeam.BiomesCore">1.6/Compatibility/BiomesTeamBiomesCore</li>
+        <li IfModActive="BiomesTeam.Oasis">1.6/Compatibility/BiomesTeamOasis</li>
+        <li IfModActive="SirMashedPotato.Spiribirds">1.6/Compatibility/SirMashedPotatoSpiribirds</li>
+        
+        <li IfModActive="tug.minotaur">1.6/Compatibility/tugminotaur</li>
+        <li IfModActive="zal.eldersfaction">1.6/Compatibility/zaleldersfaction</li> <!-- also interacts with phil42.allergies -->
+        <li IfModActive="sirmashedpotato.ashlands">1.6/Compatibility/sirmashedpotatoashlands</li>
+        <li IfModActive="ra.ecotech">1.6/Compatibility/raecotech</li>
+        
+    </v1.6>
+</loadFolders>

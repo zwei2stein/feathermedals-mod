@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_RBM_Herculean_Feather</defName>
+		<label>feather: herculean strength</label>
+		<description>Feather representing the wielder's great strength</description>
+		<graphicData>
+			<texPath>Things/Feathers/RBM_Herculean_Feather</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/RBM_Herculean_Feather</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.01</PainShockThreshold>
+			<MeleeHitChance>0.02</MeleeHitChance>
+			<MeleeCritChance>0.05</MeleeCritChance>
+			<MiningSpeed>0.05</MiningSpeed>
+			<SocialImpact>0.01</SocialImpact>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="FeatherMedals.TrophyExtension">
+				<addsTraits>
+					<li>
+						<trait>RBM_Herculean_Trait</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>				
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

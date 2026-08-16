@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather</defName>
+		<label>feather: braved ash storm</label>
+		<description>Feather telling story of wielder braving ash storm</description>
+		<graphicData>
+			<texPath>Things/Feathers/Mashed_Ashlands_AshStormLover_Feather</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/Mashed_Ashlands_AshStormLover_Feather</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<PainShockThreshold>0.01</PainShockThreshold>
+			<SocialImpact>0.01</SocialImpact>
+			<MentalBreakThreshold>0.05</MentalBreakThreshold>
+			<Mashed_Ashlands_AshResistance>0.05</Mashed_Ashlands_AshResistance>
+			<ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="FeatherMedals.TrophyExtension">
+				<addsTraits>
+					<li>
+						<trait>Mashed_Ashlands_AshStormLover</trait>
+						<degree>0</degree>
+						<chance>0.2</chance>
+					</li>				
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

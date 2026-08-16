@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="BMT_Heron"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="BMT_Heron"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="BMT_Heron"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="BMT_PalmWarbler"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="BMT_PalmWarbler"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="BMT_PalmWarbler"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+    
+</Patch>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="FeatherTrophy_EcotechRecipeBase" Abstract="True">
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>ET_Glowsap</li></thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FeatherTrophy_Precursor_PristineFeather</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ET_Glowsap</li>
+				<li>FeatherTrophy_Precursor_PristineFeather</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="FeatherTrophy_EcotechRecipeBase">
+		<defName>FeatherTrophy_Recipe_erratechAncestry_Feather</defName>
+		<label>feather: terratech bloodline</label>
+		<jobString>Crafting feather celebrating ancient terratech bloodline of a warrior.</jobString>
+		<products>
+			<FeatherTrophy_TerratechAncestry_Feather>1</FeatherTrophy_TerratechAncestry_Feather>
+		</products>
+	</RecipeDef>
+
+</Defs>

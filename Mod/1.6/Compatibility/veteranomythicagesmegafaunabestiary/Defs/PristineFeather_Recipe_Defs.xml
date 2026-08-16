@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
+        <defName>FeatherTrophy_Recipe_PristineFeather_MA_Leather_Raptorkhan</defName>
+        <label>refine raptorkhan leather to pristine feather</label>
+        <jobString>Refining raptorkhan leather to pristine feather</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MA_Leather_Raptorkhan</li>
+                    </thingDefs>
+                </filter>
+                <count>20</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MA_Leather_Raptorkhan</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+
+    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
+        <defName>FeatherTrophy_Recipe_PristineFeather_MA_Leather_Harpeagle</defName>
+        <label>refine harpeagle leather to pristine feather</label>
+        <jobString>Refining harpeagle leather to pristine feather</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MA_Leather_Harpeagle</li>
+                    </thingDefs>
+                </filter>
+                <count>20</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MA_Leather_Harpeagle</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+
+    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
+        <defName>FeatherTrophy_Recipe_PristineFeather_MA_HarpeagleFeather</defName>
+        <label>refine harpeagle feather to pristine feather</label>
+        <jobString>Refining harpeagle feather to pristine feather</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MA_HarpeagleFeather</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MA_HarpeagleFeather</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+    
+</Defs>
