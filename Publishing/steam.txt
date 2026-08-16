@@ -14,8 +14,8 @@
 
 [list]
     [*]Crafting feathers is unlocked by researching "Warrior Honour".
-    [*]Crafted at Crafting Spot, Hand Tailoring Bench, or Electric Tailoring Bench.
-    [*]Requires Pristine Feather, obtained when butchering birds or by refining bird leather.
+    [*]Crafted at the Crafting Spot, Hand Tailoring Bench, or Electric Tailoring Bench.
+    [*]Requires Pristine Feather, obtained by butchering birds or refining bird leather.
 [/list]
 
 [hr][/hr]
@@ -52,14 +52,14 @@ Cost: 10 Gold, 1 Pristine feather, 10 Dye | Crafting 5
 
 [list]
     [*]Roo's Minotaur Xenotype
-    [*]Elders Faction (Continued), bonus content with Allergies 
+    [*]Elders Faction (Continued) - bonus content with Allergies
     [*]Mashed's Ashlands
     [*]Ecotech
 [/list]
 
 [h3]Pristine Feather sources[/h3]
 
-These mods have birds/avians who can either drop pristine feathers when butchered or whose leather can be refined for feathers.
+These mods have birds/avians that can either drop pristine feathers when butchered or whose leather can be refined to pristine feathers.
 
 [list]
     [*]Mythic Ages: Megafauna Bestiary

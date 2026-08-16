@@ -5,7 +5,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>FeatherTrophy_Precursor_PristineFeather</defName>
         <label>pristine feather</label>
-        <description>A pristine feather, fit for being turned into a warrior's trophy by skilled crafter. Can be refined from the pelts of feathered animals or obtained when butchering them.</description>
+        <description>A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the pelts of feathered animals or obtained by butchering them.</description>
         <graphicData>
             <texPath>Things/Feathers/Precursor_PristineFeather</texPath>
             <graphicClass>Graphic_Single</graphicClass>

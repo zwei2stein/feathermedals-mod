@@ -4,7 +4,7 @@
     <ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather</defName>
 		<label>feather: braved ash storm</label>
-		<description>Feather telling story of wielder braving ash storm</description>
+		<description>Feather telling the story of the wielder braving an ash storm</description>
 		<graphicData>
 			<texPath>Things/Feathers/Mashed_Ashlands_AshStormLover_Feather</texPath>
 		</graphicData>

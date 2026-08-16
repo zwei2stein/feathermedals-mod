@@ -39,7 +39,7 @@
 	<RecipeDef ParentName="FeatherTrophy_EcotechRecipeBase">
 		<defName>FeatherTrophy_Recipe_erratechAncestry_Feather</defName>
 		<label>feather: terratech bloodline</label>
-		<jobString>Crafting feather celebrating ancient terratech bloodline of a warrior.</jobString>
+		<jobString>Crafting a feather celebrating ancient terratech bloodline of a warrior.</jobString>
 		<products>
 			<FeatherTrophy_TerratechAncestry_Feather>1</FeatherTrophy_TerratechAncestry_Feather>
 		</products>

@@ -6,7 +6,7 @@
   <ResearchProjectDef>
     <defName>FeatherMedal_TribalWarriorHonour</defName>
     <label>warrior honour</label>
-    <description>Tribal code for honoring warriors.</description>
+    <description>Tribal code for honoring warriors</description>
     <baseCost>200</baseCost>
     <techLevel>Neolithic</techLevel>
     <tags>
@@ -18,7 +18,7 @@
       <rulesStrings>
         <li>subject->honour</li>
         <li>subject->trophies</li>
-        <li>subject->tale of honor</li>
+        <li>subject->tale of honour</li>
         
         <li>subject_story->composed tale of honor</li>
         <li>subject_story->wrote epic about heroic deeds</li>

@@ -41,7 +41,7 @@
 	<RecipeDef ParentName="FeatherTrophy_AnimaRecipeBase">
 		<defName>FeatherMedal_Recipe_NatureHarmony_Feather</defName>
 		<label>feather: in harmony with nature</label>
-		<jobString>Crafting a feather symbolizing the warrior's unity with nature.</jobString>
+		<jobString>Crafting a feather symbolizing the warrior's unity with nature</jobString>
 		<products>
 			<FeatherTrophy_NatureHarmony_Feather>1</FeatherTrophy_NatureHarmony_Feather>
 		</products>
