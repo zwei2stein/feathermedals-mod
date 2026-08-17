@@ -24,7 +24,6 @@
         <thingCategories>
             <li>FeatherMedals_Apparel_Feathers</li>
         </thingCategories>
-        <drawGUIOverlay>false</drawGUIOverlay>
         <tradeability>Sellable</tradeability>
         <techLevel>Neolithic</techLevel>
         <tradeTags>
