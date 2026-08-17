@@ -2,17 +2,17 @@
 <Patch>
 
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[defName="Mashed_Spiribird_SpiribirdThingBase"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[@Name="Mashed_Spiribird_SpiribirdThingBase"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName="Mashed_Spiribird_SpiribirdThingBase"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[@Name="Mashed_Spiribird_SpiribirdThingBase"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName="Mashed_Spiribird_SpiribirdThingBase"]</xpath>
+            <xpath>/Defs/ThingDef[@Name="Mashed_Spiribird_SpiribirdThingBase"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
