@@ -14,7 +14,6 @@
 		<equippedStatOffsets>
 			<PainShockThreshold>0.01</PainShockThreshold>
 			<MeleeHitChance>0.02</MeleeHitChance>
-			<MeleeCritChance>0.05</MeleeCritChance>
 			<MiningSpeed>0.05</MiningSpeed>
 			<SocialImpact>0.01</SocialImpact>
 		</equippedStatOffsets>

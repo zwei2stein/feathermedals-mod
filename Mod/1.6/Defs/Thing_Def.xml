@@ -29,7 +29,7 @@
 		</equippedStatOffsets>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
-			<WorkToMake>10000</WorkToMake>
+			<WorkToMake>6000</WorkToMake>
 			<Mass>0.01</Mass>
 			<EquipDelay>0.5</EquipDelay>
 			<DeteriorationRate>0</DeteriorationRate>

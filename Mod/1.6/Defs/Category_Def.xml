@@ -7,4 +7,10 @@
 		<parent>Apparel</parent>
     </ThingCategoryDef>
 
+	<ThingCategoryDef>
+		<defName>FeatherMedals_Apparel_Feathers_Precursor</defName>
+		<label>Pristine feathers</label>
+		<parent>Manufactured</parent>
+	</ThingCategoryDef>
+
 </Defs>

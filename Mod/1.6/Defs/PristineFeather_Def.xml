@@ -9,6 +9,7 @@
         <graphicData>
             <texPath>Things/Feathers/Precursor_PristineFeather</texPath>
             <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.85</drawSize>
         </graphicData>
         <resourceReadoutPriority>Last</resourceReadoutPriority>
         <soundInteract>Standard_Pickup</soundInteract>
@@ -16,13 +17,14 @@
         <stackLimit>20</stackLimit>
         <smallVolume>true</smallVolume>
         <statBases>
+            <Beauty>1</Beauty>
             <MarketValue>100</MarketValue>
             <MaxHitPoints>500</MaxHitPoints>
             <Mass>0.01</Mass>
             <DeteriorationRate>0</DeteriorationRate>
         </statBases>
         <thingCategories>
-            <li>FeatherMedals_Apparel_Feathers</li>
+            <li>FeatherMedals_Apparel_Feathers_Precursor</li>
         </thingCategories>
         <tradeability>Sellable</tradeability>
         <techLevel>Neolithic</techLevel>
