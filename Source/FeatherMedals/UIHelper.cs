@@ -40,36 +40,36 @@ public class UIHelper
         }
     }
     
-    public static void DrawTraitChangeSummary(FeatherMedal featherMedal, Rect rect, ref float curY)
+    public static void DrawTraitChangeSummary(FeatherMedal featherMedal, float textX, Rect rect, ref float curY)
     {
 
         if (featherMedal.addedTrait != null)
         {
             Text.Font = GameFont.Tiny;
-            GUI.color = GreenColor;
-            Text.Anchor = TextAnchor.MiddleCenter;
+            GUI.color = Color.green;
+            Text.Anchor = TextAnchor.MiddleLeft;
             
-            Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), "FeatherMedals_Summary_TraitAdded".Translate(
+            Widgets.Label(new Rect(textX, curY, rect.width - textX, 24f), "FeatherMedals_Summary_TraitAdded".Translate(
                 featherMedal.addedTrait.DataAtDegree(featherMedal.addedTraitDegree).LabelCap.Named("TRAIT")
                 ));
             
             GUI.color = Color.white;
-            curY += 8f;
+            curY += 24f;
             Text.Font = GameFont.Small;
         }
         
         if (featherMedal.removedTrait != null)
         {
             Text.Font = GameFont.Tiny;
-            GUI.color = GreenColor;
-            Text.Anchor = TextAnchor.MiddleCenter;
+            GUI.color = Color.red;
+            Text.Anchor = TextAnchor.MiddleLeft;
             
-            Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), "FeatherMedals_Summary_TraitAdded".Translate(
+            Widgets.Label(new Rect(textX, curY, rect.width - textX, 24f), "FeatherMedals_Summary_TraitRemoved".Translate(
                 featherMedal.removedTrait.DataAtDegree(featherMedal.removedTraitDegree).LabelCap.Named("TRAIT")
             ));
             
             GUI.color = Color.white;
-            curY += 8f;
+            curY += 24f;
             Text.Font = GameFont.Small;
         }
     }

@@ -166,10 +166,10 @@ namespace FeatherMedals
             }
 
             if (medal.addedTrait != null)
-                height += 8f;
+                height += 24f;
 
             if (medal.removedTrait != null)
-                height += 8f;
+                height += 24f;
             
             var ext = medal.def.GetModExtension<TrophyExtension>();
             var honor = ext?.honorAwarded ?? 0;
@@ -264,7 +264,7 @@ namespace FeatherMedals
                 statsBottom = statsRect.yMax;
             }
             
-            UIHelper.DrawTraitChangeSummary(medal, rowRect, ref statsBottom);
+            UIHelper.DrawTraitChangeSummary(medal, textX, rowRect, ref statsBottom);
             
             // Award info
             if (HasAwardInfo(medal))

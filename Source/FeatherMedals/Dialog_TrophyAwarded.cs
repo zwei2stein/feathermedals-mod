@@ -91,7 +91,7 @@ public class Dialog_TrophyAwarded : Window
         // Stat bonuses
         UIHelper.DrawStatSummary(medal.def, inRect, ref curY);
         
-        UIHelper.DrawTraitChangeSummary(medal, inRect, ref curY);
+        UIHelper.DrawTraitChangeSummary(medal, inRect.x, inRect, ref curY);
 
         // Reset and close button
         Text.Font = GameFont.Small;
