@@ -7,8 +7,8 @@
         <label>pristine feather</label>
         <description>A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the pelts of feathered animals or obtained by butchering them.</description>
         <graphicData>
-            <texPath>Things/Feathers/Precursor_PristineFeather</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Feathers/Pristine</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
             <drawSize>0.85</drawSize>
         </graphicData>
         <resourceReadoutPriority>Last</resourceReadoutPriority>
