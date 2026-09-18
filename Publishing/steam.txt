@@ -52,7 +52,7 @@ Cost: 10 Gold, 1 Pristine feather, 10 Dye | Crafting 5
 
 [list]
     [*]Roo's Minotaur Xenotype
-    [*]Elders Faction (Continued) - bonus content with Allergies
+    [*]Elders Faction (Continued) - bonus content with Allergies mod
     [*]Mashed's Ashlands
     [*]Ecotech
 [/list]
@@ -69,7 +69,9 @@ These mods have birds/avians that can either drop pristine feathers when butcher
     [*]Biomes! Core
     [*]Biomes! Caverns
     [*]Biomes! Oasis
+    [*]Biomes! Prehistoric
     [*]Mashed's Spiribirds
+    [*]Project Arcos
 [/list]
 
 [h2]Disclaimers[/h2]

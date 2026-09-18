@@ -9,7 +9,7 @@
    id="svg1"
    sodipodi:docname="feathers_moded.svg"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
-   inkscape:export-filename="RBM_Herculean_Feather"
+   inkscape:export-filename="DV_PyrinthFeather.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -28,17 +28,48 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="8.6448372"
-     inkscape:cx="58.185017"
-     inkscape:cy="70.851537"
-     inkscape:window-width="2538"
+     inkscape:cx="52.690408"
+     inkscape:cy="56.045011"
+     inkscape:window-width="2560"
      inkscape:window-height="1494"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer3"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g9"
      showguides="false" />
   <defs
      id="defs1">
+    <linearGradient
+       id="linearGradient12"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+      <stop
+         style="stop-color:#bfbfbf;stop-opacity:1;"
+         offset="1"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient10">
+      <stop
+         style="stop-color:#d16e34;stop-opacity:1;"
+         offset="0"
+         id="stop9" />
+      <stop
+         style="stop-color:#ce5425;stop-opacity:1;"
+         offset="0.4539749"
+         id="stop11" />
+      <stop
+         style="stop-color:#cd471e;stop-opacity:1;"
+         offset="0.47245467"
+         id="stop12" />
+      <stop
+         style="stop-color:#cc3b17;stop-opacity:1;"
+         offset="1"
+         id="stop10" />
+    </linearGradient>
     <linearGradient
        id="linearGradient4"
        inkscape:collect="always">
@@ -152,12 +183,30 @@
        x2="16.022541"
        y2="12.001023"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10"
+       id="linearGradient9"
+       gradientUnits="userSpaceOnUse"
+       x1="11.573751"
+       y1="15.859897"
+       x2="19.695271"
+       y2="21.760525" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient12"
+       id="linearGradient14"
+       x1="14.23612"
+       y1="4.1769533"
+       x2="17.87258"
+       y2="11.313908"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="RBM_Herculean_Feather"
-     style="display:inline">
+     style="display:none">
     <g
        id="g42">
       <path
@@ -218,6 +267,32 @@
          d="M 16.680235,31.401689 15.700341,27.914465"
          id="path5" />
     </g>
+  </g>
+  <g
+     inkscape:label="Pyrinth"
+     inkscape:groupmode="layer"
+     id="g9"
+     style="display:inline">
+    <path
+       style="fill:url(#linearGradient9);stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="M 12.527451,9.4782271 C 10.446852,16.750719 10.143752,26.616758 15.700341,27.914465 20.680834,24.332823 20.605013,16.123714 19.535338,9.7074709 L 15.465129,14.015925 Z"
+       id="path2"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:url(#linearGradient14);stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="m 17.462255,1.6014832 c -2.472146,1.7156486 -3.552273,4.962519 -4.934804,7.8767439 l 2.937678,4.5376979 4.070209,-4.3084541 C 19.032051,6.1293506 18.630152,2.0780888 17.462255,1.6014832 Z"
+       id="path6"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="M 15.723079,27.527355 C 15.085591,22.213367 15.085542,18.055489 15.465129,14.015925 15.844716,9.9763607 16.581202,6.4422191 17.462255,1.6014832"
+       id="path7-8"
+       sodipodi:nodetypes="csc"
+       inkscape:label="path1" />
+    <path
+       style="fill:#5e0c0c;fill-opacity:1;stroke:#010101;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="M 16.680235,31.401689 15.700341,27.914465"
+       id="path8" />
   </g>
   <g
      inkscape:groupmode="layer"

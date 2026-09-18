@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>FeatherTrophy_Precursor_PristineFeather</thingDef>
+                <countRange>0~3</countRange>
+            </li>
+        </value>
+    </Operation>
+    
+</Patch>

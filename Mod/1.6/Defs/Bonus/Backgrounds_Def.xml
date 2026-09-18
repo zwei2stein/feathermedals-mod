@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <BackstoryDef>
+        <defName>FeatherTrophy_Backstory_DisgracedElder</defName>
+        <title>disgraced elder</title>
+        <titleShort>elder</titleShort>
+        <description>[PAWN_nameDef] used to be a figure of great honor in [PAWN_possessive] tribe. [PAWN_pronoun] betrayed their tribe and joined with sworn enemy, raising family there.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Hulk</bodyTypeMale>
+        <bodyTypeFemale>Hulk</bodyTypeFemale>
+        <skillGains>
+            <Shooting>6</Shooting>
+            <Melee>5</Melee>
+            <Social>-2</Social>
+        </skillGains>
+        <forcedTraits>
+            <FeatherMedals_Decorated>2</FeatherMedals_Decorated>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>TribalHunter</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+        </possessions>
+    </BackstoryDef>
+    
+    <BackstoryDef>
+        <defName>FeatherTrophy_Backstory_HonoredElder</defName>
+        <title>honored elder</title>
+        <titleShort>elder</titleShort>
+        <description>[PAWN_nameDef] was once fierce warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe fiercely and eventually became honored elder.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Hulk</bodyTypeMale>
+        <bodyTypeFemale>Hulk</bodyTypeFemale>
+        <skillGains>
+            <Shooting>2</Shooting>
+            <Melee>8</Melee>
+            <Social>6</Social>
+        </skillGains>
+        <forcedTraits>
+            <FeatherMedals_Decorated>2</FeatherMedals_Decorated>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>TribalHunter</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate/>
+            <Nerves>-1</Nerves>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <workDisables>
+            <li>ManualDumb</li>
+        </workDisables>
+        <possessions>
+            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FeatherTrophy_Backstory_FeatheredWarrior</defName>
+        <title>feathered warrior</title>
+        <titleShort>feathered</titleShort>
+        <description>[PAWN_nameDef] was once skilled warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe with great bravely and eventually became celebrated hero.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Hulk</bodyTypeMale>
+        <bodyTypeFemale>Hulk</bodyTypeFemale>
+        <skillGains>
+            <Shooting>2</Shooting>
+            <Melee>5</Melee>
+            <Social>2</Social>
+        </skillGains>
+        <forcedTraits>
+            <FeatherMedals_Decorated>1</FeatherMedals_Decorated>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>TribalHunter</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate/>
+            <Nerves>-1</Nerves>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FeatherTrophy_Backstory_PraisedWarrior</defName>
+        <title>praised warrior</title>
+        <titleShort>praised</titleShort>
+        <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned respect of [PAWN_pronoun] peers.</description>
+        <slot>Adulthood</slot>
+        <skillGains>
+            <Shooting>1</Shooting>
+            <Melee>4</Melee>
+            <Social>1</Social>
+        </skillGains>
+        <forcedTraits>
+            <FeatherMedals_Decorated>0</FeatherMedals_Decorated>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>TribalHunter</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FeatherTrophy_Backstory_PraisedChild</defName>
+        <title>praised child</title>
+        <titleShort>praised</titleShort>
+        <description>[PAWN_nameDef] surprised everyone with great bravery and honor. [PAWN_pronoun] defended [PAWN_possessive] tribe earned respect of every tribe member.</description>
+        <slot>Childhood</slot>
+        <skillGains>
+            <Shooting>1</Shooting>
+            <Melee>4</Melee>
+            <Social>1</Social>
+        </skillGains>
+        <forcedTraits>
+            <FeatherMedals_Decorated>0</FeatherMedals_Decorated>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+        </spawnCategories>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+        </possessions>
+    </BackstoryDef>
+
+</Defs>

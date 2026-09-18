@@ -27,10 +27,13 @@
     <li>BiomesTeam.BiomesCaverns</li>
     <li>BiomesTeam.BiomesCore</li>
     <li>BiomesTeam.Oasis</li>
+    <li>BiomesTeam.BiomesPrehistoric</li>
     <li>SirMashedPotato.Spiribirds</li>
+    <li>dorbo.arcos</li>
     <li>tug.minotaur</li>
     <li>zal.eldersfaction</li>
     <li>sirmashedpotato.ashlands</li>
     <li>ra.ecotech</li>
+    <li>phil42.allergies</li>
   </loadAfter>
 </ModMetaData>

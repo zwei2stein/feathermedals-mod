@@ -13,7 +13,9 @@
         <li IfModActive="BiomesTeam.BiomesCaverns">1.6/Compatibility/BiomesTeamBiomesCaverns</li>
         <li IfModActive="BiomesTeam.BiomesCore">1.6/Compatibility/BiomesTeamBiomesCore</li>
         <li IfModActive="BiomesTeam.Oasis">1.6/Compatibility/BiomesTeamOasis</li>
+        <li IfModActive="BiomesTeam.BiomesPrehistoric">1.6/Compatibility/BiomesTeamBiomesPrehistoric</li>        
         <li IfModActive="SirMashedPotato.Spiribirds">1.6/Compatibility/SirMashedPotatoSpiribirds</li>
+        <li IfModActive="dorbo.arcos">1.6/Compatibility/dorboarcos</li>
         
         <li IfModActive="tug.minotaur">1.6/Compatibility/tugminotaur</li>
         <li IfModActive="zal.eldersfaction">1.6/Compatibility/zaleldersfaction</li> <!-- also interacts with phil42.allergies -->
