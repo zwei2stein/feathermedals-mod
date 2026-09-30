@@ -72,6 +72,8 @@ These mods have birds/avians that can either drop pristine feathers when butcher
     [*]Biomes! Prehistoric
     [*]Mashed's Spiribirds
     [*]Project Arcos
+    [*]Birds of the World!
+    [*]More Birds - Extinct & Engineered
 [/list]
 
 [h2]Disclaimers[/h2]

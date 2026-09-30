@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Kiwi"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Kiwi"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Kiwi"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Kakapo"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Kakapo"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Kakapo"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Kakariki"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Kakariki"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Kakariki"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Moa"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Moa"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Moa"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="SlagSnipe"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="SlagSnipe"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="SlagSnipe"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="RodriguesSolitaire"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="RodriguesSolitaire"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="RodriguesSolitaire"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="GreatAuk"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="GreatAuk"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="GreatAuk"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="ElephantBird"]/butcherProducts</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="ElephantBird"]/butcherProducts</xpath>
+            <value>
+                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="ElephantBird"]</xpath>
+            <value>
+                <butcherProducts>
+                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                </butcherProducts>
+            </value>
+        </nomatch>
+    </Operation>
+    
+</Patch>

@@ -2,27 +2,6 @@
 <Defs>
 
     <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
-        <defName>FeatherTrophy_Recipe_PristineFeather_BMT_DinoHideFeathery</defName>
-        <label>refine leather from a feathery dinosaur to pristine feather</label>
-        <jobString>Refining leather from a feathery dinosaur to pristine feather</jobString>
-        <ingredients>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>BMT_DinoHideFeathery</li>
-                    </thingDefs>
-                </filter>
-                <count>20</count>
-            </li>
-        </ingredients>
-        <fixedIngredientFilter>
-            <thingDefs>
-                <li>BMT_DinoHideFeathery</li>
-            </thingDefs>
-        </fixedIngredientFilter>
-    </RecipeDef>
-
-    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
         <defName>FeatherTrophy_Recipe_PristineFeather_BMT_BladeFeather</defName>
         <label>refine saurumbo blade feather to pristine feather</label>
         <jobString>Refining saurumbo blade feather to pristine feather</jobString>

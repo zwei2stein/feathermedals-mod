@@ -34,6 +34,11 @@
                 <filter>
                     <thingDefs>
                         <li>Leather_Bird</li>
+                        <li MayRequire="Van.Beasts">DA_Leather_Crestel</li>
+                        <li MayRequire="Erin.Auraeyl">ERN_ThickBirdLeather</li>
+                        <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoHideFeathery</li>
+                        <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoFeather</li>
+                        <li MayRequire="BiomesTeam.BiomesCore">BiomesIslands_Leather_Flamingo</li>
                     </thingDefs>
                 </filter>
                 <count>20</count>
@@ -42,11 +47,13 @@
         <fixedIngredientFilter>
             <thingDefs>
                 <li>Leather_Bird</li>
+                <li MayRequire="Van.Beasts">DA_Leather_Crestel</li>
+                <li MayRequire="Erin.Auraeyl">ERN_ThickBirdLeather</li>
+                <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoHideFeathery</li>
+                <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoFeather</li>
+                <li MayRequire="BiomesTeam.BiomesCore">BiomesIslands_Leather_Flamingo</li>
             </thingDefs>
         </fixedIngredientFilter>
     </RecipeDef>
-    
-    <!--  -->
-    
     
 </Defs>

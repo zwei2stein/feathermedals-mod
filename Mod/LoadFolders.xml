@@ -11,11 +11,12 @@
         <li IfModActive="Erin.Auraeyl">1.6/Compatibility/ErinAuraeyl</li>
         <li IfModActive="ReGrowth.BOTR.BoilingForest">1.6/Compatibility/ReGrowthBOTRBoilingForest</li>
         <li IfModActive="BiomesTeam.BiomesCaverns">1.6/Compatibility/BiomesTeamBiomesCaverns</li>
-        <li IfModActive="BiomesTeam.BiomesCore">1.6/Compatibility/BiomesTeamBiomesCore</li>
         <li IfModActive="BiomesTeam.Oasis">1.6/Compatibility/BiomesTeamOasis</li>
         <li IfModActive="BiomesTeam.BiomesPrehistoric">1.6/Compatibility/BiomesTeamBiomesPrehistoric</li>        
         <li IfModActive="SirMashedPotato.Spiribirds">1.6/Compatibility/SirMashedPotatoSpiribirds</li>
         <li IfModActive="dorbo.arcos">1.6/Compatibility/dorboarcos</li>
+        <li IfModActive="tyrannidae.birdsoftheworld">1.6/Compatibility/tyrannidae.birdsoftheworld</li>
+        <li IfModActive="11Bullets.ExtinctEngineered">1.6/Compatibility/11Bullets.ExtinctEngineered</li>
         
         <li IfModActive="tug.minotaur">1.6/Compatibility/tugminotaur</li>
         <li IfModActive="zal.eldersfaction">1.6/Compatibility/zaleldersfaction</li> <!-- also interacts with phil42.allergies -->
