@@ -107,10 +107,6 @@ public class UIHelper
         if (!statText.NullOrEmpty())
             height += Text.CalcHeight(statText, textWidth) + 2f;
 
-        var ext = def.GetModExtension<TrophyExtension>();
-        if (ModsConfig.RoyaltyActive && (ext?.honorAwarded ?? 0) > 0)
-            height += 18f + 2f;
-
         height += ROW_PADDING;
         Text.Font = GameFont.Small;
         return Mathf.Max(MIN_ROW_HEIGHT, height);
@@ -149,30 +145,6 @@ public class UIHelper
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
         }
-    }
-
-    public static void DrawHonorSummary(ThingDef medalDef, Rect rect, ref float curY)
-    {
-        var ext = medalDef.GetModExtension<TrophyExtension>();
-        var honor = ext?.honorAwarded ?? 0;
-        
-        Text.Font = GameFont.Tiny;
-        GUI.color = GoldColor;
-        Text.Anchor = TextAnchor.MiddleCenter;
-        var iconSize = 14f;
-        
-        var totalWidth = iconSize + 4f + Text.CalcSize("FeatherMedals_HonorLabel".Translate(honor.ToString())).x;
-        var startX = rect.x + (rect.width - totalWidth) / 2f;
-        var labelRect = new Rect(startX + iconSize + 4f, curY, totalWidth - iconSize - 4f, 24f);
-        
-        if (TrophyTextures.HonorIcon != null)
-            GUI.DrawTexture(new Rect(startX, curY + 5f, iconSize, iconSize), TrophyTextures.HonorIcon);
-        Widgets.Label(labelRect, "FeatherMedals_HonorLabel".Translate(honor.ToString()));
-        curY += 8f + 24f;
-        GUI.color = Color.white;
-        Text.Font = GameFont.Small;
-        Text.Anchor = TextAnchor.UpperLeft;
-        
     }
 
     public static void DrawCitation(ThingDef medalDef, string citation, Rect rect, ref float curY)

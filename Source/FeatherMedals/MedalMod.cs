@@ -12,7 +12,6 @@ namespace FeatherMedals
         public static readonly Texture2D CitationIcon = ContentFinder<Texture2D>.Get("UI/ButtonWriteTheTale");
         public static readonly Texture2D LockedIcon = ContentFinder<Texture2D>.Get("UI/Locked");
         public static readonly Texture2D UnlockedIcon = ContentFinder<Texture2D>.Get("UI/Unlocked");
-        public static readonly Texture2D HonorIcon = ContentFinder<Texture2D>.Get("UI/Icons/RoyalFavor");
     }
 
     public class MedalMod : Mod
@@ -86,12 +85,7 @@ namespace FeatherMedals
             var listing = new Listing_Standard();
             listing.Begin(rect);
             Text.Font = GameFont.Small;
-
-            listing.CheckboxLabeled(
-                 "FeatherMedals_Settings_ShowTrophyCatalog".Translate(),
-                ref Settings.ShowTrophyCatalog,
-                "FeatherMedals_Settings_ShowTrophyCatalog_Tooltip".Translate()
-            );
+            
             listing.CheckboxLabeled(
                 "FeatherMedals_Settings_DrawTrophiesOnPawns".Translate(),
                 ref Settings.DrawTrophiesOnPawns,
@@ -130,7 +124,6 @@ namespace FeatherMedals
         public bool PromptForCitationDuringRitual = true;
         public float TrophyScale = 0.8f;
         public int MaxDisplayedTrophies = 9;
-        public bool ShowTrophyCatalog = true;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -143,7 +136,6 @@ namespace FeatherMedals
             Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScale, "TrophyScale", 0.8f);
-            Scribe_Values.Look(ref ShowTrophyCatalog, "ShowTrophyCatalog", true);
         }
     }
 

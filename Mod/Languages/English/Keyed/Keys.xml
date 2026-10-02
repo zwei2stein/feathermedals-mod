@@ -49,8 +49,6 @@
 
 	<FeatherMedals_MedalCatalog>Trophies</FeatherMedals_MedalCatalog>
 	<FeatherMedals_MedalLockedResearch>Locked. Required research: {0}</FeatherMedals_MedalLockedResearch>
-
-    <FeatherMedals_HonorLabel>Honor: +{0}</FeatherMedals_HonorLabel>
 	
 	<FeatherMedals_WriteCitationDesc>Tell the Tale of Honor, recount the deeds of a warrior. This tale cannot be changed once the trophy is adorned.</FeatherMedals_WriteCitationDesc>
 
@@ -107,9 +105,6 @@
 	
 	<FeatherMedals_Settings_TrophyDynamicTraits>Dynamic Traits</FeatherMedals_Settings_TrophyDynamicTraits>
 	<FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining an elder trait or losing wimp when receiving bravery awards.</FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>
-
-	<FeatherMedals_Settings_ShowTrophyCatalog>Show Trophy Catalog Button</FeatherMedals_Settings_ShowTrophyCatalog>
-	<FeatherMedals_Settings_ShowTrophyCatalog_Tooltip>If enabled, a menu button will show to open a catalog of all trophies in the game, including those added by mods. The catalog shows stats and effects of each trophy. Default: ON</FeatherMedals_Settings_ShowTrophyCatalog_Tooltip>
 
 	<FeatherMedals_Settings_DrawTrophiesOnPawns>Draw Trophies on Pawns</FeatherMedals_Settings_DrawTrophiesOnPawns>
 	<FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>If enabled, trophies will be rendered on pawns. Disabling this will stop trophies from being drawn on pawns. Use this to turn their rendering off. Default: ON</FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>

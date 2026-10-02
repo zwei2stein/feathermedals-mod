@@ -80,14 +80,6 @@ public class Dialog_TrophyAwarded : Window
             UIHelper.DrawCitation(medal.def, medal.citation, inRect, ref curY);
         }
         
-        
-        var ext = medal.def.GetModExtension<TrophyExtension>();
-        var honor = ext?.honorAwarded ?? 0;
-        if (ModsConfig.RoyaltyActive && honor > 0)
-        {
-            UIHelper.DrawHonorSummary(medal.def, inRect, ref curY);
-        }
-        
         // Stat bonuses
         UIHelper.DrawStatSummary(medal.def, inRect, ref curY);
         

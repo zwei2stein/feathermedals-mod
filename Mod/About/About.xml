@@ -20,6 +20,7 @@
     </li>
   </modDependencies>
   <loadAfter>
+    <li>Ludeon.RimWorld.Ideology</li>
     <li>veterano.mythicages.megafaunabestiary</li>
     <li>Van.Beasts</li>
     <li>Erin.Auraeyl</li>
@@ -31,6 +32,7 @@
     <li>SirMashedPotato.Spiribirds</li>
     <li>dorbo.arcos</li>
     <li>tyrannidae.birdsoftheworld</li>
+    <li>11Bullets.ExtinctEngineered</li>
     <li>tug.minotaur</li>
     <li>zal.eldersfaction</li>
     <li>sirmashedpotato.ashlands</li>

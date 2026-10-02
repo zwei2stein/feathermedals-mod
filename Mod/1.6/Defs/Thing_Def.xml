@@ -129,7 +129,7 @@
 		<equippedStatOffsets>
 			<PainShockThreshold>0.01</PainShockThreshold>
 			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
-			<RangedCooldownFactor>0.01</RangedCooldownFactor>
+			<RangedCooldownFactor>-0.01</RangedCooldownFactor>
 		</equippedStatOffsets>
 		<uiOrder>20</uiOrder>
 	</ThingDef>

@@ -106,7 +106,7 @@
         <defName>FeatherTrophy_Backstory_PraisedWarrior</defName>
         <title>praised warrior</title>
         <titleShort>praised</titleShort>
-        <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned respect of [PAWN_pronoun] peers.</description>
+        <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned respect of [PAWN_possessive] peers.</description>
         <slot>Adulthood</slot>
         <skillGains>
             <Shooting>1</Shooting>
@@ -136,7 +136,7 @@
         <defName>FeatherTrophy_Backstory_PraisedChild</defName>
         <title>praised child</title>
         <titleShort>praised</titleShort>
-        <description>[PAWN_nameDef] surprised everyone with great bravery and honor. [PAWN_pronoun] defended [PAWN_possessive] tribe earned respect of every tribe member.</description>
+        <description>[PAWN_nameDef] surprised everyone with great bravery and honor. [PAWN_pronoun] defended [PAWN_possessive] tribe and earned respect of every tribe member.</description>
         <slot>Childhood</slot>
         <skillGains>
             <Shooting>1</Shooting>

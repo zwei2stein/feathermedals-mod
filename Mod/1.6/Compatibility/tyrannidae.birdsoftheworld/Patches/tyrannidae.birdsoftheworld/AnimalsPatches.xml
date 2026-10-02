@@ -2,17 +2,17 @@
 <Patch>
 
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[@Name="TYR_Triller_WhiteBrowed"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[defName="TYR_Triller_WhiteBrowed"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Triller_WhiteBrowed"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Triller_WhiteBrowed"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Triller_WhiteBrowed"]</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Triller_WhiteBrowed"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
@@ -22,17 +22,17 @@
     </Operation>
     
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[@Name="TYR_Parrot_Caica"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[defName="TYR_Parrot_Caica"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Parrot_Caica"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Parrot_Caica"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Parrot_Caica"]</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Parrot_Caica"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
@@ -42,17 +42,17 @@
     </Operation>
     
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[@Name="TYR_Hummingbird_BlueTailed"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[defName="TYR_Hummingbird_BlueTailed"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Hummingbird_BlueTailed"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Hummingbird_BlueTailed"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Hummingbird_BlueTailed"]</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Hummingbird_BlueTailed"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
@@ -62,17 +62,17 @@
     </Operation>
     
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[@Name="TYR_FairyBluebird_Philippine"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[defName="TYR_FairyBluebird_Philippine"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_FairyBluebird_Philippine"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_FairyBluebird_Philippine"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_FairyBluebird_Philippine"]</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_FairyBluebird_Philippine"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
@@ -82,17 +82,17 @@
     </Operation>
 
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[@Name="TYR_Owl_AfricanGrass"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[defName="TYR_Owl_AfricanGrass"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Owl_AfricanGrass"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Owl_AfricanGrass"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Owl_AfricanGrass"]</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Owl_AfricanGrass"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
@@ -102,17 +102,17 @@
     </Operation>
 
     <Operation Class="PatchOperationConditional">
-        <xpath>/Defs/ThingDef[@Name="TYR_Cuckooshrike_BlackWinged"]/butcherProducts</xpath>
+        <xpath>/Defs/ThingDef[defName="TYR_Cuckooshrike_BlackWinged"]/butcherProducts</xpath>
 
         <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Cuckooshrike_BlackWinged"]/butcherProducts</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Cuckooshrike_BlackWinged"]/butcherProducts</xpath>
             <value>
                 <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
             </value>
         </match>
 
         <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[@Name="TYR_Cuckooshrike_BlackWinged"]</xpath>
+            <xpath>/Defs/ThingDef[defName="TYR_Cuckooshrike_BlackWinged"]</xpath>
             <value>
                 <butcherProducts>
                     <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>

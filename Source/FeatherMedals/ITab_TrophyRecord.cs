@@ -104,14 +104,6 @@ public class ITab_TrophyRecord : ITab
         {
             UIHelper.DrawCitation(medal.def, medal.citation, rect, ref curY);
         }
-
-        // honor bonus, gold, centered
-        var ext = medal.def.GetModExtension<TrophyExtension>();
-        var honor = ext?.honorAwarded ?? 0;
-        if (ModsConfig.RoyaltyActive && honor > 0)
-        {
-            UIHelper.DrawHonorSummary(medal.def, rect, ref curY);
-        }
         
         // Stat bonuses, green, centered
         UIHelper.DrawStatSummary(medal.def, rect, ref curY);

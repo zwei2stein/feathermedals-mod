@@ -64,26 +64,6 @@ public class Dialog_WriteCitation : Window
         Widgets.Label(descRect, desc);
         GUI.color = Color.white;
         var statsY = descRect.yMax + 10f;
-        
-        var ext = medal.def.GetModExtension<TrophyExtension>();
-        var honor = ext?.honorAwarded ?? 0;
-        if (ModsConfig.RoyaltyActive && honor > 0)
-        {
-            GUI.color = UIHelper.GoldColor;
-            var iconSize = 14f;
-            var gap = 4f;
-            var lineRect = new Rect(rect.x + 5f, statsY, rect.width - 10f, 18f);
-            var labelText = "FeatherMedals_HonorLabel".Translate(honor.ToString());
-            var textWidth = Text.CalcSize(labelText).x;
-            var totalWidth = iconSize + gap + textWidth;
-            var startX = lineRect.x + (lineRect.width - totalWidth) / 2f;
-            var centerY = lineRect.y + (lineRect.height - iconSize) / 2f;
-            if (TrophyTextures.HonorIcon != null)
-                GUI.DrawTexture(new Rect(startX, centerY, iconSize, iconSize), TrophyTextures.HonorIcon);
-            Widgets.Label(new Rect(startX + iconSize + gap, lineRect.y, textWidth, lineRect.height), labelText);
-            statsY += 18f + 6f;
-            GUI.color = Color.white;
-        }
 
         // Stat bonuses
         var offsets = medal.def.equippedStatOffsets;

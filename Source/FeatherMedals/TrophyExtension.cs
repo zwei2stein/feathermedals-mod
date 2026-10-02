@@ -6,7 +6,6 @@ namespace FeatherMedals;
 
 public class TrophyExtension : DefModExtension
 {
-    public int honorAwarded = 0;
     public List<MedalDynamicTrait> addsTraits;
     public List<MedalDynamicTrait> removesTraits;
 }

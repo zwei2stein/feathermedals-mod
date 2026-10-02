@@ -170,11 +170,6 @@ namespace FeatherMedals
 
             if (medal.removedTrait != null)
                 height += 24f;
-            
-            var ext = medal.def.GetModExtension<TrophyExtension>();
-            var honor = ext?.honorAwarded ?? 0;
-            if (honor > 0)
-                height += Text.CalcHeight("0", textWidth) + 2f;
 
             Text.Font = GameFont.Small;
             height += 8f;
@@ -242,29 +237,20 @@ namespace FeatherMedals
                 descBottom = descRect.yMax;
             }
             
-            var statsBottom = descBottom;
-            var ext = medal.def.GetModExtension<TrophyExtension>();
-            var honor = ext?.honorAwarded ?? 0;
-            if (ModsConfig.RoyaltyActive && honor > 0)
-            {
-                var rect = new Rect(textX, descBottom + 4f, nameRect.xMax, 14f);
-                UIHelper.DrawHonorSummary(medal.def, rect, ref statsBottom);
-            }
-
             // Stat bonuses summary
             var statText = UIHelper.GetStatSummary(medal.def);
             if (!statText.NullOrEmpty())
             {
                 Text.Font = GameFont.Tiny;
                 var statHeight = Text.CalcHeight(statText, textWidth);
-                var statsRect = new Rect(textX, statsBottom + 2f, textWidth, statHeight);
+                var statsRect = new Rect(textX, descBottom + 2f, textWidth, statHeight);
                 GUI.color = new Color(0.5f, 0.8f, 0.5f);
                 Widgets.Label(statsRect, statText);
                 GUI.color = Color.white;
-                statsBottom = statsRect.yMax;
+                descBottom = statsRect.yMax;
             }
             
-            UIHelper.DrawTraitChangeSummary(medal, textX, rowRect, ref statsBottom);
+            UIHelper.DrawTraitChangeSummary(medal, textX, rowRect, ref descBottom);
             
             // Award info
             if (HasAwardInfo(medal))
@@ -272,7 +258,7 @@ namespace FeatherMedals
                 Text.Font = GameFont.Tiny;
                 var awardText = GetAwardInfo(medal);
                 var awardHeight = Text.CalcHeight(awardText, textWidth);
-                var awardRect = new Rect(textX, statsBottom + 2f, textWidth, awardHeight);
+                var awardRect = new Rect(textX, descBottom + 2f, textWidth, awardHeight);
                 GUI.color = Color.gray;
                 Widgets.Label(awardRect, awardText);
                 GUI.color = Color.white;
