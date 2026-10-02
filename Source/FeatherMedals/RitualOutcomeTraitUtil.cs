@@ -81,8 +81,7 @@ public static class RitualOutcomeTraitUtil
         if (existing == null)
             return false;
 
-        // Traits imposed from outside (xenotype genes, scenario) are not ours to take away
-        if (existing.sourceGene != null || existing.ScenForced)
+        if (existing.sourceGene != null || existing.ScenForced || existing.Suppressed)
             return false;
 
         return true;
@@ -129,5 +128,56 @@ public static class RitualOutcomeTraitUtil
         );
         medal.addedTrait = newTrait.def;
         medal.addedTraitDegree = newTrait.Degree;
+    }
+
+    private const int MEDALS_DECORATED = 3;
+    private const int MEDALS_HONORED = 5;
+    private const int MEDALS_EXALTED = 7;
+    
+    public static void UpdateDecoratedTrait(Pawn pawn)
+    {
+        var traits = pawn.story?.traits;
+        if (traits == null || pawn.apparel == null)
+            return;
+
+        var medalCount = pawn.apparel.WornApparel.Count(a => a is FeatherMedal);
+        var targetDegree = medalCount switch
+        {
+            >= MEDALS_EXALTED => 2,
+            >= MEDALS_HONORED => 1,
+            >= MEDALS_DECORATED => 0,
+            _ => -1
+        };
+        if (targetDegree < 0)
+            return;
+
+        var def = FeatherMedalDefOf.FeatherMedals_Decorated;
+        var existing = traits.GetTrait(def);
+        if (existing != null && existing.Degree >= targetDegree)
+            return;
+        if (existing != null && (existing.sourceGene != null || existing.ScenForced))
+            return;
+
+        if (existing != null)
+            traits.RemoveTrait(existing);
+
+        var decorated = new Trait(def, targetDegree);
+        traits.GainTrait(decorated);
+        
+        // we somehow failed to upgrade trait, lets readd original
+        if (!traits.allTraits.Contains(decorated))
+        {
+            if (existing != null)
+                traits.GainTrait(existing);
+            return;
+        }
+
+        Messages.Message(
+            "FeatherMedals_TrophyGrantedTrait".Translate(
+                pawn.Named("PAWN"),
+                def.DataAtDegree(targetDegree).label.CapitalizeFirst().Named("TRAIT")),
+            pawn,
+            MessageTypeDefOf.PositiveEvent
+        );
     }
 }

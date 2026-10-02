@@ -84,16 +84,14 @@ namespace FeatherMedals
                 action = StartMedalRitual
             };
                 
-            if (!ModsConfig.IdeologyActive)
-                awardCeremonyBtn.Disable("Ideology DLC must be active to award medals.");
-                
+            // first failing reason wins
             if (BiocodeComp.Biocoded)
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledAlreadyAwarded".Translate());
-
-            // Check if the player actually has a presenter in their colony to enable the button
-            if (!ColonyHasPresenter(out _)) 
+            else if (IsCeremonyInProgress())
+                awardCeremonyBtn.Disable("FeatherMedals_DisabledCeremonyInProgress".Translate());
+            else if (!ColonyHasPresenter(out _))
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate());
-                
+
             yield return awardCeremonyBtn;
                 
             var citationBtn = new Command_Action
@@ -105,6 +103,20 @@ namespace FeatherMedals
             };
                 
             yield return citationBtn;
+        }
+
+        private bool IsCeremonyInProgress()
+        {
+            var lords = (Map ?? MapHeld)?.lordManager.lords;
+            if (lords == null)
+                return false;
+            
+            for (var i = 0; i < lords.Count; i++)
+            {
+                if (lords[i].LordJob is LordJob_Ritual ritual && ritual.selectedTarget.Thing == this)
+                    return true;
+            }
+            return false;
         }
 
         private bool ColonyHasPresenter(out Pawn result)
@@ -155,7 +167,13 @@ namespace FeatherMedals
                 
             Dialog_BeginRitual.ActionCallback startAction = delegate (RitualRoleAssignments assignments)
             {
-                LordJob_Ritual lordJob = new LordJob_Ritual(
+                // the dialog can sit open while another one is confirmed
+                if (IsCeremonyInProgress())
+                {
+                    Messages.Message("FeatherMedals_DisabledCeremonyInProgress".Translate(), MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
+                var lordJob = new LordJob_Ritual(
                     selectedTarget: ritualTarget,
                     ritual: fakeRitual,
                     obligation: null,

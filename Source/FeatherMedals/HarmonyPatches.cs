@@ -1,23 +1,14 @@
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using Verse.AI.Group;
 
 namespace FeatherMedals;
 
 public class HarmonyPatches
 {
-    
-    public static bool CheckRitualStatus(Pawn pawn)
-    {
-        if (pawn.GetLord()?.LordJob is not LordJob_Ritual ritual) return false;
-        var role = ritual.RoleFor(pawn);
-        return role != null;
-    }
     
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
     public static class PatchMedalBiocodeManual
@@ -29,42 +20,35 @@ public class HarmonyPatches
             var comp = medal.BiocodeComp;
             if (comp == null) return true;
 
-            // The bestowal Apply path bypasses the ceremony rejection — see ApplyingCeremonyAward.
-            if (!RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward
-                && MedalMod.Settings.TrophiesRequireCeremony
-                && !CheckRitualStatus(__instance.pawn)
-                && !comp.Biocoded)
+            var pawn = __instance.pawn;
+
+            if (comp.Biocoded)
             {
-                Messages.Message($"FeatherMedals_FailTrophyNeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
-                return false;
-            }
-            
-            if (comp.Biocoded && comp.CodedPawn != __instance.pawn)
-            {
+                // re-wearing its own trophy (unlocked, stripped, ...) is fine, anyone else's is not
+                if (comp.CodedPawn == pawn) return true;
+
                 Messages.Message("FeatherMedals_FailTrophyBiocoded".Translate(
                         comp.CodedPawn.Named("PAWN"),
-                        __instance.pawn.Named("IMPOSTOR")),
+                        pawn.Named("IMPOSTOR")),
                     comp.CodedPawn,
-                    MessageTypeDefOf.RejectInput, 
+                    MessageTypeDefOf.RejectInput,
                     false);
-                return false; 
+                return false;
             }
-            
-            if (!comp.Biocoded)
+
+            // The ceremony is the only way to earn a trophy, see RitualOutcomeEffectWorkerAwardTrophy
+            if (!RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
             {
-                comp.CodeFor(__instance.pawn);
-                var cleanLabel = GenLabel.ThingLabel(medal.def, medal.Stuff, 1);
-                var nameValue = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanLabel);
-                Log.Message($"[FeatherMedals] Biocoded {cleanLabel} to {__instance.pawn.LabelShort}");
-                Messages.Message( "FeatherMedals_TrophyAdornedWithoutRitual".Translate(__instance.pawn.Named("PAWN"), nameValue.Named("TROPHY")), __instance.pawn, MessageTypeDefOf.PositiveEvent);
-                if (__instance.pawn.needs is { mood: not null })
-                {
-                    var awardedThought = FeatherMedalDefOf.FeatherMedals_AwardedTrophy_Thought;
-                    if (awardedThought != null) 
-                        __instance.pawn.needs.mood.thoughts.memories.TryGainMemory(awardedThought);
-                }
+                Messages.Message("FeatherMedals_FailTrophyNeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
+                return false;
             }
-            return true; 
+
+            comp.CodeFor(pawn);
+
+            if (Prefs.DevMode)
+                Log.Message($"[FeatherMedals] Biocoded {medal.MedalLabel} to {pawn.LabelShort}");
+
+            return true;
         }
     }
     
@@ -151,8 +135,8 @@ public class HarmonyPatches
             if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward) return;
             if (PawnOwnsBiocodedMedalDef(p, apparel)) return;
 
-            if (MedalMod.Settings.TrophiesRequireCeremony && !CheckRitualStatus(p))
-                __result = false;
+            // only the ceremony can put a trophy on a pawn
+            __result = false;
         }
 
         private static bool PawnOwnsBiocodedMedalDef(Pawn p, ThingDef apparelDef)

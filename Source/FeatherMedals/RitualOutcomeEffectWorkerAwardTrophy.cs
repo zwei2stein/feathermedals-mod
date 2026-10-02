@@ -20,9 +20,8 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (this.def is { comps: null }) this.def.comps = [];
     }
 
-    private const int MEDALS_DECORATED = 3;
-    private const int MEDALS_HONORED = 5;
-    private const int MEDALS_EXHALTED = 7;
+    // normal completion reports 1, an interrupted ritual reports how far it got
+    private const float MIN_PROGRESS = 0.99f;
 
     public override void Apply(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
@@ -37,6 +36,15 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         var awardee = jobRitual.assignments.FirstAssignedPawn("awardee");
         var presenter = jobRitual.assignments.FirstAssignedPawn("leader");
         if (awardee == null || presenter == null) return;
+
+        if (Prefs.DevMode)
+            Log.Message($"[FeatherMedals] Apply progress={progress:F3}");
+        
+        // Interrupted (raid, leader down...) or participants gone: no award, the medal stays as it was
+        if (progress < MIN_PROGRESS || medal.Destroyed
+            || awardee.Dead || awardee.Destroyed || presenter.Dead
+            || awardee.apparel == null || awardee.story == null)
+            return;
 
         if (medal.Spawned) medal.DeSpawn();
         awardee.apparel.Wear(medal, false, false);
@@ -72,44 +80,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
         if (MedalMod.Settings.TrophyDynamicTraits)
         {
-            var medalCount = awardee.apparel.WornApparel.Count(a => a is FeatherMedal);
-
-            // Determine target degree based on medal count
-            var targetDegree = medalCount switch
-            {
-                >= MEDALS_EXHALTED => 2,
-                >= MEDALS_HONORED => 1,
-                >= MEDALS_DECORATED => 0,
-                _ => -1
-            };
-            if (targetDegree >= 0)
-            {
-                var existing = awardee.story.traits.GetTrait(FeatherMedalDefOf.FeatherMedals_Decorated);
-                if (existing is null)
-                {
-                    // No decorated trait yet, grant it
-                    awardee.story.traits.GainTrait(new Trait(FeatherMedalDefOf.FeatherMedals_Decorated, targetDegree));
-                    var label = FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(targetDegree).label.CapitalizeFirst();
-                    Messages.Message(
-                        "FeatherMedals_TrophyGrantedTrait".Translate(awardee.Named("PAWN"), label.Named("TRAIT")),
-                        awardee,
-                        MessageTypeDefOf.PositiveEvent
-                    );
-                }
-                else if (targetDegree > existing.Degree)
-                {
-                    // Already has the trait but at a lower tier, upgrade it
-                    awardee.story.traits.RemoveTrait(existing);
-                    awardee.story.traits.GainTrait(new Trait(FeatherMedalDefOf.FeatherMedals_Decorated, targetDegree));
-                    var label = FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(targetDegree).label.CapitalizeFirst();
-                    Messages.Message(
-                        "FeatherMedals_TrophyGrantedTrait".Translate(awardee.Named("PAWN"), label.Named("TRAIT")),
-                        awardee,
-                        MessageTypeDefOf.PositiveEvent
-                    );
-                }
-            }
-            
+            RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee);
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
         }
 

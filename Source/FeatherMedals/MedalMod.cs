@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using RimWorld;
 using Verse;
 using UnityEngine;
-using Verse.AI.Group;
 
 namespace FeatherMedals
 {
@@ -56,11 +54,6 @@ namespace FeatherMedals
             listing.Begin(rect);
             Text.Font = GameFont.Small;
 
-            listing.CheckboxLabeled(
-                "FeatherMedals_Settings_TrophiesRequireCeremony".Translate(),
-                ref Settings.TrophiesRequireCeremony,
-                 "FeatherMedals_Settings_TrophiesRequireCeremony_Tooltip".Translate()
-            );
             listing.CheckboxLabeled(
                  "FeatherMedals_Settings_LockTrophyUponAward".Translate(),
                 ref Settings.LockTrophyUponAward,
@@ -117,7 +110,6 @@ namespace FeatherMedals
     public class TrophyFeathersModSettings : ModSettings
     {
         // Default it to true so your intended behavior is the standard
-        public bool TrophiesRequireCeremony = true;
         public bool LockTrophyUponAward = true;
         public bool DrawTrophiesOnPawns = true;
         public bool TrophyDynamicTraits = true;
@@ -129,7 +121,6 @@ namespace FeatherMedals
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref TrophiesRequireCeremony, "TrophiesRequireCeremony", true);
             Scribe_Values.Look(ref LockTrophyUponAward, "LockTrophyUponAward", true);
             Scribe_Values.Look(ref DrawTrophiesOnPawns, "DrawTrophiesOnPawns", true);
             Scribe_Values.Look(ref MaxDisplayedTrophies, "MaxDisplayedTrophies", 9);
