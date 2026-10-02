@@ -69,8 +69,6 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
                 pawn.needs?.mood?.thoughts.memories.TryGainMemory(spectatorThought);
             }
         }
-            
-        var ext = medal.def.GetModExtension<TrophyExtension>();
 
         if (MedalMod.Settings.TrophyDynamicTraits)
         {
@@ -111,56 +109,8 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
                     );
                 }
             }
-
-            if (ext?.removesTraits != null)
-            {
-                foreach (var entry in ext.removesTraits.InRandomOrder())
-                {
-                    if (!Rand.Chance(entry.chance)) continue;
-
-                    // Find the trait on the pawn that matches both def AND degree
-                    var existing = awardee.story.traits.allTraits
-                        .FirstOrDefault(t => t.def == entry.trait && t.Degree == entry.degree);
-
-                    if (existing == null) continue;
-
-                    awardee.story.traits.RemoveTrait(existing);
-                    Messages.Message(
-                        "FeatherMedals_TrophyRemovedTrait".Translate(awardee.Named("PAWN"), entry.Label.Named("TRAIT")),
-                        awardee,
-                        MessageTypeDefOf.PositiveEvent
-                    );
-                    medal.removedTrait = existing.def;
-                    medal.removedTraitDegree = existing.Degree;
-                }
-            }
-
-            if (ext?.addsTraits != null)
-            {
-                foreach (var entry in ext.addsTraits.InRandomOrder())
-                {
-                    if (!Rand.Chance(entry.chance)) continue;
-
-                    // Skip if pawn already has this exact trait+degree
-                    if (awardee.story.traits.allTraits
-                        .Any(t => t.def == entry.trait && t.Degree == entry.degree))
-                        continue;
-
-                    // Check for conflicts with existing traits
-                    var newTrait = new Trait(entry.trait, entry.degree);
-                    if (awardee.story.traits.allTraits.Any(t => t.def.ConflictsWith(newTrait)))
-                        continue;
-
-                    awardee.story.traits.GainTrait(newTrait);
-                    Messages.Message(
-                        "FeatherMedals_TrophyAddedTrait".Translate(awardee.Named("PAWN"), entry.Label.Named("TRAIT")),
-                        awardee,
-                        MessageTypeDefOf.PositiveEvent
-                    );
-                    medal.addedTrait = newTrait.def;
-                    medal.addedTraitDegree = newTrait.Degree;
-                }
-            }
+            
+            RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
         }
 
         var medalName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(

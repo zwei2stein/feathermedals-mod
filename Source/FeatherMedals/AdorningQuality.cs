@@ -9,10 +9,7 @@ public static class AdorningQuality
     private const float AttendanceWeight = 0.4f;
     private const float RoomWeight = 0.4f;
     private const float CitationWeight = 0.2f;
-
-    /// <summary>
-    /// Returns a quality score from 0.0 to 1.0 based on attendance, room, and citation.
-    /// </summary>
+    
     public static float GetQualityScore(int attendees, int totalColonists, float roomImpressiveness, bool hasCitation)
     {
         // Attendance: 0-1 based on ratio, capped at 1.0
@@ -32,10 +29,7 @@ public static class AdorningQuality
                + (roomScore * RoomWeight)
                + (citationScore * CitationWeight);
     }
-
-    /// <summary>
-    /// Returns 0-3 stage index from a quality score.
-    /// </summary>
+    
     public static int GetStageIndex(float qualityScore)
     {
         if (qualityScore >= 0.8f) return 3;  // Legendary
@@ -56,10 +50,7 @@ public static class AdorningQuality
             1 => "FeatherMedals_Quality_Decent".Translate(),
             _ => "FeatherMedals_Quality_Poor".Translate()
         };
-
-    /// <summary>
-    /// Gets room impressiveness at a target position. Returns 0 if outdoors.
-    /// </summary>
+    
     public static float GetRoomImpressiveness(TargetInfo target)
     {
         if (!target.HasThing && !target.Cell.IsValid) return 0f;

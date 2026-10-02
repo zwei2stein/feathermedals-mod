@@ -15,11 +15,7 @@ public class MedalDynamicTrait
     public TraitDef trait;
     public int degree = 0;
     public float chance = 1.0f;
-
-    /// <summary>
-    /// Readable label for messages, pulling from the specific degree data.
-    /// Falls back to the def's label if the degree isn't found.
-    /// </summary>
+    
     public string Label
     {
         get
