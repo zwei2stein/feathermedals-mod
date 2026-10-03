@@ -153,17 +153,9 @@ namespace FeatherMedals
 
             var ritualTarget = new TargetInfo(this);
 
-            var fakeRitual = (Precept_Ritual)PreceptMaker.MakePrecept(FeatherMedalDefOf.FeatherMedals_MedalCeremonyPrecept);
-            fakeRitual.ideo = presenter.Ideo;
-            fakeRitual.sourcePattern = pattern;
+            // A real precept: it lives, and is saved, in the ideo, so the running ritual can find it again after a reload
+            var ritual = GetCeremonyPrecept(presenter.Ideo);
             var ceremonyName = "FeatherMedals_AwardCeremony".Translate();
-            fakeRitual.SetName(ceremonyName);
-                
-            fakeRitual.behavior = pattern.ritualBehavior.GetInstance();
-            fakeRitual.behavior.def = pattern.ritualBehavior;
-            fakeRitual.outcomeEffect = pattern.ritualOutcomeEffect.GetInstance();
-            fakeRitual.outcomeEffect.def = pattern.ritualOutcomeEffect;
-            fakeRitual.outcomeEffect.compDatas ??= new();
                 
             Dialog_BeginRitual.ActionCallback startAction = delegate (RitualRoleAssignments assignments)
             {
@@ -175,7 +167,7 @@ namespace FeatherMedals
                 }
                 var lordJob = new LordJob_Ritual(
                     selectedTarget: ritualTarget,
-                    ritual: fakeRitual,
+                    ritual: ritual,
                     obligation: null,
                     allStages: pattern.ritualBehavior.stages,
                     assignments: assignments,
@@ -190,7 +182,7 @@ namespace FeatherMedals
 
             Find.WindowStack.Add(new Dialog_BeginRitual(
                 ritualLabel: ceremonyName,
-                ritual: fakeRitual,       
+                ritual: ritual,       
                 target: ritualTarget,     
                 map: safeMap,             
                 action: startAction,      
@@ -202,6 +194,18 @@ namespace FeatherMedals
                 forcedForRole: null,
                 outcomeDef        
             ));
+        }
+        
+        private static Precept_Ritual GetCeremonyPrecept(Ideo ideo)
+        {
+            var def = FeatherMedalDefOf.FeatherMedals_MedalCeremonyPrecept;
+            if (ideo.GetPrecept(def) is Precept_Ritual existing)
+                return existing;
+
+            // game not reloaded since the mod was added, do what vanilla does on load
+            var created = (Precept_Ritual)PreceptMaker.MakePrecept(def);
+            ideo.AddPrecept(created, init: true, fillWith: def.ritualPatternBase);
+            return created;
         }
 
         public string GetAwardedByLabel()

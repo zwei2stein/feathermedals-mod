@@ -16,8 +16,6 @@ public class JobGiver_AwardSpeech : JobGiver_GiveSpeechFacingTarget
     {
         LordJob_Ritual lordJob = pawn.GetLord()?.LordJob as LordJob_Ritual;
         if (lordJob == null) return null;
-        lordJob.Ritual.outcomeEffect ??= FeatherMedalDefOf.FeatherMedals_AwardTrophyOutcome.GetInstance();
-        lordJob.Ritual.outcomeEffect.compDatas ??= new();
         var awardee = lordJob.assignments.FirstAssignedPawn("awardee");
         if (awardee is not { Spawned: true }) return null;
         var job = JobMaker.MakeJob(JobDefOf.GiveSpeech, pawn.Position, awardee);

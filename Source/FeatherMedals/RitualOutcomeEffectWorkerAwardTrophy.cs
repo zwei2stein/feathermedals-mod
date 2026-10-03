@@ -10,14 +10,12 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
     [System.ThreadStatic]
     public static bool ApplyingCeremonyAward;
 
-    public RitualOutcomeEffectWorkerAwardTrophy() => InitializeSafety();
-
-    public RitualOutcomeEffectWorkerAwardTrophy(RitualOutcomeEffectDef def) : base(def) => InitializeSafety();
-
-    private void InitializeSafety()
+    public RitualOutcomeEffectWorkerAwardTrophy()
     {
-        this.def ??= FeatherMedalDefOf.FeatherMedals_AwardTrophyOutcome;
-        if (this.def is { comps: null }) this.def.comps = [];
+    }
+
+    public RitualOutcomeEffectWorkerAwardTrophy(RitualOutcomeEffectDef def) : base(def)
+    {
     }
 
     // normal completion reports 1, an interrupted ritual reports how far it got
