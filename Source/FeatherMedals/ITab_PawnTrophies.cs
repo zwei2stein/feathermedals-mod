@@ -69,20 +69,18 @@ namespace FeatherMedals
 
         private string GetAwardInfo(FeatherMedal medal)
         {
-            var sb = new StringBuilder();
-            if (medal.awardedBy != null)
-            {
-                sb.Append(medal.GetAwardedByLabel());
-            }
+            var presentedBy = medal.GetAwardedByLabel();
+            string date = null;
             if (medal.awardedTick >= 0 && Find.CurrentMap != null)
             {
-                if (sb.Length > 0) sb.Append(" on ");
-                sb.Append(GenDate.DateFullStringAt(
+                date = GenDate.DateFullStringAt(
                     GenDate.TickGameToAbs(medal.awardedTick),
-                    Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile)
-                ));
+                    Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile));
             }
-            return sb.ToString();
+
+            if (presentedBy != null && date != null)
+                return "FeatherMedals_AwardInfo_PresentedByOnDate".Translate(presentedBy.Named("PRESENTER"), date.Named("DATE"));
+            return presentedBy ?? date ?? "";
         }
 
         private bool HasTrophies(Pawn pawn)

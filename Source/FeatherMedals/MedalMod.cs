@@ -87,11 +87,11 @@ namespace FeatherMedals
 
             listing.Gap(10f);
             listing.GapLine();
-            SubHeader(listing, "Worn Medals");
+            SubHeader(listing, "FeatherMedals_Settings_WornHeader".Translate());
 
-            listing.Label($"Worn size: {Settings.TrophyScale.ToStringPercent()}");
+            listing.Label("FeatherMedals_Settings_WornSize".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")));
             Settings.TrophyScale = listing.Slider(Settings.TrophyScale, 0.1f, 2.0f);
-            listing.Label($"Displayed medals: {Settings.MaxDisplayedTrophies.ToStringCached()}");
+            listing.Label("FeatherMedals_Settings_DisplayedTrophies".Translate(Settings.MaxDisplayedTrophies.ToStringCached().Named("COUNT")));
             listing.IntAdjuster(ref Settings.MaxDisplayedTrophies, 1);
 
             listing.End();

@@ -142,6 +142,7 @@ public class UIHelper
                     curY += 24f;
                 }
             }
+            
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
         }

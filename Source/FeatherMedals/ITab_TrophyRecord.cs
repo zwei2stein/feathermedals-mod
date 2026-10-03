@@ -73,7 +73,9 @@ public class ITab_TrophyRecord : ITab
 
             var dateLine = dateStr;
             if (medal.ceremonyQuality >= 0)
-                dateLine += "FeatherMedals_AwardedAtQualityCeremony".Translate(AdorningQuality.GetQualityLabel(medal.ceremonyQuality).CapitalizeFirst());
+                dateLine = "FeatherMedals_AwardedAtQualityCeremony".Translate(
+                    dateStr.Named("DATE"),
+                    AdorningQuality.GetQualityLabel(medal.ceremonyQuality).Named("QUALITY"));
 
             GUI.color = MutedColor;
             var dateHeight = Text.CalcHeight(dateLine, rect.width);

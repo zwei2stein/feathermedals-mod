@@ -61,12 +61,10 @@ namespace FeatherMedals
                         cleanLabel = comp.TransformLabel(cleanLabel);
                     }
                 }
-                var sb = new StringBuilder();
-                sb.Append(_cachedPawn.LabelShort);
-                sb.Append("'s");
-                sb.Append(' ');
-                sb.Append(cleanLabel);
-                field = sb.ToString();
+                field = "FeatherMedals_BiocodedLabel".Translate(
+                    _cachedPawn.Named("PAWN"),
+                    cleanLabel.Named("TROPHY")).
+                    Resolve();
                 return field;
             }
         } = null;
@@ -90,7 +88,7 @@ namespace FeatherMedals
             else if (IsCeremonyInProgress())
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledCeremonyInProgress".Translate());
             else if (!ColonyHasPresenter(out _))
-                awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate());
+                awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate(PreceptDefOf.SpeakerRolesLabel.Named("SPEAKERS")));
 
             yield return awardCeremonyBtn;
                 
@@ -101,6 +99,10 @@ namespace FeatherMedals
                 icon = TrophyTextures.CitationIcon,
                 action = OpenCitationDialog
             };
+
+            // the tale is part of the ceremony, it is fixed once the trophy is adorned
+            if (BiocodeComp is { Biocoded: true })
+                citationBtn.Disable("FeatherMedals_DisabledCitationLocked".Translate());
                 
             yield return citationBtn;
         }
@@ -273,19 +275,19 @@ namespace FeatherMedals
             if (awardedTick >= 0)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append("FeatherMedals_Inspector_AwardedDate".Translate());
-                sb.Append(GenDate.DateFullStringAt(
+                var dateStr = GenDate.DateFullStringAt(
                     GenDate.TickGameToAbs(awardedTick),
                     Find.WorldGrid.LongLatOf(
-                        Wearer?.Map?.Tile ?? Find.CurrentMap?.Tile ?? 0)));
+                        Wearer?.Map?.Tile ?? Find.CurrentMap?.Tile ?? 0));
+                sb.Append("FeatherMedals_Inspector_AwardedDate".Translate(dateStr.Named("DATE")));
             }
 
             // Ceremony quality
             if (ceremonyQuality >= 0)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append("FeatherMedals_Inspector_AwardedCeremonyQuality".Translate());
-                sb.Append(AdorningQuality.GetQualityLabel(ceremonyQuality).CapitalizeFirst());
+                sb.Append("FeatherMedals_Inspector_AwardedCeremonyQuality".Translate(
+                    AdorningQuality.GetQualityLabel(ceremonyQuality).CapitalizeFirst().Named("QUALITY")));
             }
 
             // Citation

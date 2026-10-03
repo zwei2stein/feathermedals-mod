@@ -6,9 +6,9 @@ namespace FeatherMedals;
 
 public static class AdorningQuality
 {
-    private const float AttendanceWeight = 0.4f;
-    private const float RoomWeight = 0.4f;
-    private const float CitationWeight = 0.2f;
+    public const float AttendanceWeight = 0.4f;
+    public const float RoomWeight = 0.4f;
+    public const float CitationWeight = 0.2f;
     
     public static float GetQualityScore(int attendees, int totalColonists, float roomImpressiveness, bool hasCitation)
     {

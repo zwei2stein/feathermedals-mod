@@ -14,7 +14,7 @@ public class RitualRole_Presenter : RitualRoleColonist
             reason = null;
             return true;
         }
-        if (!skipReason) reason = "FeatherMedals_MustBeLeaderOrGuide".Translate();
+        if (!skipReason) reason = "FeatherMedals_MustHoldSpeakerRole".Translate(PreceptDefOf.SpeakerRolesLabel.Named("SPEAKERS"));
         return false;
     }
 }

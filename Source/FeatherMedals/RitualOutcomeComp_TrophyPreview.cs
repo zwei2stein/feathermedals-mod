@@ -18,7 +18,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
         if (ritual?.selectedTarget.Thing is not FeatherMedal medal)
-            return "Trophy details unavailable.";
+            return "FeatherMedals_TrophyDetailsUnavailable".Translate();
         return medal.MedalLabel;
     }
 
@@ -86,7 +86,7 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
         var attendees = ritual.assignments.Participants.Count;
         var total = ritual.Map.mapPawns.FreeColonistsSpawnedCount;
         var ratio = total > 0 ? Mathf.Clamp01((float)attendees / total) : 0f;
-        return ratio * 0.4f;
+        return ratio * AdorningQuality.AttendanceWeight;
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -107,7 +107,7 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
         var attendees = assignments.Participants.Count;
         var total = map.mapPawns.FreeColonistsSpawnedCount;
         var ratio = total > 0 ? Mathf.Clamp01((float)attendees / total) : 0f;
-        var contribution = ratio * 0.4f;
+        var contribution = ratio * AdorningQuality.AttendanceWeight;
 
         return new QualityFactor
         {
@@ -117,7 +117,7 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
             quality = contribution,
             positive = ratio >= 0.25f,
             present = true,
-            toolTip = "FeatherMedals_CeremonyAttendance_ToolTip".Translate(),
+            toolTip = "FeatherMedals_CeremonyAttendance_ToolTip".Translate(AdorningQuality.AttendanceWeight.ToStringPercent().Named("QUALITY")),
             priority = 50f
         };
     }
@@ -133,7 +133,7 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
     {
         var impressiveness = AdorningQuality.GetRoomImpressiveness(ritual.selectedTarget);
         var roomScore = Mathf.Clamp01(impressiveness / 170f);
-        return roomScore * 0.4f;
+        return roomScore * AdorningQuality.RoomWeight;
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -150,9 +150,9 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
     {
         var impressiveness = AdorningQuality.GetRoomImpressiveness(ritualTarget);
         var roomScore = Mathf.Clamp01(impressiveness / 170f);
-        var contribution = roomScore * 0.4f;
+        var contribution = roomScore * AdorningQuality.RoomWeight;
 
-        var roomLabel = impressiveness <= 0f ? "Outdoors" : $"{impressiveness:F0}";
+        var roomLabel = impressiveness <= 0f ? "FeatherMedals_CeremonyVenue_Outdoors".Translate().Resolve() : $"{impressiveness:F0}";
 
         return new QualityFactor
         {
@@ -162,7 +162,7 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
             quality = contribution,
             positive = impressiveness >= 25f,
             present = true,
-            toolTip = "FeatherMedals_CeremonyVenue_ToolTip".Translate(),
+            toolTip = "FeatherMedals_CeremonyVenue_ToolTip".Translate(AdorningQuality.RoomWeight.ToStringPercent().Named("QUALITY")),
             priority = 40f
         };
     }
@@ -201,7 +201,7 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
         if (ritual?.selectedTarget.Thing is not FeatherMedal medal) return 0f;
-        return medal.citation.NullOrEmpty() ? 0f : 0.2f;
+        return medal.citation.NullOrEmpty() ? 0f : AdorningQuality.CitationWeight;
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -224,13 +224,13 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         {
             label = "FeatherMedals_CeremonyCitation".Translate(),
             count = hasCitation ? "FeatherMedals_CeremonyCitation_Written".Translate() : "FeatherMedals_CeremonyCitation_None".Translate(),
-            qualityChange = hasCitation ? "+20%" : "+0%",
-            quality = hasCitation ? 0.2f : 0f,
+            qualityChange = $"+{(hasCitation ? AdorningQuality.CitationWeight : 0f).ToStringPercent()}",
+            quality = hasCitation ? AdorningQuality.CitationWeight : 0f,
             positive = hasCitation,
             present = true,
             toolTip = hasCitation 
-                ? $"\"{medal.citation}\"\n\n" + "FeatherMedals_CeremonyCitation_Written_ToolTip".Translate()
-                : "FeatherMedals_CeremonyCitation_None_ToolTip".Translate(),
+                ? $"\"{medal.citation}\"\n\n" + "FeatherMedals_CeremonyCitation_Written_ToolTip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
+                : "FeatherMedals_CeremonyCitation_None_ToolTip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
             priority = 30f
         };
     }
