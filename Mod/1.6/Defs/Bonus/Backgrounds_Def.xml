@@ -23,7 +23,7 @@
         </spawnCategories>
         <disallowedTraits>
             <Wimp/>
-            <Delicate/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
         </disallowedTraits>
         <requiredWorkTags>
             <li>Violent</li>
@@ -55,7 +55,7 @@
         </spawnCategories>
         <disallowedTraits>
             <Wimp/>
-            <Delicate/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
             <Nerves>-1</Nerves>
         </disallowedTraits>
         <requiredWorkTags>
@@ -91,7 +91,7 @@
         </spawnCategories>
         <disallowedTraits>
             <Wimp/>
-            <Delicate/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
             <Nerves>-1</Nerves>
         </disallowedTraits>
         <requiredWorkTags>
@@ -122,7 +122,7 @@
         </spawnCategories>
         <disallowedTraits>
             <Wimp/>
-            <Delicate/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
         </disallowedTraits>
         <requiredWorkTags>
             <li>Violent</li>

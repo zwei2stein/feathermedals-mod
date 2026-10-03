@@ -98,7 +98,7 @@
 		<modExtensions>
 			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
-					<li>
+					<li MayRequire="Ludeon.RimWorld.Odyssey">
 						<trait>Delicate</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
@@ -213,7 +213,7 @@
 		<modExtensions>
 			<li Class="FeatherMedals.TrophyExtension">
 				<removesTraits>
-					<li>
+					<li MayRequire="Ludeon.RimWorld.Odyssey">
 						<trait>Delicate</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
