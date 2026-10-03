@@ -38,10 +38,6 @@ public static class AdorningQuality
         return 0;                            // Poor
     }
 
-    // Convenience overload for backward compat
-    public static int GetStageIndex(int attendees, int totalColonists) => 
-        GetStageIndex(GetQualityScore(attendees, totalColonists, 0f, false));
-
     public static string GetQualityLabel(int stageIndex) =>
         stageIndex switch
         {

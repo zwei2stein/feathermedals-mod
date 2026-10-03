@@ -6,19 +6,9 @@ namespace FeatherMedals;
 
 public class UIHelper
 {
-    private const float ICON_SIZE = 64f;
-
-    public const float ROW_PADDING = 10f;
-    private const float MIN_ROW_HEIGHT = 80f;
-    
     private static readonly Color GreenColor = new(0.4f, 0.9f, 0.4f);
     public static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
     
-    public static void TrophyInfoWidget_Adorned()
-    {
-        
-    }
-
     public static void DrawStatSummary(ThingDef def, Rect rect, ref float curY)
     {
         var statOffsets = def.equippedStatOffsets;
@@ -90,26 +80,6 @@ public class UIHelper
             sb.Append(offsets[i].stat.LabelCap);
         }
         return sb.ToString();
-    }
-
-    public static float GetRowHeight(ThingDef def, float width)
-    {
-        var textWidth = width - ICON_SIZE - (ROW_PADDING * 3);
-        var height = ROW_PADDING;
-
-        Text.Font = GameFont.Small;
-        height += Text.CalcHeight(def.LabelCap, textWidth) + 2f;
-
-        Text.Font = GameFont.Tiny;
-        height += Text.CalcHeight(def.description ?? "", textWidth) + 2f;
-
-        var statText = GetStatSummary(def);
-        if (!statText.NullOrEmpty())
-            height += Text.CalcHeight(statText, textWidth) + 2f;
-
-        height += ROW_PADDING;
-        Text.Font = GameFont.Small;
-        return Mathf.Max(MIN_ROW_HEIGHT, height);
     }
 
     public static void DrawTraitsSummary(ThingDef medalDef, Rect rect, ref float curY)

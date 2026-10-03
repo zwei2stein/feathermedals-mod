@@ -8,8 +8,6 @@ public class FeatherMedalDefOf
     public static RitualPatternDef FeatherMedal_AwardTrophyPattern;
 
     public static PreceptDef FeatherMedals_MedalCeremonyPrecept;
-
-    public static RitualOutcomeEffectDef FeatherMedals_AwardTrophyOutcome;
     
     public static ThoughtDef FeatherMedals_AwardedTrophy_Thought;
     public static ThoughtDef FeatherMedals_WitnessedTrophyCeremony_Thought;
