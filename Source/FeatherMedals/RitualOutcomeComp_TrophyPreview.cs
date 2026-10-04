@@ -171,11 +171,14 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
 [HarmonyPatch(typeof(Dialog_BeginLordJob), nameof(Dialog_BeginLordJob.DoLeftColumn))]
 public static class PatchDrawMedalInRitual
 {
+    private static readonly AccessTools.FieldRef<Dialog_BeginRitual, TargetInfo> TargetRef =
+        AccessTools.FieldRefAccess<Dialog_BeginRitual, TargetInfo>("target");
+
     public static void Prefix(Dialog_BeginLordJob __instance, ref RectDivider layout)
     {
         if (__instance is not Dialog_BeginRitual ritual) return;
         
-        var target = Traverse.Create(ritual).Field("target").GetValue<TargetInfo>();
+        var target = TargetRef(ritual);
         if (target.Thing is not FeatherMedal medal) return;
         
         var row = layout.NewRow(60f, marginOverride: 6f);

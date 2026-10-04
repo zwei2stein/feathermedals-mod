@@ -68,6 +68,7 @@
         <Compile Include="Dialog_TrophyAwarded.cs" />
         <Compile Include="Dialog_WriteCitation.cs" />
         <Compile Include="FeatherMedalDefOf.cs" />
+        <Compile Include="FeatherMedalUtil.cs" />
         <Compile Include="HarmonyPatches.cs" />
         <Compile Include="ITab_TrophyRecord.cs" />
         <Compile Include="ITab_PawnTrophies.cs" />

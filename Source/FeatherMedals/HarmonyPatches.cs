@@ -130,7 +130,7 @@ public class HarmonyPatches
         public static void Postfix(Pawn p, ThingDef apparel, ref bool __result)
         {
             if (!__result || p == null) return;
-            if (!typeof(FeatherMedal).IsAssignableFrom(apparel.thingClass)) return;
+            if (!FeatherMedalUtil.IsMedalDef(apparel)) return;
 
             if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward) return;
             if (PawnOwnsBiocodedMedalDef(p, apparel)) return;
@@ -169,27 +169,11 @@ public class HarmonyPatches
         public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref bool __result)
         {
             if (!__result) return;
-            if (node is not PawnRenderNode_Apparel { apparel: FeatherMedal apparelNode}) return;
-            if (!MedalMod.Settings.DrawTrophiesOnPawns)
-            {
-                __result = false;
-                return;
-            }
-            
-            var worn = parms.pawn.apparel.WornApparel; // This is a List<Apparel>
-            var maxDisplayed = MedalMod.Settings.MaxDisplayedTrophies;
-            var myIndex = 0;
+            if (node is not PawnRenderNode_Apparel { apparel: FeatherMedal medal }) return;
 
-            for (var i = 0; i < worn.Count; i++)
-            {
-                if (worn[i] is not FeatherMedal) continue;
-                if (worn[i] == apparelNode)
-                {
-                    if (myIndex >= maxDisplayed) __result = false;
-                    return;
-                }
-                myIndex++;
-            }
+            if (!MedalMod.Settings.DrawTrophiesOnPawns
+                || !FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out _, out _))
+                __result = false;
         }
     }
     
@@ -198,10 +182,10 @@ public class HarmonyPatches
     {
         public static void Postfix(ThingDef A, ThingDef B, BodyDef body, ref bool __result)
         {
-            if (__result) return;
-            var aIsMedal = typeof(FeatherMedal).IsAssignableFrom(A.thingClass);
-            var bIsMedal = typeof(FeatherMedal).IsAssignableFrom(B.thingClass);
-            if (aIsMedal && bIsMedal) 
+            if (__result)
+                return;
+            
+            if (FeatherMedalUtil.IsMedalDef(A) && FeatherMedalUtil.IsMedalDef(B)) 
                 __result = true;
         }
     }
@@ -229,6 +213,16 @@ public class HarmonyPatches
             __result = true; 
             return false;
 
+        }
+    }
+
+    [HarmonyPatch(typeof(PawnRenderNode), nameof(PawnRenderNode.FlipGraphic))]
+    public static class PatchMedalFlip
+    {
+        public static void Postfix(PawnRenderNode __instance, PawnDrawParms parms, ref bool __result)
+        {
+            if (__instance is PawnRenderNode_Apparel { apparel: FeatherMedal } && parms.facing.IsHorizontal)
+                __result = !__result;
         }
     }
 
@@ -269,34 +263,20 @@ public class HarmonyPatches
         
         public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref Vector3 __result)
         {
-            if (node is not PawnRenderNode_Apparel apparelNode || apparelNode.apparel is not FeatherMedal) 
+            if (node is not PawnRenderNode_Apparel { apparel: FeatherMedal medal })
                 return;
 
             __result.z += -0.148f;
             var scale = PatchMedalScale.GetScale(node, parms);
             var indexOffset = 0.1f * scale;
-            var bodyPartGroups = apparelNode.apparel?.def?.apparel?.bodyPartGroups;
             var shift = 0.02f * scale;
             var maxMedalsPerRow = 8;
 
             __result.x += (parms.facing == Rot4.West || parms.facing == Rot4.East) ? 0 : shift;
 
-            var worn = parms.pawn.apparel.WornApparel; // This is a List<Apparel>
-            var totalMedals = 0;
-            var myIndex = -1;
-
-            //medals per body part get grouped together - usually Torso, UpperHead
-            for (var i = 0; i < worn.Count; i++)
-            {
-                if (worn[i] is FeatherMedal && worn[i].def.apparel.bodyPartGroups.Equals(bodyPartGroups))
-                {
-                    if (worn[i] == apparelNode.apparel)
-                        myIndex = totalMedals;
-
-                    totalMedals++;
-                }
-            }
-            if (myIndex == -1) return;
+            // trophies are laid out together on body part.
+            if (!FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out var myIndex, out var totalMedals))
+                return;
 
             var reverseIndex = (totalMedals - 1) - myIndex;
 
