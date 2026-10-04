@@ -14,7 +14,6 @@ namespace FeatherMedals
             
         public string citation;
         public int ceremonyQuality = -1; // -1 = not yet awarded
-        public bool isLocked = true;
         public Pawn awardedBy;
         public int awardedTick = -1;
 
@@ -28,7 +27,6 @@ namespace FeatherMedals
             base.ExposeData();
             Scribe_Values.Look(ref citation, "citation");
             Scribe_Values.Look(ref ceremonyQuality, "ceremonyQuality", -1);
-            Scribe_Values.Look(ref isLocked, "isLocked", true);
             Scribe_References.Look(ref awardedBy, "awardedBy", true);
             Scribe_Values.Look(ref awardedTick, "awardedTick", -1);
             

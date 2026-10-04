@@ -45,8 +45,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             return;
 
         if (medal.Spawned) medal.DeSpawn();
-        awardee.apparel.Wear(medal, false, false);
-        medal.isLocked = MedalMod.Settings.LockTrophyUponAward;
+        awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAward);
         medal.awardedBy = presenter;
         medal.awardedTick = Find.TickManager.TicksGame;
 

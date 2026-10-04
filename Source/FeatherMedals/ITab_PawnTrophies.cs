@@ -194,14 +194,21 @@ namespace FeatherMedals
                 LOCK_BTN_SIZE,
                 LOCK_BTN_SIZE
             );
-            var lockIcon = medal.isLocked ?  TrophyTextures.LockedIcon : TrophyTextures.UnlockedIcon;
-            var lockTip = medal.isLocked
+            var tracker = medal.Wearer.apparel; // the tab only lists worn medals
+            var locked = tracker.IsLocked(medal);
+            var lockIcon = locked ? TrophyTextures.LockedIcon : TrophyTextures.UnlockedIcon;
+            var lockTip = locked
                 ? "FeatherMedals_TrophyLocked".Translate()
                 : "FeatherMedals_TrophyUnlocked".Translate();
 
             GUI.color = Color.gray;
             if (Widgets.ButtonImage(lockRect, lockIcon, GUI.color))
-                medal.isLocked = !medal.isLocked;
+            {
+                if (locked)
+                    tracker.Unlock(medal);
+                else
+                    tracker.Lock(medal);
+            }
             GUI.color = Color.white;
             TooltipHandler.TipRegion(lockRect, lockTip);
 

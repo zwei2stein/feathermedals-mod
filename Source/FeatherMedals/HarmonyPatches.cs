@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -52,78 +50,6 @@ public class HarmonyPatches
         }
     }
     
-    [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.IsLocked))]
-    public static class PatchRankAlwaysForced
-    {
-        public static void Postfix(Apparel apparel, ref bool __result)
-        {
-            if (apparel is FeatherMedal medal)
-                __result = medal.isLocked;
-        }
-    }
-    
-    [HarmonyPatch(typeof(Corpse), nameof(Corpse.Strip))]
-    public static class PatchCorpseStripMedals
-    {
-        public static void Prefix(Corpse __instance, out List<FeatherMedal> __state)
-        {
-            __state = null;
-            var pawn = __instance.InnerPawn;
-            if (pawn?.apparel == null) return;
-
-            __state = pawn.apparel.WornApparel
-                .OfType<FeatherMedal>()
-                .Where(m => m.isLocked)
-                .ToList();
-        }
-
-        public static void Postfix(Corpse __instance, List<FeatherMedal> __state)
-        {
-            if (__state == null || __state.Count == 0) return;
-            var pawn = __instance.InnerPawn;
-            if (pawn?.apparel == null) return;
-
-            foreach (var medal in __state)
-            {
-                if (medal.Destroyed) continue;
-                if (pawn.apparel.WornApparel.Contains(medal)) continue;
-
-                if (medal.Spawned) medal.DeSpawn();
-                pawn.apparel.Wear(medal, false, true);
-            }
-        }
-    }
-    
-    [HarmonyPatch(typeof(Pawn), nameof(Pawn.Strip))]
-    public static class PatchPawnStripMedals
-    {
-        public static void Prefix(Pawn __instance, out List<FeatherMedal> __state)
-        {
-            __state = null;
-            if (__instance.apparel == null) return;
-
-            __state = __instance.apparel.WornApparel
-                .OfType<FeatherMedal>()
-                .Where(m => m.isLocked)
-                .ToList();
-        }
-
-        public static void Postfix(Pawn __instance, List<FeatherMedal> __state)
-        {
-            if (__state == null || __state.Count == 0) return;
-            if (__instance.apparel == null) return;
-
-            foreach (var medal in __state)
-            {
-                if (medal.Destroyed) continue;
-                if (__instance.apparel.WornApparel.Contains(medal)) continue;
-
-                if (medal.Spawned) medal.DeSpawn();
-                __instance.apparel.Wear(medal, false, true);
-            }
-        }
-    }
-
     [HarmonyPatch(typeof(ApparelUtility), nameof(ApparelUtility.HasPartsToWear))]
     public static class Patch_ApparelUtility_HasPartsToWear
     {
@@ -219,7 +145,7 @@ public class HarmonyPatches
     [HarmonyPatch(typeof(PawnRenderNode), nameof(PawnRenderNode.FlipGraphic))]
     public static class PatchMedalFlip
     {
-        public static void Postfix(PawnRenderNode __instance, PawnDrawParms parms, ref bool __result)
+         public static void Postfix(PawnRenderNode __instance, PawnDrawParms parms, ref bool __result)
         {
             if (__instance is PawnRenderNode_Apparel { apparel: FeatherMedal } && parms.facing.IsHorizontal)
                 __result = !__result;
