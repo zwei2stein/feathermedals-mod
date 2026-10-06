@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -14,23 +13,38 @@ namespace FeatherMedals
         {
             var tabType = typeof(ITab_PawnTrophies);
             var tabInstance = InspectTabManager.GetSharedInstance(tabType);
-            var humanDef = ThingDef.Named("Human");
-            var corpseDef = ThingDef.Named("Corpse_Human");
-            InjectIntoDef(humanDef, tabType, tabInstance);
-            InjectIntoDef(corpseDef, tabType, tabInstance);
+
+            foreach (var def in DefDatabase<ThingDef>.AllDefsListForReading)
+            {
+                if (def.race is not { Humanlike: true })
+                    continue;
+
+                InjectIntoDef(def, tabType, tabInstance);
+                InjectIntoDef(def.race.corpseDef, tabType, tabInstance);
+                InjectIntoDef(def.race.unnaturalCorpseDef, tabType, tabInstance);
+            }
+            
         }
 
         private static void InjectIntoDef(ThingDef def, Type tabType, InspectTabBase tabInstance)
         {
-            if (def == null) return;
-            if (def.inspectorTabs == null)
-                def.inspectorTabs = new List<Type>();
-            if (!def.inspectorTabs.Contains(tabType))
-                def.inspectorTabs.Add(tabType);
-            if (def.inspectorTabsResolved == null)
-                def.inspectorTabsResolved = new List<InspectTabBase>();
+            if (def == null)
+                return;
+            
+            def.inspectorTabs ??= new List<Type>();
+            def.inspectorTabsResolved ??= new List<InspectTabBase>();
+
+            if (def.inspectorTabs.Contains(tabType))
+                return;
+            
+            def.inspectorTabs.Add(tabType);
+            
             if (!def.inspectorTabsResolved.Contains(tabInstance))
                 def.inspectorTabsResolved.Add(tabInstance);
+            
+            if (Prefs.DevMode)
+                Log.Message($"[FeatherMedals] Trophies tab added to {def.defName}.");
+            
         }
     }
     
