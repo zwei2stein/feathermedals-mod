@@ -183,5 +183,42 @@
 		</products>
 	</RecipeDef>
 
+	<!-- Joe Medicine Crow feathers recipe -->
+	
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
+		<defName>FeatherTrophy_Recipe_Protection</defName>
+		<label>feather: protection</label>
+		<jobString>Crafting feather boasting protection by archite spirits.</jobString>
+		<products>
+			<FeatherTrophy_Trophy_Protection>1</FeatherTrophy_Trophy_Protection>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
+		<defName>FeatherTrophy_Recipe_LedWarparty</defName>
+		<label>feather: led war party</label>
+		<jobString>Crafting feather boasting experience leading a war party.</jobString>
+		<products>
+			<FeatherTrophy_Trophy_LedWarparty>1</FeatherTrophy_Trophy_LedWarparty>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
+		<defName>FeatherTrophy_Recipe_StoleHorses</defName>
+		<label>feather: stole enemy mounts</label>
+		<jobString>Crafting feather boasting feat of stealing mounts of an enemy.</jobString>
+		<products>
+			<FeatherTrophy_Trophy_StoleHorses>1</FeatherTrophy_Trophy_StoleHorses>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
+		<defName>FeatherTrophy_Recipe_TookWeapon</defName>
+		<label>feather: disarmed enemy</label>
+		<jobString>Crafting feather boasting feat of disarming an enemy.</jobString>
+		<products>
+			<FeatherTrophy_Trophy_TookWeapon>1</FeatherTrophy_Trophy_TookWeapon>
+		</products>
+	</RecipeDef>
 
 </Defs>

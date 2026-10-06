@@ -39,6 +39,9 @@
                         <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoHideFeathery</li>
                         <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoFeather</li>
                         <li MayRequire="BiomesTeam.BiomesCore">BiomesIslands_Leather_Flamingo</li>
+                        <li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Raptorkhan</li>
+                        <li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Harpeagle</li>
+                        
                     </thingDefs>
                 </filter>
                 <count>20</count>
@@ -52,6 +55,8 @@
                 <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoHideFeathery</li>
                 <li MayRequire="BiomesTeam.BiomesPrehistoric">BMT_DinoFeather</li>
                 <li MayRequire="BiomesTeam.BiomesCore">BiomesIslands_Leather_Flamingo</li>
+                <li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Raptorkhan</li>
+                <li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Harpeagle</li>
             </thingDefs>
         </fixedIngredientFilter>
     </RecipeDef>

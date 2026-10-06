@@ -5,7 +5,7 @@
         <li>1.6</li>
 
         <li IfModActive="Ludeon.RimWorld.Odyssey">1.6/Compatibility/Odyssey</li>
-        
+
         <li IfModActive="veterano.mythicages.megafaunabestiary">1.6/Compatibility/veteranomythicagesmegafaunabestiary</li>
         <li IfModActive="Van.Beasts">1.6/Compatibility/VanBeasts</li>
         <li IfModActive="Erin.Auraeyl">1.6/Compatibility/ErinAuraeyl</li>

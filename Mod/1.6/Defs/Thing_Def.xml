@@ -80,8 +80,6 @@
 
 	<!-- struck 4 blows in combat - black top, white, serrated edges -->
 
-	<!--  SIMPLE MEDALS  -->
-
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedInCombat</defName>
 		<label>feather: wounded in combat</label>
@@ -425,6 +423,84 @@
 				</addsTraits>
 			</li>
 		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+	
+	<!-- ahistorical: Joe Medicine Crow inspired -->
+	
+	<!-- protection: golden -->
+
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_Trophy_Protection</defName>
+		<label>feather: protection</label>
+		<description>Trophy boasting protection by archite spirits</description>
+		<graphicData>
+			<texPath>Things/Feathers/Protection</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/Protection</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<MedicalTendQuality>0.01</MedicalTendQuality>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+	
+	<!-- led warparty -->
+
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_Trophy_LedWarparty</defName>
+		<label>feather: led war party</label>
+		<description>Trophy boasting experience leading a war party</description>
+		<graphicData>
+			<texPath>Things/Feathers/LedWarparty</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/LedWarparty</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+	
+	<!-- stole horses -->
+
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_Trophy_StoleHorses</defName>
+		<label>feather: stole enemy mounts</label>
+		<description>Trophy boasting feat of stealing mounts of an enemy</description>
+		<graphicData>
+			<texPath>Things/Feathers/StoleHorses</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/StoleHorses</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<!-- stole horses -->
+
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>FeatherTrophy_Trophy_TookWeapon</defName>
+		<label>feather: disarmed enemy</label>
+		<description>Trophy boasting feat of disarming an enemy</description>
+		<graphicData>
+			<texPath>Things/Feathers/TookWeapon</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Feathers/TookWeapon</wornGraphicPath>
+		</apparel>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
