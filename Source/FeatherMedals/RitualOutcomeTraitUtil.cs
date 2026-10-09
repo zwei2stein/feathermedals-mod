@@ -116,14 +116,16 @@ public static class RitualOutcomeTraitUtil
         
         if (pawn.story.traits.allTraits.Contains(existing))
             return;
+        
+        medal.removedTrait = existing.def;
+        medal.removedTraitDegree = existing.Degree;
 
         Messages.Message(
-            "FeatherMedals_TrophyRemovedTrait".Translate(pawn.Named("PAWN"), picked.Entry.Label.Named("TRAIT")),
+            medal.GetRemovedTraitLabel(),
             pawn,
             MessageTypeDefOf.PositiveEvent
         );
-        medal.removedTrait = existing.def;
-        medal.removedTraitDegree = existing.Degree;
+
     }
 
     private static void Add(Pawn pawn, Candidate picked, FeatherMedal medal)
@@ -133,21 +135,22 @@ public static class RitualOutcomeTraitUtil
         
         if (!pawn.story.traits.allTraits.Contains(newTrait))
             return;
+        
+        medal.addedTrait = newTrait.def;
+        medal.addedTraitDegree = newTrait.Degree;
 
         Messages.Message(
-            "FeatherMedals_TrophyAddedTrait".Translate(pawn.Named("PAWN"), picked.Entry.Label.Named("TRAIT")),
+            medal.GetAddedTraitLabel(),
             pawn,
             MessageTypeDefOf.PositiveEvent
         );
-        medal.addedTrait = newTrait.def;
-        medal.addedTraitDegree = newTrait.Degree;
     }
 
     private const int MEDALS_DECORATED = 3;
     private const int MEDALS_HONORED = 5;
     private const int MEDALS_EXALTED = 7;
     
-    public static void UpdateDecoratedTrait(Pawn pawn)
+    public static void UpdateDecoratedTrait(Pawn pawn, FeatherMedal medal)
     {
         var traits = pawn.story?.traits;
         if (traits == null || pawn.apparel == null)
@@ -185,10 +188,10 @@ public static class RitualOutcomeTraitUtil
             return;
         }
 
+        medal.decoratedDegree = targetDegree;
+        
         Messages.Message(
-            "FeatherMedals_TrophyGrantedTrait".Translate(
-                pawn.Named("PAWN"),
-                def.DataAtDegree(targetDegree).label.CapitalizeFirst().Named("TRAIT")),
+            medal.GetDecoratedTraitLabel(),
             pawn,
             MessageTypeDefOf.PositiveEvent
         );

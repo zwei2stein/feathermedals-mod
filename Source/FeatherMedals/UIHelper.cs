@@ -32,36 +32,27 @@ public class UIHelper
     
     public static void DrawTraitChangeSummary(FeatherMedal featherMedal, float textX, Rect rect, ref float curY)
     {
+        DrawTraitChangeSummary(featherMedal, new Rect(textX, rect.y, rect.width - textX, rect.height), ref curY, TextAnchor.MiddleLeft);
+    }
 
-        if (featherMedal.addedTrait != null)
-        {
-            Text.Font = GameFont.Tiny;
-            GUI.color = Color.green;
-            Text.Anchor = TextAnchor.MiddleLeft;
-            
-            Widgets.Label(new Rect(textX, curY, rect.width - textX, 24f), "FeatherMedals_Summary_TraitAdded".Translate(
-                featherMedal.addedTrait.DataAtDegree(featherMedal.addedTraitDegree).LabelCap.Named("TRAIT")
-                ));
-            
-            GUI.color = Color.white;
-            curY += 24f;
-            Text.Font = GameFont.Small;
-        }
-        
-        if (featherMedal.removedTrait != null)
-        {
-            Text.Font = GameFont.Tiny;
-            GUI.color = Color.red;
-            Text.Anchor = TextAnchor.MiddleLeft;
-            
-            Widgets.Label(new Rect(textX, curY, rect.width - textX, 24f), "FeatherMedals_Summary_TraitRemoved".Translate(
-                featherMedal.removedTrait.DataAtDegree(featherMedal.removedTraitDegree).LabelCap.Named("TRAIT")
-            ));
-            
-            GUI.color = Color.white;
-            curY += 24f;
-            Text.Font = GameFont.Small;
-        }
+    public static void DrawTraitChangeSummary(FeatherMedal featherMedal, Rect area, ref float curY, TextAnchor anchor)
+    {
+        DrawTraitChangeLine(featherMedal.GetDecoratedTraitLabel(true), GoldColor, area, ref curY, anchor);
+        DrawTraitChangeLine(featherMedal.GetAddedTraitLabel(true), Color.green, area, ref curY, anchor);
+        DrawTraitChangeLine(featherMedal.GetRemovedTraitLabel(true), Color.red, area, ref curY, anchor);
+    }
+
+    private static void DrawTraitChangeLine(string text, Color color, Rect area, ref float curY, TextAnchor anchor)
+    {
+        if (text == null) return;
+
+        Text.Font = GameFont.Tiny;
+        GUI.color = color;
+        Text.Anchor = anchor;
+        Widgets.Label(new Rect(area.x, curY, area.width, 24f), text);
+        GUI.color = Color.white;
+        curY += 24f;
+        Text.Font = GameFont.Small;
     }
 
     public static string GetStatSummary(ThingDef def)

@@ -11,19 +11,21 @@ namespace FeatherMedals
     public class FeatherMedal : Apparel
     {
         public CompBiocodable BiocodeComp => field ??= this.GetComp<CompBiocodable>();
-        private Pawn _cachedPawn = null;
+        private Pawn AdornedPawn => BiocodeComp?.CodedPawn;
+        private string cachedLabelPawnName;
             
         public string citation;
         public int ceremonyQuality = -1; // -1 = not yet awarded
         public Pawn awardedBy;
         
         public int awardedTick = -1;
-        public PlanetTile awardedTile = PlanetTile.Invalid; // ceremony map tile, gives the date its longitude
+        public PlanetTile awardedTile = PlanetTile.Invalid; // ceremony map tile for date
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
         public TraitDef removedTrait = null;
         public int removedTraitDegree = 0;
+        public int decoratedDegree = -1; // Decorated trait degree, -1 = unchanged
             
         public override void ExposeData()
         {
@@ -39,6 +41,7 @@ namespace FeatherMedals
             Scribe_Values.Look(ref addedTraitDegree, "addedTraitDegree", 0);
             Scribe_Defs.Look(ref removedTrait, "removedTrait");
             Scribe_Values.Look(ref removedTraitDegree, "removedTraitDegree", 0);
+            Scribe_Values.Look(ref decoratedDegree, "decoratedDegree", -1);
         }
 
         private void OpenCitationDialog()
@@ -51,23 +54,23 @@ namespace FeatherMedals
             get
             {
                 if (BiocodeComp is not { Biocoded: true, CodedPawn: not null }) return base.LabelNoCount;
-                if (field != null && _cachedPawn == BiocodeComp.CodedPawn) return field;
-                    
-                _cachedPawn = BiocodeComp.CodedPawn;
+
+                var pawnName = AdornedPawn.LabelShort;
+                if (field != null && cachedLabelPawnName == pawnName) return field;
 
                 var cleanLabel = GenLabel.ThingLabel(this.def, this.Stuff, 1);
                 if (AllComps != null)
                 {
                     foreach (var comp in AllComps)
                     {
-                        if (comp is CompBiocodable) continue; 
+                        if (comp is CompBiocodable) continue;
                         cleanLabel = comp.TransformLabel(cleanLabel);
                     }
                 }
                 field = "FeatherMedals_BiocodedLabel".Translate(
-                    _cachedPawn.Named("PAWN"),
-                    cleanLabel.Named("TROPHY")).
-                    Resolve();
+                    AdornedPawn.Named("PAWN"),
+                    cleanLabel.Named("TROPHY")).Resolve();
+                cachedLabelPawnName = pawnName;
                 return field;
             }
         } = null;
@@ -232,6 +235,54 @@ namespace FeatherMedals
             return GenDate.DateFullStringAt(
                 GenDate.TickGameToAbs(awardedTick),
                 Find.WorldGrid.LongLatOf(awardedTile));
+        }
+
+        public string GetAddedTraitLabel(bool terse = false)
+        {
+            if (addedTrait == null)
+                return null;
+            if (terse || this.AdornedPawn == null)
+                return "FeatherMedals_Summary_TraitAdded".Translate(
+                    this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")
+                        ).CapitalizeFirst().Resolve();
+            return "FeatherMedals_TrophyAddedTrait".Translate(
+                this.AdornedPawn.Named("PAWN"),
+                this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")).Resolve();
+        }
+
+        public string GetRemovedTraitLabel(bool terse = false)
+        {
+            if (removedTrait == null)
+                return null;
+            if (terse || this.AdornedPawn == null)
+                return "FeatherMedals_Summary_TraitRemoved".Translate(
+                    this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")
+                        ).CapitalizeFirst().Resolve();
+            return "FeatherMedals_TrophyRemovedTrait".Translate(
+                this.AdornedPawn.Named("PAWN"),
+                this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")).Resolve();
+        }
+        
+        public string GetDecoratedTraitLabel(bool terse = false)
+        {
+            if (decoratedDegree < 0)
+                return null;
+            if (terse || this.AdornedPawn == null)
+                return "FeatherMedals_Summary_TraitAdded".Translate(
+                    FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
+                        ).CapitalizeFirst().Resolve();
+            return "FeatherMedals_TrophyGrantedTrait".Translate(
+                this.AdornedPawn.Named("PAWN"),
+                FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
+        }
+
+        public string GetTraitChangeText()
+        {
+            var lines = new List<string>();
+            if (this.decoratedDegree >= 0) lines.Add(GetDecoratedTraitLabel());
+            if (this.addedTrait != null) lines.Add(GetAddedTraitLabel());
+            if (this.removedTrait != null) lines.Add(GetRemovedTraitLabel());
+            return lines.Count == 0 ? null : string.Join("\n", lines);
         }
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()

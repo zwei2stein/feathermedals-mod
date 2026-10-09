@@ -78,12 +78,14 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
         if (MedalMod.Settings.TrophyDynamicTraits)
         {
-            RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee);
+            RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee, medal);
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
         }
 
         var medalName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(
             GenLabel.ThingLabel(medal.def, medal.Stuff, 1));
+        
+        
 
         var letterLabel = "FeatherMedals_TakeOfHonorLetterLabel".Translate(medalName);
         var letterText = "FeatherMedals_TakeOfHonorLetterLine1".Translate(
@@ -96,6 +98,13 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         {
             letterText += "\n\n";
             letterText += "FeatherMedals_TakeOfHonorLetter".Translate(medal.citation);
+        }
+        
+        var traitText = medal.GetTraitChangeText();
+        if (!traitText.NullOrEmpty())
+        {
+            letterText += "\n\n";
+            letterText += traitText;
         }
 
         Find.LetterStack.ReceiveLetter(

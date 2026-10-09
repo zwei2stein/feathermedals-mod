@@ -169,12 +169,9 @@ namespace FeatherMedals
             {
                 height += Text.CalcHeight(GetAwardInfo(medal), textWidth) + 2f;
             }
-
-            if (medal.addedTrait != null)
-                height += 24f;
-
-            if (medal.removedTrait != null)
-                height += 24f;
+            
+            int lineCount = medal.GetTraitChangeText()?.Split('\n').Length ?? 0;
+            height += lineCount * 24f;
 
             Text.Font = GameFont.Small;
             height += 8f;

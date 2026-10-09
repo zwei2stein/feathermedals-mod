@@ -86,7 +86,7 @@ public class Dialog_TrophyAwarded : Window
         if (!medal.citation.NullOrEmpty())
             UIHelper.DrawCitation(medal.def, medal.citation, viewRect, ref innerY);
         UIHelper.DrawStatSummary(medal.def, viewRect, ref innerY);
-        UIHelper.DrawTraitChangeSummary(medal, 0, viewRect, ref innerY);
+        UIHelper.DrawTraitChangeSummary(medal, viewRect, ref innerY, TextAnchor.MiddleCenter);
 
         // the content height is only known after drawing, the view uses it next frame
         scrollViewHeight = innerY;
