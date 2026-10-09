@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
 namespace FeatherMedals;
@@ -6,6 +7,24 @@ namespace FeatherMedals;
 public static class FeatherMedalUtil
 {
     public static bool IsMedalDef(ThingDef def) => def?.thingClass == typeof(FeatherMedal);
+    
+    public static bool CanWearTrophy(Pawn pawn, FeatherMedal medal)
+    {
+        if (pawn?.apparel == null)
+            return false;
+
+        // our wear gate refuses every pawn outside a ceremony, lift it to ask vanilla only about the body
+        var previous = RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward;
+        RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = true;
+        try
+        {
+            return ApparelUtility.HasPartsToWear(pawn, medal.def) && medal.PawnCanWear(pawn, true);
+        }
+        finally
+        {
+            RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = previous;
+        }
+    }
 
     public static bool TryGetDisplaySlot(Pawn pawn, FeatherMedal medal, out int index, out int count)
     {

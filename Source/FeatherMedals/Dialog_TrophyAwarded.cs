@@ -11,6 +11,12 @@ public class Dialog_TrophyAwarded : Window
     private readonly Pawn awardee;
     private readonly Pawn presenter;
 
+    private const float CLOSE_BUTTON_AREA = 55f;
+    private const float SCROLLBAR_WIDTH = 16f;
+
+    private Vector2 scrollPosition;
+    private float scrollViewHeight;
+
     public Dialog_TrophyAwarded(FeatherMedal medal, Pawn awardee, Pawn presenter)
     {
         this.medal = medal;
@@ -21,7 +27,7 @@ public class Dialog_TrophyAwarded : Window
         absorbInputAroundWindow = true;
     }
 
-    public override Vector2 InitialSize => new(500f, 500f);
+    public override Vector2 InitialSize => new(500f, 560f);
 
     public override void DoWindowContents(Rect inRect)
     {
@@ -74,16 +80,20 @@ public class Dialog_TrophyAwarded : Window
             curY += 6f;
         }
 
-        // Citation
+        // Citation, stats and trait changes can be long, lets make them scrollable instead of obeflowing.
+        var scrollRect = new Rect(inRect.x, curY, inRect.width, inRect.yMax - CLOSE_BUTTON_AREA - curY);
+        var viewRect = new Rect(0f, 0f, scrollRect.width - SCROLLBAR_WIDTH, scrollViewHeight);
+        Widgets.BeginScrollView(scrollRect, ref scrollPosition, viewRect);
+
+        var innerY = 0f;
         if (!medal.citation.NullOrEmpty())
-        {
-            UIHelper.DrawCitation(medal.def, medal.citation, inRect, ref curY);
-        }
-        
-        // Stat bonuses
-        UIHelper.DrawStatSummary(medal.def, inRect, ref curY);
-        
-        UIHelper.DrawTraitChangeSummary(medal, inRect.x, inRect, ref curY);
+            UIHelper.DrawCitation(medal.def, medal.citation, viewRect, ref innerY);
+        UIHelper.DrawStatSummary(medal.def, viewRect, ref innerY);
+        UIHelper.DrawTraitChangeSummary(medal, 0, viewRect, ref innerY);
+
+        // the content height is only known after drawing, the view uses it next frame
+        scrollViewHeight = innerY;
+        Widgets.EndScrollView();
 
         // Reset and close button
         Text.Font = GameFont.Small;

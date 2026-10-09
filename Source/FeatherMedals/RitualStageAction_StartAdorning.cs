@@ -23,7 +23,7 @@ public class RitualStageAction_StartAdorning : RitualStageAction
         }
         else
         {
-            Log.Error("[FeatherMedals] RitualStageAction_StartBestowal: Leader or Awardee is null!");
+            Log.Error("[FeatherTrophies] RitualStageAction_StartBestowal: Leader or Awardee is null!");
         }
     }
 

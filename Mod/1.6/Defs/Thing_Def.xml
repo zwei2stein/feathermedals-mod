@@ -40,9 +40,10 @@
 			<li>FeatherMedals_Apparel_Feathers</li>
 		</thingCategories>
 		<apparel>
-		    <renderSkipFlags>
-		        <li>None</li> <!-- do not hide hair -->
-		    </renderSkipFlags>
+			<renderSkipFlags>
+				<li>None</li> <!-- do not hide hair -->
+			</renderSkipFlags>
+			<wearPerDay>0</wearPerDay>
 			<countsAsClothingForNudity>false</countsAsClothingForNudity>
 			<layers>
 				<li>FeatherMedal_TrophyLayer</li>
@@ -64,15 +65,15 @@
 
 	<!-- wounded in combat - red feather-->
 
-    <!-- killed an enemy - black top, white with red dot -->
+	<!-- killed an enemy - black top, white with red dot -->
 
-    <!-- wounded or killed an enemy - black top, white with notches in black section -->
+	<!-- wounded or killed an enemy - black top, white with notches in black section -->
 
 	<!-- slit throat and took scalp - black top, white with notch in white section -->
 
-    <!-- wounded many times - black top, white , split feather -->
+	<!-- wounded many times - black top, white , split feather -->
 
-    <!-- slit a throat - black top, slit on top -->
+	<!-- slit a throat - black top, slit on top -->
 
 	<!-- touched an enemy without being injured - black top, white, missing top edge and added horse hair -->
 
@@ -171,7 +172,7 @@
 						<trait>Nerves</trait>
 						<degree>-2</degree> <!-- Volatile -->
 						<chance>0.1</chance>
-					</li>					
+					</li>
 					<li>
 						<trait>Nerves</trait>
 						<degree>-1</degree> <!-- Nervous -->
@@ -188,7 +189,7 @@
 						<trait>Nerves</trait>
 						<degree>2</degree> <!-- Iron-Willed -->
 						<chance>0.05</chance>
-					</li>					
+					</li>
 				</addsTraits>
 			</li>
 		</modExtensions>
@@ -242,7 +243,7 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.02</SocialImpact>
 			<PainShockThreshold>0.01</PainShockThreshold>
-			<MedicalTendQuality>0.01</MedicalTendQuality>			
+			<MedicalTendQuality>0.01</MedicalTendQuality>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="FeatherMedals.TrophyExtension">
@@ -263,7 +264,7 @@
 			</li>
 		</modExtensions>
 		<uiOrder>20</uiOrder>
-	</ThingDef>	
+	</ThingDef>
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy</defName>
@@ -298,12 +299,12 @@
 						<trait>Nimble</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
-					</li>					
+					</li>
 				</addsTraits>
 			</li>
 		</modExtensions>
 		<uiOrder>20</uiOrder>
-	</ThingDef>	
+	</ThingDef>
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy5Times</defName>
@@ -338,12 +339,12 @@
 						<trait>SpeedOffset</trait>
 						<degree>2</degree>
 						<chance>0.1</chance>
-					</li>					
+					</li>
 				</addsTraits>
 			</li>
 		</modExtensions>
 		<uiOrder>20</uiOrder>
-	</ThingDef>	
+	</ThingDef>
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_Struck4BlowsInCombat</defName>
@@ -377,16 +378,16 @@
 						<trait>Nimble</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
-					</li>					
+					</li>
 				</addsTraits>
 			</li>
 		</modExtensions>
 		<uiOrder>20</uiOrder>
-	</ThingDef>	
+	</ThingDef>
 
-    <!-- wisdom - black feather -->
+	<!-- wisdom - black feather -->
 
-    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_CunningAndWisdom</defName>
 		<label>feather: cunning and wisdom</label>
 		<description>Trophy boasting cunning in combat and wisdom in peacetime</description>
@@ -419,7 +420,7 @@
 						<trait>GreatMemory</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
-					</li>					
+					</li>
 				</addsTraits>
 			</li>
 		</modExtensions>

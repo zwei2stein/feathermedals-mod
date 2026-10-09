@@ -71,6 +71,7 @@
 	<FeatherMedals_FailTrophyBiocoded>Trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot equip it.</FeatherMedals_FailTrophyBiocoded>
 
 	<FeatherMedals_MustHoldSpeakerRole>Must hold one of these roles: {SPEAKERS}.</FeatherMedals_MustHoldSpeakerRole>
+	<FeatherTrophy_CannotBeAdornedWith>{PAWN_labelShort} cannot be adorned with this trophy.</FeatherTrophy_CannotBeAdornedWith>
 
 	<FeatherMedals_MedalWornFor>Worn for {0} days</FeatherMedals_MedalWornFor>
 	<FeatherMedals_AwardedAtQualityCeremony>{DATE} at a {QUALITY} adorning</FeatherMedals_AwardedAtQualityCeremony>

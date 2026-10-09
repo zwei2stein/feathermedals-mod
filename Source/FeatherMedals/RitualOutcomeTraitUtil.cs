@@ -25,6 +25,10 @@ public static class RitualOutcomeTraitUtil
             Operation = operation;
         }
         
+        public override string ToString()
+        {
+            return $"{Operation}: {Entry}";
+        }
     }
     
     public static void GiveRandomTrait(Pawn pawn, FeatherMedal medal)
@@ -33,6 +37,15 @@ public static class RitualOutcomeTraitUtil
 
         // there is chance of not doing anything.
         var totalChance = candidates.Sum(candidate => candidate.Entry.chance);
+
+        if (Prefs.DevMode)
+        {
+            Log.Message($"[FeatherTrophies] GiveRandomTrait.totalChance={totalChance:P0}, candidates={candidates.Count}");
+            candidates.ForEach(
+                candidate => Log.Message($"[FeatherTrophies] GiveRandomTrait.candidate={candidate}")
+                );
+        }
+
         if (!Rand.Chance(totalChance))
             return;
         

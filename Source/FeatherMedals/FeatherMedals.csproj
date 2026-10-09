@@ -75,6 +75,7 @@
         <Compile Include="JobGiver_AwardSpeech.cs" />
         <Compile Include="RitualOutcomeEffectWorkerAwardTrophy.cs" />
         <Compile Include="RitualOutcomeTraitUtil.cs" />
+        <Compile Include="RitualRole_Awardee.cs" />
         <Compile Include="RitualRole_Presenter.cs" />
         <Compile Include="RitualStageAction_StartAdorning.cs" />
         <Compile Include="TrophyExtension.cs" />

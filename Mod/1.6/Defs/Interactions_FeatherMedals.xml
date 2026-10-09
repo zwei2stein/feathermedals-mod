@@ -11,20 +11,27 @@
 				<li>speech_verb->commended</li>
 				<li>speech_verb->honored</li>
 				<li>speech_verb->saluted</li>
+				<li>speech_verb->elevated</li>
+				<li>speech_verb->lionized</li>
 
 				<li>speech_adjective->rousing</li>
+				<li>speech_adjective->inspiring</li>
 				<li>speech_adjective->solemn</li>
 				<li>speech_adjective->tearful</li>
 				<li>speech_adjective->passionate</li>
+				<li>speech_adjective->roaring</li>
 
+				<li>heroic_trait->skill</li>
 				<li>heroic_trait->cunning</li>
 				<li>heroic_trait->unwavering courage</li>
 				<li>heroic_trait->tireless dedication</li>
 				<li>heroic_trait->bravery</li>
+				<li>heroic_trait->contribution</li>
 
 				<li>their_actions->standing firm against the odds</li>
 				<li>their_actions->their sacrifices for the tribe</li>
 				<li>their_actions->bleeding for their fellow tribals</li>
+				<li>their_actions->facing enemies of tribe</li>
 				<li>their_actions->exemplary service</li>
 			</rulesStrings>
 		</rulePack>
@@ -60,11 +67,12 @@
 				<li>image->[PRESENTER_nameFull] is standing firm, proudly adorning [AWARDEE_nameFull]'s head. [circumstance_group]</li>
 				<li>image->[PRESENTER_nameFull] is saluting [AWARDEE_nameFull], who is wearing a newly awarded trophy. [circumstance_group]</li>
 				<li>image->[AWARDEE_nameFull] looks [AWARDEE_adjective] as they are adorned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
-                
+
+				<li>circumstance_phrase->Solemn tribe stands straight.</li>
 				<li>circumstance_phrase->The tribe watches in silent awe.</li>
 				<li>circumstance_phrase->The feather trophy is iridescent.</li>
 				<li>circumstance_phrase->Confetti appears to be falling around them.</li>
-                
+
 				<li>desc_sentence->[AWARDEE_nameDef] looks incredibly proud.</li>
 				<li>desc_sentence->[PRESENTER_nameDef] wears a solemn expression of respect.</li>
 			</rulesStrings>

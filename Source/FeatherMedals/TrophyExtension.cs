@@ -24,4 +24,9 @@ public class MedalDynamicTrait
             return data?.label ?? trait?.defName ?? "unknown";
         }
     }
+    
+    public override string ToString()
+    {
+        return $"{trait?.defName ?? "unknown"} [{Label}], Degree={degree}, Chance={chance:P0}";
+    }
 }

@@ -11,7 +11,7 @@
 			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyCitation"/>
 		</comps>
 	</RitualOutcomeEffectDef>
-	
+
 	<PreceptDef>
 		<defName>FeatherMedals_MedalCeremonyPrecept</defName>
 		<issue>Ritual</issue>
@@ -22,9 +22,9 @@
 		<visible>false</visible>
 		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
 	</PreceptDef>
-	
+
 	<DutyDef>
-		<defName>SpeakOnCellAward</defName>
+		<defName>FeatherTrophies_SpeakOnCellAward</defName>
 		<hook>HighPriority</hook>
 		<socialModeMax>Off</socialModeMax>
 		<ritualSpectateTarget>true</ritualSpectateTarget>
@@ -49,7 +49,7 @@
 			</subNodes>
 		</thinkNode>
 	</DutyDef>
-	
+
 	<RitualBehaviorDef>
 		<defName>FeatherMedal_AwardMedalBehavior</defName>
 		<durationTicks>2500</durationTicks>
@@ -65,7 +65,7 @@
 				<allowChild>false</allowChild>
 				<mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
 			</li>
-			<li Class="RitualRoleColonist">
+			<li Class="FeatherMedals.RitualRole_Awardee">
 				<id>awardee</id>
 				<label>awardee</label>
 				<required>True</required>
@@ -123,7 +123,7 @@
 				<roleBehaviors>
 					<li>
 						<roleId>leader</roleId>
-						<dutyDef>SpeakOnCellAward</dutyDef>
+						<dutyDef>FeatherTrophies_SpeakOnCellAward</dutyDef>
 						<speakerInteraction>Speech_Leader</speakerInteraction>
 						<customPositions>
 							<li Class="RitualPosition_BesideThing"/>
@@ -141,7 +141,7 @@
 			</li>
 		</stages>
 	</RitualBehaviorDef>
-	
+
 	<RitualPatternDef>
 		<defName>FeatherMedal_AwardTrophyPattern</defName>
 		<ritualBehavior>FeatherMedal_AwardMedalBehavior</ritualBehavior>

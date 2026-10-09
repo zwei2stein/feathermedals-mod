@@ -135,9 +135,9 @@ namespace FeatherMedals
     {
         static MedalModInit()
         {
-            var harmony = new HarmonyLib.Harmony("FeatherMedals");
+            var harmony = new HarmonyLib.Harmony("FeatherTrophies");
             harmony.PatchAll();
-            Log.Message("[FeatherMedals] Harmony patches applied successfully.");
+            Log.Message("[FeatherTrophies] Harmony patches applied successfully.");
         }
     }
     
