@@ -124,7 +124,6 @@
 					<li>
 						<roleId>leader</roleId>
 						<dutyDef>FeatherTrophies_SpeakOnCellAward</dutyDef>
-						<speakerInteraction>Speech_Leader</speakerInteraction>
 						<customPositions>
 							<li Class="RitualPosition_BesideThing"/>
 						</customPositions>

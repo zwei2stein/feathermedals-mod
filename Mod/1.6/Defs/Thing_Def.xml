@@ -29,7 +29,6 @@
 		</equippedStatOffsets>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
-			<WorkToMake>6000</WorkToMake>
 			<Mass>0.01</Mass>
 			<EquipDelay>0.5</EquipDelay>
 			<DeteriorationRate>0</DeteriorationRate>
@@ -44,6 +43,7 @@
 				<li>None</li> <!-- do not hide hair -->
 			</renderSkipFlags>
 			<wearPerDay>0</wearPerDay>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<countsAsClothingForNudity>false</countsAsClothingForNudity>
 			<layers>
 				<li>FeatherMedal_TrophyLayer</li>
@@ -62,6 +62,13 @@
 			<MarketValue>200</MarketValue>
 		</statBases>
 	</ThingDef>
+
+	<ThingDef ParentName="FeatherTrophy_Base" Name="FeatherTrophy_BaseOrnate" Abstract="True">
+		<statBases>
+			<MarketValue>400</MarketValue>
+		</statBases>
+	</ThingDef>
+
 
 	<!-- wounded in combat - red feather-->
 
@@ -115,7 +122,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
 		<description>Trophy for killing a foe.</description>
@@ -150,7 +157,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_SlitThroatAndTookScalp</defName>
 		<label>feather: slit throat and took scalp</label>
 		<description>Trophy for slitting the throat of an enemy and taking their scalp.</description>
@@ -196,7 +203,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_WoundedManyTimes</defName>
 		<label>feather: wounded in combat many times</label>
 		<description>Trophy boasting numerous combat wounds.</description>
@@ -306,7 +313,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy5Times</defName>
 		<label>feather: touched an enemy five times</label>
 		<description>Trophy boasting five coups at distinct times - coup is touching an enemy in combat without being hurt.</description>
@@ -346,7 +353,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_Struck4BlowsInCombat</defName>
 		<label>feather: struck an enemy four times in combat</label>
 		<description>Trophy boasting striking an enemy four times in combat</description>
@@ -431,7 +438,7 @@
 	
 	<!-- protection: golden -->
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherTrophy_Trophy_Protection</defName>
 		<label>feather: protection</label>
 		<description>Trophy boasting protection by archite spirits</description>
@@ -450,7 +457,7 @@
 	
 	<!-- led warparty -->
 
-	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherTrophy_Trophy_LedWarparty</defName>
 		<label>feather: led war party</label>
 		<description>Trophy boasting experience leading a war party</description>

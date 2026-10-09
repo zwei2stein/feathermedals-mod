@@ -73,7 +73,7 @@
         <defName>FeatherTrophy_Backstory_FeatheredWarrior</defName>
         <title>feathered warrior</title>
         <titleShort>feathered</titleShort>
-        <description>[PAWN_nameDef] was once skilled warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe with great bravely and eventually became celebrated hero.</description>
+        <description>[PAWN_nameDef] was once skilled warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe with great bravery and eventually became celebrated hero.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Hulk</bodyTypeMale>
         <bodyTypeFemale>Hulk</bodyTypeFemale>

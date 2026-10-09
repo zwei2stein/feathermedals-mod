@@ -1,4 +1,3 @@
-
 [h1]Tribal Trophies[/h1]
 
 "Medals" for tribal playthrough. Feathers worn as headdresses, reminders of bravery and skill.
@@ -23,27 +22,27 @@
 [h2]Trophies[/h2]
 
 [h3]Simple Tier[/h3]
-Cost: 10 Silver, 1 Pristine feather, 10 Dye | Crafting 3
+Cost: 10 Silver, 1 Pristine feather, 10 Dye | Crafting 3 | Market value 200
 
 [table]
 [tr][th]Feather[/th][th]Effects[/th][/tr]
 [tr][td][b]Wounded in Combat[/b][/td][td]+2% Pain Shock Threshold | May remove Delicate (10%) | May grant Tough (10%) | Beauty +0.1[/td][/tr]
 [tr][td][b]Wounded or Killed an Enemy[/b][/td][td]+2% Pain Shock Threshold | +2% Melee Hit Chance | Beauty +0.1[/td][/tr]
-[tr][td][b]Wounded Many Times[/b][/td][td]+3% Pain Shock Threshold | May remove Delicate (10%) | May grant Tough (10%) | Beauty +0.1[/td][/tr]
 [tr][td][b]Slit Throat[/b][/td][td]+2% Social Impact | +1% Pain Shock Threshold | +1% Med Tend Quality | May remove Nervous (10%) | May grant Steadfast (5%) | Beauty +0.1[/td][/tr]
 [tr][td][b]Touched an Enemy[/b][/td][td]+3% Social Impact | +1% Move Speed | May remove Wimp (10%) | May grant Brawler/Nimble (10%) | Beauty +0.1[/td][/tr]
-[tr][td][b]Struck 4 Blows[/b][/td][td]+2% Pain Shock Threshold | May remove Wimp (10%) | May grant Brawler/Nimble (10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Cunning and Wisdom[/b][/td][td]+5% Research Speed | +1% Med Tend Quality | May remove Slow Learner (10%) | May grant Fast Learner/Great Memory (10%) | Beauty +0.1[/td][/tr]
 [/table]
 
 [h3]Ornate Tier[/h3]
-Cost: 10 Gold, 1 Pristine feather, 10 Dye | Crafting 5
+Cost: 10 Gold, 1 Pristine feather, 10 Dye | Crafting 5 | Market value 400
 
 [table]
 [tr][th]Feather[/th][th]Effects[/th][/tr]
 [tr][td][b]Killed an Enemy[/b][/td][td]+1% Pain Shock Threshold | +10% Shooting Accuracy | +1% Ranged Cooldown | Beauty +0.1[/td][/tr]
 [tr][td][b]Slit Throat + Took Scalp[/b][/td][td]+2% Social Impact | +1% Med Surgery Success | +4% Med Tend Quality | May remove Volatile/Nervous (10%) | May grant Steady/Iron-Willed (5%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Wounded Many Times[/b][/td][td]+3% Pain Shock Threshold | May remove Delicate (10%) | May grant Tough (10%) | Beauty +0.1[/td][/tr]
 [tr][td][b]Touched an Enemy 5 Times[/b][/td][td]+4% Social Impact | +2% Move Speed | May remove Slow (10%) | May grant Fast/Very Fast (10%) | Beauty +0.1[/td][/tr]
-[tr][td][b]Cunning and Wisdom[/b][/td][td]+5% Research Speed | +1% Med Tend Quality | May remove Slow Learner (10%) | May grant Fast Learner/Great Memory (10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Struck 4 Blows[/b][/td][td]+2% Pain Shock Threshold | May remove Wimp (10%) | May grant Brawler/Nimble (10%) | Beauty +0.1[/td][/tr]
 [/table]
 
 [h2]Mod compatibility[/h2]
@@ -84,8 +83,10 @@ This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfil
 
 [h3]Cultural heritage[/h3]
 
-This mod draws deeply from actual history (1), (2), but is a fictional take on it. Since there are no eagles in RimWorld, these are not eagle feathers.
+This mod draws deeply from actual history (1), (2), (3), but is a fictional take on it. Since there are no eagles in RimWorld, these are not eagle feathers.
 
 (1) [url=https://sites.gsu.edu/psyc4030/2018/10/29/some-native-american-feathers/]Source[/url] 
 
-(2) [url=https://www.ya-native.com/Culture_GreatPlains/resources/countingcoup.html]Source[/url] 
+(2) [url=https://www.ya-native.com/Culture_GreatPlains/resources/countingcoup.html]Source[/url]
+
+(3) [url=https://www.nps.gov/bica/learn/historyculture/joseph-medicine-crow.htm]Source[/url]

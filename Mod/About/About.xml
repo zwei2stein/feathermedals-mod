@@ -21,6 +21,10 @@
   </modDependencies>
   <loadAfter>
     <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.Rimworld.Odyssey</li>
+    
+    <li>CETeam.CombatExtended</li>
+    
     <li>veterano.mythicages.megafaunabestiary</li>
     <li>Van.Beasts</li>
     <li>Erin.Auraeyl</li>
