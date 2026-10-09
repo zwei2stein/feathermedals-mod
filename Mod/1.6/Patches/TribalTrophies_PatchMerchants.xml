@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-    
+
+    <!-- shaman and war merchant sells -->
     <Operation Class="PatchOperationAdd">
-        <xpath>Defs/TraderKindDef[defName="Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
+        <xpath>Defs/TraderKindDef[defName="Caravan_Neolithic_ShamanMerchant" or defName="Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
         <value>
             <li Class="StockGenerator_SingleDef">
                 <thingDef>FeatherTrophy_Precursor_PristineFeather</thingDef>
-                <countRange>0~3</countRange>
+                <countRange>1~2</countRange>
             </li>
         </value>
     </Operation>
-    
+
+    <!-- every tribal trader buys -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[contains(defName, "_Neolithic_")]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>FeatherTrophy_Precursor_PristineFeather</thingDef>
+            </li>
+        </value>
+    </Operation>
+
 </Patch>

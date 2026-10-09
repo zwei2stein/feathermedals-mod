@@ -26,13 +26,8 @@
         <thingCategories>
             <li>FeatherMedals_Apparel_Feathers_Precursor</li>
         </thingCategories>
-        <tradeability>Sellable</tradeability>
+        <tradeability>All</tradeability>
         <techLevel>Neolithic</techLevel>
-        <tradeTags>
-            <li>ExoticMisc</li>
-            <li>AnimalPart</li>
-            <li>Art</li>
-        </tradeTags>
     </ThingDef>
     
 </Defs>
