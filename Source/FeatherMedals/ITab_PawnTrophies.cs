@@ -84,14 +84,7 @@ namespace FeatherMedals
         private string GetAwardInfo(FeatherMedal medal)
         {
             var presentedBy = medal.GetAwardedByLabel();
-            string date = null;
-            if (medal.awardedTick >= 0 && Find.CurrentMap != null)
-            {
-                date = GenDate.DateFullStringAt(
-                    GenDate.TickGameToAbs(medal.awardedTick),
-                    Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile));
-            }
-
+            var date = medal.GetAwardedDateLabel();
             if (presentedBy != null && date != null)
                 return "FeatherMedals_AwardInfo_PresentedByOnDate".Translate(presentedBy.Named("PRESENTER"), date.Named("DATE"));
             return presentedBy ?? date ?? "";

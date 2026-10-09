@@ -61,12 +61,9 @@ public class Dialog_TrophyAwarded : Window
         curY += presenterHeight + 10f;
         Text.Font = GameFont.Small;
         
-        if (medal.awardedTick >= 0)
+        var dateStr = medal.GetAwardedDateLabel();
+        if (dateStr != null)
         {
-            var tile = awardee.Map?.Tile ?? Find.CurrentMap?.Tile ?? 0;
-            var dateStr = GenDate.DateFullStringAt(
-                GenDate.TickGameToAbs(medal.awardedTick),
-                Find.WorldGrid.LongLatOf(tile));
             Text.Font = GameFont.Tiny;
             GUI.color = Color.gray;
             var dateHeight = Text.CalcHeight(dateStr, inRect.width);

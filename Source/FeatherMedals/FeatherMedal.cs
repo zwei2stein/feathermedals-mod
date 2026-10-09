@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Text;
 using RimWorld;
+using RimWorld.Planet;
 using Verse;
 using Verse.AI.Group;
 
@@ -15,7 +16,9 @@ namespace FeatherMedals
         public string citation;
         public int ceremonyQuality = -1; // -1 = not yet awarded
         public Pawn awardedBy;
+        
         public int awardedTick = -1;
+        public PlanetTile awardedTile = PlanetTile.Invalid; // ceremony map tile, gives the date its longitude
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
@@ -28,7 +31,9 @@ namespace FeatherMedals
             Scribe_Values.Look(ref citation, "citation");
             Scribe_Values.Look(ref ceremonyQuality, "ceremonyQuality", -1);
             Scribe_References.Look(ref awardedBy, "awardedBy", true);
+            
             Scribe_Values.Look(ref awardedTick, "awardedTick", -1);
+            Scribe_Values.Look(ref awardedTile, "awardedTile", PlanetTile.Invalid);
             
             Scribe_Defs.Look(ref addedTrait, "addedTrait");
             Scribe_Values.Look(ref addedTraitDegree, "addedTraitDegree", 0);
@@ -216,6 +221,15 @@ namespace FeatherMedals
                 ? "FeatherMedals_Inspector_PresentedBy_Dead".Translate(awardedBy.Named("PAWN"))
                 : "FeatherMedals_Inspector_PresentedBy".Translate(awardedBy.Named("PAWN"));
         }
+        
+        public string GetAwardedDateLabel()
+        {
+            if (awardedTick < 0)
+                return null;
+            return GenDate.DateFullStringAt(
+                GenDate.TickGameToAbs(awardedTick),
+                Find.WorldGrid.LongLatOf(awardedTile));
+        }
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
         {
@@ -270,14 +284,11 @@ namespace FeatherMedals
             }
 
             // Date
-            if (awardedTick >= 0)
+            var dateLabel = GetAwardedDateLabel();
+            if (dateLabel != null)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                var dateStr = GenDate.DateFullStringAt(
-                    GenDate.TickGameToAbs(awardedTick),
-                    Find.WorldGrid.LongLatOf(
-                        Wearer?.Map?.Tile ?? Find.CurrentMap?.Tile ?? 0));
-                sb.Append("FeatherMedals_Inspector_AwardedDate".Translate(dateStr.Named("DATE")));
+                sb.Append("FeatherMedals_Inspector_AwardedDate".Translate(dateLabel.Named("DATE")));
             }
 
             // Ceremony quality

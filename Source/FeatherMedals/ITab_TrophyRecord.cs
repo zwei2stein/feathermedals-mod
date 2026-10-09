@@ -61,15 +61,10 @@ public class ITab_TrophyRecord : ITab
         }
 
         // Date and ceremony quality on one line
-        if (medal.awardedTick >= 0)
+        var dateStr = medal.GetAwardedDateLabel();
+        if (dateStr != null)
         {
             Text.Font = GameFont.Tiny;
-            var tile = medal.Wearer?.Map?.Tile
-                       ?? medal.MapHeld?.Tile
-                       ?? Find.CurrentMap?.Tile ?? 0;
-            var dateStr = GenDate.DateFullStringAt(
-                GenDate.TickGameToAbs(medal.awardedTick),
-                Find.WorldGrid.LongLatOf(tile));
 
             var dateLine = dateStr;
             if (medal.ceremonyQuality >= 0)
