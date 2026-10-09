@@ -89,6 +89,26 @@ public class HarmonyPatches
         }
     }
     
+    [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
+    public static class Patch_DressOtherPawn_Medal
+    {
+        public static void Postfix(Thing clickedThing, ref FloatMenuOption __result)
+        {
+            if (__result == null || !FeatherMedalUtil.NeedsCeremony(clickedThing)) return;
+            __result = FeatherMedalUtil.CeremonyOnlyForceWearOption((Apparel)clickedThing);
+        }
+    }
+
+    [HarmonyPatch(typeof(Building_OutfitStand), "GetFloatMenuOptionForForceWear")]
+    public static class Patch_OutfitStandForceWear_Medal
+    {
+        public static void Postfix(Apparel apparel, ref FloatMenuOption __result)
+        {
+            if (__result == null || !FeatherMedalUtil.NeedsCeremony(apparel)) return;
+            __result = FeatherMedalUtil.CeremonyOnlyForceWearOption(apparel);
+        }
+    }
+    
     [HarmonyPatch(typeof(PawnRenderNodeWorker), nameof(PawnRenderNodeWorker.CanDrawNow))]
     public static class PatchMedalVisibility
     {

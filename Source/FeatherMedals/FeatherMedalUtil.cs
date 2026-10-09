@@ -8,6 +8,19 @@ public static class FeatherMedalUtil
 {
     public static bool IsMedalDef(ThingDef def) => def?.thingClass == typeof(FeatherMedal);
     
+    public static FloatMenuOption CeremonyOnlyForceWearOption(Apparel apparel)
+    {
+        var cannotKey = apparel.def.apparel.LastLayer.IsUtilityLayer
+            ? "CannotForceTargetToEquipApparel"
+            : "CannotForceTargetToWear";
+        var text = cannotKey.Translate(apparel.Label, apparel) + ": "
+                                                               + "FeatherMedals_FailTrophyNeedsCeremony".Translate().CapitalizeFirst();
+        return new FloatMenuOption(text, null);
+    }
+
+    public static bool NeedsCeremony(Thing thing)
+        => thing is FeatherMedal { BiocodeComp: not { Biocoded: true } };
+    
     public static bool CanWearTrophy(Pawn pawn, FeatherMedal medal)
     {
         if (pawn?.apparel == null)
