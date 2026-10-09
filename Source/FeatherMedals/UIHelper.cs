@@ -4,10 +4,10 @@ using Verse;
 
 namespace FeatherMedals;
 
-public class UIHelper
+public static class UIHelper
 {
     private static readonly Color GreenColor = new(0.4f, 0.9f, 0.4f);
-    public static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
+    private static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
     
     public static void DrawStatSummary(ThingDef def, Rect rect, ref float curY)
     {
@@ -78,6 +78,7 @@ public class UIHelper
         var ext = medalDef.GetModExtension<TrophyExtension>();
         
         Text.Font = GameFont.Tiny;
+        
         if (ext != null && ((ext.removesTraits is { Count: > 0 }) || (ext.addsTraits is { Count: > 0 })))
         {
             Text.Anchor = TextAnchor.MiddleCenter;
@@ -97,16 +98,16 @@ public class UIHelper
                 foreach (var entry in ext.addsTraits)
                 {
                     var label = entry.Label;
-                    GUI.color = Color.grey;;
+                    GUI.color = Color.grey;
                     var line = "FeatherMedals_AwardingMayGrant".Translate(label.CapitalizeFirst(), entry.chance.ToStringPercent());
                     Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), line);
                     curY += 24f;
                 }
             }
-            
-            GUI.color = Color.white;
-            Text.Font = GameFont.Small;
         }
+        
+        GUI.color = Color.white;
+        Text.Font = GameFont.Small;
     }
 
     public static void DrawCitation(ThingDef medalDef, string citation, Rect rect, ref float curY)
