@@ -143,6 +143,7 @@
 
 	<RitualPatternDef>
 		<defName>FeatherMedal_AwardTrophyPattern</defName>
+		<allowOtherInstances>false</allowOtherInstances>
 		<ritualBehavior>FeatherMedal_AwardMedalBehavior</ritualBehavior>
 		<ritualOutcomeEffect>FeatherMedals_AwardTrophyOutcome</ritualOutcomeEffect>
 		<ritualExpectedDesc>The tribe's leader will adorn a trophy upon a deserving tribe member.</ritualExpectedDesc>

@@ -161,6 +161,8 @@ namespace FeatherMedals
             // A real precept: it lives, and is saved, in the ideo, so the running ritual can find it again after a reload
             var ritual = GetCeremonyPrecept(presenter.Ideo);
             var ceremonyName = "FeatherMedals_AwardCeremony".Translate();
+            
+            Dialog_BeginRitual.PawnFilter filter = (pawn, voluntary, allowOtherIdeos) => pawn.GetLord() == null;
                 
             Dialog_BeginRitual.ActionCallback startAction = delegate (RitualRoleAssignments assignments)
             {
@@ -170,17 +172,18 @@ namespace FeatherMedals
                     Messages.Message("FeatherMedals_DisabledCeremonyInProgress".Translate(), MessageTypeDefOf.RejectInput, false);
                     return false;
                 }
-                var lordJob = new LordJob_Ritual(
-                    selectedTarget: ritualTarget,
-                    ritual: ritual,
-                    obligation: null,
-                    allStages: pattern.ritualBehavior.stages,
-                    assignments: assignments,
-                    organizer: null,
-                    spotOverride: null
-                );
-                LordMaker.MakeNewLord(Faction.OfPlayer, lordJob, safeMap, assignments.Participants);
-                return true; 
+
+                // TryExecuteOn returns silently when blocked, so check first and keep the dialog open
+                var blocker = ritual.behavior.CanStartRitualNow(ritualTarget, ritual, forcedForRole: assignments.ForcedRolesForReading);
+                if (!blocker.NullOrEmpty())
+                {
+                    Messages.Message(blocker, ritualTarget, MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
+
+                // vanilla start: pulls pawns out of voluntary lords, ends jobs, makes the lord, PreparePawns, ResetCompDatas
+                ritual.behavior.TryExecuteOn(ritualTarget, null, ritual, null, assignments, true);
+                return true;
             };
 
             var outcomeDef = pattern.ritualOutcomeEffect;
@@ -193,7 +196,7 @@ namespace FeatherMedals
                 action: startAction,      
                 organizer: null,
                 obligation: null,         
-                filter: null,
+                filter: filter,
                 okButtonText: "FeatherMedals_BeginCeremony".Translate(),
                 requiredPawns: null,
                 forcedForRole: null,
