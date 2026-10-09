@@ -62,7 +62,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
         return new QualityFactor
         {
             label = medal.MedalLabel,
-            count = !medal.citation.NullOrEmpty() ? "FeatherMedals_WriteCitation_Written".Translate() : "FeatherMedals_WriteCitation_NotWritten".Translate(),
+            count = "",
             qualityChange = "",
             quality = 0f,
             positive = true,
