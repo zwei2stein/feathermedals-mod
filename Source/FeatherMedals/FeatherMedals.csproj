@@ -73,6 +73,8 @@
         <Compile Include="ITab_TrophyRecord.cs" />
         <Compile Include="ITab_PawnTrophies.cs" />
         <Compile Include="JobGiver_AwardSpeech.cs" />
+        <Compile Include="PawnRenderNode_Trophy.cs" />
+        <Compile Include="PawnRenderSubWorker_Trophy.cs" />
         <Compile Include="RitualOutcomeEffectWorkerAwardTrophy.cs" />
         <Compile Include="RitualOutcomeTraitUtil.cs" />
         <Compile Include="RitualRole_Awardee.cs" />
@@ -84,6 +86,7 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="RitualOutcomeComp_TrophyPreview.cs" />
         <Compile Include="FeatherMedal.cs" />
+        <Compile Include="TrophyLayout.cs" />
         <Compile Include="UIHelper.cs" />
     </ItemGroup>
     <ItemGroup>

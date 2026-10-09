@@ -8,9 +8,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/TerratechAncestry_Feather</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/TerratechAncestry_Feather</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.05</SocialImpact>
 			<PlantHarvestYield>0.02</PlantHarvestYield>

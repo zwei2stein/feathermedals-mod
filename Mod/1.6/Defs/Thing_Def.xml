@@ -39,19 +39,44 @@
 			<li>FeatherMedals_Apparel_Feathers</li>
 		</thingCategories>
 		<apparel>
-			<renderSkipFlags>
-				<li>None</li> <!-- do not hide hair -->
-			</renderSkipFlags>
+			<renderSkipFlags><li>None</li></renderSkipFlags>
 			<wearPerDay>0</wearPerDay>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<countsAsClothingForNudity>false</countsAsClothingForNudity>
-			<layers>
-				<li>FeatherMedal_TrophyLayer</li>
-			</layers>
-			<bodyPartGroups>
-				<li>UpperHead</li>
-			</bodyPartGroups>
+			<layers><li>FeatherMedal_TrophyLayer</li></layers>
+			<bodyPartGroups><li>UpperHead</li></bodyPartGroups>
 			<scoreOffset>-1000</scoreOffset>
+			<renderNodeProperties>
+				<li>
+					<debugLabel>Feather trophy</debugLabel>
+					<nodeClass>FeatherMedals.PawnRenderNode_Trophy</nodeClass>
+					<subworkerClasses>
+						<li>FeatherMedals.PawnRenderSubWorker_Trophy</li>
+					</subworkerClasses>
+					<parentTagDef>Head</parentTagDef>
+					<overrideMeshSize>1</overrideMeshSize>
+					<drawSize>0.45</drawSize>
+					<baseLayer>80</baseLayer>
+					<drawData>
+						<dataNorth>
+							<flip>true</flip>
+							<offset>(0, 0.08, 0.08)</offset>
+						</dataNorth>
+						<dataEast>
+							<flip>true</flip>
+							<offset>(0, 0, 0.08)</offset>
+						</dataEast>
+						<dataWest>
+							<flip>true</flip>
+							<offset>(0, 0, 0.08)</offset>
+						</dataWest>
+						<dataSouth>
+							<layer>45</layer>
+							<offset>(0, -0.08, 0.08)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
 		</apparel>
 	</ThingDef>
 
@@ -95,9 +120,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/WoundedInCombat</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/WoundedInCombat</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
@@ -129,9 +151,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/KilledAnEnemy</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/KilledAnEnemy</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PainShockThreshold>0.01</PainShockThreshold>
 			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
@@ -147,9 +166,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/WoundedOrKilledAnEnemy</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/WoundedOrKilledAnEnemy</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PainShockThreshold>0.02</PainShockThreshold>
 			<MeleeHitChance>0.02</MeleeHitChance>
@@ -164,9 +180,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroatAndTookScalp</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/SlitThroatAndTookScalp</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.02</SocialImpact>
 			<MedicalSurgerySuccessChance>0.01</MedicalSurgerySuccessChance>
@@ -210,9 +223,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/WoundedManyTimes</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/WoundedManyTimes</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PainShockThreshold>0.03</PainShockThreshold>
 		</equippedStatOffsets>
@@ -244,9 +254,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroat</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/SlitThroat</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.02</SocialImpact>
 			<PainShockThreshold>0.01</PainShockThreshold>
@@ -280,9 +287,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/TouchedAnEnemy</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/TouchedAnEnemy</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.03</SocialImpact>
 			<MoveSpeed>0.01</MoveSpeed>
@@ -320,9 +324,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/TouchedAnEnemy5Times</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/TouchedAnEnemy5Times</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.04</SocialImpact>
 			<MoveSpeed>0.02</MoveSpeed>
@@ -360,9 +361,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/Struck4BlowsInCombat</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/Struck4BlowsInCombat</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
@@ -401,9 +399,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/CunningAndWisdom</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/CunningAndWisdom</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<ResearchSpeed>0.05</ResearchSpeed>
 			<MedicalTendQuality>0.01</MedicalTendQuality>
@@ -445,9 +440,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/Protection</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/Protection</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<MedicalTendQuality>0.01</MedicalTendQuality>
 			<PainShockThreshold>0.02</PainShockThreshold>
@@ -464,9 +456,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/LedWarparty</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/LedWarparty</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
@@ -483,9 +472,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/StoleHorses</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/StoleHorses</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
@@ -502,9 +488,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/TookWeapon</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/TookWeapon</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>

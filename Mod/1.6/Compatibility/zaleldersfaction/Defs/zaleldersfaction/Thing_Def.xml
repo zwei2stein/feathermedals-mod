@@ -8,9 +8,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/NatureHarmony_Feather</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/NatureHarmony_Feather</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PsychicSensitivity MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.05</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.033</PsychicEntropyRecoveryRate>

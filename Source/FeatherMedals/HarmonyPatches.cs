@@ -1,6 +1,5 @@
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace FeatherMedals;
@@ -109,20 +108,6 @@ public class HarmonyPatches
         }
     }
     
-    [HarmonyPatch(typeof(PawnRenderNodeWorker), nameof(PawnRenderNodeWorker.CanDrawNow))]
-    public static class PatchMedalVisibility
-    {
-        public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref bool __result)
-        {
-            if (!__result) return;
-            if (node is not PawnRenderNode_Apparel { apparel: FeatherMedal medal }) return;
-
-            if (!MedalMod.Settings.DrawTrophiesOnPawns
-                || !FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out _, out _))
-                __result = false;
-        }
-    }
-    
     [HarmonyPatch(typeof(ApparelUtility), nameof(ApparelUtility.CanWearTogether))]
     public static class PatchMedalConflict
     {
@@ -133,128 +118,6 @@ public class HarmonyPatches
             
             if (FeatherMedalUtil.IsMedalDef(A) && FeatherMedalUtil.IsMedalDef(B)) 
                 __result = true;
-        }
-    }
-    
-    [HarmonyPatch(typeof(ApparelGraphicRecordGetter), nameof(ApparelGraphicRecordGetter.TryGetGraphicApparel))]
-    public static class PatchMedalGraphicRecord
-    {
-        public static bool Prefix(Apparel apparel, BodyTypeDef bodyType, ref ApparelGraphicRecord rec, ref bool __result)
-        {
-            if (apparel is not FeatherMedal medal) return true;
-            var path = medal.def.apparel.wornGraphicPath;
-                
-            var color = medal.DrawColor;
-            var colorTwo = medal.DrawColorTwo;
-
-            var graphic = GraphicDatabase.Get<Graphic_Single>(
-                path, 
-                ShaderDatabase.CutoutComplex, 
-                Vector2.one, 
-                color, 
-                colorTwo
-            );
-                
-            rec = new ApparelGraphicRecord(graphic, apparel);
-            __result = true; 
-            return false;
-
-        }
-    }
-
-    [HarmonyPatch(typeof(PawnRenderNode), nameof(PawnRenderNode.FlipGraphic))]
-    public static class PatchMedalFlip
-    {
-         public static void Postfix(PawnRenderNode __instance, PawnDrawParms parms, ref bool __result)
-        {
-            if (__instance is PawnRenderNode_Apparel { apparel: FeatherMedal } && parms.facing.IsHorizontal)
-                __result = !__result;
-        }
-    }
-
-    [HarmonyPatch(typeof(PawnRenderNodeWorker), nameof(PawnRenderNodeWorker.ScaleFor))]
-    public static class PatchMedalScale
-    {
-        public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref Vector3 __result)
-        {
-            if (node is not PawnRenderNode_Apparel apparelNode || apparelNode.apparel is not FeatherMedal) return;
-            var baseScale = 0.3f; 
-            var bodyModifier = GetScale(node, parms);
-            __result *= (baseScale * bodyModifier);
-        }
-        
-        public static float GetScale(PawnRenderNode node, PawnDrawParms parms)
-        {
-            if (node is not PawnRenderNode_Apparel apparelNode || apparelNode.apparel is not FeatherMedal) return 0f;
-            
-            var bodyModifier = 1.0f; // Default for Male
-            
-            var bodyType = parms.pawn?.story?.bodyType;
-            if (bodyType != null)
-            {
-                if (bodyType == BodyTypeDefOf.Hulk || bodyType == BodyTypeDefOf.Fat) bodyModifier = 1.15f;
-                else if (bodyType == BodyTypeDefOf.Thin) bodyModifier = 0.9f;
-                else if (bodyType == BodyTypeDefOf.Female) bodyModifier = 0.95f;
-            }
-            bodyModifier *= MedalMod.Settings.TrophyScale;
-            return bodyModifier;
-        }
-    }
-    
-    [HarmonyPatch(typeof(PawnRenderNodeWorker), nameof(PawnRenderNodeWorker.OffsetFor))]
-    public static class PatchMedalOffset
-    {
-        private const float BaseXOffset = 0.02f; 
-        private const float RowZDrop = 0.1f; 
-        
-        public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref Vector3 __result)
-        {
-            if (node is not PawnRenderNode_Apparel { apparel: FeatherMedal medal })
-                return;
-
-            __result.z += -0.148f;
-            var scale = PatchMedalScale.GetScale(node, parms);
-            var indexOffset = 0.1f * scale;
-            var shift = 0.02f * scale;
-            var maxMedalsPerRow = 8;
-
-            __result.x += (parms.facing == Rot4.West || parms.facing == Rot4.East) ? 0 : shift;
-
-            // trophies are laid out together on body part.
-            if (!FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out var myIndex, out var totalMedals))
-                return;
-
-            var reverseIndex = (totalMedals - 1) - myIndex;
-
-            var row = reverseIndex / maxMedalsPerRow;
-            var col = reverseIndex % maxMedalsPerRow;
-
-            var totalRows = (totalMedals + maxMedalsPerRow - 1) / maxMedalsPerRow;
-            var medalsInThisRow = maxMedalsPerRow;
-
-            // If we are looking at the very bottom row, check if it's partially empty
-            if (row == totalRows - 1 && totalMedals % maxMedalsPerRow != 0)
-                medalsInThisRow = totalMedals % maxMedalsPerRow;
-
-            // Shift the column to the right by half the missing width
-            var missingMedals = maxMedalsPerRow - medalsInThisRow;
-            var centeredCol = col + (missingMedals / 2f);
-
-            // Apply X shift using our new 'centeredCol' instead of the raw 'col'
-            var baseX = (parms.facing == Rot4.West || parms.facing == Rot4.East) ? 0 : BaseXOffset;
-            var shiftX = baseX + (centeredCol * indexOffset);
-            
-            if (parms.facing == Rot4.West || parms.facing == Rot4.North)
-                __result.x -= shiftX;
-            else
-                __result.x += shiftX;
-
-            // Apply Z (Vertical) shift
-            if (parms.facing == Rot4.South)
-                __result.x -= BaseXOffset * 10;
-            if (parms.facing == Rot4.North)
-                __result.x += BaseXOffset * 10;
-            __result.z -= (row * (RowZDrop / 2 ) * scale) - 0.75f;
         }
     }
     

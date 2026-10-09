@@ -8,9 +8,6 @@
 		<graphicData>
 			<texPath>Things/Feathers/Mashed_Ashlands_AshStormLover_Feather</texPath>
 		</graphicData>
-		<apparel>
-			<wornGraphicPath>Things/Feathers/Mashed_Ashlands_AshStormLover_Feather</wornGraphicPath>
-		</apparel>
 		<equippedStatOffsets>
 			<PainShockThreshold>0.01</PainShockThreshold>
 			<SocialImpact>0.01</SocialImpact>
