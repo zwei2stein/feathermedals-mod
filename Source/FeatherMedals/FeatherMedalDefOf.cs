@@ -18,5 +18,10 @@ public class FeatherMedalDefOf
     
     public static InteractionDef FeatherMedals_Speech_AwardMedal;
     
+    public static PreceptDef FeatherMedals_HonoringWarriors_Neutral;
+    public static PreceptDef FeatherMedals_HonoringWarriors_Forbidden;
+
+    public static IssueDef FeatherMedals_HonoringWarriors;
+    
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

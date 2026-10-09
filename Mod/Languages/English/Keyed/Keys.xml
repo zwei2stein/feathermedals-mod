@@ -89,6 +89,10 @@
 	<FeatherMedals_TrophyGrantedTrait>{PAWN_labelShort} is now known as {TRAIT}.</FeatherMedals_TrophyGrantedTrait>
 	<FeatherMedals_TrophyRemovedTrait>{PAWN_labelShort} has shed the {TRAIT} trait through this honor.</FeatherMedals_TrophyRemovedTrait>
 	<FeatherMedals_TrophyAddedTrait>{PAWN_labelShort} has gained the {TRAIT} trait through this honor.</FeatherMedals_TrophyAddedTrait>
+	
+	<!-- precept -->
+
+	<FeatherMedals_HW_ForbiddenRole>{PAWN_nameDef}'s beliefs forbid adorning trophies.</FeatherMedals_HW_ForbiddenRole>
 
 	<!-- settings -->
 

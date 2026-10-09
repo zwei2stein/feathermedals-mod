@@ -9,6 +9,13 @@ public class RitualRole_Presenter : RitualRoleColonist
     {
         if (!base.AppliesToPawn(p, out reason, selectedTarget, ritual, assignments, precept, skipReason))
             return false;
+
+        if (HonoringWarriorsUtil.ForbidsCeremony(p))
+        {
+            if (!skipReason) reason = "FeatherMedals_HW_ForbiddenRole".Translate(p.Named("PAWN"));
+            return false;
+        }
+
         if (PreceptDefOf.IsSpeaker(p))
         {
             reason = null;

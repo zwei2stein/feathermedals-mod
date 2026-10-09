@@ -41,6 +41,6 @@ public class PreceptDefOf
     public static PreceptDef IdeoRole_ResearchSpecialist;
     
     public static PreceptDef IdeoRole_MedicalSpecialist;
-        
+    
     static PreceptDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (PreceptDefOf));
 }

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Forbidden_Worn</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <stages>
+            <li>
+                <label>elevated above others (1)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (2)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-20</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (3)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-30</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (4)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-40</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (5)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-50</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (6)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-60</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (7)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-70</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+            <li>
+                <label>elevated above others (8)</label>
+                <labelAbstract>elevated above others</labelAbstract>
+                <baseMoodEffect>-80</baseMoodEffect>
+                <description>I am put on a pedestal above others. This is unacceptable, and wearing a trophy breaks my heart.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Forbidden_OthersWearing</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
+        <stages>
+            <li>
+                <label>others lording over us (1)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-2</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (2)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-4</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (3)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-6</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (4)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-8</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (5)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (6)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-12</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (7)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-14</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (8)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-16</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (9)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-18</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+            <li>
+                <label>others lording over us (10)</label>
+                <labelAbstract>others lording over us</labelAbstract>
+                <baseMoodEffect>-20</baseMoodEffect>
+                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Forbidden_RecentCeremonies</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
+        <stages>
+            <li>
+                <label>one put above others (1)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-6</baseMoodEffect>
+                <description>We have been putting one above others recently. That is not our way.</description>
+            </li>
+            <li>
+                <label>one put above others (2)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-12</baseMoodEffect>
+                <description>We have been putting one above others recently. That is not our way.</description>
+            </li>
+            <li>
+                <label>one put above others (3)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-18</baseMoodEffect>
+                <description>We have been putting one above others recently. That is not our way.</description>
+            </li>
+            <li>
+                <label>one put above others (4)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-24</baseMoodEffect>
+                <description>We have been putting one above others recently. That is not our way.</description>
+            </li>
+            <li>
+                <label>one put above others (5)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-30</baseMoodEffect>
+                <description>We have been putting one above others recently. That is not our way.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Forbidden_Opinion</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <stages>
+            <li>
+                <label>Deified despite it being unacceptable</label>
+                <labelAbstract>Deified despite it being unacceptable</labelAbstract>
+                <baseOpinionOffset>-40</baseOpinionOffset>
+                <description>Deified despite it being unacceptable.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Disapproved_Worn</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <stages>
+            <li>
+                <label>wearing a disapproved trophy</label>
+                <labelAbstract>wearing a disapproved trophy</labelAbstract>
+                <baseMoodEffect>-5</baseMoodEffect>
+                <description>I am no better than my peers. I wear a trophy granted to me, but I disapprove of it.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Disapproved_OthersWearing</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
+        <stages>
+            <li>
+                <label>one people, none above (1)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-1</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (2)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-2</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (3)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-3</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (4)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-4</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (5)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-5</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (6)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-6</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (7)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-7</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (8)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-8</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (9)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-9</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+            <li>
+                <label>one people, none above (10)</label>
+                <labelAbstract>one people, none above</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Disapproved_RecentCeremonies</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
+        <stages>
+            <li>
+                <label>one put above others (1)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-5</baseMoodEffect>
+                <description>We have been putting one above others recently.</description>
+            </li>
+            <li>
+                <label>one put above others (2)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>We have been putting one above others recently.</description>
+            </li>
+            <li>
+                <label>one put above others (3)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-15</baseMoodEffect>
+                <description>We have been putting one above others recently.</description>
+            </li>
+            <li>
+                <label>one put above others (4)</label>
+                <labelAbstract>one put above others</labelAbstract>
+                <baseMoodEffect>-20</baseMoodEffect>
+                <description>We have been putting one above others recently.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Disapproved_Opinion</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <stages>
+            <li>
+                <label>Lionized unjustly</label>
+                <labelAbstract>Lionized unjustly</labelAbstract>
+                <baseOpinionOffset>-10</baseOpinionOffset>
+                <description>Lionized unjustly.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Desired_Worn</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <stages>
+            <li>
+                <label>honored by my peers</label>
+                <labelAbstract>honored by my peers</labelAbstract>
+                <baseMoodEffect>5</baseMoodEffect>
+                <description>I am honored to be recognized by my peers.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Desired_NoTrophy</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
+        <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
+        <stages>
+            <li>
+                <label>my deeds overlooked</label>
+                <labelAbstract>my deeds overlooked</labelAbstract>
+                <baseMoodEffect>-5</baseMoodEffect>
+                <description>It is our custom to recognize our contributions, yet my deeds are overlooked.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Desired_YearsWithoutCeremony</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
+        <stages>
+            <li>
+                <label>no recognition for long (1)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-5</baseMoodEffect>
+                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (2)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (3)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-15</baseMoodEffect>
+                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (4)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-20</baseMoodEffect>
+                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Desired_Opinion</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <stages>
+            <li>
+                <label>Adorned hero</label>
+                <labelAbstract>Adorned hero</labelAbstract>
+                <baseOpinionOffset>10</baseOpinionOffset>
+                <description>Adorned hero.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Required_Worn</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <stages>
+            <li>
+                <label>exalted by my peers</label>
+                <labelAbstract>exalted by my peers</labelAbstract>
+                <baseMoodEffect>10</baseMoodEffect>
+                <description>I am exalted to be recognized by my peers.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Required_NoTrophy</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
+        <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
+        <stages>
+            <li>
+                <label>my deeds overlooked</label>
+                <labelAbstract>my deeds overlooked</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet my deeds are overlooked.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Required_OthersNotWearing</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersNotWearing</workerClass>
+        <minExpectationForNegativeThought>High</minExpectationForNegativeThought>
+        <stages>
+            <li>
+                <label>many of us ignored (1)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-1</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (2)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-2</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (3)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-3</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (4)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-4</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (5)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-5</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (6)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-6</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (7)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-7</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (8)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-8</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (9)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-9</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+            <li>
+                <label>many of us ignored (10)</label>
+                <labelAbstract>many of us ignored</labelAbstract>
+                <baseMoodEffect>-10</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, yet many of us are being ignored.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Required_YearsWithoutCeremony</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
+        <stages>
+            <li>
+                <label>no recognition for long (1)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-6</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (2)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-12</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (3)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-18</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (4)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-24</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+            <li>
+                <label>no recognition for long (5)</label>
+                <labelAbstract>no recognition for long</labelAbstract>
+                <baseMoodEffect>-30</baseMoodEffect>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherMedals_HW_Required_Opinion</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <stages>
+            <li>
+                <label>Glorious hero adorned with trophies I covet for myself</label>
+                <labelAbstract>Glorious hero adorned with trophies I covet for myself</labelAbstract>
+                <baseOpinionOffset>20</baseOpinionOffset>
+                <description>Glorious hero adorned with trophies I covet for myself.</description>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

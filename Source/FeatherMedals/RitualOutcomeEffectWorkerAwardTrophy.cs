@@ -49,6 +49,8 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         medal.awardedBy = presenter;
         medal.awardedTick = Find.TickManager.TicksGame;
         medal.awardedTile = jobRitual.Map.Tile;
+        
+        TrophyCeremonyLedger.Instance?.Record(Find.TickManager.TicksGame);
 
         var attendees = totalPresence.Count;
         var totalColonists = jobRitual.Map.mapPawns.FreeColonistsSpawnedCount;

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IssueDef>
+        <defName>FeatherMedals_HonoringWarriors</defName>
+        <label>honoring warriors</label>
+        <description>Reaction to recognition of warriors with trophies.</description>
+        <iconPath>UI/Issues/PreceptHonoringWarriors</iconPath>
+    </IssueDef>
+    
+    <PreceptDef Name="FeatherMedals_HonoringWarriors_Base" Abstract="True">
+        <issue>FeatherMedals_HonoringWarriors</issue>
+        <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+        <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+        <defaultSelectionWeight>0.001</defaultSelectionWeight>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
+        <defName>FeatherMedals_HonoringWarriors_Forbidden</defName>
+        <label>forbidden</label>
+        <description>Trophies elevating one above others must not be adorned or accepted, and the people resent those who wear them.</description>
+        <impact>High</impact>
+        <displayOrderInIssue>1</displayOrderInIssue>
+        <conflictingMemes>
+            <li>Individualist</li>
+            <li>Supremacist</li>
+            <li>HumanPrimacy</li>
+        </conflictingMemes>
+        <associatedMemes>
+            <li>PainIsVirtue</li>
+        </associatedMemes>
+        <comps>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Forbidden_Worn</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Forbidden_OthersWearing</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Forbidden_RecentCeremonies</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Forbidden_Opinion</thought>
+            </li>
+        </comps>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
+        <defName>FeatherMedals_HonoringWarriors_Disapproved</defName>
+        <label>disapproved</label>
+        <description>We are one people and none is better than their peers. Elevating one is frowned upon, even if their achievements help the whole.</description>
+        <impact>Medium</impact>
+        <displayOrderInIssue>2</displayOrderInIssue>
+        <associatedMemes>
+            <li>Guilty</li>
+            <li>Collectivist</li>
+        </associatedMemes>
+        <comps>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Disapproved_Worn</thought>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Disapproved_OthersWearing</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Disapproved_RecentCeremonies</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Disapproved_Opinion</thought>
+            </li>
+        </comps>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
+        <defName>FeatherMedals_HonoringWarriors_Neutral</defName>
+        <label>neutral</label>
+        <description>Honoring warriors is a matter of personal choice.</description>
+        <impact>Low</impact>
+        <displayOrderInIssue>3</displayOrderInIssue>
+        <defaultSelectionWeight>1</defaultSelectionWeight>
+        <conflictingMemes>
+            <li>Guilty</li>
+            <li>PainIsVirtue</li>
+        </conflictingMemes>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
+        <defName>FeatherMedals_HonoringWarriors_Desired</defName>
+        <label>desired</label>
+        <description>It is our way to recognize our contributions. Warriors should be adorned with trophies.</description>
+        <impact>Medium</impact>
+        <displayOrderInIssue>4</displayOrderInIssue>
+        <conflictingMemes>
+            <li>Guilty</li>
+            <li>PainIsVirtue</li>
+        </conflictingMemes>
+        <associatedMemes>
+            <li>Supremacist</li>
+            <li>Individualist</li>
+        </associatedMemes>
+        <comps>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Desired_Worn</thought>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Desired_NoTrophy</thought>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Desired_YearsWithoutCeremony</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Desired_Opinion</thought>
+            </li>
+        </comps>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
+        <defName>FeatherMedals_HonoringWarriors_Required</defName>
+        <label>required</label>
+        <description>It is our sacred tradition to recognize our contributions. Every warrior must be justly adorned, and neglecting this bothers everyone.</description>
+        <impact>High</impact>
+        <displayOrderInIssue>5</displayOrderInIssue>
+        <conflictingMemes>
+            <li>Collectivist</li>
+            <li>Guilty</li>
+            <li>PainIsVirtue</li>
+        </conflictingMemes>
+        <comps>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Required_Worn</thought>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Required_NoTrophy</thought>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Required_OthersNotWearing</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Required_YearsWithoutCeremony</thought>
+                <tooltipShowMoodRange>true</tooltipShowMoodRange>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherMedals_HW_Required_Opinion</thought>
+            </li>
+        </comps>
+    </PreceptDef>
+
+</Defs>
