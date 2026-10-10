@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="FeatherTrophy_BaseSimple">
+		<defName>PyrinthBionics_FeatherTrophy_Feather_Pyrinth</defName>
+		<label>feather: pyrinth</label>
+		<description>Trophy symbolizing inner flame and passion</description>
+		<graphicData>
+			<texPath>Things/Feathers/Pyrinth</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<PawnBeauty>1</PawnBeauty>
+			<SocialImpact>0.02</SocialImpact>
+			<ComfyTemperatureMax>-1</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-3</ComfyTemperatureMin>
+			<PyrinthBionics_HeatCapacity>5</PyrinthBionics_HeatCapacity>
+			<PyrinthBionics_HeatPerSecond>0.1</PyrinthBionics_HeatPerSecond>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="FeatherMedals.TrophyExtension">
+				<addsTraits>
+					<li>
+						<trait>Pyromaniac</trait>
+						<chance>0.25</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>
