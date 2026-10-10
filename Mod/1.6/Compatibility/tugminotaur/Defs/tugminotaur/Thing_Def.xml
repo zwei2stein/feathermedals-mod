@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	
-    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+    <ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherTrophy_RBM_Herculean_Feather</defName>
 		<label>feather: herculean strength</label>
 		<description>Feather representing the wielder's great strength</description>

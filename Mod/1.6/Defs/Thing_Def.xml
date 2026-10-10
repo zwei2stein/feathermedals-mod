@@ -479,7 +479,7 @@
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
-	<!-- stole horses -->
+	<!-- took weapon -->
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherTrophy_Trophy_TookWeapon</defName>

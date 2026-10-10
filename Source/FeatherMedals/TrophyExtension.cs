@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -8,6 +9,49 @@ public class TrophyExtension : DefModExtension
 {
     public List<MedalDynamicTrait> addsTraits;
     public List<MedalDynamicTrait> removesTraits;
+    
+    public override IEnumerable<string> ConfigErrors()
+    {
+        foreach (var error in CheckList(addsTraits, nameof(addsTraits)))
+            yield return error;
+        foreach (var error in CheckList(removesTraits, nameof(removesTraits)))
+            yield return error;
+    }
+
+    private static IEnumerable<string> CheckList(List<MedalDynamicTrait> list, string listName)
+    {
+        if (list == null)
+            yield break;
+
+        for (var i = 0; i < list.Count; i++)
+        {
+            var entry = list[i];
+
+            if (entry == null)
+            {
+                yield return $"{listName}[{i}] is an empty entry";
+                continue;
+            }
+
+            if (entry.trait == null)
+            {
+                yield return $"{listName}[{i}] has no trait (typo, or trait from a mod that is not loaded, MayRequire missing?)";
+                continue;
+            }
+
+            var degrees = entry.trait.degreeDatas;
+            if (degrees == null || !degrees.Any(d => d.degree == entry.degree))
+            {
+                var available = degrees == null ? "none" : string.Join(", ", degrees.Select(d => d.degree));
+                yield return $"{listName}[{i}] trait {entry.trait.defName} has no degree {entry.degree} (available: {available})";
+            }
+
+            if (entry.chance <= 0f)
+            {
+                yield return $"{listName}[{i}] trait {entry.trait.defName} has chance {entry.chance}, must be > 0";
+            }
+        }
+    }
 }
 
 public class MedalDynamicTrait
