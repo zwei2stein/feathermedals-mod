@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter</xpath>
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter/disallowedCategories</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter/disallowedCategories</xpath>
+                <value>
+                    <li>FeatherMedals_Trophies</li>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter</xpath>
+                <value>
+                    <disallowedCategories>
+                        <li>FeatherMedals_Trophies</li>
+                    </disallowedCategories>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+    
+</Patch>

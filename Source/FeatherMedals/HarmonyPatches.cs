@@ -10,6 +10,10 @@ public class HarmonyPatches
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
     public static class PatchMedalBiocodeManual
     {
+        public static void Finalizer(Apparel newApparel)
+        {
+            if (newApparel is FeatherMedal) FeatherMedalUtil.EvaluatingItem = null;
+        }
         
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
         {
@@ -22,7 +26,12 @@ public class HarmonyPatches
             if (comp.Biocoded)
             {
                 // re-wearing its own trophy (unlocked, stripped, ...) is fine, anyone else's is not
-                if (comp.CodedPawn == pawn) return true;
+                if (comp.CodedPawn == pawn)
+                {
+                    // vanilla Wear asks HasPartsToWear about this exact item, see Patch_ApparelUtility_HasPartsToWear
+                    FeatherMedalUtil.EvaluatingItem = medal;
+                    return true;
+                }
 
                 Messages.Message("FeatherMedals_FailTrophyBiocoded".Translate(
                         comp.CodedPawn.Named("PAWN"),
@@ -54,14 +63,45 @@ public class HarmonyPatches
     {
         public static void Postfix(Pawn p, ThingDef apparel, ref bool __result)
         {
-            if (!__result || p == null) return;
-            if (!FeatherMedalUtil.IsMedalDef(apparel)) return;
+            if (!__result || p == null)
+                return;
+            
+            if (!FeatherMedalUtil.IsMedalDef(apparel))
+                return;
 
-            if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward) return;
-            if (PawnOwnsBiocodedMedalDef(p, apparel)) return;
+            if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
+                return;
+            
+            if (FeatherMedalUtil.EvaluatingItem is { } item && item.def == apparel && FeatherMedalUtil.IsOwnedBy(item, p))
+                return;
+            
+            if (PawnOwnsBiocodedMedalDef(p, apparel))
+                return;
 
             // only the ceremony can put a trophy on a pawn
             __result = false;
+        }
+        
+        [HarmonyPatch(typeof(FloatMenuOptionProvider_Wear), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
+        public static class Patch_Wear_Medal
+        {
+            public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
+            {
+                if (clickedThing is not FeatherMedal medal) return true;
+
+                var pawn = context.FirstSelectedPawn;
+                if (FeatherMedalUtil.IsOwnedBy(medal, pawn))
+                {
+                    // vanilla runs, HasPartsToWear lets the owner through
+                    FeatherMedalUtil.EvaluatingItem = medal;
+                    return true;
+                }
+
+                __result = FeatherMedalUtil.BlockedWearOption(medal, FeatherMedalUtil.WearBlockedReason(medal, pawn), false);
+                return false;
+            }
+
+            public static void Finalizer() => FeatherMedalUtil.EvaluatingItem = null;
         }
 
         private static bool PawnOwnsBiocodedMedalDef(Pawn p, ThingDef apparelDef)
@@ -91,20 +131,18 @@ public class HarmonyPatches
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
     public static class Patch_DressOtherPawn_Medal
     {
+        public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
+        {
+            if (clickedThing is not FeatherMedal { BiocodeComp: { Biocoded: true } } medal) return true;
+
+            __result = FeatherMedalUtil.ForceWearOption(medal, context.FirstSelectedPawn);
+            return false;
+        }
+
         public static void Postfix(Thing clickedThing, ref FloatMenuOption __result)
         {
             if (__result == null || !FeatherMedalUtil.NeedsCeremony(clickedThing)) return;
             __result = FeatherMedalUtil.CeremonyOnlyForceWearOption((Apparel)clickedThing);
-        }
-    }
-
-    [HarmonyPatch(typeof(Building_OutfitStand), "GetFloatMenuOptionForForceWear")]
-    public static class Patch_OutfitStandForceWear_Medal
-    {
-        public static void Postfix(Apparel apparel, ref FloatMenuOption __result)
-        {
-            if (__result == null || !FeatherMedalUtil.NeedsCeremony(apparel)) return;
-            __result = FeatherMedalUtil.CeremonyOnlyForceWearOption(apparel);
         }
     }
     
