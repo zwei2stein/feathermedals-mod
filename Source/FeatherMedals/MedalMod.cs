@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using UnityEngine;
 
@@ -70,7 +71,48 @@ namespace FeatherMedals
                 "FeatherMedals_Settings_TrophyDynamicTraits_Tooltip".Translate()
             );
 
+            listing.Gap(10f);
+            listing.GapLine();
+            SubHeader(listing, "FeatherMedals_Settings_NpcHeader".Translate());
+
+            listing.CheckboxLabeled(
+                "FeatherMedals_Settings_GenerateNpcTrophies".Translate(),
+                ref Settings.GenerateNpcTrophies,
+                "FeatherMedals_Settings_GenerateNpcTrophies_Tooltip".Translate()
+            );
+            if (Settings.GenerateNpcTrophies)
+            {
+                DrawTechLevelPicker(listing, "FeatherMedals_Settings_NpcMinTech".Translate(), Settings.NpcTrophyMinTech, level =>
+                {
+                    Settings.NpcTrophyMinTech = level;
+                    if (Settings.NpcTrophyMaxTech < level)
+                        Settings.NpcTrophyMaxTech = level;
+                });
+                DrawTechLevelPicker(listing, "FeatherMedals_Settings_NpcMaxTech".Translate(), Settings.NpcTrophyMaxTech, level =>
+                {
+                    Settings.NpcTrophyMaxTech = level;
+                    if (Settings.NpcTrophyMinTech > level)
+                        Settings.NpcTrophyMinTech = level;
+                });
+            }
+
             listing.End();
+        }
+
+        private static void DrawTechLevelPicker(Listing_Standard listing, string label, TechLevel current, System.Action<TechLevel> apply)
+        {
+            if (!listing.ButtonTextLabeled(label, current.ToStringHuman().CapitalizeFirst()))
+                return;
+
+            var options = new List<FloatMenuOption>();
+            foreach (TechLevel level in System.Enum.GetValues(typeof(TechLevel)))
+            {
+                if (level == TechLevel.Undefined)
+                    continue;
+                var chosen = level;
+                options.Add(new FloatMenuOption(chosen.ToStringHuman().CapitalizeFirst(), () => apply(chosen)));
+            }
+            Find.WindowStack.Add(new FloatMenu(options));
         }
 
         private static void DrawDisplayTab(Rect rect)
@@ -116,6 +158,9 @@ namespace FeatherMedals
         public bool PromptForCitationDuringRitual = true;
         public float TrophyScale = 0.8f;
         public int MaxDisplayedTrophies = 9;
+        public bool GenerateNpcTrophies = true;
+        public TechLevel NpcTrophyMinTech = TechLevel.Animal;
+        public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -127,6 +172,9 @@ namespace FeatherMedals
             Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScale, "TrophyScale", 0.8f);
+            Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);
+            Scribe_Values.Look(ref NpcTrophyMinTech, "NpcTrophyMinTech", TechLevel.Animal);
+            Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
         }
     }
 

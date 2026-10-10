@@ -1,4 +1,5 @@
 using RimWorld;
+using Verse;
 
 namespace FeatherMedals;
 
@@ -20,8 +21,19 @@ public class FeatherMedalDefOf
     
     public static PreceptDef FeatherMedals_HonoringWarriors_Neutral;
     public static PreceptDef FeatherMedals_HonoringWarriors_Forbidden;
+    public static PreceptDef FeatherMedals_HonoringWarriors_Disapproved;
+    public static PreceptDef FeatherMedals_HonoringWarriors_Desired;
+    public static PreceptDef FeatherMedals_HonoringWarriors_Required;
 
     public static IssueDef FeatherMedals_HonoringWarriors;
+
+    public static RulePackDef FeatherMedals_NpcCitation;
+
+    public static BackstoryDef FeatherTrophy_Backstory_DisgracedElder;
+    public static BackstoryDef FeatherTrophy_Backstory_HonoredElder;
+    public static BackstoryDef FeatherTrophy_Backstory_FeatheredWarrior;
+    public static BackstoryDef FeatherTrophy_Backstory_PraisedWarrior;
+    public static BackstoryDef FeatherTrophy_Backstory_PraisedChild;
     
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

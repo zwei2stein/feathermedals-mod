@@ -108,6 +108,8 @@
         <titleShort>praised</titleShort>
         <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned respect of [PAWN_possessive] peers.</description>
         <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <skillGains>
             <Shooting>1</Shooting>
             <Melee>4</Melee>

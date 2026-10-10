@@ -79,7 +79,7 @@ namespace FeatherMedals
             }
         }
         
-        private bool HasAwardInfo(FeatherMedal medal) => medal.awardedBy != null || medal.awardedTick >= 0;
+        private bool HasAwardInfo(FeatherMedal medal) => medal.awardedBy != null || medal.HasAwardTick;
 
         private string GetAwardInfo(FeatherMedal medal)
         {

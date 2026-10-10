@@ -74,6 +74,7 @@
         <Compile Include="ITab_TrophyRecord.cs" />
         <Compile Include="ITab_PawnTrophies.cs" />
         <Compile Include="JobGiver_AwardSpeech.cs" />
+        <Compile Include="NpcTrophyGenerator.cs" />
         <Compile Include="PawnRenderNode_Trophy.cs" />
         <Compile Include="PawnRenderSubWorker_Trophy.cs" />
         <Compile Include="RitualOutcomeEffectWorkerAwardTrophy.cs" />

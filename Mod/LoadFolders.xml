@@ -22,6 +22,7 @@
         <li IfModActive="zal.eldersfaction">1.6/Compatibility/zaleldersfaction</li> <!-- also interacts with phil42.allergies -->
         <li IfModActive="sirmashedpotato.ashlands">1.6/Compatibility/sirmashedpotatoashlands</li>
         <li IfModActive="ra.ecotech">1.6/Compatibility/raecotech</li>
+        <li IfModActive="zwei2stein.pyrinthbionics">1.6/Compatibility/zwei2stein.pyrinthbionics</li>
         
     </v1.6>
 </loadFolders>

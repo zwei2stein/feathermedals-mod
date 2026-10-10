@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Text;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 using Verse.AI.Group;
 
@@ -20,6 +21,7 @@ namespace FeatherMedals
         
         public int awardedTick = -1;
         public PlanetTile awardedTile = PlanetTile.Invalid; // ceremony map tile for date
+        public bool HasAwardTick => awardedTick != -1;
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
@@ -230,11 +232,10 @@ namespace FeatherMedals
         
         public string GetAwardedDateLabel()
         {
-            if (awardedTick < 0)
+            if (!HasAwardTick)
                 return null;
-            return GenDate.DateFullStringAt(
-                GenDate.TickGameToAbs(awardedTick),
-                Find.WorldGrid.LongLatOf(awardedTile));
+            var longLat = awardedTile.Valid ? Find.WorldGrid.LongLatOf(awardedTile) : Vector2.zero;
+            return GenDate.DateFullStringAt(GenDate.TickGameToAbs(awardedTick), longLat);
         }
 
         public string GetAddedTraitLabel(bool terse = false)

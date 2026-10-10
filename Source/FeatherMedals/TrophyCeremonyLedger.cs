@@ -84,6 +84,9 @@ public class TrophyCeremonyLedger : GameComponent
 
         foreach (var pawn in PawnsFinder.AllMapsAndWorld_Alive)
         {
+            // NPC trophies do not imply ceremonies
+            if (pawn.Faction is not { IsPlayer: true })
+                continue;
             ScanList(pawn.apparel?.WornApparel, found);
             var inventory = pawn.inventory?.innerContainer;
             if (inventory == null)
@@ -94,6 +97,8 @@ public class TrophyCeremonyLedger : GameComponent
 
         foreach (var map in Find.Maps)
         {
+            if (!map.IsPlayerHome)
+                continue;
             var apparel = map.listerThings.ThingsInGroup(ThingRequestGroup.Apparel);
             for (var i = 0; i < apparel.Count; i++)
                 Note(apparel[i], found);

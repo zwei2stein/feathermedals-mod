@@ -120,5 +120,24 @@ public class HarmonyPatches
                 __result = true;
         }
     }
+
+    [HarmonyPatch(typeof(PawnGenerator), "GenerateGearFor")]
+    public static class Patch_PawnGenerator_GenerateGearFor
+    {
+        public static void Postfix(Pawn pawn)
+        {
+            NpcTrophyGenerator.OnGearGenerated(pawn);
+        }
+    }
+
+    [HarmonyPatch(typeof(Faction), nameof(Faction.TryGenerateNewLeader))]
+    public static class Patch_Faction_TryGenerateNewLeader
+    {
+        public static void Postfix(Faction __instance, bool __result)
+        {
+            if (__result)
+                NpcTrophyGenerator.OnLeaderChosen(__instance.leader);
+        }
+    }
     
 }

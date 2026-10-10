@@ -81,7 +81,7 @@ public class ITab_TrophyRecord : ITab
         }
 
         // Days worn
-        if (medal.awardedTick >= 0)
+        if (medal.HasAwardTick)
         {
             Text.Font = GameFont.Tiny;
             var days = (Find.TickManager.TicksGame - medal.awardedTick) / GenDate.TicksPerDay;

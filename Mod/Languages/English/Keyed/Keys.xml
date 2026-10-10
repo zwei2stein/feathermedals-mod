@@ -115,6 +115,14 @@
 	<FeatherMedals_Settings_WornSize>Worn size: {SIZE}</FeatherMedals_Settings_WornSize>
 	<FeatherMedals_Settings_DisplayedTrophies>Displayed trophies: {COUNT}</FeatherMedals_Settings_DisplayedTrophies>
 
+	<!-- worldgen settings -->
+
+	<FeatherMedals_Settings_NpcHeader>Pawns from other factions</FeatherMedals_Settings_NpcHeader>
+	<FeatherMedals_Settings_GenerateNpcTrophies>Pawns can spawn with trophies</FeatherMedals_Settings_GenerateNpcTrophies>
+	<FeatherMedals_Settings_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with trophies. Existing pawns are not changed. Default: ON</FeatherMedals_Settings_GenerateNpcTrophies_Tooltip>
+	<FeatherMedals_Settings_NpcMinTech>Lowest faction tech level</FeatherMedals_Settings_NpcMinTech>
+	<FeatherMedals_Settings_NpcMaxTech>Highest faction tech level</FeatherMedals_Settings_NpcMaxTech>
+
 </LanguageData>
 
 		<!-- medal = trophy -->

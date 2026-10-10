@@ -190,10 +190,10 @@ public static class RitualOutcomeTraitUtil
 
         medal.decoratedDegree = targetDegree;
         
-        Messages.Message(
-            medal.GetDecoratedTraitLabel(),
-            pawn,
-            MessageTypeDefOf.PositiveEvent
-        );
+        if (pawn.Faction is { IsPlayer: true })
+            Messages.Message(
+                medal.GetDecoratedTraitLabel(),
+                pawn,
+                MessageTypeDefOf.PositiveEvent);
     }
 }
