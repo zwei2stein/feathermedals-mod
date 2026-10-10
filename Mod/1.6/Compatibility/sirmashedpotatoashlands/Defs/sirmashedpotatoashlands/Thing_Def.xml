@@ -11,7 +11,7 @@
 		<equippedStatOffsets>
 			<PainShockThreshold>0.01</PainShockThreshold>
 			<SocialImpact>0.01</SocialImpact>
-			<MentalBreakThreshold>0.05</MentalBreakThreshold>
+			<MentalBreakThreshold>-0.05</MentalBreakThreshold>
 			<Mashed_Ashlands_AshResistance>0.05</Mashed_Ashlands_AshResistance>
 			<ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
 		</equippedStatOffsets>

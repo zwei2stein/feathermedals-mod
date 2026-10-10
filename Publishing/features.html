@@ -7,6 +7,7 @@
         body { width: 950px; margin: 0; padding: 20px; font-family: 'Segoe UI', sans-serif; background: #f8f4e8; color: #3a3a3a; }        .header h1 { margin: 0; font-size: 2.5em; color: #8b4513; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
         .requirements span { display: inline-block; margin: 0 10px; padding: 4px 12px; background: rgba(255,255,255,0.6); border-radius: 4px; border: 1px solid #b89860; }
         .section { margin-bottom: 40px; }
+        .section h2 { margin: 0 0 10px 0; font-size: 1.4em; color: #8b4513; }
         .tier-item span { font-size: 0.9em; color: #5a4a3a; }
         .crafting-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.88em; border: 2px solid #b89860;
             border-radius: 8px; }
@@ -23,6 +24,7 @@
         .stats-list li { padding: 2px 0; position: relative; padding-left: 16px; }
         .stats-list li::before { content: '\2022'; position: absolute; left: 0; color: #8b4513; font-size: 1.2em; line-height: 1; }
         .stats-list .stat-positive { color: #2e7d32; }
+        .stats-list .stat-negative { color: #b23a2e; }
         .stats-list .stat-neutral { color: #5a4a3a; }
         small { color: #5a3a1a; font-weight: 500; }
         small.ornate { color: #8b6600; font-weight: 600; }
@@ -35,322 +37,468 @@
 </head>
 <body>
 
-    <div class="section">
+<div class="section">
 
-        <table class="crafting-table">
-            <thead>
-            <tr>
-                <th class="col-graphic"></th>
-                <th class="col-name" colspan="3">Precursor</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></div></td>
-                <td class="col-name"><strong>Pristine Feather</strong><br><small>Simple</small></td>
-                <td class="col-costs">
-                    <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Leather_Bird.png');"></span><span class="cost-material-name">Bird Leather</span></div>
-                    <small>Crafting 2</small>
-                </td>
-                <td class="col-features">
-                    <div style="color: #4a4a4a; margin-bottom: 6px;">A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the pelts of feathered animals or obtained by butchering them.</div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="crafting-table">
+        <thead>
+        <tr>
+            <th class="col-graphic"></th>
+            <th class="col-name">Precursor</th>
+            <th class="col-costs" colspan="2">Costs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_c.png');"></div></td>
+            <td class="col-name"><strong>Pristine Feather</strong><br><small>Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Leather_Bird.png');"></span><span class="cost-material-name">Bird Leather</span></div>
+                <small>Crafting 2</small>
+                <br /><br />
+                <div class="cost-row">Butchering feathered beasts</div>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the pelts of feathered animals or obtained by butchering them.</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-    <div class="section">
-        
-        <table class="crafting-table">
-            <thead>
-                <tr>
-                    <th class="col-graphic"></th>
-                    <th class="col-name">Feather Trophy</th>
-                    <th class="col-costs">Costs</th>
-                    <th class="col-features">Features & Stats</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedInCombat.png');"></div></td>
-                    <td class="col-name"><strong>Wounded in Combat</strong><br><small>Simple</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 3</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for being injured in combat with a foe</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+2% Pain Shock Threshold</li>
-                            <li class="stat-positive">May remove <strong>Delicate</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedOrKilledAnEnemy.png');"></div></td>
-                    <td class="col-name"><strong>Wounded or Killed an Enemy</strong><br><small>Simple</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 3</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for wounding or killing a foe</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+2% Pain Shock Threshold</li>
-                            <li class="stat-positive">+2% Melee Hit Chance</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedManyTimes.png');"></div></td>
-                    <td class="col-name"><strong>Wounded Many Times</strong><br><small>Simple</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 3</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting numerous combat wounds</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+3% Pain Shock Threshold</li>
-                            <li class="stat-positive">May remove <strong>Delicate</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroat.png');"></div></td>
-                    <td class="col-name"><strong>Slit Throat</strong><br><small>Simple</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 3</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting slitting the throat of an enemy</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+2% Social Impact</li>
-                            <li class="stat-positive">+1% Pain Shock Threshold</li>
-                            <li class="stat-positive">+1% Medical Tend Quality</li>
-                            <li class="stat-positive">May remove <strong>Nervous</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Steadfast</strong> (5%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy.png');"></div></td>
-                    <td class="col-name"><strong>Touched an Enemy</strong><br><small>Simple</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 3</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting a <strong>coup</strong> - touching an enemy in combat without being hurt.</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+3% Social Impact</li>
-                            <li class="stat-positive">+1% Move Speed</li>
-                            <li class="stat-positive">May remove <strong>Wimp</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Brawler</strong>/<strong>Nimble</strong> (10%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Struck4BlowsInCombat.png');"></div></td>
-                    <td class="col-name"><strong>Struck 4 Blows</strong><br><small>Simple</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 3</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting striking an enemy four times in combat</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+2% Pain Shock Threshold</li>
-                            <li class="stat-positive">May remove <strong>Wimp</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Brawler</strong>/<strong>Nimble</strong> (10%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/KilledAnEnemy.png');"></div></td>
-                    <td class="col-name"><strong>Killed an Enemy</strong><br><small class="ornate">Ornate</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 5</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for killing a foe</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+1% Pain Shock Threshold</li>
-                            <li class="stat-positive">+10% Shooting Accuracy</li>
-                            <li class="stat-positive">+1% Ranged Cooldown</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroatAndTookScalp.png');"></div></td>
-                    <td class="col-name"><strong>Slit Throat + Took Scalp</strong><br><small class="ornate">Ornate</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 5</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for slitting the throat of an enemy and taking their scalp</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+2% Social Impact</li>
-                            <li class="stat-positive">+1% Med Surgery Success</li>
-                            <li class="stat-positive">+4% Med Tend Quality</li>
-                            <li class="stat-positive">May remove <strong>Volatile</strong>/<strong>Nervous</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Steady</strong>/<strong>Iron-Willed</strong> (5%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy5Times.png');"></div></td>
-                    <td class="col-name"><strong>Touched an Enemy 5 Times</strong><br><small class="ornate">Ornate</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 5</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting <strong>five coups</strong> at distinct times - touching an enemy in combat without being hurt five distinct times.</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+4% Social Impact</li>
-                            <li class="stat-positive">+2% Move Speed</li>
-                            <li class="stat-positive">May remove <strong>Slow</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Fast</strong>/<strong>Very Fast</strong> (10%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/CunningAndWisdom.png');"></div></td>
-                    <td class="col-name"><strong>Cunning and Wisdom</strong><br><small class="ornate">Ornate</small></td>
-                    <td class="col-costs">
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                        <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                        <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                        <small>Crafting 5</small>
-                    </td>
-                    <td class="col-features">
-                        <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting cunning in combat and wisdom in peacetime</div>
-                        <ul class="stats-list">
-                            <li class="stat-positive">+5% Research Speed</li>
-                            <li class="stat-positive">+1% Med Tend Quality</li>
-                            <li class="stat-positive">May remove <strong>Slow Learner</strong> (10%)</li>
-                            <li class="stat-positive">May grant <strong>Fast Learner</strong>/<strong>Great Memory</strong> (10%)</li>
-                            <li class="stat-neutral">Beauty +0.1</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="section">
+    <h2>Simple trophies</h2>
+    <table class="crafting-table">
+        <thead>
+        <tr>
+            <th class="col-graphic"></th>
+            <th class="col-name">Feather Trophy</th>
+            <th class="col-costs">Costs</th>
+            <th class="col-features">Features &amp; Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedInCombat.png');"></div></td>
+            <td class="col-name"><strong>Wounded in Combat</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for being injured in combat with a foe</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-positive">May remove <strong>Delicate</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedOrKilledAnEnemy.png');"></div></td>
+            <td class="col-name"><strong>Wounded or Killed an Enemy</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for wounding or killing a foe</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-positive">+2% Melee Hit Chance</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroat.png');"></div></td>
+            <td class="col-name"><strong>Slit Throat</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting slitting the throat of an enemy</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+2% Social Impact</li>
+                    <li class="stat-positive">+1% Pain Shock Threshold</li>
+                    <li class="stat-positive">+1% Medical Tend Quality</li>
+                    <li class="stat-positive">May remove <strong>Nervous</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Steadfast</strong> (5%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy.png');"></div></td>
+            <td class="col-name"><strong>Touched an Enemy</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting a <strong>coup</strong> - touching an enemy in combat without being hurt.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+3% Social Impact</li>
+                    <li class="stat-positive">+1% Move Speed</li>
+                    <li class="stat-positive">May remove <strong>Wimp</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Brawler</strong>/<strong>Nimble</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/CunningAndWisdom.png');"></div></td>
+            <td class="col-name"><strong>Cunning and Wisdom</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting cunning in combat and wisdom in peacetime</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+5% Research Speed</li>
+                    <li class="stat-positive">+1% Med Tend Quality</li>
+                    <li class="stat-positive">May remove <strong>Slow Learner</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Fast Learner</strong>/<strong>Great Memory</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/StoleHorses.png');"></div></td>
+            <td class="col-name"><strong>Stole Enemy Mounts</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting feat of stealing mounts of an enemy</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+10% Social Impact</li>
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TookWeapon.png');"></div></td>
+            <td class="col-name"><strong>Disarmed Enemy</strong><br><small class="">Simple</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting feat of disarming an enemy</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+10% Social Impact</li>
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-    <div class="section">
+<div class="section">
+    <h2>Ornate trophies</h2>
+    <table class="crafting-table">
+        <thead>
+        <tr>
+            <th class="col-graphic"></th>
+            <th class="col-name">Feather Trophy</th>
+            <th class="col-costs">Costs</th>
+            <th class="col-features">Features &amp; Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/KilledAnEnemy.png');"></div></td>
+            <td class="col-name"><strong>Killed an Enemy</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for killing a foe</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+1% Pain Shock Threshold</li>
+                    <li class="stat-positive">+10% Shooting Accuracy</li>
+                    <li class="stat-positive">-1% Ranged Cooldown</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroatAndTookScalp.png');"></div></td>
+            <td class="col-name"><strong>Slit Throat + Took Scalp</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy for slitting the throat of an enemy and taking their scalp</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+2% Social Impact</li>
+                    <li class="stat-positive">+1% Med Surgery Success</li>
+                    <li class="stat-positive">+4% Med Tend Quality</li>
+                    <li class="stat-positive">May remove <strong>Volatile</strong>/<strong>Nervous</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Steady</strong>/<strong>Iron-Willed</strong> (5%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedManyTimes.png');"></div></td>
+            <td class="col-name"><strong>Wounded Many Times</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting numerous combat wounds</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+3% Pain Shock Threshold</li>
+                    <li class="stat-positive">May remove <strong>Delicate</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy5Times.png');"></div></td>
+            <td class="col-name"><strong>Touched an Enemy 5 Times</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting <strong>five coups</strong> at distinct times - touching an enemy in combat without being hurt five distinct times.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+4% Social Impact</li>
+                    <li class="stat-positive">+2% Move Speed</li>
+                    <li class="stat-positive">May remove <strong>Slow</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Fast</strong>/<strong>Very Fast</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Struck4BlowsInCombat.png');"></div></td>
+            <td class="col-name"><strong>Struck 4 Blows</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting striking an enemy four times in combat</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-positive">May remove <strong>Wimp</strong> (10%)</li>
+                    <li class="stat-positive">May grant <strong>Brawler</strong>/<strong>Nimble</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Protection.png');"></div></td>
+            <td class="col-name"><strong>Protection</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting protection by archite spirits</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+1% Med Tend Quality</li>
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-positive">May remove <strong>Volatile</strong>/<strong>Nervous</strong> (5%)</li>
+                    <li class="stat-positive">May grant <strong>Tough</strong> (10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/LedWarparty.png');"></div></td>
+            <td class="col-name"><strong>Led War Party</strong><br><small class="ornate">Ornate</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy boasting experience leading a war party</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+10% Social Impact</li>
+                    <li class="stat-positive">+2% Pain Shock Threshold</li>
+                    <li class="stat-positive">-5% Mental Break Threshold</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-        <table class="crafting-table">
-            <thead>
-            <tr>
-                <th class="col-graphic"></th>
-                <th class="col-name">Feather Trophy</th>
-                <th class="col-costs">Costs</th>
-                <th class="col-features">Features & Stats</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/raecotech/Textures/Things/Feathers/TerratechAncestry_Feather.png');"></div></td>
-                <td class="col-name"><strong>Terratech Bloodline</strong><br><small class="ornate">Masterwork</small></td>
-                <td class="col-costs">
-                    <div class="cost-row"><span class="cost-amount">5</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Glowsap_b.png');"></span><span class="cost-material-name">Glowsap</span></div>
-                    <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                    <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                    <small>Crafting 5</small>
-                    <small class="ornate">Mod: Ecotech</small>
-                </td>
-                <td class="col-features">
-                    <div style="color: #4a4a4a; margin-bottom: 6px;">Feather celebrating ancient terratech bloodline of a warrior</div>
-                    <ul class="stats-list">
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/sirmashedpotatoashlands/Textures/Things/Feathers/Mashed_Ashlands_AshStormLover_Feather.png');"></div></td>
-                <td class="col-name"><strong>Braved Ash Storm</strong><br><small class="ornate">Masterwork</small></td>
-                <td class="col-costs">
-                    <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Basalt_blocks_C.png');"></span><span class="cost-material-name">Basalt Blocks</span></div>
-                    <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                    <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                    <small>Crafting 5</small>
-                    <small class="ornate">Mod: Mashed's Ashlands</small>
-                </td>
-                <td class="col-features">
-                    <div style="color: #4a4a4a; margin-bottom: 6px;">Feather telling the story of the wielder braving an ash storm</div>
-                    <ul class="stats-list">
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/tugminotaur/Textures/Things/Feathers/RBM_Herculean_Feather.png');"></div></td>
-                <td class="col-name"><strong>Herculean Strength</strong><br><small class="ornate">Masterwork</small></td>
-                <td class="col-costs">
-                    <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                    <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                    <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                    <small>Crafting 5</small>
-                    <small class="ornate">Mod: Roo's Minotaur Xenotype</small>
-                </td>
-                <td class="col-features">
-                    <div style="color: #4a4a4a; margin-bottom: 6px;">Feather representing the wielder's great strength</div>
-                    <ul class="stats-list">
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/zaleldersfaction/Textures/Things/Feathers/NatureHarmony_Feather.png');"></div></td>
-                <td class="col-name"><strong>In Harmony With Nature</strong><br><small class="ornate">Masterwork</small></td>
-                <td class="col-costs">
-                    <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Fiber_b.png');"></span><span class="cost-material-name">Anima Fiber</span></div>
-                    <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Precursor_PristineFeather.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                    <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
-                    <small>Crafting 5</small>
-                    <small class="ornate">Mod: Roo's Minotaur Xenotype</small>
-                </td>
-                <td class="col-features">
-                    <div style="color: #4a4a4a; margin-bottom: 6px;">Feather symbolizing the warrior's unity with nature</div>
-                    <ul class="stats-list">
-                    </ul>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="section">
+    <h2>Trophies from other mods</h2>
+    <table class="crafting-table">
+        <thead>
+        <tr>
+            <th class="col-graphic"></th>
+            <th class="col-name">Feather Trophy</th>
+            <th class="col-costs">Costs</th>
+            <th class="col-features">Features &amp; Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/raecotech/Textures/Things/Feathers/TerratechAncestry_Feather.png');"></div></td>
+            <td class="col-name"><strong>Terratech Bloodline</strong><br/>
+                <small class="ornate">Mod: Ecotech</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">5</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Glowsap_b.png');"></span><span class="cost-material-name">Glowsap</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Feather celebrating ancient terratech bloodline of a warrior</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+5% Social Impact</li>
+                    <li class="stat-positive">+2% Plant Harvest Yield</li>
+                    <li class="stat-positive">+5% Global Learning Factor</li>
+                    <li class="stat-positive">+5% Toxic Environment Resistance</li>
+                    <li class="stat-positive">May grant <strong>Skytouched</strong>/<strong>Grovetouched</strong>/<strong>Watertouched</strong>/<strong>Earthtouched</strong>/<strong>Spacetouched</strong> (20% each)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/sirmashedpotatoashlands/Textures/Things/Feathers/Mashed_Ashlands_AshStormLover_Feather.png');"></div></td>
+            <td class="col-name"><strong>Braved Ash Storm</strong><br/>
+                <small class="ornate">Mod: Mashed's Ashlands</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Basalt_blocks_C.png');"></span><span class="cost-material-name">Basalt Blocks</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Feather telling the story of the wielder braving an ash storm</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+1% Pain Shock Threshold</li>
+                    <li class="stat-positive">+1% Social Impact</li>
+                    <li class="stat-positive">-5% Mental Break Threshold</li>
+                    <li class="stat-positive">+5% Ash Resistance</li>
+                    <li class="stat-positive">+5% Toxic Environment Resistance</li>
+                    <li class="stat-positive">May grant <strong>Ash Storm Lover</strong> (20%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/tugminotaur/Textures/Things/Feathers/RBM_Herculean_Feather.png');"></div></td>
+            <td class="col-name"><strong>Herculean Strength</strong><br/>
+                <small class="ornate">Mod: Roo's Minotaur Xenotype</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Feather representing the wielder's great strength</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+1% Pain Shock Threshold</li>
+                    <li class="stat-positive">+2% Melee Hit Chance</li>
+                    <li class="stat-positive">+5% Mining Speed</li>
+                    <li class="stat-positive">+1% Social Impact</li>
+                    <li class="stat-positive">May grant <strong>Herculean</strong> (20%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/zaleldersfaction/Textures/Things/Feathers/NatureHarmony_Feather.png');"></div></td>
+            <td class="col-name"><strong>In Harmony With Nature</strong><br/>
+                <small class="ornate">Mod: Elders Faction (Continued)</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Fiber_b.png');"></span><span class="cost-material-name">Anima Fiber</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Feather symbolizing the warrior's unity with nature</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">+5% Psychic Sensitivity (Royalty or Biotech)</li>
+                    <li class="stat-positive">+3.3% Psychic Entropy Recovery Rate (Royalty or Biotech)</li>
+                    <li class="stat-positive">-5% Allergic Sensitivity (Allergies mod)</li>
+                    <li class="stat-positive">+1% Social Impact</li>
+                    <li class="stat-positive">+5% Injury Healing Factor</li>
+                    <li class="stat-positive">+2% Plant Harvest Yield</li>
+                    <li class="stat-positive">May remove an <strong>Allergy Resistant</strong> trait (Allergies mod, 10%)</li>
+                    <li class="stat-positive">May grant <strong>In Harmony With Nature</strong> (20%)</li>
+                    <li class="stat-positive">May grant an <strong>Allergy Prone</strong> trait (Allergies mod, 10%)</li>
+                    <li class="stat-neutral">Beauty +0.1</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/zwei2stein.pyrinthbionics/Textures/Things/Feathers/Pyrinth.png');"></div></td>
+            <td class="col-name"><strong>Pyrinth</strong><br/>
+                <small class="ornate">Mod: Pyrinth Bionics</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">5</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Pyrinth_a.png');"></span><span class="cost-material-name">Pyrinth</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <small>Crafting 5</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Trophy symbolizing inner flame and passion</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Beauty +1</li>
+                    <li class="stat-positive">+2% Social Impact</li>
+                    <li class="stat-neutral">-1 Max Comfortable Temperature</li>
+                    <li class="stat-neutral">-3 Min Comfortable Temperature</li>
+                    <li class="stat-positive">+5 Pyrinth Heat Capacity</li>
+                    <li class="stat-positive">+0.1 Pyrinth Heat Per Second</li>
+                    <li class="stat-positive">May grant <strong>Pyromaniac</strong> (25%)</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

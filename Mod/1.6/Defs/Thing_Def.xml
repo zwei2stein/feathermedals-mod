@@ -444,6 +444,28 @@
 			<MedicalTendQuality>0.01</MedicalTendQuality>
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="FeatherMedals.TrophyExtension">
+				<removesTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-2</degree>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-1</degree>
+						<chance>0.05</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Tough</trait>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 	
@@ -459,6 +481,7 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<MentalBreakThreshold>-0.05</MentalBreakThreshold>
 		</equippedStatOffsets>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
