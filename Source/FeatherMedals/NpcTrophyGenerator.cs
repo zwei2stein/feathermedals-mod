@@ -17,24 +17,25 @@ public static class NpcTrophyGenerator
     private const int HighSkill = 10;
     private const int HighAge = 50;
     private const int PickAttemptsPerTrophy = 3;
-
-    private static List<ThingDef> medalDefs;
+    private const int MaxCeremonyStage = 3; // Legendary AdorningQuality 
+    private const int LeaderQualitySteps = 2; // remove awful/poor for leaders
+    private const int LegendaryCeremonyQualitySteps = 2; // remove awful/poor for legendary ceremony
 
     private static List<ThingDef> MedalDefs
     {
         get
         {
-            if (medalDefs != null)
-                return medalDefs;
+            if (field != null)
+                return field;
 
-            medalDefs = new List<ThingDef>();
+            field = new List<ThingDef>();
             var all = DefDatabase<ThingDef>.AllDefsListForReading;
             for (var i = 0; i < all.Count; i++)
             {
                 if (FeatherMedalUtil.IsMedalDef(all[i]))
-                    medalDefs.Add(all[i]);
+                    field.Add(all[i]);
             }
-            return medalDefs;
+            return field;
         }
     }
 
@@ -66,7 +67,7 @@ public static class NpcTrophyGenerator
                 }
             }
 
-            Award(pawn, total);
+            Award(pawn, total, false);
         }
         catch (System.Exception ex)
         {
@@ -82,7 +83,7 @@ public static class NpcTrophyGenerator
             if (!BaseEligible(leader, out _))
                 return;
 
-            Award(leader, LeaderTrophies - HonoringWarriorsUtil.WornTrophies(leader));
+            Award(leader, LeaderTrophies - HonoringWarriorsUtil.WornTrophies(leader), true);
         }
         catch (System.Exception ex)
         {
@@ -180,7 +181,7 @@ public static class NpcTrophyGenerator
         return chance;
     }
 
-    private static void Award(Pawn pawn, int count)
+    private static void Award(Pawn pawn, int count, bool leader)
     {
         if (count <= 0)
             return;
@@ -208,7 +209,7 @@ public static class NpcTrophyGenerator
             var attempts = count * PickAttemptsPerTrophy;
             while (made.Count < count && attempts-- > 0)
             {
-                var medal = CreateMedal(pawn, defs, pool, fallbackPresenter, settlementTiles, fallbackTile);
+                var medal = CreateMedal(pawn, defs, pool, fallbackPresenter, settlementTiles, fallbackTile, leader);
                 if (medal != null)
                     made.Add(medal);
             }
@@ -236,7 +237,7 @@ public static class NpcTrophyGenerator
     }
 
     private static FeatherMedal CreateMedal(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter,
-        List<PlanetTile> settlementTiles, PlanetTile fallbackTile)
+        List<PlanetTile> settlementTiles, PlanetTile fallbackTile, bool leader)
     {
         var def = defs.RandomElement();
         var medal = (FeatherMedal)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
@@ -249,9 +250,28 @@ public static class NpcTrophyGenerator
         medal.awardedTick = PickAwardedTick(pawn);
         medal.awardedTile = settlementTiles.Count > 0 ? settlementTiles.RandomElement() : fallbackTile;
         medal.awardedBy = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
-        medal.ceremonyQuality = Rand.RangeInclusive(0, 3);
+        medal.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
+        SetTrophyQuality(medal, pawn, leader);
         medal.citation = GenerateCitation(pawn);
         return medal;
+    }
+
+    private static void SetTrophyQuality(FeatherMedal medal, Pawn pawn, bool leader)
+    {
+        var comp = medal.TryGetComp<CompQuality>();
+        if (comp == null)
+            return;
+
+        var quality = QualityUtility.GenerateQualityGeneratingPawn(pawn.kindDef, medal.def);
+
+        var steps = 0;
+        if (leader)
+            steps += LeaderQualitySteps;
+        if (medal.ceremonyQuality >= MaxCeremonyStage)
+            steps += LegendaryCeremonyQualitySteps;
+
+        var boosted = Mathf.Clamp((int)quality + steps, (int)QualityCategory.Awful, (int)QualityCategory.Legendary);
+        comp.SetQuality((QualityCategory)boosted, ArtGenerationContext.Outsider);
     }
 
     // random moment between the pawn becoming an adult and now, game ticks may be negative
@@ -318,7 +338,6 @@ public static class NpcTrophyGenerator
         return map != null ? map.Tile : PlanetTile.Invalid;
     }
 
-    // placeholder text for now, later wiring is XML only
     private static string GenerateCitation(Pawn pawn)
     {
         var rulePack = FeatherMedalDefOf.FeatherMedals_NpcCitation;
