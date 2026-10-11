@@ -51,52 +51,73 @@ namespace FeatherMedals
 
         private static void DrawGeneralTab(Rect rect)
         {
-            var listing = new Listing_Standard();
-            listing.Begin(rect);
-            Text.Font = GameFont.Small;
+            var listingStandard = new Listing_Standard();
+            
+            var gapWidth = 12f;
+            
+            listingStandard.Begin(rect);
+            
+            listingStandard.GapLine();
 
-            listing.CheckboxLabeled(
+            listingStandard.Label("FeatherMedals_Settings_Block_Ceremony_Label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
                  "FeatherMedals_Settings_LockTrophyUponAward".Translate(),
                 ref Settings.LockTrophyUponAward,
                  "FeatherMedals_Settings_LockTrophyUponAward_Tooltip".Translate()
             );
-            listing.CheckboxLabeled(
+            listingStandard.CheckboxLabeled(
                  "FeatherMedals_Settings_PromptForCitationDuringRitual".Translate(),
                 ref Settings.PromptForCitationDuringRitual,
                  "FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip".Translate()
             );
-            listing.CheckboxLabeled(
+            listingStandard.CheckboxLabeled(
                  "FeatherMedals_Settings_TrophyDynamicTraits".Translate(),
                 ref Settings.TrophyDynamicTraits,
                 "FeatherMedals_Settings_TrophyDynamicTraits_Tooltip".Translate()
             );
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
 
-            listing.Gap(10f);
-            listing.GapLine();
-            SubHeader(listing, "FeatherMedals_Settings_NpcHeader".Translate());
+            listingStandard.Label("FeatherMedals_Settings_Block_Npc_Label".Translate());
 
-            listing.CheckboxLabeled(
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
                 "FeatherMedals_Settings_GenerateNpcTrophies".Translate(),
                 ref Settings.GenerateNpcTrophies,
                 "FeatherMedals_Settings_GenerateNpcTrophies_Tooltip".Translate()
             );
+            
             if (Settings.GenerateNpcTrophies)
             {
-                DrawTechLevelPicker(listing, "FeatherMedals_Settings_NpcMinTech".Translate(), Settings.NpcTrophyMinTech, level =>
+                DrawTechLevelPicker(listingStandard, "FeatherMedals_Settings_NpcMinTech".Translate(), Settings.NpcTrophyMinTech, level =>
                 {
                     Settings.NpcTrophyMinTech = level;
                     if (Settings.NpcTrophyMaxTech < level)
                         Settings.NpcTrophyMaxTech = level;
                 });
-                DrawTechLevelPicker(listing, "FeatherMedals_Settings_NpcMaxTech".Translate(), Settings.NpcTrophyMaxTech, level =>
+                DrawTechLevelPicker(listingStandard, "FeatherMedals_Settings_NpcMaxTech".Translate(), Settings.NpcTrophyMaxTech, level =>
                 {
                     Settings.NpcTrophyMaxTech = level;
                     if (Settings.NpcTrophyMinTech > level)
                         Settings.NpcTrophyMinTech = level;
                 });
             }
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
 
-            listing.End();
+            listingStandard.End();
         }
 
         private static void DrawTechLevelPicker(Listing_Standard listing, string label, TechLevel current, System.Action<TechLevel> apply)
@@ -117,34 +138,52 @@ namespace FeatherMedals
 
         private static void DrawDisplayTab(Rect rect)
         {
-            var listing = new Listing_Standard();
-            listing.Begin(rect);
-            Text.Font = GameFont.Small;
+            var listingStandard = new Listing_Standard();
             
-            listing.CheckboxLabeled(
+            var gapWidth = 12f;
+            
+            listingStandard.Begin(rect);
+            
+            listingStandard.GapLine();
+
+            listingStandard.Label("FeatherMedals_Settings_Block_Draw_Label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+            
+            listingStandard.CheckboxLabeled(
                 "FeatherMedals_Settings_DrawTrophiesOnPawns".Translate(),
                 ref Settings.DrawTrophiesOnPawns,
                 "FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip".Translate()
             );
 
-            listing.Gap(10f);
-            listing.GapLine();
-            SubHeader(listing, "FeatherMedals_Settings_WornHeader".Translate());
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
 
-            listing.Label("FeatherMedals_Settings_WornSize".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")));
-            Settings.TrophyScale = listing.Slider(Settings.TrophyScale, 0.1f, 2.0f);
-            listing.Label("FeatherMedals_Settings_DisplayedTrophies".Translate(Settings.MaxDisplayedTrophies.ToStringCached().Named("COUNT")));
-            listing.IntAdjuster(ref Settings.MaxDisplayedTrophies, 1);
+            listingStandard.Label("FeatherMedals_Settings_Block_Worn_Label".Translate());
 
-            listing.End();
-        }
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+            
+            Settings.TrophyScale = listingStandard.SliderLabeled(
+                "FeatherMedals_Settings_WornSize".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")),
+                Settings.TrophyScale , 0.1f, 2f, 0.5f,
+                "FeatherMedals_Settings_WornSize_Tooltip".Translate());
+            
+            Settings.MaxDisplayedTrophies = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                "FeatherMedals_Settings_DisplayedTrophies".Translate(
+                    Settings.MaxDisplayedTrophies.Named("COUNT")),
+                Settings.MaxDisplayedTrophies, 1f, 20f, 0.5f,
+                "FeatherMedals_Settings_DisplayedTrophies_Tooltip".Translate()));
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
 
-        private static void SubHeader(Listing_Standard listing, string text)
-        {
-            Text.Font = GameFont.Medium;
-            listing.Label(text);
-            Text.Font = GameFont.Small;
-            listing.Gap(4f);
+            listingStandard.End();
         }
         
     }
