@@ -98,18 +98,14 @@ namespace FeatherMedals
             
             if (Settings.GenerateNpcTrophies)
             {
-                DrawTechLevelPicker(listingStandard, "FeatherMedals_Settings_NpcMinTech".Translate(), Settings.NpcTrophyMinTech, level =>
-                {
-                    Settings.NpcTrophyMinTech = level;
-                    if (Settings.NpcTrophyMaxTech < level)
-                        Settings.NpcTrophyMaxTech = level;
-                });
-                DrawTechLevelPicker(listingStandard, "FeatherMedals_Settings_NpcMaxTech".Translate(), Settings.NpcTrophyMaxTech, level =>
-                {
-                    Settings.NpcTrophyMaxTech = level;
-                    if (Settings.NpcTrophyMinTech > level)
-                        Settings.NpcTrophyMinTech = level;
-                });
+                // moving one slider past the other pushes the other along
+                Settings.NpcTrophyMinTech = DrawTechLevelSlider(listingStandard, "FeatherMedals_Settings_NpcMinTech", Settings.NpcTrophyMinTech);
+                if (Settings.NpcTrophyMaxTech < Settings.NpcTrophyMinTech)
+                    Settings.NpcTrophyMaxTech = Settings.NpcTrophyMinTech;
+
+                Settings.NpcTrophyMaxTech = DrawTechLevelSlider(listingStandard, "FeatherMedals_Settings_NpcMaxTech", Settings.NpcTrophyMaxTech);
+                if (Settings.NpcTrophyMinTech > Settings.NpcTrophyMaxTech)
+                    Settings.NpcTrophyMinTech = Settings.NpcTrophyMaxTech;
             }
             
             listingStandard.Outdent(gapWidth);
@@ -120,20 +116,14 @@ namespace FeatherMedals
             listingStandard.End();
         }
 
-        private static void DrawTechLevelPicker(Listing_Standard listing, string label, TechLevel current, System.Action<TechLevel> apply)
+        private static TechLevel DrawTechLevelSlider(Listing_Standard listing, string labelKey, TechLevel current)
         {
-            if (!listing.ButtonTextLabeled(label, current.ToStringHuman().CapitalizeFirst()))
-                return;
-
-            var options = new List<FloatMenuOption>();
-            foreach (TechLevel level in System.Enum.GetValues(typeof(TechLevel)))
-            {
-                if (level == TechLevel.Undefined)
-                    continue;
-                var chosen = level;
-                options.Add(new FloatMenuOption(chosen.ToStringHuman().CapitalizeFirst(), () => apply(chosen)));
-            }
-            Find.WindowStack.Add(new FloatMenu(options));
+            var value = listing.SliderLabeled(
+                labelKey.Translate(current.ToStringHuman().CapitalizeFirst().Named("LEVEL")),
+                (int)current, (int)TechLevel.Animal, (int)TechLevel.Archotech, 0.5f, 
+                "FeatherMedals_Settings_NpcTech_Tooltip".Translate()
+                );
+            return (TechLevel)Mathf.RoundToInt(value);
         }
 
         private static void DrawDisplayTab(Rect rect)
@@ -162,26 +152,42 @@ namespace FeatherMedals
             
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_Worn_Label".Translate());
+            if (Settings.DrawTrophiesOnPawns)
+            {
 
-            listingStandard.Indent(gapWidth);
-            listingStandard.ColumnWidth -= gapWidth;
-            
-            Settings.TrophyScale = listingStandard.SliderLabeled(
-                "FeatherMedals_Settings_WornSize".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")),
-                Settings.TrophyScale , 0.1f, 2f, 0.5f,
-                "FeatherMedals_Settings_WornSize_Tooltip".Translate());
-            
-            Settings.MaxDisplayedTrophies = Mathf.RoundToInt(listingStandard.SliderLabeled(
-                "FeatherMedals_Settings_DisplayedTrophies".Translate(
-                    Settings.MaxDisplayedTrophies.Named("COUNT")),
-                Settings.MaxDisplayedTrophies, 1f, 20f, 0.5f,
-                "FeatherMedals_Settings_DisplayedTrophies_Tooltip".Translate()));
-            
-            listingStandard.Outdent(gapWidth);
-            listingStandard.ColumnWidth += gapWidth;
-            
-            listingStandard.GapLine();
+                listingStandard.Label("FeatherMedals_Settings_Block_Worn_Label".Translate());
+
+                listingStandard.Indent(gapWidth);
+                listingStandard.ColumnWidth -= gapWidth;
+
+                Settings.TrophyScale = listingStandard.SliderLabeled(
+                    "FeatherMedals_Settings_WornSize".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")),
+                    Settings.TrophyScale, 0.1f, 2f, 0.5f,
+                    "FeatherMedals_Settings_WornSize_Tooltip".Translate());
+
+                Settings.VerticalBias = listingStandard.SliderLabeled(
+                    "FeatherMedals_Settings_VerticalBias".Translate(Settings.VerticalBias.ToStringPercent()
+                        .Named("BIAS")),
+                    Settings.VerticalBias, 0f, 1f, 0.5f,
+                    "FeatherMedals_Settings_VerticalBias_Tooltip".Translate());
+
+                Settings.CenterZ = listingStandard.SliderLabeled(
+                    "FeatherMedals_Settings_CenterZ".Translate(Settings.CenterZ.ToStringDecimalIfSmall().Named("Z")),
+                    Settings.CenterZ, -0.2f, 0.1f, 0.5f,
+                    "FeatherMedals_Settings_CenterZ_Tooltip".Translate());
+
+                Settings.MaxDisplayedTrophies = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                    "FeatherMedals_Settings_DisplayedTrophies".Translate(
+                        Settings.MaxDisplayedTrophies.Named("COUNT")),
+                    Settings.MaxDisplayedTrophies, 1f, 20f, 0.5f,
+                    "FeatherMedals_Settings_DisplayedTrophies_Tooltip".Translate()));
+
+                listingStandard.Outdent(gapWidth);
+                listingStandard.ColumnWidth += gapWidth;
+
+                listingStandard.GapLine();
+
+            }
 
             listingStandard.End();
         }
@@ -196,6 +202,8 @@ namespace FeatherMedals
         public bool TrophyDynamicTraits = true;
         public bool PromptForCitationDuringRitual = true;
         public float TrophyScale = 0.8f;
+        public float VerticalBias = 0.35f;  // 0 = all upright, 1 = fully radial
+        public float CenterZ = 0.08f;
         public int MaxDisplayedTrophies = 9;
         public bool GenerateNpcTrophies = true;
         public TechLevel NpcTrophyMinTech = TechLevel.Animal;
@@ -211,6 +219,8 @@ namespace FeatherMedals
             Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScale, "TrophyScale", 0.8f);
+            Scribe_Values.Look(ref VerticalBias, "VerticalBias", 0.35f);
+            Scribe_Values.Look(ref CenterZ, "CenterZ", 0.08f);
             Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);
             Scribe_Values.Look(ref NpcTrophyMinTech, "NpcTrophyMinTech", TechLevel.Animal);
             Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);

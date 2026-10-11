@@ -5,10 +5,8 @@ namespace FeatherMedals;
 
 public static class TrophyLayout
 {
-    private const int MaxPerRow = 8;
-
     // Ellipse.
-    private const float CenterZ = 0.08f;      // apex = CenterZ + RadiusZ = 0.26
+    // apex = CenterZ + RadiusZ
     private const float RadiusX = 0.32f;
     private const float RadiusZ = 0.30f;
     private const float AngleStepDeg = 18f;
@@ -16,21 +14,22 @@ public static class TrophyLayout
     private const float RingStep = 0.06f;
 
     // Fan.
-    private const float VerticalBias = 0.35f;  // 0 = all upright, 1 = fully radial
     private const float MaxTiltDeg = 35f;
 
     private static void Slot(int index, int count, out int row, out float phiDeg)
     {
+        var maxPerRow = MedalMod.Settings.MaxDisplayedTrophies;
+        
         var scale = MedalMod.Settings.TrophyScale;
         var reverseIndex = (count - 1) - index;
-        row = reverseIndex / MaxPerRow;
-        var col = reverseIndex % MaxPerRow;
-        var totalRows = (count + MaxPerRow - 1) / MaxPerRow;
-        var inThisRow = MaxPerRow;
-        if (row == totalRows - 1 && count % MaxPerRow != 0) inThisRow = count % MaxPerRow;
-        var slot = col + (MaxPerRow - inThisRow) / 2f - (MaxPerRow - 1) / 2f; // 0 = middle
+        row = reverseIndex / maxPerRow;
+        var col = reverseIndex % maxPerRow;
+        var totalRows = (count + maxPerRow - 1) / maxPerRow;
+        var inThisRow = maxPerRow;
+        if (row == totalRows - 1 && count % maxPerRow != 0) inThisRow = count % maxPerRow;
+        var slot = col + (maxPerRow - inThisRow) / 2f - (maxPerRow - 1) / 2f; // 0 = middle
         var stepDeg = AngleStepDeg * scale;
-        var halfSpanDeg = (MaxPerRow - 1) / 2f * stepDeg;
+        var halfSpanDeg = (maxPerRow - 1) / 2f * stepDeg;
         if (halfSpanDeg > MaxHalfArcDeg) stepDeg *= MaxHalfArcDeg / halfSpanDeg;
         phiDeg = slot * stepDeg; // 0 = top of head
     }
@@ -43,7 +42,7 @@ public static class TrophyLayout
         var ring = row * RingStep * MedalMod.Settings.TrophyScale;
         var phi = phiDeg * Mathf.Deg2Rad;
         var x = (RadiusX + ring) * Mathf.Sin(phi);
-        var z = CenterZ + (RadiusZ + ring) * Mathf.Cos(phi);
+        var z = MedalMod.Settings.CenterZ + (RadiusZ + ring) * Mathf.Cos(phi);
         if (Mirrored(facing)) x = -x;
         return new Vector3(x, 0f, z);
     }
@@ -52,7 +51,7 @@ public static class TrophyLayout
     public static float TiltFor(int index, int count, Rot4 facing)
     {
         Slot(index, count, out _, out var phiDeg);
-        var tilt = Mathf.Clamp(phiDeg * VerticalBias, -MaxTiltDeg, MaxTiltDeg);
+        var tilt = Mathf.Clamp(phiDeg * MedalMod.Settings.VerticalBias, -MaxTiltDeg, MaxTiltDeg);
         return Mirrored(facing) ? -tilt : tilt;
     }
 }

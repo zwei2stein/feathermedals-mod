@@ -33,7 +33,7 @@
 	<FeatherMedals_CeremonyCitation_None_ToolTip>No Tale of Honor written. You will be prompted during the adorning, or write one before the adorning for {QUALITY} bonus to adorning quality.</FeatherMedals_CeremonyCitation_None_ToolTip>
 	<FeatherMedals_CeremonyTrophyQuality>Trophy craftsmanship</FeatherMedals_CeremonyTrophyQuality>
 	<FeatherMedals_CeremonyTrophyQuality_ToolTip>How much care was put into making and selecting the trophy. A legendary trophy adds up to {MAX} of adorning quality, an awful one takes up to {MIN} away.</FeatherMedals_CeremonyTrophyQuality_ToolTip>
-	
+
 	<FeatherMedals_Quality_Legendary>legendary</FeatherMedals_Quality_Legendary>
 	<FeatherMedals_Quality_Grand>grand</FeatherMedals_Quality_Grand>
 	<FeatherMedals_Quality_Decent>decent</FeatherMedals_Quality_Decent>
@@ -91,7 +91,7 @@
 	<FeatherMedals_TrophyGrantedTrait>{PAWN_labelShort} is now known as {TRAIT}.</FeatherMedals_TrophyGrantedTrait>
 	<FeatherMedals_TrophyRemovedTrait>{PAWN_labelShort} has shed the {TRAIT} trait through this honor.</FeatherMedals_TrophyRemovedTrait>
 	<FeatherMedals_TrophyAddedTrait>{PAWN_labelShort} has gained the {TRAIT} trait through this honor.</FeatherMedals_TrophyAddedTrait>
-	
+
 	<!-- precept -->
 
 	<FeatherMedals_HW_ForbiddenRole>{PAWN_nameDef}'s beliefs forbid adorning trophies.</FeatherMedals_HW_ForbiddenRole>
@@ -100,7 +100,7 @@
 
 	<FeatherMedals_Settings_Section_General>General</FeatherMedals_Settings_Section_General>
 	<FeatherMedals_Settings_Section_Display>Display</FeatherMedals_Settings_Section_Display>
-	
+
 	<FeatherMedals_Settings_Block_Ceremony_Label>Ceremonies</FeatherMedals_Settings_Block_Ceremony_Label>
 
 	<FeatherMedals_Settings_LockTrophyUponAward>Lock Trophies upon Award</FeatherMedals_Settings_LockTrophyUponAward>
@@ -113,14 +113,20 @@
 	<FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining an elder trait or losing wimp when receiving bravery awards. A ceremony changes at most one trait.</FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>
 
 	<FeatherMedals_Settings_Block_Draw_Label>Pawn Rendering</FeatherMedals_Settings_Block_Draw_Label>
-	
+
 	<FeatherMedals_Settings_DrawTrophiesOnPawns>Draw Trophies on Pawns</FeatherMedals_Settings_DrawTrophiesOnPawns>
 	<FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>If enabled, trophies will be rendered on pawns. Disabling this will stop trophies from being drawn on pawns. Use this to turn their rendering off. Default: ON</FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>
 
 	<FeatherMedals_Settings_Block_Worn_Label>Worn Trophies</FeatherMedals_Settings_Block_Worn_Label>
-	
+
 	<FeatherMedals_Settings_WornSize>Worn size: {SIZE}</FeatherMedals_Settings_WornSize>
 	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophy rendered on pawn. Default: 0.8</FeatherMedals_Settings_WornSize_Tooltip>
+	
+	<FeatherMedals_Settings_VerticalBias>Fanning out: {BIAS}</FeatherMedals_Settings_VerticalBias>
+	<FeatherMedals_Settings_VerticalBias_Tooltip>Controls how much feathers fan out. 0% - straight up, 100% - fanned out. Default: 35%</FeatherMedals_Settings_VerticalBias_Tooltip>
+
+	<FeatherMedals_Settings_CenterZ>Vertical offset: {Z}</FeatherMedals_Settings_CenterZ>
+	<FeatherMedals_Settings_CenterZ_Tooltip>Adjusts to be higher or lower. Default: 0.08</FeatherMedals_Settings_CenterZ_Tooltip>
 	
 	<FeatherMedals_Settings_DisplayedTrophies>Displayed trophies: {COUNT}</FeatherMedals_Settings_DisplayedTrophies>
 	<FeatherMedals_Settings_DisplayedTrophies_Tooltip>Amount of displayed trophies on pawn. Trophies over this count exist, but are not drawn. Default: 9</FeatherMedals_Settings_DisplayedTrophies_Tooltip>
@@ -128,10 +134,12 @@
 	<!-- worldgen settings -->
 
 	<FeatherMedals_Settings_Block_Npc_Label>Pawns from other factions</FeatherMedals_Settings_Block_Npc_Label>
-	
+
 	<FeatherMedals_Settings_GenerateNpcTrophies>Pawns can spawn with trophies</FeatherMedals_Settings_GenerateNpcTrophies>
 	<FeatherMedals_Settings_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with trophies. Existing pawns are not changed. Default: ON</FeatherMedals_Settings_GenerateNpcTrophies_Tooltip>
-	<FeatherMedals_Settings_NpcMinTech>Lowest faction tech level</FeatherMedals_Settings_NpcMinTech>
-	<FeatherMedals_Settings_NpcMaxTech>Highest faction tech level</FeatherMedals_Settings_NpcMaxTech>
+	
+	<FeatherMedals_Settings_NpcMinTech>Lowest faction tech level: {LEVEL}</FeatherMedals_Settings_NpcMinTech>
+	<FeatherMedals_Settings_NpcMaxTech>Highest faction tech level: {LEVEL}</FeatherMedals_Settings_NpcMaxTech>
+	<FeatherMedals_Settings_NpcTech_Tooltip>Tech level of factions considered to spawn with trophies. Default: Animal-Medieval</FeatherMedals_Settings_NpcTech_Tooltip>
 
 </LanguageData>
