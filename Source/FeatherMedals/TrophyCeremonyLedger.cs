@@ -53,7 +53,7 @@ public class TrophyCeremonyLedger : GameComponent
         if (!ideosMigrated)
         {
             ideosMigrated = true;
-            HonoringWarriorsUtil.AddNeutralToIdeosMissingIssue();
+            HonoringWarriorsUtil.AddCompatibleStanceToIdeosMissingIssue();
         }
 
         if (seeded)

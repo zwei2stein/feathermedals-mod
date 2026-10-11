@@ -169,7 +169,7 @@
                 <label>Deified despite it being unacceptable</label>
                 <labelAbstract>Deified despite it being unacceptable</labelAbstract>
                 <baseOpinionOffset>-40</baseOpinionOffset>
-                <description>Deified despite it being unacceptable.</description>
+                <description>My beliefs forbid deifying one of us, this person is example why it is wrong.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -294,7 +294,7 @@
                 <label>Lionized unjustly</label>
                 <labelAbstract>Lionized unjustly</labelAbstract>
                 <baseOpinionOffset>-10</baseOpinionOffset>
-                <description>Lionized unjustly.</description>
+                <description>My beliefs disapprove putting one above others. This person might deserve respect, but not this theatrics.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -366,7 +366,7 @@
                 <label>Adorned hero</label>
                 <labelAbstract>Adorned hero</labelAbstract>
                 <baseOpinionOffset>10</baseOpinionOffset>
-                <description>Adorned hero.</description>
+                <description>This person is a hero and I respect their achievements. It is only proper that they are recognized.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -512,7 +512,7 @@
                 <label>Glorious hero adorned with trophies I covet for myself</label>
                 <labelAbstract>Glorious hero adorned with trophies I covet for myself</labelAbstract>
                 <baseOpinionOffset>20</baseOpinionOffset>
-                <description>Glorious hero adorned with trophies I covet for myself.</description>
+                <description>This person is example of who I need to be: adorned with trophies and proudly recognized by everyone for their contributions and skill.</description>
             </li>
         </stages>
     </ThoughtDef>
