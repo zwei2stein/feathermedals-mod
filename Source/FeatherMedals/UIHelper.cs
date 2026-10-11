@@ -73,12 +73,13 @@ public static class UIHelper
         return sb.ToString();
     }
 
-    public static void DrawTraitsSummary(ThingDef medalDef, Rect rect, ref float curY)
+    public static void DrawTraitsSummary(FeatherMedal medal, Rect rect, ref float curY)
     {
-        var ext = medalDef.GetModExtension<TrophyExtension>();
-        
+        var ext = medal.def.GetModExtension<TrophyExtension>();
+        var chanceMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(medal);
+
         Text.Font = GameFont.Tiny;
-        
+
         if (ext != null && ((ext.removesTraits is { Count: > 0 }) || (ext.addsTraits is { Count: > 0 })))
         {
             Text.Anchor = TextAnchor.MiddleCenter;
@@ -88,7 +89,9 @@ public static class UIHelper
                 {
                     var label = entry.Label;
                     GUI.color = Color.grey;
-                    var line = "FeatherMedals_AwardingMayRemove".Translate(label.CapitalizeFirst(), entry.chance.ToStringPercent());
+                    var line = "FeatherMedals_AwardingMayRemove".Translate(
+                        label.CapitalizeFirst(),
+                        (entry.chance * chanceMultiplier).ToStringPercent());
                     Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), line);
                     curY += 24f;
                 }
@@ -99,13 +102,15 @@ public static class UIHelper
                 {
                     var label = entry.Label;
                     GUI.color = Color.grey;
-                    var line = "FeatherMedals_AwardingMayGrant".Translate(label.CapitalizeFirst(), entry.chance.ToStringPercent());
+                    var line = "FeatherMedals_AwardingMayGrant".Translate(
+                        label.CapitalizeFirst(),
+                        (entry.chance * chanceMultiplier).ToStringPercent());
                     Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), line);
                     curY += 24f;
                 }
             }
         }
-        
+
         GUI.color = Color.white;
         Text.Font = GameFont.Small;
     }

@@ -31,7 +31,9 @@
 	<FeatherMedals_CeremonyCitation_Written_ToolTip>{QUALITY} of adorning quality. The Tale of Honor adds weight and meaning to the trophy.</FeatherMedals_CeremonyCitation_Written_ToolTip>
 	<FeatherMedals_CeremonyCitation_None>None</FeatherMedals_CeremonyCitation_None>
 	<FeatherMedals_CeremonyCitation_None_ToolTip>No Tale of Honor written. You will be prompted during the adorning, or write one before the adorning for {QUALITY} bonus to adorning quality.</FeatherMedals_CeremonyCitation_None_ToolTip>
-
+	<FeatherMedals_CeremonyTrophyQuality>Trophy craftsmanship</FeatherMedals_CeremonyTrophyQuality>
+	<FeatherMedals_CeremonyTrophyQuality_ToolTip>How much care was put into making and selecting the trophy. A legendary trophy adds up to {MAX} of adorning quality, an awful one takes up to {MIN} away.</FeatherMedals_CeremonyTrophyQuality_ToolTip>
+	
 	<FeatherMedals_Quality_Legendary>legendary</FeatherMedals_Quality_Legendary>
 	<FeatherMedals_Quality_Grand>grand</FeatherMedals_Quality_Grand>
 	<FeatherMedals_Quality_Decent>decent</FeatherMedals_Quality_Decent>

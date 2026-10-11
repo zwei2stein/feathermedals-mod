@@ -10,7 +10,7 @@
         <skillRequirements>
             <Crafting>2</Crafting>
         </skillRequirements>
-        <workAmount>200</workAmount>
+        <workAmount>400</workAmount>
         <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
         <workSkill>Crafting</workSkill>
         <effectWorking>Tailor</effectWorking>

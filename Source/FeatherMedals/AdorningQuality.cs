@@ -9,8 +9,19 @@ public static class AdorningQuality
     public const float AttendanceWeight = 0.4f;
     public const float RoomWeight = 0.4f;
     public const float CitationWeight = 0.2f;
+    public const float TrophyQualityWeightStep = 0.1f;
     
-    public static float GetQualityScore(int attendees, int totalColonists, float roomImpressiveness, bool hasCitation)
+    public static float MaxTrophyBonus => ((int)QualityCategory.Legendary - (int)QualityCategory.Normal) * TrophyQualityWeightStep;
+    public static float MaxTrophyPenalty => ((int)QualityCategory.Normal - (int)QualityCategory.Awful) * TrophyQualityWeightStep;
+    
+    public static float GetTrophyQualityBonus(Thing trophy)
+    {
+        return trophy.TryGetQuality(out var quality)
+            ? ((int)quality - (int)QualityCategory.Normal) * TrophyQualityWeightStep
+            : 0f;
+    }
+    
+    public static float GetQualityScore(int attendees, int totalColonists, float roomImpressiveness, bool hasCitation, float trophyQualityBonus)
     {
         // Attendance: 0-1 based on ratio, capped at 1.0
         var attendanceRatio = totalColonists > 0
@@ -27,7 +38,8 @@ public static class AdorningQuality
 
         return (attendanceRatio * AttendanceWeight)
                + (roomScore * RoomWeight)
-               + (citationScore * CitationWeight);
+               + (citationScore * CitationWeight)
+               + trophyQualityBonus;
     }
     
     public static int GetStageIndex(float qualityScore)

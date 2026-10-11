@@ -6,6 +6,7 @@
 		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAwardTrophy</workerClass>
 		<comps>
 			<li Class="FeatherMedals.RitualOutcomeComp_TrophyPreview"/>
+			<li Class="FeatherMedals.RitualOutcomeComp_TrophyQuality"/>
 			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyAttendance"/>
 			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyRoom"/>
 			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyCitation"/>

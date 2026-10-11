@@ -18,6 +18,9 @@
 		<comps Inherit="False">
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_Biocodable"/>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
 		</comps>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -84,13 +87,13 @@
 
 	<ThingDef ParentName="FeatherTrophy_Base" Name="FeatherTrophy_BaseSimple" Abstract="True">
 		<statBases>
-			<MarketValue>200</MarketValue>
+			<MarketValue>100</MarketValue>
 		</statBases>
 	</ThingDef>
 
 	<ThingDef ParentName="FeatherTrophy_Base" Name="FeatherTrophy_BaseOrnate" Abstract="True">
 		<statBases>
-			<MarketValue>400</MarketValue>
+			<MarketValue>200</MarketValue>
 		</statBases>
 	</ThingDef>
 

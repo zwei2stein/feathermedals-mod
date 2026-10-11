@@ -48,14 +48,15 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
             var ext = medal.def.GetModExtension<TrophyExtension>();
             if (ext != null)
             {
+                var traitMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(medal);
                 if (ext.removesTraits is { Count: > 0 })
                     foreach (var entry in ext.removesTraits)
-                        sb.AppendLine( "FeatherMedals_AwardingMayRemove"
-                            .Translate(entry.Label.CapitalizeFirst(), entry.chance.ToStringPercent()));
+                        sb.AppendLine("FeatherMedals_AwardingMayRemove"
+                            .Translate(entry.Label.CapitalizeFirst(), (entry.chance * traitMultiplier).ToStringPercent()));
                 if (ext.addsTraits is { Count: > 0 })
                     foreach (var entry in ext.addsTraits)
-                        sb.AppendLine( "FeatherMedals_AwardingMayGrant"
-                            .Translate(entry.Label.CapitalizeFirst(), entry.chance.ToStringPercent()));
+                        sb.AppendLine("FeatherMedals_AwardingMayGrant"
+                            .Translate(entry.Label.CapitalizeFirst(), (entry.chance * traitMultiplier).ToStringPercent()));
             }
         }
 
@@ -70,6 +71,47 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
             noMiddleColumnInfo = false,
             toolTip = sb.ToString().TrimEnd(),
             priority = 100f
+        };
+    }
+}
+
+public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
+{
+    public override bool Applies(LordJob_Ritual ritual) =>
+        ritual?.selectedTarget.Thing is FeatherMedal medal && medal.TryGetQuality(out _);
+
+    public override bool DataRequired => false;
+
+    public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data) =>
+        ritual?.selectedTarget.Thing is FeatherMedal medal ? AdorningQuality.GetTrophyQualityBonus(medal) : 0f;
+
+    public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null) =>
+        "FeatherMedals_CeremonyTrophyQuality".Translate();
+
+    public override QualityFactor GetQualityFactor(
+        Precept_Ritual ritual,
+        TargetInfo ritualTarget,
+        RitualObligation obligation,
+        RitualRoleAssignments assignments,
+        RitualOutcomeComp_Data data)
+    {
+        if (ritualTarget.Thing is not FeatherMedal medal || !medal.TryGetQuality(out var quality))
+            return null;
+
+        var bonus = AdorningQuality.GetTrophyQualityBonus(medal);
+
+        return new QualityFactor
+        {
+            label = "FeatherMedals_CeremonyTrophyQuality".Translate(),
+            count = quality.GetLabel().CapitalizeFirst(),
+            qualityChange = bonus >= 0f ? $"+{bonus.ToStringPercent()}" : bonus.ToStringPercent(),
+            quality = bonus,
+            positive = bonus >= 0f,
+            present = true,
+            toolTip = "FeatherMedals_CeremonyTrophyQuality_ToolTip".Translate(
+                AdorningQuality.MaxTrophyBonus.ToStringPercent().Named("MAX"),
+                AdorningQuality.MaxTrophyPenalty.ToStringPercent().Named("MIN")),
+            priority = 90f
         };
     }
 }

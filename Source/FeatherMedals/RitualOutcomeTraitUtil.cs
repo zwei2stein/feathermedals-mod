@@ -31,19 +31,30 @@ public static class RitualOutcomeTraitUtil
         }
     }
     
+    // Trait chance multiplier (awful x0.5, legendary x2)
+    private const float TrophyTraitChanceStep = 0.25f;
+
+    public static float GetTrophyTraitChanceMultiplier(Thing trophy)
+    {
+        return trophy.TryGetQuality(out var quality)
+            ? 1f + ((int)quality - (int)QualityCategory.Normal) * TrophyTraitChanceStep
+            : 1f;
+    }
+    
     public static void GiveRandomTrait(Pawn pawn, FeatherMedal medal)
     {
         var candidates = BuildCandidates(pawn, medal).ToList();
 
-        // there is chance of not doing anything.
-        var totalChance = candidates.Sum(candidate => candidate.Entry.chance);
+        // there is chance of not doing anything. Quality scales the total, weights between candidates stay the same.
+        var qualityMultiplier = GetTrophyTraitChanceMultiplier(medal);
+        var totalChance = candidates.Sum(candidate => candidate.Entry.chance) * qualityMultiplier;
 
         if (Prefs.DevMode)
         {
-            Log.Message($"[FeatherTrophies] GiveRandomTrait.totalChance={totalChance:P0}, candidates={candidates.Count}");
+            Log.Message($"[FeatherTrophies] GiveRandomTrait.totalChance={totalChance:P0} (quality x{qualityMultiplier:F2}), candidates={candidates.Count}");
             candidates.ForEach(
                 candidate => Log.Message($"[FeatherTrophies] GiveRandomTrait.candidate={candidate}")
-                );
+            );
         }
 
         if (!Rand.Chance(totalChance))

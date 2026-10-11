@@ -108,7 +108,7 @@ public class ITab_TrophyRecord : ITab
         // Trait effects, centered
         if (MedalMod.Settings.TrophyDynamicTraits && medal.BiocodeComp is not { Biocoded: true })
         {
-            UIHelper.DrawTraitsSummary(medal.def, rect, ref curY);
+            UIHelper.DrawTraitsSummary(medal, rect, ref curY);
         }
 
         // Reset

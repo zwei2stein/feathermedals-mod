@@ -4,7 +4,7 @@
 	<!--  RECIPE BASE  -->
 
 	<RecipeDef Name="FeatherTrophy_RecipeBase" Abstract="True">
-		<workAmount>8000</workAmount>
+		<workAmount>800</workAmount>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<workSkill>Crafting</workSkill>
         <effectWorking>Tailor</effectWorking>
