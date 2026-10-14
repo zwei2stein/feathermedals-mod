@@ -173,7 +173,7 @@ namespace FeatherMedals
 
                 Settings.CenterZ = listingStandard.SliderLabeled(
                     "FeatherMedals_Settings_CenterZ".Translate(Settings.CenterZ.ToStringDecimalIfSmall().Named("Z")),
-                    Settings.CenterZ, -0.2f, 0.1f, 0.5f,
+                    Settings.CenterZ, -0.2f, 0.2f, 0.5f,
                     "FeatherMedals_Settings_CenterZ_Tooltip".Translate());
 
                 Settings.MaxDisplayedTrophies = Mathf.RoundToInt(listingStandard.SliderLabeled(
@@ -201,9 +201,9 @@ namespace FeatherMedals
         public bool DrawTrophiesOnPawns = true;
         public bool TrophyDynamicTraits = true;
         public bool PromptForCitationDuringRitual = true;
-        public float TrophyScale = 0.8f;
+        public float TrophyScale = 1.3f;
         public float VerticalBias = 0.35f;  // 0 = all upright, 1 = fully radial
-        public float CenterZ = 0.08f;
+        public float CenterZ = 0.1f;
         public int MaxDisplayedTrophies = 9;
         public bool GenerateNpcTrophies = true;
         public TechLevel NpcTrophyMinTech = TechLevel.Animal;
