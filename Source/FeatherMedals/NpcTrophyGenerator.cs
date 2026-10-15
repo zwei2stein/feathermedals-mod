@@ -251,7 +251,7 @@ public static class NpcTrophyGenerator
         medal.awardedBy = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
         medal.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(medal, pawn, leader);
-        medal.citation = CitationUtil.Generate(pawn.Faction);
+        medal.citation = CitationUtil.Generate(pawn.Faction, pawn, medal.awardedTile);
         return medal;
     }
 

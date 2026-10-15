@@ -63,6 +63,12 @@
 	<FeatherMedals_ClearButton>Clear</FeatherMedals_ClearButton>
 	<FeatherMedals_GenerateButton>Suggest</FeatherMedals_GenerateButton>
 
+	<!-- tale of honor text gen constants -->
+	<FeatherMedals_Citation_DefaultName>Warrior</FeatherMedals_Citation_DefaultName>
+	<FeatherMedals_Citation_DefaultPossessive>their</FeatherMedals_Citation_DefaultPossessive>
+	<FeatherMedals_Citation_DefaultSettlement>Hearth</FeatherMedals_Citation_DefaultSettlement>
+	<FeatherMedals_Citation_DefaultFaction>Tribe</FeatherMedals_Citation_DefaultFaction>
+
 	<FeatherMedals_TrophyLocked>This trophy is locked and cannot be removed from the pawn. Click to unlock.</FeatherMedals_TrophyLocked>
 	<FeatherMedals_TrophyUnlocked>This trophy is unlocked and can be removed from the pawn. Click to lock.</FeatherMedals_TrophyUnlocked>
 

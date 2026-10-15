@@ -5,14 +5,28 @@
         <defName>FeatherMedals_NpcCitation</defName>
         <rulePack>
             <rulesStrings>
-                <li>r_root->[faction_name] [speech_verb] a warrior for [speech_adjective] [heroic_trait].</li>
-                <li>r_root->[speech_verb] by [faction_name] as [their_actions]</li>
-                <li>r_root->[speech_verb] for [heroic_trait]</li>
-                <li>r_root->[heroic_trait] [speech_verb] for [their_actions]</li>
+                <li>r_root->[place] has [speech_verb] a warrior for [speech_adjective] [heroic_trait].</li>
+                <li>r_root->[speech_verb] by [place] for [their_actions].</li>
+                <li>r_root->[speech_verb] for [pawn_adj] [heroic_trait].</li>
+                <li>r_root->[pawn_adj] [heroic_trait] was [speech_verb] for [their_actions].</li>
+                <li>r_root->[speech_verb] for [speech_adjective] [heroic_trait].</li>
+                <li>r_root->[speech_adjective] [pawn_name] for [their_actions].</li>
+                <li>r_root->[place] has [speech_verb] [heroic_trait].</li>
+                <li>r_root->[speech_adjective] [their_actions], therefore [place] has [speech_verb] [pawn_name].</li>
+                <li>r_root->[pawn_adj] [their_actions] [speech_verb].</li>
+                <li>r_root->[pawn_name] was [speech_verb] for [their_actions].</li>
+                
+                <li>place->[faction_name]</li>
+                <li>place->[pawn_adj] [faction_name]</li>
+                <li>place->[settlement_name]</li>
+                <li>place->[pawn_adj] [settlement_name]</li>
+                <li>place->[settlement_name] of [faction_name]</li>
 
                 <li>speech_verb->praised</li>
                 <li>speech_verb->commended</li>
                 <li>speech_verb->honored</li>
+                <li>speech_verb->renowned</li>
+                <li>speech_verb->celebrated</li>
                 <li>speech_verb->saluted</li>
                 <li>speech_verb->elevated</li>
                 <li>speech_verb->lionized</li>
@@ -21,6 +35,7 @@
                 <li>speech_adjective->inspiring</li>
                 <li>speech_adjective->solemn</li>
                 <li>speech_adjective->tearful</li>
+                <li>speech_adjective->awe inspiring</li>
                 <li>speech_adjective->passionate</li>
                 <li>speech_adjective->roaring</li>
 
@@ -28,6 +43,8 @@
                 <li>heroic_trait->cunning</li>
                 <li>heroic_trait->unwavering courage</li>
                 <li>heroic_trait->tireless dedication</li>
+                <li>heroic_trait->prowess</li>
+                <li>heroic_trait->vigilance</li>
                 <li>heroic_trait->bravery</li>
                 <li>heroic_trait->contribution</li>
 
@@ -36,6 +53,7 @@
                 <li>their_actions->bleeding for their fellow [faction_name]</li>
                 <li>their_actions->facing enemies of [faction_name]</li>
                 <li>their_actions->exemplary service</li>
+                <li>their_actions->deeds setting them above peers</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
