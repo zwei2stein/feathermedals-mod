@@ -51,6 +51,8 @@ namespace FeatherMedals
             Find.WindowStack.Add(new Dialog_WriteCitation(this));
         }
 
+        public bool HasCitation => !citation.NullOrEmpty();
+
         public override string LabelNoCount
         {
             get
@@ -102,7 +104,7 @@ namespace FeatherMedals
                 
             var citationBtn = new Command_Action
             {
-                defaultLabel = citation.NullOrEmpty() ? "FeatherMedals_WriteCitation".Translate() : "FeatherMedals_EditCitation".Translate(),
+                defaultLabel = !HasCitation ? "FeatherMedals_WriteCitation".Translate() : "FeatherMedals_EditCitation".Translate(),
                 defaultDesc = "FeatherMedals_CitationDesc".Translate(),
                 icon = TrophyTextures.CitationIcon,
                 action = OpenCitationDialog
@@ -355,7 +357,7 @@ namespace FeatherMedals
             }
 
             // Citation
-            if (!citation.NullOrEmpty())
+            if (HasCitation)
             {
                 if (sb.Length > 0) sb.AppendLine();
                 sb.Append('"');

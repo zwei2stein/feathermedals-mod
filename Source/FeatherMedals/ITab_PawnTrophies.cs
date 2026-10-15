@@ -150,7 +150,7 @@ namespace FeatherMedals
             height += Text.CalcHeight(medal.MedalLabel, textWidth) + 2f;
 
             Text.Font = GameFont.Tiny;
-            if (!medal.citation.NullOrEmpty())
+            if (medal.HasCitation)
             {
                 height += Text.CalcHeight($"\"{medal.citation}\"", textWidth) + 2f;
             }
@@ -233,7 +233,7 @@ namespace FeatherMedals
             // Citation
             Text.Font = GameFont.Tiny;
             float descBottom = nameRect.yMax;
-            if (!medal.citation.NullOrEmpty())
+            if (medal.HasCitation)
             {
                 UIHelper.DrawCitation(medal.def, medal.citation, nameRect, ref descBottom);
             }

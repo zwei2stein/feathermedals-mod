@@ -55,14 +55,13 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         var attendees = totalPresence.Count;
         var totalColonists = jobRitual.Map.mapPawns.FreeColonistsSpawnedCount;
         var roomImpressiveness = AdorningQuality.GetRoomImpressiveness(jobRitual.selectedTarget);
-        var hasCitation = !medal.citation.NullOrEmpty();
         var trophyQualityBonus = AdorningQuality.GetTrophyQualityBonus(medal);
         
         var qualityScore = AdorningQuality.GetQualityScore(
             attendees,
             totalColonists,
             roomImpressiveness,
-            hasCitation,
+            medal.HasCitation,
             trophyQualityBonus);
         
         var stageIndex = AdorningQuality.GetStageIndex(qualityScore);
@@ -100,7 +99,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         letterText += "FeatherMedals_TakeOfHonorLetterLine2"
             .Translate(awardee.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );
             
-        if (!medal.citation.NullOrEmpty())
+        if (medal.HasCitation)
         {
             letterText += "\n\n";
             letterText += "FeatherMedals_TakeOfHonorLetter".Translate(medal.citation);

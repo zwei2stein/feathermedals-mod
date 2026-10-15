@@ -246,7 +246,7 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
         if (ritual?.selectedTarget.Thing is not FeatherMedal medal) return 0f;
-        return medal.citation.NullOrEmpty() ? 0f : AdorningQuality.CitationWeight;
+        return !medal.HasCitation ? 0f : AdorningQuality.CitationWeight;
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -262,18 +262,16 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         RitualOutcomeComp_Data data)
     {
         if (ritualTarget.Thing is not FeatherMedal medal) return null;
-
-        var hasCitation = !medal.citation.NullOrEmpty();
-
+        
         return new QualityFactor
         {
             label = "FeatherMedals_CeremonyCitation".Translate(),
-            count = hasCitation ? "FeatherMedals_CeremonyCitation_Written".Translate() : "FeatherMedals_CeremonyCitation_None".Translate(),
-            qualityChange = $"+{(hasCitation ? AdorningQuality.CitationWeight : 0f).ToStringPercent()}",
-            quality = hasCitation ? AdorningQuality.CitationWeight : 0f,
-            positive = hasCitation,
+            count = medal.HasCitation ? "FeatherMedals_CeremonyCitation_Written".Translate() : "FeatherMedals_CeremonyCitation_None".Translate(),
+            qualityChange = $"+{(medal.HasCitation ? AdorningQuality.CitationWeight : 0f).ToStringPercent()}",
+            quality = medal.HasCitation ? AdorningQuality.CitationWeight : 0f,
+            positive = medal.HasCitation,
             present = true,
-            toolTip = hasCitation 
+            toolTip = medal.HasCitation 
                 ? $"\"{medal.citation}\"\n\n" + "FeatherMedals_CeremonyCitation_Written_ToolTip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
                 : "FeatherMedals_CeremonyCitation_None_ToolTip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
             priority = 30f

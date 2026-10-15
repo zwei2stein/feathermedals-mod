@@ -97,7 +97,7 @@ public class ITab_TrophyRecord : ITab
         curY += 6f;
 
         // Citation, gold, centered
-        if (!medal.citation.NullOrEmpty())
+        if (medal.HasCitation)
         {
             UIHelper.DrawCitation(medal.def, medal.citation, rect, ref curY);
         }

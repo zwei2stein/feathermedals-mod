@@ -18,7 +18,7 @@ public class Dialog_WriteCitation : Window
     {
         this.medal = medal;
         
-        if (MedalMod.Settings.AutoGenerateCitation && medal.citation.NullOrEmpty())
+        if (MedalMod.Settings.AutoGenerateCitation && !medal.HasCitation)
             this.draft = CitationUtil.GenerateForPlayer() ?? "";
         else
             this.draft = medal.citation ?? "";
@@ -135,7 +135,7 @@ public class Dialog_WriteCitation : Window
 
         if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_GenerateButton".Translate()))
         {
-            draft = CitationUtil.GenerateForPlayer();
+            draft = CitationUtil.GenerateForPlayer() ?? draft;
         }
 
         if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_ClearButton".Translate()))

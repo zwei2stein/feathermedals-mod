@@ -83,7 +83,7 @@ public class Dialog_TrophyAwarded : Window
         Widgets.BeginScrollView(scrollRect, ref scrollPosition, viewRect);
 
         var innerY = 0f;
-        if (!medal.citation.NullOrEmpty())
+        if (medal.HasCitation)
             UIHelper.DrawCitation(medal.def, medal.citation, viewRect, ref innerY);
         UIHelper.DrawStatSummary(medal.def, viewRect, ref innerY);
         UIHelper.DrawTraitChangeSummary(medal, viewRect, ref innerY, TextAnchor.MiddleCenter);
