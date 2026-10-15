@@ -3,7 +3,6 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
-using Verse.Grammar;
 
 namespace FeatherMedals;
 
@@ -252,7 +251,7 @@ public static class NpcTrophyGenerator
         medal.awardedBy = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
         medal.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(medal, pawn, leader);
-        medal.citation = GenerateCitation(pawn);
+        medal.citation = CitationUtil.Generate(pawn.Faction);
         return medal;
     }
 
@@ -336,17 +335,5 @@ public static class NpcTrophyGenerator
 
         var map = Find.CurrentMap ?? Find.AnyPlayerHomeMap;
         return map != null ? map.Tile : PlanetTile.Invalid;
-    }
-
-    private static string GenerateCitation(Pawn pawn)
-    {
-        var rulePack = FeatherMedalDefOf.FeatherMedals_NpcCitation;
-        if (rulePack == null)
-            return null;
-
-        var request = default(GrammarRequest);
-        request.Includes.Add(rulePack);
-        request.Rules.Add(new Rule_String("faction_name", pawn.Faction?.Name ?? string.Empty));
-        return GrammarResolver.Resolve("r_root", request, "FeatherMedals_NpcCitation");
     }
 }

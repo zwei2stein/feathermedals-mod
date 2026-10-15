@@ -75,6 +75,11 @@ namespace FeatherMedals
                  "FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip".Translate()
             );
             listingStandard.CheckboxLabeled(
+                 "FeatherMedals_Settings_AutoGenerateCitation".Translate(),
+                ref Settings.AutoGenerateCitation,
+                 "FeatherMedals_Settings_AutoGenerateCitation_Tooltip".Translate()
+            );
+            listingStandard.CheckboxLabeled(
                  "FeatherMedals_Settings_TrophyDynamicTraits".Translate(),
                 ref Settings.TrophyDynamicTraits,
                 "FeatherMedals_Settings_TrophyDynamicTraits_Tooltip".Translate()
@@ -201,6 +206,7 @@ namespace FeatherMedals
         public bool DrawTrophiesOnPawns = true;
         public bool TrophyDynamicTraits = true;
         public bool PromptForCitationDuringRitual = true;
+        public bool AutoGenerateCitation = false;
         public float TrophyScale = 1.3f;
         public float VerticalBias = 0.35f;  // 0 = all upright, 1 = fully radial
         public float CenterZ = 0.1f;
@@ -217,6 +223,7 @@ namespace FeatherMedals
             Scribe_Values.Look(ref DrawTrophiesOnPawns, "DrawTrophiesOnPawns", true);
             Scribe_Values.Look(ref MaxDisplayedTrophies, "MaxDisplayedTrophies", 9);
             Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
+            Scribe_Values.Look(ref AutoGenerateCitation, "AutoGenerateCitation", false);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScale, "TrophyScale", 0.8f);
             Scribe_Values.Look(ref VerticalBias, "VerticalBias", 0.35f);

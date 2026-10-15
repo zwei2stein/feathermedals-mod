@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace FeatherMedals;
@@ -16,8 +17,12 @@ public class Dialog_WriteCitation : Window
     public Dialog_WriteCitation(FeatherMedal medal)
     {
         this.medal = medal;
-        this.draft = medal.citation ?? "";
-
+        
+        if (MedalMod.Settings.AutoGenerateCitation && medal.citation.NullOrEmpty())
+            this.draft = CitationUtil.Generate(Faction.OfPlayer) ?? "";
+        else
+            this.draft = medal.citation ?? "";
+        
         forcePause = true;
         doCloseX = true;
         absorbInputAroundWindow = true;
@@ -120,7 +125,7 @@ public class Dialog_WriteCitation : Window
 
         // Buttons — anchored to bottom of column
         Text.Font = GameFont.Small;
-        var btnWidth = (rect.width - 10f) / 2f;
+        var btnWidth = (rect.width - 20f) / 3f;
 
         if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_ConfirmButton".Translate()))
         {
@@ -128,7 +133,12 @@ public class Dialog_WriteCitation : Window
             Close();
         }
 
-        if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_ClearButton".Translate()))
+        if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_GenerateButton".Translate()))
+        {
+            draft = CitationUtil.Generate(Faction.OfPlayer) ?? draft;
+        }
+
+        if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_ClearButton".Translate()))
         {
             draft = "";
         }

@@ -61,6 +61,7 @@
 
 	<FeatherMedals_ConfirmButton>Confirm</FeatherMedals_ConfirmButton>
 	<FeatherMedals_ClearButton>Clear</FeatherMedals_ClearButton>
+	<FeatherMedals_GenerateButton>Suggest</FeatherMedals_GenerateButton>
 
 	<FeatherMedals_TrophyLocked>This trophy is locked and cannot be removed from the pawn. Click to unlock.</FeatherMedals_TrophyLocked>
 	<FeatherMedals_TrophyUnlocked>This trophy is unlocked and can be removed from the pawn. Click to lock.</FeatherMedals_TrophyUnlocked>
@@ -106,8 +107,11 @@
 	<FeatherMedals_Settings_LockTrophyUponAward>Lock Trophies upon Award</FeatherMedals_Settings_LockTrophyUponAward>
 	<FeatherMedals_Settings_LockTrophyUponAward_Tooltip>If enabled, once a trophy is adorned to a pawn, it will default to being locked on the pawn and cannot be removed. This can be toggled individually on the dedicated tab. This setting does not affect biocoding. Default: ON</FeatherMedals_Settings_LockTrophyUponAward_Tooltip>
 
-	<FeatherMedals_Settings_PromptForCitationDuringRitual>Prompt for Tale of Honor during Ceremony</FeatherMedals_Settings_PromptForCitationDuringRitual>
+	<FeatherMedals_Settings_PromptForCitationDuringRitual>Prompt for a Tale of Honor during Ceremony</FeatherMedals_Settings_PromptForCitationDuringRitual>
 	<FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip>If enabled, a dialog will appear during adorning ceremonies to allow the user to enter a Tale of Honor for the trophy if one has not already been added to the trophy. If disabled, a window will not appear, but Tale of Honor can still be added prior to ceremony commencing. Default: ON</FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip>
+
+	<FeatherMedals_Settings_AutoGenerateCitation>Suggest a Tale of Honor</FeatherMedals_Settings_AutoGenerateCitation>
+	<FeatherMedals_Settings_AutoGenerateCitation_Tooltip>If enabled, when dialog opens to prompt for a Tale of honor and player has not wrote one yet, it will be generated. Default: OFF</FeatherMedals_Settings_AutoGenerateCitation_Tooltip>
 
 	<FeatherMedals_Settings_TrophyDynamicTraits>Dynamic Traits</FeatherMedals_Settings_TrophyDynamicTraits>
 	<FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining an elder trait or losing wimp when receiving bravery awards. A ceremony changes at most one trait.</FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>
@@ -121,13 +125,13 @@
 
 	<FeatherMedals_Settings_WornSize>Worn size: {SIZE}</FeatherMedals_Settings_WornSize>
 	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophy rendered on pawn. Default: 0.8</FeatherMedals_Settings_WornSize_Tooltip>
-	
+
 	<FeatherMedals_Settings_VerticalBias>Fanning out: {BIAS}</FeatherMedals_Settings_VerticalBias>
 	<FeatherMedals_Settings_VerticalBias_Tooltip>Controls how much feathers fan out. 0% - straight up, 100% - fanned out. Default: 35%</FeatherMedals_Settings_VerticalBias_Tooltip>
 
 	<FeatherMedals_Settings_CenterZ>Vertical offset: {Z}</FeatherMedals_Settings_CenterZ>
 	<FeatherMedals_Settings_CenterZ_Tooltip>Adjusts to be higher or lower. Default: 0.08</FeatherMedals_Settings_CenterZ_Tooltip>
-	
+
 	<FeatherMedals_Settings_DisplayedTrophies>Displayed trophies: {COUNT}</FeatherMedals_Settings_DisplayedTrophies>
 	<FeatherMedals_Settings_DisplayedTrophies_Tooltip>Amount of displayed trophies on pawn. Trophies over this count exist, but are not drawn. Default: 9</FeatherMedals_Settings_DisplayedTrophies_Tooltip>
 
@@ -137,7 +141,7 @@
 
 	<FeatherMedals_Settings_GenerateNpcTrophies>Pawns can spawn with trophies</FeatherMedals_Settings_GenerateNpcTrophies>
 	<FeatherMedals_Settings_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with trophies. Existing pawns are not changed. Default: ON</FeatherMedals_Settings_GenerateNpcTrophies_Tooltip>
-	
+
 	<FeatherMedals_Settings_NpcMinTech>Lowest faction tech level: {LEVEL}</FeatherMedals_Settings_NpcMinTech>
 	<FeatherMedals_Settings_NpcMaxTech>Highest faction tech level: {LEVEL}</FeatherMedals_Settings_NpcMaxTech>
 	<FeatherMedals_Settings_NpcTech_Tooltip>Tech level of factions considered to spawn with trophies. Default: Animal-Medieval</FeatherMedals_Settings_NpcTech_Tooltip>
