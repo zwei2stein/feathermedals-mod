@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Anima variant of the dream catcher. Same as the base def, but cost uses anima fiber instead of a stuff and the meditation focus is stronger. Keep in sync with the base def. -->
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>FeatherTrophies_FeatheredDreamCatcher_Anima</defName>
+        <label>anima dream catcher</label>
+        <description>Wooden frame with an intricate anima fiber weaving and decorated with pristine feathers.\n\nWhen mounted close to a bed, grants better sleep.\n\nIt can also be meditated to and anima fibers grant greater connection when meditating.</description>
+        <thingClass>Building_Art</thingClass>
+        <rotatable>true</rotatable>
+        <graphicData>
+            <texPath>Things/Building/Misc/FeatherTrophies_FeatheredDreamCatcher/FeatheredDreamCatcher</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+            <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+            <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+            <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+            <color>(180,215,202)</color>
+            <damageData>
+                <enabled>false</enabled>
+            </damageData>
+        </graphicData>
+        <uiIconPath>Things/Building/Misc/FeatherTrophies_FeatheredDreamCatcher/FeatheredDreamCatcher_MenuIcon</uiIconPath>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <passability>Standable</passability>
+        <terrainAffordanceNeeded IsNull="True" />
+        <pathCost>0</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <noRightClickDraftAttack>true</noRightClickDraftAttack>
+        <overrideMinifiedRot>North</overrideMinifiedRot>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsFurniture</li>
+        </thingCategories>
+        <designationCategory>Furniture</designationCategory>
+        <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+        <uiOrder>2061</uiOrder>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>2</Mass>
+            <WorkToBuild>1200</WorkToBuild>
+            <Flammability>1.0</Flammability>
+            <Beauty>3</Beauty>
+            <MeditationFocusStrength>0.0</MeditationFocusStrength>
+        </statBases>
+        <costList>
+            <WoodLog>10</WoodLog>
+            <FeatherTrophy_Precursor_PristineFeather>4</FeatherTrophy_Precursor_PristineFeather>
+            <AnimaFiber>10</AnimaFiber>
+        </costList>
+        <building>
+            <isEdifice>false</isEdifice>
+            <isAttachment>true</isAttachment>
+        </building>
+        <placeWorkers>
+            <li>PlaceWorker_MeditationOffsetBuildingsNear</li>
+            <li>Placeworker_AttachedToWall</li>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
+        <inspectorTabs>
+            <li>ITab_Art</li>
+        </inspectorTabs>
+        <comps>
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+            <li Class="CompProperties_Art">
+                <nameMaker>FeatherTrophies_NamerArt_DreamCatcher</nameMaker>
+                <descriptionMaker>FeatherTrophies_ArtDescription_DreamCatcher</descriptionMaker>
+                <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+            </li>
+            <li Class="CompProperties_Facility">
+                <statOffsets>
+                    <Comfort>0.03</Comfort>
+                    <BedRestEffectiveness>0.03</BedRestEffectiveness>
+                </statOffsets>
+                <maxSimultaneous>1</maxSimultaneous>
+                <mustBePlacedAdjacent>true</mustBePlacedAdjacent>
+            </li>
+            <li Class="CompProperties_MeditationFocus">
+                <statDef>MeditationFocusStrength</statDef>
+                <focusTypes>
+                    <li>Artistic</li>
+                    <li>Natural</li>
+                    <li MayRequire="Ludeon.RimWorld.Royalty">Dignified</li>
+                </focusTypes>
+                <offsets>
+                    <li Class="FocusStrengthOffset_Quality">
+                        <curve>
+                            <points>
+                                <li>(0,0.12)</li> <!-- awful -->
+                                <li>(1,0.14)</li> <!-- poor -->
+                                <li>(2,0.16)</li> <!-- normal -->
+                                <li>(3,0.17)</li> <!-- good -->
+                                <li>(4,0.18)</li> <!-- excellent -->
+                                <li>(5,0.19)</li> <!-- masterwork -->
+                                <li>(6,0.20)</li> <!-- legendary -->
+                            </points>
+                        </curve>
+                    </li>
+                </offsets>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities[li="EndTable" or li="SleepAccelerator"]</xpath>
+        <value>
+            <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StyleCategoryDef[defName="Totemic"]</xpath>
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/StyleCategoryDef[defName="Totemic"]/addDesignators</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="Totemic"]/addDesignators</xpath>
+                <value>
+                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="Totemic"]</xpath>
+                <value>
+                    <addDesignators>
+                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    </addDesignators>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StyleCategoryDef[defName="Rustic"]</xpath>
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/StyleCategoryDef[defName="Rustic"]/addDesignators</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="Rustic"]/addDesignators</xpath>
+                <value>
+                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="Rustic"]</xpath>
+                <value>
+                    <addDesignators>
+                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    </addDesignators>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StyleCategoryDef[defName="Animalist"]</xpath>
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/StyleCategoryDef[defName="Animalist"]/addDesignators</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="Animalist"]/addDesignators</xpath>
+                <value>
+                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="Animalist"]</xpath>
+                <value>
+                    <addDesignators>
+                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    </addDesignators>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]</xpath>
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]/addDesignators</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]/addDesignators</xpath>
+                <value>
+                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]</xpath>
+                <value>
+                    <addDesignators>
+                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    </addDesignators>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StyleCategoryDef[defName="DV_Dwarven"]</xpath>
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/StyleCategoryDef[defName="DV_Dwarven"]/addDesignators</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="DV_Dwarven"]/addDesignators</xpath>
+                <value>
+                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>/Defs/StyleCategoryDef[defName="DV_Dwarven"]</xpath>
+                <value>
+                    <addDesignators>
+                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    </addDesignators>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+
+</Patch>

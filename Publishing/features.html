@@ -37,6 +37,13 @@
 </head>
 <body>
 
+<!-- Multiply tint (180,215,202) = anima fiber color, same as the in-game graphicData color. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="animaTint" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.706 0 0 0 0  0 0.843 0 0 0  0 0 0.792 0 0  0 0 0 1 0"/>
+    </filter>
+</svg>
+
 <div class="section">
 
     <table class="crafting-table">
@@ -49,13 +56,13 @@
         </thead>
         <tbody>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_c.png');"></div></td>
-            <td class="col-name"><strong>Pristine Feather</strong><br><small>Simple</small></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_c.png');"></div></td>
+            <td class="col-name"><strong>Pristine Feather</strong></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Leather_Bird.png');"></span><span class="cost-material-name">Bird Leather</span></div>
                 <small>Crafting 2</small>
                 <br /><br />
-                <div class="cost-row">Butchering feathered beasts</div>
+                <div class="cost-row"><small>Butchering feathered beasts</small></div>
             </td>
             <td class="col-features">
                 <div style="color: #4a4a4a; margin-bottom: 6px;">A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the pelts of feathered animals or obtained by butchering them.</div>
@@ -78,12 +85,12 @@
         </thead>
         <tbody>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedInCombat.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/WoundedInCombat.png');"></div></td>
             <td class="col-name"><strong>Wounded in Combat</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -97,12 +104,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedOrKilledAnEnemy.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/WoundedOrKilledAnEnemy.png');"></div></td>
             <td class="col-name"><strong>Wounded or Killed an Enemy</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -115,12 +122,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroat.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/SlitThroat.png');"></div></td>
             <td class="col-name"><strong>Slit Throat</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -136,12 +143,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/TouchedAnEnemy.png');"></div></td>
             <td class="col-name"><strong>Touched an Enemy</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -156,12 +163,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/CunningAndWisdom.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/CunningAndWisdom.png');"></div></td>
             <td class="col-name"><strong>Cunning and Wisdom</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -176,12 +183,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/StoleHorses.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/StoleHorses.png');"></div></td>
             <td class="col-name"><strong>Stole Enemy Mounts</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -194,12 +201,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TookWeapon.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/TookWeapon.png');"></div></td>
             <td class="col-name"><strong>Disarmed Enemy</strong><br><small class="">Simple</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Silver.png');"></span><span class="cost-material-name">Silver</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 3</small>
             </td>
             <td class="col-features">
@@ -228,12 +235,12 @@
         </thead>
         <tbody>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/KilledAnEnemy.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/KilledAnEnemy.png');"></div></td>
             <td class="col-name"><strong>Killed an Enemy</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -247,12 +254,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/SlitThroatAndTookScalp.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/SlitThroatAndTookScalp.png');"></div></td>
             <td class="col-name"><strong>Slit Throat + Took Scalp</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -268,12 +275,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/WoundedManyTimes.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/WoundedManyTimes.png');"></div></td>
             <td class="col-name"><strong>Wounded Many Times</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -287,12 +294,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/TouchedAnEnemy5Times.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/TouchedAnEnemy5Times.png');"></div></td>
             <td class="col-name"><strong>Touched an Enemy 5 Times</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -307,12 +314,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Struck4BlowsInCombat.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Struck4BlowsInCombat.png');"></div></td>
             <td class="col-name"><strong>Struck 4 Blows</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -326,12 +333,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/Protection.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Protection.png');"></div></td>
             <td class="col-name"><strong>Protection</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -346,12 +353,12 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/Textures/Things/Feathers/LedWarparty.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Feathers/LedWarparty.png');"></div></td>
             <td class="col-name"><strong>Led War Party</strong><br><small class="ornate">Ornate</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -381,13 +388,13 @@
         </thead>
         <tbody>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/raecotech/Textures/Things/Feathers/TerratechAncestry_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/raecotech/Textures/Things/Feathers/TerratechAncestry_Feather.png');"></div></td>
             <td class="col-name"><strong>Terratech Bloodline</strong><br/>
                 <small class="ornate">Mod: Ecotech</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">5</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Glowsap_b.png');"></span><span class="cost-material-name">Glowsap</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -403,13 +410,13 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/sirmashedpotatoashlands/Textures/Things/Feathers/Mashed_Ashlands_AshStormLover_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/sirmashedpotatoashlands/Textures/Things/Feathers/Mashed_Ashlands_AshStormLover_Feather.png');"></div></td>
             <td class="col-name"><strong>Braved Ash Storm</strong><br/>
                 <small class="ornate">Mod: Mashed's Ashlands</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Basalt_blocks_C.png');"></span><span class="cost-material-name">Basalt Blocks</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -426,13 +433,13 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/tugminotaur/Textures/Things/Feathers/RBM_Herculean_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/tugminotaur/Textures/Things/Feathers/RBM_Herculean_Feather.png');"></div></td>
             <td class="col-name"><strong>Herculean Strength</strong><br/>
                 <small class="ornate">Mod: Roo's Minotaur Xenotype</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Gold.png');"></span><span class="cost-material-name">Gold</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -448,13 +455,13 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/zaleldersfaction/Textures/Things/Feathers/NatureHarmony_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/zaleldersfaction/Textures/Things/Feathers/NatureHarmony_Feather.png');"></div></td>
             <td class="col-name"><strong>In Harmony With Nature</strong><br/>
                 <small class="ornate">Mod: Elders Faction (Continued)</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Fiber_b.png');"></span><span class="cost-material-name">Anima Fiber</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -474,13 +481,13 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.6/Compatibility/zwei2stein.pyrinthbionics/Textures/Things/Feathers/Pyrinth.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/zwei2stein.pyrinthbionics/Textures/Things/Feathers/Pyrinth.png');"></div></td>
             <td class="col-name"><strong>Pyrinth</strong><br/>
                 <small class="ornate">Mod: Pyrinth Bionics</small></td>
             <td class="col-costs">
                 <div class="cost-row"><span class="cost-amount">5</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Pyrinth_a.png');"></span><span class="cost-material-name">Pyrinth</span></div>
-                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
+                <div class="cost-row"><span class="cost-amount">1</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
             </td>
             <td class="col-features">
@@ -493,6 +500,62 @@
                     <li class="stat-positive">+5 Pyrinth Heat Capacity</li>
                     <li class="stat-positive">+0.1 Pyrinth Heat Per Second</li>
                     <li class="stat-positive">May grant <strong>Pyromaniac</strong> (25%)</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Buildings</h2>
+    <table class="crafting-table">
+        <thead>
+        <tr>
+            <th class="col-graphic"></th>
+            <th class="col-name">Building</th>
+            <th class="col-costs">Costs</th>
+            <th class="col-features">Features &amp; Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Building/Misc/FeatherTrophies_FeatheredDreamCatcher/FeatheredDreamCatcher_MenuIcon.png');"></div></td>
+            <td class="col-name"><strong>Feathered Dream Catcher</strong></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">4</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine Feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Wood.png');"></span><span class="cost-material-name">Wood</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Cloth.png');"></span><span class="cost-material-name">Cloth or leather</span></div>
+                <small class="ornate">Available to Totemic, Rustic and Animalist styles and styles from Det's Xenotypes - Keshig and Stoneborn - Dwarven Style.</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Wooden frame with an intricate weaving, decorated with pristine feathers. It grants better sleep.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Near bed: +3% Comfort</li>
+                    <li class="stat-positive">Near bed: +3% Rest Effectiveness (sleep speed)</li>
+                    <li class="stat-positive">Meditation focus: Artistic, Natural, Dignified (Royalty)</li>
+                    <li class="stat-positive">Beauty +3</li>
+                    <li class="stat-neutral">Wall mounted</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Building/Misc/FeatherTrophies_FeatheredDreamCatcher/FeatheredDreamCatcher_MenuIcon.png'); filter: url(#animaTint);"></div></td>
+            <td class="col-name"><strong>Anima Dream Catcher</strong><br><small class="ornate">Mod: Elders Faction (Continued)</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">4</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine Feather</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Wood.png');"></span><span class="cost-material-name">Wood</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Fiber_b.png');"></span><span class="cost-material-name">Anima Fiber</span></div>
+                <small class="ornate">Available to the same styles as the Feathered Dream Catcher.</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Wooden frame with an intricate anima fiber weaving, decorated with pristine feathers. It grants better sleep and a stronger connection when meditating.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Near bed: +3% Comfort</li>
+                    <li class="stat-positive">Near bed: +3% Rest Effectiveness (sleep speed)</li>
+                    <li class="stat-positive">Meditation focus: Artistic, Natural, Dignified (Royalty), stronger than the Feathered Dream Catcher</li>
+                    <li class="stat-positive">Beauty +3</li>
+                    <li class="stat-neutral">Wall mounted</li>
                 </ul>
             </td>
         </tr>

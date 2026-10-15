@@ -8,6 +8,7 @@
     [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
     [*]Ceremony to award feathers to deserving warriors
     [*]Ideoligion precept about Honoring Warriors.
+    [*]Feathered Dream catcher, a wall-mounted building that grants better sleep.
 [/list]
 
 [h3]Crafting[/h3]
@@ -23,7 +24,7 @@
 [h2]Trophies[/h2]
 
 [h3]Simple Tier[/h3]
-Cost: 100 Silver, 1 Pristine feather, 100 Dye | Crafting 3
+Cost: 100 Silver, 1 Pristine feather, 10 Dye | Crafting 3
 
 [table]
 [tr][th]Feather[/th][th]Effects[/th][/tr]
@@ -37,7 +38,7 @@ Cost: 100 Silver, 1 Pristine feather, 100 Dye | Crafting 3
 [/table]
 
 [h3]Ornate Tier[/h3]
-Cost: 100 Gold, 1 Pristine feather, 100 Dye | Crafting 5
+Cost: 100 Gold, 1 Pristine feather, 10 Dye | Crafting 5
 
 [table]
 [tr][th]Feather[/th][th]Effects[/th][/tr]
@@ -55,11 +56,11 @@ Available only with the named mod. Crafted like other trophies, but with a mod-s
 
 [table]
 [tr][th]Feather[/th][th]Mod[/th][th]Cost[/th][th]Effects[/th][/tr]
-[tr][td][b]Terratech Bloodline[/b][/td][td]Ecotech[/td][td]5 Glowsap, 1 Pristine feather, 100 Dye | Crafting 5[/td][td]+5% Social Impact | +2% Plant Harvest Yield | +5% Global Learning Factor | +5% Toxic Environment Resistance | May grant Skytouched/Grovetouched/Watertouched/Earthtouched/Spacetouched (20% each) | Beauty +0.1[/td][/tr]
-[tr][td][b]Braved Ash Storm[/b][/td][td]Mashed's Ashlands[/td][td]10 Basalt Blocks, 1 Pristine feather, 100 Dye | Crafting 5[/td][td]+1% Pain Shock Threshold | +1% Social Impact | -5% Mental Break Threshold | +5% Ash Resistance | +5% Toxic Environment Resistance | May grant Ash Storm Lover (20%) | Beauty +0.1[/td][/tr]
-[tr][td][b]Herculean Strength[/b][/td][td]Roo's Minotaur Xenotype[/td][td]100 Gold, 1 Pristine feather, 100 Dye | Crafting 5[/td][td]+1% Pain Shock Threshold | +2% Melee Hit Chance | +5% Mining Speed | +1% Social Impact | May grant Herculean (20%) | Beauty +0.1[/td][/tr]
-[tr][td][b]In Harmony With Nature[/b][/td][td]Elders Faction (Continued)[/td][td]20 Anima Fiber, 1 Pristine feather, 100 Dye | Crafting 5[/td][td]+5% Psychic Sensitivity (Royalty or Biotech) | +3.3% Psychic Entropy Recovery Rate (Royalty or Biotech) | -5% Allergic Sensitivity (Allergies mod) | +1% Social Impact | +5% Injury Healing Factor | +2% Plant Harvest Yield | May remove Allergy Resistant (Allergies mod, 10%) | May grant In Harmony With Nature (20%) | May grant Allergy Prone (Allergies mod, 10%) | Beauty +0.1[/td][/tr]
-[tr][td][b]Pyrinth[/b][/td][td]Pyrinth Bionics[/td][td]5 Pyrinth, 1 Pristine feather, 100 Dye | Crafting 5[/td][td]Beauty +1 | +2% Social Impact | -1 Max Comfortable Temperature | -3 Min Comfortable Temperature | +5 Pyrinth Heat Capacity | +0.1 Pyrinth Heat Per Second | May grant Pyromaniac (25%)[/td][/tr]
+[tr][td][b]Terratech Bloodline[/b][/td][td]Ecotech[/td][td]5 Glowsap, 1 Pristine feather, 10 Dye | Crafting 5[/td][td]+5% Social Impact | +2% Plant Harvest Yield | +5% Global Learning Factor | +5% Toxic Environment Resistance | May grant Skytouched/Grovetouched/Watertouched/Earthtouched/Spacetouched (20% each) | Beauty +0.1[/td][/tr]
+[tr][td][b]Braved Ash Storm[/b][/td][td]Mashed's Ashlands[/td][td]100 Basalt Blocks, 1 Pristine feather, 10 Dye | Crafting 5[/td][td]+1% Pain Shock Threshold | +1% Social Impact | -5% Mental Break Threshold | +5% Ash Resistance | +5% Toxic Environment Resistance | May grant Ash Storm Lover (20%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Herculean Strength[/b][/td][td]Roo's Minotaur Xenotype[/td][td]100 Gold, 1 Pristine feather, 10 Dye | Crafting 5[/td][td]+1% Pain Shock Threshold | +2% Melee Hit Chance | +5% Mining Speed | +1% Social Impact | May grant Herculean (20%) | Beauty +0.1[/td][/tr]
+[tr][td][b]In Harmony With Nature[/b][/td][td]Elders Faction (Continued)[/td][td]20 Anima Fiber, 1 Pristine feather, 10 Dye | Crafting 5[/td][td]+5% Psychic Sensitivity (Royalty or Biotech) | +3.3% Psychic Entropy Recovery Rate (Royalty or Biotech) | -5% Allergic Sensitivity (Allergies mod) | +1% Social Impact | +5% Injury Healing Factor | +2% Plant Harvest Yield | May remove Allergy Resistant (Allergies mod, 10%) | May grant In Harmony With Nature (20%) | May grant Allergy Prone (Allergies mod, 10%) | Beauty +0.1[/td][/tr]
+[tr][td][b]Pyrinth[/b][/td][td]Pyrinth Bionics[/td][td]5 Pyrinth, 1 Pristine feather, 10 Dye | Crafting 5[/td][td]Beauty +1 | +2% Social Impact | -1 Max Comfortable Temperature | -3 Min Comfortable Temperature | +5 Pyrinth Heat Capacity | +0.1 Pyrinth Heat Per Second | May grant Pyromaniac (25%)[/td][/tr]
 [/table]
 
 [h2]Mod compatibility[/h2]
@@ -91,6 +92,21 @@ These mods have birds/avians that can either drop pristine feathers when butcher
     [*]Project Arcos
     [*]Birds of the World!
     [*]More Birds - Extinct & Engineered
+[/list]
+
+[h3]Style[/h3]
+
+These mods have styles that are patched to contain this mods style buildings.
+
+[list]
+    [*]Stoneborn - Dwarven Style Pack
+    [*]Det's Xenotypes - Keshig
+[/list]
+
+[h3]Buildings[/h3]
+
+[list]
+    [*]Anima Dream Catcher with Elders Faction (Continued): made of anima fiber, a stronger meditation focus.
 [/list]
 
 [h2]Disclaimers[/h2]

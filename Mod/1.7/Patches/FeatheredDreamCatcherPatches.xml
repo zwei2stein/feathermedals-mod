@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- bed that has end table or sleep accelerator (cribs, mod beds). -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities[li="EndTable" or li="SleepAccelerator"]</xpath>
+        <value>
+            <li>FeatherTrophies_FeatheredDreamCatcher</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/StyleCategoryDef[defName="Totemic" or defName="Rustic" or defName="Animalist"]/addDesignators</xpath>
+        <value>
+            <li>FeatherTrophies_FeatheredDreamCatcher</li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingSetMakerDef[defName="Reward_ItemsStandard"]/root/options/li[maxMarketValue]/thingSetMaker/options</xpath>
+        <value>
+            <li>
+                <weight>3</weight>
+                <thingSetMaker Class="ThingSetMaker_Conditional_MakingFaction">
+                    <makingFactionCategories><li>Tribal</li></makingFactionCategories>
+                    <requireNonNull>true</requireNonNull>
+                    <thingSetMaker Class="ThingSetMaker_MarketValue">
+                        <fixedParams>
+                            <qualityGenerator>Reward</qualityGenerator>
+                            <allowNonStackableDuplicates>False</allowNonStackableDuplicates>
+                            <filter>
+                                <thingDefs>
+                                    <li>FeatherTrophies_FeatheredDreamCatcher</li>
+                                    <li MayRequire="zal.eldersfaction">FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                                </thingDefs>
+                            </filter>
+                        </fixedParams>
+                    </thingSetMaker>
+                </thingSetMaker>
+            </li>
+        </value>
+    </Operation>
+
+    </Patch>
