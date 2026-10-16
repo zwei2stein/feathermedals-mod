@@ -5,7 +5,7 @@ namespace FeatherMedals
     public class Hediff_Scalped : Hediff_Injury
     {
         private const float FreshDays = 5f;
-        private const int FreshTicks = (int)(FreshDays * 60000f);
+        public const int FreshTicks = (int)(FreshDays * 60000f);
         
         public RememberedPawn scalper;
 

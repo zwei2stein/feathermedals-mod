@@ -3,6 +3,11 @@
     <v1.7>
         <li>/</li>
         <li>1.7</li>
+        
+        <!-- scalps -->
+
+        <li IfModActive="Ludeon.RimWorld.Royalty">1.7/Compatibility/Royalty</li>
+        <li IfModActive="pesky.bulwark">1.7/Compatibility/pesky.bulwark</li>
 
         <!-- animals -->
         

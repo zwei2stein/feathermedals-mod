@@ -16,8 +16,7 @@ namespace FeatherMedals
     [StaticConstructorOnStartup]
     public class CompScalpable : ThingComp
     {
-        // Placeholder icon, swap for own texture later.
-        private static readonly Texture2D Icon = ContentFinder<Texture2D>.Get("UI/Designators/Slaughter");
+        private static readonly Texture2D Icon = ContentFinder<Texture2D>.Get("UI/Designators/Scalp");
 
         private DesignationManager Designations => parent.Map.designationManager;
 

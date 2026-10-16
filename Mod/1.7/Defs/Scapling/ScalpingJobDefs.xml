@@ -10,8 +10,7 @@
 
     <DesignationDef>
         <defName>FeatherTrophies_Scalping_ScalpDesignation</defName>
-        <!-- TODO Placeholder icon, swap for own texture later. -->
-        <texturePath>UI/Designators/Slaughter</texturePath>
+        <texturePath>UI/Designators/Scalp</texturePath>
         <targetType>Thing</targetType>
     </DesignationDef>
 

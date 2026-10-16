@@ -23,7 +23,7 @@ namespace FeatherMedals
             return thing is Corpse corpse ? corpse.InnerPawn : thing as Pawn;
         }
 
-        private static BodyPartRecord HeadOf(Pawn pawn)
+        public static BodyPartRecord HeadOf(Pawn pawn)
         {
             return pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault(x => x.def == BodyPartDefOf.Head);
         }

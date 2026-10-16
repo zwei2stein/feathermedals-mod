@@ -8,8 +8,9 @@ namespace FeatherMedals
         private Pawn pawn;
         private string name;
 
-        public RememberedPawn()
+        public RememberedPawn(string defaultName = null)
         {
+            name = defaultName;
         }
 
         public RememberedPawn(Pawn pawn)

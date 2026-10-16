@@ -52,6 +52,9 @@ public class FeatherMedalDefOf
     public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
     public static PreceptDef FeatherTrophies_ScalpTaking_Honourable;
     public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
+
+    // Default hair for scalp items
+    public static HairDef Messy;
     
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

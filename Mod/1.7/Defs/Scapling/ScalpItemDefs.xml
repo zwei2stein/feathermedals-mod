@@ -20,20 +20,24 @@
         <pathCost>14</pathCost>
         <useHitPoints>true</useHitPoints>
         <stackLimit>1</stackLimit>
-        <tradeability>All</tradeability>
+        <tradeability>Sellable</tradeability>
         <uiIconScale>1.8</uiIconScale>
         <thingCategories>
             <li>FeatherTrophies_Scalps</li>
         </thingCategories>
         <graphicData>
+            <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
             <!-- Fallback only. Real picture is baked per item. -->
             <texPath>Things/Pawn/Humanlike/Scalp/ScalpBase</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Cutout</shaderType>
             <drawSize>1</drawSize>
         </graphicData>
+        <tradeTags><li>FeatherTrophies_Scalp</li></tradeTags>
+        <genericMarketSellable>false</genericMarketSellable>
         <statBases>
             <MarketValue>20</MarketValue>
+            <RoyalFavorValue>0.25</RoyalFavorValue>
             <MaxHitPoints>50</MaxHitPoints>
             <Mass>0.5</Mass>
             <Flammability>1</Flammability>
@@ -43,6 +47,7 @@
             <li Class="CompProperties_Forbiddable"/>
             <li Class="FeatherMedals.CompProperties_ScalpPrice"/>
         </comps>
+        <techLevel>Neolithic</techLevel>
     </ThingDef>
 
 </Defs>

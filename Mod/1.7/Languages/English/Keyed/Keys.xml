@@ -129,13 +129,13 @@
 	<FeatherMedals_Settings_Block_Worn_Label>Worn Trophies</FeatherMedals_Settings_Block_Worn_Label>
 
 	<FeatherMedals_Settings_WornSize>Worn size: {SIZE}</FeatherMedals_Settings_WornSize>
-	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophy rendered on pawn. Default: 0.8</FeatherMedals_Settings_WornSize_Tooltip>
+	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophy rendered on pawn. Default: 1.3</FeatherMedals_Settings_WornSize_Tooltip>
 
 	<FeatherMedals_Settings_VerticalBias>Fanning out: {BIAS}</FeatherMedals_Settings_VerticalBias>
 	<FeatherMedals_Settings_VerticalBias_Tooltip>Controls how much feathers fan out. 0% - straight up, 100% - fanned out. Default: 35%</FeatherMedals_Settings_VerticalBias_Tooltip>
 
 	<FeatherMedals_Settings_CenterZ>Vertical offset: {Z}</FeatherMedals_Settings_CenterZ>
-	<FeatherMedals_Settings_CenterZ_Tooltip>Adjusts to be higher or lower. Default: 0.08</FeatherMedals_Settings_CenterZ_Tooltip>
+	<FeatherMedals_Settings_CenterZ_Tooltip>Adjusts to be higher or lower. Default: 0.1</FeatherMedals_Settings_CenterZ_Tooltip>
 
 	<FeatherMedals_Settings_DisplayedTrophies>Displayed trophies: {COUNT}</FeatherMedals_Settings_DisplayedTrophies>
 	<FeatherMedals_Settings_DisplayedTrophies_Tooltip>Amount of displayed trophies on pawn. Trophies over this count exist, but are not drawn. Default: 9</FeatherMedals_Settings_DisplayedTrophies_Tooltip>
@@ -151,4 +151,7 @@
 	<FeatherMedals_Settings_NpcMaxTech>Highest faction tech level: {LEVEL}</FeatherMedals_Settings_NpcMaxTech>
 	<FeatherMedals_Settings_NpcTech_Tooltip>Tech level of factions considered to spawn with trophies. Default: Animal-Medieval</FeatherMedals_Settings_NpcTech_Tooltip>
 
+	<FeatherTrophies_Settings_GenerateScalpedNpcs>Pawns can spawn scalped</FeatherTrophies_Settings_GenerateScalpedNpcs>
+	<FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip>Pawns from other factions can spawn with an old scalping scar. Chance is 5% for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip>
+	
 </LanguageData>

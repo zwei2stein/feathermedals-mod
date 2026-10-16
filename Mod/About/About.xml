@@ -6,7 +6,7 @@
 	<li>1.7</li>
   </supportedVersions>
   <packageId>zwei2stein.FeatherMedals</packageId>
-  <description>Tribal trophies (feather headdresses) that can be awarded to pawns.</description>
+  <description>Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps that can be taken.</description>
   <modVersion>1.0.0</modVersion>
   <modDependencies>
     <li>
@@ -45,6 +45,7 @@
     <li>zwei2stein.pyrinthbionics</li>
     <li>det.keshig</li>
     <li>det.dwarvenstyle</li>
+    <li>pesky.bulwark</li>
     
   </loadAfter>
 </ModMetaData>

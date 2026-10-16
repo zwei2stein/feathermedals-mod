@@ -7,8 +7,7 @@
         <defName>FeatherTrophies_ScalpTaking</defName>
         <label>scalp taking</label>
         <description>Attitude towards scalping people by members. Scalping is taking a trophy by cutting off a scalp.</description>
-        <!-- TODO: Placeholder icon, swap for own texture later. -->
-        <iconPath>UI/Issues/DrugUse</iconPath>
+        <iconPath>UI/Issues/PreceptScalping</iconPath>
     </IssueDef>
 
     <!-- Precepts -->

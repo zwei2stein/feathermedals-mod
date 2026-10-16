@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <!-- buy royal favor with scalps of enemies. -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/TraderKindDef[defName="Empire_Caravan_TributeCollector"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuyTradeTag"><tag>FeatherTrophies_Scalp</tag></li>
+        </value>
+    </Operation>
+
+</Patch>

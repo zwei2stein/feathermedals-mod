@@ -113,6 +113,12 @@ namespace FeatherMedals
                     Settings.NpcTrophyMinTech = Settings.NpcTrophyMaxTech;
             }
             
+            listingStandard.CheckboxLabeled(
+                "FeatherTrophies_Settings_GenerateScalpedNpcs".Translate(),
+                ref Settings.GenerateNpcScalped,
+                "FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip".Translate()
+            );
+            
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
             
@@ -212,6 +218,7 @@ namespace FeatherMedals
         public float CenterZ = 0.1f;
         public int MaxDisplayedTrophies = 9;
         public bool GenerateNpcTrophies = true;
+        public bool GenerateNpcScalped = true;
         public TechLevel NpcTrophyMinTech = TechLevel.Animal;
         public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
 
@@ -225,10 +232,11 @@ namespace FeatherMedals
             Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
             Scribe_Values.Look(ref AutoGenerateCitation, "AutoGenerateCitation", false);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
-            Scribe_Values.Look(ref TrophyScale, "TrophyScale", 0.8f);
+            Scribe_Values.Look(ref TrophyScale, "TrophyScale", 1.3f);
             Scribe_Values.Look(ref VerticalBias, "VerticalBias", 0.35f);
-            Scribe_Values.Look(ref CenterZ, "CenterZ", 0.08f);
+            Scribe_Values.Look(ref CenterZ, "CenterZ", 0.1f);
             Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);
+            Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref NpcTrophyMinTech, "NpcTrophyMinTech", TechLevel.Animal);
             Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
         }

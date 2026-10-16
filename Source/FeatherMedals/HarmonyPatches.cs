@@ -165,6 +165,7 @@ public class HarmonyPatches
         public static void Postfix(Pawn pawn)
         {
             NpcTrophyGenerator.OnGearGenerated(pawn);
+            NpcScalpGenerator.OnGearGenerated(pawn);
         }
     }
 

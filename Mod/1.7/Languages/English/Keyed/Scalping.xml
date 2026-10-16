@@ -15,7 +15,9 @@
     <FeatherTrophies_Scalp_Label>Scalp of {VICTIM}</FeatherTrophies_Scalp_Label>
     <FeatherTrophies_Scalp_LabelFaction> of {FACTION}</FeatherTrophies_Scalp_LabelFaction>
     <FeatherTrophies_Scalp_Xenotype>, {XENOTYPE}</FeatherTrophies_Scalp_Xenotype>
-    
+
     <FeatherTrophies_Scalp_TakenBy>Scalp was taken by {SCALPER}.</FeatherTrophies_Scalp_TakenBy>
+    
+    <FeatherTrophies_Scalp_Anonymous>Unknown</FeatherTrophies_Scalp_Anonymous>
 
 </LanguageData>

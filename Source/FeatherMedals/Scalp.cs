@@ -11,22 +11,23 @@ namespace FeatherMedals
     {
         public const float PriceFactor = 0.1f;
         
-        private RememberedPawn victim;
-        private RememberedPawn scalper;
+        private RememberedPawn victim = new("FeatherTrophies_Scalp_Anonymous".Translate());
+        private RememberedPawn scalper = new("FeatherTrophies_Scalp_Anonymous".Translate());
 
         private string factionName;
         private string xenotypeName;
 
-        private Color skinColor = Color.white;
-        private HairDef hairDef;
-        private Color hairColor = Color.white;
+        private Color skinColor = new Color(0.74f, 0.58f, 0.47f);
+        private HairDef hairDef = FeatherMedalDefOf.Messy;
+        private Color hairColor = Color.black;
 
         private float priceBonus;
 
         private Texture2D texture;
         private bool bakeTried;
         private Graphic_Scalp graphic;
-
+        private Graphic rotated; // on ground with a bit of wiggle
+        
         public float PriceBonus => priceBonus;
 
         public static Scalp Create(Pawn victim, Pawn scalper)
@@ -122,8 +123,10 @@ namespace FeatherMedals
                 if (graphic == null && ScalpTextureWithHair != null)
                 {
                     graphic = new Graphic_Scalp(ScalpTextureWithHair, def.graphicData);
+                    float angle = def.graphicData?.onGroundRandomRotateAngle ?? 0f;
+                    rotated = angle > 0.01f ? new Graphic_RandomRotated(graphic, angle) : graphic;
                 }
-                return graphic ?? base.Graphic;
+                return rotated ?? base.Graphic;
             }
         }
 
@@ -134,6 +137,7 @@ namespace FeatherMedals
         {
             graphic?.Release();
             graphic = null;
+            rotated = null;
             if (texture != null)
             {
                 UnityEngine.Object.Destroy(texture);
