@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]//li[debugLabel="Hair"]/subworkerClasses</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]//li[debugLabel="Hair"]/subworkerClasses</xpath>
+            <value>
+                <li>FeatherMedals.PawnRenderSubWorker_HideWhenScalped</li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]//li[debugLabel="Hair"]</xpath>
+            <value>
+                <subworkerClasses>
+                    <li>FeatherMedals.PawnRenderSubWorker_HideWhenScalped</li>
+                </subworkerClasses>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

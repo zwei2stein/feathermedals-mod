@@ -35,5 +35,13 @@ public class FeatherMedalDefOf
     public static BackstoryDef FeatherTrophy_Backstory_PraisedWarrior;
     public static BackstoryDef FeatherTrophy_Backstory_PraisedChild;
     
+    //Scapling:
+    
+    public static HediffDef FeatherTrophies_Scalping_Scalped;
+    public static JobDef FeatherTrophies_Scalping_ScalpJob;
+    public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
+    public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
+    public static HistoryEventDef FeatherTrophies_Scalping_ScalpedMember;
+    
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

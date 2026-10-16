@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HistoryEventDef>
+        <defName>FeatherTrophies_Scalping_ScalpedMember</defName>
+        <label>scalped a member</label>
+    </HistoryEventDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_ScalpedMe</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <durationDays>40</durationDays>
+        <stackLimit>1</stackLimit>
+        <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>scalped me</label>
+                <description>{0} has scalped me! I despise {0} for this action.</description>
+                <baseOpinionOffset>-80</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <FeatherTrophies_Scalping_Menu>Scalp {TARGET}</FeatherTrophies_Scalping_Menu>
+    <FeatherTrophies_Scalping_GizmoLabel>Scalp</FeatherTrophies_Scalping_GizmoLabel>
+    <FeatherTrophies_Scalping_GizmoDesc>Order a colonist to scalp this person. Anyone able to cut flesh will take the job.</FeatherTrophies_Scalping_GizmoDesc>
+    
+    <FeatherTrophies_Scalping_WillAnger>Scalping {TARGET_nameDef} will anger {FACTION_name}.</FeatherTrophies_Scalping_WillAnger>
+    <FeatherTrophies_Scalping_Provoked>People of {PLAYERFACTION_name} have attempted to scalp {TARGET_nameDef}, and {TARGET_pronoun} is defending {TARGET_objective}self. {FACTION_name} is angered.</FeatherTrophies_Scalping_Provoked>
+    
+    <FeatherTrophies_Scalping_ScalpedBy>Scalped by {SCALPER}</FeatherTrophies_Scalping_ScalpedBy>
+
+</LanguageData>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>FeatherTrophies_Scalping_ScalpJob</defName>
+        <driverClass>FeatherMedals.JobDriver_Scalp</driverClass>
+        <reportString>scalping TargetA.</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <DesignationDef>
+        <defName>FeatherTrophies_Scalping_ScalpDesignation</defName>
+        <!-- TODO Placeholder icon, swap for own texture later. -->
+        <texturePath>UI/Designators/Slaughter</texturePath>
+        <targetType>Thing</targetType>
+    </DesignationDef>
+
+    <!-- medical, butchering or slaughter can scalp. -->
+    
+    <WorkGiverDef>
+        <defName>FeatherTrophies_Scalping_ScalpDoctor</defName>
+        <label>scalp</label>
+        <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
+        <workType>Doctor</workType>
+        <verb>scalp</verb>
+        <gerund>scalping</gerund>
+        <priorityInType>5</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+    <WorkGiverDef>
+        <defName>FeatherTrophies_Scalping_ScalpButcher</defName>
+        <label>scalp</label>
+        <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
+        <workType>Cooking</workType>
+        <verb>scalp</verb>
+        <gerund>scalping</gerund>
+        <priorityInType>5</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+    <WorkGiverDef>
+        <defName>FeatherTrophies_Scalping_ScalpSlaughterer</defName>
+        <label>scalp</label>
+        <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
+        <workType>Handling</workType>
+        <verb>scalp</verb>
+        <gerund>scalping</gerund>
+        <priorityInType>5</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+</Defs>

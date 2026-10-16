@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef>
+        <defName>FeatherTrophies_Scalping_Scalped</defName>
+        <hediffClass>FeatherMedals.Hediff_Scalped</hediffClass>
+        <label>scalped</label>
+        <labelNoun>a scalping</labelNoun>
+        <labelNounPretty>scalped {1}</labelNounPretty>
+        <description>The skin and hair were cut away from the top of the head and taken as a trophy. The scalp will never grow hair again.</description>
+        <isBad>true</isBad>
+        <tendable>false</tendable>
+        <displayWound>false</displayWound>
+        <everCurableByItem>true</everCurableByItem>
+        <duplicationAllowed>false</duplicationAllowed>
+        <forceRenderTreeRecache>true</forceRenderTreeRecache>
+        <initialSeverity>0.1</initialSeverity>
+        <injuryProps>
+            <averagePainPerSeverityPermanent>0.5</averagePainPerSeverityPermanent>
+            <bleedRate>0</bleedRate>
+            <canMerge>false</canMerge>
+        </injuryProps>
+        <comps>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>scalped</permanentLabel>
+                <instantlyPermanentLabel>scalped</instantlyPermanentLabel>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <PawnBeauty>-1</PawnBeauty>
+                </statOffsets>
+            </li>
+        </stages>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Scalp</debugLabel>
+                <nodeClass>FeatherMedals.PawnRenderNode_Scalp</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <parentTagDef>Head</parentTagDef>
+                <texPath>Things/Pawn/Humanlike/Scalped/Scalped</texPath>
+                <colorType>Skin</colorType>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <skipFlag>Hair</skipFlag>
+                <baseLayer>62</baseLayer>
+            </li>
+        </renderNodeProperties>
+    </HediffDef>
+
+</Defs>
