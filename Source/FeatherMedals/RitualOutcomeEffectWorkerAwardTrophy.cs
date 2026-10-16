@@ -46,7 +46,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             return;
 
         awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAward);
-        medal.awardedBy = presenter;
+        medal.awardedBy = new RememberedPawn(presenter);
         medal.awardedTick = Find.TickManager.TicksGame;
         medal.awardedTile = jobRitual.Map.Tile;
         

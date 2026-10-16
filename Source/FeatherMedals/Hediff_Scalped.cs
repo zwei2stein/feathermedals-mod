@@ -7,31 +7,21 @@ namespace FeatherMedals
         private const float FreshDays = 5f;
         private const int FreshTicks = (int)(FreshDays * 60000f);
         
-        public Pawn scalper;
-        public string scalperName;
+        public RememberedPawn scalper;
 
         private bool wasFresh = true;
 
         public bool IsFresh => ageTicks < FreshTicks;
-
-        public string GetScalperName()
-        {
-            if (scalper != null)
-            {
-                // get current name (if player renamed pawn...)
-                scalperName = scalper.NameFullColored;
-            }
-            return scalperName;
-        }
 
         public override string TipStringExtra
         {
             get
             {
                 string text = base.TipStringExtra;
+                string scalperName = scalper?.Name;
                 if (!scalperName.NullOrEmpty())
                 {
-                    text += "\n" + "FeatherTrophies_Scalping_ScalpedBy".Translate(GetScalperName().Named("SCALPER"));
+                    text += "\n" + "FeatherTrophies_Scalping_ScalpedBy".Translate(scalperName.Named("SCALPER"));
                 }
                 return text;
             }
@@ -61,8 +51,7 @@ namespace FeatherMedals
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.Look(ref scalper, "scalper");
-            Scribe_Values.Look(ref scalperName, "scalperName");
+            Scribe_Deep.Look(ref scalper, "scalper");
         }
     }
 }

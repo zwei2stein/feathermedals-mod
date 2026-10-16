@@ -185,9 +185,7 @@ namespace FeatherMedals
             var scalp = Scalp.Create(victim, scalper);
 
             var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, victim, head);
-            scalped.scalper = scalper;
-            // updates name label:
-            scalped.GetScalperName();
+            scalped.scalper = new RememberedPawn(scalper);
             victim.health.AddHediff(scalped, head);
 
             if (alive)

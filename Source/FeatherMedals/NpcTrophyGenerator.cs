@@ -248,7 +248,8 @@ public static class NpcTrophyGenerator
 
         medal.awardedTick = PickAwardedTick(pawn);
         medal.awardedTile = settlementTiles.Count > 0 ? settlementTiles.RandomElement() : fallbackTile;
-        medal.awardedBy = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
+        var presenter = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
+        medal.awardedBy = presenter != null ? new RememberedPawn(presenter) : null;
         medal.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(medal, pawn, leader);
         medal.citation = CitationUtil.Generate(pawn.Faction, pawn, medal.awardedTile);

@@ -42,8 +42,7 @@
 	<FeatherMedals_Ceremony_Started>{LEADER_labelShort} has begun the adorning ritual of a trophy upon {PAWN_labelShort}.</FeatherMedals_Ceremony_Started>
 
 	<FeatherMedals_Inspector_AwardedTo>Honoring: {PAWN_labelShort}</FeatherMedals_Inspector_AwardedTo>
-	<FeatherMedals_Inspector_PresentedBy>Adorned by: {PAWN_labelShort}</FeatherMedals_Inspector_PresentedBy>
-	<FeatherMedals_Inspector_PresentedBy_Dead>Adorned by: {PAWN_labelShort} (Deceased)</FeatherMedals_Inspector_PresentedBy_Dead>
+	<FeatherMedals_Inspector_PresentedBy>Adorned by: {PAWN}</FeatherMedals_Inspector_PresentedBy>
 	<FeatherMedals_Inspector_AwardedDate>Adorned at: {DATE}</FeatherMedals_Inspector_AwardedDate>
 	<FeatherMedals_Inspector_AwardedCeremonyQuality>Adorning ritual success: {QUALITY}</FeatherMedals_Inspector_AwardedCeremonyQuality>
 

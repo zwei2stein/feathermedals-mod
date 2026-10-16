@@ -17,7 +17,7 @@ namespace FeatherMedals
             
         public string citation;
         public int ceremonyQuality = -1; // -1 = not yet awarded
-        public Pawn awardedBy;
+        public RememberedPawn awardedBy;
         
         public int awardedTick = -1;
         public PlanetTile awardedTile = PlanetTile.Invalid; // ceremony map tile for date
@@ -34,7 +34,7 @@ namespace FeatherMedals
             base.ExposeData();
             Scribe_Values.Look(ref citation, "citation");
             Scribe_Values.Look(ref ceremonyQuality, "ceremonyQuality", -1);
-            Scribe_References.Look(ref awardedBy, "awardedBy", true);
+            Scribe_Deep.Look(ref awardedBy, "awardedBy");
             
             Scribe_Values.Look(ref awardedTick, "awardedTick", -1);
             Scribe_Values.Look(ref awardedTile, "awardedTile", PlanetTile.Invalid);
@@ -227,9 +227,7 @@ namespace FeatherMedals
         {
             if (awardedBy == null)
                 return null;
-            return awardedBy.Dead
-                ? "FeatherMedals_Inspector_PresentedBy_Dead".Translate(awardedBy.Named("PAWN"))
-                : "FeatherMedals_Inspector_PresentedBy".Translate(awardedBy.Named("PAWN"));
+            return "FeatherMedals_Inspector_PresentedBy".Translate(awardedBy.Name.Named("PAWN"));
         }
         
         public string GetAwardedDateLabel()

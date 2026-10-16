@@ -55,7 +55,7 @@ public class Dialog_TrophyAwarded : Window
 
         // Presented by
         Text.Font = GameFont.Tiny;
-        var presenterLine = "FeatherMedals_Inspector_PresentedBy".Translate(presenter.Named("PAWN"));
+        var presenterLine = medal.GetAwardedByLabel();
         var presenterHeight = Text.CalcHeight(presenterLine, inRect.width);
         Widgets.Label(new Rect(inRect.x, curY, inRect.width, presenterHeight), presenterLine);
         curY += presenterHeight + 10f;
