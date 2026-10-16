@@ -21,6 +21,7 @@
                 <li>catcher->Charm</li>
                 <li>catcher->Totem</li>
                 <li>catcher->Talisman</li>
+                <li>catcher->Ward</li>
                 <li>catcher->Weave</li>
                 
                 <li>noun->Dreams</li>
@@ -47,6 +48,7 @@
                 <li>catcher->charm</li>
                 <li>catcher->catcher</li>
                 <li>catcher->totem</li>
+                <li>catcher->ward</li>
                 <li>catcher->weave</li>
             </rulesStrings>
         </rulePack>
