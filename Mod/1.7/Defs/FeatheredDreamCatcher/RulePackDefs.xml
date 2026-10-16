@@ -22,6 +22,7 @@
                 <li>catcher->Totem</li>
                 <li>catcher->Talisman</li>
                 <li>catcher->Ward</li>
+                <li>catcher->Sleep ward</li>
                 <li>catcher->Weave</li>
                 
                 <li>noun->Dreams</li>
@@ -49,6 +50,7 @@
                 <li>catcher->catcher</li>
                 <li>catcher->totem</li>
                 <li>catcher->ward</li>
+                <li>catcher->sleep ward</li>
                 <li>catcher->weave</li>
             </rulesStrings>
         </rulePack>
