@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+        <defName>FeatherTrophies_Scalps</defName>
+        <label>scalps</label>
+        <parent>Items</parent>
+    </ThingCategoryDef>
+
+    <ThingDef>
+        <defName>FeatherTrophies_Scalping_Scalp</defName>
+        <label>scalp</label>
+        <description>A scalp taken from an enemy, hair still attached.</description>
+        <thingClass>FeatherMedals.Scalp</thingClass>
+        <category>Item</category>
+        <selectable>true</selectable>
+        <altitudeLayer>Item</altitudeLayer>
+        <alwaysHaulable>true</alwaysHaulable>
+        <rotatable>false</rotatable>
+        <pathCost>14</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <stackLimit>1</stackLimit>
+        <tradeability>All</tradeability>
+        <uiIconScale>1.8</uiIconScale>
+        <thingCategories>
+            <li>FeatherTrophies_Scalps</li>
+        </thingCategories>
+        <graphicData>
+            <!-- Fallback only. Real picture is baked per item. -->
+            <texPath>Things/Pawn/Humanlike/Scalp/ScalpBase</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Cutout</shaderType>
+            <drawSize>1</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>20</MarketValue>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>0.5</Mass>
+            <Flammability>1</Flammability>
+            <DeteriorationRate>1</DeteriorationRate>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li Class="FeatherMedals.CompProperties_ScalpPrice"/>
+        </comps>
+    </ThingDef>
+
+</Defs>

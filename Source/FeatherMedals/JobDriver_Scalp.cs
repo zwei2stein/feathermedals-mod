@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -7,7 +8,21 @@ namespace FeatherMedals
 {
     public class JobDriver_Scalp : JobDriver
     {
+        private const int MinDurationTicks = 50;
+        private const int MaxDurationTicks = 300;
+
+        private const float MedicineXp = 100f;
+
         private Thing Target => job.targetA.Thing;
+
+        private int DurationTicks()
+        {
+            float speed = pawn.GetStatValue(StatDefOf.MedicalTendSpeed);
+            if (speed <= 0f)
+                return MaxDurationTicks;
+
+            return Mathf.Clamp(Mathf.RoundToInt(MaxDurationTicks / speed), MinDurationTicks, MaxDurationTicks);
+        }
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -24,7 +39,7 @@ namespace FeatherMedals
             walk.FailOn(() => !ScalpingUtility.CanBeScalped(Target, pawn));
             yield return walk;
 
-            // Non-hostile target: caught in the act, target defends itself and the attempt fails.
+            // Non-hostile target: targets goes hostile.
             yield return Toils_General.Do(() =>
             {
                 if (Target is Pawn victim && ScalpingUtility.WouldAngerFaction(victim))
@@ -35,7 +50,7 @@ namespace FeatherMedals
                 }
             });
 
-            var work = Toils_General.WaitWith(TargetIndex.A, ScalpingTuning.DurationTicks, true, false, false, TargetIndex.A);
+            var work = Toils_General.WaitWith(TargetIndex.A, DurationTicks(), true, false, false, TargetIndex.A);
             
             // can change eligibility while in progress
             work.FailOn(() => !ScalpingUtility.CanBeScalped(Target, pawn));
@@ -48,6 +63,7 @@ namespace FeatherMedals
                 Thing target = Target;
                 Map map = target.Map;
                 ScalpingUtility.DoScalp(pawn, target);
+                pawn.skills?.Learn(SkillDefOf.Medicine, MedicineXp);
                 map?.designationManager.TryRemoveDesignationOn(target, FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpDesignation);
             });
         }

@@ -7,20 +7,16 @@ namespace FeatherMedals
 {
     public static class ScalpingTuning
     {
-        // Ticks the scalping job takes.
-        public const int DurationTicks = 300;
-
-        // Severity of the head cut on a living victim (vanilla Cut: bleed = 0.06 x severity).
-        public const float CutSeverity = 8f;
-
         // Goodwill lost with the victim's home faction. Dead victim loses half.
         public const int GoodwillLossAlive = 20;
         public const int GoodwillLossDead = GoodwillLossAlive / 2;
-    }
 
+    }
     
     public static class ScalpingUtility
     {
+        // Severity of the head cut on a living victim (vanilla Cut: bleed = 0.06 x severity).
+        public const float CutSeverity = 8f;
 
         private static Pawn PawnOf(Thing thing)
         {
@@ -185,6 +181,9 @@ namespace FeatherMedals
             var map = target.MapHeld;
             var pos = target.PositionHeld;
 
+            // Before hediffs: scalp remembers victim as they were (value, skin, hair).
+            var scalp = Scalp.Create(victim, scalper);
+
             var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, victim, head);
             scalped.scalper = scalper;
             // updates name label:
@@ -194,7 +193,7 @@ namespace FeatherMedals
             if (alive)
             {
                 var cut = HediffMaker.MakeHediff(HediffDefOf.Cut, victim, head);
-                cut.Severity = ScalpingTuning.CutSeverity;
+                cut.Severity = CutSeverity;
                 victim.health.AddHediff(cut, head);
 
                 victim.needs?.mood?.thoughts.memories.TryGainMemory(
@@ -209,13 +208,9 @@ namespace FeatherMedals
                 FilthMaker.TryMakeFilth(pos, map, blood, victim.LabelIndefinite());
             }
 
-            // TODO Placeholder scalp item until the real one exists.
-            var leather = victim.RaceProps.leatherDef;
-            if (leather != null && scalper.Map != null)
+            if (scalper.Map == null || !GenPlace.TryPlaceThing(scalp, scalper.Position, scalper.Map, ThingPlaceMode.Near))
             {
-                var item = ThingMaker.MakeThing(leather);
-                item.stackCount = 1;
-                GenPlace.TryPlaceThing(item, scalper.Position, scalper.Map, ThingPlaceMode.Near);
+                scalp.Destroy();
             }
 
             if (faction != null && faction != Faction.OfPlayer)

@@ -38,6 +38,7 @@ public class FeatherMedalDefOf
     //Scapling:
     
     public static HediffDef FeatherTrophies_Scalping_Scalped;
+    public static ThingDef FeatherTrophies_Scalping_Scalp;
     public static JobDef FeatherTrophies_Scalping_ScalpJob;
     public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
     public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
