@@ -55,7 +55,7 @@ public static class HonoringWarriorsUtil
         return best;
     }
 
-    private static bool ConflictsWithMemes(Ideo ideo, PreceptDef def)
+    public static bool ConflictsWithMemes(Ideo ideo, PreceptDef def)
     {
         var conflicts = def.conflictingMemes;
         if (conflicts == null)

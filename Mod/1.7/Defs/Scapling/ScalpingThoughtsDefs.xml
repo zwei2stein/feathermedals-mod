@@ -22,4 +22,33 @@
         </stages>
     </ThoughtDef>
 
+    <!-- Victim's own mood: sharp at first, then lingers while the Scalped hediff stays. -->
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_WasScalped</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>I am scalped</label>
+                <description>Enemy took my scalp and disfigured me. Wound and shame are still recent.</description>
+                <baseMoodEffect>-40</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_Disfigured</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Scalped</workerClass>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>I was scalped</label>
+                <description>I am disfigured and shamed by the loss of my scalp.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
 </Defs>

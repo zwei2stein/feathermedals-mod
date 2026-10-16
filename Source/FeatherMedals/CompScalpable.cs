@@ -30,7 +30,7 @@ namespace FeatherMedals
                 yield break;
             }
             // Designation that stopped being possible be cancelled.
-            if (!Designated && !ScalpingUtility.CanBeScalped(parent))
+            if (!Designated && !ScalpingUtility.CanBeScalpedByAnyone(parent))
             {
                 yield break;
             }

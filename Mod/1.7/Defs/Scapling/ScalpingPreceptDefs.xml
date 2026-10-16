@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Issue -->
+
+    <IssueDef>
+        <defName>FeatherTrophies_ScalpTaking</defName>
+        <label>scalp taking</label>
+        <description>Attitude towards scalping people by members. Scalping is taking a trophy by cutting off a scalp.</description>
+        <!-- TODO: Placeholder icon, swap for own texture later. -->
+        <iconPath>UI/Issues/DrugUse</iconPath>
+    </IssueDef>
+
+    <!-- Precepts -->
+
+    <PreceptDef Name="FeatherTrophies_ScalpTaking_Base" Abstract="True">
+        <issue>FeatherTrophies_ScalpTaking</issue>
+        <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+        <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+        <defaultSelectionWeight>0.001</defaultSelectionWeight>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
+        <defName>FeatherTrophies_ScalpTaking_Merciless</defName>
+        <label>merciless</label>
+        <description>Allows taking scalps without any moral restrictions. Children, innocents, allies: all are fair game, regardless of consequences.</description>
+        <impact>High</impact>
+        <displayOrderInIssue>1</displayOrderInIssue>
+        <associatedMemes>
+            <li>Cannibal</li>
+        </associatedMemes>
+        <conflictingMemes>
+            <li>FleshPurity</li>
+            <li>Guilty</li>
+        </conflictingMemes>
+        <comps>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>FeatherTrophies_Scalping_TookScalp</eventDef>
+                <thought>FeatherTrophies_Scalping_ClaimedRightOfVictor</thought>
+            </li>
+        </comps>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
+        <defName>FeatherTrophies_ScalpTaking_Honourable</defName>
+        <label>honourable</label>
+        <description>Allows taking scalps where honour allows it: enemies and guilty prisoners.</description>
+        <impact>Low</impact>
+        <displayOrderInIssue>2</displayOrderInIssue>
+        <defaultSelectionWeight>1</defaultSelectionWeight>
+        <associatedMemes>
+            <li>Loyalist</li>
+            <li>Raider</li>
+            <li>Supremacist</li>
+            <li>PainIsVirtue</li>
+        </associatedMemes>
+        <conflictingMemes>
+            <li>FleshPurity</li>
+        </conflictingMemes>
+    </PreceptDef>
+
+    <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
+        <defName>FeatherTrophies_ScalpTaking_Forbidden</defName>
+        <label>forbidden</label>
+        <description>Forbids taking scalps at all. Members consider taking scalps barbaric and unacceptable.</description>
+        <impact>Medium</impact>
+        <displayOrderInIssue>3</displayOrderInIssue>
+        <conflictingMemes>
+            <li>Cannibal</li>
+            <li>Loyalist</li>
+            <li>Raider</li>
+            <li>Supremacist</li>
+            <li>PainIsVirtue</li>
+        </conflictingMemes>
+        <comps>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>FeatherTrophies_Scalping_ObservedScalped</eventDef>
+                <thought>FeatherTrophies_Scalping_Brutality</thought>
+            </li>
+        </comps>
+    </PreceptDef>
+
+    <!-- History events -->
+
+    <HistoryEventDef>
+        <defName>FeatherTrophies_Scalping_TookScalp</defName>
+        <label>took a scalp</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>FeatherTrophies_Scalping_ObservedScalped</defName>
+        <label>saw a scalped person</label>
+    </HistoryEventDef>
+
+    <!-- Thoughts -->
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_ClaimedRightOfVictor</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>8</stackLimit>
+        <stackedEffectMultiplier>1</stackedEffectMultiplier>
+        <stages>
+            <li>
+                <label>claimed right of victor</label>
+                <description>I have claimed the scalps of my enemies, it thrills me.</description>
+                <baseMoodEffect>5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_Brutality</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <stages>
+            <li>
+                <label>brutality of scalping</label>
+                <description>I have witnessed brutality of scalping secondhand.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

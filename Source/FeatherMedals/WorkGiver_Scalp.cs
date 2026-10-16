@@ -27,17 +27,26 @@ namespace FeatherMedals
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            if (!ScalpingUtility.CanBeScalped(t))
+            if (!ScalpingUtility.CanBeScalpedByAnyone(t))
             {
                 // Target no longer qualifies, drop designation.
                 t.Map?.designationManager.TryRemoveDesignationOn(t, FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpDesignation);
+                return false;
+            }
+            if (ScalpingPrecepts.StanceOf(pawn) == ScalpStance.Forbidden)
+            {
+                JobFailReason.Is("FeatherTrophies_Scalping_IdeoForbids".Translate());
+                return false;
+            }
+            if (!ScalpingUtility.CanBeScalped(t, pawn))
+            {
                 return false;
             }
             if (!pawn.CanReserve(t, ignoreOtherReservations: forced))
             {
                 return false;
             }
-            if (!(t is Corpse) && pawn.WorkTagIsDisabled(WorkTags.Violent))
+            if (pawn.WorkTagIsDisabled(WorkTags.Violent))
             {
                 JobFailReason.Is("IsIncapableOfViolenceShort".Translate((NamedArgument)(Thing)pawn));
                 return false;

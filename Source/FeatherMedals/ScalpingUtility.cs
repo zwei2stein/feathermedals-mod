@@ -16,10 +16,6 @@ namespace FeatherMedals
         // Goodwill lost with the victim's home faction. Dead victim loses half.
         public const int GoodwillLossAlive = 20;
         public const int GoodwillLossDead = GoodwillLossAlive / 2;
-
-        // Damage dealt to a non-hostile target caught being scalped. Goes through the normal damage pipeline,
-        // so faction goodwill (-1.3 per point) and the target's reaction are the same as for a force-attack.
-        public const float ProvokedDamage = 8f;
     }
 
     
@@ -46,11 +42,12 @@ namespace FeatherMedals
             // * Is not scalped already
             // * Will not resist (pawns that are hostile and not prisoners: must be downed)
             // * If dead, corpse must be fresh
+            // * Colonist must be downed (slaves and prisoners exempt)
             // Examples of pawns not physically eligible:
-            // Hostile that is not downed
-            // Pawn missing head
-            // Pawn with Scalped hediff
-            // Rotten corpse or dessicated corpse.
+            // * Hostile that is not downed
+            // * Pawn missing head
+            // * Pawn with Scalped hediff
+            // * Rotten corpse or dessicated corpse.
             if (!Can_PhysicallyCapableOfBeingScalped(pawn, thing))
                 return false;
 
@@ -70,6 +67,34 @@ namespace FeatherMedals
 
             return true;
             
+        }
+
+        // What this scalper's ideology allows. Honourable: evil check applies. Merciless: no evil check. Forbidden: nothing.
+        public static bool CanBeScalped(Thing thing, Pawn scalper)
+        {
+            Pawn pawn = PawnOf(thing);
+
+            if (!Can_PhysicallyCapableOfBeingScalped(pawn, thing))
+                return false;
+
+            switch (ScalpingPrecepts.StanceOf(scalper))
+            {
+                case ScalpStance.Forbidden:
+                    return false;
+                case ScalpStance.Merciless:
+                    return true;
+                default:
+                    return Can_IsNotEvilToBeScalped(pawn);
+            }
+        }
+
+        // To be able to show gizmo in mixed ideo colony.
+        public static bool CanBeScalpedByAnyone(Thing thing)
+        {
+            if (CanBeScalped(thing))
+                return true;
+
+            return ScalpingPrecepts.AnyMercilessColonist() && Can_PhysicallyCapableOfBeingScalped(PawnOf(thing), thing);
         }
 
         private static bool Can_IsNotEvilToBeScalped(Pawn pawn)
@@ -104,8 +129,11 @@ namespace FeatherMedals
             if (pawn.Dead)
                 return false;
             
-            if (pawn.Faction == Faction.OfPlayer || pawn.IsPrisonerOfColony)
+            if (pawn.IsPrisonerOfColony || pawn.IsSlaveOfColony)
                 return true;
+
+            if (pawn.Faction == Faction.OfPlayer)
+                return pawn.Downed;
             
             var home = pawn.HomeFaction;
             if ((home != null && home.HostileTo(Faction.OfPlayer)) || pawn.HostileTo(Faction.OfPlayer))
@@ -126,11 +154,16 @@ namespace FeatherMedals
                    && !faction.HostileTo(Faction.OfPlayer) && !pawn.IsPrisonerOfColony;
         }
 
-        // Scalper is caught in the act: target is hurt like in a force-attack and defends itself. The scalp fails.
-        public static void Provoke(Pawn scalper, Pawn target)
+        public static void Provoke(Pawn target)
         {
+            // Trying to scalp turns faction hostile.
             var faction = target.Faction;
-            target.TakeDamage(new DamageInfo(DamageDefOf.Cut, ScalpingTuning.ProvokedDamage, instigator: scalper, hitPart: HeadOf(target)));
+            var change = Faction.OfPlayer.GoodwillToMakeHostile(faction);
+            if (change != 0)
+            {
+                Faction.OfPlayer.TryAffectGoodwillWith(faction, change, false, true,
+                    FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMember, (GlobalTargetInfo)target);
+            }
 
             Messages.Message(
                 "FeatherTrophies_Scalping_Provoked".Translate(
@@ -141,7 +174,7 @@ namespace FeatherMedals
         public static void DoScalp(Pawn scalper, Thing target)
         {
             var victim = PawnOf(target);
-            if (victim == null || !CanBeScalped(target))
+            if (victim == null || !CanBeScalped(target, scalper))
             {
                 return;
             }
@@ -166,6 +199,8 @@ namespace FeatherMedals
 
                 victim.needs?.mood?.thoughts.memories.TryGainMemory(
                     FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMe, scalper);
+                victim.needs?.mood?.thoughts.memories.TryGainMemory(
+                    FeatherMedalDefOf.FeatherTrophies_Scalping_WasScalped);
             }
 
             var blood = victim.RaceProps.BloodDef;
@@ -174,7 +209,7 @@ namespace FeatherMedals
                 FilthMaker.TryMakeFilth(pos, map, blood, victim.LabelIndefinite());
             }
 
-            // Placeholder scalp item until the real one exists.
+            // TODO Placeholder scalp item until the real one exists.
             var leather = victim.RaceProps.leatherDef;
             if (leather != null && scalper.Map != null)
             {
@@ -188,6 +223,15 @@ namespace FeatherMedals
                 var loss = alive ? ScalpingTuning.GoodwillLossAlive : ScalpingTuning.GoodwillLossDead;
                 faction.TryAffectGoodwillWith(Faction.OfPlayer, -loss, true, true,
                     FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMember, (GlobalTargetInfo)target);
+            }
+
+            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(FeatherMedalDefOf.FeatherTrophies_Scalping_TookScalp,
+                scalper.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim)));
+
+            // Bloodlust gives thought, ignoring ideo stance.
+            if (scalper.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true && ScalpingPrecepts.StanceOf(scalper) != ScalpStance.Merciless)
+            {
+                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.FeatherTrophies_Scalping_ClaimedRightOfVictor);
             }
         }
     }

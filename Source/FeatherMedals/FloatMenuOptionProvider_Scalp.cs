@@ -28,19 +28,26 @@ namespace FeatherMedals
         private static FloatMenuOption Build(Thing target, FloatMenuContext context)
         {
             Pawn actor = context.FirstSelectedPawn;
-            if (!ScalpingUtility.CanBeScalped(target))
+            // Forbidden by ideology: still listed (disabled) when it would be allowed otherwise.
+            bool forbidden = ScalpingPrecepts.StanceOf(actor) == ScalpStance.Forbidden;
+            if (!(forbidden ? ScalpingUtility.CanBeScalped(target) : ScalpingUtility.CanBeScalped(target, actor)))
             {
                 return null;
             }
 
             string label = "FeatherTrophies_Scalping_Menu".Translate(target.LabelShortCap.Named("TARGET"));
+            if (forbidden)
+            {
+                return new FloatMenuOption(label + " (" + "FeatherTrophies_Scalping_IdeoForbids".Translate() + ")", null);
+            }
+
             bool angers = ScalpingUtility.WouldAngerFaction(target);
             if (angers)
             {
                 label += ": " + "AngersFaction".Translate().CapitalizeFirst();
             }
 
-            if (!(target is Corpse) && actor.WorkTagIsDisabled(WorkTags.Violent))
+            if (actor.WorkTagIsDisabled(WorkTags.Violent))
             {
                 return new FloatMenuOption(label + " (" + "IsIncapableOfViolenceShort".Translate((NamedArgument)(Thing)actor) + ")", null);
             }

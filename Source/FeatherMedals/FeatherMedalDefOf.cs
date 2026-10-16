@@ -41,7 +41,16 @@ public class FeatherMedalDefOf
     public static JobDef FeatherTrophies_Scalping_ScalpJob;
     public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
     public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
+    public static ThoughtDef FeatherTrophies_Scalping_ClaimedRightOfVictor;
+    public static ThoughtDef FeatherTrophies_Scalping_WasScalped;
     public static HistoryEventDef FeatherTrophies_Scalping_ScalpedMember;
+    public static HistoryEventDef FeatherTrophies_Scalping_TookScalp;
+    public static HistoryEventDef FeatherTrophies_Scalping_ObservedScalped;
+
+    public static IssueDef FeatherTrophies_ScalpTaking;
+    public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
+    public static PreceptDef FeatherTrophies_ScalpTaking_Honourable;
+    public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
     
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }
