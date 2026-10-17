@@ -116,6 +116,9 @@
             <li>Bloodlust</li>
             <li>Cannibal</li>
         </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>brutality of scalping</label>

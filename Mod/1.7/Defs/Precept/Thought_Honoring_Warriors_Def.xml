@@ -4,6 +4,12 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Forbidden_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <nullifyingTraits>
+            <li>Jealous</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>elevated above others (1)</label>
@@ -59,6 +65,9 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Forbidden_OthersWearing</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>others lording over us (1)</label>
@@ -126,6 +135,9 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Forbidden_RecentCeremonies</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>one put above others (1)</label>
@@ -164,6 +176,12 @@
         <defName>FeatherMedals_HW_Forbidden_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>Deified despite it being unacceptable</label>
@@ -177,6 +195,12 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Disapproved_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>wearing a disapproved trophy</label>
@@ -190,6 +214,9 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Disapproved_OthersWearing</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>one people, none above (1)</label>
@@ -257,6 +284,9 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Disapproved_RecentCeremonies</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>one put above others (1)</label>
@@ -289,6 +319,9 @@
         <defName>FeatherMedals_HW_Disapproved_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>Lionized unjustly</label>
@@ -302,6 +335,12 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Desired_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <nullifyingTraits>
+            <li>Ascetic</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>honored by my peers</label>
@@ -316,6 +355,12 @@
         <defName>FeatherMedals_HW_Desired_NoTrophy</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
         <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
+        <nullifyingTraits>
+            <li>Ascetic</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>my deeds overlooked</label>
@@ -329,6 +374,12 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Desired_YearsWithoutCeremony</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
+        <nullifyingTraits>
+            <li>Jealous</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>no recognition for long (1)</label>
@@ -361,6 +412,9 @@
         <defName>FeatherMedals_HW_Desired_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>Adorned hero</label>
@@ -374,6 +428,12 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Required_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <nullifyingTraits>
+            <li>Ascetic</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>exalted by my peers</label>
@@ -388,6 +448,12 @@
         <defName>FeatherMedals_HW_Required_NoTrophy</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
         <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
+        <nullifyingTraits>
+            <li>Ascetic</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>my deeds overlooked</label>
@@ -402,6 +468,12 @@
         <defName>FeatherMedals_HW_Required_OthersNotWearing</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersNotWearing</workerClass>
         <minExpectationForNegativeThought>High</minExpectationForNegativeThought>
+        <nullifyingTraits>
+            <li>Jealous</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>many of us ignored (1)</label>
@@ -469,6 +541,12 @@
     <ThoughtDef>
         <defName>FeatherMedals_HW_Required_YearsWithoutCeremony</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
+        <nullifyingTraits>
+            <li>Jealous</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>no recognition for long (1)</label>
@@ -507,6 +585,9 @@
         <defName>FeatherMedals_HW_Required_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
         <stages>
             <li>
                 <label>Glorious hero adorned with trophies I covet for myself</label>

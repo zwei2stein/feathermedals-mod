@@ -25,8 +25,8 @@ namespace FeatherMedals
 
         public override string SettingsCategory() => "FeatherMedals_ModName".Translate();
 
-        private enum SettingsTab { General, Display }
-        private static SettingsTab currentTab = SettingsTab.General;
+        private enum SettingsTab { Feathers, Scalping, Display }
+        private static SettingsTab currentTab = SettingsTab.Feathers;
         private static readonly List<TabRecord> tabBuf = new();
 
         public override void DoSettingsWindowContents(Rect inRect)
@@ -35,21 +35,23 @@ namespace FeatherMedals
             var contentRect = new Rect(inRect.x, inRect.y + tabBarHeight, inRect.width, inRect.height - tabBarHeight);
 
             tabBuf.Clear();
-            tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_General".Translate(), () => currentTab = SettingsTab.General, currentTab == SettingsTab.General));
+            tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_Feathers".Translate(), () => currentTab = SettingsTab.Feathers, currentTab == SettingsTab.Feathers));
+            tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_Scalping".Translate(), () => currentTab = SettingsTab.Scalping, currentTab == SettingsTab.Scalping));
             tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_Display".Translate(), () => currentTab = SettingsTab.Display, currentTab == SettingsTab.Display));
-
+            
             Widgets.DrawMenuSection(contentRect);
             TabDrawer.DrawTabs(contentRect, tabBuf);
 
             var inner = contentRect.ContractedBy(12f);
             switch (currentTab)
             {
-                case SettingsTab.General: DrawGeneralTab(inner); break;
+                case SettingsTab.Feathers: DrawFeathersTab(inner); break;
+                case SettingsTab.Scalping: DrawScalpingTab(inner); break;
                 case SettingsTab.Display: DrawDisplayTab(inner); break;
             }
         }
 
-        private static void DrawGeneralTab(Rect rect)
+        private static void DrawFeathersTab(Rect rect)
         {
             var listingStandard = new Listing_Standard();
             
@@ -113,6 +115,45 @@ namespace FeatherMedals
                     Settings.NpcTrophyMinTech = Settings.NpcTrophyMaxTech;
             }
             
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
+
+            listingStandard.End();
+        }
+
+        private static void DrawScalpingTab(Rect rect)
+        {
+            var listingStandard = new Listing_Standard();
+            
+            var gapWidth = 12f;
+            
+            listingStandard.Begin(rect);
+            
+            listingStandard.GapLine();
+
+            listingStandard.Label("FeatherMedals_Settings_Block_ScalpUI_Label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
+                 "FeatherTrophies_Settings_ShowScalpinGizmo".Translate(),
+                ref Settings.ShowScalpingGizmo,
+                 "FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip".Translate()
+            );
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
+
+            listingStandard.Label("FeatherMedals_Settings_Block_Npc_Label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+            
             listingStandard.CheckboxLabeled(
                 "FeatherTrophies_Settings_GenerateScalpedNpcs".Translate(),
                 ref Settings.GenerateNpcScalped,
@@ -127,6 +168,7 @@ namespace FeatherMedals
             listingStandard.End();
         }
 
+        
         private static TechLevel DrawTechLevelSlider(Listing_Standard listing, string labelKey, TechLevel current)
         {
             var value = listing.SliderLabeled(
@@ -218,9 +260,10 @@ namespace FeatherMedals
         public float CenterZ = 0.1f;
         public int MaxDisplayedTrophies = 9;
         public bool GenerateNpcTrophies = true;
-        public bool GenerateNpcScalped = true;
         public TechLevel NpcTrophyMinTech = TechLevel.Animal;
         public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
+        public bool GenerateNpcScalped = true;
+        public bool ShowScalpingGizmo = true;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -236,9 +279,10 @@ namespace FeatherMedals
             Scribe_Values.Look(ref VerticalBias, "VerticalBias", 0.35f);
             Scribe_Values.Look(ref CenterZ, "CenterZ", 0.1f);
             Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);
-            Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref NpcTrophyMinTech, "NpcTrophyMinTech", TechLevel.Animal);
             Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
+            Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
+            Scribe_Values.Look(ref ShowScalpingGizmo, "ShowScalpingGizmo", true);
         }
     }
 

@@ -24,16 +24,16 @@ namespace FeatherMedals
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!parent.Spawned)
-            {
+            if (!MedalMod.Settings.ShowScalpingGizmo)
                 yield break;
-            }
+            
+            if (!parent.Spawned)
+                yield break;
+            
             // Designation that stopped being possible be cancelled.
             if (!Designated && !ScalpingUtility.CanBeScalpedByAnyone(parent))
-            {
                 yield break;
-            }
-
+            
             yield return new Command_Toggle
             {
                 defaultLabel = "FeatherTrophies_Scalping_GizmoLabel".Translate(),
@@ -77,13 +77,11 @@ namespace FeatherMedals
                 return;
             
             if (def.comps == null)
-            {
                 def.comps = new List<CompProperties>();
-            }
+            
             if (!def.comps.Any(c => c is CompProperties_Scalpable))
-            {
                 def.comps.Add(new CompProperties_Scalpable());
-            }
+            
         }
     }
 }
