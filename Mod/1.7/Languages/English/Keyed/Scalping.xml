@@ -20,4 +20,12 @@
     
     <FeatherTrophies_Scalp_Anonymous>Unknown</FeatherTrophies_Scalp_Anonymous>
 
+    <!-- scalp gifts -->
+
+    <FeatherTrophies_ScalpGift_LetterLabel>Scalp shipment resented</FeatherTrophies_ScalpGift_LetterLabel>
+    <FeatherTrophies_ScalpGift_Letter>{FACTION} did not take recent scalp shipment well. Relationship loss: {LOSS}\n\nReasons:\n{REASONS}</FeatherTrophies_ScalpGift_Letter>
+    <FeatherTrophies_ScalpGift_Reason_Forbidden>They do not practice barbaric custom of scalping.</FeatherTrophies_ScalpGift_Reason_Forbidden>
+    <FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>They are not partaking in scalp bounties.</FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>
+    <FeatherTrophies_ScalpGift_Reason_Victim>Their members being scalped is not something they enjoy being reminded of.</FeatherTrophies_ScalpGift_Reason_Victim>
+
 </LanguageData>

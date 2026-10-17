@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -29,6 +28,7 @@ namespace FeatherMedals
         private Graphic rotated; // on ground with a bit of wiggle
         
         public float PriceBonus => priceBonus;
+        public Pawn VictimPawn => victim?.Pawn;
 
         public static Scalp Create(Pawn victim, Pawn scalper)
         {

@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 
 namespace FeatherMedals;
@@ -176,6 +179,82 @@ public class HarmonyPatches
         {
             if (__result)
                 NpcTrophyGenerator.OnLeaderChosen(__instance.leader);
+        }
+    }
+    
+    [HarmonyPatch(typeof(FactionGiftUtility), "GetBaseGoodwillChange")]
+    public static class Patch_GetBaseGoodwillChange
+    {
+        public static bool Prefix(Thing anyThing, Faction theirFaction, ref float __result)
+        {
+            if (anyThing is not Scalp scalp)
+                return true;
+            if (ScalpGiftUtility.ReasonsFor(scalp, theirFaction).Count == 0)
+                return true;
+
+            __result = 0f;
+            return false;
+        }
+    }
+
+    // Drop pods
+    [HarmonyPatch(typeof(FactionGiftUtility), nameof(FactionGiftUtility.GiveGift),
+        new[] { typeof(List<ActiveTransporterInfo>), typeof(Settlement) })]
+    public static class Patch_GiveGift_Pods
+    {
+        public static void Prefix(List<ActiveTransporterInfo> pods, Settlement giveTo, out ScalpGiftResult __state)
+        {
+            var scalps = new List<Scalp>();
+            foreach (ActiveTransporterInfo pod in pods)
+            {
+                ThingOwner contents = pod.innerContainer;
+                for (int i = 0; i < contents.Count; i++)
+                {
+                    if (contents[i] is Scalp scalp)
+                        scalps.Add(scalp);
+                }
+            }
+            __state = ScalpGiftUtility.Evaluate(scalps, giveTo.Faction);
+        }
+
+        public static void Postfix(Settlement giveTo, ScalpGiftResult __state)
+        {
+            ScalpGiftUtility.Apply(__state, giveTo.Faction, (GlobalTargetInfo)(WorldObject)giveTo);
+        }
+    }
+    
+    // Caravan gift
+    [HarmonyPatch(typeof(FactionGiftUtility), nameof(FactionGiftUtility.GiveGift),
+        new[] { typeof(List<Tradeable>), typeof(Faction), typeof(GlobalTargetInfo) })]
+    public static class Patch_GiveGift_Tradeables
+    {
+        public static void Prefix(List<Tradeable> tradeables, Faction giveTo, out ScalpGiftResult __state)
+        {
+            __state = ScalpGiftUtility.Evaluate(ScalpsToBeGiven(tradeables), giveTo);
+        }
+
+        public static void Postfix(Faction giveTo, GlobalTargetInfo lookTarget, ScalpGiftResult __state)
+        {
+            ScalpGiftUtility.Apply(__state, giveTo, lookTarget);
+        }
+
+        private static IEnumerable<Scalp> ScalpsToBeGiven(List<Tradeable> tradeables)
+        {
+            foreach (Tradeable tradeable in tradeables)
+            {
+                if (tradeable.ActionToDo != TradeAction.PlayerSells)
+                    continue;
+
+                var left = Mathf.Min(tradeable.CountToTransferToDestination, tradeable.CountHeldBy(Transactor.Colony));
+                foreach (var thing in tradeable.thingsColony)
+                {
+                    if (left <= 0)
+                        break;
+                    if (thing is Scalp scalp)
+                        yield return scalp;
+                    left -= thing.stackCount;
+                }
+            }
         }
     }
     

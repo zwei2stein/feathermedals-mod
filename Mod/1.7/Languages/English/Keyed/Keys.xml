@@ -157,8 +157,8 @@
 	<FeatherMedals_Settings_Block_ScalpUI_Label>Scalping UI</FeatherMedals_Settings_Block_ScalpUI_Label>
 
 	<FeatherTrophies_Settings_ShowScalpinGizmo>Show Scalp action gizmo</FeatherTrophies_Settings_ShowScalpinGizmo>
-	<FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip>Pawns and corpses will have gizmo that allows player to set them to be scalped by colonists. Scalp action is going to be available when right-clicking pawn or corpse. Default: ON</FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip>
-	
+	<FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip>Pawns and corpses will have gizmo that allows player to order them to be scalped by colonists. Scalp action is going to be available when right-clicking pawn or corpse. Default: ON</FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip>
+
 	<FeatherTrophies_Settings_GenerateScalpedNpcs>Pawns can spawn scalped</FeatherTrophies_Settings_GenerateScalpedNpcs>
 	<FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip>Pawns from other factions can spawn with an old scalping scar. Chance is 5% for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip>
 	
