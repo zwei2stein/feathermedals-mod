@@ -9,18 +9,27 @@
         <labelNounPretty>scalped {1}</labelNounPretty>
         <description>The skin and hair were cut away from the top of the head and taken as a trophy. The scalp will never grow hair again.</description>
         <isBad>true</isBad>
-        <tendable>false</tendable>
+        <tendable>true</tendable>
         <displayWound>false</displayWound>
         <everCurableByItem>true</everCurableByItem>
         <duplicationAllowed>false</duplicationAllowed>
         <forceRenderTreeRecache>true</forceRenderTreeRecache>
-        <initialSeverity>0.1</initialSeverity>
+        <initialSeverity>4</initialSeverity>
         <injuryProps>
-            <averagePainPerSeverityPermanent>0.5</averagePainPerSeverityPermanent>
-            <bleedRate>0</bleedRate>
+            <painPerSeverity>0.0125</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.8</averagePainPerSeverityPermanent>
+            <bleedRate>0.06</bleedRate>
             <canMerge>false</canMerge>
         </injuryProps>
         <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>sutured</labelTendedWellInner>
+                <labelSolidTendedWell>set</labelSolidTendedWell>
+            </li>
+            <li Class="HediffCompProperties_Infecter">
+                <infectionChance>0.5</infectionChance>
+            </li>
             <li Class="HediffCompProperties_GetsPermanent">
                 <permanentLabel>scalped</permanentLabel>
                 <instantlyPermanentLabel>scalped</instantlyPermanentLabel>

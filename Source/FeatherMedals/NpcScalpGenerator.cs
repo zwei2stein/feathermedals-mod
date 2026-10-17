@@ -64,7 +64,8 @@ public static class NpcScalpGenerator
             scalped.scalper = new RememberedPawn(scalper);
 
         var maxAge = (int)System.Math.Min(MaxScarAgeTicks, pawn.ageTracker.AgeBiologicalTicks);
-        scalped.ageTicks = Rand.Range(Hediff_Scalped.FreshTicks + 1, System.Math.Max(maxAge, Hediff_Scalped.FreshTicks + 2));
+        scalped.BecomeScar();
+        scalped.ageTicks = Rand.Range(1, System.Math.Max(maxAge, 2));
 
         pawn.health.AddHediff(scalped, head);
     }

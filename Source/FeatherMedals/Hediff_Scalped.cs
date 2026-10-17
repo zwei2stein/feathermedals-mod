@@ -4,14 +4,19 @@ namespace FeatherMedals
 {
     public class Hediff_Scalped : Hediff_Injury
     {
-        private const float FreshDays = 5f;
-        public const int FreshTicks = (int)(FreshDays * 60000f);
-        
+        // Severity to become permanent scar.
+        private const float ScarSeverity = 0.1f;
+
+        private const float ChancePainless = 0.10f;
+        private const float ChanceLowPain = 0.40f;
+        private const float ChanceMediumPain = 0.35f;
+
         public RememberedPawn scalper;
 
         private bool wasFresh = true;
 
-        public bool IsFresh => ageTicks < FreshTicks;
+        // Fresh until scaring
+        public bool IsFresh => !this.IsPermanent();
 
         public override string TipStringExtra
         {
@@ -33,8 +38,38 @@ namespace FeatherMedals
             HediffComp_GetsPermanent comp = this.TryGetComp<HediffComp_GetsPermanent>();
             if (comp != null)
             {
-                comp.IsPermanent = true;
+                comp.permanentDamageThreshold = ScarSeverity;
             }
+        }
+        
+        public void BecomeScar()
+        {
+            HediffComp_GetsPermanent comp = this.TryGetComp<HediffComp_GetsPermanent>();
+            if (comp != null)
+            {
+                comp.IsPermanent = true;
+                comp.SetPainCategory(RollPainCategory());
+            }
+            Severity = ScarSeverity;
+            wasFresh = false;
+        }
+
+        private static PainCategory RollPainCategory()
+        {
+            float roll = Rand.Value;
+
+            if (roll < ChancePainless)
+                return PainCategory.Painless;
+            roll -= ChancePainless;
+
+            if (roll < ChanceLowPain)
+                return PainCategory.LowPain;
+            roll -= ChanceLowPain;
+
+            if (roll < ChanceMediumPain)
+                return PainCategory.MediumPain;
+
+            return PainCategory.HighPain;
         }
 
         public override void TickInterval(int delta)
@@ -43,6 +78,8 @@ namespace FeatherMedals
             bool fresh = IsFresh;
             if (wasFresh && !fresh)
             {
+                // We want extra pain, not vanilla
+                this.TryGetComp<HediffComp_GetsPermanent>()?.SetPainCategory(RollPainCategory());
                 pawn.Drawer.renderer.SetAllGraphicsDirty();
             }
             wasFresh = fresh;
@@ -52,6 +89,7 @@ namespace FeatherMedals
         {
             base.ExposeData();
             Scribe_Deep.Look(ref scalper, "scalper");
+            Scribe_Values.Look(ref wasFresh, "wasFresh", true);
         }
     }
 }
