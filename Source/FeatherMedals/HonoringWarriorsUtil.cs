@@ -117,6 +117,13 @@ public static class HonoringWarriorsUtil
             count--;
         return count;
     }
+    
+    public static void ResetCache()
+    {
+        cacheTick = -CacheTicks;
+        eligible.Clear();
+        wearers.Clear();
+    }
 
     private static void Refresh()
     {

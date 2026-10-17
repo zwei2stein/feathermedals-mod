@@ -158,9 +158,9 @@ namespace FeatherMedals
                 UnityEngine.Object.Destroy(texture);
                 texture = null;
             }
-            bakeTried = false;
+            // destroyed scalp falls back to def graphic/icon
         }
-
+        
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             base.Destroy(mode);

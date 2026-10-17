@@ -93,7 +93,7 @@ namespace FeatherMedals
             };
                 
             // first failing reason wins
-            if (BiocodeComp.Biocoded)
+            if (BiocodeComp is { Biocoded: true })
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledAlreadyAwarded".Translate());
             else if (IsCeremonyInProgress())
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledCeremonyInProgress".Translate());

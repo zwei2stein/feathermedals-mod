@@ -28,14 +28,13 @@ public static class ScalpingPrecepts
 
     public static bool AnyMercilessColonist()
     {
-        foreach (var p in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists)
+        foreach (var ideo in Faction.OfPlayer.ideos.AllIdeos)
         {
-            if (StanceOf(p) == ScalpStance.Merciless)
+            if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
                 return true;
         }
         return false;
     }
-
     public static void AddStanceToIdeosMissingIssue()
     {
         // Honourable > Merciless > Forbidden. None allowed: Honourable

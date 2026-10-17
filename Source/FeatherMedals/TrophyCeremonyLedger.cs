@@ -49,6 +49,8 @@ public class TrophyCeremonyLedger : GameComponent
     public override void FinalizeInit()
     {
         base.FinalizeInit();
+        
+        HonoringWarriorsUtil.ResetCache();
 
         if (!ideosMigrated)
         {
@@ -58,6 +60,7 @@ public class TrophyCeremonyLedger : GameComponent
 
         if (seeded)
             return;
+        
         seeded = true;
         SeedFromExistingTrophies();
     }
