@@ -57,6 +57,8 @@ public class FeatherMedalDefOf
     public static HairDef Messy;
 
     public static MentalStateDef MurderousRage;
+
+    public static ThingDef FeatherTrophies_ScalpPole;
     
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

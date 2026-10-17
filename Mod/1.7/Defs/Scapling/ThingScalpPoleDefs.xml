@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>FeatherTrophies_ScalpPole</defName>
+        <label>scalp pole</label>
+        <description>Wooden pole made to display taken scalps. Scalps strike terror into slaves and give a morbid focus for meditation.</description>
+        <thingClass>FeatherMedals.Building_ScalpPole</thingClass>
+        <graphicData>
+            <texPath>Things/Building/Misc/FeatherTrophies_ScalpPole/ScalpPole</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>Standable</passability>
+        <pathCost>0</pathCost>
+        <fillPercent>0.4</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <blockWind>true</blockWind>
+        <surfaceType>Item</surfaceType>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsMisc</li>
+        </thingCategories>
+        <size>(1,1)</size>
+        <rotatable>false</rotatable>
+        <defaultPlacingRot>North</defaultPlacingRot>
+        <designationCategory>Ideology</designationCategory>
+        <uiOrder>3001</uiOrder>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <WorkToBuild>1600</WorkToBuild>
+            <Flammability>1.0</Flammability>
+            <Mass>15</Mass>
+            <Beauty>-1</Beauty>
+            <TerrorSource>10</TerrorSource>
+            <MeditationFocusStrength>0.0</MeditationFocusStrength>
+        </statBases>
+        <stuffCategories>
+            <li>Woody</li>
+        </stuffCategories>
+        <costStuffCount>40</costStuffCount>
+        <costList>
+            <FeatherTrophy_Precursor_PristineFeather>4</FeatherTrophy_Precursor_PristineFeather>
+        </costList>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <building>
+            <ai_chillDestination>false</ai_chillDestination>
+            <destroySound>BuildingDestroyed_Wood_Small</destroySound>
+            <paintable>true</paintable>
+            <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+            <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+            <maxItemsInCell>3</maxItemsInCell>
+            <blueprintClass>Blueprint_Storage</blueprintClass>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>FeatherTrophies_Scalps</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Important</priority>
+                <filter>
+                    <categories>
+                        <li>FeatherTrophies_Scalps</li>
+                    </categories>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+        <inspectorTabs>
+            <li>ITab_Storage</li>
+        </inspectorTabs>
+        <modExtensions>
+            <li Class="FeatherMedals.ScalpPoleExtension">
+                <!-- Scalps hang one above another. x=0 , y=0, z (+/-). -->
+                <slotOffsets>
+                    <li>(0.1, 0, -0.05)</li>
+                    <li>(0, 0, 0.00)</li>
+                    <li>(-0.1, 0, 0.05)</li>
+                </slotOffsets>
+            </li>
+        </modExtensions>
+        <comps>
+            <li Class="CompProperties_MeditationFocus">
+                <statDef>MeditationFocusStrength</statDef>
+                <focusTypes>
+                    <li>Morbid</li>
+                </focusTypes>
+                <offsets>
+                    <li Class="FeatherMedals.FocusStrengthOffset_ScalpPoleScalps">
+                        <offset>0.05</offset>
+                    </li>
+                </offsets>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

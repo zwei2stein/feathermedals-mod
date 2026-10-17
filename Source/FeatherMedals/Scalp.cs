@@ -29,6 +29,7 @@ namespace FeatherMedals
         
         public float PriceBonus => priceBonus;
         public Pawn VictimPawn => victim?.Pawn;
+        public string VictimName => victim?.Name;
 
         public static Scalp Create(Pawn victim, Pawn scalper)
         {
@@ -97,6 +98,20 @@ namespace FeatherMedals
         }
 
         public override string DescriptionDetailed => DescriptionFlavor;
+
+        // Scalps stored on a scalp pole hang one above another.
+        public override Vector3 DrawPos
+        {
+            get
+            {
+                Vector3 position = base.DrawPos;
+                if (Spawned && this.StoringThing() is Building_ScalpPole pole)
+                {
+                    position += pole.DrawOffsetFor(this);
+                }
+                return position;
+            }
+        }
 
         public override bool CanStackWith(Thing other)
         {

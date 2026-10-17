@@ -15,6 +15,7 @@
         <category>Item</category>
         <selectable>true</selectable>
         <altitudeLayer>Item</altitudeLayer>
+        <drawerType>RealtimeOnly</drawerType>
         <alwaysHaulable>true</alwaysHaulable>
         <rotatable>false</rotatable>
         <pathCost>14</pathCost>

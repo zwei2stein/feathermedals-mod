@@ -14,6 +14,7 @@
             <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
             <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
             <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+            <shaderType>CutoutComplex</shaderType>
             <damageData>
                 <enabled>false</enabled>
             </damageData>
