@@ -52,8 +52,8 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         
         TrophyCeremonyLedger.Instance?.Record(Find.TickManager.TicksGame);
 
-        var attendees = totalPresence.Count;
-        var totalColonists = jobRitual.Map.mapPawns.FreeColonistsSpawnedCount;
+        var attendees = AdorningQuality.CountAttendees(totalPresence.Keys, awardee);
+        var totalColonists = AdorningQuality.CountPossibleAttendees(jobRitual.Map, awardee);
         var roomImpressiveness = AdorningQuality.GetRoomImpressiveness(jobRitual.selectedTarget);
         var trophyQualityBonus = AdorningQuality.GetTrophyQualityBonus(medal);
         

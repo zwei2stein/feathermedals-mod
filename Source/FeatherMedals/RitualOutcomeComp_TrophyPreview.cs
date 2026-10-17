@@ -125,10 +125,10 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
         if (ritual?.Map == null) return 0f;
-        var attendees = ritual.assignments.Participants.Count;
-        var total = ritual.Map.mapPawns.FreeColonistsSpawnedCount;
-        var ratio = total > 0 ? Mathf.Clamp01((float)attendees / total) : 0f;
-        return ratio * AdorningQuality.AttendanceWeight;
+        var awardee = ritual.assignments.FirstAssignedPawn("awardee");
+        var attendees = AdorningQuality.CountAttendees(ritual.assignments.Participants, awardee);
+        var total = AdorningQuality.CountPossibleAttendees(ritual.Map, awardee);
+        return AdorningQuality.GetAttendanceScore(attendees, total);
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -146,10 +146,11 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
         var map = ritualTarget.Map ?? Find.CurrentMap;
         if (map == null) return null;
 
-        var attendees = assignments.Participants.Count;
-        var total = map.mapPawns.FreeColonistsSpawnedCount;
-        var ratio = total > 0 ? Mathf.Clamp01((float)attendees / total) : 0f;
-        var contribution = ratio * AdorningQuality.AttendanceWeight;
+        var awardee = assignments.FirstAssignedPawn("awardee");
+        var attendees = AdorningQuality.CountAttendees(assignments.Participants, awardee);
+        var total = AdorningQuality.CountPossibleAttendees(map, awardee);
+        var ratio = AdorningQuality.GetAttendanceRatio(attendees, total);
+        var contribution = AdorningQuality.GetAttendanceScore(attendees, total);
 
         return new QualityFactor
         {
@@ -174,8 +175,7 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
         var impressiveness = AdorningQuality.GetRoomImpressiveness(ritual.selectedTarget);
-        var roomScore = Mathf.Clamp01(impressiveness / 170f);
-        return roomScore * AdorningQuality.RoomWeight;
+        return AdorningQuality.GetRoomScore(impressiveness);
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -191,8 +191,7 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
         RitualOutcomeComp_Data data)
     {
         var impressiveness = AdorningQuality.GetRoomImpressiveness(ritualTarget);
-        var roomScore = Mathf.Clamp01(impressiveness / 170f);
-        var contribution = roomScore * AdorningQuality.RoomWeight;
+        var contribution = AdorningQuality.GetRoomScore(impressiveness);
 
         var roomLabel = impressiveness <= 0f ? "FeatherMedals_CeremonyVenue_Outdoors".Translate().Resolve() : $"{impressiveness:F0}";
 
@@ -245,8 +244,10 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherMedal medal) return 0f;
-        return !medal.HasCitation ? 0f : AdorningQuality.CitationWeight;
+        if (ritual?.selectedTarget.Thing is not FeatherMedal medal)
+            return 0f;
+        
+        return AdorningQuality.GetCitationScore(medal.HasCitation);
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -261,14 +262,17 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherMedal medal) return null;
+        if (ritualTarget.Thing is not FeatherMedal medal)
+            return null;
+
+        var contribution = AdorningQuality.GetCitationScore(medal.HasCitation);
         
         return new QualityFactor
         {
             label = "FeatherMedals_CeremonyCitation".Translate(),
             count = medal.HasCitation ? "FeatherMedals_CeremonyCitation_Written".Translate() : "FeatherMedals_CeremonyCitation_None".Translate(),
-            qualityChange = $"+{(medal.HasCitation ? AdorningQuality.CitationWeight : 0f).ToStringPercent()}",
-            quality = medal.HasCitation ? AdorningQuality.CitationWeight : 0f,
+            qualityChange = $"+{contribution.ToStringPercent()}",
+            quality = contribution,
             positive = medal.HasCitation,
             present = true,
             toolTip = medal.HasCitation 
