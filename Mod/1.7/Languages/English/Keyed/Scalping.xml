@@ -4,6 +4,9 @@
     <FeatherTrophies_Scalping_Menu>Scalp {TARGET}</FeatherTrophies_Scalping_Menu>
     <FeatherTrophies_Scalping_GizmoLabel>Scalp</FeatherTrophies_Scalping_GizmoLabel>
     <FeatherTrophies_Scalping_GizmoDesc>Order a colonist to scalp this person. Anyone able to cut flesh will take the job.</FeatherTrophies_Scalping_GizmoDesc>
+    
+    <FeatherTrophies_Scalping_DesignatorDesc>Order colonists to scalp every person and corpse in the area that can be scalped.</FeatherTrophies_Scalping_DesignatorDesc>
+    <FeatherTrophies_Scalping_MessageMustDesignateScalpable>Must designate scalpable target.</FeatherTrophies_Scalping_MessageMustDesignateScalpable>
 
     <FeatherTrophies_Scalping_WillAnger>Scalping {TARGET_nameDef} will anger {FACTION_name}.</FeatherTrophies_Scalping_WillAnger>
     <FeatherTrophies_Scalping_Provoked>People of {PLAYERFACTION_name} have attempted to scalp {TARGET_nameDef}, and {TARGET_pronoun} is resisting. {FACTION_name} is angered.</FeatherTrophies_Scalping_Provoked>
@@ -17,7 +20,7 @@
     <FeatherTrophies_Scalp_Xenotype>, {XENOTYPE}</FeatherTrophies_Scalp_Xenotype>
 
     <FeatherTrophies_Scalp_TakenBy>Scalp was taken by {SCALPER}.</FeatherTrophies_Scalp_TakenBy>
-    
+
     <FeatherTrophies_Scalp_Anonymous>Unknown</FeatherTrophies_Scalp_Anonymous>
 
     <!-- scalp gifts -->
