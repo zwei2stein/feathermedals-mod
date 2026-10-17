@@ -37,10 +37,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
         if (statOffsets is { Count: > 0 })
         {
             foreach (var stat in statOffsets)
-            {
-                var sign = stat.value > 0 ? "+" : "";
-                sb.AppendLine($"{stat.stat.LabelCap}: {sign}{stat.stat.ValueToString(stat.value)}");
-            }
+                sb.AppendLine(UIHelper.StatOffsetLine(stat));
         }
 
         if (MedalMod.Settings.TrophyDynamicTraits)

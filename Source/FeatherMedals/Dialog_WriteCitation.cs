@@ -13,6 +13,11 @@ public class Dialog_WriteCitation : Window
     private const float ICON_SIZE = 160f;
     private const float BUTTON_HEIGHT = 35f;
     private const float BUTTON_AREA_HEIGHT = BUTTON_HEIGHT + 10f;
+    
+    private const float SCROLLBAR_WIDTH = 16f;
+
+    private Vector2 medalScrollPosition;
+    private float medalScrollViewHeight;
 
     public Dialog_WriteCitation(FeatherMedal medal)
     {
@@ -45,7 +50,7 @@ public class Dialog_WriteCitation : Window
         var writeCol = new Rect(separatorX + 10f, inRect.y, inRect.width - MEDAL_COLUMN_WIDTH - 30f, inRect.height);
         DrawWritingColumn(writeCol);
     }
-
+    
     private void DrawMedalColumn(Rect rect)
     {
         // Medal icon
@@ -53,38 +58,48 @@ public class Dialog_WriteCitation : Window
         var iconRect = new Rect(iconX, rect.y + 10f, ICON_SIZE, ICON_SIZE);
         Widgets.ThingIcon(iconRect, medal);
 
+        // scroll instead of overflowing
+        var scrollRect = new Rect(rect.x, iconRect.yMax + 10f, rect.width, rect.yMax - iconRect.yMax - 10f);
+        var viewRect = new Rect(0f, 0f, scrollRect.width - SCROLLBAR_WIDTH, medalScrollViewHeight);
+        Widgets.BeginScrollView(scrollRect, ref medalScrollPosition, viewRect);
+
+        var curY = 0f;
+
         // Medal name
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.UpperCenter;
-        var nameHeight = Text.CalcHeight(medal.LabelCap, rect.width);
-        var nameRect = new Rect(rect.x, iconRect.yMax + 10f, rect.width, nameHeight);
+        var nameHeight = Text.CalcHeight(medal.LabelCap, viewRect.width);
+        var nameRect = new Rect(0f, curY, viewRect.width, nameHeight);
         Widgets.Label(nameRect, medal.LabelCap);
+        curY = nameRect.yMax + 6f;
 
         // Medal description
         Text.Font = GameFont.Tiny;
         var desc = medal.def.description ?? "";
-        var descHeight = Text.CalcHeight(desc, rect.width - 10f);
-        var descRect = new Rect(rect.x + 5f, nameRect.yMax + 6f, rect.width - 10f, descHeight);
+        var descHeight = Text.CalcHeight(desc, viewRect.width - 10f);
+        var descRect = new Rect(5f, curY, viewRect.width - 10f, descHeight);
         GUI.color = Color.gray;
         Widgets.Label(descRect, desc);
         GUI.color = Color.white;
-        var statsY = descRect.yMax + 10f;
+        curY = descRect.yMax + 10f;
 
         // Stat bonuses
         var offsets = medal.def.equippedStatOffsets;
         if (offsets is { Count: > 0 })
         {
-            GUI.color = new Color(0.5f, 0.8f, 0.5f);
+            GUI.color = UIHelper.GreenColor;
             foreach (var mod in offsets)
             {
-                var sign = mod.value >= 0 ? "+" : "";
-                var line = $"{sign}{mod.stat.ValueToString(mod.value)} {mod.stat.LabelCap}";
-                var lineRect = new Rect(rect.x + 5f, statsY, rect.width - 10f, 18f);
-                Widgets.Label(lineRect, line);
-                statsY += 18f;
+                var line = UIHelper.StatOffsetLine(mod);
+                var lineHeight = Text.CalcHeight(line, viewRect.width - 10f);
+                Widgets.Label(new Rect(5f, curY, viewRect.width - 10f, lineHeight), line);
+                curY += lineHeight;
             }
             GUI.color = Color.white;
         }
+
+        medalScrollViewHeight = curY;
+        Widgets.EndScrollView();
 
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.UpperLeft;

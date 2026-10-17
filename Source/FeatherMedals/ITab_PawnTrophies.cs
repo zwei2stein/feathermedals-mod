@@ -253,7 +253,7 @@ namespace FeatherMedals
                 Text.Font = GameFont.Tiny;
                 var statHeight = Text.CalcHeight(statText, textWidth);
                 var statsRect = new Rect(textX, descBottom + 2f, textWidth, statHeight);
-                GUI.color = new Color(0.5f, 0.8f, 0.5f);
+                GUI.color = UIHelper.GreenColor;
                 Widgets.Label(statsRect, statText);
                 GUI.color = Color.white;
                 descBottom = statsRect.yMax;

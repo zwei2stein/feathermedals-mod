@@ -1,4 +1,5 @@
-using System.Text;
+using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -6,8 +7,12 @@ namespace FeatherMedals;
 
 public static class UIHelper
 {
-    private static readonly Color GreenColor = new(0.4f, 0.9f, 0.4f);
+    public static readonly Color GreenColor = new(0.5f, 0.8f, 0.5f);
     private static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
+
+    // one stat offset as shown everywhere: "Research speed: +5%"
+    public static string StatOffsetLine(StatModifier mod)
+        => $"{mod.stat.LabelCap}: {mod.ValueToStringAsOffset}";
     
     public static void DrawStatSummary(ThingDef def, Rect rect, ref float curY)
     {
@@ -19,9 +24,7 @@ public static class UIHelper
             Text.Anchor = TextAnchor.MiddleCenter;
             foreach (var stat in statOffsets)
             {
-                var sign = stat.value > 0 ? "+" : "";
-                var line = $"{stat.stat.LabelCap}: {sign}{stat.stat.ValueToString(stat.value)}";
-                Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), line);
+                Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), StatOffsetLine(stat));
                 curY += 24f;
             }
             GUI.color = Color.white;
@@ -60,17 +63,10 @@ public static class UIHelper
         var offsets = def.equippedStatOffsets;
         if (offsets == null || offsets.Count == 0) return null;
 
-        var sb = new StringBuilder();
-        for (var i = 0; i < offsets.Count; i++)
-        {
-            if (i > 0) sb.Append(", ");
-            var val = offsets[i].value;
-            sb.Append(val >= 0 ? "+" : "");
-            sb.Append(offsets[i].stat.ValueToString(val));
-            sb.Append(' ');
-            sb.Append(offsets[i].stat.LabelCap);
-        }
-        return sb.ToString();
+        var lines = new List<string>();
+        foreach (var mod in offsets)
+            lines.Add(StatOffsetLine(mod));
+        return string.Join(", ", lines);
     }
 
     public static void DrawTraitsSummary(FeatherMedal medal, Rect rect, ref float curY)
