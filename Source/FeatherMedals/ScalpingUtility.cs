@@ -98,9 +98,13 @@ namespace FeatherMedals
             if (!pawn.DevelopmentalStage.Adult())
                 return false;
 
+            // Imprisoned guilty colonist is still of player faction, we must check guilt first.
+            if (pawn.IsPrisonerOfColony && pawn.guilt.IsGuilty)
+                return true;
+
             if (pawn.Faction == Faction.OfPlayer)
                 return false;
-
+            
             Faction home = pawn.HomeFaction;
             if (home == null)
                 return true;
@@ -108,7 +112,7 @@ namespace FeatherMedals
             if (home.HostileTo(Faction.OfPlayer) || pawn.HostileTo(Faction.OfPlayer))
                 return true;
 
-            return pawn.IsPrisonerOfColony && pawn.guilt.IsGuilty;
+            return false;
         }
 
         private static bool Can_PhysicallyCapableOfBeingScalped(Pawn pawn, Thing thing)
@@ -167,10 +171,48 @@ namespace FeatherMedals
                 target, MessageTypeDefOf.NegativeEvent);
         }
 
-        public static void DoScalp(Pawn scalper, Thing target)
+        // Scalping in a mental break, ideo and other rules.
+        // Criteria:
+        // * Humanlike with head, not scalped already
+        // * Children and babies only if enabled in settings
+        // * If dead, corpse must be fresh
+        // * No other (like must be downed) rules
+        public static bool CanBeTargetedInBreak(Thing thing)
+        {
+            Pawn pawn = PawnOf(thing);
+
+            if (pawn == null || !pawn.RaceProps.Humanlike || !thing.Spawned)
+                return false;
+
+            if (pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped) || HeadOf(pawn) == null)
+                return false;
+
+            if (!pawn.DevelopmentalStage.Adult() && !MedalMod.Settings.ScalpBreaksTargetChildren)
+                return false;
+
+            if (thing is Corpse corpse)
+                return corpse.GetRotStage() == RotStage.Fresh;
+
+            return !pawn.Dead;
+        }
+
+        // Same as above, in middle of break after running down and downing pawn
+        public static bool CanBeScalpedInBreak(Thing thing)
+        {
+            if (!CanBeTargetedInBreak(thing))
+                return false;
+
+            Pawn pawn = PawnOf(thing);
+            if (pawn.Dead || pawn.IsPrisoner || pawn.IsSlave)
+                return true;
+
+            return pawn.Downed;
+        }
+
+        public static void DoScalp(Pawn scalper, Thing target, bool inBreak = false)
         {
             var victim = PawnOf(target);
-            if (victim == null || !CanBeScalped(target, scalper))
+            if (victim == null || !(inBreak ? CanBeScalpedInBreak(target) : CanBeScalped(target, scalper)))
             {
                 return;
             }

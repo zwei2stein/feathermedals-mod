@@ -7,6 +7,13 @@
         <reportString>scalping TargetA.</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
+    
+    <JobDef>
+        <defName>FeatherTrophies_Scalping_ScalpInBreakJob</defName>
+        <driverClass>FeatherMedals.JobDriver_ScalpInBreak</driverClass>
+        <reportString>scalping TargetA.</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
 
     <DesignationDef>
         <defName>FeatherTrophies_Scalping_ScalpDesignation</defName>
@@ -15,7 +22,7 @@
     </DesignationDef>
 
     <!-- medical, butchering or slaughter can scalp. -->
-    
+
     <WorkGiverDef>
         <defName>FeatherTrophies_Scalping_ScalpDoctor</defName>
         <label>scalp</label>

@@ -40,6 +40,7 @@ public class FeatherMedalDefOf
     public static HediffDef FeatherTrophies_Scalping_Scalped;
     public static ThingDef FeatherTrophies_Scalping_Scalp;
     public static JobDef FeatherTrophies_Scalping_ScalpJob;
+    public static JobDef FeatherTrophies_Scalping_ScalpInBreakJob;
     public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
     public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
     public static ThoughtDef FeatherTrophies_Scalping_ClaimedRightOfVictor;
@@ -53,8 +54,9 @@ public class FeatherMedalDefOf
     public static PreceptDef FeatherTrophies_ScalpTaking_Honourable;
     public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
 
-    // Default hair for scalp items
     public static HairDef Messy;
+
+    public static MentalStateDef MurderousRage;
     
     static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

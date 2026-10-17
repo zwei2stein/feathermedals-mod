@@ -15,6 +15,14 @@ namespace FeatherMedals
 
         private Thing Target => job.targetA.Thing;
 
+        // Mental break breaks ideology rules.
+        protected virtual bool InBreak => false;
+
+        private bool CanScalpTarget()
+        {
+            return InBreak ? ScalpingUtility.CanBeScalpedInBreak(Target) : ScalpingUtility.CanBeScalped(Target, pawn);
+        }
+
         private int DurationTicks()
         {
             float speed = pawn.GetStatValue(StatDefOf.MedicalTendSpeed);
@@ -36,7 +44,7 @@ namespace FeatherMedals
             var walk = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             
             // can change eligibility while in progress
-            walk.FailOn(() => !ScalpingUtility.CanBeScalped(Target, pawn));
+            walk.FailOn(() => !CanScalpTarget());
             yield return walk;
 
             // Non-hostile target: targets goes hostile.
@@ -53,7 +61,7 @@ namespace FeatherMedals
             var work = Toils_General.WaitWith(TargetIndex.A, DurationTicks(), true, false, false, TargetIndex.A);
             
             // can change eligibility while in progress
-            work.FailOn(() => !ScalpingUtility.CanBeScalped(Target, pawn));
+            work.FailOn(() => !CanScalpTarget());
             
             work.WithEffect(EffecterDefOf.Surgery, TargetIndex.A);
             yield return work;
@@ -62,7 +70,9 @@ namespace FeatherMedals
             {
                 Thing target = Target;
                 Map map = target.Map;
-                ScalpingUtility.DoScalp(pawn, target);
+                ScalpingUtility.DoScalp(pawn, target, InBreak);
+                if (InBreak)
+                    (pawn.MentalState as MentalState_ScalpRage)?.Notify_Scalped();
                 pawn.skills?.Learn(SkillDefOf.Medicine, MedicineXp);
                 map?.designationManager.TryRemoveDesignationOn(target, FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpDesignation);
             });

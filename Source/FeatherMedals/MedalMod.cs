@@ -149,6 +149,22 @@ namespace FeatherMedals
             
             listingStandard.GapLine();
 
+            listingStandard.Label("FeatherMedals_Settings_Block_ScalpBreaks_Label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
+                "FeatherTrophies_Settings_ScalpBreaksTargetChildren".Translate(),
+                ref Settings.ScalpBreaksTargetChildren,
+                "FeatherTrophies_Settings_ScalpBreaksTargetChildren_Tooltip".Translate()
+            );
+
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
+
             listingStandard.Label("FeatherMedals_Settings_Block_Npc_Label".Translate());
 
             listingStandard.Indent(gapWidth);
@@ -264,6 +280,7 @@ namespace FeatherMedals
         public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
         public bool GenerateNpcScalped = true;
         public bool ShowScalpingGizmo = true;
+        public bool ScalpBreaksTargetChildren = false;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -283,6 +300,7 @@ namespace FeatherMedals
             Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
             Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref ShowScalpingGizmo, "ShowScalpingGizmo", true);
+            Scribe_Values.Look(ref ScalpBreaksTargetChildren, "ScalpBreaksTargetChildren", false);
         }
     }
 

@@ -159,7 +159,12 @@
 	<FeatherTrophies_Settings_ShowScalpinGizmo>Show Scalp action gizmo</FeatherTrophies_Settings_ShowScalpinGizmo>
 	<FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip>Pawns and corpses will have gizmo that allows player to order them to be scalped by colonists. Scalp action is going to be available when right-clicking pawn or corpse. Default: ON</FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip>
 
+	<FeatherMedals_Settings_Block_ScalpBreaks_Label>Scalping mental breaks</FeatherMedals_Settings_Block_ScalpBreaks_Label>
+
+	<FeatherTrophies_Settings_ScalpBreaksTargetChildren>Scalping mental breaks can target children</FeatherTrophies_Settings_ScalpBreaksTargetChildren>
+	<FeatherTrophies_Settings_ScalpBreaksTargetChildren_Tooltip>Scalping frenzy and scalping of prisoners mental breaks can target children and babies. Default: OFF</FeatherTrophies_Settings_ScalpBreaksTargetChildren_Tooltip>
+
 	<FeatherTrophies_Settings_GenerateScalpedNpcs>Pawns can spawn scalped</FeatherTrophies_Settings_GenerateScalpedNpcs>
 	<FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip>Pawns from other factions can spawn with an old scalping scar. Chance is 5% for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip>
-	
+
 </LanguageData>
