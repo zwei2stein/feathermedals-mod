@@ -10,6 +10,48 @@ namespace FeatherMedals;
 public class HarmonyPatches
 {
     
+    private static bool PawnOwnsBiocodedMedalDef(Pawn p, ThingDef apparelDef)
+    {
+        var worn = p.apparel?.WornApparel;
+        if (worn != null)
+        {
+            for (var i = 0; i < worn.Count; i++)
+            {
+                if (worn[i].def != apparelDef) continue;
+                if (worn[i] is FeatherMedal m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+                    return true;
+            }
+        }
+        var inv = p.inventory?.innerContainer;
+        if (inv == null) return false;
+        for (var i = 0; i < inv.Count; i++)
+        {
+            if (inv[i].def != apparelDef) continue;
+            if (inv[i] is FeatherMedal m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+                return true;
+        }
+        return false;
+    }
+    
+    private static IEnumerable<Scalp> ScalpsToBeGiven(List<Tradeable> tradeables)
+    {
+        foreach (Tradeable tradeable in tradeables)
+        {
+            if (tradeable.ActionToDo != TradeAction.PlayerSells)
+                continue;
+
+            var left = Mathf.Min(tradeable.CountToTransferToDestination, tradeable.CountHeldBy(Transactor.Colony));
+            foreach (var thing in tradeable.thingsColony)
+            {
+                if (left <= 0)
+                    break;
+                if (thing is Scalp scalp)
+                    yield return scalp;
+                left -= thing.stackCount;
+            }
+        }
+    }
+    
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
     public static class PatchMedalBiocodeManual
     {
@@ -85,50 +127,28 @@ public class HarmonyPatches
             __result = false;
         }
         
-        [HarmonyPatch(typeof(FloatMenuOptionProvider_Wear), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
-        public static class Patch_Wear_Medal
+    }
+    
+    [HarmonyPatch(typeof(FloatMenuOptionProvider_Wear), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
+    public static class Patch_Wear_Medal
+    {
+        public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
+            if (clickedThing is not FeatherMedal medal) return true;
+
+            var pawn = context.FirstSelectedPawn;
+            if (FeatherMedalUtil.IsOwnedBy(medal, pawn))
             {
-                if (clickedThing is not FeatherMedal medal) return true;
-
-                var pawn = context.FirstSelectedPawn;
-                if (FeatherMedalUtil.IsOwnedBy(medal, pawn))
-                {
-                    // vanilla runs, HasPartsToWear lets the owner through
-                    FeatherMedalUtil.EvaluatingItem = medal;
-                    return true;
-                }
-
-                __result = FeatherMedalUtil.BlockedWearOption(medal, FeatherMedalUtil.WearBlockedReason(medal, pawn), false);
-                return false;
+                // vanilla runs, HasPartsToWear lets the owner through
+                FeatherMedalUtil.EvaluatingItem = medal;
+                return true;
             }
 
-            public static void Finalizer() => FeatherMedalUtil.EvaluatingItem = null;
-        }
-
-        private static bool PawnOwnsBiocodedMedalDef(Pawn p, ThingDef apparelDef)
-        {
-            var worn = p.apparel?.WornApparel;
-            if (worn != null)
-            {
-                for (var i = 0; i < worn.Count; i++)
-                {
-                    if (worn[i].def != apparelDef) continue;
-                    if (worn[i] is FeatherMedal m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
-                        return true;
-                }
-            }
-            var inv = p.inventory?.innerContainer;
-            if (inv == null) return false;
-            for (var i = 0; i < inv.Count; i++)
-            {
-                if (inv[i].def != apparelDef) continue;
-                if (inv[i] is FeatherMedal m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
-                    return true;
-            }
+            __result = FeatherMedalUtil.BlockedWearOption(medal, FeatherMedalUtil.WearBlockedReason(medal, pawn), false);
             return false;
         }
+
+        public static void Finalizer() => FeatherMedalUtil.EvaluatingItem = null;
     }
     
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
@@ -237,25 +257,7 @@ public class HarmonyPatches
         {
             ScalpGiftUtility.Apply(__state, giveTo, lookTarget);
         }
-
-        private static IEnumerable<Scalp> ScalpsToBeGiven(List<Tradeable> tradeables)
-        {
-            foreach (Tradeable tradeable in tradeables)
-            {
-                if (tradeable.ActionToDo != TradeAction.PlayerSells)
-                    continue;
-
-                var left = Mathf.Min(tradeable.CountToTransferToDestination, tradeable.CountHeldBy(Transactor.Colony));
-                foreach (var thing in tradeable.thingsColony)
-                {
-                    if (left <= 0)
-                        break;
-                    if (thing is Scalp scalp)
-                        yield return scalp;
-                    left -= thing.stackCount;
-                }
-            }
-        }
+        
     }
     
 }

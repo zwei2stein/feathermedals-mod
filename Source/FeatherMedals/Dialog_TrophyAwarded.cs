@@ -9,7 +9,6 @@ public class Dialog_TrophyAwarded : Window
 
     private readonly FeatherMedal medal;
     private readonly Pawn awardee;
-    private readonly Pawn presenter;
 
     private const float CLOSE_BUTTON_AREA = 55f;
     private const float SCROLLBAR_WIDTH = 16f;
@@ -17,11 +16,10 @@ public class Dialog_TrophyAwarded : Window
     private Vector2 scrollPosition;
     private float scrollViewHeight;
 
-    public Dialog_TrophyAwarded(FeatherMedal medal, Pawn awardee, Pawn presenter)
+    public Dialog_TrophyAwarded(FeatherMedal medal, Pawn awardee)
     {
         this.medal = medal;
         this.awardee = awardee;
-        this.presenter = presenter;
         forcePause = true;
         doCloseX = true;
         absorbInputAroundWindow = true;

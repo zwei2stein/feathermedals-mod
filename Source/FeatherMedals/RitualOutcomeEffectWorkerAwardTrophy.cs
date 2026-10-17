@@ -121,6 +121,6 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
         TaleRecorder.RecordTale(FeatherMedalDefOf.FeatherMedals_AdornedTrophyTale, presenter, awardee);
 
-        Find.WindowStack.Add(new Dialog_TrophyAwarded(medal, awardee, presenter));
+        Find.WindowStack.Add(new Dialog_TrophyAwarded(medal, awardee));
     }
 }

@@ -75,7 +75,7 @@ namespace FeatherMedals
         static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FeatherMedalDefOf));
     }
     
-    public class SpeakerRolesUtil
+    public static class SpeakerRolesUtil
     {
    
         private static List<PreceptDef> speakerRoles;
