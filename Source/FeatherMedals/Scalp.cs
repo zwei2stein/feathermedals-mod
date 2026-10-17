@@ -125,7 +125,7 @@ namespace FeatherMedals
                 if (texture == null && !bakeTried)
                 {
                     bakeTried = true;
-                    texture = ScalpTextureBaker.Bake(skinColor, hairDef, hairColor);
+                    texture = ScalpTextureFactory.Bake(skinColor, hairDef, hairColor);
                 }
                 return texture;
             }

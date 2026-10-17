@@ -1,67 +1,109 @@
+using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals;
-
-[DefOf]
-public class FeatherMedalDefOf
+namespace FeatherMedals
 {
-    public static RitualPatternDef FeatherMedal_AwardTrophyPattern;
 
-    public static PreceptDef FeatherMedals_MedalCeremonyPrecept;
+    [DefOf]
+    public class FeatherMedalDefOf
+    {
+        public static RitualPatternDef FeatherMedal_AwardTrophyPattern;
+
+        public static PreceptDef FeatherMedals_MedalCeremonyPrecept;
+
+        public static ThoughtDef FeatherMedals_AwardedTrophy_Thought;
+        public static ThoughtDef FeatherMedals_WitnessedTrophyCeremony_Thought;
+
+        public static TraitDef FeatherMedals_Decorated;
+
+        public static TaleDef FeatherMedals_AdornedTrophyTale;
+
+        public static InteractionDef FeatherMedals_Speech_AwardMedal;
+
+        public static PreceptDef FeatherMedals_HonoringWarriors_Neutral;
+        public static PreceptDef FeatherMedals_HonoringWarriors_Forbidden;
+        public static PreceptDef FeatherMedals_HonoringWarriors_Disapproved;
+        public static PreceptDef FeatherMedals_HonoringWarriors_Desired;
+        public static PreceptDef FeatherMedals_HonoringWarriors_Required;
+
+        public static IssueDef FeatherMedals_HonoringWarriors;
+
+        public static RulePackDef FeatherMedals_NpcCitation;
+
+        public static BackstoryDef FeatherTrophy_Backstory_DisgracedElder;
+        public static BackstoryDef FeatherTrophy_Backstory_HonoredElder;
+        public static BackstoryDef FeatherTrophy_Backstory_FeatheredWarrior;
+        public static BackstoryDef FeatherTrophy_Backstory_PraisedWarrior;
+        public static BackstoryDef FeatherTrophy_Backstory_PraisedChild;
+
+        //Scapling:
+
+        public static HediffDef FeatherTrophies_Scalping_Scalped;
+        public static ThingDef FeatherTrophies_Scalping_Scalp;
+        public static JobDef FeatherTrophies_Scalping_ScalpJob;
+        public static JobDef FeatherTrophies_Scalping_ScalpInBreakJob;
+        public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
+        public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
+        public static ThoughtDef FeatherTrophies_Scalping_ClaimedRightOfVictor;
+        public static ThoughtDef FeatherTrophies_Scalping_WasScalped;
+        public static HistoryEventDef FeatherTrophies_Scalping_ScalpedMember;
+        public static HistoryEventDef FeatherTrophies_Scalping_TookScalp;
+
+        public static HistoryEventDef FeatherTrophies_Scalping_Observed_Saw_Scalped;
+        public static HistoryEventDef FeatherTrophies_Scalping_Observed_Scalp;
+        public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpPole;
+
+        public static IssueDef FeatherTrophies_ScalpTaking;
+        public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
+        public static PreceptDef FeatherTrophies_ScalpTaking_Honourable;
+        public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
+
+        public static HairDef Messy;
+
+        public static MentalStateDef MurderousRage;
+
+        public static ThingDef FeatherTrophies_ScalpPole;
+
+        static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FeatherMedalDefOf));
+    }
+
+    [DefOf]
+    public class PreceptDefOf
+    {
+   
+        private static List<PreceptDef> speakerRoles;
+        private static string speakerRolesLabel;
+
+        private static List<PreceptDef> SpeakerRoles => speakerRoles ??= new List<PreceptDef>
+        {
+            RimWorld.PreceptDefOf.IdeoRole_Leader,
+            RimWorld.PreceptDefOf.IdeoRole_Moralist,
+            IdeoRole_ShootingSpecialist,
+            IdeoRole_MeleeSpecialist,
+            IdeoRole_ResearchSpecialist,
+            IdeoRole_MedicalSpecialist
+        };
+
+        public static string SpeakerRolesLabel => speakerRolesLabel ??=
+            string.Join(", ", SpeakerRoles.Select(role => role.LabelCap.Resolve()));
+
+        public static bool IsSpeaker(Pawn pawn)
+        {
+            var role = pawn.Ideo?.GetRole(pawn);
+            if (role == null)
+                return false;
+
+            return SpeakerRoles.Contains(role.def);
+        }
     
-    public static ThoughtDef FeatherMedals_AwardedTrophy_Thought;
-    public static ThoughtDef FeatherMedals_WitnessedTrophyCeremony_Thought;
-
-    public static TraitDef FeatherMedals_Decorated;
-
-    public static TaleDef FeatherMedals_AdornedTrophyTale;
+        public static PreceptDef IdeoRole_ShootingSpecialist;
+        public static PreceptDef IdeoRole_MeleeSpecialist;
+        public static PreceptDef IdeoRole_ResearchSpecialist;
+        public static PreceptDef IdeoRole_MedicalSpecialist;
     
-    public static InteractionDef FeatherMedals_Speech_AwardMedal;
-    
-    public static PreceptDef FeatherMedals_HonoringWarriors_Neutral;
-    public static PreceptDef FeatherMedals_HonoringWarriors_Forbidden;
-    public static PreceptDef FeatherMedals_HonoringWarriors_Disapproved;
-    public static PreceptDef FeatherMedals_HonoringWarriors_Desired;
-    public static PreceptDef FeatherMedals_HonoringWarriors_Required;
+        static PreceptDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (PreceptDefOf));
+    }
 
-    public static IssueDef FeatherMedals_HonoringWarriors;
-
-    public static RulePackDef FeatherMedals_NpcCitation;
-
-    public static BackstoryDef FeatherTrophy_Backstory_DisgracedElder;
-    public static BackstoryDef FeatherTrophy_Backstory_HonoredElder;
-    public static BackstoryDef FeatherTrophy_Backstory_FeatheredWarrior;
-    public static BackstoryDef FeatherTrophy_Backstory_PraisedWarrior;
-    public static BackstoryDef FeatherTrophy_Backstory_PraisedChild;
-    
-    //Scapling:
-    
-    public static HediffDef FeatherTrophies_Scalping_Scalped;
-    public static ThingDef FeatherTrophies_Scalping_Scalp;
-    public static JobDef FeatherTrophies_Scalping_ScalpJob;
-    public static JobDef FeatherTrophies_Scalping_ScalpInBreakJob;
-    public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
-    public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
-    public static ThoughtDef FeatherTrophies_Scalping_ClaimedRightOfVictor;
-    public static ThoughtDef FeatherTrophies_Scalping_WasScalped;
-    public static HistoryEventDef FeatherTrophies_Scalping_ScalpedMember;
-    public static HistoryEventDef FeatherTrophies_Scalping_TookScalp;
-    
-    public static HistoryEventDef FeatherTrophies_Scalping_Observed_Saw_Scalped;
-    public static HistoryEventDef FeatherTrophies_Scalping_Observed_Scalp;
-    public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpPole;
-
-    public static IssueDef FeatherTrophies_ScalpTaking;
-    public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
-    public static PreceptDef FeatherTrophies_ScalpTaking_Honourable;
-    public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
-
-    public static HairDef Messy;
-
-    public static MentalStateDef MurderousRage;
-
-    public static ThingDef FeatherTrophies_ScalpPole;
-    
-    static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (FeatherMedalDefOf));
 }

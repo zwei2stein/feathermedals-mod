@@ -6,6 +6,11 @@ using Verse.AI;
 
 namespace FeatherMedals
 {
+    public class JobDriver_ScalpInBreak : JobDriver_Scalp
+    {
+        protected override bool InBreak => true;
+    }
+    
     public class JobDriver_Scalp : JobDriver
     {
         private const int MinDurationTicks = 50;

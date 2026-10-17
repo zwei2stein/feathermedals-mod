@@ -4,9 +4,7 @@ using Verse;
 
 namespace FeatherMedals
 {
-    // Bakes scalp picture: ScalpBase tinted by skin color, hair texture tinted by hair color on top (1:1 aligned).
-    // Single entry point: Bake. Caller owns the returned texture.
-    public static class ScalpTextureBaker
+    public static class ScalpTextureFactory
     {
         private const string BasePath = "Things/Pawn/Humanlike/Scalp/ScalpBase";
 
@@ -62,7 +60,6 @@ namespace FeatherMedals
                    ?? ContentFinder<Texture2D>.Get(hairDef.texPath, false);
         }
 
-        // Works with non-readable textures: blit to render texture of requested size, read back.
         private static Color32[] ReadPixels(Texture source, int width, int height)
         {
             RenderTexture target = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.ARGB32);

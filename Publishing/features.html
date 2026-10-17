@@ -42,6 +42,14 @@
     <filter id="animaTint" color-interpolation-filters="sRGB">
         <feColorMatrix type="matrix" values="0.706 0 0 0 0  0 0.843 0 0 0  0 0 0.792 0 0  0 0 0 1 0"/>
     </filter>
+    <!-- Multiply tint (189,148,120) = default scalp skin color, same as the fallback skinColor in Scalp.cs. -->
+    <filter id="skinTint" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.74 0 0 0 0  0 0.58 0 0 0  0 0 0.47 0 0  0 0 0 1 0"/>
+    </filter>
+    <!-- Multiply tint (166,122,77) = brown wood. -->
+    <filter id="woodTint" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.65 0 0 0 0  0 0.48 0 0 0  0 0 0.30 0 0  0 0 0 1 0"/>
+    </filter>
 </svg>
 
 <div class="section">
@@ -556,6 +564,55 @@
                     <li class="stat-positive">Meditation focus: Artistic, Natural, Dignified (Royalty), stronger than the Feathered Dream Catcher</li>
                     <li class="stat-positive">Beauty +3</li>
                     <li class="stat-neutral">Wall mounted</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Building/Misc/FeatherTrophies_ScalpPole/ScalpPole.png'); filter: url(#woodTint);"></div></td>
+            <td class="col-name"><strong>Scalp Pole</strong></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">4</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine Feather</span></div>
+                <div class="cost-row"><span class="cost-amount">40</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Wood.png');"></span><span class="cost-material-name">Wood</span></div>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">Wooden pole made to display taken scalps. Holds up to three scalps, which are shown hanging on the pole. Scalps strike terror into slaves and give a morbid focus for meditation.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Stores up to 3 <strong>Scalps</strong>, stored scalps never deteriorate</li>
+                    <li class="stat-positive">Terror +10% per displayed scalp (empty pole gives none)</li>
+                    <li class="stat-positive">Meditation focus: Morbid, +5% per displayed scalp (empty pole gives none)</li>
+                    <li class="stat-negative">Beauty -1</li>
+                    <li class="stat-negative">People whose ideology forbids scalping are disturbed by seeing it</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Scalps</h2>
+    <table class="crafting-table">
+        <thead>
+        <tr>
+            <th class="col-graphic"></th>
+            <th class="col-name">Item</th>
+            <th class="col-costs">Obtained</th>
+            <th class="col-features">Features &amp; Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Textures/Things/Pawn/Humanlike/Scalp/ScalpBase.png'); filter: url(#skinTint);"></div></td>
+            <td class="col-name"><strong>Scalp</strong></td>
+            <td class="col-costs">
+                <small>Scalping a person or a corpse</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">A scalp taken from an enemy, hair still attached. Every scalp remembers its victim, who took it and the victim's faction, and shows the victim's own skin and hair.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Can be stored on a <strong>Scalp Pole</strong></li>
+                    <li class="stat-positive">Can be sold or used to pay tribute.</li>
+                    <li class="stat-negative">People whose ideology forbids scalping are disturbed by seeing it</li>
                 </ul>
             </td>
         </tr>
