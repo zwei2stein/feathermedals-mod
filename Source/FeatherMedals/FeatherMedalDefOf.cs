@@ -47,7 +47,10 @@ public class FeatherMedalDefOf
     public static ThoughtDef FeatherTrophies_Scalping_WasScalped;
     public static HistoryEventDef FeatherTrophies_Scalping_ScalpedMember;
     public static HistoryEventDef FeatherTrophies_Scalping_TookScalp;
-    public static HistoryEventDef FeatherTrophies_Scalping_ObservedScalped;
+    
+    public static HistoryEventDef FeatherTrophies_Scalping_Observed_Saw_Scalped;
+    public static HistoryEventDef FeatherTrophies_Scalping_Observed_Scalp;
+    public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpPole;
 
     public static IssueDef FeatherTrophies_ScalpTaking;
     public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;

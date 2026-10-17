@@ -11,6 +11,8 @@ public class ScalpingGameComponent : GameComponent
 
     private static readonly List<Pawn> observers = new();
     private static readonly List<Thing> scalped = new();
+    private static readonly List<Thing> scalps = new();
+    private static readonly List<Thing> scalpPoles = new();
 
     private bool ideosMigrated;
 
@@ -55,20 +57,31 @@ public class ScalpingGameComponent : GameComponent
             return;
 
         CollectScalped(map);
+        CollectScalps(map);
+        CollectScalpPoles(map);
         foreach (var observer in observers)
         {
-            foreach (var thing in scalped)
-            {
-                if (thing == observer || !CanSee(observer, thing))
-                    continue;
-                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(
-                    FeatherMedalDefOf.FeatherTrophies_Scalping_ObservedScalped,
-                    observer.Named(HistoryEventArgsNames.Doer), thing.Named(HistoryEventArgsNames.Subject)));
-                break;
-            }
+            RecordFirstSeen(observer, scalped, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_Saw_Scalped);
+            RecordFirstSeen(observer, scalps, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_Scalp);
+            RecordFirstSeen(observer, scalpPoles, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_ScalpPole);
         }
         observers.Clear();
         scalped.Clear();
+        scalps.Clear();
+        scalpPoles.Clear();
+    }
+
+    private static void RecordFirstSeen(Pawn observer, List<Thing> things, HistoryEventDef eventDef)
+    {
+        foreach (var thing in things)
+        {
+            if (thing == observer || !CanSee(observer, thing))
+                continue;
+            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(
+                eventDef,
+                observer.Named(HistoryEventArgsNames.Doer), thing.Named(HistoryEventArgsNames.Subject)));
+            break;
+        }
     }
 
     private static bool IsObserver(Pawn p)
@@ -94,6 +107,24 @@ public class ScalpingGameComponent : GameComponent
             // Dessicated corpses are not drawn scalped.
             if (thing is Corpse corpse && corpse.GetRotStage() != RotStage.Dessicated && IsScalped(corpse.InnerPawn))
                 scalped.Add(corpse);
+        }
+    }
+
+    private static void CollectScalps(Map map)
+    {
+        scalps.Clear();
+        foreach (var thing in map.listerThings.ThingsOfDef(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp))
+        {
+            scalps.Add(thing);
+        }
+    }
+
+    private static void CollectScalpPoles(Map map)
+    {
+        scalpPoles.Clear();
+        foreach (var thing in map.listerThings.ThingsOfDef(FeatherMedalDefOf.FeatherTrophies_ScalpPole))
+        {
+            scalpPoles.Add(thing);
         }
     }
 

@@ -73,8 +73,16 @@
         </conflictingMemes>
         <comps>
             <li Class="PreceptComp_SelfTookMemoryThought">
-                <eventDef>FeatherTrophies_Scalping_ObservedScalped</eventDef>
-                <thought>FeatherTrophies_Scalping_Brutality</thought>
+                <eventDef>FeatherTrophies_Scalping_Observed_Saw_Scalped</eventDef>
+                <thought>FeatherTrophies_Scalping_Brutality_Saw_Scalped</thought>
+            </li>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>FeatherTrophies_Scalping_Observed_Scalp</eventDef>
+                <thought>FeatherTrophies_Scalping_Brutality_Saw_Scalp</thought>
+            </li>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>FeatherTrophies_Scalping_Observed_ScalpPole</eventDef>
+                <thought>FeatherTrophies_Scalping_Brutality_Saw_ScalpPole</thought>
             </li>
         </comps>
     </PreceptDef>
@@ -87,8 +95,18 @@
     </HistoryEventDef>
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_ObservedScalped</defName>
+        <defName>FeatherTrophies_Scalping_Observed_Saw_Scalped</defName>
         <label>saw a scalped person</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>FeatherTrophies_Scalping_Observed_Scalp</defName>
+        <label>saw a scalp</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>FeatherTrophies_Scalping_Observed_ScalpPole</defName>
+        <label>saw a scalp pole</label>
     </HistoryEventDef>
 
     <!-- Thoughts -->
@@ -108,7 +126,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_Brutality</defName>
+        <defName>FeatherTrophies_Scalping_Brutality_Saw_Scalped</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -122,8 +140,50 @@
         <stages>
             <li>
                 <label>brutality of scalping</label>
-                <description>I have witnessed brutality of scalping secondhand.</description>
+                <description>I have witnessed brutality of scalping by seeing scalped victim.</description>
                 <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_Brutality_Saw_Scalp</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>brutality of scalping</label>
+                <description>I have witnessed barbarism of scalping by seeing scalp trophy.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_Brutality_Saw_ScalpPole</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>brutality of scalping</label>
+                <description>I have witnessed barbarism of scalping by seeing scalp pole display.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
             </li>
         </stages>
     </ThoughtDef>
