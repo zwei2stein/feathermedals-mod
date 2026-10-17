@@ -7,6 +7,10 @@ namespace FeatherMedals
     {
         private Pawn pawn;
         private string name;
+        
+        public RememberedPawn()
+        {
+        }
 
         public RememberedPawn(string defaultName = null)
         {
@@ -41,6 +45,10 @@ namespace FeatherMedals
 
         public void ExposeData()
         {
+            // refresh last known name when saving
+            if (Scribe.mode == LoadSaveMode.Saving)
+                Refresh();
+
             Scribe_References.Look(ref pawn, "pawn");
             Scribe_Values.Look(ref name, "name");
         }

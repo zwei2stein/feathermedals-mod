@@ -8,8 +8,9 @@ Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps t
 
 [list]
     [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
-    [*]Ceremony to award feathers to deserving warriors
+    [*]Ceremony to award feathers to deserving warriors.
     [*]Ideoligion precept about Honoring Warriors.
+    [*]Visitors and raiders can come wearing feathers.
 [/list]
 
 [h4]Crafting[/h4]
@@ -26,6 +27,8 @@ Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps t
     [*]Taking enemy scalps.
     [*]Outlander factions will buy scalps as well as Imperial tribute takers.
     [*]Ideoligion precept about taking scalps.
+    [*]Scalped pawns have permanent painful scar.
+    [*]Visitors and raiders can come bearing scalp wounds.
 [/list]
 
 [h3]Buildings[/h3]

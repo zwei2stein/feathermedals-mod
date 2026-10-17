@@ -74,6 +74,10 @@ namespace FeatherMedals
         public List<Scalp> StoredScalps()
         {
             var scalps = new List<Scalp>();
+
+            if (!Spawned) return
+                scalps;
+            
             foreach (Thing thing in slotGroup.HeldThings)
             {
                 if (thing is Scalp scalp)

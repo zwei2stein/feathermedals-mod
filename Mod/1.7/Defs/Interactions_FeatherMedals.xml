@@ -66,7 +66,7 @@
 
 				<li>image->[PRESENTER_nameFull] is standing firm, proudly adorning [AWARDEE_nameFull]'s head. [circumstance_group]</li>
 				<li>image->[PRESENTER_nameFull] is saluting [AWARDEE_nameFull], who is wearing a newly awarded trophy. [circumstance_group]</li>
-				<li>image->[AWARDEE_nameFull] looks [AWARDEE_adjective] as they are adorned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
+				<li>image->[AWARDEE_nameFull] looks at [PRESENTER_objective] as they are adorned with a trophy by [PRESENTER_nameDef]. [circumstance_group]</li>
 
 				<li>circumstance_phrase->Solemn tribe stands straight.</li>
 				<li>circumstance_phrase->The tribe watches in silent awe.</li>
