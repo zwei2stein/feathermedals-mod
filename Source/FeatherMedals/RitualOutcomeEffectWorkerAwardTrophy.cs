@@ -7,7 +7,6 @@ namespace FeatherMedals;
 
 public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 {
-    [System.ThreadStatic]
     public static bool ApplyingCeremonyAward;
 
     public RitualOutcomeEffectWorkerAwardTrophy()
@@ -23,9 +22,10 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
     public override void Apply(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
+        var previous = ApplyingCeremonyAward;
         ApplyingCeremonyAward = true;
         try { ApplyImpl(progress, totalPresence, jobRitual); }
-        finally { ApplyingCeremonyAward = false; }
+        finally { ApplyingCeremonyAward = previous; }
     }
 
     private void ApplyImpl(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)

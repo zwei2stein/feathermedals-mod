@@ -9,7 +9,7 @@ namespace FeatherMedals;
 public static class FeatherMedalUtil
 {
     // float menu helper
-    [ThreadStatic] public static Apparel EvaluatingItem;
+    public static Apparel EvaluatingItem;
     
     public static bool IsMedalDef(ThingDef def) => def?.thingClass == typeof(FeatherMedal);
 

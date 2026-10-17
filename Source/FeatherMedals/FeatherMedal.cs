@@ -98,7 +98,7 @@ namespace FeatherMedals
             else if (IsCeremonyInProgress())
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledCeremonyInProgress".Translate());
             else if (!ColonyHasPresenter(out _))
-                awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate(PreceptDefOf.SpeakerRolesLabel.Named("SPEAKERS")));
+                awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
 
             yield return awardCeremonyBtn;
                 
@@ -137,7 +137,7 @@ namespace FeatherMedals
             if (this.Map == null) return false;
             foreach (var p in this.Map.mapPawns.FreeColonistsSpawned)
             {
-                if (PreceptDefOf.IsSpeaker(p) && !HonoringWarriorsUtil.ForbidsCeremony(p))
+                if (SpeakerRolesUtil.IsSpeaker(p) && !HonoringWarriorsUtil.ForbidsCeremony(p))
                 {
                     result = p;
                     return true; 

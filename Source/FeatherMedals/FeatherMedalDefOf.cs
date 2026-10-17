@@ -37,6 +37,12 @@ namespace FeatherMedals
         public static BackstoryDef FeatherTrophy_Backstory_FeatheredWarrior;
         public static BackstoryDef FeatherTrophy_Backstory_PraisedWarrior;
         public static BackstoryDef FeatherTrophy_Backstory_PraisedChild;
+        
+        public static PreceptDef IdeoRole_ShootingSpecialist;
+        public static PreceptDef IdeoRole_MeleeSpecialist;
+        public static PreceptDef IdeoRole_ResearchSpecialist;
+        public static PreceptDef IdeoRole_MedicalSpecialist;
+
 
         //Scapling:
 
@@ -68,9 +74,8 @@ namespace FeatherMedals
 
         static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FeatherMedalDefOf));
     }
-
-    [DefOf]
-    public class PreceptDefOf
+    
+    public class SpeakerRolesUtil
     {
    
         private static List<PreceptDef> speakerRoles;
@@ -78,12 +83,12 @@ namespace FeatherMedals
 
         private static List<PreceptDef> SpeakerRoles => speakerRoles ??= new List<PreceptDef>
         {
-            RimWorld.PreceptDefOf.IdeoRole_Leader,
-            RimWorld.PreceptDefOf.IdeoRole_Moralist,
-            IdeoRole_ShootingSpecialist,
-            IdeoRole_MeleeSpecialist,
-            IdeoRole_ResearchSpecialist,
-            IdeoRole_MedicalSpecialist
+            PreceptDefOf.IdeoRole_Leader,
+            PreceptDefOf.IdeoRole_Moralist,
+            FeatherMedalDefOf.IdeoRole_ShootingSpecialist,
+            FeatherMedalDefOf.IdeoRole_MeleeSpecialist,
+            FeatherMedalDefOf.IdeoRole_ResearchSpecialist,
+            FeatherMedalDefOf.IdeoRole_MedicalSpecialist
         };
 
         public static string SpeakerRolesLabel => speakerRolesLabel ??=
@@ -97,13 +102,7 @@ namespace FeatherMedals
 
             return SpeakerRoles.Contains(role.def);
         }
-    
-        public static PreceptDef IdeoRole_ShootingSpecialist;
-        public static PreceptDef IdeoRole_MeleeSpecialist;
-        public static PreceptDef IdeoRole_ResearchSpecialist;
-        public static PreceptDef IdeoRole_MedicalSpecialist;
-    
-        static PreceptDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof (PreceptDefOf));
+        
     }
 
 }

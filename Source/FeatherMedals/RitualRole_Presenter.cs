@@ -16,12 +16,12 @@ public class RitualRole_Presenter : RitualRoleColonist
             return false;
         }
 
-        if (PreceptDefOf.IsSpeaker(p))
+        if (SpeakerRolesUtil.IsSpeaker(p))
         {
             reason = null;
             return true;
         }
-        if (!skipReason) reason = "FeatherMedals_MustHoldSpeakerRole".Translate(PreceptDefOf.SpeakerRolesLabel.Named("SPEAKERS"));
+        if (!skipReason) reason = "FeatherMedals_MustHoldSpeakerRole".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS"));
         return false;
     }
 }
