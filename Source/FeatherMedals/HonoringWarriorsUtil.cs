@@ -16,57 +16,6 @@ public static class HonoringWarriorsUtil
     {
         return p?.Ideo != null && p.Ideo.HasPrecept(FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Forbidden);
     }
-    
-    public static void AddCompatibleStanceToIdeosMissingIssue()
-    {
-        foreach (var ideo in Find.IdeoManager.IdeosListForReading)
-        {
-            if (ideo.classicMode)
-                continue;
-            if (ideo.PreceptsListForReading.Any(p => p.def.issue == FeatherMedalDefOf.FeatherMedals_HonoringWarriors))
-                continue;
-            var stance = PickClosestToNeutral(ideo);
-            if (stance == null)
-                continue;
-            
-            ideo.AddPrecept(PreceptMaker.MakePrecept(stance), true);
-            
-            if (Prefs.DevMode)
-                Log.Message($"[FeatherTrophies] {ideo.name} updated with new precept {stance.defName}.");
-        }
-    }
-
-    private static PreceptDef PickClosestToNeutral(Ideo ideo)
-    {
-        var neutralOrder = FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Neutral.displayOrderInIssue;
-        PreceptDef best = null;
-        var bestDistance = int.MaxValue;
-        foreach (var def in DefDatabase<PreceptDef>.AllDefsListForReading)
-        {
-            if (def.issue != FeatherMedalDefOf.FeatherMedals_HonoringWarriors || ConflictsWithMemes(ideo, def))
-                continue;
-            var distance = System.Math.Abs(def.displayOrderInIssue - neutralOrder);
-            if (distance < bestDistance || (distance == bestDistance && def.displayOrderInIssue > best.displayOrderInIssue))
-            {
-                best = def;
-                bestDistance = distance;
-            }
-        }
-        return best;
-    }
-
-    public static bool ConflictsWithMemes(Ideo ideo, PreceptDef def)
-    {
-        var conflicts = def.conflictingMemes;
-        if (conflicts == null)
-            return false;
-        for (var i = 0; i < conflicts.Count; i++)
-        {
-            if (ideo.HasMeme(conflicts[i]))
-                return true;
-        }
-        return false;
-    }
 
     public static bool IsEligible(Pawn p)
     {

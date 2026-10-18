@@ -21,6 +21,7 @@
         <description>No one may be adorned with trophies that elevate them above others or lead an adorning ceremony, and the people resent those who wear trophies.</description>
         <impact>High</impact>
         <displayOrderInIssue>1</displayOrderInIssue>
+        <defaultSelectionWeight>0.1</defaultSelectionWeight>
         <conflictingMemes>
             <li>Individualist</li>
             <li>Supremacist</li>
@@ -54,6 +55,7 @@
         <description>We are one people and none is better than their peers. Elevating one is frowned upon, even if their achievements help us all.</description>
         <impact>Medium</impact>
         <displayOrderInIssue>2</displayOrderInIssue>
+        <defaultSelectionWeight>0.3</defaultSelectionWeight>
         <associatedMemes>
             <li>Guilty</li>
             <li>Collectivist</li>
@@ -95,6 +97,7 @@
         <description>It is our way to recognize our contributions. Warriors should be adorned with trophies.</description>
         <impact>Medium</impact>
         <displayOrderInIssue>4</displayOrderInIssue>
+        <defaultSelectionWeight>0.5</defaultSelectionWeight>
         <conflictingMemes>
             <li>Guilty</li>
             <li>PainIsVirtue</li>
@@ -126,6 +129,7 @@
         <description>It is our sacred tradition to recognize our contributions. Every warrior must be justly adorned, and neglecting this bothers everyone.</description>
         <impact>High</impact>
         <displayOrderInIssue>5</displayOrderInIssue>
+        <defaultSelectionWeight>0.15</defaultSelectionWeight>
         <conflictingMemes>
             <li>Collectivist</li>
             <li>Guilty</li>

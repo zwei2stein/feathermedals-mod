@@ -25,6 +25,7 @@
         <description>Allows taking scalps without any moral restrictions. Children, innocents, allies: all are fair game, regardless of consequences.</description>
         <impact>High</impact>
         <displayOrderInIssue>1</displayOrderInIssue>
+        <defaultSelectionWeight>0.25</defaultSelectionWeight>
         <associatedMemes>
             <li>Cannibal</li>
         </associatedMemes>
@@ -64,6 +65,7 @@
         <description>Forbids taking scalps at all. Members consider taking scalps barbaric and unacceptable.</description>
         <impact>Medium</impact>
         <displayOrderInIssue>3</displayOrderInIssue>
+        <defaultSelectionWeight>0.5</defaultSelectionWeight>
         <conflictingMemes>
             <li>Cannibal</li>
             <li>Loyalist</li>

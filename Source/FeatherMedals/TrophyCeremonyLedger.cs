@@ -11,7 +11,6 @@ public class TrophyCeremonyLedger : GameComponent
     private List<int> ceremonyTicks = new();
     private int lastCeremonyTick = -1;
     private bool seeded;
-    private bool ideosMigrated;
 
     public TrophyCeremonyLedger(Game game)
     {
@@ -52,12 +51,6 @@ public class TrophyCeremonyLedger : GameComponent
         
         HonoringWarriorsUtil.ResetCache();
 
-        if (!ideosMigrated)
-        {
-            ideosMigrated = true;
-            HonoringWarriorsUtil.AddCompatibleStanceToIdeosMissingIssue();
-        }
-
         if (seeded)
             return;
         
@@ -71,7 +64,6 @@ public class TrophyCeremonyLedger : GameComponent
         Scribe_Collections.Look(ref ceremonyTicks, "ceremonyTicks", LookMode.Value);
         Scribe_Values.Look(ref lastCeremonyTick, "lastCeremonyTick", -1);
         Scribe_Values.Look(ref seeded, "seeded");
-        Scribe_Values.Look(ref ideosMigrated, "ideosMigrated");
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
             ceremonyTicks ??= new List<int>();
     }

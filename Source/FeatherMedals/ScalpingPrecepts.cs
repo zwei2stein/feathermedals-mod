@@ -35,46 +35,5 @@ public static class ScalpingPrecepts
         }
         return false;
     }
-    public static void AddStanceToIdeosMissingIssue()
-    {
-        // Honourable > Merciless > Forbidden. None allowed: Honourable
-        foreach (var ideo in Find.IdeoManager.IdeosListForReading)
-        {
-            if (ideo.classicMode || HasStance(ideo))
-                continue;
 
-            var stance = PickStance(ideo);
-            ideo.AddPrecept(PreceptMaker.MakePrecept(stance), true);
-
-            if (Prefs.DevMode)
-                Log.Message($"[FeatherTrophies] {ideo.name} updated with new precept {stance.defName}.");
-        }
-    }
-
-    private static bool HasStance(Ideo ideo)
-    {
-        var precepts = ideo.PreceptsListForReading;
-        for (var i = 0; i < precepts.Count; i++)
-        {
-            if (precepts[i].def.issue == FeatherMedalDefOf.FeatherTrophies_ScalpTaking)
-                return true;
-        }
-        return false;
-    }
-
-    private static PreceptDef PickStance(Ideo ideo)
-    {
-        var order = new[]
-        {
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honourable,
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless,
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden
-        };
-        foreach (var def in order)
-        {
-            if (!HonoringWarriorsUtil.ConflictsWithMemes(ideo, def))
-                return def;
-        }
-        return FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honourable;
-    }
 }

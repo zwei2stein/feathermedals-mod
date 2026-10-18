@@ -13,27 +13,9 @@ public class ScalpingGameComponent : GameComponent
     private static readonly List<Thing> scalped = new();
     private static readonly List<Thing> scalps = new();
     private static readonly List<Thing> scalpPoles = new();
-
-    private bool ideosMigrated;
-
+    
     public ScalpingGameComponent(Game game)
     {
-    }
-
-    public override void FinalizeInit()
-    {
-        base.FinalizeInit();
-
-        if (ideosMigrated)
-            return;
-        ideosMigrated = true;
-        ScalpingPrecepts.AddStanceToIdeosMissingIssue();
-    }
-
-    public override void ExposeData()
-    {
-        base.ExposeData();
-        Scribe_Values.Look(ref ideosMigrated, "ideosMigrated");
     }
 
     public override void GameComponentTick()
