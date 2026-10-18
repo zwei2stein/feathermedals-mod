@@ -9,7 +9,7 @@
                 <li>r_art_name->[catcher] of [noun]</li>
                 <li>r_art_name->[adj] [catcher] of [noun]</li>
                 <li>r_art_name->[adj] [noun]</li>
-                
+
                 <li>adj->Whispering</li>
                 <li>adj->Silent</li>
                 <li>adj->Restful</li>
@@ -22,9 +22,9 @@
                 <li>catcher->Totem</li>
                 <li>catcher->Talisman</li>
                 <li>catcher->Ward</li>
-                <li>catcher->Sleep ward</li>
+                <li>catcher->Sleep Ward</li>
                 <li>catcher->Weave</li>
-                
+
                 <li>noun->Dreams</li>
                 <li>noun->Visions</li>
                 <li>noun->Wish</li>

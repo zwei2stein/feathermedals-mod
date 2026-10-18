@@ -1,6 +1,6 @@
 [h1]Tribal Trophies[/h1]
 
-Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps that can be taken.
+Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps that can be taken.
 
 [h2]Features[/h2] 
 
@@ -8,33 +8,34 @@ Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps t
 
 [list]
     [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
-    [*]Ceremony to award feathers to deserving warriors.
+    [*]Adorning ceremony to honor deserving warriors with trophies.
     [*]Ideoligion precept about Honoring Warriors.
-    [*]Visitors and raiders can come wearing feathers.
+    [*]Visitors and raiders can come wearing trophies.
 [/list]
 
 [h4]Crafting[/h4]
 
 [list]
-    [*]Crafting feathers is unlocked by researching "Warrior Honour".
+    [*]Crafting trophies is unlocked by researching "Warrior Honor".
     [*]Crafted at the Crafting Spot, Hand Tailoring Bench, or Electric Tailoring Bench.
-    [*]Requires Pristine Feather, obtained by butchering feathered beasts or refining their leather.
+    [*]Requires pristine feathers, obtained by butchering feathered beasts or refining their leather.
 [/list]
 
 [h3]Scalp Trophies[/h3]
 
 [list]
     [*]Taking enemy scalps.
-    [*]Outlander factions will buy scalps as well as Imperial tribute takers.
+    [*]Outlander factions and Imperial tribute collectors will buy scalps. [spoiler]Givign scalps as a gift might not be appreciated.[/spoiler]
     [*]Ideoligion precept about taking scalps.
-    [*]Scalped pawns have permanent painful scar.
-    [*]Visitors and raiders can come bearing scalp wounds.
+    [*]Scalped pawns get a permanent, painful scar.
+    [*]Visitors and raiders can come bearing old scalping scars.
+    [*][spoiler]New scalping violent mental breaks.[/spoiler] Keep your colonists happy.
 [/list]
 
 [h3]Buildings[/h3]
 
 [list]
-    [*]Feathered Dream catcher, a wall-mounted building that grants better sleep. Available for Totemic, Rustic and Animalist styles.
+    [*]Feathered Dream Catcher, a wall-mounted building that grants better sleep. Available for Totemic, Rustic and Animalist styles.
     [*]Scalp Pole, a storage and display building for scalps.
 [/list]
 
@@ -54,7 +55,7 @@ Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps t
 
 [h3]Pristine Feather sources[/h3]
 
-These mods have birds/avians that can either drop pristine feathers when butchered or whose leather can be refined to pristine feathers.
+These mods have birds that either drop pristine feathers when butchered or have leather that can be refined into pristine feathers.
 
 [list]
     [*]Mythic Ages: Megafauna Bestiary
@@ -73,7 +74,7 @@ These mods have birds/avians that can either drop pristine feathers when butcher
 
 [h3]Style[/h3]
 
-These mods have styles that are patched to contain this mods style buildings.
+These mods have styles that are patched to include this mod's style buildings.
 
 [list]
     [*]Stoneborn - Dwarven Style Pack
@@ -101,11 +102,11 @@ These mods have merchants that will buy scalps:
 
 [h3]Fork[/h3]
 
-This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url]. No original graphics is left and original code is more of and inspiration at this point. 
+This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url]. No original graphics are left, and the original code is more of an inspiration at this point. 
 
 This mod was reconceptualized for a neolithic/tribal setting and has slightly different features.
 
-Both mods do similar things and can be used alongside each other. This mod, however fixed lots of bugs and at same time took another route by dropping/adding features, so do not expect things to work exactly same way.
+Both mods do similar things and can be used alongside each other. This mod, however, fixed lots of bugs and at the same time took another route by dropping/adding features, so do not expect things to work exactly the same way.
 
 [hr][/hr]
 
@@ -123,4 +124,4 @@ Both mods do similar things and can be used alongside each other. This mod, howe
 
 [h2]Thanks[/h2]
 
-Many thanks to RimWorld Modding Discord for their help.
+Many thanks to the RimWorld Modding Discord for their help and inspiration.

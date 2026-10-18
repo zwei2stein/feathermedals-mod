@@ -97,7 +97,6 @@
 		</statBases>
 	</ThingDef>
 
-
 	<!-- wounded in combat - red feather-->
 
 	<!-- killed an enemy - black top, white with red dot -->
@@ -119,7 +118,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedInCombat</defName>
 		<label>feather: wounded in combat</label>
-		<description>Trophy for being injured in combat with a foe.</description>
+		<description>Feather for being injured in combat with a foe.</description>
 		<graphicData>
 			<texPath>Things/Feathers/WoundedInCombat</texPath>
 		</graphicData>
@@ -150,7 +149,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
-		<description>Trophy for killing a foe.</description>
+		<description>Feather for killing a foe.</description>
 		<graphicData>
 			<texPath>Things/Feathers/KilledAnEnemy</texPath>
 		</graphicData>
@@ -165,7 +164,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_WoundedOrKilledAnEnemy</defName>
 		<label>feather: wounded or killed an enemy</label>
-		<description>Trophy for wounding or killing a foe.</description>
+		<description>Feather for wounding or killing a foe.</description>
 		<graphicData>
 			<texPath>Things/Feathers/WoundedOrKilledAnEnemy</texPath>
 		</graphicData>
@@ -179,7 +178,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_SlitThroatAndTookScalp</defName>
 		<label>feather: slit throat and took scalp</label>
-		<description>Trophy for slitting the throat of an enemy and taking their scalp.</description>
+		<description>Feather for slitting the throat of an enemy and taking their scalp.</description>
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroatAndTookScalp</texPath>
 		</graphicData>
@@ -205,7 +204,7 @@
 				<addsTraits>
 					<li>
 						<trait>Nerves</trait>
-						<degree>1</degree> <!-- Steady -->
+						<degree>1</degree> <!-- Steadfast -->
 						<chance>0.05</chance>
 					</li>
 					<li>
@@ -222,7 +221,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_WoundedManyTimes</defName>
 		<label>feather: wounded in combat many times</label>
-		<description>Trophy boasting numerous combat wounds.</description>
+		<description>Feather boasting numerous combat wounds.</description>
 		<graphicData>
 			<texPath>Things/Feathers/WoundedManyTimes</texPath>
 		</graphicData>
@@ -253,7 +252,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_SlitThroat</defName>
 		<label>feather: slit throat of an enemy</label>
-		<description>Trophy boasting slitting the throat of an enemy</description>
+		<description>Feather boasting slitting the throat of an enemy.</description>
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroat</texPath>
 		</graphicData>
@@ -286,7 +285,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy</defName>
 		<label>feather: touched an enemy</label>
-		<description>Trophy boasting a coup - coup is touching an enemy in combat without being hurt.</description>
+		<description>Feather boasting a coup. A coup is touching an enemy in combat without being hurt.</description>
 		<graphicData>
 			<texPath>Things/Feathers/TouchedAnEnemy</texPath>
 		</graphicData>
@@ -323,7 +322,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_TouchedAnEnemy5Times</defName>
 		<label>feather: touched an enemy five times</label>
-		<description>Trophy boasting five coups at distinct times - coup is touching an enemy in combat without being hurt.</description>
+		<description>Feather boasting five coups at distinct times. A coup is touching an enemy in combat without being hurt.</description>
 		<graphicData>
 			<texPath>Things/Feathers/TouchedAnEnemy5Times</texPath>
 		</graphicData>
@@ -360,7 +359,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherMedal_Medal_Struck4BlowsInCombat</defName>
 		<label>feather: struck an enemy four times in combat</label>
-		<description>Trophy boasting striking an enemy four times in combat</description>
+		<description>Feather boasting striking an enemy four times in combat.</description>
 		<graphicData>
 			<texPath>Things/Feathers/Struck4BlowsInCombat</texPath>
 		</graphicData>
@@ -398,7 +397,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherMedal_Medal_CunningAndWisdom</defName>
 		<label>feather: cunning and wisdom</label>
-		<description>Trophy boasting cunning in combat and wisdom in peacetime</description>
+		<description>Feather boasting cunning in combat and wisdom in peacetime.</description>
 		<graphicData>
 			<texPath>Things/Feathers/CunningAndWisdom</texPath>
 		</graphicData>
@@ -431,15 +430,15 @@
 		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
-	
+
 	<!-- ahistorical: Joe Medicine Crow inspired -->
-	
+
 	<!-- protection: golden -->
 
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherTrophy_Trophy_Protection</defName>
 		<label>feather: protection</label>
-		<description>Trophy boasting protection by archite spirits</description>
+		<description>Feather boasting protection by archite spirits.</description>
 		<graphicData>
 			<texPath>Things/Feathers/Protection</texPath>
 		</graphicData>
@@ -471,13 +470,13 @@
 		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
-	
+
 	<!-- led warparty -->
 
 	<ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherTrophy_Trophy_LedWarparty</defName>
 		<label>feather: led war party</label>
-		<description>Trophy boasting experience leading a war party</description>
+		<description>Feather boasting experience leading a war party.</description>
 		<graphicData>
 			<texPath>Things/Feathers/LedWarparty</texPath>
 		</graphicData>
@@ -488,13 +487,13 @@
 		</equippedStatOffsets>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
-	
+
 	<!-- stole horses -->
 
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherTrophy_Trophy_StoleHorses</defName>
 		<label>feather: stole enemy mounts</label>
-		<description>Trophy boasting feat of stealing mounts of an enemy</description>
+		<description>Feather boasting the feat of stealing an enemy's mounts.</description>
 		<graphicData>
 			<texPath>Things/Feathers/StoleHorses</texPath>
 		</graphicData>
@@ -510,7 +509,7 @@
 	<ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherTrophy_Trophy_TookWeapon</defName>
 		<label>feather: disarmed enemy</label>
-		<description>Trophy boasting feat of disarming an enemy</description>
+		<description>Feather boasting the feat of disarming an enemy.</description>
 		<graphicData>
 			<texPath>Things/Feathers/TookWeapon</texPath>
 		</graphicData>

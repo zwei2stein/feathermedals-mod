@@ -4,14 +4,14 @@
     <FeatherTrophies_Scalping_Menu>Scalp {TARGET}</FeatherTrophies_Scalping_Menu>
     <FeatherTrophies_Scalping_GizmoLabel>Scalp</FeatherTrophies_Scalping_GizmoLabel>
     <FeatherTrophies_Scalping_GizmoDesc>Order a colonist to scalp this person. Anyone able to cut flesh will take the job.</FeatherTrophies_Scalping_GizmoDesc>
-    
+
     <FeatherTrophies_Scalping_DesignatorDesc>Order colonists to scalp every person and corpse in the area that can be scalped.</FeatherTrophies_Scalping_DesignatorDesc>
-    <FeatherTrophies_Scalping_MessageMustDesignateScalpable>Must designate scalpable target.</FeatherTrophies_Scalping_MessageMustDesignateScalpable>
+    <FeatherTrophies_Scalping_MessageMustDesignateScalpable>Must designate a scalpable target.</FeatherTrophies_Scalping_MessageMustDesignateScalpable>
 
     <FeatherTrophies_Scalping_WillAnger>Scalping {TARGET_nameDef} will anger {FACTION_name}.</FeatherTrophies_Scalping_WillAnger>
     <FeatherTrophies_Scalping_Provoked>People of {PLAYERFACTION_name} have attempted to scalp {TARGET_nameDef}, and {TARGET_pronoun} is resisting. {FACTION_name} is angered.</FeatherTrophies_Scalping_Provoked>
 
-    <FeatherTrophies_Scalping_IdeoForbids>Ideology forbids</FeatherTrophies_Scalping_IdeoForbids>
+    <FeatherTrophies_Scalping_IdeoForbids>Ideoligion forbids</FeatherTrophies_Scalping_IdeoForbids>
 
     <FeatherTrophies_Scalping_ScalpedBy>Scalped by {SCALPER}</FeatherTrophies_Scalping_ScalpedBy>
 
@@ -26,9 +26,9 @@
     <!-- scalp gifts -->
 
     <FeatherTrophies_ScalpGift_LetterLabel>Scalp shipment resented</FeatherTrophies_ScalpGift_LetterLabel>
-    <FeatherTrophies_ScalpGift_Letter>{FACTION} did not take recent scalp shipment well. Relationship loss: {LOSS}\n\nReasons:\n{REASONS}</FeatherTrophies_ScalpGift_Letter>
-    <FeatherTrophies_ScalpGift_Reason_Forbidden>They do not practice barbaric custom of scalping.</FeatherTrophies_ScalpGift_Reason_Forbidden>
-    <FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>They are not partaking in scalp bounties.</FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>
-    <FeatherTrophies_ScalpGift_Reason_Victim>Their members being scalped is not something they enjoy being reminded of.</FeatherTrophies_ScalpGift_Reason_Victim>
+    <FeatherTrophies_ScalpGift_Letter>{FACTION} did not take the recent scalp shipment well. Goodwill lost: {LOSS}\n\nReasons:\n{REASONS}</FeatherTrophies_ScalpGift_Letter>
+    <FeatherTrophies_ScalpGift_Reason_Forbidden>They do not practice the barbaric custom of scalping.</FeatherTrophies_ScalpGift_Reason_Forbidden>
+    <FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>They do not take part in scalp bounties.</FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>
+    <FeatherTrophies_ScalpGift_Reason_Victim>They do not enjoy being reminded that their own people were scalped.</FeatherTrophies_ScalpGift_Reason_Victim>
 
 </LanguageData>

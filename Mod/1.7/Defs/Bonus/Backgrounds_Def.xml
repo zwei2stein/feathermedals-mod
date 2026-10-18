@@ -5,7 +5,7 @@
         <defName>FeatherTrophy_Backstory_DisgracedElder</defName>
         <title>disgraced elder</title>
         <titleShort>elder</titleShort>
-        <description>[PAWN_nameDef] used to be a figure of great honor in [PAWN_possessive] tribe. [PAWN_pronoun] betrayed their tribe and joined with sworn enemy, raising family there.</description>
+        <description>[PAWN_nameDef] used to be a figure of great honor in [PAWN_possessive] tribe. [PAWN_pronoun] betrayed [PAWN_possessive] tribe and joined with a sworn enemy, raising a family there.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Hulk</bodyTypeMale>
         <bodyTypeFemale>Hulk</bodyTypeFemale>
@@ -32,12 +32,12 @@
             <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
         </possessions>
     </BackstoryDef>
-    
+
     <BackstoryDef>
         <defName>FeatherTrophy_Backstory_HonoredElder</defName>
         <title>honored elder</title>
         <titleShort>elder</titleShort>
-        <description>[PAWN_nameDef] was once fierce warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe fiercely and eventually became honored elder.</description>
+        <description>[PAWN_nameDef] was once a fierce warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe relentlessly and eventually became an honored elder.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Hulk</bodyTypeMale>
         <bodyTypeFemale>Hulk</bodyTypeFemale>
@@ -73,7 +73,7 @@
         <defName>FeatherTrophy_Backstory_FeatheredWarrior</defName>
         <title>feathered warrior</title>
         <titleShort>feathered</titleShort>
-        <description>[PAWN_nameDef] was once skilled warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe with great bravery and eventually became celebrated hero.</description>
+        <description>[PAWN_nameDef] was once a skilled warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe with great bravery and eventually became a celebrated hero.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Hulk</bodyTypeMale>
         <bodyTypeFemale>Hulk</bodyTypeFemale>
@@ -106,7 +106,7 @@
         <defName>FeatherTrophy_Backstory_PraisedWarrior</defName>
         <title>praised warrior</title>
         <titleShort>praised</titleShort>
-        <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned respect of [PAWN_possessive] peers.</description>
+        <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned the respect of [PAWN_possessive] peers.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Male</bodyTypeMale>
         <bodyTypeFemale>Female</bodyTypeFemale>
@@ -138,7 +138,7 @@
         <defName>FeatherTrophy_Backstory_PraisedChild</defName>
         <title>praised child</title>
         <titleShort>praised</titleShort>
-        <description>[PAWN_nameDef] surprised everyone with great bravery and honor. [PAWN_pronoun] defended [PAWN_possessive] tribe and earned respect of every tribe member.</description>
+        <description>[PAWN_nameDef] surprised everyone with great bravery and honor. [PAWN_pronoun] defended [PAWN_possessive] tribe and earned the respect of every tribe member.</description>
         <slot>Childhood</slot>
         <skillGains>
             <Shooting>1</Shooting>

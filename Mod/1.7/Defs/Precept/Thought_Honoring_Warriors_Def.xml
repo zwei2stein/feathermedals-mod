@@ -73,61 +73,61 @@
                 <label>others lording over us (1)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-2</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (2)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-4</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (3)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-6</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (4)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-8</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (5)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-10</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (6)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-12</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (7)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-14</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (8)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-16</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (9)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-18</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
             <li>
                 <label>others lording over us (10)</label>
                 <labelAbstract>others lording over us</labelAbstract>
                 <baseMoodEffect>-20</baseMoodEffect>
-                <description>We are not putting one above others, yet there are others being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
+                <description>We do not put one above others, yet some are being elevated, lording their trophies and achievements over the rest. This is unacceptable and unjust.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -184,10 +184,10 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>Deified despite it being unacceptable</label>
-                <labelAbstract>Deified despite it being unacceptable</labelAbstract>
+                <label>deified despite it being unacceptable</label>
+                <labelAbstract>deified despite it being unacceptable</labelAbstract>
                 <baseOpinionOffset>-40</baseOpinionOffset>
-                <description>My beliefs forbid deifying one of us, this person is example why it is wrong.</description>
+                <description>My beliefs forbid deifying one of us. This person is an example of why it is wrong.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -222,61 +222,61 @@
                 <label>one people, none above (1)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-1</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (2)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-2</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (3)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-3</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (4)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-4</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (5)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-5</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (6)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-6</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (7)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-7</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (8)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-8</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (9)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-9</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
             <li>
                 <label>one people, none above (10)</label>
                 <labelAbstract>one people, none above</labelAbstract>
                 <baseMoodEffect>-10</baseMoodEffect>
-                <description>We are not putting one above others. We are one people, no one should be considered better than their peers.</description>
+                <description>We do not put one above others. We are one people, no one should be considered better than their peers.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -324,10 +324,10 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>Lionized unjustly</label>
-                <labelAbstract>Lionized unjustly</labelAbstract>
+                <label>lionized unjustly</label>
+                <labelAbstract>lionized unjustly</labelAbstract>
                 <baseOpinionOffset>-10</baseOpinionOffset>
-                <description>My beliefs disapprove putting one above others. This person might deserve respect, but not this theatrics.</description>
+                <description>My beliefs disapprove of putting one above others. This person might deserve respect, but not these theatrics.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -385,25 +385,25 @@
                 <label>no recognition for long (1)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-5</baseMoodEffect>
-                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our custom to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (2)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-10</baseMoodEffect>
-                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our custom to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (3)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-15</baseMoodEffect>
-                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our custom to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (4)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-20</baseMoodEffect>
-                <description>It is our custom to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our custom to recognize our contributions, but we have not done so for a long time.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -417,8 +417,8 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>Adorned hero</label>
-                <labelAbstract>Adorned hero</labelAbstract>
+                <label>adorned hero</label>
+                <labelAbstract>adorned hero</labelAbstract>
                 <baseOpinionOffset>10</baseOpinionOffset>
                 <description>This person is a hero and I respect their achievements. It is only proper that they are recognized.</description>
             </li>
@@ -439,7 +439,7 @@
                 <label>exalted by my peers</label>
                 <labelAbstract>exalted by my peers</labelAbstract>
                 <baseMoodEffect>10</baseMoodEffect>
-                <description>I am exalted to be recognized by my peers.</description>
+                <description>I am exalted by the recognition of my peers.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -552,31 +552,31 @@
                 <label>no recognition for long (1)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-6</baseMoodEffect>
-                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (2)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-12</baseMoodEffect>
-                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (3)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-18</baseMoodEffect>
-                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (4)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-24</baseMoodEffect>
-                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done so for a long time.</description>
             </li>
             <li>
                 <label>no recognition for long (5)</label>
                 <labelAbstract>no recognition for long</labelAbstract>
                 <baseMoodEffect>-30</baseMoodEffect>
-                <description>It is our sacred tradition to recognize our contributions, but we have not done that for a long time.</description>
+                <description>It is our sacred tradition to recognize our contributions, but we have not done so for a long time.</description>
             </li>
         </stages>
     </ThoughtDef>
@@ -590,10 +590,10 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>Glorious hero adorned with trophies I covet for myself</label>
-                <labelAbstract>Glorious hero adorned with trophies I covet for myself</labelAbstract>
+                <label>glorious hero adorned with trophies I covet for myself</label>
+                <labelAbstract>glorious hero adorned with trophies I covet for myself</labelAbstract>
                 <baseOpinionOffset>20</baseOpinionOffset>
-                <description>This person is example of who I need to be: adorned with trophies and proudly recognized by everyone for their contributions and skill.</description>
+                <description>This person is an example of who I need to be: adorned with trophies and proudly recognized by everyone for their contributions and skill.</description>
             </li>
         </stages>
     </ThoughtDef>

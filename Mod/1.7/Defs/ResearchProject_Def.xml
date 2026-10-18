@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <!--=============================== Tier 1: pre-electricity ===================================-->
   
   <ResearchProjectDef>
     <defName>FeatherMedal_TribalWarriorHonour</defName>
-    <label>warrior honour</label>
-    <description>Tribal code for honoring warriors</description>
+    <label>warrior honor</label>
+    <description>Tribal code for honoring warriors with trophies.</description>
     <baseCost>200</baseCost>
     <techLevel>Neolithic</techLevel>
     <tags>
@@ -16,19 +14,19 @@
     <researchViewY>1.80</researchViewY>
     <generalRules>
       <rulesStrings>
-        <li>subject->honour</li>
+        <li>subject->honor</li>
         <li>subject->trophies</li>
-        <li>subject->tale of honour</li>
-        
-        <li>subject_story->composed tale of honor</li>
-        <li>subject_story->wrote epic about heroic deeds</li>
+        <li>subject->Tale of Honor</li>
+
+        <li>subject_story->composed a Tale of Honor</li>
+        <li>subject_story->wrote an epic about heroic deeds</li>
         <li>subject_story->discussed ways to exalt warriors</li>
-        <li>subject_story->participated in battle, touched an enemy and was victorious without receiving injury</li>
+        <li>subject_story->participated in battle, touched an enemy and was victorious without being injured</li>
         <li>subject_story->took the scalp of a hated enemy as a trophy</li>
         <li>subject_story->was wounded in combat many times, earning the respect of tribe members</li>
-        <li>subject_story->observed a ritual where archers received feathers to honor their deeds.</li>
+        <li>subject_story->observed a ritual where archers received feathers to honor their deeds</li>
 
-        <li>subject_gerund->reciting tales of honor</li>
+        <li>subject_gerund->reciting Tales of Honor</li>
         <li>subject_gerund->honoring warriors</li>
         <li>subject_gerund->recounting warrior deeds</li>
       </rulesStrings>

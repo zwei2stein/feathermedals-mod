@@ -4,7 +4,7 @@
     <ThingDef ParentName="BuildingBase">
         <defName>FeatherTrophies_FeatheredDreamCatcher</defName>
         <label>feathered dream catcher</label>
-        <description>Wooden frame with an intricate weaving and decorated with pristine feathers.\n\nWhen mounted close to a bed, grants better sleep.\n\nIt can also be meditated to.</description>
+        <description>A wooden frame with an intricate weaving, decorated with pristine feathers.\n\nWhen mounted next to a bed, it grants better sleep.\n\nIt can also be meditated to.</description>
         <thingClass>Building_Art</thingClass>
         <rotatable>true</rotatable>
         <graphicData>

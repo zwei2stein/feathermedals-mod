@@ -16,8 +16,8 @@
 	<PreceptDef>
 		<defName>FeatherMedals_MedalCeremonyPrecept</defName>
 		<issue>Ritual</issue>
-		<label>award ceremony</label>
-		<description>An official ceremony to adorn a trophy upon a deserving warrior.</description>
+		<label>adorning ceremony</label>
+		<description>An official ceremony to adorn a deserving warrior with a trophy.</description>
 		<preceptClass>Precept_Ritual</preceptClass>
 		<ritualPatternBase>FeatherMedal_AwardTrophyPattern</ritualPatternBase>
 		<visible>false</visible>
@@ -160,7 +160,7 @@
 		<allowOtherInstances>false</allowOtherInstances>
 		<ritualBehavior>FeatherMedal_AwardMedalBehavior</ritualBehavior>
 		<ritualOutcomeEffect>FeatherMedals_AwardTrophyOutcome</ritualOutcomeEffect>
-		<ritualExpectedDesc>The tribe's leader will adorn a trophy upon a deserving tribe member.</ritualExpectedDesc>
+		<ritualExpectedDesc>A respected tribe member will adorn a deserving warrior with a trophy.</ritualExpectedDesc>
 	</RitualPatternDef>
 
 	<JobDef>
@@ -184,8 +184,8 @@
 	<JobDef>
 		<defName>FeatherTrophies_AwaitAdorning</defName>
 		<driverClass>FeatherMedals.JobDriver_AwaitAdorning</driverClass>
-		<reportString>awaiting adorning.</reportString>
+		<reportString>waiting to be adorned.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	</JobDef>
-	
+
 </Defs>

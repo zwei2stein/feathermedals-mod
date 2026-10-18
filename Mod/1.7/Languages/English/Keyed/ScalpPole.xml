@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-    <FeatherTrophies_ScalpPole_LabelOne>{POLE} of {VICTIM}'s scalp</FeatherTrophies_ScalpPole_LabelOne>
+    <FeatherTrophies_ScalpPole_LabelOne>{POLE} with {VICTIM}'s scalp</FeatherTrophies_ScalpPole_LabelOne>
     <FeatherTrophies_ScalpPole_LabelMany>{POLE} ({COUNT} scalps)</FeatherTrophies_ScalpPole_LabelMany>
 
     <FeatherTrophies_ScalpPole_StatPart>Displayed scalps: {COUNT}</FeatherTrophies_ScalpPole_StatPart>

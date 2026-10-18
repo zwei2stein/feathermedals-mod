@@ -3,13 +3,13 @@
 
 	<ThingCategoryDef>
 		<defName>FeatherMedals_Apparel_Feathers</defName>
-		<label>Feather trophies</label>
+		<label>trophies</label>
 		<parent>Apparel</parent>
-    </ThingCategoryDef>
+	</ThingCategoryDef>
 
 	<ThingCategoryDef>
 		<defName>FeatherMedals_Apparel_Feathers_Precursor</defName>
-		<label>Pristine feathers</label>
+		<label>pristine feathers</label>
 		<parent>Manufactured</parent>
 	</ThingCategoryDef>
 

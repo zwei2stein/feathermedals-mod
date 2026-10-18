@@ -4,10 +4,10 @@
     <IssueDef>
         <defName>FeatherMedals_HonoringWarriors</defName>
         <label>honoring warriors</label>
-        <description>Reaction to recognition of warriors with trophies.</description>
+        <description>How the people view warriors adorned with trophies and to adorning ceremonies.</description>
         <iconPath>UI/Issues/PreceptHonoringWarriors</iconPath>
     </IssueDef>
-    
+
     <PreceptDef Name="FeatherMedals_HonoringWarriors_Base" Abstract="True">
         <issue>FeatherMedals_HonoringWarriors</issue>
         <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
@@ -18,7 +18,7 @@
     <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
         <defName>FeatherMedals_HonoringWarriors_Forbidden</defName>
         <label>forbidden</label>
-        <description>Trophies elevating one above others must not be adorned or accepted, and the people resent those who wear them.</description>
+        <description>No one may be adorned with trophies that elevate them above others, no one may lead adorning ceremony and the people resent those who wear trophies.</description>
         <impact>High</impact>
         <displayOrderInIssue>1</displayOrderInIssue>
         <conflictingMemes>
@@ -51,7 +51,7 @@
     <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
         <defName>FeatherMedals_HonoringWarriors_Disapproved</defName>
         <label>disapproved</label>
-        <description>We are one people and none is better than their peers. Elevating one is frowned upon, even if their achievements help the whole.</description>
+        <description>We are one people and none is better than their peers. Elevating one is frowned upon, even if their achievements help us all.</description>
         <impact>Medium</impact>
         <displayOrderInIssue>2</displayOrderInIssue>
         <associatedMemes>

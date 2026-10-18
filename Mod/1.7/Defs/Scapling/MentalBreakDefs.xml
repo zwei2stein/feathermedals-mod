@@ -30,7 +30,7 @@
         <moodRecoveryThought>Catharsis</moodRecoveryThought>
         <blockNormalThoughts>true</blockNormalThoughts>
         <recoveryMessage>{0} is no longer in a scalping frenzy.</recoveryMessage>
-        <beginLetter>{0} has gone into a scalping frenzy, [PAWN_pronoun] wants blood and trophy.\n\n[PAWN_pronoun] will run down {1}, down them and take their scalp.</beginLetter>
+        <beginLetter>{0} has gone into a scalping frenzy. [PAWN_pronoun] wants blood and a trophy.\n\n[PAWN_pronoun] will hunt down {1} and take their scalp.</beginLetter>
         <beginLetterDef>ThreatSmall</beginLetterDef>
         <baseInspectLine>Mental state: Scalping frenzy</baseInspectLine>
         <allowBeatfire>true</allowBeatfire>
@@ -74,7 +74,7 @@
         <recoveryMessage>{0} is no longer set on scalping a prisoner.</recoveryMessage>
         <beginLetter>{0} has had enough and decided to take revenge on a prisoner by scalping them.\n\n[PAWN_pronoun] is going for {1}.</beginLetter>
         <beginLetterDef>ThreatSmall</beginLetterDef>
-        <baseInspectLine>Mental state: Scalping prisoner</baseInspectLine>
+        <baseInspectLine>Mental state: Scalping a prisoner</baseInspectLine>
         <allowBeatfire>true</allowBeatfire>
         <modExtensions>
             <li Class="FeatherMedals.ScalpRageExtension">

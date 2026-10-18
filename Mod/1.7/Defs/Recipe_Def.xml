@@ -7,8 +7,8 @@
 		<workAmount>800</workAmount>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<workSkill>Crafting</workSkill>
-        <effectWorking>Tailor</effectWorking>
-        <soundWorking>Recipe_Tailor</soundWorking>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
 		<recipeUsers>
 			<li>ElectricTailoringBench</li>
 			<li>HandTailoringBench</li>
@@ -89,14 +89,14 @@
 				<li>Dye</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-	</RecipeDef>	
+	</RecipeDef>
 
 	<!--  SIMPLE RECIPES  -->
 
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedInCombat</defName>
 		<label>feather: wounded in combat</label>
-		<jobString>Crafting feather boasting combat wound.</jobString>
+		<jobString>Crafting a feather boasting a combat wound.</jobString>
 		<products>
 			<FeatherMedal_Medal_WoundedInCombat>1</FeatherMedal_Medal_WoundedInCombat>
 		</products>
@@ -105,16 +105,16 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_KilledAnEnemy</defName>
 		<label>feather: killed an enemy</label>
-		<jobString>Crafting feather boasting slaying an enemy.</jobString>
+		<jobString>Crafting a feather boasting the slaying of an enemy.</jobString>
 		<products>
 			<FeatherMedal_Medal_KilledAnEnemy>1</FeatherMedal_Medal_KilledAnEnemy>
 		</products>
-	</RecipeDef>	
+	</RecipeDef>
 
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedOrKilledAnEnemy</defName>
 		<label>feather: wounded or killed an enemy</label>
-		<jobString>Crafting feather boasting wounding or slaying an enemy.</jobString>
+		<jobString>Crafting a feather boasting wounding or slaying an enemy.</jobString>
 		<products>
 			<FeatherMedal_Medal_WoundedOrKilledAnEnemy>1</FeatherMedal_Medal_WoundedOrKilledAnEnemy>
 		</products>
@@ -123,7 +123,7 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_SlitThroatAndTookScalp</defName>
 		<label>feather: slit throat and took scalp</label>
-		<jobString>Crafting feather boasting slitting throats and scalping enemies.</jobString>
+		<jobString>Crafting a feather boasting slitting a throat and taking a scalp.</jobString>
 		<products>
 			<FeatherMedal_Medal_SlitThroatAndTookScalp>1</FeatherMedal_Medal_SlitThroatAndTookScalp>
 		</products>
@@ -132,16 +132,16 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_WoundedManyTimes</defName>
 		<label>feather: wounded in combat many times</label>
-		<jobString>Crafting feather boasting many combat wounds.</jobString>
+		<jobString>Crafting a feather boasting many combat wounds.</jobString>
 		<products>
 			<FeatherMedal_Medal_WoundedManyTimes>1</FeatherMedal_Medal_WoundedManyTimes>
 		</products>
-	</RecipeDef>	
+	</RecipeDef>
 
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_SlitThroat</defName>
 		<label>feather: slit throat of an enemy</label>
-		<jobString>Crafting feather for slitting the throat of an enemy.</jobString>
+		<jobString>Crafting a feather boasting slitting the throat of an enemy.</jobString>
 		<products>
 			<FeatherMedal_Medal_SlitThroat>1</FeatherMedal_Medal_SlitThroat>
 		</products>
@@ -150,7 +150,7 @@
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_TouchedAnEnemy</defName>
 		<label>feather: touched an enemy</label>
-		<jobString>Crafting feather for touching an enemy in combat without being hurt.</jobString>
+		<jobString>Crafting a feather boasting touching an enemy in combat without being hurt.</jobString>
 		<products>
 			<FeatherMedal_Medal_TouchedAnEnemy>1</FeatherMedal_Medal_TouchedAnEnemy>
 		</products>
@@ -159,7 +159,7 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_TouchedAnEnemy5Times</defName>
 		<label>feather: touched an enemy five times</label>
-		<jobString>Crafting feather boasting touching an enemy in combat without being hurt five distinct times.</jobString>
+		<jobString>Crafting a feather boasting touching an enemy in combat without being hurt five distinct times.</jobString>
 		<products>
 			<FeatherMedal_Medal_TouchedAnEnemy5Times>1</FeatherMedal_Medal_TouchedAnEnemy5Times>
 		</products>
@@ -168,7 +168,7 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherMedal_Recipe_Struck4BlowsInCombat</defName>
 		<label>feather: struck an enemy four times in combat</label>
-		<jobString>Crafting feather boasting striking an enemy four times in combat.</jobString>
+		<jobString>Crafting a feather boasting striking an enemy four times in combat.</jobString>
 		<products>
 			<FeatherMedal_Medal_Struck4BlowsInCombat>1</FeatherMedal_Medal_Struck4BlowsInCombat>
 		</products>
@@ -177,18 +177,18 @@
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherMedal_Recipe_CunningAndWisdom</defName>
 		<label>feather: cunning and wisdom</label>
-		<jobString>Crafting feather boasting cunning in combat and wisdom in peacetime.</jobString>
+		<jobString>Crafting a feather boasting cunning in combat and wisdom in peacetime.</jobString>
 		<products>
 			<FeatherMedal_Medal_CunningAndWisdom>1</FeatherMedal_Medal_CunningAndWisdom>
 		</products>
 	</RecipeDef>
 
 	<!-- Joe Medicine Crow feathers recipe -->
-	
+
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherTrophy_Recipe_Protection</defName>
 		<label>feather: protection</label>
-		<jobString>Crafting feather boasting protection by archite spirits.</jobString>
+		<jobString>Crafting a feather boasting protection by archite spirits.</jobString>
 		<products>
 			<FeatherTrophy_Trophy_Protection>1</FeatherTrophy_Trophy_Protection>
 		</products>
@@ -197,7 +197,7 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherTrophy_Recipe_LedWarparty</defName>
 		<label>feather: led war party</label>
-		<jobString>Crafting feather boasting experience leading a war party.</jobString>
+		<jobString>Crafting a feather boasting experience leading a war party.</jobString>
 		<products>
 			<FeatherTrophy_Trophy_LedWarparty>1</FeatherTrophy_Trophy_LedWarparty>
 		</products>
@@ -206,7 +206,7 @@
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherTrophy_Recipe_StoleHorses</defName>
 		<label>feather: stole enemy mounts</label>
-		<jobString>Crafting feather boasting feat of stealing mounts of an enemy.</jobString>
+		<jobString>Crafting a feather boasting the feat of stealing an enemy's mounts.</jobString>
 		<products>
 			<FeatherTrophy_Trophy_StoleHorses>1</FeatherTrophy_Trophy_StoleHorses>
 		</products>
@@ -215,7 +215,7 @@
 	<RecipeDef ParentName="FeatherTrophy_SimpleRecipeBase">
 		<defName>FeatherTrophy_Recipe_TookWeapon</defName>
 		<label>feather: disarmed enemy</label>
-		<jobString>Crafting feather boasting feat of disarming an enemy.</jobString>
+		<jobString>Crafting a feather boasting the feat of disarming an enemy.</jobString>
 		<products>
 			<FeatherTrophy_Trophy_TookWeapon>1</FeatherTrophy_Trophy_TookWeapon>
 		</products>

@@ -31,8 +31,8 @@
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <stages>
             <li>
-                <label>I am scalped</label>
-                <description>Enemy took my scalp and disfigured me. Wound and shame are still recent.</description>
+                <label>freshly scalped</label>
+                <description>Someone took my scalp and disfigured me. The wound and the shame are still fresh.</description>
                 <baseMoodEffect>-40</baseMoodEffect>
             </li>
         </stages>
@@ -44,7 +44,7 @@
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <stages>
             <li>
-                <label>I was scalped</label>
+                <label>disfigured by scalping</label>
                 <description>I am disfigured and shamed by the loss of my scalp.</description>
                 <baseMoodEffect>-5</baseMoodEffect>
             </li>
