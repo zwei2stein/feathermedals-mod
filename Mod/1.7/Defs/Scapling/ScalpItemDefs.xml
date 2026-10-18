@@ -34,6 +34,8 @@
             <shaderType>Cutout</shaderType>
             <drawSize>1</drawSize>
         </graphicData>
+        <soundInteract>Standard_Pickup</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
         <tradeTags><li>FeatherTrophies_Scalp</li></tradeTags>
         <genericMarketSellable>false</genericMarketSellable>
         <statBases>

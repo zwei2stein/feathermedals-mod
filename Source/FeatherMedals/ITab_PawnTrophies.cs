@@ -152,7 +152,7 @@ namespace FeatherMedals
             Text.Font = GameFont.Tiny;
             if (medal.HasCitation)
             {
-                height += Text.CalcHeight($"\"{medal.citation}\"", textWidth) + 2f;
+                height += UIHelper.CitationHeight(medal.citation, textWidth);
             }
             else
             {
@@ -162,7 +162,7 @@ namespace FeatherMedals
             var statText = UIHelper.GetStatSummary(medal.def);
             if (!statText.NullOrEmpty())
             {
-                height += Text.CalcHeight(statText, textWidth);
+                height += Text.CalcHeight(statText, textWidth) + 2f;
             }
             
             if (HasAwardInfo(medal))
@@ -198,20 +198,31 @@ namespace FeatherMedals
                 LOCK_BTN_SIZE,
                 LOCK_BTN_SIZE
             );
-            var tracker = medal.Wearer.apparel; // the tab only lists worn medals
+            var wearer = medal.Wearer;
+            var tracker = wearer.apparel; // the tab only lists worn medals
             var locked = tracker.IsLocked(medal);
             var lockIcon = locked ? TrophyTextures.LockedIcon : TrophyTextures.UnlockedIcon;
             var lockTip = locked
                 ? "FeatherMedals_TrophyLocked".Translate()
                 : "FeatherMedals_TrophyUnlocked".Translate();
 
+            // only show when player can change worn things.
+            var canToggle = wearer.IsColonistPlayerControlled || StrippableUtility.CanBeStrippedByColony(wearer);
+
             GUI.color = Color.gray;
-            if (Widgets.ButtonImage(lockRect, lockIcon, GUI.color))
+            if (canToggle)
             {
-                if (locked)
-                    tracker.Unlock(medal);
-                else
-                    tracker.Lock(medal);
+                if (Widgets.ButtonImage(lockRect, lockIcon, GUI.color))
+                {
+                    if (locked)
+                        tracker.Unlock(medal);
+                    else
+                        tracker.Lock(medal);
+                }
+            }
+            else
+            {
+                GUI.DrawTexture(lockRect, lockIcon);
             }
             GUI.color = Color.white;
             TooltipHandler.TipRegion(lockRect, lockTip);

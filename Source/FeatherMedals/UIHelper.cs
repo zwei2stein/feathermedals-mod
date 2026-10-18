@@ -9,6 +9,9 @@ public static class UIHelper
 {
     public static readonly Color GreenColor = new(0.5f, 0.8f, 0.5f);
     private static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
+    
+    private const float CitationSideMargin = 20f;
+    private const float CitationGap = 12f;
 
     // one stat offset as shown everywhere: "Research speed: +5%"
     public static string StatOffsetLine(StatModifier mod)
@@ -111,15 +114,22 @@ public static class UIHelper
         Text.Font = GameFont.Small;
     }
 
+    public static float CitationHeight(string citation, float width)
+    {
+        return Text.CalcHeight($"\"{citation}\"", width - CitationSideMargin * 2f) + CitationGap;
+    }
+
     public static void DrawCitation(ThingDef medalDef, string citation, Rect rect, ref float curY)
     {
+        var previousAnchor = Text.Anchor;
         GUI.color = GoldColor;
         Text.Anchor = TextAnchor.MiddleCenter;
         var citationText = $"\"{citation}\"";
-        var citationHeight = Text.CalcHeight(citationText, rect.width - 40f);
-        var citationRect = new Rect(rect.x + 20f, curY, rect.width - 40f, citationHeight);
+        var citationHeight = Text.CalcHeight(citationText, rect.width - CitationSideMargin * 2f);
+        var citationRect = new Rect(rect.x + CitationSideMargin, curY, rect.width - CitationSideMargin * 2f, citationHeight);
         Widgets.Label(citationRect, citationText);
         GUI.color = Color.white;
-        curY += citationHeight + 12f;
+        Text.Anchor = previousAnchor;
+        curY += citationHeight + CitationGap;
     }
 }
