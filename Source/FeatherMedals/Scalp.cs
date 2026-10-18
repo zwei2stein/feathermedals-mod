@@ -19,6 +19,7 @@ namespace FeatherMedals
         private Color skinColor = new Color(0.74f, 0.58f, 0.47f);
         private HairDef hairDef = FeatherMedalDefOf.Messy;
         private Color hairColor = Color.black;
+        private Rot4 hairFacing = Rot4.South;
 
         private float priceBonus;
 
@@ -30,6 +31,22 @@ namespace FeatherMedals
         public float PriceBonus => priceBonus;
         public Pawn VictimPawn => victim?.Pawn;
         public string VictimName => victim?.Name;
+        
+        public override void PostMake()
+        {
+            base.PostMake();
+            hairFacing = RandomHairFacing();
+        }
+
+        private static Rot4 RandomHairFacing()
+        {
+            float roll = Rand.Value;
+            if (roll < 0.8f)
+                return Rot4.South;
+            if (roll < 0.9f)
+                return Rot4.East;
+            return Rot4.West;
+        }
 
         public static Scalp Create(Pawn victim, Pawn scalper)
         {
@@ -124,7 +141,7 @@ namespace FeatherMedals
                 if (texture == null && !bakeTried)
                 {
                     bakeTried = true;
-                    texture = ScalpTextureFactory.Bake(skinColor, hairDef, hairColor);
+                    texture = ScalpTextureFactory.Bake(skinColor, hairDef, hairColor, hairFacing);
                 }
                 return texture;
             }
@@ -177,6 +194,7 @@ namespace FeatherMedals
             Scribe_Values.Look(ref skinColor, "skinColor", Color.white);
             Scribe_Defs.Look(ref hairDef, "hairDef");
             Scribe_Values.Look(ref hairColor, "hairColor", Color.white);
+            Scribe_Values.Look(ref hairFacing, "hairFacing", Rot4.South);
             Scribe_Values.Look(ref priceBonus, "priceBonus");
         }
     }

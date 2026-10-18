@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Trophies tab -->
+
+    <TribalTrophies_Settings_Trophies_Label>Trophies</TribalTrophies_Settings_Trophies_Label>
+
+    <TribalTrophies_Settings_Trophies_Ceremony_Label>Ceremonies</TribalTrophies_Settings_Trophies_Ceremony_Label>
+
+    <TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Label>Lock trophies upon adorning</TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Tooltip>If enabled, a trophy is locked by default once a colonist is adorned with it, and cannot be removed. This can be toggled per trophy on the Trophies tab. This setting does not affect biocoding. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Label>Prompt for a Tale of Honor during ceremonies</TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip>If enabled, a dialog will appear during adorning ceremonies to enter a Tale of Honor for the trophy, if it does not have one yet. If disabled, no dialog will appear, but a Tale of Honor can still be written before the ceremony starts. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label>Suggest a Tale of Honor</TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip>If enabled, a Tale of Honor will be suggested when the dialog opens and none has been written yet. Default: OFF</TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>Dynamic traits</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining the elder trait or losing wimp when adorned. A ceremony changes at most one trait. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Trophies_Npc_Label>
+
+    <TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Label>Pawns can spawn with trophies</TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Label>
+    <TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with trophies. Existing pawns are not changed. Default: ON</TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Label>Lowest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Label>
+    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Tooltip>Lowest tech level of factions whose pawns can spawn with trophies. Default: Animal</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Label>Highest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Label>
+    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Tooltip>Highest tech level of factions whose pawns can spawn with trophies. Default: Medieval</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Tooltip>
+
+    <!-- Scalping tab -->
+
+    <TribalTrophies_Settings_Scalping_Label>Scalping</TribalTrophies_Settings_Scalping_Label>
+
+    <TribalTrophies_Settings_Scalping_Ui_Label>Scalping UI</TribalTrophies_Settings_Scalping_Ui_Label>
+
+    <TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Label>Show scalp gizmo</TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Label>
+    <TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Tooltip>Pawns and corpses will have a gizmo to order colonists to scalp them. Scalping is still available from the right-click menu and the Orders menu. Default: ON</TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Tooltip>
+
+    <TribalTrophies_Settings_Scalping_MentalBreaks_Label>Scalping mental breaks</TribalTrophies_Settings_Scalping_MentalBreaks_Label>
+
+    <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>Scalping mental breaks can target children</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>
+    <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip>The scalping frenzy and prisoner scalping mental breaks can target children and babies. Default: OFF</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip>
+
+    <TribalTrophies_Settings_Scalping_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Scalping_Npc_Label>
+
+    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label>Pawns can spawn scalped</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label>
+    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>Pawns from other factions can spawn with an old scalping scar. Chance is 5% for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>
+
+    <!-- Display tab -->
+
+    <TribalTrophies_Settings_Display_Label>Display</TribalTrophies_Settings_Display_Label>
+
+    <TribalTrophies_Settings_Display_Rendering_Label>Pawn rendering</TribalTrophies_Settings_Display_Rendering_Label>
+
+    <TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Label>Draw trophies on pawns</TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Label>
+    <TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip>If enabled, worn trophies will be drawn on pawns. Default: ON</TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Label>Worn trophies</TribalTrophies_Settings_Display_Worn_Label>
+
+    <TribalTrophies_Settings_Display_Worn_TrophyScale_Label>Worn size: {SIZE}</TribalTrophies_Settings_Display_Worn_TrophyScale_Label>
+    <TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip>Size of trophies drawn on pawns. Default: 130%</TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_FanOut_Label>Fanning out: {BIAS}</TribalTrophies_Settings_Display_Worn_FanOut_Label>
+    <TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>Controls how much feathers fan out. 0% - straight up, 100% - fanned out. Default: 35%</TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>Vertical offset: {Z}</TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>
+    <TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip>Moves trophies higher or lower. Default: 0.1</TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label>Displayed trophies: {COUNT}</TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label>
+    <TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Tooltip>Number of trophies drawn on a pawn. Trophies over this count are still worn, but not drawn. Default: 9</TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Tooltip>
+
+</LanguageData>

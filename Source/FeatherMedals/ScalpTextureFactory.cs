@@ -8,7 +8,7 @@ namespace FeatherMedals
     {
         private const string BasePath = "Things/Pawn/Humanlike/Scalp/ScalpBase";
 
-        public static Texture2D Bake(Color skinColor, HairDef hairDef, Color hairColor)
+        public static Texture2D Bake(Color skinColor, HairDef hairDef, Color hairColor, Rot4 hairFacing)
         {
             var baseTexture = ContentFinder<Texture2D>.Get(BasePath, false);
             if (baseTexture == null)
@@ -26,10 +26,12 @@ namespace FeatherMedals
                 result[i] = Tint(result[i], skinColor);
             }
 
-            var hairTexture = HairTexture(hairDef);
+            var hairTexture = HairTexture(hairDef, hairFacing, out bool mirror);
             if (hairTexture != null)
             {
                 Color32[] hair = ReadPixels(hairTexture, width, height);
+                if (mirror)
+                    hair = MirrorHorizontally(hair, width, height);
                 for (int i = 0; i < result.Length; i++)
                 {
                     result[i] = Over(result[i], Tint(hair[i], hairColor));
@@ -48,16 +50,49 @@ namespace FeatherMedals
             return baked;
         }
 
-        private static Texture2D HairTexture(HairDef hairDef)
+        private static Texture2D HairTexture(HairDef hairDef, Rot4 facing, out bool mirror)
         {
+            mirror = false;
             if (hairDef == null || hairDef.texPath.NullOrEmpty())
             {
                 return null;
             }
 
+            var path = hairDef.texPath;
+            if (facing == Rot4.East || facing == Rot4.West)
+            {
+                // like the pawn hair graphic: a missing side is drawn as the other side mirrored
+                var ownSuffix = facing == Rot4.East ? "_east" : "_west";
+                var otherSuffix = facing == Rot4.East ? "_west" : "_east";
+
+                var side = ContentFinder<Texture2D>.Get(path + ownSuffix, false);
+                if (side != null)
+                    return side;
+
+                side = ContentFinder<Texture2D>.Get(path + otherSuffix, false);
+                if (side != null)
+                {
+                    mirror = true;
+                    return side;
+                }
+            }
+
             // Same lookup order as the pawn hair graphic: south first, then plain.
-            return ContentFinder<Texture2D>.Get(hairDef.texPath + "_south", false)
-                   ?? ContentFinder<Texture2D>.Get(hairDef.texPath, false);
+            return ContentFinder<Texture2D>.Get(path + "_south", false)
+                   ?? ContentFinder<Texture2D>.Get(path, false);
+        }
+        
+        private static Color32[] MirrorHorizontally(Color32[] pixels, int width, int height)
+        {
+            var mirrored = new Color32[pixels.Length];
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    mirrored[y * width + x] = pixels[y * width + (width - 1 - x)];
+                }
+            }
+            return mirrored;
         }
 
         private static Color32[] ReadPixels(Texture source, int width, int height)

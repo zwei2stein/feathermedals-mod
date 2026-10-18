@@ -66,7 +66,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (presenter.carryTracker?.CarriedThing == medal)
             presenter.carryTracker.innerContainer.Remove(medal);
 
-        awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAward);
+        awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAdorning);
 
         // Wear failed, drop trophy
         if (!awardee.apparel.Wearing(medal))

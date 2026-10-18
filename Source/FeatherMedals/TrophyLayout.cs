@@ -42,7 +42,7 @@ public static class TrophyLayout
         var ring = row * RingStep * MedalMod.Settings.TrophyScale;
         var phi = phiDeg * Mathf.Deg2Rad;
         var x = (RadiusX + ring) * Mathf.Sin(phi);
-        var z = MedalMod.Settings.CenterZ + (RadiusZ + ring) * Mathf.Cos(phi);
+        var z = MedalMod.Settings.VerticalOffset + (RadiusZ + ring) * Mathf.Cos(phi);
         if (Mirrored(facing)) x = -x;
         return new Vector3(x, 0f, z);
     }
@@ -51,7 +51,7 @@ public static class TrophyLayout
     public static float TiltFor(int index, int count, Rot4 facing)
     {
         Slot(index, count, out _, out var phiDeg);
-        var tilt = Mathf.Clamp(phiDeg * MedalMod.Settings.VerticalBias, -MaxTiltDeg, MaxTiltDeg);
+        var tilt = Mathf.Clamp(phiDeg * MedalMod.Settings.FanOut, -MaxTiltDeg, MaxTiltDeg);
         return Mirrored(facing) ? -tilt : tilt;
     }
 }

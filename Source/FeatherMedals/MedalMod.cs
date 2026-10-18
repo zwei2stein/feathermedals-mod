@@ -15,18 +15,18 @@ namespace FeatherMedals
 
     public class MedalMod : Mod
     {
-        public static TrophyFeathersModSettings Settings;
+        public static TribalTrophiesSettings Settings;
 
         // Constructor runs when the mod is loaded
         public MedalMod(ModContentPack content) : base(content)
         {
-            Settings = GetSettings<TrophyFeathersModSettings>();
+            Settings = GetSettings<TribalTrophiesSettings>();
         }
 
-        public override string SettingsCategory() => "FeatherMedals_ModName".Translate();
+        public override string SettingsCategory() => "TribalTrophies_ModName".Translate();
 
-        private enum SettingsTab { Feathers, Scalping, Display }
-        private static SettingsTab currentTab = SettingsTab.Feathers;
+        private enum SettingsTab { Trophies, Scalping, Display }
+        private static SettingsTab currentTab = SettingsTab.Trophies;
         private static readonly List<TabRecord> tabBuf = new();
 
         public override void DoSettingsWindowContents(Rect inRect)
@@ -35,17 +35,17 @@ namespace FeatherMedals
             var contentRect = new Rect(inRect.x, inRect.y + tabBarHeight, inRect.width, inRect.height - tabBarHeight);
 
             tabBuf.Clear();
-            tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_Feathers".Translate(), () => currentTab = SettingsTab.Feathers, currentTab == SettingsTab.Feathers));
-            tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_Scalping".Translate(), () => currentTab = SettingsTab.Scalping, currentTab == SettingsTab.Scalping));
-            tabBuf.Add(new TabRecord("FeatherMedals_Settings_Section_Display".Translate(), () => currentTab = SettingsTab.Display, currentTab == SettingsTab.Display));
-            
+            tabBuf.Add(new TabRecord("TribalTrophies_Settings_Trophies_Label".Translate(), () => currentTab = SettingsTab.Trophies, currentTab == SettingsTab.Trophies));
+            tabBuf.Add(new TabRecord("TribalTrophies_Settings_Scalping_Label".Translate(), () => currentTab = SettingsTab.Scalping, currentTab == SettingsTab.Scalping));
+            tabBuf.Add(new TabRecord("TribalTrophies_Settings_Display_Label".Translate(), () => currentTab = SettingsTab.Display, currentTab == SettingsTab.Display));
+
             Widgets.DrawMenuSection(contentRect);
             TabDrawer.DrawTabs(contentRect, tabBuf);
 
             var inner = contentRect.ContractedBy(12f);
             switch (currentTab)
             {
-                case SettingsTab.Feathers: DrawFeathersTab(inner); break;
+                case SettingsTab.Trophies: DrawFeathersTab(inner); break;
                 case SettingsTab.Scalping: DrawScalpingTab(inner); break;
                 case SettingsTab.Display: DrawDisplayTab(inner); break;
             }
@@ -54,70 +54,76 @@ namespace FeatherMedals
         private static void DrawFeathersTab(Rect rect)
         {
             var listingStandard = new Listing_Standard();
-            
+
             var gapWidth = 12f;
-            
+
             listingStandard.Begin(rect);
-            
+
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_Ceremony_Label".Translate());
+            listingStandard.Label("TribalTrophies_Settings_Trophies_Ceremony_Label".Translate());
 
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
 
             listingStandard.CheckboxLabeled(
-                 "FeatherMedals_Settings_LockTrophyUponAward".Translate(),
-                ref Settings.LockTrophyUponAward,
-                 "FeatherMedals_Settings_LockTrophyUponAward_Tooltip".Translate()
+                 "TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Label".Translate(),
+                ref Settings.LockTrophyUponAdorning,
+                 "TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Tooltip".Translate()
             );
             listingStandard.CheckboxLabeled(
-                 "FeatherMedals_Settings_PromptForCitationDuringRitual".Translate(),
+                 "TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Label".Translate(),
                 ref Settings.PromptForCitationDuringRitual,
-                 "FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip".Translate()
+                 "TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip".Translate()
             );
             listingStandard.CheckboxLabeled(
-                 "FeatherMedals_Settings_AutoGenerateCitation".Translate(),
+                 "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label".Translate(),
                 ref Settings.AutoGenerateCitation,
-                 "FeatherMedals_Settings_AutoGenerateCitation_Tooltip".Translate()
+                 "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip".Translate()
             );
             listingStandard.CheckboxLabeled(
-                 "FeatherMedals_Settings_TrophyDynamicTraits".Translate(),
+                 "TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label".Translate(),
                 ref Settings.TrophyDynamicTraits,
-                "FeatherMedals_Settings_TrophyDynamicTraits_Tooltip".Translate()
+                "TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip".Translate()
             );
-            
+
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
-            
+
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_Npc_Label".Translate());
+            listingStandard.Label("TribalTrophies_Settings_Trophies_Npc_Label".Translate());
 
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
 
             listingStandard.CheckboxLabeled(
-                "FeatherMedals_Settings_GenerateNpcTrophies".Translate(),
+                "TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Label".Translate(),
                 ref Settings.GenerateNpcTrophies,
-                "FeatherMedals_Settings_GenerateNpcTrophies_Tooltip".Translate()
+                "TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Tooltip".Translate()
             );
-            
+
             if (Settings.GenerateNpcTrophies)
             {
                 // moving one slider past the other pushes the other along
-                Settings.NpcTrophyMinTech = DrawTechLevelSlider(listingStandard, "FeatherMedals_Settings_NpcMinTech", Settings.NpcTrophyMinTech);
+                Settings.NpcTrophyMinTech = DrawTechLevelSlider(listingStandard,
+                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Label",
+                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Tooltip",
+                    Settings.NpcTrophyMinTech);
                 if (Settings.NpcTrophyMaxTech < Settings.NpcTrophyMinTech)
                     Settings.NpcTrophyMaxTech = Settings.NpcTrophyMinTech;
 
-                Settings.NpcTrophyMaxTech = DrawTechLevelSlider(listingStandard, "FeatherMedals_Settings_NpcMaxTech", Settings.NpcTrophyMaxTech);
+                Settings.NpcTrophyMaxTech = DrawTechLevelSlider(listingStandard,
+                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Label",
+                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Tooltip",
+                    Settings.NpcTrophyMaxTech);
                 if (Settings.NpcTrophyMinTech > Settings.NpcTrophyMaxTech)
                     Settings.NpcTrophyMinTech = Settings.NpcTrophyMaxTech;
             }
-            
+
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
-            
+
             listingStandard.GapLine();
 
             listingStandard.End();
@@ -126,71 +132,71 @@ namespace FeatherMedals
         private static void DrawScalpingTab(Rect rect)
         {
             var listingStandard = new Listing_Standard();
-            
+
             var gapWidth = 12f;
-            
+
             listingStandard.Begin(rect);
-            
+
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_ScalpUI_Label".Translate());
+            listingStandard.Label("TribalTrophies_Settings_Scalping_Ui_Label".Translate());
 
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
 
             listingStandard.CheckboxLabeled(
-                 "FeatherTrophies_Settings_ShowScalpinGizmo".Translate(),
+                 "TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Label".Translate(),
                 ref Settings.ShowScalpingGizmo,
-                 "FeatherTrophies_Settings_ShowScalpinGizmo_Tooltip".Translate()
+                 "TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Tooltip".Translate()
             );
-            
+
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
-            
+
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_ScalpBreaks_Label".Translate());
+            listingStandard.Label("TribalTrophies_Settings_Scalping_MentalBreaks_Label".Translate());
 
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
 
             listingStandard.CheckboxLabeled(
-                "FeatherTrophies_Settings_ScalpBreaksTargetChildren".Translate(),
+                "TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label".Translate(),
                 ref Settings.ScalpBreaksTargetChildren,
-                "FeatherTrophies_Settings_ScalpBreaksTargetChildren_Tooltip".Translate()
+                "TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip".Translate()
             );
 
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
-            
+
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_Npc_Label".Translate());
+            listingStandard.Label("TribalTrophies_Settings_Scalping_Npc_Label".Translate());
 
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
-            
+
             listingStandard.CheckboxLabeled(
-                "FeatherTrophies_Settings_GenerateScalpedNpcs".Translate(),
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label".Translate(),
                 ref Settings.GenerateNpcScalped,
-                "FeatherTrophies_Settings_GenerateScalpedNpcs_Tooltip".Translate()
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip".Translate()
             );
-            
+
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
-            
+
             listingStandard.GapLine();
 
             listingStandard.End();
         }
 
-        
-        private static TechLevel DrawTechLevelSlider(Listing_Standard listing, string labelKey, TechLevel current)
+
+        private static TechLevel DrawTechLevelSlider(Listing_Standard listing, string labelKey, string tooltipKey, TechLevel current)
         {
             var value = listing.SliderLabeled(
                 labelKey.Translate(current.ToStringHuman().CapitalizeFirst().Named("LEVEL")),
-                (int)current, (int)TechLevel.Animal, (int)TechLevel.Archotech, 0.5f, 
-                "FeatherMedals_Settings_NpcTech_Tooltip".Translate()
+                (int)current, (int)TechLevel.Animal, (int)TechLevel.Archotech, 0.5f,
+                tooltipKey.Translate()
                 );
             return (TechLevel)Mathf.RoundToInt(value);
         }
@@ -198,58 +204,58 @@ namespace FeatherMedals
         private static void DrawDisplayTab(Rect rect)
         {
             var listingStandard = new Listing_Standard();
-            
+
             var gapWidth = 12f;
-            
+
             listingStandard.Begin(rect);
-            
+
             listingStandard.GapLine();
 
-            listingStandard.Label("FeatherMedals_Settings_Block_Draw_Label".Translate());
+            listingStandard.Label("TribalTrophies_Settings_Display_Rendering_Label".Translate());
 
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
-            
+
             listingStandard.CheckboxLabeled(
-                "FeatherMedals_Settings_DrawTrophiesOnPawns".Translate(),
+                "TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Label".Translate(),
                 ref Settings.DrawTrophiesOnPawns,
-                "FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip".Translate()
+                "TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip".Translate()
             );
 
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
-            
+
             listingStandard.GapLine();
 
             if (Settings.DrawTrophiesOnPawns)
             {
 
-                listingStandard.Label("FeatherMedals_Settings_Block_Worn_Label".Translate());
+                listingStandard.Label("TribalTrophies_Settings_Display_Worn_Label".Translate());
 
                 listingStandard.Indent(gapWidth);
                 listingStandard.ColumnWidth -= gapWidth;
 
                 Settings.TrophyScale = listingStandard.SliderLabeled(
-                    "FeatherMedals_Settings_WornSize".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")),
+                    "TribalTrophies_Settings_Display_Worn_TrophyScale_Label".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")),
                     Settings.TrophyScale, 0.1f, 2f, 0.5f,
-                    "FeatherMedals_Settings_WornSize_Tooltip".Translate());
+                    "TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip".Translate());
 
-                Settings.VerticalBias = listingStandard.SliderLabeled(
-                    "FeatherMedals_Settings_VerticalBias".Translate(Settings.VerticalBias.ToStringPercent()
+                Settings.FanOut = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_FanOut_Label".Translate(Settings.FanOut.ToStringPercent()
                         .Named("BIAS")),
-                    Settings.VerticalBias, 0f, 1f, 0.5f,
-                    "FeatherMedals_Settings_VerticalBias_Tooltip".Translate());
+                    Settings.FanOut, 0f, 1f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_FanOut_Tooltip".Translate());
 
-                Settings.CenterZ = listingStandard.SliderLabeled(
-                    "FeatherMedals_Settings_CenterZ".Translate(Settings.CenterZ.ToStringDecimalIfSmall().Named("Z")),
-                    Settings.CenterZ, -0.2f, 0.2f, 0.5f,
-                    "FeatherMedals_Settings_CenterZ_Tooltip".Translate());
+                Settings.VerticalOffset = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_VerticalOffset_Label".Translate(Settings.VerticalOffset.ToStringDecimalIfSmall().Named("Z")),
+                    Settings.VerticalOffset, -0.2f, 0.2f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip".Translate());
 
                 Settings.MaxDisplayedTrophies = Mathf.RoundToInt(listingStandard.SliderLabeled(
-                    "FeatherMedals_Settings_DisplayedTrophies".Translate(
+                    "TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label".Translate(
                         Settings.MaxDisplayedTrophies.Named("COUNT")),
                     Settings.MaxDisplayedTrophies, 1f, 20f, 0.5f,
-                    "FeatherMedals_Settings_DisplayedTrophies_Tooltip".Translate()));
+                    "TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Tooltip".Translate()));
 
                 listingStandard.Outdent(gapWidth);
                 listingStandard.ColumnWidth += gapWidth;
@@ -260,20 +266,20 @@ namespace FeatherMedals
 
             listingStandard.End();
         }
-        
+
     }
-    
-    public class TrophyFeathersModSettings : ModSettings
+
+    public class TribalTrophiesSettings : ModSettings
     {
         // Default it to true so your intended behavior is the standard
-        public bool LockTrophyUponAward = true;
+        public bool LockTrophyUponAdorning = true;
         public bool DrawTrophiesOnPawns = true;
         public bool TrophyDynamicTraits = true;
         public bool PromptForCitationDuringRitual = true;
         public bool AutoGenerateCitation = false;
         public float TrophyScale = 1.3f;
-        public float VerticalBias = 0.35f;  // 0 = all upright, 1 = fully radial
-        public float CenterZ = 0.1f;
+        public float FanOut = 0.35f;  // 0 = all upright, 1 = fully radial
+        public float VerticalOffset = 0.1f;
         public int MaxDisplayedTrophies = 9;
         public bool GenerateNpcTrophies = true;
         public TechLevel NpcTrophyMinTech = TechLevel.Animal;
@@ -286,15 +292,15 @@ namespace FeatherMedals
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref LockTrophyUponAward, "LockTrophyUponAward", true);
+            Scribe_Values.Look(ref LockTrophyUponAdorning, "LockTrophyUponAdorning", true);
             Scribe_Values.Look(ref DrawTrophiesOnPawns, "DrawTrophiesOnPawns", true);
             Scribe_Values.Look(ref MaxDisplayedTrophies, "MaxDisplayedTrophies", 9);
             Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
             Scribe_Values.Look(ref AutoGenerateCitation, "AutoGenerateCitation", false);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScale, "TrophyScale", 1.3f);
-            Scribe_Values.Look(ref VerticalBias, "VerticalBias", 0.35f);
-            Scribe_Values.Look(ref CenterZ, "CenterZ", 0.1f);
+            Scribe_Values.Look(ref FanOut, "FanOut", 0.35f);
+            Scribe_Values.Look(ref VerticalOffset, "VerticalOffset", 0.1f);
             Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);
             Scribe_Values.Look(ref NpcTrophyMinTech, "NpcTrophyMinTech", TechLevel.Animal);
             Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
@@ -311,10 +317,10 @@ namespace FeatherMedals
         {
             var harmony = new HarmonyLib.Harmony("TribalTrophies");
             harmony.PatchAll();
-            
+
             if (Prefs.DevMode)
                 Log.Message("[TribalTrophies] Harmony patches applied successfully.");
         }
     }
-    
+
 }
