@@ -59,7 +59,7 @@ These mods have birds that either drop pristine feathers when butchered or have 
 
 [list]
     [*]Mythic Ages: Megafauna Bestiary
-    [*]Dark Ages : Beasts and Monsters
+    [*]Dark Ages: Beasts and Monsters
     [*]Erin's Auraeyl
     [*]ReGrowth: Boiling
     [*]Biomes! Core

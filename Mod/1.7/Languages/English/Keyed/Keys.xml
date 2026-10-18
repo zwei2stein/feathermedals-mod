@@ -6,7 +6,7 @@
 	<FeatherMedals_TrophiesTab>Trophies</FeatherMedals_TrophiesTab>
 	<FeatherMedals_NoTrophies>Not yet adorned with any trophies.</FeatherMedals_NoTrophies>
 
-	<FeatherMedals_Record>Tale</FeatherMedals_Record>
+	<FeatherMedals_Record>Trophy Details</FeatherMedals_Record>
 
 	<FeatherMedals_AwardCeremony>Adorning Ceremony</FeatherMedals_AwardCeremony>
 	<FeatherMedals_CeremonyDesc>Gather colonists to adorn a warrior with this trophy.</FeatherMedals_CeremonyDesc>
@@ -114,24 +114,24 @@
 
 	<FeatherMedals_Settings_Block_Ceremony_Label>Ceremonies</FeatherMedals_Settings_Block_Ceremony_Label>
 
-	<FeatherMedals_Settings_LockTrophyUponAward>Lock Trophies upon Adorning</FeatherMedals_Settings_LockTrophyUponAward>
+	<FeatherMedals_Settings_LockTrophyUponAward>Lock trophies upon adorning</FeatherMedals_Settings_LockTrophyUponAward>
 	<FeatherMedals_Settings_LockTrophyUponAward_Tooltip>If enabled, a trophy is locked by default once a colonist is adorned with it, and cannot be removed. This can be toggled per trophy on the Trophies tab. This setting does not affect biocoding. Default: ON</FeatherMedals_Settings_LockTrophyUponAward_Tooltip>
 
-	<FeatherMedals_Settings_PromptForCitationDuringRitual>Prompt for a Tale of Honor during Ceremonies</FeatherMedals_Settings_PromptForCitationDuringRitual>
+	<FeatherMedals_Settings_PromptForCitationDuringRitual>Prompt for a Tale of Honor during ceremonies</FeatherMedals_Settings_PromptForCitationDuringRitual>
 	<FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip>If enabled, a dialog will appear during adorning ceremonies to enter a Tale of Honor for the trophy, if it does not have one yet. If disabled, no dialog will appear, but a Tale of Honor can still be written before the ceremony starts. Default: ON</FeatherMedals_Settings_PromptForCitationDuringRitual_Tooltip>
 
 	<FeatherMedals_Settings_AutoGenerateCitation>Suggest a Tale of Honor</FeatherMedals_Settings_AutoGenerateCitation>
 	<FeatherMedals_Settings_AutoGenerateCitation_Tooltip>If enabled, a Tale of Honor will be suggested when the dialog opens and none has been written yet. Default: OFF</FeatherMedals_Settings_AutoGenerateCitation_Tooltip>
 
-	<FeatherMedals_Settings_TrophyDynamicTraits>Dynamic Traits</FeatherMedals_Settings_TrophyDynamicTraits>
+	<FeatherMedals_Settings_TrophyDynamicTraits>Dynamic traits</FeatherMedals_Settings_TrophyDynamicTraits>
 	<FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining the elder trait or losing wimp when adorned. A ceremony changes at most one trait. Default: ON</FeatherMedals_Settings_TrophyDynamicTraits_Tooltip>
 
-	<FeatherMedals_Settings_Block_Draw_Label>Pawn Rendering</FeatherMedals_Settings_Block_Draw_Label>
+	<FeatherMedals_Settings_Block_Draw_Label>Pawn rendering</FeatherMedals_Settings_Block_Draw_Label>
 
-	<FeatherMedals_Settings_DrawTrophiesOnPawns>Draw Trophies on Pawns</FeatherMedals_Settings_DrawTrophiesOnPawns>
+	<FeatherMedals_Settings_DrawTrophiesOnPawns>Draw trophies on pawns</FeatherMedals_Settings_DrawTrophiesOnPawns>
 	<FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>If enabled, worn trophies will be drawn on pawns. Default: ON</FeatherMedals_Settings_DrawTrophiesOnPawns_Tooltip>
 
-	<FeatherMedals_Settings_Block_Worn_Label>Worn Trophies</FeatherMedals_Settings_Block_Worn_Label>
+	<FeatherMedals_Settings_Block_Worn_Label>Worn trophies</FeatherMedals_Settings_Block_Worn_Label>
 
 	<FeatherMedals_Settings_WornSize>Worn size: {SIZE}</FeatherMedals_Settings_WornSize>
 	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophies drawn on pawns. Default: 130%</FeatherMedals_Settings_WornSize_Tooltip>

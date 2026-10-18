@@ -188,7 +188,7 @@
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
 		<defName>FeatherTrophy_Recipe_Protection</defName>
 		<label>feather: protection</label>
-		<jobString>Crafting a feather boasting protection by archite spirits.</jobString>
+		<jobString>Crafting a feather boasting protection by archotech spirits.</jobString>
 		<products>
 			<FeatherTrophy_Trophy_Protection>1</FeatherTrophy_Trophy_Protection>
 		</products>

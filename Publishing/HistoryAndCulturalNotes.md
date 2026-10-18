@@ -16,9 +16,9 @@ Since there are no eagles on the Rim, these are not eagle feathers.
 
 ## Scalping
 
-Colonists introduced and paid scalp bounties, offering rewards for the scalps of enemy combatants.
+Scalping was practiced by some Indigenous peoples before European contact.
 
-Various Indigenous nations then adopted and practiced scalping.
+Colonists later introduced and paid scalp bounties, offering rewards for the scalps of enemy combatants.
 
 Warfare and bounty systems helped spread and intensify the practice.
 
@@ -27,3 +27,5 @@ On the Rim, this is mirrored by only outlander traders and Imperial tribute coll
 [More reading 4](https://online.ucpress.edu/ch/article/100/2/4/196102/The-California-Indian-Scalp-Bounty-MythEvidence-of)
 
 [More reading 5](https://www.thecollector.com/history-scalping/)
+
+[More reading 6](https://www.si.edu/object/siris_sil_913150)
