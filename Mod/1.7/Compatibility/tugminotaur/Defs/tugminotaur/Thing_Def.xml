@@ -4,7 +4,7 @@
     <ThingDef ParentName="FeatherTrophy_BaseOrnate">
 		<defName>FeatherTrophy_RBM_Herculean_Feather</defName>
 		<label>feather: herculean strength</label>
-		<description>Feather representing the wielder's great strength</description>
+		<description>Feather representing the wearer's great strength.</description>
 		<graphicData>
 			<texPath>Things/Feathers/RBM_Herculean_Feather</texPath>
 		</graphicData>

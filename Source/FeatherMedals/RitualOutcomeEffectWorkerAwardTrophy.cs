@@ -125,7 +125,9 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         
         var letterLabel = "FeatherMedals_TakeOfHonorLetterLabel".Translate(medal.MedalLabel);
         var letterText = "FeatherMedals_TakeOfHonorLetterLine1".Translate(
-            awardee.Named("PAWN"), medal.MedalLabel.Named("MEDAL"), presenter.Named("PRESENTER"));
+            awardee.Named("PAWN"),
+            medal.MedalLabel.Named("TROPHY"),
+            presenter.Named("PRESENTER"));
         letterText += "\n\n";
         letterText += "FeatherMedals_TakeOfHonorLetterLine2"
             .Translate(awardee.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );

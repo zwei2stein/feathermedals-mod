@@ -4,7 +4,7 @@
     <IssueDef>
         <defName>FeatherMedals_HonoringWarriors</defName>
         <label>honoring warriors</label>
-        <description>How the people view warriors adorned with trophies and to adorning ceremonies.</description>
+        <description>How the people view warriors adorned with trophies and adorning ceremonies.</description>
         <iconPath>UI/Issues/PreceptHonoringWarriors</iconPath>
     </IssueDef>
 
@@ -18,7 +18,7 @@
     <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
         <defName>FeatherMedals_HonoringWarriors_Forbidden</defName>
         <label>forbidden</label>
-        <description>No one may be adorned with trophies that elevate them above others, no one may lead adorning ceremony and the people resent those who wear trophies.</description>
+        <description>No one may be adorned with trophies that elevate them above others or lead an adorning ceremony, and the people resent those who wear trophies.</description>
         <impact>High</impact>
         <displayOrderInIssue>1</displayOrderInIssue>
         <conflictingMemes>

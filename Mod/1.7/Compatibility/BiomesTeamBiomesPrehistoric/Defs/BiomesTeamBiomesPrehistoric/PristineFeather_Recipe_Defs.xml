@@ -3,8 +3,8 @@
 
     <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
         <defName>FeatherTrophy_Recipe_PristineFeather_BMT_BladeFeather</defName>
-        <label>refine saurumbo blade feather to pristine feather</label>
-        <jobString>Refining saurumbo blade feather to pristine feather</jobString>
+        <label>refine saurumbo blade feather into pristine feather</label>
+        <jobString>Refining saurumbo blade feather into pristine feather</jobString>
         <ingredients>
             <li>
                 <filter>

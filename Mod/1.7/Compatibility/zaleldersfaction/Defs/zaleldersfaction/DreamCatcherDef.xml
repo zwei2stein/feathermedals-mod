@@ -6,7 +6,7 @@
     <ThingDef ParentName="BuildingBase">
         <defName>FeatherTrophies_FeatheredDreamCatcher_Anima</defName>
         <label>anima dream catcher</label>
-        <description>Wooden frame with an intricate anima fiber weaving and decorated with pristine feathers.\n\nWhen mounted close to a bed, grants better sleep.\n\nIt can also be meditated to and anima fibers grant greater connection when meditating.</description>
+        <description>A wooden frame with an intricate anima fiber weaving, decorated with pristine feathers.\n\nWhen mounted next to a bed, it grants better sleep.\n\nIt can also be meditated to, and the anima fiber grants a stronger connection when meditating.</description>
         <thingClass>Building_Art</thingClass>
         <rotatable>true</rotatable>
         <graphicData>
@@ -16,6 +16,7 @@
             <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
             <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
             <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+            <shaderType>CutoutComplex</shaderType>
             <color>(180,215,202)</color>
             <damageData>
                 <enabled>false</enabled>

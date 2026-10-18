@@ -4,7 +4,7 @@
     <ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherTrophy_NatureHarmony_Feather</defName>
 		<label>feather: in harmony with nature</label>
-		<description>Feather symbolizing the warrior's unity with nature</description>
+		<description>Feather symbolizing the warrior's unity with nature.</description>
 		<graphicData>
 			<texPath>Things/Feathers/NatureHarmony_Feather</texPath>
 		</graphicData>

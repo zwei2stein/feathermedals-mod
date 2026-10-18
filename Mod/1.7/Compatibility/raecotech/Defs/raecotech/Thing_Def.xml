@@ -4,7 +4,7 @@
     <ThingDef ParentName="FeatherTrophy_BaseSimple">
 		<defName>FeatherTrophy_TerratechAncestry_Feather</defName>
 		<label>feather: terratech bloodline</label>
-		<description>Feather celebrating ancient terratech bloodline of a warrior</description>
+		<description>Feather celebrating the ancient terratech bloodline of a warrior.</description>
 		<graphicData>
 			<texPath>Things/Feathers/TerratechAncestry_Feather</texPath>
 		</graphicData>

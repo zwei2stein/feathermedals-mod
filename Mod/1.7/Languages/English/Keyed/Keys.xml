@@ -57,7 +57,7 @@
 	<FeatherMedals_WriteCitationDesc>Tell the Tale of Honor, recounting the deeds of a warrior. The tale cannot be changed after the adorning.</FeatherMedals_WriteCitationDesc>
 
 	<FeatherMedals_TakeOfHonorLetterLabel>{0} trophy adorned</FeatherMedals_TakeOfHonorLetterLabel>
-	<FeatherMedals_TakeOfHonorLetterLine1>{PAWN_labelShort} has been ceremonially adorned with a {MEDAL} by {PRESENTER_labelShort}.</FeatherMedals_TakeOfHonorLetterLine1>
+	<FeatherMedals_TakeOfHonorLetterLine1>{PAWN_labelShort} has been ceremonially adorned with a {TROPHY} by {PRESENTER_labelShort}.</FeatherMedals_TakeOfHonorLetterLine1>
 	<FeatherMedals_TakeOfHonorLetterLine2>The {QUALITY} adorning ceremony was attended by {ATTENDEES} tribe members, and the deeds of {PAWN_labelShort} have been recognized by the tribe.</FeatherMedals_TakeOfHonorLetterLine2>
 
 	<FeatherMedals_TakeOfHonorLetter>Tale of Honor: "{0}"</FeatherMedals_TakeOfHonorLetter>
