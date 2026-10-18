@@ -17,7 +17,13 @@ public static class ScalpingPrecepts
     {
         var ideo = pawn?.Ideo;
         if (ideo == null)
-            // Pawns without ideo count as Honourable.
+            return ScalpStance.Honourable;
+        return StanceOf(ideo);
+    }
+
+    public static ScalpStance StanceOf(Ideo ideo)
+    {
+        if (ideo == null)
             return ScalpStance.Honourable;
         if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden))
             return ScalpStance.Forbidden;

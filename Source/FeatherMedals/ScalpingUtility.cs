@@ -58,7 +58,7 @@ namespace FeatherMedals
             // * No-faction pawns
             // * Hostile pawns
             // * Guilty prisoners
-            if (!Can_IsNotEvilToBeScalped(pawn))
+            if (!Can_IsNotEvilToBeScalped(pawn, Faction.OfPlayer))
                 return false;
 
             return true;
@@ -80,7 +80,7 @@ namespace FeatherMedals
                 case ScalpStance.Merciless:
                     return true;
                 default:
-                    return Can_IsNotEvilToBeScalped(pawn);
+                    return Can_IsNotEvilToBeScalped(pawn, scalper.Faction ?? Faction.OfPlayer);
             }
         }
 
@@ -93,23 +93,24 @@ namespace FeatherMedals
             return ScalpingPrecepts.AnyMercilessColonist() && Can_PhysicallyCapableOfBeingScalped(PawnOf(thing), thing);
         }
 
-        private static bool Can_IsNotEvilToBeScalped(Pawn pawn)
+        // Evil from the point of view of the scalper's faction: its own people, its non-hostiles, children.
+        private static bool Can_IsNotEvilToBeScalped(Pawn pawn, Faction scalperFaction)
         {
             if (!pawn.DevelopmentalStage.Adult())
                 return false;
 
             // Imprisoned guilty colonist is still of player faction, we must check guilt first.
-            if (pawn.IsPrisonerOfColony && pawn.guilt.IsGuilty)
+            if (pawn.IsPrisoner && pawn.HostFaction == scalperFaction && pawn.guilt.IsGuilty)
                 return true;
 
-            if (pawn.Faction == Faction.OfPlayer)
+            if (pawn.Faction == scalperFaction)
                 return false;
-            
+    
             Faction home = pawn.HomeFaction;
             if (home == null)
                 return true;
 
-            if (home.HostileTo(Faction.OfPlayer) || pawn.HostileTo(Faction.OfPlayer))
+            if (home.HostileTo(scalperFaction) || pawn.HostileTo(scalperFaction))
                 return true;
 
             return false;
@@ -209,12 +210,12 @@ namespace FeatherMedals
             return pawn.Downed;
         }
 
-        public static void DoScalp(Pawn scalper, Thing target, bool inBreak = false)
+        public static Scalp DoScalp(Pawn scalper, Thing target, bool inBreak = false)
         {
             var victim = PawnOf(target);
             if (victim == null || !(inBreak ? CanBeScalpedInBreak(target) : CanBeScalped(target, scalper)))
             {
-                return;
+                return null;
             }
 
             var alive = !victim.Dead;
@@ -251,9 +252,11 @@ namespace FeatherMedals
             if (scalper.Map == null || !GenPlace.TryPlaceThing(scalp, scalper.Position, scalper.Map, ThingPlaceMode.Near))
             {
                 scalp.Destroy();
+                scalp = null;
             }
 
-            if (faction != null && faction != Faction.OfPlayer)
+            // only the player's own scalping changes goodwill with the player
+            if (faction != null && faction != Faction.OfPlayer && scalper.Faction == Faction.OfPlayer)
             {
                 var loss = alive ? ScalpingTuning.GoodwillLossAlive : ScalpingTuning.GoodwillLossDead;
                 faction.TryAffectGoodwillWith(Faction.OfPlayer, -loss, true, true,
@@ -268,6 +271,8 @@ namespace FeatherMedals
             {
                 scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.FeatherTrophies_Scalping_ClaimedRightOfVictor);
             }
+
+            return scalp;
         }
     }
 }

@@ -189,6 +189,36 @@ namespace FeatherMedals
             listingStandard.ColumnWidth += gapWidth;
 
             listingStandard.GapLine();
+            
+            listingStandard.Label("TribalTrophies_Settings_Scalping_ScalpHunts_Label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Label".Translate(),
+                ref Settings.ScalpHuntRaids,
+                "TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Tooltip".Translate()
+            );
+
+            if (Settings.ScalpHuntRaids)
+            {
+                Settings.ScalpHuntMaxTech = DrawTechLevelSlider(listingStandard,
+                    "TribalTrophies_Settings_Scalping_ScalpHunts_MaxTech_Label",
+                    "TribalTrophies_Settings_Scalping_ScalpHunts_MaxTech_Tooltip",
+                    Settings.ScalpHuntMaxTech);
+
+                listingStandard.CheckboxLabeled(
+                    "TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Label".Translate(),
+                    ref Settings.ScalpHuntDropPods,
+                    "TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Tooltip".Translate()
+                );
+            }
+
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+
+            listingStandard.GapLine();
 
             listingStandard.End();
         }
@@ -290,6 +320,9 @@ namespace FeatherMedals
         public bool GenerateNpcScalped = true;
         public bool ShowScalpingGizmo = true;
         public bool ScalpBreaksTargetChildren = false;
+        public bool ScalpHuntRaids = true;
+        public TechLevel ScalpHuntMaxTech = TechLevel.Industrial;
+        public bool ScalpHuntDropPods = true;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -310,6 +343,9 @@ namespace FeatherMedals
             Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref ShowScalpingGizmo, "ShowScalpingGizmo", true);
             Scribe_Values.Look(ref ScalpBreaksTargetChildren, "ScalpBreaksTargetChildren", false);
+            Scribe_Values.Look(ref ScalpHuntRaids, "ScalpHuntRaids", true);
+            Scribe_Values.Look(ref ScalpHuntMaxTech, "ScalpHuntMaxTech", TechLevel.Industrial);
+            Scribe_Values.Look(ref ScalpHuntDropPods, "ScalpHuntDropPods", true);
         }
     }
 
