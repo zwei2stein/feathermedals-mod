@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
@@ -60,7 +60,7 @@ namespace FeatherMedals
 
         public ITab_PawnTrophies()
         {
-            labelKey = "FeatherMedals_TrophiesTab";
+            labelKey = "TribalTrophies_Trophy_PawnTab_Label";
             size = new(TAB_WIDTH, TAB_HEIGHT);
         }
 
@@ -86,7 +86,7 @@ namespace FeatherMedals
             var presentedBy = medal.GetAwardedByLabel();
             var date = medal.GetAwardedDateLabel();
             if (presentedBy != null && date != null)
-                return "FeatherMedals_AwardInfo_PresentedByOnDate".Translate(presentedBy.Named("PRESENTER"), date.Named("DATE"));
+                return "TribalTrophies_Trophy_PawnTab_AdornedByOnDate".Translate(presentedBy.Named("PRESENTER"), date.Named("DATE"));
             return presentedBy ?? date ?? "";
         }
 
@@ -110,14 +110,14 @@ namespace FeatherMedals
 
             var headerRect = new Rect(outerRect.x, outerRect.y, outerRect.width, 30f);
             Text.Font = GameFont.Medium;
-            Widgets.Label(headerRect, "FeatherMedals_TrophiesTab".Translate());
+            Widgets.Label(headerRect, "TribalTrophies_Trophy_PawnTab_Label".Translate());
             Text.Font = GameFont.Small;
 
             if (!HasTrophies(pawn))
             {
                 var emptyRect = new Rect(outerRect.x, headerRect.yMax + PADDING, outerRect.width, 40f);
                 GUI.color = Color.gray;
-                Widgets.Label(emptyRect, "FeatherMedals_NoTrophies".Translate());
+                Widgets.Label(emptyRect, "TribalTrophies_Trophy_PawnTab_NoTrophies".Translate());
                 GUI.color = Color.white;
                 return;
             }
@@ -203,8 +203,8 @@ namespace FeatherMedals
             var locked = tracker.IsLocked(medal);
             var lockIcon = locked ? TrophyTextures.LockedIcon : TrophyTextures.UnlockedIcon;
             var lockTip = locked
-                ? "FeatherMedals_TrophyLocked".Translate()
-                : "FeatherMedals_TrophyUnlocked".Translate();
+                ? "TribalTrophies_Trophy_PawnTab_Locked_Tooltip".Translate()
+                : "TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip".Translate();
 
             // only show when player can change worn things.
             var canToggle = wearer.IsColonistPlayerControlled || StrippableUtility.CanBeStrippedByColony(wearer);

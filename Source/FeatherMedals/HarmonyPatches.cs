@@ -78,7 +78,7 @@ public class HarmonyPatches
                     return true;
                 }
 
-                Messages.Message("FeatherMedals_FailTrophyBiocoded".Translate(
+                Messages.Message("TribalTrophies_Trophy_Common_OwnedByOther".Translate(
                         comp.CodedPawn.Named("PAWN"),
                         pawn.Named("IMPOSTOR")),
                     comp.CodedPawn,
@@ -90,7 +90,7 @@ public class HarmonyPatches
             // The ceremony is the only way to earn a trophy, see RitualOutcomeEffectWorkerAwardTrophy
             if (!RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
             {
-                Messages.Message("FeatherMedals_FailTrophyNeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
+                Messages.Message("TribalTrophies_Trophy_Common_NeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 

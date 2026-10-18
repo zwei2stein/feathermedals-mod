@@ -19,9 +19,9 @@ public static class FeatherMedalUtil
     public static string WearBlockedReason(FeatherMedal medal, Pawn pawn)
     {
         if (medal.BiocodeComp is { Biocoded: true, CodedPawn: { } owner } && owner != pawn)
-            return "FeatherMedals_FailTrophyBiocoded".Translate(owner.Named("PAWN"), pawn.Named("IMPOSTOR"));
+            return "TribalTrophies_Trophy_Common_OwnedByOther".Translate(owner.Named("PAWN"), pawn.Named("IMPOSTOR"));
 
-        return "FeatherMedals_FailTrophyNeedsCeremony".Translate().CapitalizeFirst();
+        return "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst();
     }
 
     public static string BlockedWearText(Apparel apparel, string reason, bool forcingOtherPawn)
@@ -110,7 +110,7 @@ public static class FeatherMedalUtil
     }
 
     public static FloatMenuOption CeremonyOnlyForceWearOption(Apparel apparel)
-        => BlockedWearOption(apparel, "FeatherMedals_FailTrophyNeedsCeremony".Translate().CapitalizeFirst(), true);
+        => BlockedWearOption(apparel, "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst(), true);
 
     public static bool NeedsCeremony(Thing thing)
         => thing is FeatherMedal { BiocodeComp: not { Biocoded: true } };

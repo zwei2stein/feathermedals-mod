@@ -70,7 +70,7 @@ namespace FeatherMedals
                         cleanLabel = comp.TransformLabel(cleanLabel);
                     }
                 }
-                field = "FeatherMedals_BiocodedLabel".Translate(
+                field = "TribalTrophies_Trophy_Misc_AdornedLabel".Translate(
                     AdornedPawn.Named("PAWN"),
                     cleanLabel.Named("TROPHY")).Resolve();
                 cachedLabelPawnName = pawnName;
@@ -303,9 +303,9 @@ namespace FeatherMedals
                         {
                             yield return new StatDrawEntry(
                                 StatCategoryDefOf.Apparel,
-                                (string)"FeatherMedals_StatDraw_AddTrait".Translate(),
+                                (string)"TribalTrophies_Trophy_InfoCard_MayGrant".Translate(),
                                 trait.Label.CapitalizeFirst(),
-                                (string)"FeatherMedals_StatDraw_AddTrait_Desc".Translate(trait.Label.Named("TRAIT")),
+                                (string)"TribalTrophies_Trophy_InfoCard_MayGrant_Desc".Translate(trait.Label.Named("TRAIT")),
                                 3752);
                         }
                     if (ext.removesTraits != null)
@@ -313,9 +313,9 @@ namespace FeatherMedals
                         {
                             yield return new StatDrawEntry(
                                 StatCategoryDefOf.Apparel,
-                                (string)"FeatherMedals_StatDraw_RemoveTrait".Translate(),
+                                (string)"TribalTrophies_Trophy_InfoCard_MayRemove".Translate(),
                                 trait.Label.CapitalizeFirst(),
-                                (string)"FeatherMedals_StatDraw_RemoveTrait_Desc".Translate(trait.Label.Named("TRAIT")),
+                                (string)"TribalTrophies_Trophy_InfoCard_MayRemove_Desc".Translate(trait.Label.Named("TRAIT")),
                                 3753);
                         }
                 }

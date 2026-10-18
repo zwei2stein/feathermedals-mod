@@ -12,7 +12,7 @@ public class ITab_TrophyRecord : ITab
     public ITab_TrophyRecord()
     {
         this.size = new Vector2(400f, 520f);
-        this.labelKey = "FeatherMedals_Record";
+        this.labelKey = "TribalTrophies_Trophy_TrophyTab_Label";
     }
 
     public override bool IsVisible => SelThing is FeatherMedal;

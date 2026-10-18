@@ -3,35 +3,35 @@
 
 	<TribalTrophies_ModName>Tribal Trophies</TribalTrophies_ModName>
 
-	<!-- ===== Messages ===== -->
+	<!-- ===== Common (shown in several places) ===== -->
 
-	<!-- wear refused; FailTrophyNeedsCeremony also a float menu reason -->
-	<FeatherMedals_FailTrophyNeedsCeremony>Trophies can only be given through an adorning ceremony</FeatherMedals_FailTrophyNeedsCeremony>
-	<FeatherMedals_FailTrophyBiocoded>This trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot wear it.</FeatherMedals_FailTrophyBiocoded>
+	<!-- wear refused: message, float menu reason, gizmo/wear blocked text -->
+	<TribalTrophies_Trophy_Common_NeedsCeremony>Trophies can only be given through an adorning ceremony</TribalTrophies_Trophy_Common_NeedsCeremony>
+	<TribalTrophies_Trophy_Common_OwnedByOther>This trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot wear it</TribalTrophies_Trophy_Common_OwnedByOther>
 
 	<!-- ===== Trophies tab (pawn) ===== -->
 
-	<FeatherMedals_TrophiesTab>Trophies</FeatherMedals_TrophiesTab>
-	<FeatherMedals_NoTrophies>Not yet adorned with any trophies.</FeatherMedals_NoTrophies>
-	<FeatherMedals_AwardInfo_PresentedByOnDate>{PRESENTER} on {DATE}</FeatherMedals_AwardInfo_PresentedByOnDate>
-	<FeatherMedals_TrophyLocked>This trophy is locked and cannot be removed. Click to unlock.</FeatherMedals_TrophyLocked>
-	<FeatherMedals_TrophyUnlocked>This trophy is unlocked and can be removed. Click to lock.</FeatherMedals_TrophyUnlocked>
+	<TribalTrophies_Trophy_PawnTab_Label>Trophies</TribalTrophies_Trophy_PawnTab_Label>
+	<TribalTrophies_Trophy_PawnTab_NoTrophies>Not yet adorned with any trophies.</TribalTrophies_Trophy_PawnTab_NoTrophies>
+	<TribalTrophies_Trophy_PawnTab_AdornedByOnDate>{PRESENTER} on {DATE}</TribalTrophies_Trophy_PawnTab_AdornedByOnDate>
+	<TribalTrophies_Trophy_PawnTab_Locked_Tooltip>This trophy is locked and cannot be removed. Click to unlock.</TribalTrophies_Trophy_PawnTab_Locked_Tooltip>
+	<TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip>This trophy is unlocked and can be removed. Click to lock.</TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip>
 
 	<!-- ===== Trophy Details tab (item) ===== -->
 
-	<FeatherMedals_Record>Trophy Details</FeatherMedals_Record>
+	<TribalTrophies_Trophy_TrophyTab_Label>Trophy Details</TribalTrophies_Trophy_TrophyTab_Label>
 
 	<!-- ===== Info card ===== -->
 
-	<FeatherMedals_StatDraw_AddTrait>May grant</FeatherMedals_StatDraw_AddTrait>
-	<FeatherMedals_StatDraw_AddTrait_Desc>May grant the {TRAIT} trait when adorned. A ceremony changes at most one trait.</FeatherMedals_StatDraw_AddTrait_Desc>
+	<TribalTrophies_Trophy_InfoCard_MayGrant>May grant</TribalTrophies_Trophy_InfoCard_MayGrant>
+	<TribalTrophies_Trophy_InfoCard_MayGrant_Desc>May grant the {TRAIT} trait when adorned. A ceremony changes at most one trait.</TribalTrophies_Trophy_InfoCard_MayGrant_Desc>
 
-	<FeatherMedals_StatDraw_RemoveTrait>May remove</FeatherMedals_StatDraw_RemoveTrait>
-	<FeatherMedals_StatDraw_RemoveTrait_Desc>May remove the {TRAIT} trait when adorned. A ceremony changes at most one trait.</FeatherMedals_StatDraw_RemoveTrait_Desc>
+	<TribalTrophies_Trophy_InfoCard_MayRemove>May remove</TribalTrophies_Trophy_InfoCard_MayRemove>
+	<TribalTrophies_Trophy_InfoCard_MayRemove_Desc>May remove the {TRAIT} trait when adorned. A ceremony changes at most one trait.</TribalTrophies_Trophy_InfoCard_MayRemove_Desc>
 
 	<!-- ===== Misc ===== -->
 
 	<!-- label of an adorned trophy -->
-	<FeatherMedals_BiocodedLabel>{PAWN_labelShort}'s {TROPHY}</FeatherMedals_BiocodedLabel>
+	<TribalTrophies_Trophy_Misc_AdornedLabel>{PAWN_labelShort}'s {TROPHY}</TribalTrophies_Trophy_Misc_AdornedLabel>
 
 </LanguageData>
