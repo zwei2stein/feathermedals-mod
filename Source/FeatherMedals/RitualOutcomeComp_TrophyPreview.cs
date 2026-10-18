@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using HarmonyLib;
 using UnityEngine;
 
@@ -18,7 +18,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
         if (ritual?.selectedTarget.Thing is not FeatherMedal medal)
-            return "FeatherMedals_TrophyDetailsUnavailable".Translate();
+            return "TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable".Translate();
         return medal.MedalLabel;
     }
 
@@ -48,11 +48,11 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
                 var traitMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(medal);
                 if (ext.removesTraits is { Count: > 0 })
                     foreach (var entry in ext.removesTraits)
-                        sb.AppendLine("FeatherMedals_AwardingMayRemove"
+                        sb.AppendLine("TribalTrophies_AdorningCeremony_Common_MayRemoveTrait"
                             .Translate(entry.Label.CapitalizeFirst(), (entry.chance * traitMultiplier).ToStringPercent()));
                 if (ext.addsTraits is { Count: > 0 })
                     foreach (var entry in ext.addsTraits)
-                        sb.AppendLine("FeatherMedals_AwardingMayGrant"
+                        sb.AppendLine("TribalTrophies_AdorningCeremony_Common_MayGrantTrait"
                             .Translate(entry.Label.CapitalizeFirst(), (entry.chance * traitMultiplier).ToStringPercent()));
             }
         }
@@ -83,7 +83,7 @@ public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
         ritual?.selectedTarget.Thing is FeatherMedal medal ? AdorningQuality.GetTrophyQualityBonus(medal) : 0f;
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null) =>
-        "FeatherMedals_CeremonyTrophyQuality".Translate();
+        "TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality".Translate();
 
     public override QualityFactor GetQualityFactor(
         Precept_Ritual ritual,
@@ -99,13 +99,13 @@ public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
 
         return new QualityFactor
         {
-            label = "FeatherMedals_CeremonyTrophyQuality".Translate(),
+            label = "TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality".Translate(),
             count = quality.GetLabel().CapitalizeFirst(),
             qualityChange = bonus >= 0f ? $"+{bonus.ToStringPercent()}" : bonus.ToStringPercent(),
             quality = bonus,
             positive = bonus >= 0f,
             present = true,
-            toolTip = "FeatherMedals_CeremonyTrophyQuality_ToolTip".Translate(
+            toolTip = "TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality_Tooltip".Translate(
                 AdorningQuality.MaxTrophyBonus.ToStringPercent().Named("MAX"),
                 AdorningQuality.MaxTrophyPenalty.ToStringPercent().Named("MIN")),
             priority = 90f
@@ -130,7 +130,7 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
-        return "FeatherMedals_CeremonyAttendance".Translate();
+        return "TribalTrophies_AdorningCeremony_RitualDialog_Attendance".Translate();
     }
 
     public override QualityFactor GetQualityFactor(
@@ -151,13 +151,13 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
 
         return new QualityFactor
         {
-            label = "FeatherMedals_CeremonyAttendance".Translate(),
+            label = "TribalTrophies_AdorningCeremony_RitualDialog_Attendance".Translate(),
             count = $"{attendees} / {total}",
             qualityChange = $"+{contribution.ToStringPercent()}",
             quality = contribution,
             positive = ratio >= 0.25f,
             present = true,
-            toolTip = "FeatherMedals_CeremonyAttendance_ToolTip".Translate(AdorningQuality.AttendanceWeight.ToStringPercent().Named("QUALITY")),
+            toolTip = "TribalTrophies_AdorningCeremony_RitualDialog_Attendance_Tooltip".Translate(AdorningQuality.AttendanceWeight.ToStringPercent().Named("QUALITY")),
             priority = 50f
         };
     }
@@ -177,7 +177,7 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
-        return "FeatherMedals_CeremonyVenue".Translate();
+        return "TribalTrophies_AdorningCeremony_RitualDialog_Venue".Translate();
     }
 
     public override QualityFactor GetQualityFactor(
@@ -190,17 +190,17 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
         var impressiveness = AdorningQuality.GetRoomImpressiveness(ritualTarget);
         var contribution = AdorningQuality.GetRoomScore(impressiveness);
 
-        var roomLabel = impressiveness <= 0f ? "FeatherMedals_CeremonyVenue_Outdoors".Translate().Resolve() : $"{impressiveness:F0}";
+        var roomLabel = impressiveness <= 0f ? "TribalTrophies_AdorningCeremony_RitualDialog_Venue_Outdoors".Translate().Resolve() : $"{impressiveness:F0}";
 
         return new QualityFactor
         {
-            label ="FeatherMedals_CeremonyVenue".Translate(),
+            label ="TribalTrophies_AdorningCeremony_RitualDialog_Venue".Translate(),
             count = roomLabel,
             qualityChange = $"+{contribution.ToStringPercent()}",
             quality = contribution,
             positive = impressiveness >= 25f,
             present = true,
-            toolTip = "FeatherMedals_CeremonyVenue_ToolTip".Translate(AdorningQuality.RoomWeight.ToStringPercent().Named("QUALITY")),
+            toolTip = "TribalTrophies_AdorningCeremony_RitualDialog_Venue_Tooltip".Translate(AdorningQuality.RoomWeight.ToStringPercent().Named("QUALITY")),
             priority = 40f
         };
     }
@@ -249,7 +249,7 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
-        return "FeatherMedals_CeremonyCitation".Translate();
+        return "TribalTrophies_AdorningCeremony_RitualDialog_Tale".Translate();
     }
 
     public override QualityFactor GetQualityFactor(
@@ -266,15 +266,15 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         
         return new QualityFactor
         {
-            label = "FeatherMedals_CeremonyCitation".Translate(),
-            count = medal.HasCitation ? "FeatherMedals_CeremonyCitation_Written".Translate() : "FeatherMedals_CeremonyCitation_None".Translate(),
+            label = "TribalTrophies_AdorningCeremony_RitualDialog_Tale".Translate(),
+            count = medal.HasCitation ? "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written".Translate() : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None".Translate(),
             qualityChange = $"+{contribution.ToStringPercent()}",
             quality = contribution,
             positive = medal.HasCitation,
             present = true,
             toolTip = medal.HasCitation 
-                ? $"\"{medal.citation}\"\n\n" + "FeatherMedals_CeremonyCitation_Written_ToolTip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
-                : "FeatherMedals_CeremonyCitation_None_ToolTip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
+                ? $"\"{medal.citation}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
+                : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
             priority = 30f
         };
     }

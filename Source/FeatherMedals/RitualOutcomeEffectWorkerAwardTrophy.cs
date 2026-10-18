@@ -44,7 +44,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (medal.Destroyed)
         {
             Messages.Message(
-                "FeatherMedals_Ceremony_Failed_TrophyLost".Translate(awardee.Named("PAWN")),
+                "TribalTrophies_AdorningCeremony_Message_TrophyLost".Translate(awardee.Named("PAWN")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
@@ -57,7 +57,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (!FeatherMedalUtil.CanWearTrophy(awardee, medal))
         {
             Messages.Message(
-                "FeatherMedals_Ceremony_Failed_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
+                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
@@ -74,7 +74,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             if (!medal.Spawned && medal.holdingOwner == null)
                 GenPlace.TryPlaceThing(medal, awardee.PositionHeld, awardee.MapHeld, ThingPlaceMode.Near);
             Messages.Message(
-                "FeatherMedals_Ceremony_Failed_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
+                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
@@ -123,19 +123,19 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
         }
         
-        var letterLabel = "FeatherMedals_TakeOfHonorLetterLabel".Translate(medal.MedalLabel);
-        var letterText = "FeatherMedals_TakeOfHonorLetterLine1".Translate(
+        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(medal.MedalLabel);
+        var letterText = "TribalTrophies_AdorningCeremony_Letter_Adorned".Translate(
             awardee.Named("PAWN"),
             medal.MedalLabel.Named("TROPHY"),
             presenter.Named("PRESENTER"));
         letterText += "\n\n";
-        letterText += "FeatherMedals_TakeOfHonorLetterLine2"
+        letterText += "TribalTrophies_AdorningCeremony_Letter_Attendance"
             .Translate(awardee.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );
             
         if (medal.HasCitation)
         {
             letterText += "\n\n";
-            letterText += "FeatherMedals_TakeOfHonorLetter".Translate(medal.citation);
+            letterText += "TribalTrophies_AdorningCeremony_Letter_Tale".Translate(medal.citation);
         }
         
         var traitText = medal.GetTraitChangeText();

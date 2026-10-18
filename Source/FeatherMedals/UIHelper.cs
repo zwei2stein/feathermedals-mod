@@ -88,7 +88,7 @@ public static class UIHelper
                 {
                     var label = entry.Label;
                     GUI.color = Color.grey;
-                    var line = "FeatherMedals_AwardingMayRemove".Translate(
+                    var line = "TribalTrophies_AdorningCeremony_Common_MayRemoveTrait".Translate(
                         label.CapitalizeFirst(),
                         (entry.chance * chanceMultiplier).ToStringPercent());
                     Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), line);
@@ -101,7 +101,7 @@ public static class UIHelper
                 {
                     var label = entry.Label;
                     GUI.color = Color.grey;
-                    var line = "FeatherMedals_AwardingMayGrant".Translate(
+                    var line = "TribalTrophies_AdorningCeremony_Common_MayGrantTrait".Translate(
                         label.CapitalizeFirst(),
                         (entry.chance * chanceMultiplier).ToStringPercent());
                     Widgets.Label(new Rect(rect.x, curY, rect.width, 24f), line);

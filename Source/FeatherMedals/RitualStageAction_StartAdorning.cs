@@ -16,7 +16,7 @@ public class RitualStageAction_StartAdorning : RitualStageAction
                     Find.WindowStack.Add(new Dialog_WriteCitation(medal));
                 
             Messages.Message(
-                "FeatherMedals_Ceremony_Started".Translate(leader.Named("LEADER"), awardee.Named("PAWN")),
+                "TribalTrophies_AdorningCeremony_Message_Started".Translate(leader.Named("LEADER"), awardee.Named("PAWN")),
                 leader, // This makes the message clickable to jump to the leader
                 MessageTypeDefOf.PositiveEvent
             );

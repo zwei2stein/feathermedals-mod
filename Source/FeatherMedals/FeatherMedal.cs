@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Text;
 using RimWorld;
 using RimWorld.Planet;
@@ -85,35 +85,35 @@ namespace FeatherMedals
 
             var awardCeremonyBtn = new Command_Action
             {
-                defaultLabel = "FeatherMedals_AwardCeremony".Translate(),
-                defaultDesc = "FeatherMedals_CeremonyDesc".Translate(),
+                defaultLabel = "TribalTrophies_AdorningCeremony_Common_CeremonyLabel".Translate(),
+                defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc".Translate(),
                 icon = this.def.uiIcon, 
                 action = StartMedalRitual
             };
             
             // first failing reason wins
             if (BiocodeComp is { Biocoded: true })
-                awardCeremonyBtn.Disable("FeatherMedals_DisabledAlreadyAwarded".Translate());
+                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned".Translate());
             else if (IsCeremonyInProgress())
-                awardCeremonyBtn.Disable("FeatherMedals_DisabledCeremonyInProgress".Translate());
+                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Common_CeremonyInProgress".Translate());
             else if (!Spawned)
-                awardCeremonyBtn.Disable("FeatherMedals_DisabledNotOnGround".Translate());
+                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround".Translate());
             else if (!ColonyHasPresenter(out _))
-                awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
+                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
             
             yield return awardCeremonyBtn;
                 
             var citationBtn = new Command_Action
             {
-                defaultLabel = !HasCitation ? "FeatherMedals_WriteCitation".Translate() : "FeatherMedals_EditCitation".Translate(),
-                defaultDesc = "FeatherMedals_CitationDesc".Translate(),
+                defaultLabel = !HasCitation ? "TribalTrophies_AdorningCeremony_Gizmo_WriteTale".Translate() : "TribalTrophies_AdorningCeremony_Gizmo_EditTale".Translate(),
+                defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_TaleDesc".Translate(),
                 icon = TrophyTextures.CitationIcon,
                 action = OpenCitationDialog
             };
 
             // the tale is part of the ceremony, it is fixed once the trophy is adorned
             if (BiocodeComp is { Biocoded: true })
-                citationBtn.Disable("FeatherMedals_DisabledCitationLocked".Translate());
+                citationBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledTaleLocked".Translate());
                 
             yield return citationBtn;
         }
@@ -168,7 +168,7 @@ namespace FeatherMedals
 
             // A real precept: it lives, and is saved, in the ideo, so the running ritual can find it again after a reload
             var ritual = GetCeremonyPrecept(presenter.Ideo);
-            var ceremonyName = "FeatherMedals_AwardCeremony".Translate();
+            var ceremonyName = "TribalTrophies_AdorningCeremony_Common_CeremonyLabel".Translate();
             
             Dialog_BeginRitual.PawnFilter filter = (pawn, voluntary, allowOtherIdeos) => pawn.GetLord() == null;
                 
@@ -177,7 +177,7 @@ namespace FeatherMedals
                 // the dialog can sit open while another one is confirmed
                 if (IsCeremonyInProgress())
                 {
-                    Messages.Message("FeatherMedals_DisabledCeremonyInProgress".Translate(), MessageTypeDefOf.RejectInput, false);
+                    Messages.Message("TribalTrophies_AdorningCeremony_Common_CeremonyInProgress".Translate(), MessageTypeDefOf.RejectInput, false);
                     return false;
                 }
 
@@ -205,7 +205,7 @@ namespace FeatherMedals
                 organizer: null,
                 obligation: null,         
                 filter: filter,
-                okButtonText: "FeatherMedals_BeginCeremony".Translate(),
+                okButtonText: "TribalTrophies_AdorningCeremony_RitualDialog_Begin".Translate(),
                 requiredPawns: null,
                 forcedForRole: null,
                 outcomeDef        
@@ -228,7 +228,7 @@ namespace FeatherMedals
         {
             if (awardedBy == null)
                 return null;
-            return "FeatherMedals_Inspector_PresentedBy".Translate(awardedBy.Name.Named("PAWN"));
+            return "TribalTrophies_AdorningCeremony_Common_AdornedBy".Translate(awardedBy.Name.Named("PAWN"));
         }
         
         public string GetAwardedDateLabel()
@@ -244,10 +244,10 @@ namespace FeatherMedals
             if (addedTrait == null)
                 return null;
             if (terse || this.AdornedPawn == null)
-                return "FeatherMedals_Summary_TraitAdded".Translate(
+                return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
                     this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
-            return "FeatherMedals_TrophyAddedTrait".Translate(
+            return "TribalTrophies_AdorningCeremony_Common_TraitGained".Translate(
                 this.AdornedPawn.Named("PAWN"),
                 this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")).Resolve();
         }
@@ -257,10 +257,10 @@ namespace FeatherMedals
             if (removedTrait == null)
                 return null;
             if (terse || this.AdornedPawn == null)
-                return "FeatherMedals_Summary_TraitRemoved".Translate(
+                return "TribalTrophies_AdorningCeremony_Common_TraitRemoved_Short".Translate(
                     this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
-            return "FeatherMedals_TrophyRemovedTrait".Translate(
+            return "TribalTrophies_AdorningCeremony_Common_TraitShed".Translate(
                 this.AdornedPawn.Named("PAWN"),
                 this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")).Resolve();
         }
@@ -270,10 +270,10 @@ namespace FeatherMedals
             if (decoratedDegree < 0)
                 return null;
             if (terse || this.AdornedPawn == null)
-                return "FeatherMedals_Summary_TraitAdded".Translate(
+                return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
                     FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
-            return "FeatherMedals_TrophyGrantedTrait".Translate(
+            return "TribalTrophies_AdorningCeremony_Common_DecoratedGained".Translate(
                 this.AdornedPawn.Named("PAWN"),
                 FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
         }
@@ -333,7 +333,7 @@ namespace FeatherMedals
             if (BiocodeComp is { Biocoded: true, CodedPawn: not null })
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append("FeatherMedals_Inspector_AwardedTo".Translate(BiocodeComp.CodedPawn.Named("PAWN")));
+                sb.Append("TribalTrophies_AdorningCeremony_Common_Honoring".Translate(BiocodeComp.CodedPawn.Named("PAWN")));
             }
 
             // Awarded by
@@ -348,14 +348,14 @@ namespace FeatherMedals
             if (dateLabel != null)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append("FeatherMedals_Inspector_AwardedDate".Translate(dateLabel.Named("DATE")));
+                sb.Append("TribalTrophies_AdorningCeremony_Inspect_AdornedOn".Translate(dateLabel.Named("DATE")));
             }
 
             // Ceremony quality
             if (ceremonyQuality >= 0)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append("FeatherMedals_Inspector_AwardedCeremonyQuality".Translate(
+                sb.Append("TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality".Translate(
                     AdorningQuality.GetQualityLabel(ceremonyQuality).CapitalizeFirst().Named("QUALITY")));
             }
 

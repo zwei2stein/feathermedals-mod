@@ -12,7 +12,7 @@ public class RitualRole_Presenter : RitualRoleColonist
 
         if (HonoringWarriorsUtil.ForbidsCeremony(p))
         {
-            if (!skipReason) reason = "FeatherMedals_HW_ForbiddenRole".Translate(p.Named("PAWN"));
+            if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleForbiddenByPrecept".Translate(p.Named("PAWN"));
             return false;
         }
 
@@ -21,7 +21,7 @@ public class RitualRole_Presenter : RitualRoleColonist
             reason = null;
             return true;
         }
-        if (!skipReason) reason = "FeatherMedals_MustHoldSpeakerRole".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS"));
+        if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleMustBeSpeaker".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS"));
         return false;
     }
 }

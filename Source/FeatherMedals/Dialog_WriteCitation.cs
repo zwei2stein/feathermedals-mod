@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -110,14 +110,14 @@ public class Dialog_WriteCitation : Window
         // Header
         Text.Font = GameFont.Medium;
         var headerRect = new Rect(rect.x, rect.y + 10f, rect.width, 30f);
-        Widgets.Label(headerRect, "FeatherMedals_WriteCitation".Translate());
+        Widgets.Label(headerRect, "TribalTrophies_AdorningCeremony_TaleDialog_Title".Translate());
         Text.Font = GameFont.Small;
 
         // Instruction
         var instrRect = new Rect(rect.x, headerRect.yMax + 4f, rect.width, 36f);
         GUI.color = Color.gray;
         Text.Font = GameFont.Tiny;
-        Widgets.Label(instrRect, "FeatherMedals_WriteCitationDesc".Translate());
+        Widgets.Label(instrRect, "TribalTrophies_AdorningCeremony_TaleDialog_Desc".Translate());
         GUI.color = Color.white;
 
         // Text area — fills all space between instructions and the button row
@@ -142,18 +142,18 @@ public class Dialog_WriteCitation : Window
         Text.Font = GameFont.Small;
         var btnWidth = (rect.width - 20f) / 3f;
 
-        if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_ConfirmButton".Translate()))
+        if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Confirm".Translate()))
         {
             medal.citation = draft.NullOrEmpty() ? null : draft.Trim();
             Close();
         }
 
-        if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_GenerateButton".Translate()))
+        if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Suggest".Translate()))
         {
             draft = CitationUtil.GenerateForPlayer() ?? draft;
         }
 
-        if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "FeatherMedals_ClearButton".Translate()))
+        if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Clear".Translate()))
         {
             draft = "";
         }

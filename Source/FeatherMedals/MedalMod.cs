@@ -76,11 +76,14 @@ namespace FeatherMedals
                 ref Settings.PromptForCitationDuringRitual,
                  "TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip".Translate()
             );
-            listingStandard.CheckboxLabeled(
-                 "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label".Translate(),
-                ref Settings.AutoGenerateCitation,
-                 "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip".Translate()
-            );
+            if (Settings.PromptForCitationDuringRitual)
+            {
+                listingStandard.CheckboxLabeled(
+                    "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label".Translate(),
+                    ref Settings.AutoGenerateCitation,
+                    "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip".Translate()
+                );
+            }
             listingStandard.CheckboxLabeled(
                  "TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label".Translate(),
                 ref Settings.TrophyDynamicTraits,

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -43,7 +43,7 @@ public class ITab_TrophyRecord : ITab
 
         if (medal.BiocodeComp is { Biocoded: true, CodedPawn: not null })
         {
-            var awardLine = "FeatherMedals_Inspector_AwardedTo".Translate(medal.BiocodeComp.CodedPawn.Named("PAWN"));
+            var awardLine = "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(medal.BiocodeComp.CodedPawn.Named("PAWN"));
             var awardHeight = Text.CalcHeight(awardLine, rect.width);
             Widgets.Label(new Rect(rect.x, curY, rect.width, awardHeight), awardLine);
             curY += awardHeight + 4f;
@@ -68,7 +68,7 @@ public class ITab_TrophyRecord : ITab
 
             var dateLine = dateStr;
             if (medal.ceremonyQuality >= 0)
-                dateLine = "FeatherMedals_AwardedAtQualityCeremony".Translate(
+                dateLine = "TribalTrophies_AdorningCeremony_TrophyTab_AdornedAtCeremony".Translate(
                     dateStr.Named("DATE"),
                     AdorningQuality.GetQualityLabel(medal.ceremonyQuality).Named("QUALITY"));
 
@@ -86,7 +86,7 @@ public class ITab_TrophyRecord : ITab
             Text.Font = GameFont.Tiny;
             var days = (Find.TickManager.TicksGame - medal.awardedTick) / GenDate.TicksPerDay;
             GUI.color = MutedColor;
-            var daysText = "FeatherMedals_MedalWornFor".Translate(days.ToString());
+            var daysText = "TribalTrophies_AdorningCeremony_TrophyTab_WornFor".Translate(days.ToString());
             var daysHeight = Text.CalcHeight(daysText, rect.width);
             Widgets.Label(new Rect(rect.x, curY, rect.width, daysHeight), daysText);
             GUI.color = Color.white;

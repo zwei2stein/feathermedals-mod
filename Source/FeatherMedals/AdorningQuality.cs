@@ -96,10 +96,10 @@ public static class AdorningQuality
     public static string GetQualityLabel(int stageIndex) =>
         stageIndex switch
         {
-            3 => "FeatherMedals_Quality_Legendary".Translate(),
-            2 => "FeatherMedals_Quality_Grand".Translate(),
-            1 => "FeatherMedals_Quality_Decent".Translate(),
-            _ => "FeatherMedals_Quality_Poor".Translate()
+            3 => "TribalTrophies_AdorningCeremony_Common_Quality_Legendary".Translate(),
+            2 => "TribalTrophies_AdorningCeremony_Common_Quality_Grand".Translate(),
+            1 => "TribalTrophies_AdorningCeremony_Common_Quality_Decent".Translate(),
+            _ => "TribalTrophies_AdorningCeremony_Common_Quality_Poor".Translate()
         };
     
     public static float GetRoomImpressiveness(TargetInfo target)

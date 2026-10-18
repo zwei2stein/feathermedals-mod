@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<!-- ===== Messages ===== -->
+
+	<TribalTrophies_AdorningCeremony_Message_Started>{LEADER_labelShort} has begun the adorning ceremony for {PAWN_labelShort}.</TribalTrophies_AdorningCeremony_Message_Started>
+	<TribalTrophies_AdorningCeremony_Message_TrophyLost>The trophy was lost before {PAWN_labelShort} could be adorned.</TribalTrophies_AdorningCeremony_Message_TrophyLost>
+	<TribalTrophies_AdorningCeremony_Message_CannotWear>{PAWN_labelShort} could not be adorned with {TROPHY}.</TribalTrophies_AdorningCeremony_Message_CannotWear>
+
+	<!-- ===== Letters ===== -->
+
+	<TribalTrophies_AdorningCeremony_Letter_Label>{0} trophy adorned</TribalTrophies_AdorningCeremony_Letter_Label>
+	<TribalTrophies_AdorningCeremony_Letter_Adorned>{PAWN_labelShort} has been ceremonially adorned with a {TROPHY} by {PRESENTER_labelShort}.</TribalTrophies_AdorningCeremony_Letter_Adorned>
+	<TribalTrophies_AdorningCeremony_Letter_Attendance>The {QUALITY} adorning ceremony was attended by {ATTENDEES} tribe members, and the deeds of {PAWN_labelShort} have been recognized by the tribe.</TribalTrophies_AdorningCeremony_Letter_Attendance>
+	<TribalTrophies_AdorningCeremony_Letter_Tale>Tale of Honor: "{0}"</TribalTrophies_AdorningCeremony_Letter_Tale>
+
+	<!-- ===== Gizmos (trophy) ===== -->
+
+	<TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc>Gather colonists to adorn a warrior with this trophy.</TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc>
+	<TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned>Someone has already been adorned with this trophy.</TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned>
+	<TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround>The trophy must be put down before starting an adorning ceremony.</TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround>
+	<TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter>Requires a colonist holding one of these roles: {SPEAKERS}.</TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter>
+
+	<TribalTrophies_AdorningCeremony_Gizmo_WriteTale>Write the Tale of Honor</TribalTrophies_AdorningCeremony_Gizmo_WriteTale>
+	<TribalTrophies_AdorningCeremony_Gizmo_EditTale>Edit the Tale of Honor</TribalTrophies_AdorningCeremony_Gizmo_EditTale>
+	<TribalTrophies_AdorningCeremony_Gizmo_TaleDesc>Write or edit the Tale of Honor about the deeds this trophy represents.</TribalTrophies_AdorningCeremony_Gizmo_TaleDesc>
+	<TribalTrophies_AdorningCeremony_Gizmo_DisabledTaleLocked>The deeds in the Tale of Honor cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_Gizmo_DisabledTaleLocked>
+
+	<!-- ===== RitualDialog (begin ritual) ===== -->
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_Begin>Begin Ceremony</TribalTrophies_AdorningCeremony_RitualDialog_Begin>
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_RoleMustBeSpeaker>Must hold one of these roles: {SPEAKERS}.</TribalTrophies_AdorningCeremony_RitualDialog_RoleMustBeSpeaker>
+	<TribalTrophies_AdorningCeremony_RitualDialog_RoleCannotBeAdorned>{PAWN_labelShort} cannot be adorned with this trophy.</TribalTrophies_AdorningCeremony_RitualDialog_RoleCannotBeAdorned>
+	<TribalTrophies_AdorningCeremony_RitualDialog_RoleForbiddenByPrecept>{PAWN_nameDef}'s beliefs forbid taking part in adorning ceremonies.</TribalTrophies_AdorningCeremony_RitualDialog_RoleForbiddenByPrecept>
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable>Trophy details unavailable.</TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable>
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality>Trophy craftsmanship</TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality>
+	<TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality_Tooltip>How much care was put into making and selecting the trophy. A legendary trophy adds up to {MAX} of adorning quality, an awful one takes up to {MIN} away.</TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality_Tooltip>
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_Attendance>Adorning attendance</TribalTrophies_AdorningCeremony_RitualDialog_Attendance>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Attendance_Tooltip>Up to {QUALITY} of adorning quality. More colonists make a more meaningful adorning.</TribalTrophies_AdorningCeremony_RitualDialog_Attendance_Tooltip>
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_Venue>Adorning venue</TribalTrophies_AdorningCeremony_RitualDialog_Venue>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Venue_Tooltip>Up to {QUALITY} of adorning quality. Hold the adorning in an impressive room for a better outcome.</TribalTrophies_AdorningCeremony_RitualDialog_Venue_Tooltip>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Venue_Outdoors>Outdoors</TribalTrophies_AdorningCeremony_RitualDialog_Venue_Outdoors>
+
+	<TribalTrophies_AdorningCeremony_RitualDialog_Tale>Tale of Honor</TribalTrophies_AdorningCeremony_RitualDialog_Tale>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written>Written</TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip>{QUALITY} of adorning quality. The Tale of Honor adds weight and meaning to the trophy.</TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_None>None</TribalTrophies_AdorningCeremony_RitualDialog_Tale_None>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip>No Tale of Honor written. You will be prompted during the adorning, or write one before the adorning for a {QUALITY} bonus to adorning quality.</TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip>
+
+	<!-- ===== TaleDialog (write the Tale of Honor) ===== -->
+
+	<TribalTrophies_AdorningCeremony_TaleDialog_Title>Tale of Honor</TribalTrophies_AdorningCeremony_TaleDialog_Title>
+	<TribalTrophies_AdorningCeremony_TaleDialog_Desc>Tell the Tale of Honor, recounting the deeds of a warrior. The tale cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_TaleDialog_Desc>
+	<TribalTrophies_AdorningCeremony_TaleDialog_Confirm>Confirm</TribalTrophies_AdorningCeremony_TaleDialog_Confirm>
+	<TribalTrophies_AdorningCeremony_TaleDialog_Suggest>Suggest</TribalTrophies_AdorningCeremony_TaleDialog_Suggest>
+	<TribalTrophies_AdorningCeremony_TaleDialog_Clear>Clear</TribalTrophies_AdorningCeremony_TaleDialog_Clear>
+
+	<!-- ===== AdornedDialog (shown after the ceremony) ===== -->
+
+	<TribalTrophies_AdorningCeremony_AdornedDialog_Close>Close</TribalTrophies_AdorningCeremony_AdornedDialog_Close>
+
+	<!-- ===== TrophyTab (Trophy Details tab on the item) ===== -->
+
+	<TribalTrophies_AdorningCeremony_TrophyTab_AdornedAtCeremony>{DATE} at a {QUALITY} adorning ceremony</TribalTrophies_AdorningCeremony_TrophyTab_AdornedAtCeremony>
+	<TribalTrophies_AdorningCeremony_TrophyTab_WornFor>Worn for {0} days</TribalTrophies_AdorningCeremony_TrophyTab_WornFor>
+
+	<!-- ===== Inspect (inspect pane) ===== -->
+
+	<TribalTrophies_AdorningCeremony_Inspect_AdornedOn>Adorned on: {DATE}</TribalTrophies_AdorningCeremony_Inspect_AdornedOn>
+	<TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality>Adorning ceremony quality: {QUALITY}</TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality>
+
+	<!-- ===== Common (shown in several places) ===== -->
+
+	<!-- gizmo label, begin ritual dialog title -->
+	<TribalTrophies_AdorningCeremony_Common_CeremonyLabel>Adorning Ceremony</TribalTrophies_AdorningCeremony_Common_CeremonyLabel>
+	<!-- gizmo disable reason, message when the ritual dialog is confirmed -->
+	<TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>An adorning ceremony for this trophy is already in progress.</TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>
+
+	<!-- adorned dialog, trophy tab, inspect pane -->
+	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN_labelShort}</TribalTrophies_AdorningCeremony_Common_Honoring>
+	<!-- adorned dialog, trophy tab, inspect pane, pawn Trophies tab -->
+	<TribalTrophies_AdorningCeremony_Common_AdornedBy>Adorned by: {PAWN}</TribalTrophies_AdorningCeremony_Common_AdornedBy>
+
+	<!-- ritual dialog trophy row tooltip, trophy tab -->
+	<TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>May remove {0} ({1})</TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>
+	<TribalTrophies_AdorningCeremony_Common_MayGrantTrait>May grant {0} ({1})</TribalTrophies_AdorningCeremony_Common_MayGrantTrait>
+
+	<!-- ceremony quality words: letter, trophy tab, inspect pane -->
+	<TribalTrophies_AdorningCeremony_Common_Quality_Legendary>legendary</TribalTrophies_AdorningCeremony_Common_Quality_Legendary>
+	<TribalTrophies_AdorningCeremony_Common_Quality_Grand>grand</TribalTrophies_AdorningCeremony_Common_Quality_Grand>
+	<TribalTrophies_AdorningCeremony_Common_Quality_Decent>decent</TribalTrophies_AdorningCeremony_Common_Quality_Decent>
+	<TribalTrophies_AdorningCeremony_Common_Quality_Poor>poor</TribalTrophies_AdorningCeremony_Common_Quality_Poor>
+
+	<!-- trait changes, full: messages, letter, pawn Trophies tab row height -->
+	<TribalTrophies_AdorningCeremony_Common_DecoratedGained>{PAWN_labelShort} is now known as {TRAIT}.</TribalTrophies_AdorningCeremony_Common_DecoratedGained>
+	<TribalTrophies_AdorningCeremony_Common_TraitGained>{PAWN_labelShort} has gained the {TRAIT} trait through this honor.</TribalTrophies_AdorningCeremony_Common_TraitGained>
+	<TribalTrophies_AdorningCeremony_Common_TraitShed>{PAWN_labelShort} has shed the {TRAIT} trait through this honor.</TribalTrophies_AdorningCeremony_Common_TraitShed>
+
+	<!-- trait changes, short: adorned dialog, pawn Trophies tab -->
+	<TribalTrophies_AdorningCeremony_Common_TraitAdded_Short>Added trait: {TRAIT}</TribalTrophies_AdorningCeremony_Common_TraitAdded_Short>
+	<TribalTrophies_AdorningCeremony_Common_TraitRemoved_Short>Removed trait: {TRAIT}</TribalTrophies_AdorningCeremony_Common_TraitRemoved_Short>
+
+	<!-- ===== Misc ===== -->
+
+	<!-- Tale of Honor generator fallbacks -->
+	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultName>Warrior</TribalTrophies_AdorningCeremony_Misc_TaleDefaultName>
+	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultPossessive>their</TribalTrophies_AdorningCeremony_Misc_TaleDefaultPossessive>
+	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultSettlement>Hearth</TribalTrophies_AdorningCeremony_Misc_TaleDefaultSettlement>
+	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultFaction>Tribe</TribalTrophies_AdorningCeremony_Misc_TaleDefaultFaction>
+
+</LanguageData>

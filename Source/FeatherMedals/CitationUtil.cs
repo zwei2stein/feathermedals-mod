@@ -33,7 +33,7 @@ public static class CitationUtil
     private static string FactionName(Faction faction)
     {
         var name = faction?.Name;
-        return name.NullOrEmpty() ? "FeatherMedals_Citation_DefaultFaction".Translate().ToString() : name;
+        return name.NullOrEmpty() ? "TribalTrophies_AdorningCeremony_Misc_TaleDefaultFaction".Translate().ToString() : name;
     }
 
     private static string SettlementName(Faction faction, PlanetTile tile)
@@ -44,19 +44,19 @@ public static class CitationUtil
             if (settlement != null && settlement.Faction == faction && !settlement.Name.NullOrEmpty())
                 return settlement.Name;
         }
-        return "FeatherMedals_Citation_DefaultSettlement".Translate().ToString();
+        return "TribalTrophies_AdorningCeremony_Misc_TaleDefaultSettlement".Translate().ToString();
     }
 
     private static string PawnName(Pawn pawn)
     {
         var name = pawn?.Name?.ToStringShort;
-        return name.NullOrEmpty() ? "FeatherMedals_Citation_DefaultName".Translate().ToString() : name;
+        return name.NullOrEmpty() ? "TribalTrophies_AdorningCeremony_Misc_TaleDefaultName".Translate().ToString() : name;
     }
 
     private static string PawnPossessive(Pawn pawn)
     {
         if (pawn == null || pawn.gender == Gender.None)
-            return "FeatherMedals_Citation_DefaultPossessive".Translate().ToString();
+            return "TribalTrophies_AdorningCeremony_Misc_TaleDefaultPossessive".Translate().ToString();
         return pawn.gender.GetPossessive();
     }
 }

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -46,7 +46,7 @@ public class Dialog_TrophyAwarded : Window
         // Awarded to
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.MiddleCenter;
-        var awardLine = "FeatherMedals_Inspector_AwardedTo".Translate(awardee.Named("PAWN"));
+        var awardLine = "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(awardee.Named("PAWN"));
         var awardHeight = Text.CalcHeight(awardLine, inRect.width);
         Widgets.Label(new Rect(inRect.x, curY, inRect.width, awardHeight), awardLine);
         curY += awardHeight + 4f;
@@ -95,7 +95,7 @@ public class Dialog_TrophyAwarded : Window
         Text.Anchor = TextAnchor.UpperLeft;
         GUI.color = Color.white;
 
-        if (Widgets.ButtonText(new Rect(inRect.x + (inRect.width - 120f) / 2f, inRect.yMax - 45f, 120f, 35f), "FeatherMedals_CloseButton".Translate()))
+        if (Widgets.ButtonText(new Rect(inRect.x + (inRect.width - 120f) / 2f, inRect.yMax - 45f, 120f, 35f), "TribalTrophies_AdorningCeremony_AdornedDialog_Close".Translate()))
             Close();
     }
 }
