@@ -63,7 +63,23 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             return;
         }
 
+        if (presenter.carryTracker?.CarriedThing == medal)
+            presenter.carryTracker.innerContainer.Remove(medal);
+
         awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAward);
+
+        // Wear failed, drop trophy
+        if (!awardee.apparel.Wearing(medal))
+        {
+            if (!medal.Spawned && medal.holdingOwner == null)
+                GenPlace.TryPlaceThing(medal, awardee.PositionHeld, awardee.MapHeld, ThingPlaceMode.Near);
+            Messages.Message(
+                "FeatherMedals_Ceremony_Failed_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
+                awardee,
+                MessageTypeDefOf.NegativeEvent);
+            return;
+        }
+        
         medal.awardedBy = new RememberedPawn(presenter);
         medal.awardedTick = Find.TickManager.TicksGame;
         medal.awardedTile = jobRitual.Map.Tile;

@@ -13,6 +13,7 @@
 	<FeatherMedals_DisabledAlreadyAwarded>A warrior was already honored with this trophy.</FeatherMedals_DisabledAlreadyAwarded>
 	<FeatherMedals_DisabledRequiresPresenter>Requires a colonist holding one of these roles: {SPEAKERS}.</FeatherMedals_DisabledRequiresPresenter>
 	<FeatherMedals_DisabledCeremonyInProgress>An adorning ceremony for this trophy is happening right now.</FeatherMedals_DisabledCeremonyInProgress>
+	<FeatherMedals_DisabledNotOnGround>The trophy must be put down before starting an adorning ceremony.</FeatherMedals_DisabledNotOnGround>
 	<FeatherMedals_DisabledCitationLocked>The deeds in the Tale of Honor cannot be changed after the trophy is adorned.</FeatherMedals_DisabledCitationLocked>
 
 	<FeatherMedals_WriteCitation>Write the Tale of Honor</FeatherMedals_WriteCitation>

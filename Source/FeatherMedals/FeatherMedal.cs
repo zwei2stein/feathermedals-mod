@@ -90,15 +90,17 @@ namespace FeatherMedals
                 icon = this.def.uiIcon, 
                 action = StartMedalRitual
             };
-                
+            
             // first failing reason wins
             if (BiocodeComp is { Biocoded: true })
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledAlreadyAwarded".Translate());
             else if (IsCeremonyInProgress())
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledCeremonyInProgress".Translate());
+            else if (!Spawned)
+                awardCeremonyBtn.Disable("FeatherMedals_DisabledNotOnGround".Translate());
             else if (!ColonyHasPresenter(out _))
                 awardCeremonyBtn.Disable("FeatherMedals_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
-
+            
             yield return awardCeremonyBtn;
                 
             var citationBtn = new Command_Action

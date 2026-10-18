@@ -25,27 +25,38 @@
 	</PreceptDef>
 
 	<DutyDef>
+		<defName>FeatherTrophies_FetchTrophy</defName>
+		<hook>HighPriority</hook>
+		<socialModeMax>Off</socialModeMax>
+		<thinkNode Class="ThinkNode_Priority">
+			<subNodes>
+				<li Class="FeatherMedals.JobGiver_PresentTrophy" />
+			</subNodes>
+		</thinkNode>
+	</DutyDef>
+
+	<DutyDef>
+		<defName>FeatherTrophies_AwaitAdorning</defName>
+		<hook>HighPriority</hook>
+		<socialModeMax>Off</socialModeMax>
+		<thinkNode Class="ThinkNode_Priority">
+			<subNodes>
+				<li Class="FeatherMedals.JobGiver_AwaitAdorning" />
+			</subNodes>
+		</thinkNode>
+	</DutyDef>
+
+	<DutyDef>
 		<defName>FeatherTrophies_SpeakOnCellAward</defName>
 		<hook>HighPriority</hook>
 		<socialModeMax>Off</socialModeMax>
 		<ritualSpectateTarget>true</ritualSpectateTarget>
 		<thinkNode Class="ThinkNode_Priority">
 			<subNodes>
-				<!-- Goto my spot -->
-				<li Class="JobGiver_GotoTravelDestination">
-					<exactCell>true</exactCell>
-					<locomotionUrgency>Jog</locomotionUrgency>
-					<ritualTagOnArrival>Arrived</ritualTagOnArrival>
-				</li>
-
-				<!-- Arrived -->
-				<li Class="ThinkNode_ConditionalAtDutyLocation">
-					<subNodes>
-						<li Class="FeatherMedals.JobGiver_AwardSpeech">
-							<soundDefMale>Speech_Funeral_Male</soundDefMale>
-							<soundDefFemale>Speech_Funeral_Female</soundDefFemale>
-						</li>
-					</subNodes>
+				<li Class="FeatherMedals.JobGiver_PresentTrophy">
+					<speech>true</speech>
+					<soundDefMale>Speech_Funeral_Male</soundDefMale>
+					<soundDefFemale>Speech_Funeral_Female</soundDefFemale>
 				</li>
 			</subNodes>
 		</thinkNode>
@@ -92,14 +103,14 @@
 				<roleBehaviors>
 					<li>
 						<roleId>leader</roleId>
-						<dutyDef>ArriveToCell</dutyDef>
+						<dutyDef>FeatherTrophies_FetchTrophy</dutyDef>
 						<customPositions>
 							<li Class="RitualPosition_BehindThingCenter"/>
 						</customPositions>
 					</li>
 					<li>
 						<roleId>awardee</roleId>
-						<dutyDef>ArriveToCell</dutyDef>
+						<dutyDef>FeatherTrophies_AwaitAdorning</dutyDef>
 						<customPositions>
 							<li Class="RitualPosition_InFrontThingCenter"/>
 						</customPositions>
@@ -126,12 +137,14 @@
 						<roleId>leader</roleId>
 						<dutyDef>FeatherTrophies_SpeakOnCellAward</dutyDef>
 						<customPositions>
-							<li Class="RitualPosition_BesideThing"/>
+							<li Class="RitualPosition_InFrontThingCenter">
+								<offset>(1,0,0)</offset>
+							</li>
 						</customPositions>
 					</li>
 					<li>
 						<roleId>awardee</roleId>
-						<dutyDef>ArriveToCell</dutyDef>
+						<dutyDef>FeatherTrophies_AwaitAdorning</dutyDef>
 						<customPositions>
 							<li Class="RitualPosition_InFrontThingCenter"/>
 						</customPositions>
@@ -149,4 +162,30 @@
 		<ritualOutcomeEffect>FeatherMedals_AwardTrophyOutcome</ritualOutcomeEffect>
 		<ritualExpectedDesc>The tribe's leader will adorn a trophy upon a deserving tribe member.</ritualExpectedDesc>
 	</RitualPatternDef>
+
+	<JobDef>
+		<defName>FeatherTrophies_PresentTrophy</defName>
+		<driverClass>FeatherMedals.JobDriver_PresentTrophy</driverClass>
+		<reportString>presenting TargetA.</reportString>
+		<carryThingAfterJob>true</carryThingAfterJob>
+		<dropThingBeforeJob>false</dropThingBeforeJob>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>FeatherTrophies_PresentTrophySpeech</defName>
+		<driverClass>FeatherMedals.JobDriver_PresentTrophy</driverClass>
+		<reportString>honoring TargetC.</reportString>
+		<carryThingAfterJob>true</carryThingAfterJob>
+		<dropThingBeforeJob>false</dropThingBeforeJob>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>FeatherTrophies_AwaitAdorning</defName>
+		<driverClass>FeatherMedals.JobDriver_AwaitAdorning</driverClass>
+		<reportString>awaiting adorning.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+	
 </Defs>
