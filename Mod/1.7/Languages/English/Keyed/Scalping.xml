@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-    <FeatherTrophies_Scalping_Menu>Scalp {TARGET}</FeatherTrophies_Scalping_Menu>
-    <FeatherTrophies_Scalping_GizmoLabel>Scalp</FeatherTrophies_Scalping_GizmoLabel>
-    <FeatherTrophies_Scalping_GizmoDesc>Order a colonist to scalp this person. Anyone able to cut flesh will take the job.</FeatherTrophies_Scalping_GizmoDesc>
+    <!-- ===== Messages ===== -->
 
-    <FeatherTrophies_Scalping_DesignatorDesc>Order colonists to scalp every person and corpse in the area that can be scalped.</FeatherTrophies_Scalping_DesignatorDesc>
-    <FeatherTrophies_Scalping_MessageMustDesignateScalpable>Must designate a scalpable target.</FeatherTrophies_Scalping_MessageMustDesignateScalpable>
+    <TribalTrophies_Scalping_Message_WillAnger>Scalping {TARGET_nameDef} will anger {FACTION_name}.</TribalTrophies_Scalping_Message_WillAnger>
+    <TribalTrophies_Scalping_Message_Provoked>People of {PLAYERFACTION_name} have attempted to scalp {TARGET_nameDef}, and {TARGET_pronoun} resisted. {FACTION_name} is angered.</TribalTrophies_Scalping_Message_Provoked>
 
-    <FeatherTrophies_Scalping_WillAnger>Scalping {TARGET_nameDef} will anger {FACTION_name}.</FeatherTrophies_Scalping_WillAnger>
-    <FeatherTrophies_Scalping_Provoked>People of {PLAYERFACTION_name} have attempted to scalp {TARGET_nameDef}, and {TARGET_pronoun} is resisting. {FACTION_name} is angered.</FeatherTrophies_Scalping_Provoked>
+    <!-- ===== Letters ===== -->
 
-    <FeatherTrophies_Scalping_IdeoForbids>Ideoligion forbids</FeatherTrophies_Scalping_IdeoForbids>
+    <!-- scalp gift resented; reasons are listed in {REASONS}, one per line -->
+    <TribalTrophies_Scalping_Letter_GiftResented_Label>Scalp shipment resented</TribalTrophies_Scalping_Letter_GiftResented_Label>
+    <TribalTrophies_Scalping_Letter_GiftResented>{FACTION} did not take the recent scalp shipment well. Goodwill lost: {LOSS}\n\nReasons:\n{REASONS}</TribalTrophies_Scalping_Letter_GiftResented>
+    <TribalTrophies_Scalping_Letter_GiftResented_Reason_Forbidden>They do not practice the barbaric custom of scalping.</TribalTrophies_Scalping_Letter_GiftResented_Reason_Forbidden>
+    <TribalTrophies_Scalping_Letter_GiftResented_Reason_NoBounties>They do not take part in scalp bounties.</TribalTrophies_Scalping_Letter_GiftResented_Reason_NoBounties>
+    <TribalTrophies_Scalping_Letter_GiftResented_Reason_Victim>They do not enjoy being reminded that their own people were scalped.</TribalTrophies_Scalping_Letter_GiftResented_Reason_Victim>
 
-    <FeatherTrophies_Scalping_ScalpedBy>Scalped by {SCALPER}</FeatherTrophies_Scalping_ScalpedBy>
+    <!-- ===== Gizmo (pawn, corpse) ===== -->
 
-    <FeatherTrophies_Scalp_Label>scalp of {VICTIM}{FACTIONPART}{XENOTYPEPART}</FeatherTrophies_Scalp_Label>
-    <FeatherTrophies_Scalp_LabelFaction> of {FACTION}</FeatherTrophies_Scalp_LabelFaction>
-    <FeatherTrophies_Scalp_Xenotype>, {XENOTYPE}</FeatherTrophies_Scalp_Xenotype>
+    <TribalTrophies_Scalping_Gizmo_Label>Scalp</TribalTrophies_Scalping_Gizmo_Label>
+    <TribalTrophies_Scalping_Gizmo_Desc>Order a colonist to scalp this person. Anyone able to cut flesh will take the job.</TribalTrophies_Scalping_Gizmo_Desc>
 
-    <FeatherTrophies_Scalp_TakenBy>Scalp was taken by {SCALPER}.</FeatherTrophies_Scalp_TakenBy>
+    <!-- ===== Designator (Orders) ===== -->
 
-    <FeatherTrophies_Scalp_Anonymous>Unknown</FeatherTrophies_Scalp_Anonymous>
+    <TribalTrophies_Scalping_Designator_Label>Scalp</TribalTrophies_Scalping_Designator_Label>
+    <TribalTrophies_Scalping_Designator_Desc>Order colonists to scalp every person and corpse in the area that can be scalped.</TribalTrophies_Scalping_Designator_Desc>
+    <TribalTrophies_Scalping_Designator_MustDesignateScalpable>Must designate a scalpable target.</TribalTrophies_Scalping_Designator_MustDesignateScalpable>
 
-    <!-- scalp gifts -->
+    <!-- ===== FloatMenu ===== -->
 
-    <FeatherTrophies_ScalpGift_LetterLabel>Scalp shipment resented</FeatherTrophies_ScalpGift_LetterLabel>
-    <FeatherTrophies_ScalpGift_Letter>{FACTION} did not take the recent scalp shipment well. Goodwill lost: {LOSS}\n\nReasons:\n{REASONS}</FeatherTrophies_ScalpGift_Letter>
-    <FeatherTrophies_ScalpGift_Reason_Forbidden>They do not practice the barbaric custom of scalping.</FeatherTrophies_ScalpGift_Reason_Forbidden>
-    <FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>They do not take part in scalp bounties.</FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases>
-    <FeatherTrophies_ScalpGift_Reason_Victim>They do not enjoy being reminded that their own people were scalped.</FeatherTrophies_ScalpGift_Reason_Victim>
+    <TribalTrophies_Scalping_FloatMenu_Scalp>Scalp {TARGET}</TribalTrophies_Scalping_FloatMenu_Scalp>
+
+    <!-- ===== Hediff (scalped pawn health tooltip) ===== -->
+
+    <TribalTrophies_Scalping_Hediff_ScalpedBy>Scalped by {SCALPER}</TribalTrophies_Scalping_Hediff_ScalpedBy>
+
+    <!-- ===== Item (scalp) ===== -->
+
+    <!-- label built from optional parts: FactionPart and XenotypePart are empty when unknown -->
+    <TribalTrophies_Scalping_Item_Label>scalp of {VICTIM}{FACTIONPART}{XENOTYPEPART}</TribalTrophies_Scalping_Item_Label>
+    <TribalTrophies_Scalping_Item_Label_FactionPart> of {FACTION}</TribalTrophies_Scalping_Item_Label_FactionPart>
+    <TribalTrophies_Scalping_Item_Label_XenotypePart>, {XENOTYPE}</TribalTrophies_Scalping_Item_Label_XenotypePart>
+
+    <!-- description -->
+    <TribalTrophies_Scalping_Item_TakenBy>This scalp was taken by {SCALPER}.</TribalTrophies_Scalping_Item_TakenBy>
+
+    <!-- ===== Common (shown in several places) ===== -->
+
+    <!-- float menu option suffix, work giver fail reason -->
+    <TribalTrophies_Scalping_Common_IdeoForbids>Ideoligion forbids</TribalTrophies_Scalping_Common_IdeoForbids>
+
+    <!-- ===== Misc ===== -->
+
+    <!-- name of an unknown victim or scalper -->
+    <TribalTrophies_Scalping_Misc_UnknownName>Unknown</TribalTrophies_Scalping_Misc_UnknownName>
 
 </LanguageData>

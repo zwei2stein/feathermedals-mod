@@ -13,8 +13,8 @@ public class Designator_Scalp : Designator
 
     public Designator_Scalp()
     {
-        defaultLabel = "FeatherTrophies_Scalping_GizmoLabel".Translate();
-        defaultDesc = "FeatherTrophies_Scalping_DesignatorDesc".Translate();
+        defaultLabel = "TribalTrophies_Scalping_Designator_Label".Translate();
+        defaultDesc = "TribalTrophies_Scalping_Designator_Desc".Translate();
         icon = ContentFinder<Texture2D>.Get("UI/Designators/Scalp");
         soundDragSustain = SoundDefOf.Designate_DragStandard;
         soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
@@ -30,7 +30,7 @@ public class Designator_Scalp : Designator
         foreach (var unused in ScalpablesInCell(c))
             return true;
 
-        return "FeatherTrophies_Scalping_MessageMustDesignateScalpable".Translate();
+        return "TribalTrophies_Scalping_Designator_MustDesignateScalpable".Translate();
     }
 
     public override void DesignateSingleCell(IntVec3 loc)

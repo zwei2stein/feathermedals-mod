@@ -92,15 +92,15 @@ namespace FeatherMedals
 
             var reasonLines = new List<string>();
             if (result.Reasons.Contains(ScalpGiftReason.Forbidden))
-                reasonLines.Add("FeatherTrophies_ScalpGift_Reason_Forbidden".Translate().Resolve());
+                reasonLines.Add("TribalTrophies_Scalping_Letter_GiftResented_Reason_Forbidden".Translate().Resolve());
             if (result.Reasons.Contains(ScalpGiftReason.NoScalpBountyPurchases))
-                reasonLines.Add("FeatherTrophies_ScalpGift_Reason_NoScalpBountyPurchases".Translate().Resolve());
+                reasonLines.Add("TribalTrophies_Scalping_Letter_GiftResented_Reason_NoBounties".Translate().Resolve());
             if (result.Reasons.Contains(ScalpGiftReason.Victim))
-                reasonLines.Add("FeatherTrophies_ScalpGift_Reason_Victim".Translate().Resolve());
+                reasonLines.Add("TribalTrophies_Scalping_Letter_GiftResented_Reason_Victim".Translate().Resolve());
 
             Find.LetterStack.ReceiveLetter(
-                "FeatherTrophies_ScalpGift_LetterLabel".Translate(),
-                "FeatherTrophies_ScalpGift_Letter".Translate(
+                "TribalTrophies_Scalping_Letter_GiftResented_Label".Translate(),
+                "TribalTrophies_Scalping_Letter_GiftResented".Translate(
                     faction.NameColored.Named("FACTION"),
                     (-lost).ToStringWithSign().Named("LOSS"),
                     string.Join("\n", reasonLines).Named("REASONS")),

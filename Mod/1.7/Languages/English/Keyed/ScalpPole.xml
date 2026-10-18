@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-    <FeatherTrophies_ScalpPole_LabelOne>{POLE} with {VICTIM}'s scalp</FeatherTrophies_ScalpPole_LabelOne>
-    <FeatherTrophies_ScalpPole_LabelMany>{POLE} ({COUNT} scalps)</FeatherTrophies_ScalpPole_LabelMany>
+    <!-- ===== Label ===== -->
 
-    <FeatherTrophies_ScalpPole_StatPart>Displayed scalps: {COUNT}</FeatherTrophies_ScalpPole_StatPart>
-    <FeatherTrophies_ScalpPole_FocusExplanation>Displayed scalps ({COUNT} of {MAX}, {PERSCALP} each): {VALUE}</FeatherTrophies_ScalpPole_FocusExplanation>
-    <FeatherTrophies_ScalpPole_FocusExplanationAbstract>Displayed scalps (up to {MAX}, {PERSCALP} each): +0-{VALUE}</FeatherTrophies_ScalpPole_FocusExplanationAbstract>
+    <TribalTrophies_ScalpPole_Label_OneScalp>{POLE} with {VICTIM}'s scalp</TribalTrophies_ScalpPole_Label_OneScalp>
+    <TribalTrophies_ScalpPole_Label_ManyScalps>{POLE} ({COUNT} scalps)</TribalTrophies_ScalpPole_Label_ManyScalps>
+
+    <!-- ===== StatExplanation (stat breakdown) ===== -->
+
+    <TribalTrophies_ScalpPole_StatExplanation_DisplayedScalps>Displayed scalps: {COUNT}</TribalTrophies_ScalpPole_StatExplanation_DisplayedScalps>
+
+    <!-- ===== Meditation (focus explanation) ===== -->
+
+    <TribalTrophies_ScalpPole_Meditation_FocusOffset>Displayed scalps ({COUNT} of {MAX}, {PERSCALP} each): {VALUE}</TribalTrophies_ScalpPole_Meditation_FocusOffset>
+    <!-- not built yet / info card -->
+    <TribalTrophies_ScalpPole_Meditation_FocusOffsetAbstract>Displayed scalps (up to {MAX}, {PERSCALP} each): +0-{VALUE}</TribalTrophies_ScalpPole_Meditation_FocusOffsetAbstract>
 
 </LanguageData>

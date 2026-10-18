@@ -22,7 +22,7 @@ namespace FeatherMedals
         public override string ExplanationPart(StatRequest req)
         {
             if (req.Thing is Building_ScalpPole pole)
-                return "FeatherTrophies_ScalpPole_StatPart".Translate(pole.ScalpCount.Named("COUNT")).Resolve();
+                return "TribalTrophies_ScalpPole_StatExplanation_DisplayedScalps".Translate(pole.ScalpCount.Named("COUNT")).Resolve();
 
             return null;
         }
@@ -50,7 +50,7 @@ namespace FeatherMedals
             if (!parent.Spawned || parent is not Building_ScalpPole pole)
                 return GetExplanationAbstract(parent.def);
 
-            return "FeatherTrophies_ScalpPole_FocusExplanation".Translate(
+            return "TribalTrophies_ScalpPole_Meditation_FocusOffset".Translate(
                        pole.ScalpCount.Named("COUNT"),
                        Capacity.Named("MAX"),
                        offset.ToString("0%").Named("PERSCALP"),
@@ -60,7 +60,7 @@ namespace FeatherMedals
 
         public override string GetExplanationAbstract(ThingDef def = null)
         {
-            return "FeatherTrophies_ScalpPole_FocusExplanationAbstract".Translate(
+            return "TribalTrophies_ScalpPole_Meditation_FocusOffsetAbstract".Translate(
                 Capacity.Named("MAX"),
                 offset.ToString("0%").Named("PERSCALP"),
                 MaxOffset().ToString("0%").Named("VALUE")
@@ -111,11 +111,11 @@ namespace FeatherMedals
                 var poleLabel = GenLabel.ThingLabel(def, Stuff);
 
                 if (scalps.Count == 1 && !scalps[0].VictimName.NullOrEmpty())
-                    return "FeatherTrophies_ScalpPole_LabelOne"
+                    return "TribalTrophies_ScalpPole_Label_OneScalp"
                         .Translate(poleLabel.Named("POLE"), scalps[0].VictimName.Named("VICTIM")).Resolve();
 
                 if (scalps.Count > 0)
-                    return "FeatherTrophies_ScalpPole_LabelMany"
+                    return "TribalTrophies_ScalpPole_Label_ManyScalps"
                         .Translate(poleLabel.Named("POLE"), scalps.Count.Named("COUNT")).Resolve();
 
                 return base.LabelNoCount;

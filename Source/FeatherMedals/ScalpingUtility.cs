@@ -166,7 +166,7 @@ namespace FeatherMedals
             }
 
             Messages.Message(
-                "FeatherTrophies_Scalping_Provoked".Translate(
+                "TribalTrophies_Scalping_Message_Provoked".Translate(
                     Faction.OfPlayer.Named("PLAYERFACTION"), target.Named("TARGET"), faction.Named("FACTION")).CapitalizeFirst(),
                 target, MessageTypeDefOf.NegativeEvent);
         }

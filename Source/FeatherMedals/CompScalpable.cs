@@ -36,8 +36,8 @@ namespace FeatherMedals
             
             yield return new Command_Toggle
             {
-                defaultLabel = "FeatherTrophies_Scalping_GizmoLabel".Translate(),
-                defaultDesc = "FeatherTrophies_Scalping_GizmoDesc".Translate(),
+                defaultLabel = "TribalTrophies_Scalping_Gizmo_Label".Translate(),
+                defaultDesc = "TribalTrophies_Scalping_Gizmo_Desc".Translate(),
                 icon = Icon,
                 isActive = () => Designated,
                 toggleAction = Toggle

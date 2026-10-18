@@ -10,8 +10,8 @@ namespace FeatherMedals
     {
         public const float PriceFactor = 0.1f;
         
-        private RememberedPawn victim = new("FeatherTrophies_Scalp_Anonymous".Translate());
-        private RememberedPawn scalper = new("FeatherTrophies_Scalp_Anonymous".Translate());
+        private RememberedPawn victim = new("TribalTrophies_Scalping_Misc_UnknownName".Translate());
+        private RememberedPawn scalper = new("TribalTrophies_Scalping_Misc_UnknownName".Translate());
 
         private string factionName;
         private string xenotypeName;
@@ -81,13 +81,13 @@ namespace FeatherMedals
 
                 var factionPart = factionName.NullOrEmpty()
                     ? ""
-                    : "FeatherTrophies_Scalp_LabelFaction".Translate(factionName.Named("FACTION")).Resolve();
+                    : "TribalTrophies_Scalping_Item_Label_FactionPart".Translate(factionName.Named("FACTION")).Resolve();
 
                 var xenotypePart = xenotypeName.NullOrEmpty()
                     ? ""
-                    : "FeatherTrophies_Scalp_Xenotype".Translate(xenotypeName.CapitalizeFirst().Named("XENOTYPE")).Resolve();
+                    : "TribalTrophies_Scalping_Item_Label_XenotypePart".Translate(xenotypeName.CapitalizeFirst().Named("XENOTYPE")).Resolve();
 
-                return "FeatherTrophies_Scalp_Label".Translate(
+                return "TribalTrophies_Scalping_Item_Label".Translate(
                     victimName.Named("VICTIM"),
                     factionPart.Named("FACTIONPART"),
                     xenotypePart.Named("XENOTYPEPART")).Resolve();
@@ -107,7 +107,7 @@ namespace FeatherMedals
                 
                 var scalperName = scalper?.Name;
                 if (!scalperName.NullOrEmpty())
-                    descriptions.Add("FeatherTrophies_Scalp_TakenBy".Translate(scalperName.Named("SCALPER")));
+                    descriptions.Add("TribalTrophies_Scalping_Item_TakenBy".Translate(scalperName.Named("SCALPER")));
 
                 return string.Join("\n\n", descriptions.Where(s => !string.IsNullOrEmpty(s)));
             }

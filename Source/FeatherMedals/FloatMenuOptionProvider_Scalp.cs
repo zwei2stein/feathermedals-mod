@@ -35,10 +35,10 @@ namespace FeatherMedals
                 return null;
             }
 
-            string label = "FeatherTrophies_Scalping_Menu".Translate(target.LabelShortCap.Named("TARGET"));
+            string label = "TribalTrophies_Scalping_FloatMenu_Scalp".Translate(target.LabelShortCap.Named("TARGET"));
             if (forbidden)
             {
-                return new FloatMenuOption(label + " (" + "FeatherTrophies_Scalping_IdeoForbids".Translate() + ")", null);
+                return new FloatMenuOption(label + " (" + "TribalTrophies_Scalping_Common_IdeoForbids".Translate() + ")", null);
             }
 
             bool angers = ScalpingUtility.WouldAngerFaction(target);
@@ -64,7 +64,7 @@ namespace FeatherMedals
                     if (angers)
                     {
                         Messages.Message(
-                            "FeatherTrophies_Scalping_WillAnger".Translate(target.Named("TARGET"), ((Pawn)target).Faction.Named("FACTION")).CapitalizeFirst(),
+                            "TribalTrophies_Scalping_Message_WillAnger".Translate(target.Named("TARGET"), ((Pawn)target).Faction.Named("FACTION")).CapitalizeFirst(),
                             target, MessageTypeDefOf.CautionInput, false);
                     }
                 }, revalidateClickTarget: target),

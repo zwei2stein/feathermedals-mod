@@ -26,7 +26,7 @@ namespace FeatherMedals
                 string scalperName = scalper?.Name;
                 if (!scalperName.NullOrEmpty())
                 {
-                    text += "\n" + "FeatherTrophies_Scalping_ScalpedBy".Translate(scalperName.Named("SCALPER"));
+                    text += "\n" + "TribalTrophies_Scalping_Hediff_ScalpedBy".Translate(scalperName.Named("SCALPER"));
                 }
                 return text;
             }
