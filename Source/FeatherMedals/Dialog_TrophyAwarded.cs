@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -95,7 +95,7 @@ public class Dialog_TrophyAwarded : Window
         Text.Anchor = TextAnchor.UpperLeft;
         GUI.color = Color.white;
 
-        if (Widgets.ButtonText(new Rect(inRect.x + (inRect.width - 120f) / 2f, inRect.yMax - 45f, 120f, 35f), "TribalTrophies_AdorningCeremony_AdornedDialog_Close".Translate()))
+        if (Widgets.ButtonText(new Rect(inRect.x + (inRect.width - 120f) / 2f, inRect.yMax - 45f, 120f, 35f), "CloseButton".Translate()))
             Close();
     }
 }

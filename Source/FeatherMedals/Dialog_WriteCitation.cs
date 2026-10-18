@@ -142,7 +142,7 @@ public class Dialog_WriteCitation : Window
         Text.Font = GameFont.Small;
         var btnWidth = (rect.width - 20f) / 3f;
 
-        if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Confirm".Translate()))
+        if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "Confirm".Translate()))
         {
             medal.citation = draft.NullOrEmpty() ? null : draft.Trim();
             Close();

@@ -56,13 +56,8 @@
 
 	<TribalTrophies_AdorningCeremony_TaleDialog_Title>Tale of Honor</TribalTrophies_AdorningCeremony_TaleDialog_Title>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Desc>Tell the Tale of Honor, recounting the deeds of a warrior. The tale cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_TaleDialog_Desc>
-	<TribalTrophies_AdorningCeremony_TaleDialog_Confirm>Confirm</TribalTrophies_AdorningCeremony_TaleDialog_Confirm>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Suggest>Suggest</TribalTrophies_AdorningCeremony_TaleDialog_Suggest>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Clear>Clear</TribalTrophies_AdorningCeremony_TaleDialog_Clear>
-
-	<!-- ===== AdornedDialog (shown after the ceremony) ===== -->
-
-	<TribalTrophies_AdorningCeremony_AdornedDialog_Close>Close</TribalTrophies_AdorningCeremony_AdornedDialog_Close>
 
 	<!-- ===== TrophyTab (Trophy Details tab on the item) ===== -->
 
