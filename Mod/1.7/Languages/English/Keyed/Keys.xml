@@ -41,6 +41,9 @@
 
 	<FeatherMedals_Ceremony_Started>{LEADER_labelShort} has begun the adorning ritual of a trophy upon {PAWN_labelShort}.</FeatherMedals_Ceremony_Started>
 
+	<FeatherMedals_Ceremony_Failed_TrophyLost>The trophy was lost before {PAWN_labelShort} could be adorned.</FeatherMedals_Ceremony_Failed_TrophyLost>
+	<FeatherMedals_Ceremony_Failed_CannotWear>{PAWN_labelShort} could not be adorned with {TROPHY}.</FeatherMedals_Ceremony_Failed_CannotWear>
+	
 	<FeatherMedals_Inspector_AwardedTo>Honoring: {PAWN_labelShort}</FeatherMedals_Inspector_AwardedTo>
 	<FeatherMedals_Inspector_PresentedBy>Adorned by: {PAWN}</FeatherMedals_Inspector_PresentedBy>
 	<FeatherMedals_Inspector_AwardedDate>Adorned at: {DATE}</FeatherMedals_Inspector_AwardedDate>
@@ -130,7 +133,7 @@
 	<FeatherMedals_Settings_Block_Worn_Label>Worn Trophies</FeatherMedals_Settings_Block_Worn_Label>
 
 	<FeatherMedals_Settings_WornSize>Worn size: {SIZE}</FeatherMedals_Settings_WornSize>
-	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophy rendered on pawn. Default: 1.3</FeatherMedals_Settings_WornSize_Tooltip>
+	<FeatherMedals_Settings_WornSize_Tooltip>Size of trophy rendered on pawn. Default: 130%</FeatherMedals_Settings_WornSize_Tooltip>
 
 	<FeatherMedals_Settings_VerticalBias>Fanning out: {BIAS}</FeatherMedals_Settings_VerticalBias>
 	<FeatherMedals_Settings_VerticalBias_Tooltip>Controls how much feathers fan out. 0% - straight up, 100% - fanned out. Default: 35%</FeatherMedals_Settings_VerticalBias_Tooltip>

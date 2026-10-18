@@ -61,20 +61,19 @@ namespace FeatherMedals
                 {
                     return null;
                 }
-                
-                var itemName = new List<string>();
-                
-                itemName.Add("FeatherTrophies_Scalp_Label".Translate(victimName.Named("VICTIM")).Resolve());
 
-                if (!factionName.NullOrEmpty())
-                    itemName.Add("FeatherTrophies_Scalp_LabelFaction".Translate(factionName.Named("FACTION")).Resolve());
-                
-                if (!xenotypeName.NullOrEmpty())
-                    itemName.Add("FeatherTrophies_Scalp_Xenotype".Translate(xenotypeName.CapitalizeFirst().Named("XENOTYPE")).Resolve());
-                
-                itemName.Add(".");
-                
-                return string.Join("", itemName);
+                var factionPart = factionName.NullOrEmpty()
+                    ? ""
+                    : "FeatherTrophies_Scalp_LabelFaction".Translate(factionName.Named("FACTION")).Resolve();
+
+                var xenotypePart = xenotypeName.NullOrEmpty()
+                    ? ""
+                    : "FeatherTrophies_Scalp_Xenotype".Translate(xenotypeName.CapitalizeFirst().Named("XENOTYPE")).Resolve();
+
+                return "FeatherTrophies_Scalp_Label".Translate(
+                    victimName.Named("VICTIM"),
+                    factionPart.Named("FACTIONPART"),
+                    xenotypePart.Named("XENOTYPEPART")).Resolve();
             }
         }
 
@@ -86,7 +85,7 @@ namespace FeatherMedals
             {
                 var descriptions = new List<string>();
                 
-                descriptions.Add(ScalpOf);
+                descriptions.Add(ScalpOf?.CapitalizeFirst());
                 descriptions.Add(base.DescriptionFlavor);
                 
                 var scalperName = scalper?.Name;
@@ -159,6 +158,7 @@ namespace FeatherMedals
                 texture = null;
             }
             // destroyed scalp falls back to def graphic/icon
+            bakeTried = true;
         }
         
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)

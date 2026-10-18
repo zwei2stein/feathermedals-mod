@@ -15,7 +15,7 @@
 
     <FeatherTrophies_Scalping_ScalpedBy>Scalped by {SCALPER}</FeatherTrophies_Scalping_ScalpedBy>
 
-    <FeatherTrophies_Scalp_Label>Scalp of {VICTIM}</FeatherTrophies_Scalp_Label>
+    <FeatherTrophies_Scalp_Label>scalp of {VICTIM}{FACTIONPART}{XENOTYPEPART}</FeatherTrophies_Scalp_Label>
     <FeatherTrophies_Scalp_LabelFaction> of {FACTION}</FeatherTrophies_Scalp_LabelFaction>
     <FeatherTrophies_Scalp_Xenotype>, {XENOTYPE}</FeatherTrophies_Scalp_Xenotype>
 

@@ -226,7 +226,7 @@ public static class NpcTrophyGenerator
                     medal.Destroy();
             }
 
-            if (newest != null)
+            if (MedalMod.Settings.TrophyDynamicTraits && newest != null)
                 RitualOutcomeTraitUtil.UpdateDecoratedTrait(pawn, newest);
         }
         finally

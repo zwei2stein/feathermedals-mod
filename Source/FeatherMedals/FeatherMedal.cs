@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Globalization;
 using System.Text;
 using RimWorld;
 using RimWorld.Planet;
@@ -151,7 +150,7 @@ namespace FeatherMedals
             get
             {
                 var cleanLabel = GenLabel.ThingLabel(this.def, this.Stuff, 1);
-                return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(cleanLabel);
+                return cleanLabel.CapitalizeFirst(this.def);
             }
         }
 
@@ -295,25 +294,29 @@ namespace FeatherMedals
 
             if (ext != null)
             {
-                if (ext.addsTraits != null)
-                    foreach (var trait in ext.addsTraits)
-                    {
-                        yield return new StatDrawEntry(
-                            StatCategoryDefOf.Apparel,
-                            (string)"FeatherMedals_StatDraw_AddTrait".Translate(),
-                            trait.Label.CapitalizeFirst(),
-                            (string)"FeatherMedals_StatDraw_AddTrait_Desc".Translate(trait.Label.Named("TRAIT")), 3752);
-                    }
-                
-                if (ext.removesTraits != null)
-                    foreach (var trait in ext.removesTraits)
-                    {
-                        yield return new StatDrawEntry(
-                            StatCategoryDefOf.Apparel,
-                            (string)"FeatherMedals_StatDraw_RemoveTrait".Translate(),
-                            trait.Label.CapitalizeFirst(),
-                            (string)"FeatherMedals_StatDraw_RemoveTrait_Desc".Translate(trait.Label.Named("TRAIT")), 3753);
-                    }
+                if (MedalMod.Settings.TrophyDynamicTraits)
+                {
+                    if (ext.addsTraits != null)
+                        foreach (var trait in ext.addsTraits)
+                        {
+                            yield return new StatDrawEntry(
+                                StatCategoryDefOf.Apparel,
+                                (string)"FeatherMedals_StatDraw_AddTrait".Translate(),
+                                trait.Label.CapitalizeFirst(),
+                                (string)"FeatherMedals_StatDraw_AddTrait_Desc".Translate(trait.Label.Named("TRAIT")),
+                                3752);
+                        }
+                    if (ext.removesTraits != null)
+                        foreach (var trait in ext.removesTraits)
+                        {
+                            yield return new StatDrawEntry(
+                                StatCategoryDefOf.Apparel,
+                                (string)"FeatherMedals_StatDraw_RemoveTrait".Translate(),
+                                trait.Label.CapitalizeFirst(),
+                                (string)"FeatherMedals_StatDraw_RemoveTrait_Desc".Translate(trait.Label.Named("TRAIT")),
+                                3753);
+                        }
+                }
             }
             
             

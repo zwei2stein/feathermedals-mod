@@ -4,7 +4,7 @@
     <FeatherTrophies_ScalpPole_LabelOne>{POLE} of {VICTIM}'s scalp</FeatherTrophies_ScalpPole_LabelOne>
     <FeatherTrophies_ScalpPole_LabelMany>{POLE} ({COUNT} scalps)</FeatherTrophies_ScalpPole_LabelMany>
 
-    <FeatherTrophies_ScalpPole_StatPart>Displayed scalps: {COUNT}: x{COUNT}</FeatherTrophies_ScalpPole_StatPart>
+    <FeatherTrophies_ScalpPole_StatPart>Displayed scalps: {COUNT}</FeatherTrophies_ScalpPole_StatPart>
     <FeatherTrophies_ScalpPole_FocusExplanation>Displayed scalps ({COUNT} of {MAX}, {PERSCALP} each): {VALUE}</FeatherTrophies_ScalpPole_FocusExplanation>
     <FeatherTrophies_ScalpPole_FocusExplanationAbstract>Displayed scalps (up to {MAX}, {PERSCALP} each): +0-{VALUE}</FeatherTrophies_ScalpPole_FocusExplanationAbstract>
 

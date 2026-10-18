@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Globalization;
 using RimWorld;
 using Verse;
 
@@ -39,11 +38,30 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             Log.Message($"[FeatherTrophies] Apply progress={progress:F3}");
         
         // Interrupted (raid, leader down...) or participants gone: no award, the medal stays as it was
-        if (progress < MIN_PROGRESS || medal.Destroyed
-            || awardee.Dead || awardee.Destroyed || presenter.Dead
-            || awardee.apparel == null || awardee.story == null
-            || !FeatherMedalUtil.CanWearTrophy(awardee, medal))
+        if (progress < MIN_PROGRESS)
             return;
+
+        if (medal.Destroyed)
+        {
+            Messages.Message(
+                "FeatherMedals_Ceremony_Failed_TrophyLost".Translate(awardee.Named("PAWN")),
+                awardee,
+                MessageTypeDefOf.NegativeEvent);
+            return;
+        }
+
+        if (awardee.Dead || awardee.Destroyed || presenter.Dead
+            || awardee.apparel == null || awardee.story == null)
+            return;
+
+        if (!FeatherMedalUtil.CanWearTrophy(awardee, medal))
+        {
+            Messages.Message(
+                "FeatherMedals_Ceremony_Failed_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
+                awardee,
+                MessageTypeDefOf.NegativeEvent);
+            return;
+        }
 
         awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAward);
         medal.awardedBy = new RememberedPawn(presenter);
@@ -88,13 +106,10 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee, medal);
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
         }
-
-        var medalName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(
-            GenLabel.ThingLabel(medal.def, medal.Stuff, 1));
         
-        var letterLabel = "FeatherMedals_TakeOfHonorLetterLabel".Translate(medalName);
+        var letterLabel = "FeatherMedals_TakeOfHonorLetterLabel".Translate(medal.MedalLabel);
         var letterText = "FeatherMedals_TakeOfHonorLetterLine1".Translate(
-            awardee.Named("PAWN"), medalName.Named("MEDAL"), presenter.Named("PRESENTER"));
+            awardee.Named("PAWN"), medal.MedalLabel.Named("MEDAL"), presenter.Named("PRESENTER"));
         letterText += "\n\n";
         letterText += "FeatherMedals_TakeOfHonorLetterLine2"
             .Translate(awardee.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );

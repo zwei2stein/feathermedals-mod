@@ -19,6 +19,7 @@
         <statBases>
             <Beauty>1</Beauty>
             <MarketValue>100</MarketValue>
+            <SellPriceFactor>0.1</SellPriceFactor>
             <MaxHitPoints>500</MaxHitPoints>
             <Mass>0.01</Mass>
             <DeteriorationRate>0</DeteriorationRate>
