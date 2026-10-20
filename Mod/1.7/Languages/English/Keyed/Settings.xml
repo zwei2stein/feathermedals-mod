@@ -52,7 +52,7 @@
     <TribalTrophies_Settings_Scalping_ScalpHunts_Label>Scalp hunts (raids)</TribalTrophies_Settings_Scalping_ScalpHunts_Label>
 
     <TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Label>Raiders can come for scalps</TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Label>
-    <TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Tooltip>Some raids by factions whose ideoligion allows scalping come to take scalps from downed colonists. They leave once they have taken enough scalps. Default: ON</TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Tooltip>
+    <TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Tooltip>Some raids by factions whose ideoligion allows scalping come to take scalps from downed or dead colonists. They leave once they have taken enough scalps. Default: ON</TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Tooltip>
 
     <TribalTrophies_Settings_Scalping_ScalpHunts_MaxTech_Label>Highest faction tech level: {LEVEL}</TribalTrophies_Settings_Scalping_ScalpHunts_MaxTech_Label>
     <TribalTrophies_Settings_Scalping_ScalpHunts_MaxTech_Tooltip>Highest tech level of factions that can send scalp hunts. Default: Industrial</TribalTrophies_Settings_Scalping_ScalpHunts_MaxTech_Tooltip>

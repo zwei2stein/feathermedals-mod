@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>TribalTrophies_Scalping_TakeScalpAndFlee</defName>
+        <driverClass>FeatherMedals.JobDriver_TakeScalp</driverClass>
+        <reportString>scalping TargetA.</reportString>
+        <!-- like vanilla kidnapping and stealing: no giving up once started, not even when shot -->
+        <casualInterruptible>false</casualInterruptible>
+        <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+    </JobDef>
+
+    <!-- scalp a downed colonist and flee with it; no victim left: back to the fight -->
+    <DutyDef>
+        <defName>TribalTrophies_Scalping_ScalpHuntDuty</defName>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+        <thinkNode Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="FeatherMedals.JobGiver_TakeScalp" />
+                <li Class="JobGiver_AIFightEnemies">
+                    <targetAcquireRadius>65</targetAcquireRadius>
+                    <targetKeepRadius>72</targetKeepRadius>
+                </li>
+                <li Class="JobGiver_AIGotoNearestHostile" />
+            </subNodes>
+        </thinkNode>
+    </DutyDef>
+    
+</Defs>

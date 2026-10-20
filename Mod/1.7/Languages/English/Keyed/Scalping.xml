@@ -54,4 +54,10 @@
     <!-- name of an unknown victim or scalper -->
     <TribalTrophies_Scalping_Misc_UnknownName>Unknown</TribalTrophies_Scalping_Misc_UnknownName>
 
+    <!-- ===== Scalp Hunt Raid ===== -->
+
+    <TribalTrophies_ScalpHunt_Message_Scalping>{SCALPER_labelShort} is scalping {VICTIM_labelShort}.</TribalTrophies_ScalpHunt_Message_Scalping>
+    <TribalTrophies_ScalpHunt_Message_TookScalp>{SCALPER_labelShort} has taken {VICTIM_labelShort}'s scalp and is retreating with the trophy.</TribalTrophies_ScalpHunt_Message_TookScalp>
+    <TribalTrophies_ScalpHunt_Message_GoalReached>{PAWNSPLURAL} from {FACTION} have taken all the scalps they came for and are retreating.</TribalTrophies_ScalpHunt_Message_GoalReached>
+
 </LanguageData>

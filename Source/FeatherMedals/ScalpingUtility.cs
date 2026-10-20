@@ -1,6 +1,7 @@
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 
 namespace FeatherMedals
@@ -17,8 +18,14 @@ namespace FeatherMedals
     {
         // Severity of the head cut on a living victim (vanilla Cut: bleed = 0.06 x severity).
         public const float CutSeverity = 8f;
+        
+        // Injuries add up on a part and enough of them destroy it. A scalping must leave the head on: at least this much head health stays.
+        private const float MinHeadHealthLeft = 1f;
+        
+        // smallest injury still worth adding
+        private const float MinInjurySeverity = 0.01f;
 
-        private static Pawn PawnOf(Thing thing)
+        public static Pawn PawnOf(Thing thing)
         {
             return thing is Corpse corpse ? corpse.InnerPawn : thing as Pawn;
         }
@@ -118,10 +125,10 @@ namespace FeatherMedals
 
         private static bool Can_PhysicallyCapableOfBeingScalped(Pawn pawn, Thing thing)
         {
-            if (pawn == null || !pawn.RaceProps.Humanlike || !thing.Spawned)
+            if (pawn == null || !thing.Spawned)
                 return false;
             
-            if (pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped) || HeadOf(pawn) == null)
+            if (!HasScalpToTake(pawn))
                 return false;
             
             if (thing is Corpse corpse)
@@ -182,10 +189,10 @@ namespace FeatherMedals
         {
             Pawn pawn = PawnOf(thing);
 
-            if (pawn == null || !pawn.RaceProps.Humanlike || !thing.Spawned)
+            if (pawn == null || !thing.Spawned)
                 return false;
 
-            if (pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped) || HeadOf(pawn) == null)
+            if (!HasScalpToTake(pawn))
                 return false;
 
             if (!pawn.DevelopmentalStage.Adult() && !MedalMod.Settings.ScalpBreaksTargetChildren)
@@ -227,15 +234,24 @@ namespace FeatherMedals
             // Before hediffs: scalp remembers victim as they were (value, skin, hair).
             var scalp = Scalp.Create(victim, scalper);
 
+            // how much more damage the head can take before it is destroyed
+            var headDamageRoom = victim.health.hediffSet.GetPartHealth(head) - MinHeadHealthLeft;
+
             var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, victim, head);
             scalped.scalper = new RememberedPawn(scalper);
+            scalped.Severity = Mathf.Clamp(scalped.Severity, MinInjurySeverity, Mathf.Max(MinInjurySeverity, headDamageRoom));
             victim.health.AddHediff(scalped, head);
+            headDamageRoom -= scalped.Severity;
 
             if (alive)
             {
-                var cut = HediffMaker.MakeHediff(HediffDefOf.Cut, victim, head);
-                cut.Severity = CutSeverity;
-                victim.health.AddHediff(cut, head);
+                // the cut takes only what the head has left; a battered head bleeds less, but stays on
+                if (headDamageRoom >= MinInjurySeverity)
+                {
+                    var cut = HediffMaker.MakeHediff(HediffDefOf.Cut, victim, head);
+                    cut.Severity = Mathf.Min(CutSeverity, headDamageRoom);
+                    victim.health.AddHediff(cut, head);
+                }
 
                 victim.needs?.mood?.thoughts.memories.TryGainMemory(
                     FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMe, scalper);
@@ -266,6 +282,12 @@ namespace FeatherMedals
             Find.HistoryEventsManager.RecordEvent(new HistoryEvent(FeatherMedalDefOf.FeatherTrophies_Scalping_TookScalp,
                 scalper.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim)));
 
+            // messages are taking sides - heroic colonist, villain raider.
+            var tale = scalper.Faction == Faction.OfPlayer
+                ? FeatherMedalDefOf.TribalTrophies_Scalping_TookScalp
+                : FeatherMedalDefOf.TribalTrophies_Scalping_ScalpedByEnemy;
+            TaleRecorder.RecordTale(tale, scalper, victim);
+            
             // Bloodlust gives thought, ignoring ideo stance.
             if (scalper.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true && ScalpingPrecepts.StanceOf(scalper) != ScalpStance.Merciless)
             {
@@ -274,5 +296,14 @@ namespace FeatherMedals
 
             return scalp;
         }
+        
+        // Body can still give a scalp: humanlike, head present, not scalped yet.
+        public static bool HasScalpToTake(Pawn pawn)
+        {
+            return pawn.RaceProps.Humanlike
+                   && !pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped)
+                   && HeadOf(pawn) != null;
+        }
+        
     }
 }

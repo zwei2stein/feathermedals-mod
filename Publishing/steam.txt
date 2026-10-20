@@ -10,7 +10,7 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
     [*]Adorning ceremony to honor deserving warriors with trophies.
     [*]Ideoligion precept about Honoring Warriors.
-    [*]Visitors and raiders can come wearing trophies.
+    [*]Visitors and raiders can come wearing trophies if their own.
 [/list]
 
 [h4]Crafting[/h4]
@@ -30,6 +30,7 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Scalped pawns get a permanent, painful scar.
     [*]Visitors and raiders can come bearing old scalping scars.
     [*][spoiler]New violent scalping mental breaks.[/spoiler] Keep your colonists happy.
+    [*][spoiler]New raid type, "Scalp Hunt".[/spoiler] Keep your neighbors happy too.
 [/list]
 
 [h3]Buildings[/h3]

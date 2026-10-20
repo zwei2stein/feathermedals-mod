@@ -16,19 +16,19 @@ namespace FeatherMedals
         private const int MinDurationTicks = 50;
         private const int MaxDurationTicks = 300;
 
-        private const float MedicineXp = 100f;
+        protected const float MedicineXp = 100f;
 
-        private Thing Target => job.targetA.Thing;
+        private protected Thing Target => job.targetA.Thing;
 
         // Mental break breaks ideology rules.
         protected virtual bool InBreak => false;
 
-        private bool CanScalpTarget()
+        protected bool CanScalpTarget()
         {
             return InBreak ? ScalpingUtility.CanBeScalpedInBreak(Target) : ScalpingUtility.CanBeScalped(Target, pawn);
         }
 
-        private int DurationTicks()
+        protected int DurationTicks()
         {
             float speed = pawn.GetStatValue(StatDefOf.MedicalTendSpeed);
             if (speed <= 0f)

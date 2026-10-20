@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RaidStrategyDef Name="TribalTrophies_Scalping_ScalpHuntBase" Abstract="True">
+        <pointsFactorCurve>
+            <points>
+                <li>0, 0.95</li>
+            </points>
+        </pointsFactorCurve>
+        <letterLabelEnemy>Scalp hunt</letterLabelEnemy>
+        <arrivalTextEnemy>They have come for your scalps.\n\nThey will strike straight away. Every colonist who falls risks losing their scalp. Each scalper runs off the moment they have the scalp, and the raid retreats once they have enough.</arrivalTextEnemy>
+        <!-- never used: scalp hunts are hostile only, vanilla expects the fields -->
+        <letterLabelFriendly>Friendlies</letterLabelFriendly>
+        <arrivalTextFriendly>They are moving in to help you immediately.</arrivalTextFriendly>
+    </RaidStrategyDef>
+
+    <RaidStrategyDef ParentName="TribalTrophies_Scalping_ScalpHuntBase">
+        <defName>TribalTrophies_Scalping_ScalpHunt</defName>
+        <workerClass>FeatherMedals.RaidStrategyWorker_ScalpHunt</workerClass>
+        <selectionWeightPerPointsCurve>
+            <points>
+                <li>(0, 0.3)</li>
+            </points>
+        </selectionWeightPerPointsCurve>
+        <arriveModes>
+            <li>EdgeWalkIn</li>
+            <li>EdgeWalkInGroups</li>
+        </arriveModes>
+    </RaidStrategyDef>
+
+    <RaidStrategyDef ParentName="TribalTrophies_Scalping_ScalpHuntBase">
+        <defName>TribalTrophies_Scalping_ScalpHuntDropPods</defName>
+        <workerClass>FeatherMedals.RaidStrategyWorker_ScalpHuntDropPods</workerClass>
+        <selectionWeightPerPointsCurve>
+            <points>
+                <li>(0, 0.15)</li>
+            </points>
+        </selectionWeightPerPointsCurve>
+        <arriveModes>
+            <li>EdgeDrop</li>
+            <li>EdgeDropGroups</li>
+            <li>CenterDrop</li>
+            <li>RandomDrop</li>
+        </arriveModes>
+    </RaidStrategyDef>
+
+</Defs>

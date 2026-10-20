@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace FeatherMedals
 {
@@ -75,6 +76,12 @@ namespace FeatherMedals
         public static MentalStateDef MurderousRage;
 
         public static ThingDef FeatherTrophies_ScalpPole;
+        
+        public static JobDef TribalTrophies_Scalping_TakeScalpAndFlee;
+        public static DutyDef TribalTrophies_Scalping_ScalpHuntDuty;
+        
+        public static TaleDef TribalTrophies_Scalping_TookScalp;
+        public static TaleDef TribalTrophies_Scalping_ScalpedByEnemy;
 
         static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FeatherMedalDefOf));
     }
