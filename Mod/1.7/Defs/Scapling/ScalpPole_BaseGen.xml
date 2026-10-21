@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- pushed by our patch on the settlement resolver; no minRectSize, so it can always resolve what the patch pushes -->
+    <RuleDef>
+        <defName>TribalTrophies_ScalpPoles</defName>
+        <symbol>tribalTrophies_scalpPoles</symbol>
+        <resolvers>
+            <li Class="FeatherMedals.SymbolResolver_ScalpPoles" />
+        </resolvers>
+    </RuleDef>
+
+</Defs>

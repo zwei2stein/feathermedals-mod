@@ -184,6 +184,12 @@ namespace FeatherMedals
                 ref Settings.GenerateNpcScalped,
                 "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip".Translate()
             );
+            
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label".Translate(),
+                ref Settings.ScalpPolesInBases,
+                "TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Tooltip".Translate()
+            );
 
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
@@ -323,6 +329,7 @@ namespace FeatherMedals
         public bool ScalpHuntRaids = true;
         public TechLevel ScalpHuntMaxTech = TechLevel.Industrial;
         public bool ScalpHuntDropPods = true;
+        public bool ScalpPolesInBases = true;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -346,6 +353,7 @@ namespace FeatherMedals
             Scribe_Values.Look(ref ScalpHuntRaids, "ScalpHuntRaids", true);
             Scribe_Values.Look(ref ScalpHuntMaxTech, "ScalpHuntMaxTech", TechLevel.Industrial);
             Scribe_Values.Look(ref ScalpHuntDropPods, "ScalpHuntDropPods", true);
+            Scribe_Values.Look(ref ScalpPolesInBases, "ScalpPolesInBases", true);
         }
     }
 

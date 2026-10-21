@@ -68,6 +68,13 @@ namespace FeatherMedals
 
             return scalp;
         }
+        
+        public static Scalp CreateFromTemporaryVictim(Pawn victim, Pawn scalper)
+        {
+            var scalp = Create(victim, scalper);
+            scalp.victim = new RememberedPawn(victim.NameFullColored);
+            return scalp;
+        }
 
         private string ScalpOf
         {

@@ -46,7 +46,7 @@
         </costList>
         <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
         <building>
-            <ai_chillDestination>false</ai_chillDestination>
+            <ai_chillDestination>true</ai_chillDestination>
             <destroySound>BuildingDestroyed_Wood_Small</destroySound>
             <paintable>true</paintable>
             <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
