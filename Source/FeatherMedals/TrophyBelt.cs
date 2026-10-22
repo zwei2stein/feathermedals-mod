@@ -168,11 +168,11 @@ public class CompTrophyContainer : ThingComp, IThingHolder
             if (!Props.trophyDefs.Contains(ingredient.def))
                 continue;
             ingredients.Remove(ingredient);
-            Keep(ingredient);
+            Add(ingredient);
         }
     }
 
-    private void Keep(Thing trophy)
+    public void Add(Thing trophy)
     {
         if (trophy.Spawned)
             trophy.DeSpawn();

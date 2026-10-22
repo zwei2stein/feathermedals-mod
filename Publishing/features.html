@@ -33,6 +33,10 @@
         .cost-row .cost-amount { color: #8b4513; font-weight: bold; min-width: 24px; }
         .cost-row .cost-material-name { color: #3a3a3a; }
         .cost-row .cost-icon { width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat; background-position: center; flex-shrink: 0; }
+        /* Trophy belt composed like in game: belt layer, then trophies in slot order, cut off at the belt texture's edges. */
+        .crafting-table .col-graphic .belt-render { position: relative; overflow: hidden; }
+        .crafting-table .col-graphic .belt-render div { position: absolute; margin: 0; background-size: 100% 100%; }
+        .crafting-table .col-graphic .belt-render .belt { left: 0; top: 0; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
@@ -45,6 +49,13 @@
     <!-- Multiply tint (189,148,120) = default scalp skin color, same as the fallback skinColor in Scalp.cs. -->
     <filter id="skinTint" color-interpolation-filters="sRGB">
         <feColorMatrix type="matrix" values="0.74 0 0 0 0  0 0.58 0 0 0  0 0 0.47 0 0  0 0 0 1 0"/>
+    </filter>
+    <!-- Lighter and darker skin, so belt scalps differ like victims do in game. -->
+    <filter id="skinTintLight" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.92 0 0 0 0  0 0.78 0 0 0  0 0 0.66 0 0  0 0 0 1 0"/>
+    </filter>
+    <filter id="skinTintDark" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0.45 0 0 0 0  0 0.32 0 0 0  0 0 0.24 0 0  0 0 0 1 0"/>
     </filter>
     <!-- Multiply tint (166,122,77) = brown wood. -->
     <filter id="woodTint" color-interpolation-filters="sRGB">
@@ -422,7 +433,7 @@
             <td class="col-name"><strong>Braved Ash Storm</strong><br/>
                 <small class="ornate">Mod: Mashed's Ashlands</small></td>
             <td class="col-costs">
-                <div class="cost-row"><span class="cost-amount">100</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Basalt_blocks_C.png');"></span><span class="cost-material-name">Basalt Blocks</span></div>
+                <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Basalt_blocks_C.png');"></span><span class="cost-material-name">Basalt Blocks</span></div>
                 <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Feathers/Pristine/Precursor_PristineFeather_a.png');"></span><span class="cost-material-name">Pristine feather</span></div>
                 <div class="cost-row"><span class="cost-amount">10</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Dye.png');"></span><span class="cost-material-name">Dye</span></div>
                 <small>Crafting 5</small>
@@ -613,6 +624,58 @@
                     <li class="stat-positive">Can be stored on a <strong>Scalp Pole</strong></li>
                     <li class="stat-positive">Can be sold or used to pay tribute</li>
                     <li class="stat-negative">People whose ideology forbids scalping are disturbed by seeing it</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic">
+                <!-- south slots of TribalTrophies_Apparel_Belt_ScalpBelt: left = x - width/2, top = y - width/2 -->
+                <div class="belt-render">
+                    <div class="belt" style="background-image: url('../Mod/1.7/Textures/Things/TrophyBelts/TrophyBelt_south.png'); filter: url(#woodTint);"></div>
+                    <div style="left: 45%; top: 7%; width: 90%; height: 90%; background-image: url('../Mod/1.7/Textures/Things/Pawn/Humanlike/Scalp/ScalpBase.png'); filter: url(#skinTint);"></div>
+                    <div style="left: 0%; top: 16%; width: 100%; height: 100%; background-image: url('../Mod/1.7/Textures/Things/Pawn/Humanlike/Scalp/ScalpBase.png'); filter: url(#skinTintDark);"></div>
+                    <div style="left: -35%; top: 7%; width: 90%; height: 90%; background-image: url('../Mod/1.7/Textures/Things/Pawn/Humanlike/Scalp/ScalpBase.png'); filter: url(#skinTintLight);"></div>
+                </div>
+            </td>
+            <td class="col-name"><strong>Scalp Belt</strong><br><small>Utility belt</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">3</span><span class="cost-icon" style="background-image: url('../Mod/1.7/Textures/Things/Pawn/Humanlike/Scalp/ScalpBase.png'); filter: url(#skinTint);"></span><span class="cost-material-name">Scalp</span></div>
+                <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Cloth.png');"></span><span class="cost-material-name">Cloth or leather</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">A belt hung with the scalps of foes.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Terror +10% (Awful 5% to Legendary 15%)</li>
+                    <li class="stat-positive">Disassemble to get the scalps back</li>
+                    <li class="stat-neutral">Visitors and raiders of scalping cultures can come wearing one</li>
+                    <li class="stat-negative">Beauty -0.5 for the wearer</li>
+                    <li class="stat-negative">People whose ideology forbids scalping are disturbed by seeing it, and even more by wearing it</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-graphic">
+                <!-- south slots of TribalTrophies_Apparel_Belt_SkullBelt: left = x - width/2, top = y - width/2 -->
+                <div class="belt-render">
+                    <div class="belt" style="background-image: url('../Mod/1.7/Textures/Things/TrophyBelts/TrophyBelt_south.png'); filter: url(#woodTint);"></div>
+                    <div style="left: 65%; top: 27%; width: 50%; height: 50%; background-image: url('./Assets/Icons/Skull.png');"></div>
+                    <div style="left: 20%; top: 36%; width: 60%; height: 60%; background-image: url('./Assets/Icons/Skull.png');"></div>
+                    <div style="left: -15%; top: 27%; width: 50%; height: 50%; background-image: url('./Assets/Icons/Skull.png');"></div>
+                </div>
+            </td>
+            <td class="col-name"><strong>Skull Belt</strong><br><small>Utility belt</small></td>
+            <td class="col-costs">
+                <div class="cost-row"><span class="cost-amount">3</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Skull.png');"></span><span class="cost-material-name">Skull</span></div>
+                <div class="cost-row"><span class="cost-amount">20</span><span class="cost-icon" style="background-image: url('./Assets/Icons/Cloth.png');"></span><span class="cost-material-name">Cloth or leather</span></div>
+                <small>Crafting 3</small>
+            </td>
+            <td class="col-features">
+                <div style="color: #4a4a4a; margin-bottom: 6px;">A belt hung with human skulls.</div>
+                <ul class="stats-list">
+                    <li class="stat-positive">Terror +10% (Awful 5% to Legendary 15%)</li>
+                    <li class="stat-positive">Disassemble to get the skulls back</li>
+                    <li class="stat-negative">Beauty -0.5 for the wearer</li>
                 </ul>
             </td>
         </tr>

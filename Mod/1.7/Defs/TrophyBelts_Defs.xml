@@ -155,6 +155,11 @@
         </tradeTags>
         <modExtensions>
             <li Class="FeatherMedals.ScalpDisplayExtension" />
+            <li Class="FeatherMedals.NpcScalpBeltExtension">
+                <honourableChance>0.05</honourableChance>
+                <mercilessChance>0.2</mercilessChance>
+                <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
+            </li>
         </modExtensions>
         <comps>
             <li Class="FeatherMedals.CompProperties_TrophyContainer">
@@ -168,7 +173,7 @@
                         <south>(0.90, 0.52, 0.90)</south>
 
                         <north>(0.10, 0.38, 0.90)</north>
-                        
+
                         <west>(0.55, 0.50, 0.90)</west>
 
                     </li>

@@ -189,6 +189,7 @@ public class HarmonyPatches
         {
             NpcTrophyGenerator.OnGearGenerated(pawn);
             NpcScalpGenerator.OnGearGenerated(pawn);
+            NpcScalpBeltGenerator.OnGearGenerated(pawn);
         }
     }
 

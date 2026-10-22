@@ -18,6 +18,8 @@ public static class NpcScalpUtility
             PawnGenerationContext.NonPlayer,
             forceGenerateNewPawn: true,
             canGeneratePawnRelations: false,
+            //fix recursion of generating scalps for belts, which can then also generate pawns that might need to generate scalps for belts...
+            forceNoGear: true,
             developmentalStages: DevelopmentalStage.Adult));
 
         var scalp = Scalp.CreateFromTemporaryVictim(victim, scalper);
