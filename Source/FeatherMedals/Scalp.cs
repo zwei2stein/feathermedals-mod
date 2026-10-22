@@ -24,8 +24,8 @@ namespace FeatherMedals
         private float priceBonus;
 
         private Texture2D texture;
-        private bool bakeTried;
-        private Graphic_Scalp graphic;
+        private bool composeTried;
+        private Graphic_RuntimeTexture graphic;
         private Graphic rotated; // on ground with a bit of wiggle
         
         public float PriceBonus => priceBonus;
@@ -145,10 +145,10 @@ namespace FeatherMedals
         {
             get
             {
-                if (texture == null && !bakeTried)
+                if (texture == null && !composeTried)
                 {
-                    bakeTried = true;
-                    texture = ScalpTextureFactory.Bake(skinColor, hairDef, hairColor, hairFacing);
+                    composeTried = true;
+                    texture = ScalpTextureFactory.Compose(skinColor, hairDef, hairColor, hairFacing);
                 }
                 return texture;
             }
@@ -160,7 +160,7 @@ namespace FeatherMedals
             {
                 if (graphic == null && ScalpTextureWithHair != null)
                 {
-                    graphic = new Graphic_Scalp(ScalpTextureWithHair, def.graphicData);
+                    graphic = new Graphic_RuntimeTexture(ScalpTextureWithHair, def.graphicData);
                     float angle = def.graphicData?.onGroundRandomRotateAngle ?? 0f;
                     rotated = angle > 0.01f ? new Graphic_RandomRotated(graphic, angle) : graphic;
                 }
@@ -182,7 +182,7 @@ namespace FeatherMedals
                 texture = null;
             }
             // destroyed scalp falls back to def graphic/icon
-            bakeTried = true;
+            composeTried = true;
         }
         
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)

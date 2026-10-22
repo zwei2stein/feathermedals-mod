@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="TerrorSource"]/parts</xpath>
+        <value>
+            <li Class="StatPart_Quality_Offset">
+                <offsetAwful>-5</offsetAwful>
+                <offsetPoor>-2.5</offsetPoor>
+                <offsetNormal>0</offsetNormal>
+                <offsetGood>1.25</offsetGood>
+                <offsetExcellent>2.5</offsetExcellent>
+                <offsetMasterwork>3.75</offsetMasterwork>
+                <offsetLegendary>5</offsetLegendary>
+                <thingDefs>
+                    <li>TribalTrophies_Apparel_Belt_SkullBelt</li>
+                </thingDefs>
+            </li>
+            <li Class="FeatherMedals.StatPart_TerrorFreeWearersOnly">
+                <thingDefs>
+                    <li>TribalTrophies_Apparel_Belt_SkullBelt</li>
+                </thingDefs>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

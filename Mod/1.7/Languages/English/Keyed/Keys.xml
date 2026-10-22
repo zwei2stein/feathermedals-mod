@@ -34,4 +34,14 @@
 	<!-- label of an adorned trophy -->
 	<TribalTrophies_Trophy_Misc_AdornedLabel>{PAWN_labelShort}'s {TROPHY}</TribalTrophies_Trophy_Misc_AdornedLabel>
 
+	<!-- ===== Gizmo (trophy belts) ===== -->
+
+	<TribalTrophies_Trophy_Gizmo_Disassemble_Label>Disassemble {ITEM}</TribalTrophies_Trophy_Gizmo_Disassemble_Label>
+	<TribalTrophies_Trophy_Gizmo_Disassemble_Desc>Disassemble item and reclaim used trophies.</TribalTrophies_Trophy_Gizmo_Disassemble_Desc>
+
+	<!-- ===== Inspect (trophy belts) ===== -->
+
+	<!-- names of the people whose remains the belt is made of -->
+	<TribalTrophies_Trophy_Inspect_TakenFrom>Taken from: {NAMES}</TribalTrophies_Trophy_Inspect_TakenFrom>
+
 </LanguageData>

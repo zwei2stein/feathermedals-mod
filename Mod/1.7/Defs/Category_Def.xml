@@ -2,11 +2,23 @@
 <Defs>
 
 	<ThingCategoryDef>
-		<defName>FeatherMedals_Apparel_Feathers</defName>
+		<defName>TribalTrophies_Apparel_Trophies</defName>
 		<label>trophies</label>
 		<parent>Apparel</parent>
 	</ThingCategoryDef>
 
+	<ThingCategoryDef>
+		<defName>FeatherMedals_Apparel_Feathers</defName>
+		<label>feathers</label>
+		<parent>TribalTrophies_Apparel_Trophies</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>TribalTrophies_Apparel_Belts</defName>
+		<label>belts</label>
+		<parent>TribalTrophies_Apparel_Trophies</parent>
+	</ThingCategoryDef>
+	
 	<ThingCategoryDef>
 		<defName>FeatherMedals_Apparel_Feathers_Precursor</defName>
 		<label>pristine feathers</label>

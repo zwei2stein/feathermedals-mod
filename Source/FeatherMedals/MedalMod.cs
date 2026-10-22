@@ -11,6 +11,7 @@ namespace FeatherMedals
         public static readonly Texture2D CitationIcon = ContentFinder<Texture2D>.Get("UI/ButtonWriteTheTale");
         public static readonly Texture2D LockedIcon = ContentFinder<Texture2D>.Get("UI/Locked");
         public static readonly Texture2D UnlockedIcon = ContentFinder<Texture2D>.Get("UI/Unlocked");
+        public static readonly Texture2D DisassembleIcon = ContentFinder<Texture2D>.Get("UI/Designators/Deconstruct");
     }
 
     public class MedalMod : Mod
