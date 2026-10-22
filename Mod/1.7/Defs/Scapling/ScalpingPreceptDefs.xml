@@ -86,6 +86,13 @@
                 <eventDef>FeatherTrophies_Scalping_Observed_ScalpPole</eventDef>
                 <thought>FeatherTrophies_Scalping_Brutality_Saw_ScalpPole</thought>
             </li>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>FeatherTrophies_Scalping_Observed_ScalpBelt</eventDef>
+                <thought>FeatherTrophies_Scalping_Brutality_Saw_ScalpBelt</thought>
+            </li>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>FeatherTrophies_Scalping_WearingScalps</thought>
+            </li>
         </comps>
     </PreceptDef>
 
@@ -109,6 +116,11 @@
     <HistoryEventDef>
         <defName>FeatherTrophies_Scalping_Observed_ScalpPole</defName>
         <label>saw a scalp pole</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>FeatherTrophies_Scalping_Observed_ScalpBelt</defName>
+        <label>saw a scalp belt</label>
     </HistoryEventDef>
 
     <!-- Thoughts -->
@@ -189,5 +201,47 @@
             </li>
         </stages>
     </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_Brutality_Saw_ScalpBelt</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>brutality of scalping</label>
+                <description>I have witnessed the savagery of scalping: someone wore scalps on a belt.</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>FeatherTrophies_Scalping_WearingScalps</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_WearingScalps</workerClass>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>wearing scalp trophies</label>
+                <description>I wear the scalps of others hung on belt. I am a disgrace.</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
 
 </Defs>

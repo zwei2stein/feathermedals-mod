@@ -220,6 +220,17 @@ public class CompTrophyContainer : ThingComp, IThingHolder
         return "TribalTrophies_Trophy_Inspect_TakenFrom".Translate(names.ToCommaList().Named("NAMES"));
     }
 
+    public override float GetStatOffset(StatDef stat)
+    {
+        if (stat != StatDefOf.MarketValue)
+            return 0f;
+
+        float extra = 0f;
+        foreach (var trophy in Held)
+            extra += trophy.MarketValue - trophy.def.BaseMarketValue;
+        return extra;
+    }
+
     public override void PostExposeData()
     {
         base.PostExposeData();

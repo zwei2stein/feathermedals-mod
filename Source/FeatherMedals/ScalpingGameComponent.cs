@@ -13,6 +13,7 @@ public class ScalpingGameComponent : GameComponent
     private static readonly List<Thing> scalped = new();
     private static readonly List<Thing> scalps = new();
     private static readonly List<Thing> scalpPoles = new();
+    private static readonly List<Thing> scalpBelts = new();
     
     public ScalpingGameComponent(Game game)
     {
@@ -41,16 +42,19 @@ public class ScalpingGameComponent : GameComponent
         CollectScalped(map);
         CollectScalps(map);
         CollectScalpPoles(map);
+        CollectScalpBelts(map);
         foreach (var observer in observers)
         {
             RecordFirstSeen(observer, scalped, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_Saw_Scalped);
             RecordFirstSeen(observer, scalps, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_Scalp);
             RecordFirstSeen(observer, scalpPoles, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_ScalpPole);
+            RecordFirstSeen(observer, scalpBelts, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_ScalpBelt);
         }
         observers.Clear();
         scalped.Clear();
         scalps.Clear();
         scalpPoles.Clear();
+        scalpBelts.Clear();
     }
 
     private static void RecordFirstSeen(Pawn observer, List<Thing> things, HistoryEventDef eventDef)
@@ -107,6 +111,21 @@ public class ScalpingGameComponent : GameComponent
         foreach (var thing in map.listerThings.ThingsOfDef(FeatherMedalDefOf.FeatherTrophies_ScalpPole))
         {
             scalpPoles.Add(thing);
+        }
+    }
+
+    private static void CollectScalpBelts(Map map)
+    {
+        scalpBelts.Clear();
+        foreach (var p in map.mapPawns.AllPawnsSpawned)
+        {
+            if (ScalpDisplayExtension.WornBy(p))
+                scalpBelts.Add(p);
+        }
+        foreach (var thing in map.listerThings.ThingsInGroup(ThingRequestGroup.Apparel))
+        {
+            if (thing.def.HasModExtension<ScalpDisplayExtension>())
+                scalpBelts.Add(thing);
         }
     }
 

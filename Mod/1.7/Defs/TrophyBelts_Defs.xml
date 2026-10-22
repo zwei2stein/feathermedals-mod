@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>TribalTrophies_Apparel_Belt_SkullBelt</defName>
-        <label>skull belt</label>
-        <description>A belt brandishing human skulls. It inspires awe, disgust or terror depending on who you are.</description>
+    <ThingDef Name="TribalTrophies_Apparel_Belt_Base" ParentName="ApparelMakeableBase" Abstract="True">
         <thingClass>FeatherMedals.TrophyBelt</thingClass>
         <graphicData>
             <texPath>Things/TrophyBelts/TrophyBelt</texPath>
@@ -12,18 +9,17 @@
         </graphicData>
         <uiIconPath>Things/TrophyBelts/TrophyBelt_south</uiIconPath>
         <techLevel>Neolithic</techLevel>
+        <tradeability>Sellable</tradeability>
+        <genericMarketSellable>false</genericMarketSellable>
+        <tradeTags Inherit="False" />
         <costStuffCount>20</costStuffCount>
         <stuffCategories>
             <li>Fabric</li>
             <li>Leathery</li>
         </stuffCategories>
-        <costList>
-            <Skull>3</Skull>
-        </costList>
         <statBases>
             <MaxHitPoints>50</MaxHitPoints>
             <WorkToMake>1200</WorkToMake>
-            <Mass>5</Mass>
             <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
@@ -98,6 +94,18 @@
                 </fat>
             </wornGraphicData>
         </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="TribalTrophies_Apparel_Belt_Base">
+        <defName>TribalTrophies_Apparel_Belt_SkullBelt</defName>
+        <label>skull belt</label>
+        <description>A belt hung with human skulls. It inspires awe, disgust or terror depending on who you are.</description>
+        <costList>
+            <Skull>3</Skull>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
         <comps>
             <li Class="FeatherMedals.CompProperties_TrophyContainer">
                 <trophyDefs>
@@ -113,11 +121,11 @@
                         <east>(0.45, 0.50, 0.50)</east>
                     </li>
                     <li> <!-- center skull -->
-                        <south>(0.50, 0.66, 0.50)</south>
+                        <south>(0.50, 0.66, 0.60)</south>
 
-                        <east>(0.72, 0.66, 0.50)</east>
+                        <east>(0.72, 0.66, 0.55)</east>
 
-                        <west>(0.28, 0.66, 0.50)</west>
+                        <west>(0.28, 0.66, 0.55)</west>
                     </li>
                     <li> <!-- wearer's right skull -->
                         <south>(0.10, 0.52, 0.50)</south>
@@ -125,6 +133,58 @@
                         <north>(0.10, 0.38, 0.50)</north>
 
                         <west>(0.55, 0.50, 0.50)</west>
+                    </li>
+                </slots>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="TribalTrophies_Apparel_Belt_Base">
+        <defName>TribalTrophies_Apparel_Belt_ScalpBelt</defName>
+        <label>scalp belt</label>
+        <description>A belt hung with the scalps of foes. It inspires awe, disgust or terror depending on who sees it.</description>
+        <costList>
+            <FeatherTrophies_Scalping_Scalp>3</FeatherTrophies_Scalping_Scalp>
+        </costList>
+        <statBases>
+            <Mass>2</Mass>
+        </statBases>
+        <!-- same buyers as scalps -->
+        <tradeTags>
+            <li>FeatherTrophies_Scalp</li>
+        </tradeTags>
+        <modExtensions>
+            <li Class="FeatherMedals.ScalpDisplayExtension" />
+        </modExtensions>
+        <comps>
+            <li Class="FeatherMedals.CompProperties_TrophyContainer">
+                <trophyDefs>
+                    <li>FeatherTrophies_Scalping_Scalp</li>
+                </trophyDefs>
+                <!-- (x, y, width): trophy center and width as fractions of the belt texture, y from the top -->
+                <!-- starting values copied from the skull belt, tune for scalps -->
+                <slots>
+                    <li> <!-- wearer's left scalp -->
+                        <south>(0.90, 0.52, 0.90)</south>
+
+                        <north>(0.10, 0.38, 0.90)</north>
+                        
+                        <west>(0.55, 0.50, 0.90)</west>
+
+                    </li>
+                    <li> <!-- center scalp -->
+                        <south>(0.50, 0.66, 1.00)</south>
+
+                        <east>(0.72, 0.66, 0.95)</east>
+
+                        <west>(0.28, 0.66, 0.95)</west>
+                    </li>
+                    <li> <!-- wearer's right scalp -->
+                        <south>(0.10, 0.52, 0.90)</south>
+
+                        <north>(0.90, 0.38, 0.90)</north>
+
+                        <east>(0.45, 0.50, 0.90)</east>
                     </li>
                 </slots>
             </li>

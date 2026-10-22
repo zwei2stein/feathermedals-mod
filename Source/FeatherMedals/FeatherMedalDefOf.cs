@@ -65,6 +65,7 @@ namespace FeatherMedals
         public static HistoryEventDef FeatherTrophies_Scalping_Observed_Saw_Scalped;
         public static HistoryEventDef FeatherTrophies_Scalping_Observed_Scalp;
         public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpPole;
+        public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpBelt;
 
         public static IssueDef FeatherTrophies_ScalpTaking;
         public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
