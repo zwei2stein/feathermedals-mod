@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace FeatherMedals;
@@ -28,11 +27,12 @@ public static class NpcScalpBeltGenerator
             if (!Eligible(pawn))
                 return;
 
-            if (!BeltDefs.Where(def => CanWear(pawn, def)).TryRandomElement(out var beltDef))
+            if (!BeltDefs.Where(def => NpcBeltGenerationUtility.CanWear(pawn, def)).TryRandomElement(out var beltDef))
                 return;
 
             if (Rand.Chance(ChanceFor(pawn, beltDef)))
-                GiveBelt(pawn, beltDef);
+                NpcBeltGenerationUtility.GiveBelt(pawn, beltDef, FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp,
+                    () => NpcScalpUtility.MakeScalp(pawn.Faction, pawn));
         }
         catch (System.Exception ex)
         {
@@ -54,31 +54,12 @@ public static class NpcScalpBeltGenerator
         return pawn.Ideo != null;
     }
 
-    private static bool CanWear(Pawn pawn, ThingDef beltDef)
-    {
-        if (!beltDef.apparel.PawnCanWear(pawn) || !ApparelUtility.HasPartsToWear(pawn, beltDef))
-            return false;
-
-        foreach (var worn in pawn.apparel.WornApparel)
-        {
-            if (!ApparelUtility.CanWearTogether(beltDef, worn.def, pawn.RaceProps.body))
-                return false;
-        }
-        return true;
-    }
-
     private static float ChanceFor(Pawn pawn, ThingDef beltDef)
     {
         var tuning = beltDef.GetModExtension<NpcScalpBeltExtension>();
-        var techLevel = pawn.Faction.def.techLevel;
-        if (techLevel == TechLevel.Undefined)
-            return 0f;
-
-        var span = (float)(tuning.zeroChanceTechLevel - TechLevel.Animal);
-        var steps = (float)(tuning.zeroChanceTechLevel - techLevel);
-        return BaseChance(pawn.Ideo, tuning) * Mathf.Clamp01(steps / span);
+        return NpcBeltGenerationUtility.ChanceFor(pawn, BaseChance(pawn.Ideo, tuning), tuning.zeroChanceTechLevel);
     }
-    
+
     private static float BaseChance(Ideo ideo, NpcScalpBeltExtension tuning)
     {
         if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
@@ -86,33 +67,5 @@ public static class NpcScalpBeltGenerator
         if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honourable))
             return tuning.honourableChance;
         return 0f;
-    }
-
-    private static void GiveBelt(Pawn pawn, ThingDef beltDef)
-    {
-        var stuff = GenStuff.RandomStuffByCommonalityFor(beltDef, pawn.Faction.def.techLevel);
-        if (beltDef.MadeFromStuff && stuff == null)
-            return;
-
-        var belt = (Apparel)ThingMaker.MakeThing(beltDef, stuff);
-        var trophies = belt.TryGetComp<CompTrophyContainer>();
-        var count = ScalpCount(beltDef);
-        for (var i = 0; i < count; i++)
-            trophies.Add(NpcScalpUtility.MakeScalp(pawn.Faction, pawn));
-
-        PawnGenerator.PostProcessGeneratedGear(belt, pawn);
-        pawn.apparel.Wear(belt, dropReplacedApparel: false);
-    }
-    
-    private static int ScalpCount(ThingDef beltDef)
-    {
-        if (beltDef.costList == null)
-            return 0;
-        foreach (var cost in beltDef.costList)
-        {
-            if (cost.thingDef == FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp)
-                return cost.count;
-        }
-        return 0;
     }
 }

@@ -48,6 +48,7 @@ namespace FeatherMedals
         public static PreceptDef IdeoRole_ResearchSpecialist;
         public static PreceptDef IdeoRole_MedicalSpecialist;
 
+        public static PreceptDef Skullspike_Desired;
 
         //Scapling:
 

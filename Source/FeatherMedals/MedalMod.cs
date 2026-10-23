@@ -191,6 +191,12 @@ namespace FeatherMedals
                 ref Settings.GenerateNpcScalpBelts,
                 "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip".Translate()
             );
+
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Label".Translate(),
+                ref Settings.GenerateNpcSkullBelts,
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Tooltip".Translate()
+            );
             
             listingStandard.CheckboxLabeled(
                 "TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label".Translate(),
@@ -332,6 +338,7 @@ namespace FeatherMedals
         public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
         public bool GenerateNpcScalped = true;
         public bool GenerateNpcScalpBelts = true;
+        public bool GenerateNpcSkullBelts = true;
         public bool ShowScalpingGizmo = true;
         public bool ScalpBreaksTargetChildren = false;
         public bool ScalpHuntRaids = true;
@@ -357,6 +364,7 @@ namespace FeatherMedals
             Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
             Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref GenerateNpcScalpBelts, "GenerateNpcScalpBelts", true);
+            Scribe_Values.Look(ref GenerateNpcSkullBelts, "GenerateNpcSkullBelts", true);
             Scribe_Values.Look(ref ShowScalpingGizmo, "ShowScalpingGizmo", true);
             Scribe_Values.Look(ref ScalpBreaksTargetChildren, "ScalpBreaksTargetChildren", false);
             Scribe_Values.Look(ref ScalpHuntRaids, "ScalpHuntRaids", true);

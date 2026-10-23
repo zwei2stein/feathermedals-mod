@@ -52,6 +52,9 @@
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>Pawns can spawn with scalp belts</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>Pawns from other factions whose ideoligion allows scalping can spawn wearing a scalp belt. More common in low-tech and merciless factions. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>
     
+    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Label>Pawns can spawn with skull belts</TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Label>
+    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Tooltip>Pawns from other factions whose ideoligion desires skullspikes can spawn wearing a skull belt. More common in low-tech factions. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Tooltip>
+    
     <TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label>Scalp poles spawn in other factions' settlements</TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label>
     <TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Tooltip>Settlements of factions whose ideoligion allows scalping and whose tech level is Medieval or lower can generate with scalp poles and some scalps. Default: ON</TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Tooltip>
     
