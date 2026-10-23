@@ -7,8 +7,6 @@ namespace FeatherMedals;
 public class ITab_TrophyRecord : ITab
 {
 
-    private static readonly Color MutedColor = new(0.7f, 0.7f, 0.7f);
-
     public ITab_TrophyRecord()
     {
         this.size = new Vector2(400f, 520f);
@@ -31,67 +29,39 @@ public class ITab_TrophyRecord : ITab
         curY += iconSize + 10f;
 
         // Medal name, centered
-        Text.Font = GameFont.Medium;
-        Text.Anchor = TextAnchor.MiddleCenter;
-        var nameHeight = Text.CalcHeight(medal.MedalLabel, rect.width);
-        Widgets.Label(new Rect(rect.x, curY, rect.width, nameHeight), medal.MedalLabel);
-        curY += nameHeight + 6f;
+        UIHelper.DrawLine(medal.MedalLabel, GameFont.Medium, Color.white, TextAnchor.MiddleCenter, rect, ref curY, 6f);
 
         // Award details, centered
-        Text.Font = GameFont.Small;
-        Text.Anchor = TextAnchor.MiddleCenter;
-
         if (medal.BiocodeComp is { Biocoded: true, CodedPawn: not null })
         {
             var awardLine = "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(medal.BiocodeComp.CodedPawn.Named("PAWN"));
-            var awardHeight = Text.CalcHeight(awardLine, rect.width);
-            Widgets.Label(new Rect(rect.x, curY, rect.width, awardHeight), awardLine);
-            curY += awardHeight + 4f;
+            UIHelper.DrawLine(awardLine, GameFont.Small, Color.white, TextAnchor.MiddleCenter, rect, ref curY);
         }
-        
+
         if (medal.awardedBy != null)
         {
-            Text.Font = GameFont.Tiny;
-            GUI.color = MutedColor;
-            var presenterLine = medal.GetAwardedByLabel();
-            var presenterHeight = Text.CalcHeight(presenterLine, rect.width);
-            Widgets.Label(new Rect(rect.x, curY, rect.width, presenterHeight), presenterLine);
-            curY += presenterHeight + 4f;
-            Text.Font = GameFont.Small;
+            UIHelper.DrawLine(medal.GetAwardedByLabel(), GameFont.Tiny, UIHelper.MutedColor, TextAnchor.MiddleCenter, rect, ref curY);
         }
 
         // Date and ceremony quality on one line
         var dateStr = medal.GetAwardedDateLabel();
         if (dateStr != null)
         {
-            Text.Font = GameFont.Tiny;
-
             var dateLine = dateStr;
             if (medal.ceremonyQuality >= 0)
                 dateLine = "TribalTrophies_AdorningCeremony_TrophyTab_AdornedAtCeremony".Translate(
                     dateStr.Named("DATE"),
                     AdorningQuality.GetQualityLabel(medal.ceremonyQuality).Named("QUALITY"));
 
-            GUI.color = MutedColor;
-            var dateHeight = Text.CalcHeight(dateLine, rect.width);
-            Widgets.Label(new Rect(rect.x, curY, rect.width, dateHeight), dateLine);
-            GUI.color = Color.white;
-            curY += dateHeight + 4f;
-            Text.Font = GameFont.Small;
+            UIHelper.DrawLine(dateLine, GameFont.Tiny, UIHelper.MutedColor, TextAnchor.MiddleCenter, rect, ref curY);
         }
 
         // Days worn
         if (medal.awarded != null)
         {
-            Text.Font = GameFont.Tiny;
             var days = medal.awarded.TicksAgo / GenDate.TicksPerDay;
-            GUI.color = MutedColor;
             var daysText = "TribalTrophies_AdorningCeremony_TrophyTab_WornFor".Translate(days.ToString());
-            var daysHeight = Text.CalcHeight(daysText, rect.width);
-            Widgets.Label(new Rect(rect.x, curY, rect.width, daysHeight), daysText);
-            GUI.color = Color.white;
-            curY += daysHeight + 4f;
-            Text.Font = GameFont.Small;
+            UIHelper.DrawLine(daysText, GameFont.Tiny, UIHelper.MutedColor, TextAnchor.MiddleCenter, rect, ref curY);
         }
 
         curY += 6f;
@@ -101,7 +71,7 @@ public class ITab_TrophyRecord : ITab
         {
             UIHelper.DrawCitation(medal.def, medal.citation, rect, ref curY);
         }
-        
+
         // Stat bonuses, green, centered
         UIHelper.DrawStatSummary(medal.def, rect, ref curY);
 

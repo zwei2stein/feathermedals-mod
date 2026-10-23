@@ -9,7 +9,14 @@ public static class NpcHistoryUtility
 {
     public static EventTime RandomPastEvent(Faction placeFaction, params Pawn[] pawns)
     {
-        return new EventTime(RandomPastTick(pawns), RandomSettlementTile(placeFaction));
+        var tick = RandomPastTick(pawns);
+        var settlements = Settlements(placeFaction);
+
+        if (settlements.Count == 0)
+            return new EventTime(tick, FallbackTile(), null);
+
+        var settlement = settlements.RandomElement();
+        return new EventTime(tick, settlement.Tile, settlement);
     }
 
     public static int RandomPastTick(params Pawn[] pawns)
@@ -37,25 +44,19 @@ public static class NpcHistoryUtility
         return (int)(nowGame - (nowAbs - pickedAbs));
     }
 
-    public static PlanetTile RandomSettlementTile(Faction faction)
+    public static List<Settlement> Settlements(Faction faction)
     {
-        var tiles = SettlementTiles(faction);
-        return tiles.Count > 0 ? tiles.RandomElement() : FallbackTile();
-    }
-
-    public static List<PlanetTile> SettlementTiles(Faction faction)
-    {
-        var tiles = new List<PlanetTile>();
+        var result = new List<Settlement>();
         if (faction == null || Current.Game == null)
-            return tiles;
+            return result;
 
         var settlements = Find.WorldObjects.Settlements;
         for (var i = 0; i < settlements.Count; i++)
         {
             if (settlements[i].Faction == faction)
-                tiles.Add(settlements[i].Tile);
+                result.Add(settlements[i]);
         }
-        return tiles;
+        return result;
     }
 
     public static PlanetTile FallbackTile()

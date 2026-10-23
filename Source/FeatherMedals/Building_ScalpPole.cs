@@ -110,9 +110,9 @@ namespace FeatherMedals
                 var scalps = StoredScalps();
                 var poleLabel = GenLabel.ThingLabel(def, Stuff);
 
-                if (scalps.Count == 1 && !scalps[0].VictimName.NullOrEmpty())
+                if (scalps.Count == 1 && !scalps[0].Victim.Name.NullOrEmpty())
                     return "TribalTrophies_ScalpPole_Label_OneScalp"
-                        .Translate(poleLabel.Named("POLE"), scalps[0].VictimName.Named("VICTIM")).Resolve();
+                        .Translate(poleLabel.Named("POLE"), scalps[0].Victim.Name.Named("VICTIM")).Resolve();
 
                 if (scalps.Count > 0)
                     return "TribalTrophies_ScalpPole_Label_ManyScalps"

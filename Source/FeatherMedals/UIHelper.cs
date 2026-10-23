@@ -8,8 +8,30 @@ namespace FeatherMedals;
 public static class UIHelper
 {
     public static readonly Color GreenColor = new(0.5f, 0.8f, 0.5f);
-    private static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
-    
+    public static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
+    public static readonly Color MutedColor = new(0.7f, 0.7f, 0.7f);
+
+    private const float LineGap = 4f;
+
+    public static float LineHeight(string text, GameFont font, float width, float gapAfter = LineGap)
+    {
+        Text.Font = font;
+        var height = Text.CalcHeight(text, width) + gapAfter;
+        Text.Font = GameFont.Small;
+        return height;
+    }
+
+    public static void DrawLine(string text, GameFont font, Color color, TextAnchor anchor, Rect area, ref float curY, float gapAfter = LineGap)
+    {
+        Text.Font = font;
+        Text.Anchor = anchor;
+        var height = Text.CalcHeight(text, area.width);
+        // colored as text, not by GUI.color, so colored names inside keep their own color
+        Widgets.Label(new Rect(area.x, curY, area.width, height), text.Colorize(color));
+        curY += height + gapAfter;
+        Text.Font = GameFont.Small;
+    }
+
     private const float CitationSideMargin = 20f;
     private const float CitationGap = 12f;
 

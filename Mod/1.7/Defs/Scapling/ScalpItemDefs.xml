@@ -51,6 +51,9 @@
             <li Class="FeatherMedals.CompProperties_ScalpPrice"/>
         </comps>
         <techLevel>Neolithic</techLevel>
+        <inspectorTabs>
+            <li>FeatherMedals.ITab_ScalpRecord</li>
+        </inspectorTabs>
     </ThingDef>
 
 </Defs>

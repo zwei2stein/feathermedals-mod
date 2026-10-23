@@ -155,6 +155,9 @@
         <statBases>
             <Mass>2</Mass>
         </statBases>
+        <inspectorTabs>
+            <li>FeatherMedals.ITab_ScalpRecord</li>
+        </inspectorTabs>
         <!-- same buyers as scalps -->
         <tradeTags>
             <li>FeatherTrophies_Scalp</li>

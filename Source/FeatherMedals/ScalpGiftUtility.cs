@@ -36,7 +36,7 @@ namespace FeatherMedals
                 reasons.Add(ScalpGiftReason.NoScalpBountyPurchases);
 
             // Scalps of pawns that were purged from save are considered forgotten by faction
-            var victim = scalp.VictimPawn;
+            var victim = scalp.Victim?.Pawn;
             if (victim != null && (victim.HomeFaction ?? victim.Faction) == faction)
                 reasons.Add(ScalpGiftReason.Victim);
 

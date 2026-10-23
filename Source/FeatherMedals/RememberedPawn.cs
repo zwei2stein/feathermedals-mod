@@ -52,6 +52,17 @@ namespace FeatherMedals
             }
         }
 
+        public string FactionNameColored
+        {
+            get
+            {
+                var plain = FactionName;
+                if (plain.NullOrEmpty() || faction == null)
+                    return plain;
+                return plain.Colorize(faction.Color);
+            }
+        }
+
         private void Refresh()
         {
             if (pawn != null)

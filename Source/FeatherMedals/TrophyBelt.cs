@@ -246,7 +246,7 @@ public static class TrophyNames
     public static string VictimName(Thing trophy)
     {
         if (trophy is Scalp scalp)
-            return scalp.VictimName;
+            return scalp.Victim.Name;
 
         var sources = trophy.TryGetComp<CompHasSources>();
         if (sources == null)

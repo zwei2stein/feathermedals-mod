@@ -71,6 +71,7 @@
         </building>
         <inspectorTabs>
             <li>ITab_Storage</li>
+            <li>FeatherMedals.ITab_ScalpRecord</li>
         </inspectorTabs>
         <modExtensions>
             <li Class="FeatherMedals.ScalpPoleExtension">

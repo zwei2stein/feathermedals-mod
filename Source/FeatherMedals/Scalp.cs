@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
-using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -31,8 +30,11 @@ namespace FeatherMedals
         private Graphic rotated; // on ground with a bit of wiggle
         
         public float PriceBonus => priceBonus;
-        public Pawn VictimPawn => victim?.Pawn;
-        public string VictimName => victim?.Name;
+
+        public RememberedPawn Victim => victim;
+        public RememberedPawn Scalper => scalper;
+        public EventTime Scalped => scalped;
+        public string XenotypeName => xenotypeName;
         
         public override void PostMake()
         {
