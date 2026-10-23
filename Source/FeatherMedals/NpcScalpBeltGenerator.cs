@@ -44,11 +44,7 @@ public static class NpcScalpBeltGenerator
     {
         if (!MedalMod.Settings.GenerateNpcScalpBelts)
             return false;
-        if (pawn == null || pawn.Dead || pawn.apparel == null)
-            return false;
-        if (!pawn.RaceProps.Humanlike || !pawn.DevelopmentalStage.Adult())
-            return false;
-        if (pawn.Faction == null || pawn.Faction.IsPlayer)
+        if (!NpcBeltGenerationUtility.IsNpcWearer(pawn))
             return false;
 
         return pawn.Ideo != null;

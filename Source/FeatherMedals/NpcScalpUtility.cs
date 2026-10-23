@@ -22,7 +22,10 @@ public static class NpcScalpUtility
             forceNoGear: true,
             developmentalStages: DevelopmentalStage.Adult));
 
-        var scalp = Scalp.CreateFromTemporaryVictim(victim, scalper);
+        // taken while both were adults, where the victim's people live
+        var scalp = Scalp.CreateFromTemporaryVictim(victim, scalper,
+            NpcHistoryUtility.RandomPastTick(scalper, victim),
+            NpcHistoryUtility.RandomSettlementTile(victimFaction));
         
         Find.WorldPawns.PassToWorld(victim, PawnDiscardDecideMode.Discard);
         return scalp;

@@ -1,3 +1,4 @@
+using RimWorld;
 using Verse;
 
 namespace FeatherMedals
@@ -7,6 +8,9 @@ namespace FeatherMedals
     {
         private Pawn pawn;
         private string name;
+
+        private Faction faction;
+        private string factionName;
         
         public RememberedPawn()
         {
@@ -21,6 +25,11 @@ namespace FeatherMedals
         {
             this.pawn = pawn;
             Refresh();
+            if (pawn != null)
+            {
+                faction = pawn.HomeFaction ?? pawn.Faction;
+                factionName = faction?.Name;
+            }
         }
 
         public Pawn Pawn => pawn;
@@ -31,6 +40,15 @@ namespace FeatherMedals
             {
                 Refresh();
                 return name;
+            }
+        }
+        
+        public string FactionName
+        {
+            get
+            {
+                Refresh();
+                return factionName;
             }
         }
 
@@ -51,6 +69,14 @@ namespace FeatherMedals
 
             Scribe_References.Look(ref pawn, "pawn");
             Scribe_Values.Look(ref name, "name");
+            
+            Scribe_References.Look(ref faction, "faction");
+            Scribe_Values.Look(ref factionName, "factionName");
+        }
+
+        public void DiscardPawn()
+        {
+            pawn = null;
         }
     }
 }

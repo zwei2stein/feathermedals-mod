@@ -7,6 +7,18 @@ namespace FeatherMedals;
 
 public static class NpcBeltGenerationUtility
 {
+    
+    public static bool IsNpcWearer(Pawn pawn)
+    {
+        if (pawn == null || pawn.Dead || pawn.apparel == null)
+            return false;
+        if (!pawn.RaceProps.Humanlike || !pawn.DevelopmentalStage.Adult())
+            return false;
+        if (pawn.Faction == null || pawn.Faction.IsPlayer)
+            return false;
+        return true;
+    }
+
     public static bool CanWear(Pawn pawn, ThingDef beltDef)
     {
         if (!beltDef.apparel.PawnCanWear(pawn) || !ApparelUtility.HasPartsToWear(pawn, beltDef))

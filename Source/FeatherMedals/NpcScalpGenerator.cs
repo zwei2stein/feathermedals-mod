@@ -9,8 +9,6 @@ public static class NpcScalpGenerator
 {
     private const float MaxChance = 0.05f;
 
-    private const int MaxScarAgeTicks = 10 * GenDate.TicksPerYear;
-
     public static void OnGearGenerated(Pawn pawn)
     {
         try
@@ -63,9 +61,9 @@ public static class NpcScalpGenerator
         if (scalper != null)
             scalped.scalper = new RememberedPawn(scalper);
 
-        var maxAge = (int)System.Math.Min(MaxScarAgeTicks, pawn.ageTracker.AgeBiologicalTicks);
+        // scalped while both were adults, same as NPC scalps are taken
         scalped.BecomeScar();
-        scalped.ageTicks = Rand.Range(1, System.Math.Max(maxAge, 2));
+        scalped.ageTicks = System.Math.Max(1, GenTicks.TicksGame - NpcHistoryUtility.RandomPastTick(scalper, pawn));
 
         pawn.health.AddHediff(scalped, head);
     }

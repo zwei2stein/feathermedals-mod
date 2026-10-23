@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -13,10 +14,12 @@ namespace FeatherMedals
         private RememberedPawn victim = new("TribalTrophies_Scalping_Misc_UnknownName".Translate());
         private RememberedPawn scalper = new("TribalTrophies_Scalping_Misc_UnknownName".Translate());
 
-        private string factionName;
         private string xenotypeName;
 
-        private Color skinColor = new Color(0.74f, 0.58f, 0.47f);
+        private int scalpedTick = -1;
+        public PlanetTile scalpedTile = PlanetTile.Invalid;
+
+        private Color skinColor = new(0.74f, 0.58f, 0.47f);
         private HairDef hairDef = FeatherMedalDefOf.Messy;
         private Color hairColor = Color.black;
         private Rot4 hairFacing = Rot4.South;
@@ -54,11 +57,11 @@ namespace FeatherMedals
 
             scalp.victim = new RememberedPawn(victim);
             scalp.scalper = new RememberedPawn(scalper);
-
-            scalp.factionName = (victim.HomeFaction ?? victim.Faction)?.Name;
             
             if (victim.genes != null && (victim.genes.Xenotype != XenotypeDefOf.Baseliner || victim.genes.CustomXenotype != null))
                 scalp.xenotypeName = victim.genes.XenotypeLabel;
+            
+            scalp.scalpedTick = Find.TickManager.TicksGame;
 
             scalp.skinColor = victim.story?.SkinColor ?? Color.white;
             scalp.hairDef = victim.story?.hairDef;
@@ -69,10 +72,12 @@ namespace FeatherMedals
             return scalp;
         }
         
-        public static Scalp CreateFromTemporaryVictim(Pawn victim, Pawn scalper)
+        public static Scalp CreateFromTemporaryVictim(Pawn victim, Pawn scalper, int scalpedTick, PlanetTile scalpedTile)
         {
             var scalp = Create(victim, scalper);
-            scalp.victim = new RememberedPawn(victim.NameFullColored);
+            scalp.victim.DiscardPawn();
+            scalp.scalpedTick = scalpedTick;
+            scalp.scalpedTile = scalpedTile;
             return scalp;
         }
 
@@ -80,22 +85,21 @@ namespace FeatherMedals
         {
             get
             {
-                string victimName = victim?.Name;
-                if (victimName.NullOrEmpty())
+                if (victim == null || victim.Name.NullOrEmpty())
                 {
                     return null;
                 }
 
-                var factionPart = factionName.NullOrEmpty()
+                var factionPart = victim.FactionName.NullOrEmpty()
                     ? ""
-                    : "TribalTrophies_Scalping_Item_Label_FactionPart".Translate(factionName.Named("FACTION")).Resolve();
+                    : "TribalTrophies_Scalping_Item_Label_FactionPart".Translate(victim.FactionName.Named("FACTION")).Resolve();
 
                 var xenotypePart = xenotypeName.NullOrEmpty()
                     ? ""
                     : "TribalTrophies_Scalping_Item_Label_XenotypePart".Translate(xenotypeName.CapitalizeFirst().Named("XENOTYPE")).Resolve();
 
                 return "TribalTrophies_Scalping_Item_Label".Translate(
-                    victimName.Named("VICTIM"),
+                    victim.Name.Named("VICTIM"),
                     factionPart.Named("FACTIONPART"),
                     xenotypePart.Named("XENOTYPEPART")).Resolve();
             }
@@ -196,8 +200,9 @@ namespace FeatherMedals
             base.ExposeData();
             Scribe_Deep.Look(ref victim, "victim");
             Scribe_Deep.Look(ref scalper, "scalper");
-            Scribe_Values.Look(ref factionName, "factionName");
             Scribe_Values.Look(ref xenotypeName, "xenotypeName");
+            Scribe_Values.Look(ref scalpedTick, "scalpedTick", -1);
+            Scribe_Values.Look(ref scalpedTile, "scalpedTile", PlanetTile.Invalid);
             Scribe_Values.Look(ref skinColor, "skinColor", Color.white);
             Scribe_Defs.Look(ref hairDef, "hairDef");
             Scribe_Values.Look(ref hairColor, "hairColor", Color.white);

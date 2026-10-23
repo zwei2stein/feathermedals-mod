@@ -187,8 +187,8 @@ public static class NpcTrophyGenerator
 
         var pool = BuildPresenterPool(pawn);
         var fallbackPresenter = FallbackPresenter(pawn);
-        var settlementTiles = SettlementTiles(pawn.Faction);
-        var fallbackTile = FallbackTile();
+        var settlementTiles = NpcHistoryUtility.SettlementTiles(pawn.Faction);
+        var fallbackTile = NpcHistoryUtility.FallbackTile();
 
         // lets the Wear gate and HasPartsToWear patch through, same as a ceremony
         var previous = RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward;
@@ -246,7 +246,7 @@ public static class NpcTrophyGenerator
             return null;
         }
 
-        medal.awardedTick = PickAwardedTick(pawn);
+        medal.awardedTick = NpcHistoryUtility.RandomPastTick(pawn);
         medal.awardedTile = settlementTiles.Count > 0 ? settlementTiles.RandomElement() : fallbackTile;
         var presenter = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
         medal.awardedBy = presenter != null ? new RememberedPawn(presenter) : null;
@@ -274,22 +274,6 @@ public static class NpcTrophyGenerator
         comp.SetQuality((QualityCategory)boosted, ArtGenerationContext.Outsider);
     }
 
-    // random moment between the pawn becoming an adult and now, game ticks may be negative
-    private static int PickAwardedTick(Pawn pawn)
-    {
-        var nowAbs = (long)GenTicks.TicksAbs;
-        var nowGame = GenTicks.TicksGame;
-        var adultAbs = pawn.ageTracker.BirthAbsTicks + pawn.ageTracker.AdultMinAgeTicks;
-
-        var pickedAbs = adultAbs >= nowAbs
-            ? nowAbs
-            : adultAbs + (long)(Rand.Value * (nowAbs - adultAbs));
-
-        var tick = (int)(nowGame - (nowAbs - pickedAbs));
-        // -1 means "no date" on a trophy
-        return tick == -1 ? -2 : tick;
-    }
-
     private static List<Pawn> BuildPresenterPool(Pawn pawn)
     {
         var pool = new List<Pawn>();
@@ -312,29 +296,5 @@ public static class NpcTrophyGenerator
     {
         var leader = pawn.Faction?.leader;
         return leader != null && leader != pawn && !leader.Dead ? leader : null;
-    }
-
-    private static List<PlanetTile> SettlementTiles(Faction faction)
-    {
-        var tiles = new List<PlanetTile>();
-        if (faction == null || Current.Game == null)
-            return tiles;
-
-        var settlements = Find.WorldObjects.Settlements;
-        for (var i = 0; i < settlements.Count; i++)
-        {
-            if (settlements[i].Faction == faction)
-                tiles.Add(settlements[i].Tile);
-        }
-        return tiles;
-    }
-
-    private static PlanetTile FallbackTile()
-    {
-        if (Current.Game == null)
-            return PlanetTile.Invalid;
-
-        var map = Find.CurrentMap ?? Find.AnyPlayerHomeMap;
-        return map != null ? map.Tile : PlanetTile.Invalid;
     }
 }

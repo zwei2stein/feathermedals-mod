@@ -43,11 +43,7 @@ public static class NpcSkullBeltGenerator
     {
         if (!MedalMod.Settings.GenerateNpcSkullBelts)
             return false;
-        if (pawn == null || pawn.Dead || pawn.apparel == null)
-            return false;
-        if (!pawn.RaceProps.Humanlike || !pawn.DevelopmentalStage.Adult())
-            return false;
-        if (pawn.Faction == null || pawn.Faction.IsPlayer)
+        if (!NpcBeltGenerationUtility.IsNpcWearer(pawn))
             return false;
 
         // no ideo or no skullspike stance means no belt
