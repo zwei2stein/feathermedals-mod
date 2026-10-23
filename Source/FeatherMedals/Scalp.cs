@@ -16,8 +16,7 @@ namespace FeatherMedals
 
         private string xenotypeName;
 
-        private int scalpedTick = -1;
-        public PlanetTile scalpedTile = PlanetTile.Invalid;
+        private EventTime scalped; // null = unknown, e.g. spawned by dev tools
 
         private Color skinColor = new(0.74f, 0.58f, 0.47f);
         private HairDef hairDef = FeatherMedalDefOf.Messy;
@@ -51,7 +50,7 @@ namespace FeatherMedals
             return Rot4.West;
         }
 
-        public static Scalp Create(Pawn victim, Pawn scalper)
+        public static Scalp Create(Pawn victim, Pawn scalper, EventTime scalped)
         {
             var scalp = (Scalp)ThingMaker.MakeThing(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp);
 
@@ -61,7 +60,7 @@ namespace FeatherMedals
             if (victim.genes != null && (victim.genes.Xenotype != XenotypeDefOf.Baseliner || victim.genes.CustomXenotype != null))
                 scalp.xenotypeName = victim.genes.XenotypeLabel;
             
-            scalp.scalpedTick = Find.TickManager.TicksGame;
+            scalp.scalped = scalped;
 
             scalp.skinColor = victim.story?.SkinColor ?? Color.white;
             scalp.hairDef = victim.story?.hairDef;
@@ -72,12 +71,10 @@ namespace FeatherMedals
             return scalp;
         }
         
-        public static Scalp CreateFromTemporaryVictim(Pawn victim, Pawn scalper, int scalpedTick, PlanetTile scalpedTile)
+        public static Scalp CreateFromTemporaryVictim(Pawn victim, Pawn scalper, EventTime scalped)
         {
-            var scalp = Create(victim, scalper);
+            var scalp = Create(victim, scalper, scalped);
             scalp.victim.DiscardPawn();
-            scalp.scalpedTick = scalpedTick;
-            scalp.scalpedTile = scalpedTile;
             return scalp;
         }
 
@@ -201,8 +198,7 @@ namespace FeatherMedals
             Scribe_Deep.Look(ref victim, "victim");
             Scribe_Deep.Look(ref scalper, "scalper");
             Scribe_Values.Look(ref xenotypeName, "xenotypeName");
-            Scribe_Values.Look(ref scalpedTick, "scalpedTick", -1);
-            Scribe_Values.Look(ref scalpedTile, "scalpedTile", PlanetTile.Invalid);
+            Scribe_Deep.Look(ref scalped, "scalped");
             Scribe_Values.Look(ref skinColor, "skinColor", Color.white);
             Scribe_Defs.Look(ref hairDef, "hairDef");
             Scribe_Values.Look(ref hairColor, "hairColor", Color.white);

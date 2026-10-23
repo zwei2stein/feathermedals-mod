@@ -81,10 +81,10 @@ public class ITab_TrophyRecord : ITab
         }
 
         // Days worn
-        if (medal.HasAwardTick)
+        if (medal.awarded != null)
         {
             Text.Font = GameFont.Tiny;
-            var days = (Find.TickManager.TicksGame - medal.awardedTick) / GenDate.TicksPerDay;
+            var days = medal.awarded.TicksAgo / GenDate.TicksPerDay;
             GUI.color = MutedColor;
             var daysText = "TribalTrophies_AdorningCeremony_TrophyTab_WornFor".Translate(days.ToString());
             var daysHeight = Text.CalcHeight(daysText, rect.width);

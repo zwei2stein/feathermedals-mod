@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using RimWorld;
-using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -187,8 +186,6 @@ public static class NpcTrophyGenerator
 
         var pool = BuildPresenterPool(pawn);
         var fallbackPresenter = FallbackPresenter(pawn);
-        var settlementTiles = NpcHistoryUtility.SettlementTiles(pawn.Faction);
-        var fallbackTile = NpcHistoryUtility.FallbackTile();
 
         // lets the Wear gate and HasPartsToWear patch through, same as a ceremony
         var previous = RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward;
@@ -208,13 +205,13 @@ public static class NpcTrophyGenerator
             var attempts = count * PickAttemptsPerTrophy;
             while (made.Count < count && attempts-- > 0)
             {
-                var medal = CreateMedal(pawn, defs, pool, fallbackPresenter, settlementTiles, fallbackTile, leader);
+                var medal = CreateMedal(pawn, defs, pool, fallbackPresenter, leader);
                 if (medal != null)
                     made.Add(medal);
             }
 
             // oldest first, so the newest one is the last to be worn and the one that grants the Decorated trait
-            made.Sort((a, b) => a.awardedTick.CompareTo(b.awardedTick));
+            made.Sort((a, b) => a.awarded.tick.CompareTo(b.awarded.tick));
 
             FeatherMedal newest = null;
             foreach (var medal in made)
@@ -235,8 +232,7 @@ public static class NpcTrophyGenerator
         }
     }
 
-    private static FeatherMedal CreateMedal(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter,
-        List<PlanetTile> settlementTiles, PlanetTile fallbackTile, bool leader)
+    private static FeatherMedal CreateMedal(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
     {
         var def = defs.RandomElement();
         var medal = (FeatherMedal)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
@@ -246,13 +242,12 @@ public static class NpcTrophyGenerator
             return null;
         }
 
-        medal.awardedTick = NpcHistoryUtility.RandomPastTick(pawn);
-        medal.awardedTile = settlementTiles.Count > 0 ? settlementTiles.RandomElement() : fallbackTile;
+        medal.awarded = NpcHistoryUtility.RandomPastEvent(pawn.Faction, pawn);
         var presenter = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
         medal.awardedBy = presenter != null ? new RememberedPawn(presenter) : null;
         medal.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(medal, pawn, leader);
-        medal.citation = CitationUtil.Generate(pawn.Faction, pawn, medal.awardedTile);
+        medal.citation = CitationUtil.Generate(pawn.Faction, pawn, medal.awarded.tile);
         return medal;
     }
 

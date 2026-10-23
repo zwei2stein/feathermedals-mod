@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
 using RimWorld;
-using RimWorld.Planet;
-using UnityEngine;
 using Verse;
 using Verse.AI.Group;
 
@@ -18,9 +16,7 @@ namespace FeatherMedals
         public int ceremonyQuality = -1; // -1 = not yet awarded
         public RememberedPawn awardedBy;
         
-        public int awardedTick = -1;
-        public PlanetTile awardedTile = PlanetTile.Invalid; // ceremony map tile for date
-        public bool HasAwardTick => awardedTick != -1;
+        public EventTime awarded; // null = not yet awarded
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
@@ -35,9 +31,8 @@ namespace FeatherMedals
             Scribe_Values.Look(ref ceremonyQuality, "ceremonyQuality", -1);
             Scribe_Deep.Look(ref awardedBy, "awardedBy");
             
-            Scribe_Values.Look(ref awardedTick, "awardedTick", -1);
-            Scribe_Values.Look(ref awardedTile, "awardedTile", PlanetTile.Invalid);
-            
+            Scribe_Deep.Look(ref awarded, "awarded");
+
             Scribe_Defs.Look(ref addedTrait, "addedTrait");
             Scribe_Values.Look(ref addedTraitDegree, "addedTraitDegree", 0);
             Scribe_Defs.Look(ref removedTrait, "removedTrait");
@@ -233,10 +228,7 @@ namespace FeatherMedals
         
         public string GetAwardedDateLabel()
         {
-            if (!HasAwardTick)
-                return null;
-            var longLat = awardedTile.Valid ? Find.WorldGrid.LongLatOf(awardedTile) : Vector2.zero;
-            return GenDate.DateFullStringAt(GenDate.TickGameToAbs(awardedTick), longLat);
+            return awarded?.DateLabel;
         }
 
         public string GetAddedTraitLabel(bool terse = false)

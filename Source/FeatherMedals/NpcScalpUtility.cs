@@ -24,8 +24,7 @@ public static class NpcScalpUtility
 
         // taken while both were adults, where the victim's people live
         var scalp = Scalp.CreateFromTemporaryVictim(victim, scalper,
-            NpcHistoryUtility.RandomPastTick(scalper, victim),
-            NpcHistoryUtility.RandomSettlementTile(victimFaction));
+            NpcHistoryUtility.RandomPastEvent(victimFaction, scalper, victim));
         
         Find.WorldPawns.PassToWorld(victim, PawnDiscardDecideMode.Discard);
         return scalp;

@@ -7,7 +7,11 @@ namespace FeatherMedals;
 
 public static class NpcHistoryUtility
 {
-    
+    public static EventTime RandomPastEvent(Faction placeFaction, params Pawn[] pawns)
+    {
+        return new EventTime(RandomPastTick(pawns), RandomSettlementTile(placeFaction));
+    }
+
     public static int RandomPastTick(params Pawn[] pawns)
     {
         var nowAbs = (long)GenTicks.TicksAbs;
@@ -30,9 +34,7 @@ public static class NpcHistoryUtility
             ? nowAbs
             : adultAbs.Value + (long)(Rand.Value * (nowAbs - adultAbs.Value));
 
-        var tick = (int)(nowGame - (nowAbs - pickedAbs));
-        // -1 means "no date" on a trophy
-        return tick == -1 ? -2 : tick;
+        return (int)(nowGame - (nowAbs - pickedAbs));
     }
 
     public static PlanetTile RandomSettlementTile(Faction faction)

@@ -81,10 +81,9 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         }
         
         medal.awardedBy = new RememberedPawn(presenter);
-        medal.awardedTick = Find.TickManager.TicksGame;
-        medal.awardedTile = jobRitual.Map.Tile;
-        
-        TrophyCeremonyLedger.Instance?.Record(Find.TickManager.TicksGame);
+        medal.awarded = EventTime.Now(jobRitual.Map);
+
+        TrophyCeremonyLedger.Instance?.Record(medal.awarded.tick);
 
         var attendees = AdorningQuality.CountAttendees(totalPresence.Keys, awardee);
         var totalColonists = AdorningQuality.CountPossibleAttendees(jobRitual.Map, awardee);

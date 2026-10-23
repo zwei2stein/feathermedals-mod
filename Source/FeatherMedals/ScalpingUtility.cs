@@ -232,8 +232,7 @@ namespace FeatherMedals
             var pos = target.PositionHeld;
 
             // Before hediffs: scalp remembers victim as they were (value, skin, hair).
-            var scalp = Scalp.Create(victim, scalper);
-            scalp.scalpedTile = map?.Tile ?? PlanetTile.Invalid;
+            var scalp = Scalp.Create(victim, scalper, EventTime.Now(map));
 
             // how much more damage the head can take before it is destroyed
             var headDamageRoom = victim.health.hediffSet.GetPartHealth(head) - MinHeadHealthLeft;
