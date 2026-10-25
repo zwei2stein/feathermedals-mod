@@ -38,7 +38,7 @@
 	</RulePackDef>
 
 	<InteractionDef>
-		<defName>FeatherMedals_Speech_AwardMedal</defName>
+		<defName>TribalTrophies_Speech_AdornTrophy</defName>
 		<label>adorning speech</label>
 		<workerClass>InteractionWorker</workerClass>
 		<symbol>Things/Mote/SpeechSymbols/Speech</symbol>

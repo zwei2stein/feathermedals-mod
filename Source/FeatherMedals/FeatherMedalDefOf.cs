@@ -10,13 +10,13 @@ namespace FeatherMedals
     [DefOf]
     public class FeatherMedalDefOf
     {
-        public static RitualPatternDef FeatherMedal_AwardTrophyPattern;
+        public static RitualPatternDef TribalTrophies_AwardTrophyPattern;
         
-        public static JobDef FeatherTrophies_PresentTrophy;
-        public static JobDef FeatherTrophies_PresentTrophySpeech;
-        public static JobDef FeatherTrophies_AwaitAdorning;
+        public static JobDef TribalTrophies_PresentTrophy;
+        public static JobDef TribalTrophies_PresentTrophySpeech;
+        public static JobDef TribalTrophies_AwaitAdorning;
 
-        public static PreceptDef FeatherMedals_MedalCeremonyPrecept;
+        public static PreceptDef TribalTrophies_AdorningCeremonyPrecept;
 
         public static ThoughtDef FeatherMedals_AwardedTrophy_Thought;
         public static ThoughtDef FeatherMedals_WitnessedTrophyCeremony_Thought;
@@ -25,7 +25,7 @@ namespace FeatherMedals
 
         public static TaleDef FeatherMedals_AdornedTrophyTale;
 
-        public static InteractionDef FeatherMedals_Speech_AwardMedal;
+        public static InteractionDef TribalTrophies_Speech_AdornTrophy;
 
         public static PreceptDef FeatherMedals_HonoringWarriors_Neutral;
         public static PreceptDef FeatherMedals_HonoringWarriors_Forbidden;

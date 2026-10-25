@@ -25,7 +25,7 @@ namespace FeatherMedals
             if (!pawn.CanReach(standCell, PathEndMode.OnCell, Danger.Deadly))
                 return null;
 
-            return JobMaker.MakeJob(FeatherMedalDefOf.FeatherTrophies_AwaitAdorning, standCell, presenter);
+            return JobMaker.MakeJob(FeatherMedalDefOf.TribalTrophies_AwaitAdorning, standCell, presenter);
         }
     }
     

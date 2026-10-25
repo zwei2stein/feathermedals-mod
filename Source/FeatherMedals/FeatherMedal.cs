@@ -154,7 +154,7 @@ namespace FeatherMedals
         private void StartMedalRitual()
         {
             if (!ColonyHasPresenter(out Pawn presenter)) return;
-            var pattern = FeatherMedalDefOf.FeatherMedal_AwardTrophyPattern;
+            var pattern = FeatherMedalDefOf.TribalTrophies_AwardTrophyPattern;
 
             var safeMap = this.Map ?? this.MapHeld;
             if (safeMap == null) return;
@@ -209,7 +209,7 @@ namespace FeatherMedals
         
         private static Precept_Ritual GetCeremonyPrecept(Ideo ideo)
         {
-            var def = FeatherMedalDefOf.FeatherMedals_MedalCeremonyPrecept;
+            var def = FeatherMedalDefOf.TribalTrophies_AdorningCeremonyPrecept;
             if (ideo.GetPrecept(def) is Precept_Ritual existing)
                 return existing;
 

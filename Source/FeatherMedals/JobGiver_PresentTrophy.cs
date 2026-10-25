@@ -41,15 +41,15 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
             return null;
 
         var def = speech
-            ? FeatherMedalDefOf.FeatherTrophies_PresentTrophySpeech
-            : FeatherMedalDefOf.FeatherTrophies_PresentTrophy;
+            ? FeatherMedalDefOf.TribalTrophies_PresentTrophySpeech
+            : FeatherMedalDefOf.TribalTrophies_PresentTrophy;
 
         var job = JobMaker.MakeJob(def, medal, standCell, awardee);
         job.count = 1;
         if (speech)
         {
             job.showSpeechBubbles = true;
-            job.interaction = FeatherMedalDefOf.FeatherMedals_Speech_AwardMedal;
+            job.interaction = FeatherMedalDefOf.TribalTrophies_Speech_AdornTrophy;
             job.speechSoundMale = soundDefMale ?? SoundDefOf.Speech_Leader_Male;
             job.speechSoundFemale = soundDefFemale ?? SoundDefOf.Speech_Leader_Female;
         }
