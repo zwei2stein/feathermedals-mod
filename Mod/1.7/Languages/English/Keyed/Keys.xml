@@ -19,10 +19,10 @@
 	
 	<TribalTrophies_Trophy_PawnTab_Header_One>Worn trophy</TribalTrophies_Trophy_PawnTab_Header_One>
 	<TribalTrophies_Trophy_PawnTab_Header_Many>Worn trophies</TribalTrophies_Trophy_PawnTab_Header_Many>
-	<TribalTrophies_Trophy_TrophyTab_Header>Feather</TribalTrophies_Trophy_TrophyTab_Header>
 
 	<!-- ===== Trophy Details tab (item) ===== -->
-	
+
+	<TribalTrophies_Trophy_TrophyTab_Header>Feather</TribalTrophies_Trophy_TrophyTab_Header>
 	<TribalTrophies_Trophy_TrophyTab_Label>Trophy</TribalTrophies_Trophy_TrophyTab_Label>
 	
 	<!-- ===== Info card ===== -->
@@ -40,7 +40,7 @@
 
 	<!-- ===== Gizmo (trophy belts) ===== -->
 
-	<TribalTrophies_Trophy_Gizmo_Disassemble_Desc>Disassemble item and reclaim used trophies.</TribalTrophies_Trophy_Gizmo_Disassemble_Desc>
+	<TribalTrophies_Trophy_Gizmo_Disassemble_Desc>Disassemble item and recover the trophies it was crafted with as well as some base material.</TribalTrophies_Trophy_Gizmo_Disassemble_Desc>
 
 	<!-- ===== Inspect (trophy belts) ===== -->
 

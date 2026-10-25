@@ -29,7 +29,7 @@ public class Dialog_TrophyAwarded : Window
         var titleRect = new Rect(inRect.x, inRect.y, inRect.width, TrophyUIStyle.HeaderHeight);
         Text.Font = GameFont.Medium;
         Text.Anchor = TextAnchor.UpperLeft;
-        Widgets.Label(titleRect, "TribalTrophies_AdorningCeremony_AwardedDialog_Title".Translate(awardee.Named("PAWN")));
+        Widgets.Label(titleRect, "TribalTrophies_AdorningCeremony_AdornedDialog_Title".Translate(awardee.Named("PAWN")));
         Text.Font = GameFont.Small;
 
         // The trophy just adorned, with who it honors and how the ceremony went; scroll instead of overflowing

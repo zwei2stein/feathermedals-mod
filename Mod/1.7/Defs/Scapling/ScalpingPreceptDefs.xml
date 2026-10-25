@@ -42,9 +42,9 @@
     </PreceptDef>
 
     <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
-        <defName>FeatherTrophies_ScalpTaking_Honourable</defName>
-        <label>honourable</label>
-        <description>Allows taking scalps where honour allows it: enemies and guilty prisoners.</description>
+        <defName>FeatherTrophies_ScalpTaking_Honorable</defName>
+        <label>honorable</label>
+        <description>Allows taking scalps where honor allows it: enemies and guilty prisoners.</description>
         <impact>Low</impact>
         <displayOrderInIssue>2</displayOrderInIssue>
         <defaultSelectionWeight>1</defaultSelectionWeight>
@@ -237,7 +237,7 @@
         <stages>
             <li>
                 <label>wearing scalp trophies</label>
-                <description>I wear the scalps of others hung on belt. I am a disgrace.</description>
+                <description>I wear the scalps of others hung on a belt. I am a disgrace.</description>
                 <baseMoodEffect>-10</baseMoodEffect>
             </li>
         </stages>

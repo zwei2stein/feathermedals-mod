@@ -78,7 +78,7 @@
     <TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Tooltip>Highest tech level of factions that can ask for scalps. Default: Industrial</TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Tooltip>
 
     <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label>Maximum distance: {TILES} tiles</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label>
-    <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>Only settlements closer than this to your colony can ask for scalps. If player has a Gravship, this limit is ignored. Default: 32</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>
+    <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>Only settlements closer than this to your colony can ask for scalps. If you have a gravship, this limit does not apply. Default: 32</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>
     
     <!-- Display tab -->
 

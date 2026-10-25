@@ -7,7 +7,7 @@ namespace FeatherMedals;
 
 public class NpcScalpBeltExtension : DefModExtension
 {
-    public float honourableChance = 0.05f;
+    public float honorableChance = 0.05f;
     public float mercilessChance = 0.2f;
     public TechLevel zeroChanceTechLevel = TechLevel.Archotech;
 }
@@ -60,8 +60,8 @@ public static class NpcScalpBeltGenerator
     {
         if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
             return tuning.mercilessChance;
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honourable))
-            return tuning.honourableChance;
+        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honorable))
+            return tuning.honorableChance;
         return 0f;
     }
 }

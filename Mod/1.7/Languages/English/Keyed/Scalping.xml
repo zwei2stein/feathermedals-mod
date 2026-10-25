@@ -83,9 +83,9 @@
     <TribalTrophies_ScalpRequest_Command_Deliver_Label>Deliver scalps</TribalTrophies_ScalpRequest_Command_Deliver_Label>
     <TribalTrophies_ScalpRequest_Command_Deliver_Desc>Hand over the scalps of {TARGET} this caravan carries, up to the number still requested.</TribalTrophies_ScalpRequest_Command_Deliver_Desc>
     <TribalTrophies_ScalpRequest_Command_Deliver_NoScalps>The caravan carries no scalps of {TARGET}.</TribalTrophies_ScalpRequest_Command_Deliver_NoScalps>
-    <TribalTrophies_ScalpRequest_Command_Deliver_Confirm>Hand over {COUNT} scalps of {TARGET} to {FACTION}?</TribalTrophies_ScalpRequest_Command_Deliver_Confirm>
+    <TribalTrophies_ScalpRequest_Command_Deliver_Confirm>Hand over {COUNT}x scalp of {TARGET} to {FACTION}?</TribalTrophies_ScalpRequest_Command_Deliver_Confirm>
 
     <!-- partial delivery, caravan or pods -->
-    <TribalTrophies_ScalpRequest_Message_Delivered>{FACTION} received {COUNT} scalps of {TARGET}. Delivered so far: {DELIVERED}/{TOTAL}.</TribalTrophies_ScalpRequest_Message_Delivered>
+    <TribalTrophies_ScalpRequest_Message_Delivered>{FACTION} received {COUNT}x scalp of {TARGET}. Delivered so far: {DELIVERED}/{TOTAL}.</TribalTrophies_ScalpRequest_Message_Delivered>
 
 </LanguageData>

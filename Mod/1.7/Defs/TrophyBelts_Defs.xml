@@ -99,7 +99,7 @@
     <ThingDef ParentName="TribalTrophies_Apparel_Belt_Base">
         <defName>TribalTrophies_Apparel_Belt_SkullBelt</defName>
         <label>skull belt</label>
-        <description>A belt hung with human skulls. It inspires awe, disgust or terror depending on who you are.</description>
+        <description>A belt hung with human skulls. It inspires awe, disgust or terror depending on who sees it.</description>
         <costList>
             <Skull>3</Skull>
         </costList>
@@ -169,7 +169,7 @@
         <modExtensions>
             <li Class="FeatherMedals.ScalpDisplayExtension" />
             <li Class="FeatherMedals.NpcScalpBeltExtension">
-                <honourableChance>0.05</honourableChance>
+                <honorableChance>0.05</honorableChance>
                 <mercilessChance>0.2</mercilessChance>
                 <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
             </li>

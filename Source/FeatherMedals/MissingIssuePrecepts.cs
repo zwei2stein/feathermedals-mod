@@ -23,7 +23,7 @@ public static class MissingIssuePrecepts
     {
         Fill(FeatherMedalDefOf.FeatherTrophies_ScalpTaking, new List<PreceptDef>
         {
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honourable,
+            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honorable,
             FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless,
             FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden
         });

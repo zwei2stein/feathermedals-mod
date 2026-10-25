@@ -71,7 +71,7 @@
 	<!-- gizmo disable reason, message when the ritual dialog is confirmed -->
 	<TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>An adorning ceremony for this trophy is already in progress.</TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>
 
-	<TribalTrophies_AdorningCeremony_AwardedDialog_Title>{PAWN_labelShort} honored with:</TribalTrophies_AdorningCeremony_AwardedDialog_Title>
+	<TribalTrophies_AdorningCeremony_AdornedDialog_Title>{PAWN_labelShort} adorned with:</TribalTrophies_AdorningCeremony_AdornedDialog_Title>
 	<!-- adorned dialog, trophy tab, inspect pane -->
 	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN_nameFull}</TribalTrophies_AdorningCeremony_Common_Honoring>
 	<!-- adorned dialog, trophy tab, inspect pane, pawn Trophies tab -->

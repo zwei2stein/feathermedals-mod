@@ -5,8 +5,8 @@ namespace FeatherMedals;
 
 public enum ScalpStance
 {
-    Honourable,
     Merciless,
+    Honorable,
     Forbidden
 }
 
@@ -17,19 +17,19 @@ public static class ScalpingPrecepts
     {
         var ideo = pawn?.Ideo;
         if (ideo == null)
-            return ScalpStance.Honourable;
+            return ScalpStance.Honorable;
         return StanceOf(ideo);
     }
 
     public static ScalpStance StanceOf(Ideo ideo)
     {
         if (ideo == null)
-            return ScalpStance.Honourable;
+            return ScalpStance.Honorable;
         if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden))
             return ScalpStance.Forbidden;
         if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
             return ScalpStance.Merciless;
-        return ScalpStance.Honourable;
+        return ScalpStance.Honorable;
     }
 
     public static bool AnyMercilessColonist()

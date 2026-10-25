@@ -14,9 +14,9 @@
                 <li>questName->[trophies] for [settlement_label]</li>
                 <li>questName->[trophies] of [targetFaction_name]</li>
                 <li>questName->The [hunt] of [targetFaction_name]</li>
-                <li>questName->A [bloody] [request]</li>
-                <li>questName->A [reward] for [hunt]</li>
-                <li>questName->A [reward] for [trophies]</li>
+                <li>questName->[bloody] [request]</li>
+                <li>questName->[reward] for [hunt]</li>
+                <li>questName->[reward] for [trophies]</li>
                 
                 <li>reward->Blood Money</li>
                 <li>reward->Payout</li>
@@ -24,7 +24,7 @@
                 
                 <li>trophies->Scalps</li>
                 <li>trophies->Trophies</li>
-                <li>trophies->Revenge tokens of</li>
+                <li>trophies->Revenge Tokens</li>
                 <li>trophies->[bloody] Spoils</li>
                 <li>trophies->[bloody] Keepsakes</li>
                 
@@ -47,10 +47,10 @@
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->[faction_name] of [settlement_label] want scalps taken from their enemies, [targetFaction_name]. They ask for:
+                <li>questDescription->[faction_name] of [settlement_label] wants scalps taken from its enemies, [targetFaction_name]. It asks for:
                     \n  [scalpCount]x scalp of a member of [targetFaction_name]
-                    \nAny scalp counts, as long as it was taken from a member of [targetFaction_name]. [delivery] Scalps can be delivered a few at a time.[rewardInfo]</li>
-                <li>delivery(askerHostile==True,priority=1)->[faction_name] is hostile to you, they ask you to send the scalps to [settlement_label] in transport pods as a gift.</li>
+                    \nAny loose scalp counts, as long as it was taken from a member of [targetFaction_name]. [delivery] Scalps can be delivered a few at a time.[rewardInfo]</li>
+                <li>delivery(askerHostile==True,priority=1)->[faction_name] is hostile to you, so the scalps must be sent to [settlement_label] in transport pods as a gift.</li>
                 <li>delivery->Bring the scalps to [settlement_label] by caravan, or send them in transport pods as a gift.</li>
                 <li>rewardInfo(askerHostile==True,priority=1)->\n\n[faction_name] goodwill: [goodwillReward].</li>
                 <li>rewardInfo-></li>

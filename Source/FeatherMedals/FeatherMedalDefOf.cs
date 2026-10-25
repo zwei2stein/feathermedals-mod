@@ -70,7 +70,7 @@ namespace FeatherMedals
 
         public static IssueDef FeatherTrophies_ScalpTaking;
         public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
-        public static PreceptDef FeatherTrophies_ScalpTaking_Honourable;
+        public static PreceptDef FeatherTrophies_ScalpTaking_Honorable;
         public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
 
         public static HairDef Messy;
