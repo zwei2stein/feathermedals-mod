@@ -237,7 +237,7 @@ namespace FeatherMedals
             // how much more damage the head can take before it is destroyed
             var headDamageRoom = victim.health.hediffSet.GetPartHealth(head) - MinHeadHealthLeft;
 
-            var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, victim, head);
+            var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped, victim, head);
             scalped.scalper = new RememberedPawn(scalper);
             scalped.Severity = Mathf.Clamp(scalped.Severity, MinInjurySeverity, Mathf.Max(MinInjurySeverity, headDamageRoom));
             victim.health.AddHediff(scalped, head);
@@ -301,7 +301,7 @@ namespace FeatherMedals
         public static bool HasScalpToTake(Pawn pawn)
         {
             return pawn.RaceProps.Humanlike
-                   && !pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped)
+                   && !pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped)
                    && HeadOf(pawn) != null;
         }
         

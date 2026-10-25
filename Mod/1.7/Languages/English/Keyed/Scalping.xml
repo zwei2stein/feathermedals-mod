@@ -73,5 +73,19 @@
     <TribalTrophies_Scalping_ScalpTab_When>{DATE}{PLACEPART}</TribalTrophies_Scalping_ScalpTab_When>
     <TribalTrophies_Scalping_ScalpTab_At> at {SETTLEMENT}</TribalTrophies_Scalping_ScalpTab_At>
     <TribalTrophies_Scalping_ScalpTab_By>Scalped by {SCALPER}</TribalTrophies_Scalping_ScalpTab_By>
-    
+
+    <!-- ===== Scalp Request Quest ===== -->
+
+    <!-- settlement inspect pane -->
+    <TribalTrophies_ScalpRequest_Inspect>Requested: scalps of {TARGET} ({DELIVERED}/{TOTAL}), {TIME} left</TribalTrophies_ScalpRequest_Inspect>
+
+    <!-- caravan button at the settlement -->
+    <TribalTrophies_ScalpRequest_Command_Deliver_Label>Deliver scalps</TribalTrophies_ScalpRequest_Command_Deliver_Label>
+    <TribalTrophies_ScalpRequest_Command_Deliver_Desc>Hand over the scalps of {TARGET} this caravan carries, up to the number still requested.</TribalTrophies_ScalpRequest_Command_Deliver_Desc>
+    <TribalTrophies_ScalpRequest_Command_Deliver_NoScalps>The caravan carries no scalps of {TARGET}.</TribalTrophies_ScalpRequest_Command_Deliver_NoScalps>
+    <TribalTrophies_ScalpRequest_Command_Deliver_Confirm>Hand over {COUNT} scalps of {TARGET} to {FACTION}?</TribalTrophies_ScalpRequest_Command_Deliver_Confirm>
+
+    <!-- partial delivery, caravan or pods -->
+    <TribalTrophies_ScalpRequest_Message_Delivered>{FACTION} received {COUNT} scalps of {TARGET}. Delivered so far: {DELIVERED}/{TOTAL}.</TribalTrophies_ScalpRequest_Message_Delivered>
+
 </LanguageData>

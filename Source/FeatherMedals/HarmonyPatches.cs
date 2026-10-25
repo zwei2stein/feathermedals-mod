@@ -33,6 +33,8 @@ public class HarmonyPatches
         return false;
     }
     
+    private static ScalpRequestComp previewRequest;
+
     private static IEnumerable<Scalp> ScalpsToBeGiven(List<Tradeable> tradeables)
     {
         foreach (Tradeable tradeable in tradeables)
@@ -211,11 +213,34 @@ public class HarmonyPatches
         {
             if (anyThing is not Scalp scalp)
                 return true;
+
+            if (previewRequest != null && previewRequest.Wants(scalp))
+            {
+                __result = 0f;
+                return false;
+            }
+
             if (ScalpGiftUtility.ReasonsFor(scalp, theirFaction).Count == 0)
                 return true;
 
             __result = 0f;
             return false;
+        }
+    }
+
+    // Pod gift preview (float menu label)
+    [HarmonyPatch(typeof(FactionGiftUtility), nameof(FactionGiftUtility.GetGoodwillChange),
+        new[] { typeof(IEnumerable<IThingHolder>), typeof(Settlement) })]
+    public static class Patch_GetGoodwillChange_Pods
+    {
+        public static void Prefix(Settlement giveTo)
+        {
+            previewRequest = giveTo?.GetComponent<ScalpRequestComp>();
+        }
+
+        public static void Finalizer()
+        {
+            previewRequest = null;
         }
     }
 
@@ -226,6 +251,8 @@ public class HarmonyPatches
     {
         public static void Prefix(List<ActiveTransporterInfo> pods, Settlement giveTo, out ScalpGiftResult __state)
         {
+            giveTo.GetComponent<ScalpRequestComp>()?.TakeFromPods(pods);
+
             var scalps = new List<Scalp>();
             foreach (ActiveTransporterInfo pod in pods)
             {

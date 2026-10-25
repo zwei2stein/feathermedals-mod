@@ -7,6 +7,6 @@ public class ThoughtWorker_Scalped : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        return p.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, mustBeVisible: true);
+        return p.health.hediffSet.HasHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped, mustBeVisible: true);
     }
 }

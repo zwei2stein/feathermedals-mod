@@ -69,6 +69,17 @@
     <TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Label>Scalp hunters can arrive by drop pod</TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Label>
     <TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Tooltip>If enabled, scalp hunts by factions able to use drop pods can arrive by drop pod. Default: ON</TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Tooltip>
     
+    <TribalTrophies_Settings_Scalping_ScalpRequests_Label>Scalp requests (quests)</TribalTrophies_Settings_Scalping_ScalpRequests_Label>
+
+    <TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Label>Factions can ask for scalps</TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Label>
+    <TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Tooltip>Factions whose ideoligion allows scalping can ask for scalps of their enemies. Default: ON</TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Tooltip>
+
+    <TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Label>Highest faction tech level: {LEVEL}</TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Label>
+    <TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Tooltip>Highest tech level of factions that can ask for scalps. Default: Industrial</TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Tooltip>
+
+    <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label>Maximum distance: {TILES} tiles</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label>
+    <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>Only settlements closer than this to your colony can ask for scalps. If player has a Gravship, this limit is ignored. Default: 32</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>
+    
     <!-- Display tab -->
 
     <TribalTrophies_Settings_Display_Label>Display</TribalTrophies_Settings_Display_Label>

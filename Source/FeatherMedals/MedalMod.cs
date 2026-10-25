@@ -238,6 +238,36 @@ namespace FeatherMedals
             listingStandard.ColumnWidth += gapWidth;
 
             listingStandard.GapLine();
+            
+            listingStandard.Label("TribalTrophies_Settings_Scalping_ScalpRequests_Label".Translate());
+ 
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+ 
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Label".Translate(),
+                ref Settings.ScalpRequestQuests,
+                "TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Tooltip".Translate()
+            );
+ 
+            if (Settings.ScalpRequestQuests)
+            {
+                Settings.ScalpRequestMaxTech = DrawTechLevelSlider(listingStandard,
+                    "TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Label",
+                    "TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Tooltip",
+                    Settings.ScalpRequestMaxTech);
+ 
+                Settings.ScalpRequestMaxDistance = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label".Translate(
+                        Settings.ScalpRequestMaxDistance.Named("TILES")),
+                    Settings.ScalpRequestMaxDistance, 5f, 100f, 0.5f,
+                    "TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip".Translate()));
+            }
+ 
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+ 
+            listingStandard.GapLine();
 
             listingStandard.End();
         }
@@ -344,6 +374,10 @@ namespace FeatherMedals
         public bool ScalpHuntRaids = true;
         public TechLevel ScalpHuntMaxTech = TechLevel.Industrial;
         public bool ScalpHuntDropPods = true;
+        public bool ScalpRequestQuests = true;
+        public TechLevel ScalpRequestMaxTech = TechLevel.Industrial;
+        public int ScalpRequestMaxDistance = 32;
+
         public bool ScalpPolesInBases = true;
 
         // This method saves and loads the setting
@@ -370,6 +404,9 @@ namespace FeatherMedals
             Scribe_Values.Look(ref ScalpHuntRaids, "ScalpHuntRaids", true);
             Scribe_Values.Look(ref ScalpHuntMaxTech, "ScalpHuntMaxTech", TechLevel.Industrial);
             Scribe_Values.Look(ref ScalpHuntDropPods, "ScalpHuntDropPods", true);
+            Scribe_Values.Look(ref ScalpRequestQuests, "ScalpRequestQuests", true);
+            Scribe_Values.Look(ref ScalpRequestMaxTech, "ScalpRequestMaxTech", TechLevel.Industrial);
+            Scribe_Values.Look(ref ScalpRequestMaxDistance, "ScalpRequestMaxDistance", 32);
             Scribe_Values.Look(ref ScalpPolesInBases, "ScalpPolesInBases", true);
         }
     }

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- vanilla TradeRequest. -->
+    <QuestScriptDef>
+        <defName>TribalTrophies_Quest_ScalpRequest</defName>
+        <rootSelectionWeight>0.4</rootSelectionWeight>
+        <rootMinProgressScore>8</rootMinProgressScore>
+        <rootEarliestDay>30</rootEarliestDay>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <expireDaysRange>10~15</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->[trophies] for [settlement_label]</li>
+                <li>questName->[trophies] of [targetFaction_name]</li>
+                <li>questName->The [hunt] of [targetFaction_name]</li>
+                <li>questName->A [bloody] [request]</li>
+                <li>questName->A [reward] for [hunt]</li>
+                <li>questName->A [reward] for [trophies]</li>
+                
+                <li>reward->Blood Money</li>
+                <li>reward->Payout</li>
+                <li>reward->[bloody] Cash</li>
+                
+                <li>trophies->Scalps</li>
+                <li>trophies->Trophies</li>
+                <li>trophies->Revenge tokens of</li>
+                <li>trophies->[bloody] Spoils</li>
+                <li>trophies->[bloody] Keepsakes</li>
+                
+                <li>hunt->Scalp Hunt</li>
+                <li>hunt->Scalping</li>
+                <li>hunt->Trophy Hunt</li>
+                <li>hunt->[bloody] Hunt</li>
+                
+                <li>bloody->Bloody</li>
+                <li>bloody->Grim</li>
+                <li>bloody->Savage</li>
+                <li>bloody->Brutal</li>
+                <li>bloody->Uncivilized</li>
+                <li>bloody->Vengeful</li>
+                
+                <li>request->Request</li>
+                <li>request->Bounty</li>
+                <li>request->Demand</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->[faction_name] of [settlement_label] want scalps taken from their enemies, [targetFaction_name]. They ask for:
+                    \n  [scalpCount]x scalp of a member of [targetFaction_name]
+                    \nAny scalp counts, as long as it was taken from a member of [targetFaction_name]. [delivery] Scalps can be delivered a few at a time.[rewardInfo]</li>
+                <li>delivery(askerHostile==True,priority=1)->[faction_name] is hostile to you, they ask you to send the scalps to [settlement_label] in transport pods as a gift.</li>
+                <li>delivery->Bring the scalps to [settlement_label] by caravan, or send them in transport pods as a gift.</li>
+                <li>rewardInfo(askerHostile==True,priority=1)->\n\n[faction_name] goodwill: [goodwillReward].</li>
+                <li>rewardInfo-></li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="QuestNode_GetMap">
+                    <canBeSpace>true</canBeSpace>
+                </li>
+                <li Class="FeatherMedals.QuestNode_ScalpRequest_GetAsker">
+                    <storeAs>settlement</storeAs>
+                    <storeFactionAs>faction</storeFactionAs>
+                    <storeFactionLeaderAs>asker</storeFactionLeaderAs>
+                    <storeAskerHostileAs>askerHostile</storeAskerHostileAs>
+                </li>
+                <li Class="FeatherMedals.QuestNode_ScalpRequest_GetTarget">
+                    <asker>$faction</asker>
+                    <storeAs>targetFaction</storeAs>
+                </li>
+                <li Class="FeatherMedals.QuestNode_ScalpRequest_GetRequest">
+                    <targetFaction>$targetFaction</targetFaction>
+                    <countRange>3~10</countRange>
+                    <extraStarAboveCount>5</extraStarAboveCount>
+                    <rewardValuePerScalp>400</rewardValuePerScalp>
+                    <rewardFactorPerStar>1.05</rewardFactorPerStar>
+                    <goodwillPerScalp>5</goodwillPerScalp>
+                    <storeCountAs>scalpCount</storeCountAs>
+                    <storeRewardValueAs>scalpRewardValue</storeRewardValueAs>
+                    <storeGoodwillAs>goodwillReward</storeGoodwillAs>
+                </li>
+                <li Class="QuestNode_Set">
+                    <name>timeout</name>
+                    <value>3600000</value> <!-- one year to deliver -->
+                </li>
+                <li Class="FeatherMedals.QuestNode_ScalpRequest_Initiate">
+                    <settlement>$settlement</settlement>
+                    <targetFaction>$targetFaction</targetFaction>
+                    <requestedCount>$scalpCount</requestedCount>
+                    <duration>$timeout</duration>
+                </li>
+
+                <!-- Neutral or allied asker: vanilla rewards, quest ends if they turn hostile -->
+                <li Class="QuestNode_Equal">
+                    <value1>$askerHostile</value1>
+                    <value2>false</value2>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <inSignal>faction.BecameHostileToPlayer</inSignal>
+                                <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+                                <text TKey="LetterTextQuestFailed">[faction_name] became hostile to you.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <inSignal>faction.BecameHostileToPlayer</inSignal>
+                                <outcome>Fail</outcome>
+                            </li>
+
+                            <li Class="QuestNode_GetMapWealth">
+                                <map>$map</map>
+                                <storeAs>mapWealth</storeAs>
+                            </li>
+                            <li Class="QuestNode_EvaluateSimpleCurve">
+                                <value>$mapWealth</value>
+                                <storeAs>wealthRewardValueFactor</storeAs>
+                                <curve>
+                                    <points>
+                                        <li>0, 1.15</li>
+                                        <li>50000, 1</li>
+                                        <li>300000, 0.85</li>
+                                    </points>
+                                </curve>
+                            </li>
+                            <li Class="QuestNode_Set">
+                                <name>rewardValue</name>
+                                <value>$($scalpRewardValue * $wealthRewardValueFactor * randFloat(0.9, 1.1))</value>
+                            </li>
+                            <li Class="QuestNode_GiveRewards">
+                                <inSignal>settlement.ScalpRequestFulfilled</inSignal>
+                                <parms>
+                                    <allowGoodwill>true</allowGoodwill>
+                                    <allowRoyalFavor>true</allowRoyalFavor>
+                                    <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                    <giveToCaravan>false</giveToCaravan>
+                                </parms>
+                                <useDifficultyFactor>false</useDifficultyFactor>
+                                <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                                    <letterDef>ChoosePawn</letterDef>
+                                    <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                                    <text TKey="LetterTextFavorReceiver">Who should be credited with [asker_faction_royalFavorLabel] for delivering the scalps?</text>
+                                    <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                </nodeIfChosenPawnSignalUsed>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <!-- Hostile asker: goodwill only -->
+                <li Class="QuestNode_Equal">
+                    <value1>$askerHostile</value1>
+                    <value2>true</value2>
+                    <node Class="FeatherMedals.QuestNode_ScalpRequest_GoodwillReward">
+                        <inSignal>settlement.ScalpRequestFulfilled</inSignal>
+                        <faction>$faction</faction>
+                        <change>$goodwillReward</change>
+                    </node>
+                </li>
+
+                <!-- End conditions -->
+                <li Class="QuestNode_Delay">
+                    <delayTicks>$timeout</delayTicks>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <outSignalComplete>ScalpRequestTimeout</outSignalComplete>
+                </li>
+
+                <li Class="QuestNode_End">
+                    <inSignal>settlement.ScalpRequestFulfilled</inSignal>
+                    <outcome>Success</outcome>
+                    <sendStandardLetter>true</sendStandardLetter>
+                </li>
+
+                <li Class="QuestNode_End">
+                    <inSignal>ScalpRequestTimeout</inSignal>
+                    <outcome>Fail</outcome>
+                </li>
+
+                <!-- asking settlement gone: quest just ends -->
+                <li Class="QuestNode_End">
+                    <inSignal>settlement.Destroyed</inSignal>
+                    <outcome>Fail</outcome>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+</Defs>

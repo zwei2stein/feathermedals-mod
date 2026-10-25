@@ -35,7 +35,7 @@ public static class NpcScalpGenerator
             return false;
         if (pawn.Faction is { IsPlayer: true })
             return false;
-        if (pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped))
+        if (pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped))
             return false;
 
         return ScalpingUtility.HeadOf(pawn) != null;
@@ -55,7 +55,7 @@ public static class NpcScalpGenerator
     private static void AddScar(Pawn pawn)
     {
         var head = ScalpingUtility.HeadOf(pawn);
-        var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, pawn, head);
+        var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped, pawn, head);
 
         var scalper = PickScalper(pawn);
         if (scalper != null)

@@ -52,7 +52,7 @@ namespace FeatherMedals
 
         //Scapling:
 
-        public static HediffDef FeatherTrophies_Scalping_Scalped;
+        public static HediffDef TribalTrophies_Scalping_Scalped;
         public static ThingDef FeatherTrophies_Scalping_Scalp;
         public static JobDef FeatherTrophies_Scalping_ScalpJob;
         public static JobDef FeatherTrophies_Scalping_ScalpInBreakJob;

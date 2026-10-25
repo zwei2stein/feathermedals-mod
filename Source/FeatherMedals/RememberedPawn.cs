@@ -43,6 +43,8 @@ namespace FeatherMedals
             }
         }
         
+        public Faction Faction => faction;
+
         public string FactionName
         {
             get

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/WorldObjectDef[defName="Settlement"]/comps</xpath>
+        <value>
+            <li Class="WorldObjectCompProperties">
+                <compClass>FeatherMedals.ScalpRequestComp</compClass>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

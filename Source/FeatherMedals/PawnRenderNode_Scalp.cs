@@ -37,7 +37,7 @@ namespace FeatherMedals
             {
                 return true;
             }
-            return !hediffs.HasHediff(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalped, mustBeVisible: true);
+            return !hediffs.HasHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped, mustBeVisible: true);
         }
     }
 }
