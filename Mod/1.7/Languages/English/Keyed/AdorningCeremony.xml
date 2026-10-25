@@ -59,11 +59,6 @@
 	<TribalTrophies_AdorningCeremony_TaleDialog_Suggest>Suggest</TribalTrophies_AdorningCeremony_TaleDialog_Suggest>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Clear>Clear</TribalTrophies_AdorningCeremony_TaleDialog_Clear>
 
-	<!-- ===== TrophyTab (Trophy Details tab on the item) ===== -->
-
-	<TribalTrophies_AdorningCeremony_TrophyTab_AdornedAtCeremony>{DATE} at a {QUALITY} adorning ceremony</TribalTrophies_AdorningCeremony_TrophyTab_AdornedAtCeremony>
-	<TribalTrophies_AdorningCeremony_TrophyTab_WornFor>Worn for {0} days</TribalTrophies_AdorningCeremony_TrophyTab_WornFor>
-
 	<!-- ===== Inspect (inspect pane) ===== -->
 
 	<TribalTrophies_AdorningCeremony_Inspect_AdornedOn>Adorned on: {DATE}</TribalTrophies_AdorningCeremony_Inspect_AdornedOn>
@@ -76,8 +71,9 @@
 	<!-- gizmo disable reason, message when the ritual dialog is confirmed -->
 	<TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>An adorning ceremony for this trophy is already in progress.</TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>
 
+	<TribalTrophies_AdorningCeremony_AwardedDialog_Title>{PAWN_labelShort} honored with:</TribalTrophies_AdorningCeremony_AwardedDialog_Title>
 	<!-- adorned dialog, trophy tab, inspect pane -->
-	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN_labelShort}</TribalTrophies_AdorningCeremony_Common_Honoring>
+	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN_nameFull}</TribalTrophies_AdorningCeremony_Common_Honoring>
 	<!-- adorned dialog, trophy tab, inspect pane, pawn Trophies tab -->
 	<TribalTrophies_AdorningCeremony_Common_AdornedBy>Adorned by: {PAWN}</TribalTrophies_AdorningCeremony_Common_AdornedBy>
 

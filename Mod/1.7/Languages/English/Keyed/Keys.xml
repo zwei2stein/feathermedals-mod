@@ -12,15 +12,19 @@
 	<!-- ===== Trophies tab (pawn) ===== -->
 
 	<TribalTrophies_Trophy_PawnTab_Label>Trophies</TribalTrophies_Trophy_PawnTab_Label>
-	<TribalTrophies_Trophy_PawnTab_NoTrophies>Not yet adorned with any trophies.</TribalTrophies_Trophy_PawnTab_NoTrophies>
+	
 	<TribalTrophies_Trophy_PawnTab_AdornedByOnDate>{PRESENTER} on {DATE}</TribalTrophies_Trophy_PawnTab_AdornedByOnDate>
 	<TribalTrophies_Trophy_PawnTab_Locked_Tooltip>This trophy is locked and cannot be removed. Click to unlock.</TribalTrophies_Trophy_PawnTab_Locked_Tooltip>
 	<TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip>This trophy is unlocked and can be removed. Click to lock.</TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip>
+	
+	<TribalTrophies_Trophy_PawnTab_Header_One>Worn trophy</TribalTrophies_Trophy_PawnTab_Header_One>
+	<TribalTrophies_Trophy_PawnTab_Header_Many>Worn trophies</TribalTrophies_Trophy_PawnTab_Header_Many>
+	<TribalTrophies_Trophy_TrophyTab_Header>Feather</TribalTrophies_Trophy_TrophyTab_Header>
 
 	<!-- ===== Trophy Details tab (item) ===== -->
-
-	<TribalTrophies_Trophy_TrophyTab_Label>Trophy Details</TribalTrophies_Trophy_TrophyTab_Label>
-
+	
+	<TribalTrophies_Trophy_TrophyTab_Label>Trophy</TribalTrophies_Trophy_TrophyTab_Label>
+	
 	<!-- ===== Info card ===== -->
 
 	<TribalTrophies_Trophy_InfoCard_MayGrant>May grant</TribalTrophies_Trophy_InfoCard_MayGrant>

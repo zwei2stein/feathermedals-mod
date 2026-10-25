@@ -62,12 +62,16 @@
 
     <!-- ===== Scalp tab (scalp, scalp belt, scalp pole) ===== -->
 
+    <TribalTrophies_Scalping_ScalpTab_Header_One>Scalp</TribalTrophies_Scalping_ScalpTab_Header_One>
+    <TribalTrophies_Scalping_ScalpTab_Header_Many>Scalps</TribalTrophies_Scalping_ScalpTab_Header_Many>
+    
     <TribalTrophies_Scalping_ScalpTab_Label>Scalps</TribalTrophies_Scalping_ScalpTab_Label>
+    
     <TribalTrophies_Scalping_ScalpTab_ScalpOf>Scalp of {VICTIM}</TribalTrophies_Scalping_ScalpTab_ScalpOf>
     <TribalTrophies_Scalping_ScalpTab_XenotypeOf>{XENOTYPE} of {FACTION}</TribalTrophies_Scalping_ScalpTab_XenotypeOf>
     <TribalTrophies_Scalping_ScalpTab_Of>of {FACTION}</TribalTrophies_Scalping_ScalpTab_Of>
     <TribalTrophies_Scalping_ScalpTab_When>{DATE}{PLACEPART}</TribalTrophies_Scalping_ScalpTab_When>
     <TribalTrophies_Scalping_ScalpTab_At> at {SETTLEMENT}</TribalTrophies_Scalping_ScalpTab_At>
-    <TribalTrophies_Scalping_ScalpTab_By>By {SCALPER}</TribalTrophies_Scalping_ScalpTab_By>
+    <TribalTrophies_Scalping_ScalpTab_By>Scalped by {SCALPER}</TribalTrophies_Scalping_ScalpTab_By>
     
 </LanguageData>

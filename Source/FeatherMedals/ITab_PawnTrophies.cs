@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace FeatherMedals
@@ -48,23 +48,11 @@ namespace FeatherMedals
         }
     }
     
-    public class ITab_PawnTrophies : ITab
+    public class ITab_PawnTrophies : ITab_TrophyRows
     {
-        private Vector2 _scrollPosition;
-        private const float MEDAL_ROW_HEIGHT = 90f;
-        private const float ICON_SIZE = 80f;
-        private const float PADDING = 10f;
-        private const float TAB_WIDTH = 400f;
-        private const float TAB_HEIGHT = 480f;
-        private const float LOCK_BTN_SIZE = 24f;
-
-        public ITab_PawnTrophies()
+        public ITab_PawnTrophies() : base("TribalTrophies_Trophy_PawnTab_Label")
         {
-            labelKey = "TribalTrophies_Trophy_PawnTab_Label";
-            size = new(TAB_WIDTH, TAB_HEIGHT);
         }
-
-        public override bool IsVisible => HasTrophies(SelPawnForGear);
 
         private Pawn SelPawnForGear
         {
@@ -78,217 +66,36 @@ namespace FeatherMedals
                 };
             }
         }
-        
-        private bool HasAwardInfo(FeatherMedal medal) => medal.awardedBy != null || medal.awarded != null;
 
-        private string GetAwardInfo(FeatherMedal medal)
+        // feathers first, then scalps; an empty belt holds no trophies
+        protected override List<ITrophyRecordRow> Rows()
         {
-            var presentedBy = medal.GetAwardedByLabel();
-            var date = medal.GetAwardedDateLabel();
-            if (presentedBy != null && date != null)
-                return "TribalTrophies_Trophy_PawnTab_AdornedByOnDate".Translate(presentedBy.Named("PRESENTER"), date.Named("DATE"));
-            return presentedBy ?? date ?? "";
-        }
-
-        private bool HasTrophies(Pawn pawn)
-        {
-            if (pawn?.apparel == null) return false;
-            foreach (var apparel in pawn.apparel.WornApparel)
-            {
-                if (apparel is FeatherMedal)
-                    return true;
-            }
-            return false;
-        }
-
-        protected override void FillTab()
-        {
+            var rows = new List<ITrophyRecordRow>();
             var pawn = SelPawnForGear;
-            if (pawn == null) return;
+            if (pawn?.apparel == null)
+                return rows;
 
-            var outerRect = new Rect(0f, 0f, size.x, size.y).ContractedBy(PADDING);
+            foreach (var medal in pawn.apparel.WornApparel.OfType<FeatherMedal>())
+                rows.Add(new FeatherTrophyRecordDrawer(medal));
+            foreach (var scalp in WornScalps(pawn))
+                rows.Add(new ScalpRecordDrawer(scalp));
+            return rows;
+        }
 
-            var headerRect = new Rect(outerRect.x, outerRect.y, outerRect.width, 30f);
-            Text.Font = GameFont.Medium;
-            Widgets.Label(headerRect, "TribalTrophies_Trophy_PawnTab_Label".Translate());
-            Text.Font = GameFont.Small;
+        protected override string Header(int rowCount) => rowCount == 1
+            ? "TribalTrophies_Trophy_PawnTab_Header_One".Translate()
+            : "TribalTrophies_Trophy_PawnTab_Header_Many".Translate();
 
-            if (!HasTrophies(pawn))
-            {
-                var emptyRect = new Rect(outerRect.x, headerRect.yMax + PADDING, outerRect.width, 40f);
-                GUI.color = Color.gray;
-                Widgets.Label(emptyRect, "TribalTrophies_Trophy_PawnTab_NoTrophies".Translate());
-                GUI.color = Color.white;
-                return;
-            }
-
-            var listRect = new Rect(outerRect.x, headerRect.yMax + PADDING, outerRect.width, outerRect.height - 30f - PADDING);
-            var viewWidth = listRect.width - 16f; // scrollbar
-
-            var totalHeight = 0f;
+        private static IEnumerable<Scalp> WornScalps(Pawn pawn)
+        {
             foreach (var apparel in pawn.apparel.WornApparel)
-                if (apparel is FeatherMedal medal)
-                    totalHeight += GetRowHeight(medal, viewWidth) + PADDING;
-            var viewRect = new Rect(0f, 0f, viewWidth, totalHeight);
-
-            Widgets.BeginScrollView(listRect, ref _scrollPosition, viewRect);
-
-            var curY = 0f;
-            foreach (var apparel in pawn.apparel.WornApparel)
-                if (apparel is FeatherMedal medal)
-                    DrawMedalRow(viewWidth, ref curY, medal);
-
-            Widgets.EndScrollView();
+            {
+                var container = apparel.TryGetComp<CompTrophyContainer>();
+                if (container == null)
+                    continue;
+                foreach (var scalp in container.Held.OfType<Scalp>())
+                    yield return scalp;
+            }
         }
-
-        private float GetRowHeight(FeatherMedal medal, float width)
-        {
-            var textWidth = GetTextWidth(width);
-            var height = 4f;
-
-            Text.Font = GameFont.Small;
-            height += Text.CalcHeight(medal.MedalLabel, textWidth) + 2f;
-
-            Text.Font = GameFont.Tiny;
-            if (medal.HasCitation)
-            {
-                height += UIHelper.CitationHeight(medal.citation, textWidth);
-            }
-            else
-            {
-                height += 20f + 2f;
-            }
-
-            var statText = UIHelper.GetStatSummary(medal.def);
-            if (!statText.NullOrEmpty())
-            {
-                height += Text.CalcHeight(statText, textWidth) + 2f;
-            }
-            
-            if (HasAwardInfo(medal))
-            {
-                height += Text.CalcHeight(GetAwardInfo(medal), textWidth) + 2f;
-            }
-            
-            int lineCount = medal.GetTraitChangeText()?.Split('\n').Length ?? 0;
-            height += lineCount * 24f;
-
-            Text.Font = GameFont.Small;
-            height += 8f;
-            return Mathf.Max(MEDAL_ROW_HEIGHT, height);
-        }
-        
-        private float GetTextWidth(float availableWidth)
-        {
-            return availableWidth - ICON_SIZE - (PADDING * 3) - LOCK_BTN_SIZE - PADDING;
-        }
-
-        private void DrawMedalRow(float width, ref float curY, FeatherMedal medal)
-        {
-            var rowHeight = GetRowHeight(medal, width);
-            var rowRect = new Rect(0f, curY, width, rowHeight);
-
-            if (Mouse.IsOver(rowRect))
-                Widgets.DrawHighlight(rowRect);
-
-            // Lock toggle
-            var lockRect = new Rect(
-                rowRect.xMax - LOCK_BTN_SIZE - PADDING,
-                rowRect.y + 4f,
-                LOCK_BTN_SIZE,
-                LOCK_BTN_SIZE
-            );
-            var wearer = medal.Wearer;
-            var tracker = wearer.apparel; // the tab only lists worn medals
-            var locked = tracker.IsLocked(medal);
-            var lockIcon = locked ? TrophyTextures.LockedIcon : TrophyTextures.UnlockedIcon;
-            var lockTip = locked
-                ? "TribalTrophies_Trophy_PawnTab_Locked_Tooltip".Translate()
-                : "TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip".Translate();
-
-            // only show when player can change worn things.
-            var canToggle = wearer.IsColonistPlayerControlled || StrippableUtility.CanBeStrippedByColony(wearer);
-
-            GUI.color = Color.gray;
-            if (canToggle)
-            {
-                if (Widgets.ButtonImage(lockRect, lockIcon, GUI.color))
-                {
-                    if (locked)
-                        tracker.Unlock(medal);
-                    else
-                        tracker.Lock(medal);
-                }
-            }
-            else
-            {
-                GUI.DrawTexture(lockRect, lockIcon);
-            }
-            GUI.color = Color.white;
-            TooltipHandler.TipRegion(lockRect, lockTip);
-
-            // Icon
-            var iconRect = new Rect(rowRect.x + PADDING, rowRect.y + (rowHeight - ICON_SIZE) / 2f, ICON_SIZE, ICON_SIZE);
-            Widgets.ThingIcon(iconRect, medal);
-
-            var textX = iconRect.xMax + PADDING;
-            var textWidth = GetTextWidth(width);
-
-            // Medal name
-            Text.Font = GameFont.Small;
-            Text.Anchor = TextAnchor.MiddleLeft;
-            var nameHeight = Text.CalcHeight(medal.MedalLabel, textWidth);
-            var nameRect = new Rect(textX, rowRect.y + 4f, textWidth, nameHeight);
-            Widgets.Label(nameRect, medal.MedalLabel);
-
-            // Citation
-            Text.Font = GameFont.Tiny;
-            float descBottom = nameRect.yMax;
-            if (medal.HasCitation)
-            {
-                UIHelper.DrawCitation(medal.def, medal.citation, nameRect, ref descBottom);
-            }
-            else
-            {
-                var descRect = new Rect(textX, nameRect.yMax + 2f, textWidth, 20f);
-                GUI.color = Color.gray;
-                Widgets.Label(descRect, (medal.def.description ?? "").Truncate(descRect.width));
-                GUI.color = Color.white;
-                descBottom = descRect.yMax;
-            }
-            
-            // Stat bonuses summary
-            var statText = UIHelper.GetStatSummary(medal.def);
-            if (!statText.NullOrEmpty())
-            {
-                Text.Font = GameFont.Tiny;
-                var statHeight = Text.CalcHeight(statText, textWidth);
-                var statsRect = new Rect(textX, descBottom + 2f, textWidth, statHeight);
-                GUI.color = UIHelper.GreenColor;
-                Widgets.Label(statsRect, statText);
-                GUI.color = Color.white;
-                descBottom = statsRect.yMax;
-            }
-            
-            UIHelper.DrawTraitChangeSummary(medal, textX, rowRect, ref descBottom);
-            
-            // Award info
-            if (HasAwardInfo(medal))
-            {
-                Text.Font = GameFont.Tiny;
-                var awardText = GetAwardInfo(medal);
-                var awardHeight = Text.CalcHeight(awardText, textWidth);
-                var awardRect = new Rect(textX, descBottom + 2f, textWidth, awardHeight);
-                GUI.color = Color.gray;
-                Widgets.Label(awardRect, awardText);
-                GUI.color = Color.white;
-            }
-            
-            Text.Font = GameFont.Small;
-            Text.Anchor = TextAnchor.UpperLeft;
-
-            curY += rowHeight + PADDING;
-        }
-        
     }
 }

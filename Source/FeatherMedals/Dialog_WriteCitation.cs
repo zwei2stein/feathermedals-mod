@@ -9,15 +9,11 @@ public class Dialog_WriteCitation : Window
     private readonly FeatherMedal medal;
     private string draft;
     private const int MAX_LENGTH = 300;
-    private const float MEDAL_COLUMN_WIDTH = 160f;
-    private const float ICON_SIZE = 160f;
-    private const float BUTTON_HEIGHT = 35f;
-    private const float BUTTON_AREA_HEIGHT = BUTTON_HEIGHT + 10f;
-    
-    private const float SCROLLBAR_WIDTH = 16f;
+    private const float MEDAL_COLUMN_WIDTH = TrophyUIStyle.TaleDialogFeatherColumnWidth;
+    private const float BUTTON_HEIGHT = TrophyUIStyle.ButtonHeight;
+    private const float BUTTON_AREA_HEIGHT = TrophyUIStyle.ButtonHeight + TrophyUIStyle.ColumnGap;
 
     private Vector2 medalScrollPosition;
-    private float medalScrollViewHeight;
 
     public Dialog_WriteCitation(FeatherMedal medal)
     {
@@ -34,71 +30,31 @@ public class Dialog_WriteCitation : Window
         closeOnClickedOutside = false;
     }
 
-    public override Vector2 InitialSize => new(600f, 400f);
+    public override Vector2 InitialSize => new(TrophyUIStyle.TaleDialogWidth, TrophyUIStyle.TabSize.y);
 
     public override void DoWindowContents(Rect inRect)
     {
-        var medalCol = new Rect(inRect.x, inRect.y, MEDAL_COLUMN_WIDTH, inRect.height - 45f);
-        DrawMedalColumn(medalCol);
+        var medalCol = new Rect(inRect.x, inRect.y, MEDAL_COLUMN_WIDTH, inRect.height);
 
         // Vertical separator
-        var separatorX = medalCol.xMax + 10f;
-        GUI.color = new Color(1f, 1f, 1f, 0.15f);
-        Widgets.DrawLineVertical(separatorX, inRect.y, inRect.height - 45f);
-        GUI.color = Color.white;
+        var separatorX = medalCol.xMax + TrophyUIStyle.ColumnGap;
+        UIHelper.DrawSeparatorVertical(separatorX, inRect.y, inRect.height);
 
-        var writeCol = new Rect(separatorX + 10f, inRect.y, inRect.width - MEDAL_COLUMN_WIDTH - 30f, inRect.height);
+        // writing first, so the preview shows the text typed this frame
+        var writeCol = new Rect(separatorX + TrophyUIStyle.ColumnGap, inRect.y, inRect.width - MEDAL_COLUMN_WIDTH - TrophyUIStyle.ColumnGap * 3f, inRect.height);
         DrawWritingColumn(writeCol);
+
+        DrawMedalColumn(medalCol);
     }
     
     private void DrawMedalColumn(Rect rect)
     {
-        // Medal icon
-        var iconX = rect.x + (rect.width - ICON_SIZE) / 2f;
-        var iconRect = new Rect(iconX, rect.y + 10f, ICON_SIZE, ICON_SIZE);
-        Widgets.ThingIcon(iconRect, medal);
-
-        // scroll instead of overflowing
-        var scrollRect = new Rect(rect.x, iconRect.yMax + 10f, rect.width, rect.yMax - iconRect.yMax - 10f);
-        var viewRect = new Rect(0f, 0f, scrollRect.width - SCROLLBAR_WIDTH, medalScrollViewHeight);
-        Widgets.BeginScrollView(scrollRect, ref medalScrollPosition, viewRect);
-
-        var curY = 0f;
-
-        // Medal name
-        Text.Font = GameFont.Small;
-        Text.Anchor = TextAnchor.UpperCenter;
-        var nameHeight = Text.CalcHeight(medal.LabelCap, viewRect.width);
-        var nameRect = new Rect(0f, curY, viewRect.width, nameHeight);
-        Widgets.Label(nameRect, medal.LabelCap);
-        curY = nameRect.yMax + 6f;
-
-        // Medal description
-        Text.Font = GameFont.Tiny;
-        var desc = medal.def.description ?? "";
-        var descHeight = Text.CalcHeight(desc, viewRect.width - 10f);
-        var descRect = new Rect(5f, curY, viewRect.width - 10f, descHeight);
-        GUI.color = Color.gray;
-        Widgets.Label(descRect, desc);
-        GUI.color = Color.white;
-        curY = descRect.yMax + 10f;
-
-        // Stat bonuses
-        var offsets = medal.def.equippedStatOffsets;
-        if (offsets is { Count: > 0 })
-        {
-            GUI.color = UIHelper.GreenColor;
-            foreach (var mod in offsets)
-            {
-                var line = UIHelper.StatOffsetLine(mod);
-                var lineHeight = Text.CalcHeight(line, viewRect.width - 10f);
-                Widgets.Label(new Rect(5f, curY, viewRect.width - 10f, lineHeight), line);
-                curY += lineHeight;
-            }
-            GUI.color = Color.white;
-        }
-
-        medalScrollViewHeight = curY;
+        // the trophy as it will be adorned, with the tale being written; scroll instead of overflowing
+        var row = new FeatherTrophyDetailDrawer(medal, draft);
+        var viewWidth = rect.width - TrophyUIStyle.ScrollbarWidth;
+        var viewRect = new Rect(0f, 0f, viewWidth, row.Height(viewWidth));
+        Widgets.BeginScrollView(rect, ref medalScrollPosition, viewRect);
+        row.Draw(viewRect);
         Widgets.EndScrollView();
 
         Text.Font = GameFont.Small;
@@ -109,13 +65,13 @@ public class Dialog_WriteCitation : Window
     {
         // Header
         Text.Font = GameFont.Medium;
-        var headerRect = new Rect(rect.x, rect.y + 10f, rect.width, 30f);
+        var headerRect = new Rect(rect.x, rect.y + 10f, rect.width, TrophyUIStyle.HeaderHeight);
         Widgets.Label(headerRect, "TribalTrophies_AdorningCeremony_TaleDialog_Title".Translate());
         Text.Font = GameFont.Small;
 
         // Instruction
         var instrRect = new Rect(rect.x, headerRect.yMax + 4f, rect.width, 36f);
-        GUI.color = Color.gray;
+        GUI.color = TrophyUIStyle.MutedColor;
         Text.Font = GameFont.Tiny;
         Widgets.Label(instrRect, "TribalTrophies_AdorningCeremony_TaleDialog_Desc".Translate());
         GUI.color = Color.white;
@@ -129,7 +85,7 @@ public class Dialog_WriteCitation : Window
             draft = draft.Substring(0, MAX_LENGTH);
 
         // Character count — sits just above the buttons
-        var countColor = draft.Length > MAX_LENGTH - 30 ? Color.yellow : Color.gray;
+        var countColor = draft.Length > MAX_LENGTH - 30 ? Color.yellow : TrophyUIStyle.MutedColor;
         GUI.color = countColor;
         Text.Font = GameFont.Tiny;
         var countRect = new Rect(rect.x, textRect.yMax + 4f, rect.width, 20f);

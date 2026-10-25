@@ -4,43 +4,43 @@ using Verse;
 
 namespace FeatherMedals;
 
-public static class ScalpRecordDrawer
+public class ScalpRecordDrawer : ITrophyRecordRow
 {
-    private const float SidePadding = 10f;
-    private const float PictureColumnWidth = 80f;
-    private const float PictureSize = 70f;
-    private const float ColumnGap = 10f;
-    private const float RowPadding = 4f;
-    private const float LineGap = 2f;
-    private const float BlockGap = 8f;
+    private readonly Scalp scalp;
+
+    public ScalpRecordDrawer(Scalp scalp)
+    {
+        this.scalp = scalp;
+    }
 
     private class Line
     {
         public string text;
         public GameFont font;
         public Color color;
-        public float gapAfter = LineGap;
+        public float gapAfter = TrophyUIStyle.RowLineGap;
     }
 
-    public static float Height(Scalp scalp, float width)
+    public float Height(float width)
     {
-        return Mathf.Max(PictureSize, TextHeight(Lines(scalp), TextWidth(width))) + RowPadding * 2f;
+        return Mathf.Max(TrophyUIStyle.ScalpIconSize, TextHeight(Lines(), TextWidth(width))) + TrophyUIStyle.RowPadding * 2f;
     }
 
-    public static void Draw(Scalp scalp, Rect rect)
+    public void Draw(Rect rect)
     {
         if (Mouse.IsOver(rect))
             Widgets.DrawHighlight(rect);
 
         // centered in its column
-        var column = new Rect(rect.x + SidePadding, rect.y, PictureColumnWidth, rect.height);
-        var pictureRect = new Rect(column.center.x - PictureSize / 2f, column.center.y - PictureSize / 2f, PictureSize, PictureSize);
+        var size = TrophyUIStyle.ScalpIconSize;
+        var column = new Rect(rect.x + TrophyUIStyle.SidePadding, rect.y, TrophyUIStyle.IconColumnWidth, rect.height);
+        var pictureRect = new Rect(column.center.x - size / 2f, column.center.y - size / 2f, size, size);
         Widgets.ThingIcon(pictureRect, scalp);
 
         // text block centered against the picture
-        var lines = Lines(scalp);
+        var lines = Lines();
         var textWidth = TextWidth(rect.width);
-        var textArea = new Rect(column.xMax + ColumnGap, rect.y, textWidth, rect.height);
+        var textArea = new Rect(column.xMax + TrophyUIStyle.ColumnGap, rect.y, textWidth, rect.height);
         var curY = rect.y + (rect.height - TextHeight(lines, textWidth)) / 2f;
         foreach (var line in lines)
             UIHelper.DrawLine(line.text, line.font, line.color, TextAnchor.MiddleCenter, textArea, ref curY, line.gapAfter);
@@ -50,7 +50,7 @@ public static class ScalpRecordDrawer
 
     private static float TextWidth(float rowWidth)
     {
-        return rowWidth - SidePadding - PictureColumnWidth - ColumnGap - SidePadding;
+        return rowWidth - TrophyUIStyle.SidePadding - TrophyUIStyle.IconColumnWidth - TrophyUIStyle.ColumnGap - TrophyUIStyle.SidePadding;
     }
 
     private static float TextHeight(List<Line> lines, float width)
@@ -64,7 +64,7 @@ public static class ScalpRecordDrawer
     // Scalp of (victim)        / (xenotype) of (faction)
     // (date) at (settlement)
     // By (scalper)             / of (faction)
-    private static List<Line> Lines(Scalp scalp)
+    private List<Line> Lines()
     {
         var lines = new List<Line>();
         var victim = scalp.Victim;
@@ -74,7 +74,7 @@ public static class ScalpRecordDrawer
         var victimName = victim?.Name;
         Add(lines, victimName.NullOrEmpty()
             ? scalp.LabelCap.ToString()
-            : "TribalTrophies_Scalping_ScalpTab_ScalpOf".Translate(Highlight(victimName, UIHelper.GoldColor).Named("VICTIM")).Resolve(),
+            : "TribalTrophies_Scalping_ScalpTab_ScalpOf".Translate(Highlight(victimName, TrophyUIStyle.GoldColor).Named("VICTIM")).Resolve(),
             GameFont.Small, Color.white);
         Add(lines, Origin(scalp.XenotypeName, victim?.FactionNameColored));
         EndBlock(lines);
@@ -93,7 +93,7 @@ public static class ScalpRecordDrawer
         var scalperName = scalper?.Name;
         if (!scalperName.NullOrEmpty())
         {
-            Add(lines, "TribalTrophies_Scalping_ScalpTab_By".Translate(Highlight(scalperName, UIHelper.GreenColor).Named("SCALPER")).Resolve());
+            Add(lines, "TribalTrophies_Scalping_ScalpTab_By".Translate(Highlight(scalperName, TrophyUIStyle.GreenColor).Named("SCALPER")).Resolve());
             Add(lines, OfFaction(scalper.FactionNameColored));
         }
 
@@ -127,12 +127,12 @@ public static class ScalpRecordDrawer
     {
         if (text.NullOrEmpty())
             return;
-        lines.Add(new Line { text = text, font = font, color = color ?? UIHelper.MutedColor });
+        lines.Add(new Line { text = text, font = font, color = color ?? TrophyUIStyle.MutedColor });
     }
 
     private static void EndBlock(List<Line> lines)
     {
         if (lines.Count > 0)
-            lines[lines.Count - 1].gapAfter = BlockGap;
+            lines[lines.Count - 1].gapAfter = TrophyUIStyle.BlockGap;
     }
 }
