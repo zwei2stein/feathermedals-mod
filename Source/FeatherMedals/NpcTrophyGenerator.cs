@@ -103,7 +103,7 @@ public static class NpcTrophyGenerator
             return false;
         if (!TechAllowed(pawn))
             return false;
-        if (pawn.story.Adulthood == null && pawn.story.Childhood != FeatherMedalDefOf.FeatherTrophy_Backstory_PraisedChild)
+        if (pawn.story.Adulthood == null && pawn.story.Childhood != FeatherMedalDefOf.TribalTrophies_Backstory_PraisedChild)
             return false;
 
         baseRolls = BaseRolls(pawn);
@@ -148,13 +148,13 @@ public static class NpcTrophyGenerator
     {
         if (backstory == null)
             return 0;
-        if (backstory == FeatherMedalDefOf.FeatherTrophy_Backstory_HonoredElder
-            || backstory == FeatherMedalDefOf.FeatherTrophy_Backstory_DisgracedElder)
+        if (backstory == FeatherMedalDefOf.TribalTrophies_Backstory_HonoredElder
+            || backstory == FeatherMedalDefOf.TribalTrophies_Backstory_DisgracedElder)
             return 3;
-        if (backstory == FeatherMedalDefOf.FeatherTrophy_Backstory_FeatheredWarrior)
+        if (backstory == FeatherMedalDefOf.TribalTrophies_Backstory_FeatheredWarrior)
             return 2;
-        if (backstory == FeatherMedalDefOf.FeatherTrophy_Backstory_PraisedWarrior
-            || backstory == FeatherMedalDefOf.FeatherTrophy_Backstory_PraisedChild)
+        if (backstory == FeatherMedalDefOf.TribalTrophies_Backstory_PraisedWarrior
+            || backstory == FeatherMedalDefOf.TribalTrophies_Backstory_PraisedChild)
             return 1;
         return 0;
     }

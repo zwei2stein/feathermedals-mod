@@ -2,7 +2,7 @@
 <Defs>
 
     <BackstoryDef>
-        <defName>FeatherTrophy_Backstory_DisgracedElder</defName>
+        <defName>TribalTrophies_Backstory_DisgracedElder</defName>
         <title>disgraced elder</title>
         <titleShort>elder</titleShort>
         <description>[PAWN_nameDef] used to be a figure of great honor in [PAWN_possessive] tribe. [PAWN_pronoun] betrayed [PAWN_possessive] tribe and joined with a sworn enemy, raising a family there.</description>
@@ -34,7 +34,7 @@
     </BackstoryDef>
 
     <BackstoryDef>
-        <defName>FeatherTrophy_Backstory_HonoredElder</defName>
+        <defName>TribalTrophies_Backstory_HonoredElder</defName>
         <title>honored elder</title>
         <titleShort>elder</titleShort>
         <description>[PAWN_nameDef] was once a fierce warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe relentlessly and eventually became an honored elder.</description>
@@ -70,7 +70,7 @@
     </BackstoryDef>
 
     <BackstoryDef>
-        <defName>FeatherTrophy_Backstory_FeatheredWarrior</defName>
+        <defName>TribalTrophies_Backstory_FeatheredWarrior</defName>
         <title>feathered warrior</title>
         <titleShort>feathered</titleShort>
         <description>[PAWN_nameDef] was once a skilled warrior. [PAWN_pronoun] defended [PAWN_possessive] tribe with great bravery and eventually became a celebrated hero.</description>
@@ -103,7 +103,7 @@
     </BackstoryDef>
 
     <BackstoryDef>
-        <defName>FeatherTrophy_Backstory_PraisedWarrior</defName>
+        <defName>TribalTrophies_Backstory_PraisedWarrior</defName>
         <title>praised warrior</title>
         <titleShort>praised</titleShort>
         <description>[PAWN_nameDef] was once a warrior of some renown. [PAWN_pronoun] defended [PAWN_possessive] tribe with noted skill and bravery and earned the respect of [PAWN_possessive] peers.</description>
@@ -135,7 +135,7 @@
     </BackstoryDef>
 
     <BackstoryDef>
-        <defName>FeatherTrophy_Backstory_PraisedChild</defName>
+        <defName>TribalTrophies_Backstory_PraisedChild</defName>
         <title>praised child</title>
         <titleShort>praised</titleShort>
         <description>[PAWN_nameDef] surprised everyone with great bravery and honor. [PAWN_pronoun] defended [PAWN_possessive] tribe and earned the respect of every tribe member.</description>

@@ -37,7 +37,7 @@
 	</RecipeDef>
 	
 	<RecipeDef ParentName="FeatherTrophy_AshlandsRecipeBase">
-		<defName>FeatherTrophy_Recipe_Mashed_Ashlands_AshStormLover_Feather</defName>
+		<defName>TribalTrophies_Recipe_Mashed_Ashlands_AshStormLover_Feather</defName>
 		<label>feather: braved ash storm</label>
 		<jobString>Crafting a feather telling the story of the wearer braving an ash storm.</jobString>
 		<products>

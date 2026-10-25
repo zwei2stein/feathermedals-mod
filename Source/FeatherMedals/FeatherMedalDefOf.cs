@@ -37,11 +37,11 @@ namespace FeatherMedals
 
         public static RulePackDef TribalTrophies_Trophy_Feather_Adorning_NpcCitation;
 
-        public static BackstoryDef FeatherTrophy_Backstory_DisgracedElder;
-        public static BackstoryDef FeatherTrophy_Backstory_HonoredElder;
-        public static BackstoryDef FeatherTrophy_Backstory_FeatheredWarrior;
-        public static BackstoryDef FeatherTrophy_Backstory_PraisedWarrior;
-        public static BackstoryDef FeatherTrophy_Backstory_PraisedChild;
+        public static BackstoryDef TribalTrophies_Backstory_DisgracedElder;
+        public static BackstoryDef TribalTrophies_Backstory_HonoredElder;
+        public static BackstoryDef TribalTrophies_Backstory_FeatheredWarrior;
+        public static BackstoryDef TribalTrophies_Backstory_PraisedWarrior;
+        public static BackstoryDef TribalTrophies_Backstory_PraisedChild;
         
         public static PreceptDef IdeoRole_ShootingSpecialist;
         public static PreceptDef IdeoRole_MeleeSpecialist;
