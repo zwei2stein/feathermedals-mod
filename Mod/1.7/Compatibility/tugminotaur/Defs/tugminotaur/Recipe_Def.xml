@@ -2,7 +2,7 @@
 <Defs>
 
 	<RecipeDef ParentName="FeatherTrophy_OrnateRecipeBase">
-		<defName>FeatherMedal_Recipe_RBM_Herculean_Feather</defName>
+		<defName>TribalTrophies_Trophy_Feather_Recipe_RBM_Herculean_Feather</defName>
 		<label>feather: herculean strength</label>
 		<jobString>Crafting a feather representing the wearer's great strength.</jobString>
 		<products>

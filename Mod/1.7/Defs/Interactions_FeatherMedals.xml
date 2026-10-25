@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<RulePackDef>
-		<defName>FeatherMedals_Speech_AwardTrophy_Rules</defName>
+		<defName>TribalTrophies_Speech_AwardTrophy_Rules</defName>
 		<rulePack>
 			<rulesStrings>
 				<li>r_logentry->[INITIATOR_nameDef] [speech_verb] a warrior for [their_actions].</li>
@@ -45,13 +45,13 @@
 
 		<logRulesInitiator>
 			<include>
-				<li>FeatherMedals_Speech_AwardTrophy_Rules</li>
+				<li>TribalTrophies_Speech_AwardTrophy_Rules</li>
 			</include>
 		</logRulesInitiator>
 	</InteractionDef>
 
 	<TaleDef>
-		<defName>FeatherMedals_AdornedTrophyTale</defName>
+		<defName>TribalTrophies_AdornedTrophyTale</defName>
 		<label>trophy adorned</label>
 		<taleClass>Tale_DoublePawn</taleClass>
 		<type>Volatile</type>

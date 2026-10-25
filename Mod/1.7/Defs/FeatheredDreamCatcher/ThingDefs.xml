@@ -49,7 +49,7 @@
         <costStuffCount>10</costStuffCount>
         <costList>
             <WoodLog>10</WoodLog>
-            <FeatherTrophy_Precursor_PristineFeather>4</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>4</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </costList>
         <building>
             <isEdifice>false</isEdifice>

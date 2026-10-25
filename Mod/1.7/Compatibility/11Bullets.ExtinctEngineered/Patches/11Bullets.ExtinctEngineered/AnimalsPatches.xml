@@ -7,7 +7,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="Kiwi"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -15,7 +15,7 @@
             <xpath>/Defs/ThingDef[defName="Kiwi"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -27,7 +27,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="Kakapo"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -35,7 +35,7 @@
             <xpath>/Defs/ThingDef[defName="Kakapo"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -47,7 +47,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="Kakariki"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -55,7 +55,7 @@
             <xpath>/Defs/ThingDef[defName="Kakariki"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -67,7 +67,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="Moa"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -75,7 +75,7 @@
             <xpath>/Defs/ThingDef[defName="Moa"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -87,7 +87,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="SlagSnipe"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -95,7 +95,7 @@
             <xpath>/Defs/ThingDef[defName="SlagSnipe"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -107,7 +107,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="RodriguesSolitaire"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -115,7 +115,7 @@
             <xpath>/Defs/ThingDef[defName="RodriguesSolitaire"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -127,7 +127,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="GreatAuk"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -135,7 +135,7 @@
             <xpath>/Defs/ThingDef[defName="GreatAuk"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -147,7 +147,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="ElephantBird"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -155,7 +155,7 @@
             <xpath>/Defs/ThingDef[defName="ElephantBird"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>

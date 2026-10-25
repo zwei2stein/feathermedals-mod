@@ -3,9 +3,9 @@
 
     <!--  RECIPE BASE  -->
 
-    <RecipeDef Name="FeatherTrophy_Precursor_PristineFeather_RecipeBase" Abstract="True">
+    <RecipeDef Name="TribalTrophies_Trophy_Feather_Precursor_PristineFeather_RecipeBase" Abstract="True">
         <products>
-            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </products>
         <skillRequirements>
             <Crafting>2</Crafting>
@@ -25,7 +25,7 @@
         </researchPrerequisites>
     </RecipeDef>
 
-    <RecipeDef ParentName="FeatherTrophy_Precursor_PristineFeather_RecipeBase">
+    <RecipeDef ParentName="TribalTrophies_Trophy_Feather_Precursor_PristineFeather_RecipeBase">
         <label>refine bird leather into a pristine feather</label>
         <jobString>Refining bird leather into pristine feather.</jobString>
         <defName>FeatherTrophy_Recipe_PristineFeather_Leather_Bird</defName>

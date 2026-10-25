@@ -2,7 +2,7 @@
 <Defs>
 
     <RulePackDef>
-        <defName>FeatherMedals_NpcCitation</defName>
+        <defName>TribalTrophies_Trophy_Feather_Adorning_NpcCitation</defName>
         <rulePack>
             <rulesStrings>
                 <li>r_root->[place] has [speech_verb] a warrior for [speech_adjective] [heroic_trait].</li>

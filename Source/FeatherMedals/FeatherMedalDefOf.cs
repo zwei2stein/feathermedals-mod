@@ -18,12 +18,12 @@ namespace FeatherMedals
 
         public static PreceptDef TribalTrophies_AdorningCeremonyPrecept;
 
-        public static ThoughtDef FeatherMedals_AwardedTrophy_Thought;
-        public static ThoughtDef FeatherMedals_WitnessedTrophyCeremony_Thought;
+        public static ThoughtDef TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy;
+        public static ThoughtDef TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed;
 
         public static TraitDef TribalTrophies_Decorated;
 
-        public static TaleDef FeatherMedals_AdornedTrophyTale;
+        public static TaleDef TribalTrophies_AdornedTrophyTale;
 
         public static InteractionDef TribalTrophies_Speech_AdornTrophy;
 
@@ -35,7 +35,7 @@ namespace FeatherMedals
 
         public static IssueDef TribalTrophies_Issue_HonoringWarriors;
 
-        public static RulePackDef FeatherMedals_NpcCitation;
+        public static RulePackDef TribalTrophies_Trophy_Feather_Adorning_NpcCitation;
 
         public static BackstoryDef FeatherTrophy_Backstory_DisgracedElder;
         public static BackstoryDef FeatherTrophy_Backstory_HonoredElder;

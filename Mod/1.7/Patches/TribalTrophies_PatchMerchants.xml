@@ -6,7 +6,7 @@
         <xpath>Defs/TraderKindDef[defName="Caravan_Neolithic_ShamanMerchant" or defName="Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
         <value>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>FeatherTrophy_Precursor_PristineFeather</thingDef>
+                <thingDef>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</thingDef>
                 <countRange>1~2</countRange>
             </li>
         </value>
@@ -17,7 +17,7 @@
         <xpath>Defs/TraderKindDef[contains(defName, "_Neolithic_")]/stockGenerators</xpath>
         <value>
             <li Class="StockGenerator_BuySingleDef">
-                <thingDef>FeatherTrophy_Precursor_PristineFeather</thingDef>
+                <thingDef>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</thingDef>
             </li>
         </value>
     </Operation>

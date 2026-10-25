@@ -29,7 +29,7 @@
             <li>Violent</li>
         </requiredWorkTags>
         <possessions>
-            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
     </BackstoryDef>
 
@@ -65,7 +65,7 @@
             <li>ManualDumb</li>
         </workDisables>
         <possessions>
-            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
     </BackstoryDef>
 
@@ -98,7 +98,7 @@
             <li>Violent</li>
         </requiredWorkTags>
         <possessions>
-            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
     </BackstoryDef>
 
@@ -130,7 +130,7 @@
             <li>Violent</li>
         </requiredWorkTags>
         <possessions>
-            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
     </BackstoryDef>
 
@@ -155,7 +155,7 @@
             <li>Violent</li>
         </requiredWorkTags>
         <possessions>
-            <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
     </BackstoryDef>
 

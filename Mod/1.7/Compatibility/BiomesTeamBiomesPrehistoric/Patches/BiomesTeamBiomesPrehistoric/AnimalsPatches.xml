@@ -7,7 +7,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Cryodrakon"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -15,7 +15,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Cryodrakon"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -27,7 +27,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Deinonychus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -35,7 +35,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Deinonychus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -47,7 +47,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Gallimimus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -55,7 +55,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Gallimimus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -67,7 +67,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Hypsilophodon"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -75,7 +75,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Hypsilophodon"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -87,7 +87,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Juravenator"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -95,7 +95,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Juravenator"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -107,7 +107,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Leaellynasaura"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -115,7 +115,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Leaellynasaura"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -127,7 +127,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Ornithomimus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -135,7 +135,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Ornithomimus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -147,7 +147,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Oviraptor"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -155,7 +155,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Oviraptor"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -167,7 +167,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Pisanosaurus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -175,7 +175,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Pisanosaurus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -187,7 +187,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Sinornithosaurus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -195,7 +195,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Sinornithosaurus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -207,7 +207,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Struthiomimus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -215,7 +215,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Struthiomimus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -227,7 +227,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Thalassodromeus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -235,7 +235,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Thalassodromeus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -247,7 +247,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Therizinosaurus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -255,7 +255,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Therizinosaurus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -267,7 +267,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Timimus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -275,7 +275,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Timimus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -287,7 +287,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Troodon"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -295,7 +295,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Troodon"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -307,7 +307,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Utahraptor"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -315,7 +315,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Utahraptor"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -327,7 +327,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Velociraptor"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -335,7 +335,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Velociraptor"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -347,7 +347,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="BMT_Yutyrannus"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -355,7 +355,7 @@
             <xpath>/Defs/ThingDef[defName="BMT_Yutyrannus"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>

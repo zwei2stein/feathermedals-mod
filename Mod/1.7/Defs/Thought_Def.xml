@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThoughtDef>
-		<defName>FeatherMedals_AwardedTrophy_Thought</defName>
+		<defName>TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy</defName>
 		<durationDays>15</durationDays>
 		<stages>
 			<li>
@@ -28,7 +28,7 @@
 	</ThoughtDef>
 
 	<ThoughtDef>
-		<defName>FeatherMedals_WitnessedTrophyCeremony_Thought</defName>
+		<defName>TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed</defName>
 		<durationDays>5</durationDays>
 		<stages>
 			<li>

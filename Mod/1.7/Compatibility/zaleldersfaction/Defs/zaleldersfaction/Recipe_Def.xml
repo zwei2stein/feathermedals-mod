@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="FeatherTrophy_AnimaRecipeBase" Abstract="True">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="FeatherTrophy_AnimaRecipeBase" Abstract="True">
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
@@ -17,7 +17,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>FeatherTrophy_Precursor_PristineFeather</li>
+						<li>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -32,14 +32,14 @@
 		<fixedIngredientFilter>
 			<thingDefs>
 				<li>AnimaFiber</li>
-				<li>FeatherTrophy_Precursor_PristineFeather</li>
+				<li>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</li>
 				<li>Dye</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
 
 	<RecipeDef ParentName="FeatherTrophy_AnimaRecipeBase">
-		<defName>FeatherMedal_Recipe_NatureHarmony_Feather</defName>
+		<defName>TribalTrophies_Trophy_Feather_Recipe_NatureHarmony_Feather</defName>
 		<label>feather: in harmony with nature</label>
 		<jobString>Crafting a feather symbolizing the warrior's unity with nature.</jobString>
 		<products>

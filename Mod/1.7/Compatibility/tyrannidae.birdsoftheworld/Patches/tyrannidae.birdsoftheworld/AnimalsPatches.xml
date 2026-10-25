@@ -7,7 +7,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="TYR_Triller_WhiteBrowed"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -15,7 +15,7 @@
             <xpath>/Defs/ThingDef[defName="TYR_Triller_WhiteBrowed"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -27,7 +27,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="TYR_Parrot_Caica"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -35,7 +35,7 @@
             <xpath>/Defs/ThingDef[defName="TYR_Parrot_Caica"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -47,7 +47,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="TYR_Hummingbird_BlueTailed"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -55,7 +55,7 @@
             <xpath>/Defs/ThingDef[defName="TYR_Hummingbird_BlueTailed"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -67,7 +67,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="TYR_FairyBluebird_Philippine"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -75,7 +75,7 @@
             <xpath>/Defs/ThingDef[defName="TYR_FairyBluebird_Philippine"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -87,7 +87,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="TYR_Owl_AfricanGrass"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -95,7 +95,7 @@
             <xpath>/Defs/ThingDef[defName="TYR_Owl_AfricanGrass"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>
@@ -107,7 +107,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName="TYR_Cuckooshrike_BlackWinged"]/butcherProducts</xpath>
             <value>
-                <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
             </value>
         </match>
 
@@ -115,7 +115,7 @@
             <xpath>/Defs/ThingDef[defName="TYR_Cuckooshrike_BlackWinged"]</xpath>
             <value>
                 <butcherProducts>
-                    <FeatherTrophy_Precursor_PristineFeather>1</FeatherTrophy_Precursor_PristineFeather>
+                    <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
                 </butcherProducts>
             </value>
         </nomatch>

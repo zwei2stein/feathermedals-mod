@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="FeatherTrophy_EcotechRecipeBase" Abstract="True">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="FeatherTrophy_EcotechRecipeBase" Abstract="True">
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
@@ -15,7 +15,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>FeatherTrophy_Precursor_PristineFeather</li>
+						<li>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -30,7 +30,7 @@
 		<fixedIngredientFilter>
 			<thingDefs>
 				<li>ET_Glowsap</li>
-				<li>FeatherTrophy_Precursor_PristineFeather</li>
+				<li>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</li>
 				<li>Dye</li>
 			</thingDefs>
 		</fixedIngredientFilter>
