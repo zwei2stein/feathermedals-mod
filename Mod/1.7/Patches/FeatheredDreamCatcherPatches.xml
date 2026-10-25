@@ -5,14 +5,14 @@
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities[li="EndTable" or li="SleepAccelerator"]</xpath>
         <value>
-            <li>FeatherTrophies_FeatheredDreamCatcher</li>
+            <li>TribalTrophies_Building_FeatheredDreamCatcher</li>
         </value>
     </Operation>
 
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/StyleCategoryDef[defName="Totemic" or defName="Rustic" or defName="Animalist"]/addDesignators</xpath>
         <value>
-            <li>FeatherTrophies_FeatheredDreamCatcher</li>
+            <li>TribalTrophies_Building_FeatheredDreamCatcher</li>
         </value>
     </Operation>
     
@@ -30,8 +30,8 @@
                             <allowNonStackableDuplicates>False</allowNonStackableDuplicates>
                             <filter>
                                 <thingDefs>
-                                    <li>FeatherTrophies_FeatheredDreamCatcher</li>
-                                    <li MayRequire="zal.eldersfaction">FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                                    <li>TribalTrophies_Building_FeatheredDreamCatcher</li>
+                                    <li MayRequire="zal.eldersfaction">TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                                 </thingDefs>
                             </filter>
                         </fixedParams>

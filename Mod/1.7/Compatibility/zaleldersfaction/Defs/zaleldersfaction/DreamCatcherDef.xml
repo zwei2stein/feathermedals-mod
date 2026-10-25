@@ -4,13 +4,13 @@
     <!-- Anima variant of the dream catcher. Same as the base def, but cost uses anima fiber instead of a stuff and the meditation focus is stronger. Keep in sync with the base def. -->
 
     <ThingDef ParentName="BuildingBase">
-        <defName>FeatherTrophies_FeatheredDreamCatcher_Anima</defName>
+        <defName>TribalTrophies_Building_FeatheredDreamCatcher_Anima</defName>
         <label>anima dream catcher</label>
         <description>A wooden frame with an intricate anima fiber weaving, decorated with pristine feathers.\n\nWhen mounted next to a bed, it grants better sleep.\n\nIt can also be meditated to, and the anima fiber grants a stronger connection when meditating.</description>
         <thingClass>Building_Art</thingClass>
         <rotatable>true</rotatable>
         <graphicData>
-            <texPath>Things/Building/Misc/FeatherTrophies_FeatheredDreamCatcher/FeatheredDreamCatcher</texPath>
+            <texPath>Things/Building/Misc/TribalTrophies_Building_FeatheredDreamCatcher/FeatheredDreamCatcher</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
             <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
@@ -22,7 +22,7 @@
                 <enabled>false</enabled>
             </damageData>
         </graphicData>
-        <uiIconPath>Things/Building/Misc/FeatherTrophies_FeatheredDreamCatcher/FeatheredDreamCatcher_MenuIcon</uiIconPath>
+        <uiIconPath>Things/Building/Misc/TribalTrophies_Building_FeatheredDreamCatcher/FeatheredDreamCatcher_MenuIcon</uiIconPath>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
         <passability>Standable</passability>
         <terrainAffordanceNeeded IsNull="True" />

@@ -4,7 +4,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities[li="EndTable" or li="SleepAccelerator"]</xpath>
         <value>
-            <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+            <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
         </value>
     </Operation>
 
@@ -15,14 +15,14 @@
             <match Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="Totemic"]/addDesignators</xpath>
                 <value>
-                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="Totemic"]</xpath>
                 <value>
                     <addDesignators>
-                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                        <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                     </addDesignators>
                 </value>
             </nomatch>
@@ -36,14 +36,14 @@
             <match Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="Rustic"]/addDesignators</xpath>
                 <value>
-                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="Rustic"]</xpath>
                 <value>
                     <addDesignators>
-                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                        <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                     </addDesignators>
                 </value>
             </nomatch>
@@ -57,14 +57,14 @@
             <match Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="Animalist"]/addDesignators</xpath>
                 <value>
-                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="Animalist"]</xpath>
                 <value>
                     <addDesignators>
-                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                        <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                     </addDesignators>
                 </value>
             </nomatch>
@@ -78,14 +78,14 @@
             <match Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]/addDesignators</xpath>
                 <value>
-                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]</xpath>
                 <value>
                     <addDesignators>
-                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                        <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                     </addDesignators>
                 </value>
             </nomatch>
@@ -99,14 +99,14 @@
             <match Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="DV_Dwarven"]/addDesignators</xpath>
                 <value>
-                    <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                    <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
                 <xpath>/Defs/StyleCategoryDef[defName="DV_Dwarven"]</xpath>
                 <value>
                     <addDesignators>
-                        <li>FeatherTrophies_FeatheredDreamCatcher_Anima</li>
+                        <li>TribalTrophies_Building_FeatheredDreamCatcher_Anima</li>
                     </addDesignators>
                 </value>
             </nomatch>

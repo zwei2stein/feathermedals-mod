@@ -6,14 +6,14 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]/addDesignators</xpath>
             <value>
-                <li>FeatherTrophies_FeatheredDreamCatcher</li>
+                <li>TribalTrophies_Building_FeatheredDreamCatcher</li>
             </value>
         </match>
         <nomatch Class="PatchOperationAdd">
             <xpath>/Defs/StyleCategoryDef[defName="DV_Tengrism"]</xpath>
             <value>
                 <addDesignators>
-                    <li>FeatherTrophies_FeatheredDreamCatcher</li>
+                    <li>TribalTrophies_Building_FeatheredDreamCatcher</li>
                 </addDesignators>
             </value>
         </nomatch>

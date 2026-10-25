@@ -436,7 +436,7 @@
 	<!-- protection: golden -->
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
-		<defName>FeatherTrophy_Trophy_Protection</defName>
+		<defName>TribalTrophies_Trophy_Feather_Protection</defName>
 		<label>feather: protection</label>
 		<description>Feather boasting protection by archotech spirits.</description>
 		<graphicData>
@@ -474,7 +474,7 @@
 	<!-- led warparty -->
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
-		<defName>FeatherTrophy_Trophy_LedWarparty</defName>
+		<defName>TribalTrophies_Trophy_Feather_LedWarparty</defName>
 		<label>feather: led war party</label>
 		<description>Feather boasting experience leading a war party.</description>
 		<graphicData>
@@ -491,7 +491,7 @@
 	<!-- stole horses -->
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
-		<defName>FeatherTrophy_Trophy_StoleHorses</defName>
+		<defName>TribalTrophies_Trophy_Feather_StoleHorses</defName>
 		<label>feather: stole enemy mounts</label>
 		<description>Feather boasting the feat of stealing an enemy's mounts.</description>
 		<graphicData>
@@ -507,7 +507,7 @@
 	<!-- took weapon -->
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
-		<defName>FeatherTrophy_Trophy_TookWeapon</defName>
+		<defName>TribalTrophies_Trophy_Feather_TookWeapon</defName>
 		<label>feather: disarmed enemy</label>
 		<description>Feather boasting the feat of disarming an enemy.</description>
 		<graphicData>
