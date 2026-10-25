@@ -21,7 +21,7 @@ namespace FeatherMedals
         public static ThoughtDef FeatherMedals_AwardedTrophy_Thought;
         public static ThoughtDef FeatherMedals_WitnessedTrophyCeremony_Thought;
 
-        public static TraitDef FeatherMedals_Decorated;
+        public static TraitDef TribalTrophies_Decorated;
 
         public static TaleDef FeatherMedals_AdornedTrophyTale;
 

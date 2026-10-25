@@ -263,11 +263,11 @@ namespace FeatherMedals
                 return null;
             if (terse || this.AdornedPawn == null)
                 return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
-                    FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
+                    FeatherMedalDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
             return "TribalTrophies_AdorningCeremony_Common_DecoratedGained".Translate(
                 this.AdornedPawn.Named("PAWN"),
-                FeatherMedalDefOf.FeatherMedals_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
+                FeatherMedalDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
         }
 
         public string GetTraitChangeText()

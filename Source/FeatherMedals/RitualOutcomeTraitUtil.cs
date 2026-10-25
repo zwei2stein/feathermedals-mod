@@ -178,7 +178,7 @@ public static class RitualOutcomeTraitUtil
         if (targetDegree < 0)
             return;
 
-        var def = FeatherMedalDefOf.FeatherMedals_Decorated;
+        var def = FeatherMedalDefOf.TribalTrophies_Decorated;
         var existing = traits.GetTrait(def);
         if (existing != null && existing.Degree >= targetDegree)
             return;

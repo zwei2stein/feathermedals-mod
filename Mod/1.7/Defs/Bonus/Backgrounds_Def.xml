@@ -15,7 +15,7 @@
             <Social>-2</Social>
         </skillGains>
         <forcedTraits>
-            <FeatherMedals_Decorated>2</FeatherMedals_Decorated>
+            <TribalTrophies_Decorated>2</TribalTrophies_Decorated>
         </forcedTraits>
         <spawnCategories>
             <li>Tribal</li>
@@ -47,7 +47,7 @@
             <Social>6</Social>
         </skillGains>
         <forcedTraits>
-            <FeatherMedals_Decorated>2</FeatherMedals_Decorated>
+            <TribalTrophies_Decorated>2</TribalTrophies_Decorated>
         </forcedTraits>
         <spawnCategories>
             <li>Tribal</li>
@@ -83,7 +83,7 @@
             <Social>2</Social>
         </skillGains>
         <forcedTraits>
-            <FeatherMedals_Decorated>1</FeatherMedals_Decorated>
+            <TribalTrophies_Decorated>1</TribalTrophies_Decorated>
         </forcedTraits>
         <spawnCategories>
             <li>Tribal</li>
@@ -116,7 +116,7 @@
             <Social>1</Social>
         </skillGains>
         <forcedTraits>
-            <FeatherMedals_Decorated>0</FeatherMedals_Decorated>
+            <TribalTrophies_Decorated>0</TribalTrophies_Decorated>
         </forcedTraits>
         <spawnCategories>
             <li>Tribal</li>
@@ -146,7 +146,7 @@
             <Social>1</Social>
         </skillGains>
         <forcedTraits>
-            <FeatherMedals_Decorated>0</FeatherMedals_Decorated>
+            <TribalTrophies_Decorated>0</TribalTrophies_Decorated>
         </forcedTraits>
         <spawnCategories>
             <li>Tribal</li>
