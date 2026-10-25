@@ -5,10 +5,10 @@
 
 	<!-- ===== Common (shown in several places) ===== -->
 
-	<!-- wear refused: message, float menu reason, gizmo/wear blocked text -->
 	<TribalTrophies_Trophy_Common_NeedsCeremony>Trophies can only be given through an adorning ceremony</TribalTrophies_Trophy_Common_NeedsCeremony>
 	<TribalTrophies_Trophy_Common_OwnedByOther>This trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot wear it</TribalTrophies_Trophy_Common_OwnedByOther>
-
+	<TribalTrophies_Trophy_Common_Disassemble_Label>Disassemble {ITEM}</TribalTrophies_Trophy_Common_Disassemble_Label>
+	
 	<!-- ===== Trophies tab (pawn) ===== -->
 
 	<TribalTrophies_Trophy_PawnTab_Label>Trophies</TribalTrophies_Trophy_PawnTab_Label>
@@ -40,7 +40,6 @@
 
 	<!-- ===== Gizmo (trophy belts) ===== -->
 
-	<TribalTrophies_Trophy_Gizmo_Disassemble_Label>Disassemble {ITEM}</TribalTrophies_Trophy_Gizmo_Disassemble_Label>
 	<TribalTrophies_Trophy_Gizmo_Disassemble_Desc>Disassemble item and reclaim used trophies.</TribalTrophies_Trophy_Gizmo_Disassemble_Desc>
 
 	<!-- ===== Inspect (trophy belts) ===== -->

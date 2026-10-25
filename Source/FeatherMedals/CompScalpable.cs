@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -40,7 +41,8 @@ namespace FeatherMedals
                 defaultDesc = "TribalTrophies_Scalping_Gizmo_Desc".Translate(),
                 icon = Icon,
                 isActive = () => Designated,
-                toggleAction = Toggle
+                toggleAction = Toggle,
+                turnOnSound = SoundDefOf.Designate_ExtractSkull
             };
         }
 

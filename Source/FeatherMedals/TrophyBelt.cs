@@ -24,6 +24,7 @@ public class TrophyBelt : Apparel
     private Texture2D[] textures; // by Rot4.AsInt
     private bool composeTried;
     private Graphic_RuntimeTexture groundGraphic;
+    private Graphic groundRotated; // on ground with a bit of wiggle, like vanilla apparel
     private Graphic_RuntimeTexture wornGraphic;
 
     public CompTrophyContainer Trophies => GetComp<CompTrophyContainer>();
@@ -46,8 +47,12 @@ public class TrophyBelt : Apparel
         get
         {
             if (groundGraphic == null && Textures != null)
+            {
                 groundGraphic = new Graphic_RuntimeTexture(Textures[Rot4.South.AsInt], def.graphicData);
-            return groundGraphic ?? base.Graphic;
+                float angle = def.graphicData?.onGroundRandomRotateAngle ?? 0f;
+                groundRotated = angle > 0.01f ? new Graphic_RandomRotated(groundGraphic, angle) : groundGraphic;
+            }
+            return groundRotated ?? base.Graphic;
         }
     }
 
@@ -100,6 +105,7 @@ public class TrophyBelt : Apparel
     {
         groundGraphic?.Release();
         groundGraphic = null;
+        groundRotated = null;
         wornGraphic?.Release();
         wornGraphic = null;
         if (textures != null)
@@ -115,6 +121,12 @@ public class CompProperties_TrophyContainer : CompProperties
 {
     public List<ThingDef> trophyDefs = new();
     public List<TrophySlot> slots = new();
+
+    // disassembly job
+    public int disassembleTicks = 300;
+    public EffecterDef disassembleEffecter;
+    public SoundDef disassembleSound;
+    public float disassembleStuffableRefund = 0.5f;
 
     public CompProperties_TrophyContainer()
     {
@@ -186,24 +198,83 @@ public class CompTrophyContainer : ThingComp, IThingHolder
         innerContainer.TryDropAll(cell, map, ThingPlaceMode.Near);
     }
 
+    private DesignationManager Designations => parent.Map.designationManager;
+
+    public bool MarkedForDisassembly =>
+        parent.Spawned && Designations.DesignationOn(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) != null;
+
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
         if (!parent.Spawned)
             yield break;
 
-        yield return new Command_Action
+        yield return new Command_Toggle
         {
-            defaultLabel = "TribalTrophies_Trophy_Gizmo_Disassemble_Label".Translate(parent.def.label.Named("ITEM")),
+            defaultLabel = "TribalTrophies_Trophy_Common_Disassemble_Label".Translate(parent.def.label.Named("ITEM")),
             defaultDesc = "TribalTrophies_Trophy_Gizmo_Disassemble_Desc".Translate(),
             icon = TrophyTextures.DisassembleIcon,
-            action = Disassemble
+            isActive = () => MarkedForDisassembly,
+            toggleAction = ToggleDisassembly,
+            turnOnSound = SoundDefOf.Designate_Deconstruct
         };
+
+        if (DebugSettings.ShowDevGizmos)
+        {
+            yield return new Command_Action
+            {
+                defaultLabel = "DEV: Disassemble now",
+                action = Disassemble
+            };
+        }
     }
 
-    private void Disassemble()
+    // direct pawn order marks it too, so an interrupted job is finished by another tailor
+    public void MarkForDisassembly()
     {
-        DropAll(parent.Position, parent.Map);
+        if (!MarkedForDisassembly)
+            Designations.AddDesignation(new Designation(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
+    }
+
+    private void ToggleDisassembly()
+    {
+        var designation = Designations.DesignationOn(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble);
+        if (designation != null)
+            Designations.RemoveDesignation(designation);
+        else
+            Designations.AddDesignation(new Designation(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
+    }
+
+    public void Disassemble()
+    {
+        var cell = parent.Position;
+        var map = parent.Map;
+        DropAll(cell, map);
+        DropStuffRefund(cell, map);
         parent.Destroy();
+    }
+
+    // part of the cloth or leather the belt was made from comes back
+    private void DropStuffRefund(IntVec3 cell, Map map)
+    {
+        var stuff = parent.Stuff;
+        if (stuff == null || Props.disassembleStuffableRefund <= 0f)
+            return;
+
+        // vanilla cost of this belt in its stuff, already adjusted for the stuff's volume
+        foreach (var cost in parent.def.CostListAdjusted(stuff))
+        {
+            if (cost.thingDef != stuff)
+                continue;
+
+            var count = GenMath.RoundRandom(cost.count * Props.disassembleStuffableRefund);
+            if (count <= 0)
+                return;
+
+            var refund = ThingMaker.MakeThing(stuff);
+            refund.stackCount = count;
+            GenPlace.TryPlaceThing(refund, cell, map, ThingPlaceMode.Near);
+            return;
+        }
     }
 
     public override string CompInspectStringExtra()

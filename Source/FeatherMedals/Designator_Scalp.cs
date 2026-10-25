@@ -19,7 +19,7 @@ public class Designator_Scalp : Designator
         soundDragSustain = SoundDefOf.Designate_DragStandard;
         soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
         useMouseIcon = true;
-        soundSucceeded = SoundDefOf.Designate_Hunt;
+        soundSucceeded = SoundDefOf.Designate_ExtractSkull;
     }
 
     public override AcceptanceReport CanDesignateCell(IntVec3 c)

@@ -85,6 +85,12 @@ namespace FeatherMedals
         public static TaleDef TribalTrophies_Scalping_TookScalp;
         public static TaleDef TribalTrophies_Scalping_ScalpedByEnemy;
 
+        // Trophy belts:
+        
+        public static DesignationDef TribalTrophies_Apparel_Belt_Designation_Disassemble;
+        public static JobDef TribalTrophies_Apparel_Belt_Job_Disassemble;
+        public static WorkGiverDef TribalTrophies_Apparel_Belt_WorkGiver_Disassemble;
+        
         static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FeatherMedalDefOf));
     }
     

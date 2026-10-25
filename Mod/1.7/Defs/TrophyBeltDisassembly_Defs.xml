@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <DesignationDef>
+        <defName>TribalTrophies_Apparel_Belt_Designation_Disassemble</defName>
+        <texturePath>Designations/Deconstruct</texturePath>
+        <targetType>Thing</targetType>
+    </DesignationDef>
+
+    <WorkGiverDef>
+        <defName>TribalTrophies_Apparel_Belt_WorkGiver_Disassemble</defName>
+        <label>disassemble trophy belts</label>
+        <giverClass>FeatherMedals.WorkGiver_DisassembleTrophyBelt</giverClass>
+        <workType>Tailoring</workType>
+        <verb>disassemble</verb>
+        <gerund>disassembling</gerund>
+        <priorityInType>110</priorityInType>
+        <directOrderable>false</directOrderable>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <canBeDoneByMechs>false</canBeDoneByMechs>
+    </WorkGiverDef>
+
+    <JobDef>
+        <defName>TribalTrophies_Apparel_Belt_Job_Disassemble</defName>
+        <driverClass>FeatherMedals.JobDriver_DisassembleTrophyBelt</driverClass>
+        <reportString>disassembling TargetA.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>

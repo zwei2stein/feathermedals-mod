@@ -114,6 +114,10 @@
         </modExtensions>
         <comps>
             <li Class="FeatherMedals.CompProperties_TrophyContainer">
+                <disassembleTicks>300</disassembleTicks>
+                <disassembleEffecter>Tailor</disassembleEffecter>
+                <disassembleSound>Recipe_Tailor</disassembleSound>
+                <disassembleStuffableRefund>0.5</disassembleStuffableRefund>
                 <trophyDefs>
                     <li>Skull</li>
                 </trophyDefs>
@@ -172,6 +176,10 @@
         </modExtensions>
         <comps>
             <li Class="FeatherMedals.CompProperties_TrophyContainer">
+                <disassembleTicks>300</disassembleTicks>
+                <disassembleEffecter>Tailor</disassembleEffecter>
+                <disassembleSound>Recipe_Tailor</disassembleSound>
+                <disassembleStuffableRefund>0.5</disassembleStuffableRefund>
                 <trophyDefs>
                     <li>FeatherTrophies_Scalping_Scalp</li>
                 </trophyDefs>
