@@ -21,7 +21,7 @@
             <li>CraftingSpot</li>
         </recipeUsers>
         <researchPrerequisites>
-            <li>FeatherMedal_TribalWarriorHonour</li>
+            <li>TribalTrophies_TribalWarriorHonor</li>
         </researchPrerequisites>
     </RecipeDef>
 

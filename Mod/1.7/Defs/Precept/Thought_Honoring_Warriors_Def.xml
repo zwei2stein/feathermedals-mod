@@ -2,7 +2,7 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Forbidden_Worn</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Jealous</li>
@@ -63,7 +63,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Forbidden_OthersWearing</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_OthersWearing</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -133,7 +133,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Forbidden_RecentCeremonies</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_RecentCeremonies</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -173,7 +173,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Forbidden_Opinion</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingTraits>
@@ -193,7 +193,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Disapproved_Worn</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Psychopath</li>
@@ -212,7 +212,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Disapproved_OthersWearing</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_OthersWearing</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -282,7 +282,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Disapproved_RecentCeremonies</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_RecentCeremonies</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -316,7 +316,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Disapproved_Opinion</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingHediffs>
@@ -333,7 +333,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Desired_Worn</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Ascetic</li>
@@ -352,7 +352,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Desired_NoTrophy</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_NoTrophy</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
         <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
         <nullifyingTraits>
@@ -372,7 +372,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Desired_YearsWithoutCeremony</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_YearsWithoutCeremony</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
         <nullifyingTraits>
             <li>Jealous</li>
@@ -409,7 +409,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Desired_Opinion</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingHediffs>
@@ -426,7 +426,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Required_Worn</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_Worn</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Ascetic</li>
@@ -445,7 +445,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Required_NoTrophy</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_NoTrophy</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
         <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
         <nullifyingTraits>
@@ -465,7 +465,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Required_OthersNotWearing</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_OthersNotWearing</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersNotWearing</workerClass>
         <minExpectationForNegativeThought>High</minExpectationForNegativeThought>
         <nullifyingTraits>
@@ -539,7 +539,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Required_YearsWithoutCeremony</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_YearsWithoutCeremony</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
         <nullifyingTraits>
             <li>Jealous</li>
@@ -582,7 +582,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherMedals_HW_Required_Opinion</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingHediffs>

@@ -27,13 +27,13 @@ namespace FeatherMedals
 
         public static InteractionDef TribalTrophies_Speech_AdornTrophy;
 
-        public static PreceptDef FeatherMedals_HonoringWarriors_Neutral;
-        public static PreceptDef FeatherMedals_HonoringWarriors_Forbidden;
-        public static PreceptDef FeatherMedals_HonoringWarriors_Disapproved;
-        public static PreceptDef FeatherMedals_HonoringWarriors_Desired;
-        public static PreceptDef FeatherMedals_HonoringWarriors_Required;
+        public static PreceptDef TribalTrophies_Issue_HonoringWarriors_Neutral;
+        public static PreceptDef TribalTrophies_Issue_HonoringWarriors_Forbidden;
+        public static PreceptDef TribalTrophies_Issue_HonoringWarriors_Disapproved;
+        public static PreceptDef TribalTrophies_Issue_HonoringWarriors_Desired;
+        public static PreceptDef TribalTrophies_Issue_HonoringWarriors_Required;
 
-        public static IssueDef FeatherMedals_HonoringWarriors;
+        public static IssueDef TribalTrophies_Issue_HonoringWarriors;
 
         public static RulePackDef FeatherMedals_NpcCitation;
 

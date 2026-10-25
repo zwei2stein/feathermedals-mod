@@ -2,21 +2,21 @@
 <Defs>
 
     <IssueDef>
-        <defName>FeatherMedals_HonoringWarriors</defName>
+        <defName>TribalTrophies_Issue_HonoringWarriors</defName>
         <label>honoring warriors</label>
         <description>How the people view warriors adorned with trophies and adorning ceremonies.</description>
         <iconPath>UI/Issues/PreceptHonoringWarriors</iconPath>
     </IssueDef>
 
-    <PreceptDef Name="FeatherMedals_HonoringWarriors_Base" Abstract="True">
-        <issue>FeatherMedals_HonoringWarriors</issue>
+    <PreceptDef Name="TribalTrophies_Issue_HonoringWarriors_Base" Abstract="True">
+        <issue>TribalTrophies_Issue_HonoringWarriors</issue>
         <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
         <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
         <defaultSelectionWeight>0.001</defaultSelectionWeight>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
-        <defName>FeatherMedals_HonoringWarriors_Forbidden</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_HonoringWarriors_Base">
+        <defName>TribalTrophies_Issue_HonoringWarriors_Forbidden</defName>
         <label>forbidden</label>
         <description>No one may be adorned with trophies that elevate them above others or lead an adorning ceremony, and the people resent those who wear trophies.</description>
         <impact>High</impact>
@@ -32,25 +32,25 @@
         </associatedMemes>
         <comps>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Forbidden_Worn</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_Worn</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Forbidden_OthersWearing</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_OthersWearing</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Forbidden_RecentCeremonies</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_RecentCeremonies</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Forbidden_Opinion</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_Opinion</thought>
             </li>
         </comps>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
-        <defName>FeatherMedals_HonoringWarriors_Disapproved</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_HonoringWarriors_Base">
+        <defName>TribalTrophies_Issue_HonoringWarriors_Disapproved</defName>
         <label>disapproved</label>
         <description>We are one people and none is better than their peers. Elevating one is frowned upon, even if their achievements help us all.</description>
         <impact>Medium</impact>
@@ -62,24 +62,24 @@
         </associatedMemes>
         <comps>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Disapproved_Worn</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_Worn</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Disapproved_OthersWearing</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_OthersWearing</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Disapproved_RecentCeremonies</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_RecentCeremonies</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Disapproved_Opinion</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_Opinion</thought>
             </li>
         </comps>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
-        <defName>FeatherMedals_HonoringWarriors_Neutral</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_HonoringWarriors_Base">
+        <defName>TribalTrophies_Issue_HonoringWarriors_Neutral</defName>
         <label>neutral</label>
         <description>Honoring warriors is a matter of personal choice.</description>
         <impact>Low</impact>
@@ -91,8 +91,8 @@
         </conflictingMemes>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
-        <defName>FeatherMedals_HonoringWarriors_Desired</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_HonoringWarriors_Base">
+        <defName>TribalTrophies_Issue_HonoringWarriors_Desired</defName>
         <label>desired</label>
         <description>It is our way to recognize our contributions. Warriors should be adorned with trophies.</description>
         <impact>Medium</impact>
@@ -108,23 +108,23 @@
         </associatedMemes>
         <comps>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Desired_Worn</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_Worn</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Desired_NoTrophy</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_NoTrophy</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Desired_YearsWithoutCeremony</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_YearsWithoutCeremony</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Desired_Opinion</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_Opinion</thought>
             </li>
         </comps>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherMedals_HonoringWarriors_Base">
-        <defName>FeatherMedals_HonoringWarriors_Required</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_HonoringWarriors_Base">
+        <defName>TribalTrophies_Issue_HonoringWarriors_Required</defName>
         <label>required</label>
         <description>It is our sacred tradition to recognize our contributions. Every warrior must be justly adorned, and neglecting this bothers everyone.</description>
         <impact>High</impact>
@@ -137,21 +137,21 @@
         </conflictingMemes>
         <comps>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Required_Worn</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Required_Worn</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Required_NoTrophy</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Required_NoTrophy</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Required_OthersNotWearing</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Required_OthersNotWearing</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Required_YearsWithoutCeremony</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Required_YearsWithoutCeremony</thought>
                 <tooltipShowMoodRange>true</tooltipShowMoodRange>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherMedals_HW_Required_Opinion</thought>
+                <thought>TribalTrophies_Issue_HonoringWarriors_Thought_Required_Opinion</thought>
             </li>
         </comps>
     </PreceptDef>

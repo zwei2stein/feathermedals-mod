@@ -3,7 +3,7 @@
 
 	<RecipeDef ParentName="FeatherTrophy_RecipeBase" Name="PyrinthBionics_FeatherTrophy_PyrinthRecipeBase" Abstract="True">
 		<researchPrerequisites>
-			<li>FeatherMedal_TribalWarriorHonour</li>
+			<li>TribalTrophies_TribalWarriorHonor</li>
 			<li>PyrinthStove_PyrinthTemperatureRegulationResearch</li>
 		</researchPrerequisites>
 		<skillRequirements>

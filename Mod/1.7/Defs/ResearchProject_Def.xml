@@ -2,7 +2,7 @@
 <Defs>
   
   <ResearchProjectDef>
-    <defName>FeatherMedal_TribalWarriorHonour</defName>
+    <defName>TribalTrophies_TribalWarriorHonor</defName>
     <label>warrior honor</label>
     <description>Tribal code for honoring warriors with trophies.</description>
     <baseCost>200</baseCost>

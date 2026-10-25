@@ -9,13 +9,13 @@ public static class MissingIssuePrecepts
     
     public static void AddCompatibleStanceToIdeosMissingHonoringWarriors()
     {
-        Fill(FeatherMedalDefOf.FeatherMedals_HonoringWarriors, new List<PreceptDef>
+        Fill(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors, new List<PreceptDef>
         {
-            FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Neutral,
-            FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Desired,
-            FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Disapproved,
-            FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Required,
-            FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Forbidden
+            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Neutral,
+            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Desired,
+            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved,
+            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Required,
+            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden
         });
     }
     

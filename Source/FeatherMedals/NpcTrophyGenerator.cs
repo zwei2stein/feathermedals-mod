@@ -129,12 +129,12 @@ public static class NpcTrophyGenerator
         if (ideo == null)
             return 1;
 
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Forbidden)
-            || ideo.HasPrecept(FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Disapproved))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden)
+            || ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved))
             return 0;
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Required))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Required))
             return 3;
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherMedals_HonoringWarriors_Desired))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Desired))
             return 2;
         return 1;
     }
