@@ -43,7 +43,7 @@
 	</RecipeDef>
 
 	<RecipeDef ParentName="PyrinthBionics_FeatherTrophy_PyrinthRecipeBase">
-		<defName>PyrinthBionics_TribalTrophies_Recipe_Pyrinth</defName>
+		<defName>TribalTrophies_Trophy_Feather_Recipe_Pyrinth</defName>
 		<label>feather: pyrinth</label>
 		<jobString>Crafting a feather symbolizing inner flame and passion.</jobString>
 		<products>

@@ -2,7 +2,7 @@
 <Defs>
 
     <RulePackDef>
-        <defName>FeatherTrophies_NamerArt_DreamCatcher</defName>
+        <defName>TribalTrophies_Building_NamerArt_DreamCatcher</defName>
         <rulePack>
             <rulesStrings>
                 <li>r_art_name->[adj] [catcher]</li>
@@ -37,7 +37,7 @@
     </RulePackDef>
 
     <RulePackDef>
-        <defName>FeatherTrophies_ArtDescription_DreamCatcher</defName>
+        <defName>TribalTrophies_Building_ArtDescription_DreamCatcher</defName>
         <rulePack>
             <rulesStrings>
                 <li>physical_description_root->A [catcher] lattice is [depiction] of [image]. [desc_sentence_group]</li>

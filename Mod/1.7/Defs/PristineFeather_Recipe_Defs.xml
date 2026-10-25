@@ -28,7 +28,7 @@
     <RecipeDef ParentName="TribalTrophies_Trophy_Feather_Precursor_PristineFeather_RecipeBase">
         <label>refine bird leather into a pristine feather</label>
         <jobString>Refining bird leather into pristine feather.</jobString>
-        <defName>TribalTrophies_Recipe_PristineFeather_Leather_Bird</defName>
+        <defName>TribalTrophies_PristineFeather_Recipe_Leather_Bird</defName>
         <ingredients>
             <li>
                 <filter>

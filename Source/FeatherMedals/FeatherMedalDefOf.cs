@@ -10,7 +10,7 @@ namespace FeatherMedals
     [DefOf]
     public class FeatherMedalDefOf
     {
-        public static RitualPatternDef TribalTrophies_AwardTrophyPattern;
+        public static RitualPatternDef TribalTrophies_AdorningCeremony_Pattern;
         
         public static JobDef TribalTrophies_PresentTrophy;
         public static JobDef TribalTrophies_PresentTrophySpeech;

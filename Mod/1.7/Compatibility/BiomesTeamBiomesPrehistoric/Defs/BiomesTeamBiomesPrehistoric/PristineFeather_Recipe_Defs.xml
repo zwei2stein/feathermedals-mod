@@ -2,7 +2,7 @@
 <Defs>
 
     <RecipeDef ParentName="TribalTrophies_Trophy_Feather_Precursor_PristineFeather_RecipeBase">
-        <defName>TribalTrophies_Recipe_PristineFeather_BMT_BladeFeather</defName>
+        <defName>TribalTrophies_Trophy_Feather_Recipe_PristineFeather_BMT_BladeFeather</defName>
         <label>refine saurumbo blade feather into pristine feather</label>
         <jobString>Refining saurumbo blade feather into pristine feather.</jobString>
         <ingredients>

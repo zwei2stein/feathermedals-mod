@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<RitualOutcomeEffectDef>
-		<defName>TribalTrophies_AwardTrophyOutcome</defName>
+		<defName>TribalTrophies_AdorningCeremony_TrophyOutcome</defName>
 		<description>The warrior is adorned with a trophy.</description>
 		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAwardTrophy</workerClass>
 		<comps>
@@ -19,7 +19,7 @@
 		<label>adorning ceremony</label>
 		<description>An official ceremony to adorn a deserving warrior with a trophy.</description>
 		<preceptClass>Precept_Ritual</preceptClass>
-		<ritualPatternBase>TribalTrophies_AwardTrophyPattern</ritualPatternBase>
+		<ritualPatternBase>TribalTrophies_AdorningCeremony_Pattern</ritualPatternBase>
 		<visible>false</visible>
 		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
 	</PreceptDef>
@@ -47,7 +47,7 @@
 	</DutyDef>
 
 	<DutyDef>
-		<defName>TribalTrophies_SpeakOnCellAward</defName>
+		<defName>TribalTrophies_AdorningCeremony_SpeakOnCell</defName>
 		<hook>HighPriority</hook>
 		<socialModeMax>Off</socialModeMax>
 		<ritualSpectateTarget>true</ritualSpectateTarget>
@@ -135,7 +135,7 @@
 				<roleBehaviors>
 					<li>
 						<roleId>leader</roleId>
-						<dutyDef>TribalTrophies_SpeakOnCellAward</dutyDef>
+						<dutyDef>TribalTrophies_AdorningCeremony_SpeakOnCell</dutyDef>
 						<customPositions>
 							<li Class="RitualPosition_InFrontThingCenter">
 								<offset>(1,0,0)</offset>
@@ -156,10 +156,10 @@
 	</RitualBehaviorDef>
 
 	<RitualPatternDef>
-		<defName>TribalTrophies_AwardTrophyPattern</defName>
+		<defName>TribalTrophies_AdorningCeremony_Pattern</defName>
 		<allowOtherInstances>false</allowOtherInstances>
 		<ritualBehavior>TribalTrophies_AdorningCeremonyBehavior</ritualBehavior>
-		<ritualOutcomeEffect>TribalTrophies_AwardTrophyOutcome</ritualOutcomeEffect>
+		<ritualOutcomeEffect>TribalTrophies_AdorningCeremony_TrophyOutcome</ritualOutcomeEffect>
 		<ritualExpectedDesc>A respected tribe member will adorn a deserving warrior with a trophy.</ritualExpectedDesc>
 	</RitualPatternDef>
 

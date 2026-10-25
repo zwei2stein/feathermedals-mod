@@ -68,8 +68,8 @@
                 <compClass>CompQuality</compClass>
             </li>
             <li Class="CompProperties_Art">
-                <nameMaker>FeatherTrophies_NamerArt_DreamCatcher</nameMaker>
-                <descriptionMaker>FeatherTrophies_ArtDescription_DreamCatcher</descriptionMaker>
+                <nameMaker>TribalTrophies_Building_NamerArt_DreamCatcher</nameMaker>
+                <descriptionMaker>TribalTrophies_Building_ArtDescription_DreamCatcher</descriptionMaker>
                 <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
             </li>
             <li Class="CompProperties_Facility">

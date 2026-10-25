@@ -154,7 +154,7 @@ namespace FeatherMedals
         private void StartMedalRitual()
         {
             if (!ColonyHasPresenter(out Pawn presenter)) return;
-            var pattern = FeatherMedalDefOf.TribalTrophies_AwardTrophyPattern;
+            var pattern = FeatherMedalDefOf.TribalTrophies_AdorningCeremony_Pattern;
 
             var safeMap = this.Map ?? this.MapHeld;
             if (safeMap == null) return;
