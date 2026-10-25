@@ -25,7 +25,7 @@
             <DeteriorationRate>0</DeteriorationRate>
         </statBases>
         <thingCategories>
-            <li>FeatherMedals_Apparel_Feathers_Precursor</li>
+            <li>TribalTrophies_Apparel_Feathers_Precursor</li>
         </thingCategories>
         <tradeability>All</tradeability>
         <techLevel>Neolithic</techLevel>

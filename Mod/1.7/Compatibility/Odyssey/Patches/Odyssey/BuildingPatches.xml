@@ -8,14 +8,14 @@
             <match Class="PatchOperationAdd">
                 <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter/disallowedCategories</xpath>
                 <value>
-                    <li>FeatherMedals_Apparel_Feathers</li>
+                    <li>TribalTrophies_Apparel_Feathers</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
                 <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter</xpath>
                 <value>
                     <disallowedCategories>
-                        <li>FeatherMedals_Apparel_Feathers</li>
+                        <li>TribalTrophies_Apparel_Feathers</li>
                     </disallowedCategories>
                 </value>
             </nomatch>

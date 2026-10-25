@@ -98,7 +98,7 @@
 		<label>feather: wounded in combat</label>
 		<jobString>Crafting a feather boasting a combat wound.</jobString>
 		<products>
-			<FeatherMedal_Medal_WoundedInCombat>1</FeatherMedal_Medal_WoundedInCombat>
+			<TribalTrophies_Trophy_Feather_WoundedInCombat>1</TribalTrophies_Trophy_Feather_WoundedInCombat>
 		</products>
 	</RecipeDef>
 
@@ -107,7 +107,7 @@
 		<label>feather: killed an enemy</label>
 		<jobString>Crafting a feather boasting the slaying of an enemy.</jobString>
 		<products>
-			<FeatherMedal_Medal_KilledAnEnemy>1</FeatherMedal_Medal_KilledAnEnemy>
+			<TribalTrophies_Trophy_Feather_KilledAnEnemy>1</TribalTrophies_Trophy_Feather_KilledAnEnemy>
 		</products>
 	</RecipeDef>
 
@@ -116,7 +116,7 @@
 		<label>feather: wounded or killed an enemy</label>
 		<jobString>Crafting a feather boasting wounding or slaying an enemy.</jobString>
 		<products>
-			<FeatherMedal_Medal_WoundedOrKilledAnEnemy>1</FeatherMedal_Medal_WoundedOrKilledAnEnemy>
+			<TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy>1</TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy>
 		</products>
 	</RecipeDef>
 
@@ -125,7 +125,7 @@
 		<label>feather: slit throat and took scalp</label>
 		<jobString>Crafting a feather boasting slitting a throat and taking a scalp.</jobString>
 		<products>
-			<FeatherMedal_Medal_SlitThroatAndTookScalp>1</FeatherMedal_Medal_SlitThroatAndTookScalp>
+			<TribalTrophies_Trophy_Feather_SlitThroatAndTookScalp>1</TribalTrophies_Trophy_Feather_SlitThroatAndTookScalp>
 		</products>
 	</RecipeDef>
 
@@ -134,7 +134,7 @@
 		<label>feather: wounded in combat many times</label>
 		<jobString>Crafting a feather boasting many combat wounds.</jobString>
 		<products>
-			<FeatherMedal_Medal_WoundedManyTimes>1</FeatherMedal_Medal_WoundedManyTimes>
+			<TribalTrophies_Trophy_Feather_WoundedManyTimes>1</TribalTrophies_Trophy_Feather_WoundedManyTimes>
 		</products>
 	</RecipeDef>
 
@@ -143,7 +143,7 @@
 		<label>feather: slit throat of an enemy</label>
 		<jobString>Crafting a feather boasting slitting the throat of an enemy.</jobString>
 		<products>
-			<FeatherMedal_Medal_SlitThroat>1</FeatherMedal_Medal_SlitThroat>
+			<TribalTrophies_Trophy_Feather_SlitThroat>1</TribalTrophies_Trophy_Feather_SlitThroat>
 		</products>
 	</RecipeDef>
 
@@ -152,7 +152,7 @@
 		<label>feather: touched an enemy</label>
 		<jobString>Crafting a feather boasting touching an enemy in combat without being hurt.</jobString>
 		<products>
-			<FeatherMedal_Medal_TouchedAnEnemy>1</FeatherMedal_Medal_TouchedAnEnemy>
+			<TribalTrophies_Trophy_Feather_TouchedAnEnemy>1</TribalTrophies_Trophy_Feather_TouchedAnEnemy>
 		</products>
 	</RecipeDef>
 
@@ -161,7 +161,7 @@
 		<label>feather: touched an enemy five times</label>
 		<jobString>Crafting a feather boasting touching an enemy in combat without being hurt five distinct times.</jobString>
 		<products>
-			<FeatherMedal_Medal_TouchedAnEnemy5Times>1</FeatherMedal_Medal_TouchedAnEnemy5Times>
+			<TribalTrophies_Trophy_Feather_TouchedAnEnemy5Times>1</TribalTrophies_Trophy_Feather_TouchedAnEnemy5Times>
 		</products>
 	</RecipeDef>
 
@@ -170,7 +170,7 @@
 		<label>feather: struck an enemy four times in combat</label>
 		<jobString>Crafting a feather boasting striking an enemy four times in combat.</jobString>
 		<products>
-			<FeatherMedal_Medal_Struck4BlowsInCombat>1</FeatherMedal_Medal_Struck4BlowsInCombat>
+			<TribalTrophies_Trophy_Feather_Struck4BlowsInCombat>1</TribalTrophies_Trophy_Feather_Struck4BlowsInCombat>
 		</products>
 	</RecipeDef>
 
@@ -179,7 +179,7 @@
 		<label>feather: cunning and wisdom</label>
 		<jobString>Crafting a feather boasting cunning in combat and wisdom in peacetime.</jobString>
 		<products>
-			<FeatherMedal_Medal_CunningAndWisdom>1</FeatherMedal_Medal_CunningAndWisdom>
+			<TribalTrophies_Trophy_Feather_CunningAndWisdom>1</TribalTrophies_Trophy_Feather_CunningAndWisdom>
 		</products>
 	</RecipeDef>
 

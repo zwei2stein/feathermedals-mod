@@ -8,7 +8,7 @@
 	</ThingCategoryDef>
 
 	<ThingCategoryDef>
-		<defName>FeatherMedals_Apparel_Feathers</defName>
+		<defName>TribalTrophies_Apparel_Feathers</defName>
 		<label>feathers</label>
 		<parent>TribalTrophies_Apparel_Trophies</parent>
 	</ThingCategoryDef>
@@ -20,7 +20,7 @@
 	</ThingCategoryDef>
 	
 	<ThingCategoryDef>
-		<defName>FeatherMedals_Apparel_Feathers_Precursor</defName>
+		<defName>TribalTrophies_Apparel_Feathers_Precursor</defName>
 		<label>pristine feathers</label>
 		<parent>Manufactured</parent>
 	</ThingCategoryDef>

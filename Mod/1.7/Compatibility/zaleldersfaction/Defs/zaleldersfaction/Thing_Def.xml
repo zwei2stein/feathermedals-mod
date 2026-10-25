@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	
-    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+    <ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
 		<defName>FeatherTrophy_NatureHarmony_Feather</defName>
 		<label>feather: in harmony with nature</label>
 		<description>Feather symbolizing the warrior's unity with nature.</description>

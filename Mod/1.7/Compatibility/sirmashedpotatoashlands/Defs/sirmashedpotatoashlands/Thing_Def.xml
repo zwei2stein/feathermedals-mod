@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	
-    <ThingDef ParentName="FeatherTrophy_BaseSimple">
+    <ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
 		<defName>FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather</defName>
 		<label>feather: braved ash storm</label>
 		<description>Feather telling the story of the wearer braving an ash storm.</description>
