@@ -6,7 +6,7 @@ using Verse.AI.Group;
 
 namespace FeatherMedals
 {
-    public class FeatherMedal : Apparel
+    public class FeatherTrophy : Apparel
     {
         public CompBiocodable BiocodeComp => field ??= this.GetComp<CompBiocodable>();
         private Pawn AdornedPawn => BiocodeComp?.CodedPawn;

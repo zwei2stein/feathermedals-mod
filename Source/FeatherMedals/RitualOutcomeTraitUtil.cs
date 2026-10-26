@@ -41,12 +41,12 @@ public static class RitualOutcomeTraitUtil
             : 1f;
     }
     
-    public static void GiveRandomTrait(Pawn pawn, FeatherMedal medal)
+    public static void GiveRandomTrait(Pawn pawn, FeatherTrophy trophy)
     {
-        var candidates = BuildCandidates(pawn, medal).ToList();
+        var candidates = BuildCandidates(pawn, trophy).ToList();
 
         // there is chance of not doing anything. Quality scales the total, weights between candidates stay the same.
-        var qualityMultiplier = GetTrophyTraitChanceMultiplier(medal);
+        var qualityMultiplier = GetTrophyTraitChanceMultiplier(trophy);
         var totalChance = candidates.Sum(candidate => candidate.Entry.chance) * qualityMultiplier;
 
         if (Prefs.DevMode)
@@ -64,19 +64,19 @@ public static class RitualOutcomeTraitUtil
         switch (picked.Operation)
         {
             case TraitOperation.Add:
-                Add(pawn, picked, medal);
+                Add(pawn, picked, trophy);
                 break;
             case TraitOperation.Remove:
-                Remove(pawn, picked, medal);
+                Remove(pawn, picked, trophy);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
     }
 
-    private static IEnumerable<Candidate> BuildCandidates(Pawn pawn, FeatherMedal medal)
+    private static IEnumerable<Candidate> BuildCandidates(Pawn pawn, FeatherTrophy trophy)
     {
-        var ext = medal.def.GetModExtension<TrophyExtension>();
+        var ext = trophy.def.GetModExtension<TrophyExtension>();
         if (ext == null)
             yield break;
         
@@ -120,7 +120,7 @@ public static class RitualOutcomeTraitUtil
         return !traits.allTraits.Any(t => t.def.ConflictsWith(probe));
     }
 
-    private static void Remove(Pawn pawn, Candidate picked, FeatherMedal medal)
+    private static void Remove(Pawn pawn, Candidate picked, FeatherTrophy trophy)
     {
         var existing =  pawn.story.traits.allTraits.FirstOrDefault(t => t.def == picked.Entry.trait && t.Degree == picked.Entry.degree);
         pawn.story.traits.RemoveTrait(existing);
@@ -128,18 +128,18 @@ public static class RitualOutcomeTraitUtil
         if (pawn.story.traits.allTraits.Contains(existing))
             return;
         
-        medal.removedTrait = existing.def;
-        medal.removedTraitDegree = existing.Degree;
+        trophy.removedTrait = existing.def;
+        trophy.removedTraitDegree = existing.Degree;
 
         Messages.Message(
-            medal.GetRemovedTraitLabel(),
+            trophy.GetRemovedTraitLabel(),
             pawn,
             MessageTypeDefOf.PositiveEvent
         );
 
     }
 
-    private static void Add(Pawn pawn, Candidate picked, FeatherMedal medal)
+    private static void Add(Pawn pawn, Candidate picked, FeatherTrophy trophy)
     {
         var newTrait = new Trait(picked.Entry.trait, picked.Entry.degree);
         pawn.story.traits.GainTrait(newTrait);
@@ -147,11 +147,11 @@ public static class RitualOutcomeTraitUtil
         if (!pawn.story.traits.allTraits.Contains(newTrait))
             return;
         
-        medal.addedTrait = newTrait.def;
-        medal.addedTraitDegree = newTrait.Degree;
+        trophy.addedTrait = newTrait.def;
+        trophy.addedTraitDegree = newTrait.Degree;
 
         Messages.Message(
-            medal.GetAddedTraitLabel(),
+            trophy.GetAddedTraitLabel(),
             pawn,
             MessageTypeDefOf.PositiveEvent
         );
@@ -161,13 +161,13 @@ public static class RitualOutcomeTraitUtil
     private const int MEDALS_HONORED = 5;
     private const int MEDALS_EXALTED = 7;
     
-    public static void UpdateDecoratedTrait(Pawn pawn, FeatherMedal medal)
+    public static void UpdateDecoratedTrait(Pawn pawn, FeatherTrophy trophy)
     {
         var traits = pawn.story?.traits;
         if (traits == null || pawn.apparel == null)
             return;
 
-        var medalCount = pawn.apparel.WornApparel.Count(a => a is FeatherMedal);
+        var medalCount = pawn.apparel.WornApparel.Count(a => a is FeatherTrophy);
         var targetDegree = medalCount switch
         {
             >= MEDALS_EXALTED => 2,
@@ -199,11 +199,11 @@ public static class RitualOutcomeTraitUtil
             return;
         }
 
-        medal.decoratedDegree = targetDegree;
+        trophy.decoratedDegree = targetDegree;
         
         if (pawn.Faction is { IsPlayer: true })
             Messages.Message(
-                medal.GetDecoratedTraitLabel(),
+                trophy.GetDecoratedTraitLabel(),
                 pawn,
                 MessageTypeDefOf.PositiveEvent);
     }

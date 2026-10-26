@@ -7,14 +7,14 @@ namespace FeatherMedals;
 public class Dialog_TrophyAwarded : Window
 {
 
-    private readonly FeatherMedal medal;
+    private readonly FeatherTrophy _trophy;
     private readonly Pawn awardee;
 
     private Vector2 scrollPosition;
 
-    public Dialog_TrophyAwarded(FeatherMedal medal, Pawn awardee)
+    public Dialog_TrophyAwarded(FeatherTrophy trophy, Pawn awardee)
     {
-        this.medal = medal;
+        this._trophy = trophy;
         this.awardee = awardee;
         forcePause = true;
         doCloseX = true;
@@ -36,7 +36,7 @@ public class Dialog_TrophyAwarded : Window
         var buttonTop = inRect.yMax - TrophyUIStyle.ButtonHeight;
         var scrollTop = titleRect.yMax + TrophyUIStyle.TabPadding;
         var scrollRect = new Rect(inRect.x, scrollTop, inRect.width, buttonTop - TrophyUIStyle.TabPadding - scrollTop);
-        var row = new FeatherTrophyRecordDrawer(medal, verbose: true);
+        var row = new FeatherTrophyRecordDrawer(_trophy, verbose: true);
         var viewWidth = scrollRect.width - TrophyUIStyle.ScrollbarWidth;
         var viewRect = new Rect(0f, 0f, viewWidth, row.Height(viewWidth));
         Widgets.BeginScrollView(scrollRect, ref scrollPosition, viewRect);

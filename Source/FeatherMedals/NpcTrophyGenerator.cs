@@ -201,7 +201,7 @@ public static class NpcTrophyGenerator
             if (defs.Count == 0)
                 return;
 
-            var made = new List<FeatherMedal>();
+            var made = new List<FeatherTrophy>();
             var attempts = count * PickAttemptsPerTrophy;
             while (made.Count < count && attempts-- > 0)
             {
@@ -213,7 +213,7 @@ public static class NpcTrophyGenerator
             // oldest first, so the newest one is the last to be worn and the one that grants the Decorated trait
             made.Sort((a, b) => a.awarded.tick.CompareTo(b.awarded.tick));
 
-            FeatherMedal newest = null;
+            FeatherTrophy newest = null;
             foreach (var medal in made)
             {
                 pawn.apparel.Wear(medal, false, true);
@@ -232,10 +232,10 @@ public static class NpcTrophyGenerator
         }
     }
 
-    private static FeatherMedal CreateMedal(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
+    private static FeatherTrophy CreateMedal(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
     {
         var def = defs.RandomElement();
-        var medal = (FeatherMedal)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
+        var medal = (FeatherTrophy)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
         if (!medal.PawnCanWear(pawn, true))
         {
             medal.Destroy();
@@ -251,18 +251,18 @@ public static class NpcTrophyGenerator
         return medal;
     }
 
-    private static void SetTrophyQuality(FeatherMedal medal, Pawn pawn, bool leader)
+    private static void SetTrophyQuality(FeatherTrophy trophy, Pawn pawn, bool leader)
     {
-        var comp = medal.TryGetComp<CompQuality>();
+        var comp = trophy.TryGetComp<CompQuality>();
         if (comp == null)
             return;
 
-        var quality = QualityUtility.GenerateQualityGeneratingPawn(pawn.kindDef, medal.def);
+        var quality = QualityUtility.GenerateQualityGeneratingPawn(pawn.kindDef, trophy.def);
 
         var steps = 0;
         if (leader)
             steps += LeaderQualitySteps;
-        if (medal.ceremonyQuality >= MaxCeremonyStage)
+        if (trophy.ceremonyQuality >= MaxCeremonyStage)
             steps += LegendaryCeremonyQualitySteps;
 
         var boosted = Mathf.Clamp((int)quality + steps, (int)QualityCategory.Awful, (int)QualityCategory.Legendary);

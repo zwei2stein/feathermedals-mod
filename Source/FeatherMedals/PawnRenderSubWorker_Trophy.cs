@@ -8,13 +8,13 @@ public class PawnRenderSubWorker_Trophy : PawnRenderSubWorker
     public override bool CanDrawNowSub(PawnRenderNode node, PawnDrawParms parms)
     {
         return MedalMod.Settings.DrawTrophiesOnPawns
-               && node.apparel is FeatherMedal medal
+               && node.apparel is FeatherTrophy medal
                && FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out _, out _);
     }
 
     public override void TransformOffset(PawnRenderNode node, PawnDrawParms parms, ref Vector3 offset, ref Vector3 pivot)
     {
-        if (node.apparel is not FeatherMedal medal
+        if (node.apparel is not FeatherTrophy medal
             || !FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out var index, out var count))
             return;
 
@@ -28,7 +28,7 @@ public class PawnRenderSubWorker_Trophy : PawnRenderSubWorker
     
     public override void TransformRotation(PawnRenderNode node, PawnDrawParms parms, ref Quaternion rotation)
     {
-        if (node.apparel is not FeatherMedal medal
+        if (node.apparel is not FeatherTrophy medal
             || !FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out var index, out var count))
             return;
 

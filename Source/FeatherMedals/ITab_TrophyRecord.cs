@@ -12,7 +12,7 @@ public class ITab_TrophyRecord : ITab_TrophyRows
     protected override List<ITrophyRecordRow> Rows()
     {
         var rows = new List<ITrophyRecordRow>();
-        if (SelThing is not FeatherMedal medal)
+        if (SelThing is not FeatherTrophy medal)
             return rows;
 
         // awarded: the record of its ceremony; not yet awarded: what it may do

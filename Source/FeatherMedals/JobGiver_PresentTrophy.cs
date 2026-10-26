@@ -24,7 +24,7 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
     {
         if (pawn.GetLord()?.LordJob is not LordJob_Ritual ritual)
             return null;
-        if (ritual.selectedTarget.Thing is not FeatherMedal medal || medal.Destroyed)
+        if (ritual.selectedTarget.Thing is not FeatherTrophy medal || medal.Destroyed)
             return null;
 
         var standCell = pawn.mindState.duty?.focus ?? LocalTargetInfo.Invalid;

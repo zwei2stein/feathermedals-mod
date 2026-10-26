@@ -12,7 +12,7 @@ public class RitualStageAction_StartAdorning : RitualStageAction
         if (leader != null && awardee != null)
         {
             if (MedalMod.Settings.PromptForCitationDuringRitual)
-                if (ritual.selectedTarget.Thing is FeatherMedal medal && !medal.HasCitation)
+                if (ritual.selectedTarget.Thing is FeatherTrophy medal && !medal.HasCitation)
                     Find.WindowStack.Add(new Dialog_WriteCitation(medal));
                 
             Messages.Message(

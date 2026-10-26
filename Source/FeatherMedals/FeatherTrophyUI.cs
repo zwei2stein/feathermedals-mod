@@ -42,16 +42,16 @@ public static class FeatherTrophyUI
         curY += citationHeight + TrophyUIStyle.CitationGap;
     }
 
-    public static void DrawTraitChangeSummary(FeatherMedal featherMedal, float textX, Rect rect, ref float curY)
+    public static void DrawTraitChangeSummary(FeatherTrophy featherTrophy, float textX, Rect rect, ref float curY)
     {
-        DrawTraitChangeSummary(featherMedal, new Rect(textX, rect.y, rect.xMax - textX, rect.height), ref curY, TextAnchor.MiddleLeft);
+        DrawTraitChangeSummary(featherTrophy, new Rect(textX, rect.y, rect.xMax - textX, rect.height), ref curY, TextAnchor.MiddleLeft);
     }
 
-    public static void DrawTraitChangeSummary(FeatherMedal featherMedal, Rect area, ref float curY, TextAnchor anchor)
+    public static void DrawTraitChangeSummary(FeatherTrophy featherTrophy, Rect area, ref float curY, TextAnchor anchor)
     {
-        DrawTraitChangeLine(featherMedal.GetDecoratedTraitLabel(true), TrophyUIStyle.GoldColor, area, ref curY, anchor);
-        DrawTraitChangeLine(featherMedal.GetAddedTraitLabel(true), Color.green, area, ref curY, anchor);
-        DrawTraitChangeLine(featherMedal.GetRemovedTraitLabel(true), Color.red, area, ref curY, anchor);
+        DrawTraitChangeLine(featherTrophy.GetDecoratedTraitLabel(true), TrophyUIStyle.GoldColor, area, ref curY, anchor);
+        DrawTraitChangeLine(featherTrophy.GetAddedTraitLabel(true), Color.green, area, ref curY, anchor);
+        DrawTraitChangeLine(featherTrophy.GetRemovedTraitLabel(true), Color.red, area, ref curY, anchor);
     }
 
     private static void DrawTraitChangeLine(string text, Color color, Rect area, ref float curY, TextAnchor anchor)
@@ -67,19 +67,19 @@ public static class FeatherTrophyUI
         Text.Font = GameFont.Small;
     }
 
-    public static float TraitsSummaryHeight(FeatherMedal medal)
+    public static float TraitsSummaryHeight(FeatherTrophy trophy)
     {
-        var ext = medal.def.GetModExtension<TrophyExtension>();
+        var ext = trophy.def.GetModExtension<TrophyExtension>();
         if (ext == null)
             return 0f;
         var count = (ext.removesTraits?.Count ?? 0) + (ext.addsTraits?.Count ?? 0);
         return count * TrophyUIStyle.FixedLineHeight;
     }
 
-    public static void DrawTraitsSummary(FeatherMedal medal, Rect rect, ref float curY)
+    public static void DrawTraitsSummary(FeatherTrophy trophy, Rect rect, ref float curY)
     {
-        var ext = medal.def.GetModExtension<TrophyExtension>();
-        var chanceMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(medal);
+        var ext = trophy.def.GetModExtension<TrophyExtension>();
+        var chanceMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(trophy);
 
         Text.Font = GameFont.Tiny;
 

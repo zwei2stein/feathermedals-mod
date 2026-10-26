@@ -120,7 +120,7 @@ public class TrophyCeremonyLedger : GameComponent
     private static void Note(Thing thing, HashSet<int> found)
     {
         // generated pasts can date before the game started, no colony ceremony then
-        if (thing is FeatherMedal { awarded.tick: >= 0 } medal)
+        if (thing is FeatherTrophy { awarded.tick: >= 0 } medal)
             found.Add(medal.awarded.tick);
     }
 }

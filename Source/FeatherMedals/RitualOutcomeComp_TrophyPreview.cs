@@ -9,7 +9,7 @@ using Verse;
 public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherMedal;
+        ritual?.selectedTarget.Thing is FeatherTrophy;
 
     public override bool DataRequired => false;
 
@@ -17,7 +17,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherMedal medal)
+        if (ritual?.selectedTarget.Thing is not FeatherTrophy medal)
             return "TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable".Translate();
         return medal.MedalLabel;
     }
@@ -29,7 +29,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherMedal medal) return null;
+        if (ritualTarget.Thing is not FeatherTrophy medal) return null;
 
         var sb = new StringBuilder();
 
@@ -75,12 +75,12 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherMedal medal && medal.TryGetQuality(out _);
+        ritual?.selectedTarget.Thing is FeatherTrophy medal && medal.TryGetQuality(out _);
 
     public override bool DataRequired => false;
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data) =>
-        ritual?.selectedTarget.Thing is FeatherMedal medal ? AdorningQuality.GetTrophyQualityBonus(medal) : 0f;
+        ritual?.selectedTarget.Thing is FeatherTrophy medal ? AdorningQuality.GetTrophyQualityBonus(medal) : 0f;
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null) =>
         "TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality".Translate();
@@ -92,7 +92,7 @@ public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherMedal medal || !medal.TryGetQuality(out var quality))
+        if (ritualTarget.Thing is not FeatherTrophy medal || !medal.TryGetQuality(out var quality))
             return null;
 
         var bonus = AdorningQuality.GetTrophyQualityBonus(medal);
@@ -217,7 +217,7 @@ public static class PatchDrawMedalInRitual
         if (__instance is not Dialog_BeginRitual ritual) return;
         
         var target = TargetRef(ritual);
-        if (target.Thing is not FeatherMedal medal) return;
+        if (target.Thing is not FeatherTrophy medal) return;
         
         var row = layout.NewRow(60f, marginOverride: 6f);
         var iconRect = new Rect(row.Rect.x, row.Rect.y, 50f, 50f);
@@ -235,13 +235,13 @@ public static class PatchDrawMedalInRitual
 public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherMedal;
+        ritual?.selectedTarget.Thing is FeatherTrophy;
 
     public override bool DataRequired => false;
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherMedal medal)
+        if (ritual?.selectedTarget.Thing is not FeatherTrophy medal)
             return 0f;
         
         return AdorningQuality.GetCitationScore(medal.HasCitation);
@@ -259,7 +259,7 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherMedal medal)
+        if (ritualTarget.Thing is not FeatherTrophy medal)
             return null;
 
         var contribution = AdorningQuality.GetCitationScore(medal.HasCitation);

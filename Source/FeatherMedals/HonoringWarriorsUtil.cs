@@ -35,7 +35,7 @@ public static class HonoringWarriorsUtil
         var count = 0;
         for (var i = 0; i < worn.Count; i++)
         {
-            if (worn[i] is FeatherMedal)
+            if (worn[i] is FeatherTrophy)
                 count++;
         }
         return count;

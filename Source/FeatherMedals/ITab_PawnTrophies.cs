@@ -75,7 +75,7 @@ namespace FeatherMedals
             if (pawn?.apparel == null)
                 return rows;
 
-            foreach (var medal in pawn.apparel.WornApparel.OfType<FeatherMedal>())
+            foreach (var medal in pawn.apparel.WornApparel.OfType<FeatherTrophy>())
                 rows.Add(new FeatherTrophyRecordDrawer(medal));
             foreach (var scalp in WornScalps(pawn))
                 rows.Add(new ScalpRecordDrawer(scalp));

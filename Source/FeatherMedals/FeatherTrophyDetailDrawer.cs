@@ -9,17 +9,17 @@ namespace FeatherMedals;
 // but no award ceremony details (it did not happen yet)
 public class FeatherTrophyDetailDrawer : ITrophyRecordRow
 {
-    private readonly FeatherMedal medal;
+    private readonly FeatherTrophy _trophy;
     private readonly string citation;
 
-    public FeatherTrophyDetailDrawer(FeatherMedal medal) : this(medal, medal.citation)
+    public FeatherTrophyDetailDrawer(FeatherTrophy trophy) : this(trophy, trophy.citation)
     {
     }
 
     // citation being written, shown instead of the saved one
-    public FeatherTrophyDetailDrawer(FeatherMedal medal, string citation)
+    public FeatherTrophyDetailDrawer(FeatherTrophy trophy, string citation)
     {
-        this.medal = medal;
+        this._trophy = trophy;
         this.citation = citation;
     }
 
@@ -36,14 +36,14 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         if (draw)
         {
             var iconRect = new Rect(rect.x + (rect.width - iconSize) / 2f, curY, iconSize, iconSize);
-            Widgets.ThingIcon(iconRect, medal);
+            Widgets.ThingIcon(iconRect, _trophy);
         }
         curY += iconSize + TrophyUIStyle.DetailIconGap;
 
         // Medal name, centered
-        var description = medal.def.description;
+        var description = _trophy.def.description;
         var hasDescription = !description.NullOrEmpty();
-        Line(medal.MedalLabel, GameFont.Medium, Color.white, rect, ref curY, draw,
+        Line(_trophy.MedalLabel, GameFont.Medium, Color.white, rect, ref curY, draw,
             hasDescription ? TrophyUIStyle.DetailLineGap : TrophyUIStyle.DetailSectionGap);
 
         // Description, muted, centered
@@ -61,17 +61,17 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
 
         // Stat bonuses, green, centered
         if (draw)
-            UIHelper.DrawStatSummary(medal.def, rect, ref curY);
+            UIHelper.DrawStatSummary(_trophy.def, rect, ref curY);
         else
-            curY += UIHelper.StatSummaryHeight(medal.def);
+            curY += UIHelper.StatSummaryHeight(_trophy.def);
 
         // Trait effects, centered
-        if (MedalMod.Settings.TrophyDynamicTraits && medal.BiocodeComp is not { Biocoded: true })
+        if (MedalMod.Settings.TrophyDynamicTraits && _trophy.BiocodeComp is not { Biocoded: true })
         {
             if (draw)
-                FeatherTrophyUI.DrawTraitsSummary(medal, rect, ref curY);
+                FeatherTrophyUI.DrawTraitsSummary(_trophy, rect, ref curY);
             else
-                curY += FeatherTrophyUI.TraitsSummaryHeight(medal);
+                curY += FeatherTrophyUI.TraitsSummaryHeight(_trophy);
         }
 
         Text.Font = GameFont.Small;

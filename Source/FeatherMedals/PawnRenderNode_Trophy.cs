@@ -13,7 +13,7 @@ public class PawnRenderNode_Trophy : PawnRenderNode_Apparel
 
     protected override IEnumerable<Graphic> GraphicsFor(Pawn pawn)
     {
-        if (apparel is not FeatherMedal medal)
+        if (apparel is not FeatherTrophy medal)
             yield break;
 
         yield return GraphicDatabase.Get<Graphic_Single>(

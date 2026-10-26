@@ -11,14 +11,14 @@ public static class FeatherMedalUtil
     // float menu helper
     public static Apparel EvaluatingItem;
     
-    public static bool IsMedalDef(ThingDef def) => def?.thingClass == typeof(FeatherMedal);
+    public static bool IsMedalDef(ThingDef def) => def?.thingClass == typeof(FeatherTrophy);
 
     public static bool IsOwnedBy(Thing thing, Pawn pawn)
-        => thing is FeatherMedal { BiocodeComp: { Biocoded: true } comp } && comp.CodedPawn == pawn;
+        => thing is FeatherTrophy { BiocodeComp: { Biocoded: true } comp } && comp.CodedPawn == pawn;
 
-    public static string WearBlockedReason(FeatherMedal medal, Pawn pawn)
+    public static string WearBlockedReason(FeatherTrophy trophy, Pawn pawn)
     {
-        if (medal.BiocodeComp is { Biocoded: true, CodedPawn: { } owner } && owner != pawn)
+        if (trophy.BiocodeComp is { Biocoded: true, CodedPawn: { } owner } && owner != pawn)
             return "TribalTrophies_Trophy_Common_OwnedByOther".Translate(owner.Named("PAWN"), pawn.Named("IMPOSTOR"));
 
         return "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst();
@@ -37,37 +37,37 @@ public static class FeatherMedalUtil
         => new(BlockedWearText(apparel, reason, forcingOtherPawn), null);
 
     // "force <pawn> to wear" for a trophy that already belongs to somebody
-    public static FloatMenuOption ForceWearOption(FeatherMedal medal, Pawn dresser)
+    public static FloatMenuOption ForceWearOption(FeatherTrophy trophy, Pawn dresser)
     {
-        if (!dresser.CanReach(medal, PathEndMode.ClosestTouch, Danger.Deadly))
-            return BlockedWearOption(medal, "NoPath".Translate().CapitalizeFirst(), true);
-        if (medal.IsBurning())
-            return BlockedWearOption(medal, "Burning".Translate(), true);
+        if (!dresser.CanReach(trophy, PathEndMode.ClosestTouch, Danger.Deadly))
+            return BlockedWearOption(trophy, "NoPath".Translate().CapitalizeFirst(), true);
+        if (trophy.IsBurning())
+            return BlockedWearOption(trophy, "Burning".Translate(), true);
 
-        var key = medal.def.apparel.LastLayer.IsUtilityLayer ? "ForceTargetToEquipApparel" : "ForceTargetToWear";
+        var key = trophy.def.apparel.LastLayer.IsUtilityLayer ? "ForceTargetToEquipApparel" : "ForceTargetToWear";
         return FloatMenuUtility.DecoratePrioritizedTask(
-            new FloatMenuOption(key.Translate(medal.LabelShort, medal), () =>
+            new FloatMenuOption(key.Translate(trophy.LabelShort, trophy), () =>
             {
                 var queueOrder = KeyBindingDefOf.QueueOrder.IsDownEvent;
                 Find.Targeter.BeginTargeting(TargetingParameters.ForForceWear(dresser),
-                    target => ForceWearTargetChosen(medal, dresser, target, queueOrder));
+                    target => ForceWearTargetChosen(trophy, dresser, target, queueOrder));
             }),
-            dresser, medal);
+            dresser, trophy);
     }
 
-    private static void ForceWearTargetChosen(FeatherMedal medal, Pawn dresser, LocalTargetInfo target, bool queueOrder)
+    private static void ForceWearTargetChosen(FeatherTrophy trophy, Pawn dresser, LocalTargetInfo target, bool queueOrder)
     {
         if (!target.TryGetPawn(out var targetPawn) || targetPawn.apparel == null) return;
 
         void Reject(string reason)
-            => Messages.Message(BlockedWearText(medal, reason, true), targetPawn, MessageTypeDefOf.RejectInput, false);
+            => Messages.Message(BlockedWearText(trophy, reason, true), targetPawn, MessageTypeDefOf.RejectInput, false);
 
-        if (!IsOwnedBy(medal, targetPawn))
+        if (!IsOwnedBy(trophy, targetPawn))
         {
-            Reject(WearBlockedReason(medal, targetPawn));
+            Reject(WearBlockedReason(trophy, targetPawn));
             return;
         }
-        if (targetPawn.apparel.WouldReplaceLockedApparel(medal))
+        if (targetPawn.apparel.WouldReplaceLockedApparel(trophy))
         {
             Reject("WouldReplaceLockedApparel".Translate().CapitalizeFirst());
             return;
@@ -79,8 +79,8 @@ public static class FeatherMedalUtil
         }
 
         bool hasParts;
-        EvaluatingItem = medal;
-        try { hasParts = ApparelUtility.HasPartsToWear(targetPawn, medal.def); }
+        EvaluatingItem = trophy;
+        try { hasParts = ApparelUtility.HasPartsToWear(targetPawn, trophy.def); }
         finally { EvaluatingItem = null; }
 
         if (!hasParts)
@@ -88,7 +88,7 @@ public static class FeatherMedalUtil
             Reject("CannotWearBecauseOfMissingBodyParts".Translate().CapitalizeFirst());
             return;
         }
-        if (!EquipmentUtility.CanEquip(medal, targetPawn, out var cantReason))
+        if (!EquipmentUtility.CanEquip(trophy, targetPawn, out var cantReason))
         {
             Reject(cantReason);
             return;
@@ -96,12 +96,12 @@ public static class FeatherMedalUtil
 
         void Confirm()
         {
-            medal.SetForbidden(false);
-            var job = JobMaker.MakeJob(JobDefOf.ForceTargetWear, targetPawn, medal);
+            trophy.SetForbidden(false);
+            var job = JobMaker.MakeJob(JobDefOf.ForceTargetWear, targetPawn, trophy);
             dresser.jobs.TryTakeOrderedJob(job, JobTag.Misc, queueOrder);
         }
 
-        var replaced = ApparelUtility.GetApparelReplacedByNewApparel(targetPawn, medal);
+        var replaced = ApparelUtility.GetApparelReplacedByNewApparel(targetPawn, trophy);
         if (replaced != null && ModsConfig.BiotechActive
                              && MechanitorUtility.TryConfirmBandwidthLossFromDroppingThing(targetPawn, replaced, Confirm))
             return;
@@ -113,9 +113,9 @@ public static class FeatherMedalUtil
         => BlockedWearOption(apparel, "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst(), true);
 
     public static bool NeedsCeremony(Thing thing)
-        => thing is FeatherMedal { BiocodeComp: not { Biocoded: true } };
+        => thing is FeatherTrophy { BiocodeComp: not { Biocoded: true } };
     
-    public static bool CanWearTrophy(Pawn pawn, FeatherMedal medal)
+    public static bool CanWearTrophy(Pawn pawn, FeatherTrophy trophy)
     {
         if (pawn?.apparel == null)
             return false;
@@ -125,7 +125,7 @@ public static class FeatherMedalUtil
         RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = true;
         try
         {
-            return ApparelUtility.HasPartsToWear(pawn, medal.def) && medal.PawnCanWear(pawn, true);
+            return ApparelUtility.HasPartsToWear(pawn, trophy.def) && trophy.PawnCanWear(pawn, true);
         }
         finally
         {
@@ -133,7 +133,7 @@ public static class FeatherMedalUtil
         }
     }
 
-    public static bool TryGetDisplaySlot(Pawn pawn, FeatherMedal medal, out int index, out int count)
+    public static bool TryGetDisplaySlot(Pawn pawn, FeatherTrophy trophy, out int index, out int count)
     {
         index = -1;
         count = 0;
@@ -143,19 +143,19 @@ public static class FeatherMedalUtil
             return false;
 
         var maxDisplayed = MedalMod.Settings.MaxDisplayedTrophies;
-        var groups = medal.def.apparel.bodyPartGroups;
+        var groups = trophy.def.apparel.bodyPartGroups;
         var seen = 0;
 
         for (var i = 0; i < worn.Count; i++)
         {
-            if (worn[i] is not FeatherMedal other)
+            if (worn[i] is not FeatherTrophy other)
                 continue;
             if (seen++ >= maxDisplayed)
                 break;
             if (!SameGroups(other.def.apparel.bodyPartGroups, groups))
                 continue;
 
-            if (other == medal)
+            if (other == trophy)
                 index = count;
             count++;
         }

@@ -9,37 +9,37 @@ namespace FeatherMedals;
 // with ceremony that has already happened related info
 public class FeatherTrophyRecordDrawer : ITrophyRecordRow
 {
-    private readonly FeatherMedal medal;
+    private readonly FeatherTrophy _trophy;
     private readonly bool verbose;
 
     // verbose: also who it honors and how the ceremony went, for views of this one trophy
-    public FeatherTrophyRecordDrawer(FeatherMedal medal, bool verbose = false)
+    public FeatherTrophyRecordDrawer(FeatherTrophy trophy, bool verbose = false)
     {
-        this.medal = medal;
+        this._trophy = trophy;
         this.verbose = verbose;
     }
 
-    private bool HasAwardInfo() => medal.awardedBy != null || medal.awarded != null;
+    private bool HasAwardInfo() => _trophy.awardedBy != null || _trophy.awarded != null;
 
     private string GetHonoringLine()
     {
-        if (!verbose || medal.BiocodeComp is not { Biocoded: true, CodedPawn: not null })
+        if (!verbose || _trophy.BiocodeComp is not { Biocoded: true, CodedPawn: not null })
             return null;
-        return "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(medal.BiocodeComp.CodedPawn.Named("PAWN"));
+        return "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(_trophy.BiocodeComp.CodedPawn.Named("PAWN"));
     }
 
     private string GetCeremonyQualityLine()
     {
-        if (!verbose || medal.ceremonyQuality < 0)
+        if (!verbose || _trophy.ceremonyQuality < 0)
             return null;
         return "TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality".Translate(
-            FeatherTrophyUI.CeremonyQualityLabelColored(medal.ceremonyQuality).Named("QUALITY")).Resolve();
+            FeatherTrophyUI.CeremonyQualityLabelColored(_trophy.ceremonyQuality).Named("QUALITY")).Resolve();
     }
 
     private string GetAwardInfo()
     {
-        var presentedBy = medal.GetAwardedByLabel();
-        var date = medal.GetAwardedDateLabel();
+        var presentedBy = _trophy.GetAwardedByLabel();
+        var date = _trophy.GetAwardedDateLabel();
         if (presentedBy != null && date != null)
             return "TribalTrophies_Trophy_PawnTab_AdornedByOnDate".Translate(
                 presentedBy.Named("PRESENTER"),
@@ -54,19 +54,19 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
 
         // each line below counts the gap drawn above it; the tale is drawn right under the line before it
         Text.Font = GameFont.Small;
-        height += Text.CalcHeight(medal.MedalLabel, textWidth);
+        height += Text.CalcHeight(_trophy.MedalLabel, textWidth);
 
         Text.Font = GameFont.Tiny;
         var honoring = GetHonoringLine();
         if (honoring != null)
             height += Text.CalcHeight(honoring, textWidth) + TrophyUIStyle.RowLineGap;
 
-        if (medal.HasCitation)
-            height += FeatherTrophyUI.CitationHeight(medal.citation, textWidth);
+        if (_trophy.HasCitation)
+            height += FeatherTrophyUI.CitationHeight(_trophy.citation, textWidth);
         else
             height += TrophyUIStyle.DescriptionLineHeight + TrophyUIStyle.RowLineGap;
 
-        var statText = UIHelper.GetStatSummary(medal.def);
+        var statText = UIHelper.GetStatSummary(_trophy.def);
         if (!statText.NullOrEmpty())
             height += Text.CalcHeight(statText, textWidth) + TrophyUIStyle.RowLineGap;
 
@@ -77,7 +77,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         if (quality != null)
             height += Text.CalcHeight(quality, textWidth) + TrophyUIStyle.RowLineGap;
 
-        int lineCount = medal.GetTraitChangeText()?.Split('\n').Length ?? 0;
+        int lineCount = _trophy.GetTraitChangeText()?.Split('\n').Length ?? 0;
         height += lineCount * TrophyUIStyle.FixedLineHeight;
 
         Text.Font = GameFont.Small;
@@ -94,9 +94,9 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             lockSize,
             lockSize
         );
-        var wearer = medal.Wearer;
+        var wearer = _trophy.Wearer;
         var tracker = wearer.apparel;
-        var locked = tracker.IsLocked(medal);
+        var locked = tracker.IsLocked(_trophy);
         var lockIcon = locked ? TrophyTextures.LockedIcon : TrophyTextures.UnlockedIcon;
         var lockTip = locked
             ? "TribalTrophies_Trophy_PawnTab_Locked_Tooltip".Translate()
@@ -111,9 +111,9 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             if (Widgets.ButtonImage(lockRect, lockIcon, GUI.color))
             {
                 if (locked)
-                    tracker.Unlock(medal);
+                    tracker.Unlock(_trophy);
                 else
-                    tracker.Lock(medal);
+                    tracker.Lock(_trophy);
             }
         }
         else
@@ -138,14 +138,14 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             Widgets.DrawHighlight(rowRect);
 
         // Lock toggle, only while worn; an awarded trophy can also lie on the ground
-        if (medal.Wearer != null)
+        if (_trophy.Wearer != null)
             DrawLockToggle(rowRect);
 
         // Icon, centered in its column
         var iconSize = TrophyUIStyle.FeatherIconSize;
         var column = new Rect(rowRect.x + TrophyUIStyle.SidePadding, rowRect.y, TrophyUIStyle.IconColumnWidth, rowHeight);
         var iconRect = new Rect(column.center.x - iconSize / 2f, column.center.y - iconSize / 2f, iconSize, iconSize);
-        Widgets.ThingIcon(iconRect, medal);
+        Widgets.ThingIcon(iconRect, _trophy);
 
         var textX = column.xMax + TrophyUIStyle.ColumnGap;
         var textWidth = GetTextWidth(rowRect.width);
@@ -153,9 +153,9 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         // Medal name
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.MiddleLeft;
-        var nameHeight = Text.CalcHeight(medal.MedalLabel, textWidth);
+        var nameHeight = Text.CalcHeight(_trophy.MedalLabel, textWidth);
         var nameRect = new Rect(textX, rowRect.y + TrophyUIStyle.RowPadding, textWidth, nameHeight);
-        Widgets.Label(nameRect, medal.MedalLabel);
+        Widgets.Label(nameRect, _trophy.MedalLabel);
 
         // Honoring, verbose only
         Text.Font = GameFont.Tiny;
@@ -171,21 +171,21 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
 
         // Citation
         Text.Font = GameFont.Tiny;
-        if (medal.HasCitation)
+        if (_trophy.HasCitation)
         {
-            FeatherTrophyUI.DrawCitation(medal.citation, nameRect, ref descBottom);
+            FeatherTrophyUI.DrawCitation(_trophy.citation, nameRect, ref descBottom);
         }
         else
         {
             var descRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, TrophyUIStyle.DescriptionLineHeight);
             GUI.color = TrophyUIStyle.MutedColor;
-            Widgets.Label(descRect, (medal.def.description ?? "").Truncate(descRect.width));
+            Widgets.Label(descRect, (_trophy.def.description ?? "").Truncate(descRect.width));
             GUI.color = Color.white;
             descBottom = descRect.yMax;
         }
 
         // Stat bonuses summary
-        var statText = UIHelper.GetStatSummary(medal.def);
+        var statText = UIHelper.GetStatSummary(_trophy.def);
         if (!statText.NullOrEmpty())
         {
             Text.Font = GameFont.Tiny;
@@ -197,7 +197,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             descBottom = statsRect.yMax;
         }
 
-        FeatherTrophyUI.DrawTraitChangeSummary(medal, textX, rowRect, ref descBottom);
+        FeatherTrophyUI.DrawTraitChangeSummary(_trophy, textX, rowRect, ref descBottom);
 
         // Award info
         if (HasAwardInfo())

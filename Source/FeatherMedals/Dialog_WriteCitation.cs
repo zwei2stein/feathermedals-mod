@@ -6,7 +6,7 @@ namespace FeatherMedals;
 
 public class Dialog_WriteCitation : Window
 {
-    private readonly FeatherMedal medal;
+    private readonly FeatherTrophy _trophy;
     private string draft;
     private const int MAX_LENGTH = 300;
     private const float MEDAL_COLUMN_WIDTH = TrophyUIStyle.TaleDialogFeatherColumnWidth;
@@ -15,14 +15,14 @@ public class Dialog_WriteCitation : Window
 
     private Vector2 medalScrollPosition;
 
-    public Dialog_WriteCitation(FeatherMedal medal)
+    public Dialog_WriteCitation(FeatherTrophy trophy)
     {
-        this.medal = medal;
+        this._trophy = trophy;
         
-        if (MedalMod.Settings.AutoGenerateCitation && !medal.HasCitation)
+        if (MedalMod.Settings.AutoGenerateCitation && !trophy.HasCitation)
             this.draft = CitationUtil.GenerateForPlayer() ?? "";
         else
-            this.draft = medal.citation ?? "";
+            this.draft = trophy.citation ?? "";
         
         forcePause = true;
         doCloseX = true;
@@ -50,7 +50,7 @@ public class Dialog_WriteCitation : Window
     private void DrawMedalColumn(Rect rect)
     {
         // the trophy as it will be adorned, with the tale being written; scroll instead of overflowing
-        var row = new FeatherTrophyDetailDrawer(medal, draft);
+        var row = new FeatherTrophyDetailDrawer(_trophy, draft);
         var viewWidth = rect.width - TrophyUIStyle.ScrollbarWidth;
         var viewRect = new Rect(0f, 0f, viewWidth, row.Height(viewWidth));
         Widgets.BeginScrollView(rect, ref medalScrollPosition, viewRect);
@@ -100,7 +100,7 @@ public class Dialog_WriteCitation : Window
 
         if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "Confirm".Translate()))
         {
-            medal.citation = draft.NullOrEmpty() ? null : draft.Trim();
+            _trophy.citation = draft.NullOrEmpty() ? null : draft.Trim();
             Close();
         }
 

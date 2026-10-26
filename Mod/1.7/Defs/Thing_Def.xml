@@ -10,7 +10,7 @@
 	<!--  BASE  -->
 
 	<ThingDef ParentName="ApparelBase" Name="TribalTrophies_Feather_Base" Abstract="True">
-		<thingClass>FeatherMedals.FeatherMedal</thingClass>
+		<thingClass>FeatherMedals.FeatherTrophy</thingClass>
 		<smeltable>false</smeltable>
 		<inspectorTabs>
 			<li>FeatherMedals.ITab_TrophyRecord</li>

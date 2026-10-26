@@ -29,7 +29,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
     private void ApplyImpl(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
-        if (jobRitual.selectedTarget.Thing is not FeatherMedal medal) return;
+        if (jobRitual.selectedTarget.Thing is not FeatherTrophy medal) return;
         var awardee = jobRitual.assignments.FirstAssignedPawn("awardee");
         var presenter = jobRitual.assignments.FirstAssignedPawn("leader");
         if (awardee == null || presenter == null) return;

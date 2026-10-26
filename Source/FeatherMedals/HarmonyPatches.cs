@@ -18,7 +18,7 @@ public class HarmonyPatches
             for (var i = 0; i < worn.Count; i++)
             {
                 if (worn[i].def != apparelDef) continue;
-                if (worn[i] is FeatherMedal m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+                if (worn[i] is FeatherTrophy m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
                     return true;
             }
         }
@@ -27,7 +27,7 @@ public class HarmonyPatches
         for (var i = 0; i < inv.Count; i++)
         {
             if (inv[i].def != apparelDef) continue;
-            if (inv[i] is FeatherMedal m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+            if (inv[i] is FeatherTrophy m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
                 return true;
         }
         return false;
@@ -59,12 +59,12 @@ public class HarmonyPatches
     {
         public static void Finalizer(Apparel newApparel)
         {
-            if (newApparel is FeatherMedal) FeatherMedalUtil.EvaluatingItem = null;
+            if (newApparel is FeatherTrophy) FeatherMedalUtil.EvaluatingItem = null;
         }
         
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
         {
-            if (newApparel is not FeatherMedal medal) return true;
+            if (newApparel is not FeatherTrophy medal) return true;
             var comp = medal.BiocodeComp;
             if (comp == null) return true;
 
@@ -136,7 +136,7 @@ public class HarmonyPatches
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherMedal medal) return true;
+            if (clickedThing is not FeatherTrophy medal) return true;
 
             var pawn = context.FirstSelectedPawn;
             if (FeatherMedalUtil.IsOwnedBy(medal, pawn))
@@ -158,7 +158,7 @@ public class HarmonyPatches
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherMedal { BiocodeComp: { Biocoded: true } } medal) return true;
+            if (clickedThing is not FeatherTrophy { BiocodeComp: { Biocoded: true } } medal) return true;
 
             __result = FeatherMedalUtil.ForceWearOption(medal, context.FirstSelectedPawn);
             return false;
