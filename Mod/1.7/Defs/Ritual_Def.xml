@@ -182,7 +182,7 @@
 	</JobDef>
 
 	<JobDef>
-		<defName>TribalTrophies_AwaitAdorning</defName>
+		<defName>TribalTrophies_Job_AwaitAdorning</defName>
 		<driverClass>FeatherMedals.JobDriver_AwaitAdorning</driverClass>
 		<reportString>waiting to be adorned.</reportString>
 		<casualInterruptible>false</casualInterruptible>

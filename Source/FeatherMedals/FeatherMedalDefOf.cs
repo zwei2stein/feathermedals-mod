@@ -14,7 +14,7 @@ namespace FeatherMedals
         
         public static JobDef TribalTrophies_PresentTrophy;
         public static JobDef TribalTrophies_PresentTrophySpeech;
-        public static JobDef TribalTrophies_AwaitAdorning;
+        public static JobDef TribalTrophies_Job_AwaitAdorning;
 
         public static PreceptDef TribalTrophies_AdorningCeremonyPrecept;
 
