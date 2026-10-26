@@ -18,7 +18,7 @@ public static class ScalpRequestUtility
             return false;
         if (faction.def.permanentEnemy || !faction.HasGoodwill)
             return false;
-        if (faction.def.techLevel > MedalMod.Settings.ScalpRequestMaxTech)
+        if (faction.def.techLevel > TribalTrophiesMod.Settings.ScalpRequestMaxTech)
             return false;
         if (ScalpingPrecepts.StanceOf(faction.ideos?.PrimaryIdeo) == ScalpStance.Forbidden)
             return false;

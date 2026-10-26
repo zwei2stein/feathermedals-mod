@@ -29,7 +29,7 @@ public class QuestNode_ScalpRequest_GetAsker : QuestNode
             return true;
         if (!originTile.Valid || settlement.Tile.Layer != originTile.Layer)
             return false;
-        return Find.WorldGrid.ApproxDistanceInTiles(originTile, settlement.Tile) < MedalMod.Settings.ScalpRequestMaxDistance;
+        return Find.WorldGrid.ApproxDistanceInTiles(originTile, settlement.Tile) < TribalTrophiesMod.Settings.ScalpRequestMaxDistance;
     }
 
     private void Store(Slate slate, Settlement settlement)
@@ -45,7 +45,7 @@ public class QuestNode_ScalpRequest_GetAsker : QuestNode
 
     protected override bool TestRunInt(Slate slate)
     {
-        if (!MedalMod.Settings.ScalpRequestQuests)
+        if (!TribalTrophiesMod.Settings.ScalpRequestQuests)
             return false;
         var map = slate.Get<Map>("map");
         if (map == null)

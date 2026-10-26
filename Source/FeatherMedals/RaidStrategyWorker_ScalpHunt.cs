@@ -39,6 +39,6 @@ public class RaidStrategyWorker_ScalpHuntDropPods : RaidStrategyWorker_ScalpHunt
 {
     public override bool CanUseWith(IncidentParms parms, PawnGroupKindDef groupKind)
     {
-        return MedalMod.Settings.ScalpHuntDropPods && base.CanUseWith(parms, groupKind);
+        return TribalTrophiesMod.Settings.ScalpHuntDropPods && base.CanUseWith(parms, groupKind);
     }
 }

@@ -288,7 +288,7 @@ namespace FeatherMedals
 
             if (ext != null)
             {
-                if (MedalMod.Settings.TrophyDynamicTraits)
+                if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
                 {
                     if (ext.addsTraits != null)
                         foreach (var trait in ext.addsTraits)

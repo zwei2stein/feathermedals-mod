@@ -25,7 +25,7 @@ namespace FeatherMedals
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!MedalMod.Settings.ShowScalpingGizmo)
+            if (!TribalTrophiesMod.Settings.ShowScalpingGizmo)
                 yield break;
             
             if (!parent.Spawned)

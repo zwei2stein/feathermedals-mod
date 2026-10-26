@@ -40,7 +40,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
                 sb.AppendLine(UIHelper.StatOffsetLine(stat));
         }
 
-        if (MedalMod.Settings.TrophyDynamicTraits)
+        if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
         {
             var ext = medal.def.GetModExtension<TrophyExtension>();
             if (ext != null)

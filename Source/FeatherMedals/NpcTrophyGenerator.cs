@@ -93,7 +93,7 @@ public static class NpcTrophyGenerator
     {
         baseRolls = 0;
 
-        if (!MedalMod.Settings.GenerateNpcTrophies)
+        if (!TribalTrophiesMod.Settings.GenerateNpcTrophies)
             return false;
         if (pawn == null || pawn.Dead || pawn.apparel == null || pawn.story == null || pawn.skills == null || pawn.ageTracker == null)
             return false;
@@ -117,7 +117,7 @@ public static class NpcTrophyGenerator
             return false;
 
         var level = factionDef.techLevel;
-        return level >= MedalMod.Settings.NpcTrophyMinTech && level <= MedalMod.Settings.NpcTrophyMaxTech;
+        return level >= TribalTrophiesMod.Settings.NpcTrophyMinTech && level <= TribalTrophiesMod.Settings.NpcTrophyMaxTech;
     }
     
     private static int BaseRolls(Pawn pawn)
@@ -223,7 +223,7 @@ public static class NpcTrophyGenerator
                     medal.Destroy();
             }
 
-            if (MedalMod.Settings.TrophyDynamicTraits && newest != null)
+            if (TribalTrophiesMod.Settings.TrophyDynamicTraits && newest != null)
                 RitualOutcomeTraitUtil.UpdateDecoratedTrait(pawn, newest);
         }
         finally

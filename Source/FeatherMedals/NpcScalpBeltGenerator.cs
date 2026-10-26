@@ -42,7 +42,7 @@ public static class NpcScalpBeltGenerator
 
     private static bool Eligible(Pawn pawn)
     {
-        if (!MedalMod.Settings.GenerateNpcScalpBelts)
+        if (!TribalTrophiesMod.Settings.GenerateNpcScalpBelts)
             return false;
         if (!NpcBeltGenerationUtility.IsNpcWearer(pawn))
             return false;

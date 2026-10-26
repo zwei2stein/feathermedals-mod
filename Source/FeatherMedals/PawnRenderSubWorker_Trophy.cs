@@ -7,7 +7,7 @@ public class PawnRenderSubWorker_Trophy : PawnRenderSubWorker
 {
     public override bool CanDrawNowSub(PawnRenderNode node, PawnDrawParms parms)
     {
-        return MedalMod.Settings.DrawTrophiesOnPawns
+        return TribalTrophiesMod.Settings.DrawTrophiesOnPawns
                && node.apparel is FeatherTrophy medal
                && FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out _, out _);
     }
@@ -23,7 +23,7 @@ public class PawnRenderSubWorker_Trophy : PawnRenderSubWorker
 
     public override void TransformScale(PawnRenderNode node, PawnDrawParms parms, ref Vector3 scale)
     {
-        scale *= MedalMod.Settings.TrophyScale;
+        scale *= TribalTrophiesMod.Settings.TrophyScale;
     }
     
     public override void TransformRotation(PawnRenderNode node, PawnDrawParms parms, ref Quaternion rotation)

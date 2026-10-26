@@ -56,11 +56,11 @@ public static class ScalpHuntUtility
 
     public static bool CanHunt(Faction faction, Map map)
     {
-        if (!MedalMod.Settings.ScalpHuntRaids)
+        if (!TribalTrophiesMod.Settings.ScalpHuntRaids)
             return false;
         if (faction == null || !faction.def.humanlikeFaction || !faction.HostileTo(Faction.OfPlayer))
             return false;
-        if (faction.def.techLevel > MedalMod.Settings.ScalpHuntMaxTech)
+        if (faction.def.techLevel > TribalTrophiesMod.Settings.ScalpHuntMaxTech)
             return false;
         if (ScalpingPrecepts.StanceOf(faction.ideos?.PrimaryIdeo) == ScalpStance.Forbidden)
             return false;

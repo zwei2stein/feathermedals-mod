@@ -195,7 +195,7 @@ namespace FeatherMedals
             if (!HasScalpToTake(pawn))
                 return false;
 
-            if (!pawn.DevelopmentalStage.Adult() && !MedalMod.Settings.ScalpBreaksTargetChildren)
+            if (!pawn.DevelopmentalStage.Adult() && !TribalTrophiesMod.Settings.ScalpBreaksTargetChildren)
                 return false;
 
             if (thing is Corpse corpse)

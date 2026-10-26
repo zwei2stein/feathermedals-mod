@@ -27,7 +27,7 @@ public static class NpcScalpGenerator
 
     private static bool Eligible(Pawn pawn)
     {
-        if (!MedalMod.Settings.GenerateNpcScalped)
+        if (!TribalTrophiesMod.Settings.GenerateNpcScalped)
             return false;
         if (pawn == null || pawn.Dead || pawn.health == null || pawn.ageTracker == null)
             return false;

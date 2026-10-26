@@ -19,7 +19,7 @@ public class Dialog_WriteCitation : Window
     {
         this._trophy = trophy;
         
-        if (MedalMod.Settings.AutoGenerateCitation && !trophy.HasCitation)
+        if (TribalTrophiesMod.Settings.AutoGenerateCitation && !trophy.HasCitation)
             this.draft = CitationUtil.GenerateForPlayer() ?? "";
         else
             this.draft = trophy.citation ?? "";

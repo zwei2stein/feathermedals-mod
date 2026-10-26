@@ -14,12 +14,12 @@ namespace FeatherMedals
         public static readonly Texture2D DisassembleIcon = ContentFinder<Texture2D>.Get("UI/Designators/Deconstruct");
     }
 
-    public class MedalMod : Mod
+    public class TribalTrophiesMod : Mod
     {
         public static TribalTrophiesSettings Settings;
 
         // Constructor runs when the mod is loaded
-        public MedalMod(ModContentPack content) : base(content)
+        public TribalTrophiesMod(ModContentPack content) : base(content)
         {
             Settings = GetSettings<TribalTrophiesSettings>();
         }

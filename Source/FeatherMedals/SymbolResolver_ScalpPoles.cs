@@ -29,7 +29,7 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
 
     public static bool FactionShouldHaveScalpPoles(Faction faction)
     {
-        return MedalMod.Settings.ScalpPolesInBases
+        return TribalTrophiesMod.Settings.ScalpPolesInBases
                && faction != null
                && !faction.IsPlayer
                && faction.def.humanlikeFaction

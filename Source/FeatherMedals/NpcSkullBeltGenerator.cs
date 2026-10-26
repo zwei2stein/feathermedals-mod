@@ -41,7 +41,7 @@ public static class NpcSkullBeltGenerator
 
     private static bool Eligible(Pawn pawn)
     {
-        if (!MedalMod.Settings.GenerateNpcSkullBelts)
+        if (!TribalTrophiesMod.Settings.GenerateNpcSkullBelts)
             return false;
         if (!NpcBeltGenerationUtility.IsNpcWearer(pawn))
             return false;

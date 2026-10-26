@@ -66,7 +66,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (presenter.carryTracker?.CarriedThing == medal)
             presenter.carryTracker.innerContainer.Remove(medal);
 
-        awardee.apparel.Wear(medal, false, MedalMod.Settings.LockTrophyUponAdorning);
+        awardee.apparel.Wear(medal, false, TribalTrophiesMod.Settings.LockTrophyUponAdorning);
 
         // Wear failed, drop trophy
         if (!awardee.apparel.Wearing(medal))
@@ -116,7 +116,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             }
         }
 
-        if (MedalMod.Settings.TrophyDynamicTraits)
+        if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
         {
             RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee, medal);
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);

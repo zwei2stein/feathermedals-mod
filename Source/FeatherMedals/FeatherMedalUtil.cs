@@ -142,7 +142,7 @@ public static class FeatherMedalUtil
         if (worn == null)
             return false;
 
-        var maxDisplayed = MedalMod.Settings.MaxDisplayedTrophies;
+        var maxDisplayed = TribalTrophiesMod.Settings.MaxDisplayedTrophies;
         var groups = trophy.def.apparel.bodyPartGroups;
         var seen = 0;
 

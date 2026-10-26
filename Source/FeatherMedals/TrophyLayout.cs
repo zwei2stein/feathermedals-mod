@@ -18,9 +18,9 @@ public static class TrophyLayout
 
     private static void Slot(int index, int count, out int row, out float phiDeg)
     {
-        var maxPerRow = MedalMod.Settings.MaxDisplayedTrophies;
+        var maxPerRow = TribalTrophiesMod.Settings.MaxDisplayedTrophies;
         
-        var scale = MedalMod.Settings.TrophyScale;
+        var scale = TribalTrophiesMod.Settings.TrophyScale;
         var reverseIndex = (count - 1) - index;
         row = reverseIndex / maxPerRow;
         var col = reverseIndex % maxPerRow;
@@ -39,10 +39,10 @@ public static class TrophyLayout
     public static Vector3 OffsetFor(int index, int count, Rot4 facing)
     {
         Slot(index, count, out var row, out var phiDeg);
-        var ring = row * RingStep * MedalMod.Settings.TrophyScale;
+        var ring = row * RingStep * TribalTrophiesMod.Settings.TrophyScale;
         var phi = phiDeg * Mathf.Deg2Rad;
         var x = (RadiusX + ring) * Mathf.Sin(phi);
-        var z = MedalMod.Settings.VerticalOffset + (RadiusZ + ring) * Mathf.Cos(phi);
+        var z = TribalTrophiesMod.Settings.VerticalOffset + (RadiusZ + ring) * Mathf.Cos(phi);
         if (Mirrored(facing)) x = -x;
         return new Vector3(x, 0f, z);
     }
@@ -51,7 +51,7 @@ public static class TrophyLayout
     public static float TiltFor(int index, int count, Rot4 facing)
     {
         Slot(index, count, out _, out var phiDeg);
-        var tilt = Mathf.Clamp(phiDeg * MedalMod.Settings.FanOut, -MaxTiltDeg, MaxTiltDeg);
+        var tilt = Mathf.Clamp(phiDeg * TribalTrophiesMod.Settings.FanOut, -MaxTiltDeg, MaxTiltDeg);
         return Mirrored(facing) ? -tilt : tilt;
     }
 }
