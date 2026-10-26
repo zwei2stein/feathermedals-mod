@@ -10,29 +10,6 @@ namespace FeatherMedals;
 public class HarmonyPatches
 {
     
-    private static bool PawnOwnsBiocodedMedalDef(Pawn p, ThingDef apparelDef)
-    {
-        var worn = p.apparel?.WornApparel;
-        if (worn != null)
-        {
-            for (var i = 0; i < worn.Count; i++)
-            {
-                if (worn[i].def != apparelDef) continue;
-                if (worn[i] is FeatherTrophy m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
-                    return true;
-            }
-        }
-        var inv = p.inventory?.innerContainer;
-        if (inv == null) return false;
-        for (var i = 0; i < inv.Count; i++)
-        {
-            if (inv[i].def != apparelDef) continue;
-            if (inv[i] is FeatherTrophy m && m.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
-                return true;
-        }
-        return false;
-    }
-    
     private static ScalpRequestComp previewRequest;
 
     private static IEnumerable<Scalp> ScalpsToBeGiven(List<Tradeable> tradeables)
@@ -55,7 +32,7 @@ public class HarmonyPatches
     }
     
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
-    public static class PatchMedalBiocodeManual
+    public static class PatchFeatherTrophyBiocodeManualWear
     {
         public static void Finalizer(Apparel newApparel)
         {
@@ -64,8 +41,8 @@ public class HarmonyPatches
         
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
         {
-            if (newApparel is not FeatherTrophy medal) return true;
-            var comp = medal.BiocodeComp;
+            if (newApparel is not FeatherTrophy featherTrophy) return true;
+            var comp = featherTrophy.BiocodeComp;
             if (comp == null) return true;
 
             var pawn = __instance.pawn;
@@ -76,7 +53,7 @@ public class HarmonyPatches
                 if (comp.CodedPawn == pawn)
                 {
                     // vanilla Wear asks HasPartsToWear about this exact item, see Patch_ApparelUtility_HasPartsToWear
-                    FeatherTrophyUtil.EvaluatingItem = medal;
+                    FeatherTrophyUtil.EvaluatingItem = featherTrophy;
                     return true;
                 }
 
@@ -99,7 +76,7 @@ public class HarmonyPatches
             comp.CodeFor(pawn);
 
             if (Prefs.DevMode)
-                Log.Message($"[TribalTrophies] Biocoded {medal.TrophyLabel} to {pawn.LabelShort}");
+                Log.Message($"[TribalTrophies] Biocoded {featherTrophy.TrophyLabel} to {pawn.LabelShort}");
 
             return true;
         }
@@ -122,7 +99,7 @@ public class HarmonyPatches
             if (FeatherTrophyUtil.EvaluatingItem is { } item && item.def == apparel && FeatherTrophyUtil.IsOwnedBy(item, p))
                 return;
             
-            if (PawnOwnsBiocodedMedalDef(p, apparel))
+            if (FeatherTrophyUtil.PawnOwnsBiocodedFeatherTrophyDef(p, apparel))
                 return;
 
             // only the ceremony can put a trophy on a pawn
@@ -132,21 +109,21 @@ public class HarmonyPatches
     }
     
     [HarmonyPatch(typeof(FloatMenuOptionProvider_Wear), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
-    public static class Patch_Wear_Medal
+    public static class PatchWearFeatherTrophy
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherTrophy medal) return true;
+            if (clickedThing is not FeatherTrophy featherTrophy) return true;
 
             var pawn = context.FirstSelectedPawn;
-            if (FeatherTrophyUtil.IsOwnedBy(medal, pawn))
+            if (FeatherTrophyUtil.IsOwnedBy(featherTrophy, pawn))
             {
                 // vanilla runs, HasPartsToWear lets the owner through
-                FeatherTrophyUtil.EvaluatingItem = medal;
+                FeatherTrophyUtil.EvaluatingItem = featherTrophy;
                 return true;
             }
 
-            __result = FeatherTrophyUtil.BlockedWearOption(medal, FeatherTrophyUtil.WearBlockedReason(medal, pawn), false);
+            __result = FeatherTrophyUtil.BlockedWearOption(featherTrophy, FeatherTrophyUtil.WearBlockedReason(featherTrophy, pawn), false);
             return false;
         }
 
@@ -154,13 +131,13 @@ public class HarmonyPatches
     }
     
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
-    public static class Patch_DressOtherPawn_Medal
+    public static class PatchDressOtherPawnFeatherTrophy
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherTrophy { BiocodeComp: { Biocoded: true } } medal) return true;
+            if (clickedThing is not FeatherTrophy { BiocodeComp: { Biocoded: true } } featherTrophy) return true;
 
-            __result = FeatherTrophyUtil.ForceWearOption(medal, context.FirstSelectedPawn);
+            __result = FeatherTrophyUtil.ForceWearOption(featherTrophy, context.FirstSelectedPawn);
             return false;
         }
 
@@ -172,7 +149,7 @@ public class HarmonyPatches
     }
     
     [HarmonyPatch(typeof(ApparelUtility), nameof(ApparelUtility.CanWearTogether))]
-    public static class PatchMedalConflict
+    public static class PatchFeatherTrophyConflict
     {
         public static void Postfix(ThingDef A, ThingDef B, BodyDef body, ref bool __result)
         {

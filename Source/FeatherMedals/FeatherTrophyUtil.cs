@@ -133,6 +133,30 @@ public static class FeatherTrophyUtil
         }
     }
 
+    public static bool PawnOwnsBiocodedFeatherTrophyDef(Pawn p, ThingDef apparelDef)
+    {
+        var worn = p.apparel?.WornApparel;
+        if (worn != null)
+        {
+            for (var i = 0; i < worn.Count; i++)
+            {
+                if (worn[i].def != apparelDef) continue;
+                if (worn[i] is FeatherTrophy featherTrophy && featherTrophy.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+                    return true;
+            }
+        }
+        var inv = p.inventory?.innerContainer;
+        if (inv == null) return false;
+        for (var i = 0; i < inv.Count; i++)
+        {
+            if (inv[i].def != apparelDef) continue;
+            if (inv[i] is FeatherTrophy featherTrophy && featherTrophy.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+                return true;
+        }
+        return false;
+    }
+
+
     public static bool TryGetDisplaySlot(Pawn pawn, FeatherTrophy trophy, out int index, out int count)
     {
         index = -1;
