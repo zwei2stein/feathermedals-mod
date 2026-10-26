@@ -16,10 +16,10 @@ public static class RitualOutcomeTraitUtil
 
     private readonly struct Candidate
     {
-        public readonly MedalDynamicTrait Entry;
+        public readonly TrophyDynamicTrait Entry;
         public readonly TraitOperation Operation;
 
-        public Candidate(MedalDynamicTrait entry, TraitOperation operation)
+        public Candidate(TrophyDynamicTrait entry, TraitOperation operation)
         {
             Entry = entry;
             Operation = operation;
@@ -99,7 +99,7 @@ public static class RitualOutcomeTraitUtil
         }
     }
 
-    private static bool CanRemove(TraitSet traits, MedalDynamicTrait entry)
+    private static bool CanRemove(TraitSet traits, TrophyDynamicTrait entry)
     {
         var existing = traits.allTraits.FirstOrDefault(t => t.def == entry.trait && t.Degree == entry.degree);
         if (existing == null)
@@ -111,7 +111,7 @@ public static class RitualOutcomeTraitUtil
         return true;
     }
 
-    private static bool CanAdd(TraitSet traits, MedalDynamicTrait entry)
+    private static bool CanAdd(TraitSet traits, TrophyDynamicTrait entry)
     {
         if (traits.HasTrait(entry.trait))
             return false;
@@ -157,9 +157,9 @@ public static class RitualOutcomeTraitUtil
         );
     }
 
-    private const int MEDALS_DECORATED = 3;
-    private const int MEDALS_HONORED = 5;
-    private const int MEDALS_EXALTED = 7;
+    private const int TROPHIES_DECORATED = 3;
+    private const int TROPHIES_HONORED = 5;
+    private const int TROPHIES_EXALTED = 7;
     
     public static void UpdateDecoratedTrait(Pawn pawn, FeatherTrophy trophy)
     {
@@ -167,12 +167,12 @@ public static class RitualOutcomeTraitUtil
         if (traits == null || pawn.apparel == null)
             return;
 
-        var medalCount = pawn.apparel.WornApparel.Count(a => a is FeatherTrophy);
-        var targetDegree = medalCount switch
+        var trophyCount = pawn.apparel.WornApparel.Count(a => a is FeatherTrophy);
+        var targetDegree = trophyCount switch
         {
-            >= MEDALS_EXALTED => 2,
-            >= MEDALS_HONORED => 1,
-            >= MEDALS_DECORATED => 0,
+            >= TROPHIES_EXALTED => 2,
+            >= TROPHIES_HONORED => 1,
+            >= TROPHIES_DECORATED => 0,
             _ => -1
         };
         if (targetDegree < 0)

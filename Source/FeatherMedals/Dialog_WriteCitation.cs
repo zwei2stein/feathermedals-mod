@@ -9,11 +9,11 @@ public class Dialog_WriteCitation : Window
     private readonly FeatherTrophy _trophy;
     private string draft;
     private const int MAX_LENGTH = 300;
-    private const float MEDAL_COLUMN_WIDTH = TrophyUIStyle.TaleDialogFeatherColumnWidth;
+    private const float TROPHY_COLUMN_WIDTH = TrophyUIStyle.TaleDialogFeatherColumnWidth;
     private const float BUTTON_HEIGHT = TrophyUIStyle.ButtonHeight;
     private const float BUTTON_AREA_HEIGHT = TrophyUIStyle.ButtonHeight + TrophyUIStyle.ColumnGap;
 
-    private Vector2 medalScrollPosition;
+    private Vector2 trophyScrollPosition;
 
     public Dialog_WriteCitation(FeatherTrophy trophy)
     {
@@ -34,26 +34,26 @@ public class Dialog_WriteCitation : Window
 
     public override void DoWindowContents(Rect inRect)
     {
-        var medalCol = new Rect(inRect.x, inRect.y, MEDAL_COLUMN_WIDTH, inRect.height);
+        var trophyCol = new Rect(inRect.x, inRect.y, TROPHY_COLUMN_WIDTH, inRect.height);
 
         // Vertical separator
-        var separatorX = medalCol.xMax + TrophyUIStyle.ColumnGap;
+        var separatorX = trophyCol.xMax + TrophyUIStyle.ColumnGap;
         UIHelper.DrawSeparatorVertical(separatorX, inRect.y, inRect.height);
 
         // writing first, so the preview shows the text typed this frame
-        var writeCol = new Rect(separatorX + TrophyUIStyle.ColumnGap, inRect.y, inRect.width - MEDAL_COLUMN_WIDTH - TrophyUIStyle.ColumnGap * 3f, inRect.height);
+        var writeCol = new Rect(separatorX + TrophyUIStyle.ColumnGap, inRect.y, inRect.width - TROPHY_COLUMN_WIDTH - TrophyUIStyle.ColumnGap * 3f, inRect.height);
         DrawWritingColumn(writeCol);
 
-        DrawMedalColumn(medalCol);
+        DrawTrophyColumn(trophyCol);
     }
     
-    private void DrawMedalColumn(Rect rect)
+    private void DrawTrophyColumn(Rect rect)
     {
         // the trophy as it will be adorned, with the tale being written; scroll instead of overflowing
         var row = new FeatherTrophyDetailDrawer(_trophy, draft);
         var viewWidth = rect.width - TrophyUIStyle.ScrollbarWidth;
         var viewRect = new Rect(0f, 0f, viewWidth, row.Height(viewWidth));
-        Widgets.BeginScrollView(rect, ref medalScrollPosition, viewRect);
+        Widgets.BeginScrollView(rect, ref trophyScrollPosition, viewRect);
         row.Draw(viewRect);
         Widgets.EndScrollView();
 

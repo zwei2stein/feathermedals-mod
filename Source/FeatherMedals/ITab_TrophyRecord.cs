@@ -12,14 +12,14 @@ public class ITab_TrophyRecord : ITab_TrophyRows
     protected override List<ITrophyRecordRow> Rows()
     {
         var rows = new List<ITrophyRecordRow>();
-        if (SelThing is not FeatherTrophy medal)
+        if (SelThing is not FeatherTrophy featherTrophy)
             return rows;
 
         // awarded: the record of its ceremony; not yet awarded: what it may do
-        if (medal.awarded != null)
-            rows.Add(new FeatherTrophyRecordDrawer(medal, verbose: true));
+        if (featherTrophy.awarded != null)
+            rows.Add(new FeatherTrophyRecordDrawer(featherTrophy, verbose: true));
         else
-            rows.Add(new FeatherTrophyDetailDrawer(medal));
+            rows.Add(new FeatherTrophyDetailDrawer(featherTrophy));
         return rows;
     }
 

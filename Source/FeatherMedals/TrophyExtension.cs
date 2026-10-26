@@ -7,8 +7,8 @@ namespace FeatherMedals;
 
 public class TrophyExtension : DefModExtension
 {
-    public List<MedalDynamicTrait> addsTraits;
-    public List<MedalDynamicTrait> removesTraits;
+    public List<TrophyDynamicTrait> addsTraits;
+    public List<TrophyDynamicTrait> removesTraits;
     
     public override IEnumerable<string> ConfigErrors()
     {
@@ -18,7 +18,7 @@ public class TrophyExtension : DefModExtension
             yield return error;
     }
 
-    private static IEnumerable<string> CheckList(List<MedalDynamicTrait> list, string listName)
+    private static IEnumerable<string> CheckList(List<TrophyDynamicTrait> list, string listName)
     {
         if (list == null)
             yield break;
@@ -54,7 +54,7 @@ public class TrophyExtension : DefModExtension
     }
 }
 
-public class MedalDynamicTrait
+public class TrophyDynamicTrait
 {
     public TraitDef trait;
     public int degree = 0;
