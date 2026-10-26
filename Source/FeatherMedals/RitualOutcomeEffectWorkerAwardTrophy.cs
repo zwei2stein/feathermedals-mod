@@ -54,7 +54,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             || awardee.apparel == null || awardee.story == null)
             return;
 
-        if (!FeatherMedalUtil.CanWearTrophy(awardee, medal))
+        if (!FeatherTrophyUtil.CanWearTrophy(awardee, medal))
         {
             Messages.Message(
                 "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.TrophyLabel.Named("TROPHY")),

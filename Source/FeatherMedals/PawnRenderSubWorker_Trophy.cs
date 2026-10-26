@@ -9,13 +9,13 @@ public class PawnRenderSubWorker_Trophy : PawnRenderSubWorker
     {
         return TribalTrophiesMod.Settings.DrawTrophiesOnPawns
                && node.apparel is FeatherTrophy medal
-               && FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out _, out _);
+               && FeatherTrophyUtil.TryGetDisplaySlot(parms.pawn, medal, out _, out _);
     }
 
     public override void TransformOffset(PawnRenderNode node, PawnDrawParms parms, ref Vector3 offset, ref Vector3 pivot)
     {
         if (node.apparel is not FeatherTrophy medal
-            || !FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out var index, out var count))
+            || !FeatherTrophyUtil.TryGetDisplaySlot(parms.pawn, medal, out var index, out var count))
             return;
 
         offset += TrophyLayout.OffsetFor(index, count, parms.facing);
@@ -29,7 +29,7 @@ public class PawnRenderSubWorker_Trophy : PawnRenderSubWorker
     public override void TransformRotation(PawnRenderNode node, PawnDrawParms parms, ref Quaternion rotation)
     {
         if (node.apparel is not FeatherTrophy medal
-            || !FeatherMedalUtil.TryGetDisplaySlot(parms.pawn, medal, out var index, out var count))
+            || !FeatherTrophyUtil.TryGetDisplaySlot(parms.pawn, medal, out var index, out var count))
             return;
 
         rotation = Quaternion.AngleAxis(TrophyLayout.TiltFor(index, count, parms.facing), Vector3.up) * rotation;

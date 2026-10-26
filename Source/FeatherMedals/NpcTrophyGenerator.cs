@@ -30,7 +30,7 @@ public static class NpcTrophyGenerator
             var all = DefDatabase<ThingDef>.AllDefsListForReading;
             for (var i = 0; i < all.Count; i++)
             {
-                if (FeatherMedalUtil.IsMedalDef(all[i]))
+                if (FeatherTrophyUtil.IsMedalDef(all[i]))
                     field.Add(all[i]);
             }
             return field;

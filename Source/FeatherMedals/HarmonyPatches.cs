@@ -59,7 +59,7 @@ public class HarmonyPatches
     {
         public static void Finalizer(Apparel newApparel)
         {
-            if (newApparel is FeatherTrophy) FeatherMedalUtil.EvaluatingItem = null;
+            if (newApparel is FeatherTrophy) FeatherTrophyUtil.EvaluatingItem = null;
         }
         
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
@@ -76,7 +76,7 @@ public class HarmonyPatches
                 if (comp.CodedPawn == pawn)
                 {
                     // vanilla Wear asks HasPartsToWear about this exact item, see Patch_ApparelUtility_HasPartsToWear
-                    FeatherMedalUtil.EvaluatingItem = medal;
+                    FeatherTrophyUtil.EvaluatingItem = medal;
                     return true;
                 }
 
@@ -113,13 +113,13 @@ public class HarmonyPatches
             if (!__result || p == null)
                 return;
             
-            if (!FeatherMedalUtil.IsMedalDef(apparel))
+            if (!FeatherTrophyUtil.IsMedalDef(apparel))
                 return;
 
             if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
                 return;
             
-            if (FeatherMedalUtil.EvaluatingItem is { } item && item.def == apparel && FeatherMedalUtil.IsOwnedBy(item, p))
+            if (FeatherTrophyUtil.EvaluatingItem is { } item && item.def == apparel && FeatherTrophyUtil.IsOwnedBy(item, p))
                 return;
             
             if (PawnOwnsBiocodedMedalDef(p, apparel))
@@ -139,18 +139,18 @@ public class HarmonyPatches
             if (clickedThing is not FeatherTrophy medal) return true;
 
             var pawn = context.FirstSelectedPawn;
-            if (FeatherMedalUtil.IsOwnedBy(medal, pawn))
+            if (FeatherTrophyUtil.IsOwnedBy(medal, pawn))
             {
                 // vanilla runs, HasPartsToWear lets the owner through
-                FeatherMedalUtil.EvaluatingItem = medal;
+                FeatherTrophyUtil.EvaluatingItem = medal;
                 return true;
             }
 
-            __result = FeatherMedalUtil.BlockedWearOption(medal, FeatherMedalUtil.WearBlockedReason(medal, pawn), false);
+            __result = FeatherTrophyUtil.BlockedWearOption(medal, FeatherTrophyUtil.WearBlockedReason(medal, pawn), false);
             return false;
         }
 
-        public static void Finalizer() => FeatherMedalUtil.EvaluatingItem = null;
+        public static void Finalizer() => FeatherTrophyUtil.EvaluatingItem = null;
     }
     
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
@@ -160,14 +160,14 @@ public class HarmonyPatches
         {
             if (clickedThing is not FeatherTrophy { BiocodeComp: { Biocoded: true } } medal) return true;
 
-            __result = FeatherMedalUtil.ForceWearOption(medal, context.FirstSelectedPawn);
+            __result = FeatherTrophyUtil.ForceWearOption(medal, context.FirstSelectedPawn);
             return false;
         }
 
         public static void Postfix(Thing clickedThing, ref FloatMenuOption __result)
         {
-            if (__result == null || !FeatherMedalUtil.NeedsCeremony(clickedThing)) return;
-            __result = FeatherMedalUtil.CeremonyOnlyForceWearOption((Apparel)clickedThing);
+            if (__result == null || !FeatherTrophyUtil.NeedsCeremony(clickedThing)) return;
+            __result = FeatherTrophyUtil.CeremonyOnlyForceWearOption((Apparel)clickedThing);
         }
     }
     
@@ -179,7 +179,7 @@ public class HarmonyPatches
             if (__result)
                 return;
             
-            if (FeatherMedalUtil.IsMedalDef(A) && FeatherMedalUtil.IsMedalDef(B)) 
+            if (FeatherTrophyUtil.IsMedalDef(A) && FeatherTrophyUtil.IsMedalDef(B)) 
                 __result = true;
         }
     }

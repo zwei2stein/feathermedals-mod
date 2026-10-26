@@ -412,9 +412,9 @@ namespace FeatherMedals
     }
 
     [StaticConstructorOnStartup]
-    public static class MedalModInit
+    public static class TribalTrophiesModInit
     {
-        static MedalModInit()
+        static TribalTrophiesModInit()
         {
             var harmony = new HarmonyLib.Harmony("TribalTrophies");
             harmony.PatchAll();

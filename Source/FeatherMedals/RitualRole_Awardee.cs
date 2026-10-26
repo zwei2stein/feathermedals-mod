@@ -16,7 +16,7 @@ public class RitualRole_Awardee : RitualRoleColonist
             return false;
         }
 
-        if (selectedTarget.Thing is FeatherTrophy trophy && !FeatherMedalUtil.CanWearTrophy(pawn, trophy))
+        if (selectedTarget.Thing is FeatherTrophy trophy && !FeatherTrophyUtil.CanWearTrophy(pawn, trophy))
         {
             if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleCannotBeAdorned".Translate(pawn.Named("PAWN"));
             return false;

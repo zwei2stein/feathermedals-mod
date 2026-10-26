@@ -6,7 +6,7 @@ using Verse.AI;
 
 namespace FeatherMedals;
 
-public static class FeatherMedalUtil
+public static class FeatherTrophyUtil
 {
     // float menu helper
     public static Apparel EvaluatingItem;
