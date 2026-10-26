@@ -54,7 +54,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
 
         // each line below counts the gap drawn above it; the tale is drawn right under the line before it
         Text.Font = GameFont.Small;
-        height += Text.CalcHeight(_trophy.MedalLabel, textWidth);
+        height += Text.CalcHeight(_trophy.TrophyLabel, textWidth);
 
         Text.Font = GameFont.Tiny;
         var honoring = GetHonoringLine();
@@ -153,9 +153,9 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         // Medal name
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.MiddleLeft;
-        var nameHeight = Text.CalcHeight(_trophy.MedalLabel, textWidth);
+        var nameHeight = Text.CalcHeight(_trophy.TrophyLabel, textWidth);
         var nameRect = new Rect(textX, rowRect.y + TrophyUIStyle.RowPadding, textWidth, nameHeight);
-        Widgets.Label(nameRect, _trophy.MedalLabel);
+        Widgets.Label(nameRect, _trophy.TrophyLabel);
 
         // Honoring, verbose only
         Text.Font = GameFont.Tiny;

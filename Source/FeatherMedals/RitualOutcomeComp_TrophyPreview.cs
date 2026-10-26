@@ -19,7 +19,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
     {
         if (ritual?.selectedTarget.Thing is not FeatherTrophy medal)
             return "TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable".Translate();
-        return medal.MedalLabel;
+        return medal.TrophyLabel;
     }
 
     public override QualityFactor GetQualityFactor(
@@ -59,7 +59,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
         return new QualityFactor
         {
-            label = medal.MedalLabel,
+            label = medal.TrophyLabel,
             count = "",
             qualityChange = "",
             quality = 0f,
@@ -226,7 +226,7 @@ public static class PatchDrawMedalInRitual
         var labelRect = new Rect(iconRect.xMax + 10f, row.Rect.y, row.Rect.width - 60f, 50f);
         Text.Anchor = TextAnchor.MiddleLeft;
         Text.Font = GameFont.Medium;
-        Widgets.Label(labelRect, medal.MedalLabel);
+        Widgets.Label(labelRect, medal.TrophyLabel);
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.UpperLeft;
     }

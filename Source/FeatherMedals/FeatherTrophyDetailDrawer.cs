@@ -43,7 +43,7 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         // Medal name, centered
         var description = _trophy.def.description;
         var hasDescription = !description.NullOrEmpty();
-        Line(_trophy.MedalLabel, GameFont.Medium, Color.white, rect, ref curY, draw,
+        Line(_trophy.TrophyLabel, GameFont.Medium, Color.white, rect, ref curY, draw,
             hasDescription ? TrophyUIStyle.DetailLineGap : TrophyUIStyle.DetailSectionGap);
 
         // Description, muted, centered

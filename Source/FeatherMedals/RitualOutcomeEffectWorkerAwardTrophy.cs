@@ -57,7 +57,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (!FeatherMedalUtil.CanWearTrophy(awardee, medal))
         {
             Messages.Message(
-                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
+                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.TrophyLabel.Named("TROPHY")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
@@ -74,7 +74,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             if (!medal.Spawned && medal.holdingOwner == null)
                 GenPlace.TryPlaceThing(medal, awardee.PositionHeld, awardee.MapHeld, ThingPlaceMode.Near);
             Messages.Message(
-                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.MedalLabel.Named("TROPHY")),
+                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.TrophyLabel.Named("TROPHY")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
@@ -122,10 +122,10 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
         }
         
-        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(medal.MedalLabel);
+        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(medal.TrophyLabel);
         var letterText = "TribalTrophies_AdorningCeremony_Letter_Adorned".Translate(
             awardee.Named("PAWN"),
-            medal.MedalLabel.Named("TROPHY"),
+            medal.TrophyLabel.Named("TROPHY"),
             presenter.Named("PRESENTER"));
         letterText += "\n\n";
         letterText += "TribalTrophies_AdorningCeremony_Letter_Attendance"

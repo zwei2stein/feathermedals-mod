@@ -83,7 +83,7 @@ namespace FeatherMedals
                 defaultLabel = "TribalTrophies_AdorningCeremony_Common_CeremonyLabel".Translate(),
                 defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc".Translate(),
                 icon = this.def.uiIcon, 
-                action = StartMedalRitual
+                action = StartTrophyAdorningRitual
             };
             
             // first failing reason wins
@@ -142,7 +142,7 @@ namespace FeatherMedals
             return false;
         }
             
-        public string MedalLabel
+        public string TrophyLabel
         {
             get
             {
@@ -151,7 +151,7 @@ namespace FeatherMedals
             }
         }
 
-        private void StartMedalRitual()
+        private void StartTrophyAdorningRitual()
         {
             if (!ColonyHasPresenter(out Pawn presenter)) return;
             var pattern = TribalTrophiesDefOf.TribalTrophies_AdorningCeremony_Pattern;
