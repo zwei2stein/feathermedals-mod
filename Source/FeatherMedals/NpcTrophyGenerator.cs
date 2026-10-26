@@ -19,7 +19,7 @@ public static class NpcTrophyGenerator
     private const int LeaderQualitySteps = 2; // remove awful/poor for leaders
     private const int LegendaryCeremonyQualitySteps = 2; // remove awful/poor for legendary ceremony
 
-    private static List<ThingDef> MedalDefs
+    private static List<ThingDef> FeatherTrophyDefs
     {
         get
         {
@@ -30,7 +30,7 @@ public static class NpcTrophyGenerator
             var all = DefDatabase<ThingDef>.AllDefsListForReading;
             for (var i = 0; i < all.Count; i++)
             {
-                if (FeatherTrophyUtil.IsMedalDef(all[i]))
+                if (FeatherTrophyUtil.IsFeatherTrophyDef(all[i]))
                     field.Add(all[i]);
             }
             return field;
@@ -193,7 +193,7 @@ public static class NpcTrophyGenerator
         try
         {
             var defs = new List<ThingDef>();
-            foreach (var def in MedalDefs)
+            foreach (var def in FeatherTrophyDefs)
             {
                 if (ApparelUtility.HasPartsToWear(pawn, def))
                     defs.Add(def);
@@ -205,22 +205,22 @@ public static class NpcTrophyGenerator
             var attempts = count * PickAttemptsPerTrophy;
             while (made.Count < count && attempts-- > 0)
             {
-                var medal = CreateMedal(pawn, defs, pool, fallbackPresenter, leader);
-                if (medal != null)
-                    made.Add(medal);
+                var featherTrophy = CreateFeatherTrophy(pawn, defs, pool, fallbackPresenter, leader);
+                if (featherTrophy != null)
+                    made.Add(featherTrophy);
             }
 
             // oldest first, so the newest one is the last to be worn and the one that grants the Decorated trait
             made.Sort((a, b) => a.awarded.tick.CompareTo(b.awarded.tick));
 
             FeatherTrophy newest = null;
-            foreach (var medal in made)
+            foreach (var featherTrophy in made)
             {
-                pawn.apparel.Wear(medal, false, true);
-                if (pawn.apparel.Wearing(medal))
-                    newest = medal;
-                else if (!medal.Destroyed)
-                    medal.Destroy();
+                pawn.apparel.Wear(featherTrophy, false, true);
+                if (pawn.apparel.Wearing(featherTrophy))
+                    newest = featherTrophy;
+                else if (!featherTrophy.Destroyed)
+                    featherTrophy.Destroy();
             }
 
             if (TribalTrophiesMod.Settings.TrophyDynamicTraits && newest != null)
@@ -232,23 +232,23 @@ public static class NpcTrophyGenerator
         }
     }
 
-    private static FeatherTrophy CreateMedal(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
+    private static FeatherTrophy CreateFeatherTrophy(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
     {
         var def = defs.RandomElement();
-        var medal = (FeatherTrophy)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
-        if (!medal.PawnCanWear(pawn, true))
+        var featherTrophy = (FeatherTrophy)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
+        if (!featherTrophy.PawnCanWear(pawn, true))
         {
-            medal.Destroy();
+            featherTrophy.Destroy();
             return null;
         }
 
-        medal.awarded = NpcHistoryUtility.RandomPastEvent(pawn.Faction, pawn);
+        featherTrophy.awarded = NpcHistoryUtility.RandomPastEvent(pawn.Faction, pawn);
         var presenter = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
-        medal.awardedBy = presenter != null ? new RememberedPawn(presenter) : null;
-        medal.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
-        SetTrophyQuality(medal, pawn, leader);
-        medal.citation = CitationUtil.Generate(pawn.Faction, pawn, medal.awarded.tile);
-        return medal;
+        featherTrophy.awardedBy = presenter != null ? new RememberedPawn(presenter) : null;
+        featherTrophy.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
+        SetTrophyQuality(featherTrophy, pawn, leader);
+        featherTrophy.citation = CitationUtil.Generate(pawn.Faction, pawn, featherTrophy.awarded.tile);
+        return featherTrophy;
     }
 
     private static void SetTrophyQuality(FeatherTrophy trophy, Pawn pawn, bool leader)

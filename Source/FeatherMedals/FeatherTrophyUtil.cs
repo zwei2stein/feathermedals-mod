@@ -11,7 +11,7 @@ public static class FeatherTrophyUtil
     // float menu helper
     public static Apparel EvaluatingItem;
     
-    public static bool IsMedalDef(ThingDef def) => def?.thingClass == typeof(FeatherTrophy);
+    public static bool IsFeatherTrophyDef(ThingDef def) => def?.thingClass == typeof(FeatherTrophy);
 
     public static bool IsOwnedBy(Thing thing, Pawn pawn)
         => thing is FeatherTrophy { BiocodeComp: { Biocoded: true } comp } && comp.CodedPawn == pawn;

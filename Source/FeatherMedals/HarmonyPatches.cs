@@ -113,7 +113,7 @@ public class HarmonyPatches
             if (!__result || p == null)
                 return;
             
-            if (!FeatherTrophyUtil.IsMedalDef(apparel))
+            if (!FeatherTrophyUtil.IsFeatherTrophyDef(apparel))
                 return;
 
             if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
@@ -179,7 +179,7 @@ public class HarmonyPatches
             if (__result)
                 return;
             
-            if (FeatherTrophyUtil.IsMedalDef(A) && FeatherTrophyUtil.IsMedalDef(B)) 
+            if (FeatherTrophyUtil.IsFeatherTrophyDef(A) && FeatherTrophyUtil.IsFeatherTrophyDef(B)) 
                 __result = true;
         }
     }
