@@ -8,7 +8,7 @@ namespace FeatherMedals
 {
 
     [DefOf]
-    public class FeatherMedalDefOf
+    public class TribalTrophiesDefOf
     {
         public static RitualPatternDef TribalTrophies_AdorningCeremony_Pattern;
         
@@ -91,7 +91,7 @@ namespace FeatherMedals
         public static JobDef TribalTrophies_Apparel_Belt_Job_Disassemble;
         public static WorkGiverDef TribalTrophies_Apparel_Belt_WorkGiver_Disassemble;
         
-        static FeatherMedalDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(FeatherMedalDefOf));
+        static TribalTrophiesDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(TribalTrophiesDefOf));
     }
     
     public static class SpeakerRolesUtil
@@ -104,10 +104,10 @@ namespace FeatherMedals
         {
             PreceptDefOf.IdeoRole_Leader,
             PreceptDefOf.IdeoRole_Moralist,
-            FeatherMedalDefOf.IdeoRole_ShootingSpecialist,
-            FeatherMedalDefOf.IdeoRole_MeleeSpecialist,
-            FeatherMedalDefOf.IdeoRole_ResearchSpecialist,
-            FeatherMedalDefOf.IdeoRole_MedicalSpecialist
+            TribalTrophiesDefOf.IdeoRole_ShootingSpecialist,
+            TribalTrophiesDefOf.IdeoRole_MeleeSpecialist,
+            TribalTrophiesDefOf.IdeoRole_ResearchSpecialist,
+            TribalTrophiesDefOf.IdeoRole_MedicalSpecialist
         };
 
         public static string SpeakerRolesLabel => speakerRolesLabel ??=

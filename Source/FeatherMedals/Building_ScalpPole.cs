@@ -30,7 +30,7 @@ namespace FeatherMedals
     
     public class FocusStrengthOffset_ScalpPoleScalps : FocusStrengthOffset
     {
-        private int Capacity => FeatherMedalDefOf.TribalTrophies_Scalping_Building_ScalpPole.building.maxItemsInCell;
+        private int Capacity => TribalTrophiesDefOf.TribalTrophies_Scalping_Building_ScalpPole.building.maxItemsInCell;
 
         public override float GetOffset(Thing parent, Pawn user = null)
         {

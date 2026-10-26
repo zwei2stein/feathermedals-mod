@@ -31,7 +31,7 @@ public class JobGiver_ScalpRage : ThinkNode_JobGiver
 
         if (ScalpingUtility.CanBeScalpedInBreak(thing))
         {
-            var scalp = JobMaker.MakeJob(FeatherMedalDefOf.TribalTrophies_Scalping_Job_ScalpInBreakJob, thing);
+            var scalp = JobMaker.MakeJob(TribalTrophiesDefOf.TribalTrophies_Scalping_Job_ScalpInBreakJob, thing);
             scalp.canBashDoors = true;
             return scalp;
         }

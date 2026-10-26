@@ -154,7 +154,7 @@ namespace FeatherMedals
         private void StartMedalRitual()
         {
             if (!ColonyHasPresenter(out Pawn presenter)) return;
-            var pattern = FeatherMedalDefOf.TribalTrophies_AdorningCeremony_Pattern;
+            var pattern = TribalTrophiesDefOf.TribalTrophies_AdorningCeremony_Pattern;
 
             var safeMap = this.Map ?? this.MapHeld;
             if (safeMap == null) return;
@@ -209,7 +209,7 @@ namespace FeatherMedals
         
         private static Precept_Ritual GetCeremonyPrecept(Ideo ideo)
         {
-            var def = FeatherMedalDefOf.TribalTrophies_AdorningCeremonyPrecept;
+            var def = TribalTrophiesDefOf.TribalTrophies_AdorningCeremonyPrecept;
             if (ideo.GetPrecept(def) is Precept_Ritual existing)
                 return existing;
 
@@ -263,11 +263,11 @@ namespace FeatherMedals
                 return null;
             if (terse || this.AdornedPawn == null)
                 return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
-                    FeatherMedalDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
+                    TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
             return "TribalTrophies_AdorningCeremony_Common_DecoratedGained".Translate(
                 this.AdornedPawn.Named("PAWN"),
-                FeatherMedalDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
+                TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
         }
 
         public string GetTraitChangeText()

@@ -29,7 +29,7 @@ namespace FeatherMedals
                 return reasons;
 
             var ideo = faction.ideos?.PrimaryIdeo;
-            if (ideo != null && ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden))
+            if (ideo != null && ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden))
                 reasons.Add(ScalpGiftReason.Forbidden);
 
             if (!AnyTraderBuysScalps(faction))
@@ -45,7 +45,7 @@ namespace FeatherMedals
 
         private static bool AnyTraderBuysScalps(Faction faction)
         {
-            var scalpDef = FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp;
+            var scalpDef = TribalTrophiesDefOf.TribalTrophies_Trophy_Scalping_Scalp;
             var def = faction.def;
             return AnyBuys(def.baseTraderKinds, scalpDef)
                    || AnyBuys(def.caravanTraderKinds, scalpDef)

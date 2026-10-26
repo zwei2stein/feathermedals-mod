@@ -14,7 +14,7 @@ namespace FeatherMedals
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
             // HasJobOnThing can remove designations while this is happening.
-            foreach (Designation designation in pawn.Map.designationManager.SpawnedDesignationsOfDef(FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation).ToList())
+            foreach (Designation designation in pawn.Map.designationManager.SpawnedDesignationsOfDef(TribalTrophiesDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation).ToList())
             {
                 yield return designation.target.Thing;
             }
@@ -22,7 +22,7 @@ namespace FeatherMedals
 
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
-            return !pawn.Map.designationManager.AnySpawnedDesignationOfDef(FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
+            return !pawn.Map.designationManager.AnySpawnedDesignationOfDef(TribalTrophiesDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -30,7 +30,7 @@ namespace FeatherMedals
             if (!ScalpingUtility.CanBeScalpedByAnyone(t))
             {
                 // Target no longer qualifies, drop designation.
-                t.Map?.designationManager.TryRemoveDesignationOn(t, FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
+                t.Map?.designationManager.TryRemoveDesignationOn(t, TribalTrophiesDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
                 return false;
             }
             if (ScalpingPrecepts.StanceOf(pawn) == ScalpStance.Forbidden)
@@ -56,7 +56,7 @@ namespace FeatherMedals
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            return JobMaker.MakeJob(FeatherMedalDefOf.TribalTrophies_Scalping_Job_ScalpJob, t);
+            return JobMaker.MakeJob(TribalTrophiesDefOf.TribalTrophies_Scalping_Job_ScalpJob, t);
         }
     }
 }

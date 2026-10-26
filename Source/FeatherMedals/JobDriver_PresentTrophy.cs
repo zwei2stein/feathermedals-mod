@@ -26,7 +26,7 @@ public class JobDriver_PresentTrophy : JobDriver
     
     private Pawn Awardee => job.GetTarget(AwardeeInd).Pawn;
     
-    private bool Speech => job.def == FeatherMedalDefOf.TribalTrophies_PresentTrophySpeech;
+    private bool Speech => job.def == TribalTrophiesDefOf.TribalTrophies_PresentTrophySpeech;
     
     private bool HoldingTrophy => Trophy != null && pawn.carryTracker.CarriedThing == Trophy;
     

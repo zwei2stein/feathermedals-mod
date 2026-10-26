@@ -47,7 +47,7 @@ public static class NpcSkullBeltGenerator
             return false;
 
         // no ideo or no skullspike stance means no belt
-        return pawn.Ideo != null && pawn.Ideo.HasPrecept(FeatherMedalDefOf.Skullspike_Desired);
+        return pawn.Ideo != null && pawn.Ideo.HasPrecept(TribalTrophiesDefOf.Skullspike_Desired);
     }
 
     private static float ChanceFor(Pawn pawn, ThingDef beltDef)

@@ -58,7 +58,7 @@ namespace FeatherMedals
                 if (Target is Pawn victim && ScalpingUtility.WouldAngerFaction(victim))
                 {
                     ScalpingUtility.Provoke( victim);
-                    victim.Map?.designationManager.TryRemoveDesignationOn(victim, FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
+                    victim.Map?.designationManager.TryRemoveDesignationOn(victim, TribalTrophiesDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
                     pawn.jobs.EndCurrentJob(JobCondition.Incompletable);
                 }
             });
@@ -79,7 +79,7 @@ namespace FeatherMedals
                 if (InBreak)
                     (pawn.MentalState as MentalState_ScalpRage)?.Notify_Scalped();
                 pawn.skills?.Learn(SkillDefOf.Medicine, MedicineXp);
-                map?.designationManager.TryRemoveDesignationOn(target, FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
+                map?.designationManager.TryRemoveDesignationOn(target, TribalTrophiesDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation);
             });
         }
     }

@@ -138,7 +138,7 @@ public static class ScalpHuntUtility
         if (!RCellFinder.TryFindBestExitSpot(hunter, out var exitSpot))
             return null;
 
-        var job = JobMaker.MakeJob(FeatherMedalDefOf.TribalTrophies_Scalping_TakeScalpAndFlee, victim, exitSpot);
+        var job = JobMaker.MakeJob(TribalTrophiesDefOf.TribalTrophies_Scalping_TakeScalpAndFlee, victim, exitSpot);
         job.count = 1;
         return job;
     }

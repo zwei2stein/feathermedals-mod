@@ -8,7 +8,7 @@ namespace FeatherMedals;
 public class LordToil_ScalpHunt : LordToil_DoOpportunisticTaskOrCover
 {
  
-    protected override DutyDef DutyDef => FeatherMedalDefOf.TribalTrophies_Scalping_ScalpHuntDuty;
+    protected override DutyDef DutyDef => TribalTrophiesDefOf.TribalTrophies_Scalping_ScalpHuntDuty;
 
     public override bool ForceHighStoryDanger => true;
 

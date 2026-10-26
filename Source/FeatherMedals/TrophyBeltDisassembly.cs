@@ -12,27 +12,27 @@ public class WorkGiver_DisassembleTrophyBelt : WorkGiver_Scanner
 
     public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
     {
-        foreach (var designation in pawn.Map.designationManager.SpawnedDesignationsOfDef(FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble))
+        foreach (var designation in pawn.Map.designationManager.SpawnedDesignationsOfDef(TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble))
             yield return designation.target.Thing;
     }
 
     public override bool ShouldSkip(Pawn pawn, bool forced = false)
     {
-        return !pawn.Map.designationManager.AnySpawnedDesignationOfDef(FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble);
+        return !pawn.Map.designationManager.AnySpawnedDesignationOfDef(TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble);
     }
 
     public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
     {
         if (t.Destroyed || t.TryGetComp<CompTrophyContainer>() == null)
             return false;
-        if (t.Map.designationManager.DesignationOn(t, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) == null)
+        if (t.Map.designationManager.DesignationOn(t, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) == null)
             return false;
         return pawn.CanReserve(t, ignoreOtherReservations: forced);
     }
 
     public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
     {
-        return JobMaker.MakeJob(FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Job_Disassemble, t);
+        return JobMaker.MakeJob(TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Job_Disassemble, t);
     }
 }
 
@@ -51,7 +51,7 @@ public class JobDriver_DisassembleTrophyBelt : JobDriver
     protected override IEnumerable<Toil> MakeNewToils()
     {
         this.FailOnDespawnedNullOrForbidden(BeltInd);
-        this.FailOn(() => Map.designationManager.DesignationOn(Belt, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) == null);
+        this.FailOn(() => Map.designationManager.DesignationOn(Belt, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) == null);
 
         yield return Toils_Goto.GotoThing(BeltInd, PathEndMode.ClosestTouch);
 
@@ -66,7 +66,7 @@ public class JobDriver_DisassembleTrophyBelt : JobDriver
 
         yield return Toils_General.Do(() =>
         {
-            Map.designationManager.RemoveDesignation(Map.designationManager.DesignationOn(Belt, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
+            Map.designationManager.RemoveDesignation(Map.designationManager.DesignationOn(Belt, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
             Trophies.Disassemble();
         });
     }
@@ -78,7 +78,7 @@ public class FloatMenuOptionProvider_DisassembleTrophyBelt : FloatMenuOptionProv
     protected override bool Undrafted => true;
     protected override bool Multiselect => false;
 
-    private static WorkGiverDef GiverDef => FeatherMedalDefOf.TribalTrophies_Apparel_Belt_WorkGiver_Disassemble;
+    private static WorkGiverDef GiverDef => TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_WorkGiver_Disassemble;
     
     protected override bool AppliesInt(FloatMenuContext context)
     {
@@ -129,7 +129,7 @@ public class FloatMenuOptionProvider_DisassembleTrophyBelt : FloatMenuOptionProv
         if (pawn.workSettings.GetPriority(workType) == 0)
             return "CannotPrioritizeNotAssignedToWorkType".Translate(workType.gerundLabel);
 
-        if (pawn.CurJobDef == FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Job_Disassemble && pawn.CurJob.targetA.Thing == belt)
+        if (pawn.CurJobDef == TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Job_Disassemble && pawn.CurJob.targetA.Thing == belt)
             return "CannotGenericAlreadyAm".Translate(GiverDef.gerund, belt.LabelShort, belt);
 
         if (belt.IsForbidden(pawn))

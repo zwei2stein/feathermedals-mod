@@ -201,7 +201,7 @@ public class CompTrophyContainer : ThingComp, IThingHolder
     private DesignationManager Designations => parent.Map.designationManager;
 
     public bool MarkedForDisassembly =>
-        parent.Spawned && Designations.DesignationOn(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) != null;
+        parent.Spawned && Designations.DesignationOn(parent, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble) != null;
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
@@ -232,16 +232,16 @@ public class CompTrophyContainer : ThingComp, IThingHolder
     public void MarkForDisassembly()
     {
         if (!MarkedForDisassembly)
-            Designations.AddDesignation(new Designation(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
+            Designations.AddDesignation(new Designation(parent, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
     }
 
     private void ToggleDisassembly()
     {
-        var designation = Designations.DesignationOn(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble);
+        var designation = Designations.DesignationOn(parent, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble);
         if (designation != null)
             Designations.RemoveDesignation(designation);
         else
-            Designations.AddDesignation(new Designation(parent, FeatherMedalDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
+            Designations.AddDesignation(new Designation(parent, TribalTrophiesDefOf.TribalTrophies_Apparel_Belt_Designation_Disassemble));
     }
 
     public void Disassemble()

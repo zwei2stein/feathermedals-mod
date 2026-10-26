@@ -10,7 +10,7 @@ public static class CitationUtil
     
     public static string Generate(Faction faction, Pawn pawn = null, PlanetTile tile = default)
     {
-        var rulePack = FeatherMedalDefOf.TribalTrophies_Trophy_Feather_Adorning_NpcCitation;
+        var rulePack = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_NpcCitation;
         if (rulePack == null)
             return null;
 

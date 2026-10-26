@@ -103,7 +103,7 @@ public static class NpcTrophyGenerator
             return false;
         if (!TechAllowed(pawn))
             return false;
-        if (pawn.story.Adulthood == null && pawn.story.Childhood != FeatherMedalDefOf.TribalTrophies_Backstory_PraisedChild)
+        if (pawn.story.Adulthood == null && pawn.story.Childhood != TribalTrophiesDefOf.TribalTrophies_Backstory_PraisedChild)
             return false;
 
         baseRolls = BaseRolls(pawn);
@@ -129,12 +129,12 @@ public static class NpcTrophyGenerator
         if (ideo == null)
             return 1;
 
-        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden)
-            || ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved))
+        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden)
+            || ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved))
             return 0;
-        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Required))
+        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Required))
             return 3;
-        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Desired))
+        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Desired))
             return 2;
         return 1;
     }
@@ -148,13 +148,13 @@ public static class NpcTrophyGenerator
     {
         if (backstory == null)
             return 0;
-        if (backstory == FeatherMedalDefOf.TribalTrophies_Backstory_HonoredElder
-            || backstory == FeatherMedalDefOf.TribalTrophies_Backstory_DisgracedElder)
+        if (backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_HonoredElder
+            || backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_DisgracedElder)
             return 3;
-        if (backstory == FeatherMedalDefOf.TribalTrophies_Backstory_FeatheredWarrior)
+        if (backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_FeatheredWarrior)
             return 2;
-        if (backstory == FeatherMedalDefOf.TribalTrophies_Backstory_PraisedWarrior
-            || backstory == FeatherMedalDefOf.TribalTrophies_Backstory_PraisedChild)
+        if (backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_PraisedWarrior
+            || backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_PraisedChild)
             return 1;
         return 0;
     }

@@ -9,23 +9,23 @@ public static class MissingIssuePrecepts
     
     public static void AddCompatibleStanceToIdeosMissingHonoringWarriors()
     {
-        Fill(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors, new List<PreceptDef>
+        Fill(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors, new List<PreceptDef>
         {
-            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Neutral,
-            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Desired,
-            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved,
-            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Required,
-            FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden
+            TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Neutral,
+            TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Desired,
+            TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved,
+            TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Required,
+            TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden
         });
     }
     
     public static void AddCompatibleStanceToIdeosMissingScalpTaking()
     {
-        Fill(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking, new List<PreceptDef>
+        Fill(TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking, new List<PreceptDef>
         {
-            FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Honorable,
-            FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Merciless,
-            FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden
+            TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Honorable,
+            TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Merciless,
+            TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden
         });
     }
     

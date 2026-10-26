@@ -86,7 +86,7 @@ namespace FeatherMedals
                     continue;
 
                 var disallowed = trait.CurrentData.disallowedMentalStates;
-                if (disallowed != null && disallowed.Contains(FeatherMedalDefOf.MurderousRage))
+                if (disallowed != null && disallowed.Contains(TribalTrophiesDefOf.MurderousRage))
                     return false;
             }
 

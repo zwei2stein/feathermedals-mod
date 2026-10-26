@@ -18,7 +18,7 @@ namespace FeatherMedals
         private EventTime scalped; // null = unknown, e.g. spawned by dev tools
 
         private Color skinColor = new(0.74f, 0.58f, 0.47f);
-        private HairDef hairDef = FeatherMedalDefOf.Messy;
+        private HairDef hairDef = TribalTrophiesDefOf.Messy;
         private Color hairColor = Color.black;
         private Rot4 hairFacing = Rot4.South;
 
@@ -54,7 +54,7 @@ namespace FeatherMedals
 
         public static Scalp Create(Pawn victim, Pawn scalper, EventTime scalped)
         {
-            var scalp = (Scalp)ThingMaker.MakeThing(FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp);
+            var scalp = (Scalp)ThingMaker.MakeThing(TribalTrophiesDefOf.TribalTrophies_Trophy_Scalping_Scalp);
 
             scalp.victim = new RememberedPawn(victim);
             scalp.scalper = new RememberedPawn(scalper);

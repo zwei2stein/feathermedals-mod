@@ -14,7 +14,7 @@ public static class HonoringWarriorsUtil
 
     public static bool ForbidsCeremony(Pawn p)
     {
-        return p?.Ideo != null && p.Ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden);
+        return p?.Ideo != null && p.Ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden);
     }
 
     public static bool IsEligible(Pawn p)

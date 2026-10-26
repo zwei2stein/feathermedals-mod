@@ -102,11 +102,11 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
         medal.ceremonyQuality = stageIndex;
 
-        var awardedThought = FeatherMedalDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy;
+        var awardedThought = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy;
         var memory = (Thought_Memory)ThoughtMaker.MakeThought(awardedThought, stageIndex);
         awardee.needs?.mood?.thoughts.memories.TryGainMemory(memory);
 
-        var spectatorThought = FeatherMedalDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed;
+        var spectatorThought = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed;
         if (spectatorThought != null)
         {
             foreach (var pawn in totalPresence.Keys)
@@ -151,7 +151,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             lookTargets: awardee
         );
 
-        TaleRecorder.RecordTale(FeatherMedalDefOf.TribalTrophies_AdornedTrophyTale, presenter, awardee);
+        TaleRecorder.RecordTale(TribalTrophiesDefOf.TribalTrophies_AdornedTrophyTale, presenter, awardee);
 
         Find.WindowStack.Add(new Dialog_TrophyAwarded(medal, awardee));
     }

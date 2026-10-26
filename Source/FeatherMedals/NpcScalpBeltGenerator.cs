@@ -31,7 +31,7 @@ public static class NpcScalpBeltGenerator
                 return;
 
             if (Rand.Chance(ChanceFor(pawn, beltDef)))
-                NpcBeltGenerationUtility.GiveBelt(pawn, beltDef, FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp,
+                NpcBeltGenerationUtility.GiveBelt(pawn, beltDef, TribalTrophiesDefOf.TribalTrophies_Trophy_Scalping_Scalp,
                     () => NpcScalpUtility.MakeScalp(pawn.Faction, pawn));
         }
         catch (System.Exception ex)
@@ -58,9 +58,9 @@ public static class NpcScalpBeltGenerator
 
     private static float BaseChance(Ideo ideo, NpcScalpBeltExtension tuning)
     {
-        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Merciless))
+        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Merciless))
             return tuning.mercilessChance;
-        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Honorable))
+        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Honorable))
             return tuning.honorableChance;
         return 0f;
     }

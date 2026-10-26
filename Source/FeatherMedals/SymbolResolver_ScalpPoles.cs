@@ -56,7 +56,7 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
             spots.Remove(spot);
             usedSpots.Add(spot);
 
-            var poleDef = FeatherMedalDefOf.TribalTrophies_Scalping_Building_ScalpPole;
+            var poleDef = TribalTrophiesDefOf.TribalTrophies_Scalping_Building_ScalpPole;
             var pole = ThingMaker.MakeThing(poleDef, BaseGenUtility.CheapStuffFor(poleDef, faction));
 
             var poleParams = rp;
@@ -77,7 +77,7 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
                 continue;
             if (cell.GetFirstBuilding(map) != null || cell.GetFirstItem(map) != null || cell.GetFirstPawn(map) != null)
                 continue;
-            if (!GenConstruct.CanBuildOnTerrain(FeatherMedalDefOf.TribalTrophies_Scalping_Building_ScalpPole, cell, map, Rot4.North))
+            if (!GenConstruct.CanBuildOnTerrain(TribalTrophiesDefOf.TribalTrophies_Scalping_Building_ScalpPole, cell, map, Rot4.North))
                 continue;
 
             var walls = 0;
