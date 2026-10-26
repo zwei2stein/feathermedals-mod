@@ -164,7 +164,7 @@
         </inspectorTabs>
         <!-- same buyers as scalps -->
         <tradeTags>
-            <li>FeatherTrophies_Scalp</li>
+            <li>TribalTrophies_TradeTag_Scalp</li>
         </tradeTags>
         <modExtensions>
             <li Class="FeatherMedals.ScalpDisplayExtension" />

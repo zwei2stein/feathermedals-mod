@@ -13,7 +13,7 @@ namespace FeatherMedals
             var baseTexture = ContentFinder<Texture2D>.Get(BasePath, false);
             if (baseTexture == null)
             {
-                Log.ErrorOnce("FeatherTrophies: scalp base texture not found at " + BasePath, 7354811);
+                Log.ErrorOnce("[TribalTrophies]: scalp base texture not found at " + BasePath, 7354811);
                 return null;
             }
 

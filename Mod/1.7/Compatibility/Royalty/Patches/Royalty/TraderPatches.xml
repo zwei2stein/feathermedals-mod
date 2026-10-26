@@ -5,7 +5,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/TraderKindDef[defName="Empire_Caravan_TributeCollector"]/stockGenerators</xpath>
         <value>
-            <li Class="StockGenerator_BuyTradeTag"><tag>FeatherTrophies_Scalp</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>TribalTrophies_TradeTag_Scalp</tag></li>
         </value>
     </Operation>
 
