@@ -2,11 +2,11 @@
 <Defs>
 
 	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_OrnateRecipeBase">
-		<defName>TribalTrophies_Trophy_Feather_Recipe_RBM_Herculean_Feather</defName>
+		<defName>TribalTrophies_Trophy_Feather_Recipe_Herculean_Feather</defName>
 		<label>feather: herculean strength</label>
 		<jobString>Crafting a feather representing the wearer's great strength.</jobString>
 		<products>
-			<FeatherTrophy_RBM_Herculean_Feather>1</FeatherTrophy_RBM_Herculean_Feather>
+			<TribalTrophies_Trophy_Feather_Herculean>1</TribalTrophies_Trophy_Feather_Herculean>
 		</products>
 	</RecipeDef>
 

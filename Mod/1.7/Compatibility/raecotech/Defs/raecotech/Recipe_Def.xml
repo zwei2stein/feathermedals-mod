@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="FeatherTrophy_EcotechRecipeBase" Abstract="True">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="TribalTrophies_Trophy_Feather_EcotechRecipeBase" Abstract="True">
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
@@ -36,12 +36,12 @@
 		</fixedIngredientFilter>
 	</RecipeDef>
 	
-	<RecipeDef ParentName="FeatherTrophy_EcotechRecipeBase">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_EcotechRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_TerratechAncestry_Feather</defName>
 		<label>feather: terratech bloodline</label>
 		<jobString>Crafting a feather celebrating the ancient terratech bloodline of a warrior.</jobString>
 		<products>
-			<FeatherTrophy_TerratechAncestry_Feather>1</FeatherTrophy_TerratechAncestry_Feather>
+			<TribalTrophies_Trophy_Feather_TerratechAncestry>1</TribalTrophies_Trophy_Feather_TerratechAncestry>
 		</products>
 	</RecipeDef>
 

@@ -43,7 +43,7 @@ namespace FeatherMedals
                 def.inspectorTabsResolved.Add(tabInstance);
             
             if (Prefs.DevMode)
-                Log.Message($"[FeatherTrophies] Trophies tab added to {def.defName}.");
+                Log.Message($"[TribalTrophies] Trophies tab added to {def.defName}.");
             
         }
     }

@@ -58,15 +58,15 @@ namespace FeatherMedals
         public static JobDef TribalTrophies_Scalping_Job_ScalpInBreakJob;
         public static DesignationDef TribalTrophies_Scalping_Designation_ScalpDesignation;
         public static ThoughtDef TribalTrophies_Scalping_ThoughtSocial_ScalpedMe;
-        public static ThoughtDef TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor;
+        public static ThoughtDef TribalTrophies_Issue_ScalpinTaking_Thought_Merciless_ClaimedRightOfVictor;
         public static ThoughtDef TribalTrophies_Scalping_Thought_IWasScalped;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_ScalpedMember;
-        public static HistoryEventDef FeatherTrophies_Scalping_TookScalp;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_TookScalp;
 
-        public static HistoryEventDef FeatherTrophies_Scalping_Observed_Saw_Scalped;
-        public static HistoryEventDef FeatherTrophies_Scalping_Observed_Scalp;
-        public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpPole;
-        public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpBelt;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scap;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt;
 
         public static IssueDef TribalTrophies_Issue_ScalpTaking;
         public static PreceptDef TribalTrophies_Issue_ScalpTaking_Merciless;

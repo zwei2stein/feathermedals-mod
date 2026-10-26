@@ -35,7 +35,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (awardee == null || presenter == null) return;
 
         if (Prefs.DevMode)
-            Log.Message($"[FeatherTrophies] Apply progress={progress:F3}");
+            Log.Message($"[TribalTrophies] Apply progress={progress:F3}");
         
         // Interrupted (raid, leader down...) or participants gone: no award, the medal stays as it was
         if (progress < MIN_PROGRESS)

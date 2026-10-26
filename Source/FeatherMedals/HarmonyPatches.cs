@@ -99,7 +99,7 @@ public class HarmonyPatches
             comp.CodeFor(pawn);
 
             if (Prefs.DevMode)
-                Log.Message($"[FeatherTrophies] Biocoded {medal.MedalLabel} to {pawn.LabelShort}");
+                Log.Message($"[TribalTrophies] Biocoded {medal.MedalLabel} to {pawn.LabelShort}");
 
             return true;
         }

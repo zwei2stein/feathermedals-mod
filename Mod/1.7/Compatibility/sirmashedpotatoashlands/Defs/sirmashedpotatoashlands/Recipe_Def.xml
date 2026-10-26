@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="FeatherTrophy_AshlandsRecipeBase" Abstract="True">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="TribalTrophies_Trophy_Feather_AshlandsRecipeBase" Abstract="True">
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
@@ -36,12 +36,12 @@
 		</fixedIngredientFilter>
 	</RecipeDef>
 	
-	<RecipeDef ParentName="FeatherTrophy_AshlandsRecipeBase">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_AshlandsRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_Mashed_Ashlands_AshStormLover_Feather</defName>
 		<label>feather: braved ash storm</label>
 		<jobString>Crafting a feather telling the story of the wearer braving an ash storm.</jobString>
 		<products>
-			<FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather>1</FeatherTrophy_Mashed_Ashlands_AshStormLover_Feather>
+			<TribalTrophies_Trophy_Feather_AshStormLover>1</TribalTrophies_Trophy_Feather_AshStormLover>
 		</products>
 	</RecipeDef>
 

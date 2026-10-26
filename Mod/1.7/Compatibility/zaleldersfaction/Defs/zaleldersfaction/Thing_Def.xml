@@ -2,7 +2,7 @@
 <Defs>
 	
     <ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
-		<defName>FeatherTrophy_NatureHarmony_Feather</defName>
+		<defName>TribalTrophies_Trophy_Feather_NatureHarmony</defName>
 		<label>feather: in harmony with nature</label>
 		<description>Feather symbolizing the warrior's unity with nature.</description>
 		<graphicData>

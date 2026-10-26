@@ -2,7 +2,7 @@
 <Defs>
 	
     <ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
-		<defName>FeatherTrophy_RBM_Herculean_Feather</defName>
+		<defName>TribalTrophies_Trophy_Feather_Herculean</defName>
 		<label>feather: herculean strength</label>
 		<description>Feather representing the wearer's great strength.</description>
 		<graphicData>

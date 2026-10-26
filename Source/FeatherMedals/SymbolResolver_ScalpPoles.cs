@@ -124,7 +124,7 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
         var count = ScalpsPerPoleRange.RandomInRange;
         
         if (Prefs.DevMode)
-            Log.Message($"[TribalTrophies probe] hanging {count} scalps on {pole} for {faction?.Name}");
+            Log.Message($"[TribalTrophies] hanging {count} scalps on {pole} for {faction?.Name}");
         
         for (var i = 0; i < count; i++)
         {

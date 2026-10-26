@@ -51,9 +51,9 @@ public static class RitualOutcomeTraitUtil
 
         if (Prefs.DevMode)
         {
-            Log.Message($"[FeatherTrophies] GiveRandomTrait.totalChance={totalChance:P0} (quality x{qualityMultiplier:F2}), candidates={candidates.Count}");
+            Log.Message($"[TribalTrophies] GiveRandomTrait.totalChance={totalChance:P0} (quality x{qualityMultiplier:F2}), candidates={candidates.Count}");
             candidates.ForEach(
-                candidate => Log.Message($"[FeatherTrophies] GiveRandomTrait.candidate={candidate}")
+                candidate => Log.Message($"[TribalTrophies] GiveRandomTrait.candidate={candidate}")
             );
         }
 

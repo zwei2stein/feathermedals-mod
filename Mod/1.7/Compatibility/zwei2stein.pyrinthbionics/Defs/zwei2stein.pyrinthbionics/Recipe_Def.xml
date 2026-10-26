@@ -47,7 +47,7 @@
 		<label>feather: pyrinth</label>
 		<jobString>Crafting a feather symbolizing inner flame and passion.</jobString>
 		<products>
-			<PyrinthBionics_FeatherTrophy_Feather_Pyrinth>1</PyrinthBionics_FeatherTrophy_Feather_Pyrinth>
+			<TribalTrophies_Trophy_Feather_Pyrinth>1</TribalTrophies_Trophy_Feather_Pyrinth>
 		</products>
 	</RecipeDef>
 

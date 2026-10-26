@@ -2,7 +2,7 @@
 <Defs>
 	
     <ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
-		<defName>FeatherTrophy_TerratechAncestry_Feather</defName>
+		<defName>TribalTrophies_Trophy_Feather_TerratechAncestry</defName>
 		<label>feather: terratech bloodline</label>
 		<description>Feather celebrating the ancient terratech bloodline of a warrior.</description>
 		<graphicData>

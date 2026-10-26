@@ -72,7 +72,7 @@ namespace FeatherMedals
             
         }
 
-        // What this scalper's ideology allows. Honourable: evil check applies. Merciless: no evil check. Forbidden: nothing.
+        // What this scalper's ideology allows. Honorable: evil check applies. Merciless: no evil check. Forbidden: nothing.
         public static bool CanBeScalped(Thing thing, Pawn scalper)
         {
             Pawn pawn = PawnOf(thing);
@@ -279,7 +279,7 @@ namespace FeatherMedals
                     FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember, (GlobalTargetInfo)target);
             }
 
-            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(FeatherMedalDefOf.FeatherTrophies_Scalping_TookScalp,
+            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_TookScalp,
                 scalper.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim)));
 
             // messages are taking sides - heroic colonist, villain raider.
@@ -291,7 +291,7 @@ namespace FeatherMedals
             // Bloodlust gives thought, ignoring ideo stance.
             if (scalper.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true && ScalpingPrecepts.StanceOf(scalper) != ScalpStance.Merciless)
             {
-                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor);
+                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.TribalTrophies_Issue_ScalpinTaking_Thought_Merciless_ClaimedRightOfVictor);
             }
 
             return scalp;

@@ -45,10 +45,10 @@ public class ScalpingGameComponent : GameComponent
         CollectScalpBelts(map);
         foreach (var observer in observers)
         {
-            RecordFirstSeen(observer, scalped, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_Saw_Scalped);
-            RecordFirstSeen(observer, scalps, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_Scalp);
-            RecordFirstSeen(observer, scalpPoles, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_ScalpPole);
-            RecordFirstSeen(observer, scalpBelts, FeatherMedalDefOf.FeatherTrophies_Scalping_Observed_ScalpBelt);
+            RecordFirstSeen(observer, scalped, FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped);
+            RecordFirstSeen(observer, scalps, FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scap);
+            RecordFirstSeen(observer, scalpPoles, FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole);
+            RecordFirstSeen(observer, scalpBelts, FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt);
         }
         observers.Clear();
         scalped.Clear();

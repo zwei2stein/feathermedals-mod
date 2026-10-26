@@ -35,8 +35,8 @@
         </conflictingMemes>
         <comps>
             <li Class="PreceptComp_SelfTookMemoryThought">
-                <eventDef>FeatherTrophies_Scalping_TookScalp</eventDef>
-                <thought>TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor</thought>
+                <eventDef>TribalTrophies_Scalping_HistoryEvent_TookScalp</eventDef>
+                <thought>TribalTrophies_Issue_ScalpinTaking_Thought_Merciless_ClaimedRightOfVictor</thought>
             </li>
         </comps>
     </PreceptDef>
@@ -75,23 +75,23 @@
         </conflictingMemes>
         <comps>
             <li Class="PreceptComp_SelfTookMemoryThought">
-                <eventDef>FeatherTrophies_Scalping_Observed_Saw_Scalped</eventDef>
-                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalped</thought>
+                <eventDef>TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped</eventDef>
+                <thought>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalped</thought>
             </li>
             <li Class="PreceptComp_SelfTookMemoryThought">
-                <eventDef>FeatherTrophies_Scalping_Observed_Scalp</eventDef>
-                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Scalp</thought>
+                <eventDef>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scap</eventDef>
+                <thought>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalp_Item_Scalp</thought>
             </li>
             <li Class="PreceptComp_SelfTookMemoryThought">
-                <eventDef>FeatherTrophies_Scalping_Observed_ScalpPole</eventDef>
-                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Building_Pole</thought>
+                <eventDef>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole</eventDef>
+                <thought>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalp_Building_Pole</thought>
             </li>
             <li Class="PreceptComp_SelfTookMemoryThought">
-                <eventDef>FeatherTrophies_Scalping_Observed_ScalpBelt</eventDef>
-                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Belt</thought>
+                <eventDef>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt</eventDef>
+                <thought>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalp_Item_Belt</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_WearingScalps</thought>
+                <thought>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_WearingScalps</thought>
             </li>
         </comps>
     </PreceptDef>
@@ -99,34 +99,34 @@
     <!-- History events -->
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_TookScalp</defName>
+        <defName>TribalTrophies_Scalping_HistoryEvent_TookScalp</defName>
         <label>took a scalp</label>
     </HistoryEventDef>
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_Observed_Saw_Scalped</defName>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped</defName>
         <label>saw a scalped person</label>
     </HistoryEventDef>
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_Observed_Scalp</defName>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scap</defName>
         <label>saw a scalp</label>
     </HistoryEventDef>
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_Observed_ScalpPole</defName>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole</defName>
         <label>saw a scalp pole</label>
     </HistoryEventDef>
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_Observed_ScalpBelt</defName>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt</defName>
         <label>saw a scalp belt</label>
     </HistoryEventDef>
 
     <!-- Thoughts -->
 
     <ThoughtDef>
-        <defName>TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor</defName>
+        <defName>TribalTrophies_Issue_ScalpinTaking_Thought_Merciless_ClaimedRightOfVictor</defName>
         <durationDays>10</durationDays>
         <stackLimit>8</stackLimit>
         <stackedEffectMultiplier>1</stackedEffectMultiplier>
@@ -140,7 +140,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalped</defName>
+        <defName>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalped</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -161,7 +161,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Scalp</defName>
+        <defName>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalp_Item_Scalp</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -182,7 +182,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Building_Pole</defName>
+        <defName>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalp_Building_Pole</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -203,7 +203,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Belt</defName>
+        <defName>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_Saw_Scalp_Item_Belt</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -224,7 +224,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_WearingScalps</defName>
+        <defName>TribalTrophies_Issue_ScalpinTaking_Thought_Forbidden_WearingScalps</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_WearingScalps</workerClass>
         <nullifyingTraits>
             <li>Psychopath</li>

@@ -21,7 +21,7 @@ public static class NpcScalpGenerator
         }
         catch (System.Exception ex)
         {
-            Log.ErrorOnce($"[FeatherTrophies] Failed to generate scalped pawn {pawn?.LabelShort}: {ex}", 1948203);
+            Log.ErrorOnce($"[TribalTrophies] Failed to generate scalped pawn {pawn?.LabelShort}: {ex}", 1948203);
         }
     }
 

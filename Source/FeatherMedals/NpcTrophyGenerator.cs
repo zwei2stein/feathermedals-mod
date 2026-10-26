@@ -69,7 +69,7 @@ public static class NpcTrophyGenerator
         }
         catch (System.Exception ex)
         {
-            Log.ErrorOnce($"[FeatherTrophies] Failed to generate trophies for {pawn?.LabelShort}: {ex}", 1948201);
+            Log.ErrorOnce($"[TribalTrophies] Failed to generate trophies for {pawn?.LabelShort}: {ex}", 1948201);
         }
     }
 
@@ -85,7 +85,7 @@ public static class NpcTrophyGenerator
         }
         catch (System.Exception ex)
         {
-            Log.ErrorOnce($"[FeatherTrophies] Failed to generate leader trophies for {leader?.LabelShort}: {ex}", 1948202);
+            Log.ErrorOnce($"[TribalTrophies] Failed to generate leader trophies for {leader?.LabelShort}: {ex}", 1948202);
         }
     }
 

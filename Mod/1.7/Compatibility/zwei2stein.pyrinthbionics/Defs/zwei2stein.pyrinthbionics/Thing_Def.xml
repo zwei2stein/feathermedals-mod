@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
-		<defName>PyrinthBionics_FeatherTrophy_Feather_Pyrinth</defName>
+		<defName>TribalTrophies_Trophy_Feather_Pyrinth</defName>
 		<label>feather: pyrinth</label>
 		<description>Feather symbolizing inner flame and passion.</description>
 		<graphicData>
