@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="PyrinthBionics_FeatherTrophy_PyrinthRecipeBase" Abstract="True">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_RecipeBase" Name="TribalTrophies_Trophy_Feather_PyrinthRecipeBase" Abstract="True">
 		<researchPrerequisites>
 			<li>TribalTrophies_TribalWarriorHonor</li>
 			<li>PyrinthStove_PyrinthTemperatureRegulationResearch</li>
@@ -42,7 +42,7 @@
 		</fixedIngredientFilter>
 	</RecipeDef>
 
-	<RecipeDef ParentName="PyrinthBionics_FeatherTrophy_PyrinthRecipeBase">
+	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_PyrinthRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_Pyrinth</defName>
 		<label>feather: pyrinth</label>
 		<jobString>Crafting a feather symbolizing inner flame and passion.</jobString>

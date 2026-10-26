@@ -154,7 +154,7 @@
         <label>scalp belt</label>
         <description>A belt hung with the scalps of foes. It inspires awe, disgust or terror depending on who sees it.</description>
         <costList>
-            <FeatherTrophies_Scalping_Scalp>3</FeatherTrophies_Scalping_Scalp>
+            <TribalTrophies_Trophy_Scalping_Scalp>3</TribalTrophies_Trophy_Scalping_Scalp>
         </costList>
         <statBases>
             <Mass>2</Mass>
@@ -181,7 +181,7 @@
                 <disassembleSound>Recipe_Tailor</disassembleSound>
                 <disassembleStuffableRefund>0.5</disassembleStuffableRefund>
                 <trophyDefs>
-                    <li>FeatherTrophies_Scalping_Scalp</li>
+                    <li>TribalTrophies_Trophy_Scalping_Scalp</li>
                 </trophyDefs>
                 <!-- (x, y, width): trophy center and width as fractions of the belt texture, y from the top -->
                 <!-- starting values copied from the skull belt, tune for scalps -->

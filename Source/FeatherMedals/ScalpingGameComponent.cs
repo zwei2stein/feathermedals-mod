@@ -99,7 +99,7 @@ public class ScalpingGameComponent : GameComponent
     private static void CollectScalps(Map map)
     {
         scalps.Clear();
-        foreach (var thing in map.listerThings.ThingsOfDef(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp))
+        foreach (var thing in map.listerThings.ThingsOfDef(FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp))
         {
             scalps.Add(thing);
         }

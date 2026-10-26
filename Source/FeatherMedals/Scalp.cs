@@ -54,7 +54,7 @@ namespace FeatherMedals
 
         public static Scalp Create(Pawn victim, Pawn scalper, EventTime scalped)
         {
-            var scalp = (Scalp)ThingMaker.MakeThing(FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp);
+            var scalp = (Scalp)ThingMaker.MakeThing(FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp);
 
             scalp.victim = new RememberedPawn(victim);
             scalp.scalper = new RememberedPawn(scalper);

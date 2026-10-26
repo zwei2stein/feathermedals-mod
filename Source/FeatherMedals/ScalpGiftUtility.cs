@@ -45,7 +45,7 @@ namespace FeatherMedals
 
         private static bool AnyTraderBuysScalps(Faction faction)
         {
-            var scalpDef = FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp;
+            var scalpDef = FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp;
             var def = faction.def;
             return AnyBuys(def.baseTraderKinds, scalpDef)
                    || AnyBuys(def.caravanTraderKinds, scalpDef)

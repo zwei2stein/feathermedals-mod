@@ -31,7 +31,7 @@ public static class NpcScalpBeltGenerator
                 return;
 
             if (Rand.Chance(ChanceFor(pawn, beltDef)))
-                NpcBeltGenerationUtility.GiveBelt(pawn, beltDef, FeatherMedalDefOf.FeatherTrophies_Scalping_Scalp,
+                NpcBeltGenerationUtility.GiveBelt(pawn, beltDef, FeatherMedalDefOf.TribalTrophies_Trophy_Scalping_Scalp,
                     () => NpcScalpUtility.MakeScalp(pawn.Faction, pawn));
         }
         catch (System.Exception ex)

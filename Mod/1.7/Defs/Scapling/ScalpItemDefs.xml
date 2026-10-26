@@ -8,7 +8,7 @@
     </ThingCategoryDef>
 
     <ThingDef>
-        <defName>FeatherTrophies_Scalping_Scalp</defName>
+        <defName>TribalTrophies_Trophy_Scalping_Scalp</defName>
         <label>scalp</label>
         <description>A scalp taken from an enemy, hair still attached.</description>
         <thingClass>FeatherMedals.Scalp</thingClass>
