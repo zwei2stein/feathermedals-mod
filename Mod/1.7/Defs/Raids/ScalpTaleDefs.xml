@@ -3,7 +3,7 @@
 
     <!-- a colonist took a scalp -->
     <TaleDef>
-        <defName>TribalTrophies_Scalping_TookScalp</defName>
+        <defName>TribalTrophies_Scalping_Tale_TookScalp</defName>
         <label>took a scalp</label>
         <taleClass>Tale_DoublePawn</taleClass>
         <type>Volatile</type>
@@ -37,7 +37,7 @@
 
     <!-- someone outside the colony took a scalp, in a raid usually from a colonist -->
     <TaleDef>
-        <defName>TribalTrophies_Scalping_ScalpedByEnemy</defName>
+        <defName>TribalTrophies_Scalping_Tale_ScalpedByEnemy</defName>
         <label>scalped by an enemy</label>
         <taleClass>Tale_DoublePawn</taleClass>
         <type>Volatile</type>

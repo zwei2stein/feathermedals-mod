@@ -21,11 +21,11 @@ public static class MissingIssuePrecepts
     
     public static void AddCompatibleStanceToIdeosMissingScalpTaking()
     {
-        Fill(FeatherMedalDefOf.FeatherTrophies_ScalpTaking, new List<PreceptDef>
+        Fill(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking, new List<PreceptDef>
         {
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honorable,
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless,
-            FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden
+            FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Honorable,
+            FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Merciless,
+            FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden
         });
     }
     

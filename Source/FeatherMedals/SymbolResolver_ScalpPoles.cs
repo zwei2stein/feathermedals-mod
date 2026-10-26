@@ -19,7 +19,7 @@ public static class Patch_SymbolResolver_Settlement
 
 public class SymbolResolver_ScalpPoles : SymbolResolver
 {
-    public const string Symbol = "tribalTrophies_scalpPoles";
+    public const string Symbol = "tribalTrophies_worldgen_scalpPoles";
 
     private static readonly IntRange PoleCountRange = new(1, 3);
     

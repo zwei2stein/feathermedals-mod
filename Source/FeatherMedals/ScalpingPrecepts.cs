@@ -25,9 +25,9 @@ public static class ScalpingPrecepts
     {
         if (ideo == null)
             return ScalpStance.Honorable;
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden))
             return ScalpStance.Forbidden;
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Merciless))
             return ScalpStance.Merciless;
         return ScalpStance.Honorable;
     }
@@ -36,7 +36,7 @@ public static class ScalpingPrecepts
     {
         foreach (var ideo in Faction.OfPlayer.ideos.AllIdeos)
         {
-            if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
+            if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Merciless))
                 return true;
         }
         return false;

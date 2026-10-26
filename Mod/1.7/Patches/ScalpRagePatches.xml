@@ -6,8 +6,8 @@
         <value>
             <li Class="ThinkNode_ConditionalMentalStates">
                 <states>
-                    <li>FeatherTrophies_Scalping_ScalpingFrenzy</li>
-                    <li>FeatherTrophies_Scalping_ScalpPrisoner</li>
+                    <li>TribalTrophies_Scalping_MentalBreak_ScalpingFrenzy</li>
+                    <li>TribalTrophies_Scalping_MentalBreak_ScalpPrisoner</li>
                 </states>
                 <subNodes>
                     <li Class="FeatherMedals.JobGiver_ScalpRage" />

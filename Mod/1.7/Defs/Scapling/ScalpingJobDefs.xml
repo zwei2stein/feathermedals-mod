@@ -2,21 +2,21 @@
 <Defs>
 
     <JobDef>
-        <defName>FeatherTrophies_Scalping_ScalpJob</defName>
+        <defName>TribalTrophies_Scalping_Job_ScalpJob</defName>
         <driverClass>FeatherMedals.JobDriver_Scalp</driverClass>
         <reportString>scalping TargetA.</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
     
     <JobDef>
-        <defName>FeatherTrophies_Scalping_ScalpInBreakJob</defName>
+        <defName>TribalTrophies_Scalping_Job_ScalpInBreakJob</defName>
         <driverClass>FeatherMedals.JobDriver_ScalpInBreak</driverClass>
         <reportString>scalping TargetA.</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
 
     <DesignationDef>
-        <defName>FeatherTrophies_Scalping_ScalpDesignation</defName>
+        <defName>TribalTrophies_Scalping_Designation_ScalpDesignation</defName>
         <texturePath>UI/Designators/Scalp</texturePath>
         <targetType>Thing</targetType>
     </DesignationDef>
@@ -24,7 +24,7 @@
     <!-- medical, butchering or slaughter can scalp. -->
 
     <WorkGiverDef>
-        <defName>FeatherTrophies_Scalping_ScalpDoctor</defName>
+        <defName>TribalTrophies_Scalping_WorkGiver_Scalp_Doctor</defName>
         <label>scalp</label>
         <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
         <workType>Doctor</workType>
@@ -37,7 +37,7 @@
     </WorkGiverDef>
 
     <WorkGiverDef>
-        <defName>FeatherTrophies_Scalping_ScalpButcher</defName>
+        <defName>TribalTrophies_Scalping_WorkGiver_Scalp_Butcher</defName>
         <label>scalp</label>
         <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
         <workType>Cooking</workType>
@@ -50,7 +50,7 @@
     </WorkGiverDef>
 
     <WorkGiverDef>
-        <defName>FeatherTrophies_Scalping_ScalpSlaughterer</defName>
+        <defName>TribalTrophies_Scalping_WorkGiver_Scalp_Slaughterer</defName>
         <label>scalp</label>
         <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
         <workType>Handling</workType>

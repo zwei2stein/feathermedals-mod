@@ -2,15 +2,15 @@
 <Defs>
 
     <MentalBreakDef>
-        <defName>FeatherTrophies_Scalping_ScalpingFrenzy</defName>
-        <mentalState>FeatherTrophies_Scalping_ScalpingFrenzy</mentalState>
+        <defName>TribalTrophies_Scalping_MentalBreak_ScalpingFrenzy</defName>
+        <mentalState>TribalTrophies_Scalping_MentalState_ScalpingFrenzy</mentalState>
         <intensity>Extreme</intensity>
         <baseCommonality>0.3</baseCommonality>
         <requiredTrait>Bloodlust</requiredTrait>
     </MentalBreakDef>
 
     <MentalStateDef ParentName="BaseMentalState">
-        <defName>FeatherTrophies_Scalping_ScalpingFrenzy</defName>
+        <defName>TribalTrophies_Scalping_MentalState_ScalpingFrenzy</defName>
         <stateClass>FeatherMedals.MentalState_ScalpRage</stateClass>
         <workerClass>FeatherMedals.MentalStateWorker_ScalpRage</workerClass>
         <label>scalping frenzy</label>
@@ -44,14 +44,14 @@
     </MentalStateDef>
 
     <MentalBreakDef>
-        <defName>FeatherTrophies_Scalping_ScalpPrisoner</defName>
-        <mentalState>FeatherTrophies_Scalping_ScalpPrisoner</mentalState>
+        <defName>TribalTrophies_Scalping_MentalBreak_ScalpPrisoner</defName>
+        <mentalState>TribalTrophies_Scalping_MentalState_ScalpPrisoner</mentalState>
         <intensity>Major</intensity>
         <baseCommonality>0.3</baseCommonality>
     </MentalBreakDef>
 
     <MentalStateDef ParentName="BaseMentalState">
-        <defName>FeatherTrophies_Scalping_ScalpPrisoner</defName>
+        <defName>TribalTrophies_Scalping_MentalState_ScalpPrisoner</defName>
         <stateClass>FeatherMedals.MentalState_ScalpRage</stateClass>
         <workerClass>FeatherMedals.MentalStateWorker_ScalpRage</workerClass>
         <label>decided to scalp a prisoner</label>

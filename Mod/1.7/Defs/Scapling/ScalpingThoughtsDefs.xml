@@ -2,12 +2,12 @@
 <Defs>
 
     <HistoryEventDef>
-        <defName>FeatherTrophies_Scalping_ScalpedMember</defName>
+        <defName>TribalTrophies_Scalping_HistoryEvent_ScalpedMember</defName>
         <label>scalped a member</label>
     </HistoryEventDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_ScalpedMe</defName>
+        <defName>TribalTrophies_Scalping_ThoughtSocial_ScalpedMe</defName>
         <thoughtClass>Thought_MemorySocial</thoughtClass>
         <durationDays>40</durationDays>
         <stackLimit>1</stackLimit>
@@ -25,7 +25,7 @@
     <!-- Victim's own mood: sharp at first, then lingers while the Scalped hediff stays. -->
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_WasScalped</defName>
+        <defName>TribalTrophies_Scalping_Thought_IWasScalped</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
@@ -39,7 +39,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_Disfigured</defName>
+        <defName>TribalTrophies_Scalping_Thought_Disfigured</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Scalped</workerClass>
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <stages>

@@ -56,7 +56,7 @@
             <fixedStorageSettings>
                 <filter>
                     <categories>
-                        <li>FeatherTrophies_Scalps</li>
+                        <li>TribalTrophies_Items_Scalps</li>
                     </categories>
                 </filter>
             </fixedStorageSettings>
@@ -64,7 +64,7 @@
                 <priority>Important</priority>
                 <filter>
                     <categories>
-                        <li>FeatherTrophies_Scalps</li>
+                        <li>TribalTrophies_Items_Scalps</li>
                     </categories>
                 </filter>
             </defaultStorageSettings>

@@ -4,7 +4,7 @@
     <!-- Issue -->
 
     <IssueDef>
-        <defName>FeatherTrophies_ScalpTaking</defName>
+        <defName>TribalTrophies_Issue_ScalpTaking</defName>
         <label>scalp taking</label>
         <description>Attitude towards scalping people by members. Scalping is taking a trophy by cutting off a scalp.</description>
         <iconPath>UI/Issues/PreceptScalping</iconPath>
@@ -12,15 +12,15 @@
 
     <!-- Precepts -->
 
-    <PreceptDef Name="FeatherTrophies_ScalpTaking_Base" Abstract="True">
-        <issue>FeatherTrophies_ScalpTaking</issue>
+    <PreceptDef Name="TribalTrophies_Issue_ScalpTaking_Base" Abstract="True">
+        <issue>TribalTrophies_Issue_ScalpTaking</issue>
         <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
         <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
         <defaultSelectionWeight>0.001</defaultSelectionWeight>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
-        <defName>FeatherTrophies_ScalpTaking_Merciless</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
+        <defName>TribalTrophies_Issue_ScalpTaking_Merciless</defName>
         <label>merciless</label>
         <description>Allows taking scalps without any moral restrictions. Children, innocents, allies: all are fair game, regardless of consequences.</description>
         <impact>High</impact>
@@ -36,13 +36,13 @@
         <comps>
             <li Class="PreceptComp_SelfTookMemoryThought">
                 <eventDef>FeatherTrophies_Scalping_TookScalp</eventDef>
-                <thought>FeatherTrophies_Scalping_ClaimedRightOfVictor</thought>
+                <thought>TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor</thought>
             </li>
         </comps>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
-        <defName>FeatherTrophies_ScalpTaking_Honorable</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
+        <defName>TribalTrophies_Issue_ScalpTaking_Honorable</defName>
         <label>honorable</label>
         <description>Allows taking scalps where honor allows it: enemies and guilty prisoners.</description>
         <impact>Low</impact>
@@ -59,8 +59,8 @@
         </conflictingMemes>
     </PreceptDef>
 
-    <PreceptDef ParentName="FeatherTrophies_ScalpTaking_Base">
-        <defName>FeatherTrophies_ScalpTaking_Forbidden</defName>
+    <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
+        <defName>TribalTrophies_Issue_ScalpTaking_Forbidden</defName>
         <label>forbidden</label>
         <description>Forbids taking scalps at all. Members consider taking scalps barbaric and unacceptable.</description>
         <impact>Medium</impact>
@@ -76,22 +76,22 @@
         <comps>
             <li Class="PreceptComp_SelfTookMemoryThought">
                 <eventDef>FeatherTrophies_Scalping_Observed_Saw_Scalped</eventDef>
-                <thought>FeatherTrophies_Scalping_Brutality_Saw_Scalped</thought>
+                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalped</thought>
             </li>
             <li Class="PreceptComp_SelfTookMemoryThought">
                 <eventDef>FeatherTrophies_Scalping_Observed_Scalp</eventDef>
-                <thought>FeatherTrophies_Scalping_Brutality_Saw_Scalp</thought>
+                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Scalp</thought>
             </li>
             <li Class="PreceptComp_SelfTookMemoryThought">
                 <eventDef>FeatherTrophies_Scalping_Observed_ScalpPole</eventDef>
-                <thought>FeatherTrophies_Scalping_Brutality_Saw_ScalpPole</thought>
+                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Building_Pole</thought>
             </li>
             <li Class="PreceptComp_SelfTookMemoryThought">
                 <eventDef>FeatherTrophies_Scalping_Observed_ScalpBelt</eventDef>
-                <thought>FeatherTrophies_Scalping_Brutality_Saw_ScalpBelt</thought>
+                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Belt</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
-                <thought>FeatherTrophies_Scalping_WearingScalps</thought>
+                <thought>TribalTrophies_Issue_Scalping_Thought_Forbidden_WearingScalps</thought>
             </li>
         </comps>
     </PreceptDef>
@@ -126,7 +126,7 @@
     <!-- Thoughts -->
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_ClaimedRightOfVictor</defName>
+        <defName>TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor</defName>
         <durationDays>10</durationDays>
         <stackLimit>8</stackLimit>
         <stackedEffectMultiplier>1</stackedEffectMultiplier>
@@ -140,7 +140,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_Brutality_Saw_Scalped</defName>
+        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalped</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -161,7 +161,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_Brutality_Saw_Scalp</defName>
+        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Scalp</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -182,7 +182,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_Brutality_Saw_ScalpPole</defName>
+        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Building_Pole</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -203,7 +203,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_Brutality_Saw_ScalpBelt</defName>
+        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_Saw_Scalp_Item_Belt</defName>
         <durationDays>10</durationDays>
         <stackLimit>1</stackLimit>
         <nullifyingTraits>
@@ -224,7 +224,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>FeatherTrophies_Scalping_WearingScalps</defName>
+        <defName>TribalTrophies_Issue_Scalping_Thought_Forbidden_WearingScalps</defName>
         <workerClass>FeatherMedals.ThoughtWorker_Precept_WearingScalps</workerClass>
         <nullifyingTraits>
             <li>Psychopath</li>

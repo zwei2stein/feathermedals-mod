@@ -170,7 +170,7 @@ namespace FeatherMedals
             if (change != 0)
             {
                 Faction.OfPlayer.TryAffectGoodwillWith(faction, change, false, true,
-                    FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMember, (GlobalTargetInfo)target);
+                    FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember, (GlobalTargetInfo)target);
             }
 
             Messages.Message(
@@ -237,7 +237,7 @@ namespace FeatherMedals
             // how much more damage the head can take before it is destroyed
             var headDamageRoom = victim.health.hediffSet.GetPartHealth(head) - MinHeadHealthLeft;
 
-            var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped, victim, head);
+            var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Hediff_Scalped, victim, head);
             scalped.scalper = new RememberedPawn(scalper);
             scalped.Severity = Mathf.Clamp(scalped.Severity, MinInjurySeverity, Mathf.Max(MinInjurySeverity, headDamageRoom));
             victim.health.AddHediff(scalped, head);
@@ -254,9 +254,9 @@ namespace FeatherMedals
                 }
 
                 victim.needs?.mood?.thoughts.memories.TryGainMemory(
-                    FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMe, scalper);
+                    FeatherMedalDefOf.TribalTrophies_Scalping_ThoughtSocial_ScalpedMe, scalper);
                 victim.needs?.mood?.thoughts.memories.TryGainMemory(
-                    FeatherMedalDefOf.FeatherTrophies_Scalping_WasScalped);
+                    FeatherMedalDefOf.TribalTrophies_Scalping_Thought_IWasScalped);
             }
 
             var blood = victim.RaceProps.BloodDef;
@@ -276,7 +276,7 @@ namespace FeatherMedals
             {
                 var loss = alive ? ScalpingTuning.GoodwillLossAlive : ScalpingTuning.GoodwillLossDead;
                 faction.TryAffectGoodwillWith(Faction.OfPlayer, -loss, true, true,
-                    FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpedMember, (GlobalTargetInfo)target);
+                    FeatherMedalDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember, (GlobalTargetInfo)target);
             }
 
             Find.HistoryEventsManager.RecordEvent(new HistoryEvent(FeatherMedalDefOf.FeatherTrophies_Scalping_TookScalp,
@@ -284,14 +284,14 @@ namespace FeatherMedals
 
             // messages are taking sides - heroic colonist, villain raider.
             var tale = scalper.Faction == Faction.OfPlayer
-                ? FeatherMedalDefOf.TribalTrophies_Scalping_TookScalp
-                : FeatherMedalDefOf.TribalTrophies_Scalping_ScalpedByEnemy;
+                ? FeatherMedalDefOf.TribalTrophies_Scalping_Tale_TookScalp
+                : FeatherMedalDefOf.TribalTrophies_Scalping_Tale_ScalpedByEnemy;
             TaleRecorder.RecordTale(tale, scalper, victim);
             
             // Bloodlust gives thought, ignoring ideo stance.
             if (scalper.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true && ScalpingPrecepts.StanceOf(scalper) != ScalpStance.Merciless)
             {
-                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.FeatherTrophies_Scalping_ClaimedRightOfVictor);
+                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor);
             }
 
             return scalp;
@@ -301,7 +301,7 @@ namespace FeatherMedals
         public static bool HasScalpToTake(Pawn pawn)
         {
             return pawn.RaceProps.Humanlike
-                   && !pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Scalped)
+                   && !pawn.health.hediffSet.HasHediff(FeatherMedalDefOf.TribalTrophies_Scalping_Hediff_Scalped)
                    && HeadOf(pawn) != null;
         }
         

@@ -24,5 +24,11 @@
 		<label>pristine feathers</label>
 		<parent>Manufactured</parent>
 	</ThingCategoryDef>
+	
+	<ThingCategoryDef>
+		<defName>TribalTrophies_Items_Scalps</defName>
+		<label>scalps</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
 
 </Defs>

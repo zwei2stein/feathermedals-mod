@@ -21,7 +21,7 @@ namespace FeatherMedals
 
         private DesignationManager Designations => parent.Map.designationManager;
 
-        private bool Designated => Designations.DesignationOn(parent, FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpDesignation) != null;
+        private bool Designated => Designations.DesignationOn(parent, FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation) != null;
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -48,7 +48,7 @@ namespace FeatherMedals
 
         private void Toggle()
         {
-            DesignationDef def = FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpDesignation;
+            DesignationDef def = FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation;
             if (Designated)
             {
                 Designations.TryRemoveDesignationOn(parent, def);

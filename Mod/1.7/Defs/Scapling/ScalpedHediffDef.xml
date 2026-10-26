@@ -2,7 +2,7 @@
 <Defs>
 
     <HediffDef>
-        <defName>TribalTrophies_Scalping_Scalped</defName>
+        <defName>TribalTrophies_Scalping_Hediff_Scalped</defName>
         <hediffClass>FeatherMedals.Hediff_Scalped</hediffClass>
         <label>scalped</label>
         <labelNoun>a scalping</labelNoun>

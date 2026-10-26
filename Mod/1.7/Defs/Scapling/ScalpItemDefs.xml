@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingCategoryDef>
-        <defName>FeatherTrophies_Scalps</defName>
-        <label>scalps</label>
-        <parent>Items</parent>
-    </ThingCategoryDef>
-
     <ThingDef>
         <defName>TribalTrophies_Trophy_Scalping_Scalp</defName>
         <label>scalp</label>
@@ -24,7 +18,7 @@
         <tradeability>Sellable</tradeability>
         <uiIconScale>1.8</uiIconScale>
         <thingCategories>
-            <li>FeatherTrophies_Scalps</li>
+            <li>TribalTrophies_Items_Scalps</li>
         </thingCategories>
         <graphicData>
             <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>

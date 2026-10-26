@@ -59,7 +59,7 @@ namespace FeatherMedals
             return FloatMenuUtility.DecoratePrioritizedTask(
                 new FloatMenuOption(label, () =>
                 {
-                    Job job = JobMaker.MakeJob(FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpJob, target);
+                    Job job = JobMaker.MakeJob(FeatherMedalDefOf.TribalTrophies_Scalping_Job_ScalpJob, target);
                     actor.jobs.TryTakeOrderedJob(job);
                     if (angers)
                     {

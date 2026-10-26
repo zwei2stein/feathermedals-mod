@@ -7,7 +7,7 @@ namespace FeatherMedals;
 
 public class Designator_Scalp : Designator
 {
-    protected override DesignationDef Designation => FeatherMedalDefOf.FeatherTrophies_Scalping_ScalpDesignation;
+    protected override DesignationDef Designation => FeatherMedalDefOf.TribalTrophies_Scalping_Designation_ScalpDesignation;
 
     public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.FilledRectangle;
 

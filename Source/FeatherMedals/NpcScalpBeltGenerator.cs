@@ -58,9 +58,9 @@ public static class NpcScalpBeltGenerator
 
     private static float BaseChance(Ideo ideo, NpcScalpBeltExtension tuning)
     {
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Merciless))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Merciless))
             return tuning.mercilessChance;
-        if (ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Honorable))
+        if (ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Honorable))
             return tuning.honorableChance;
         return 0f;
     }

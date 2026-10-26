@@ -29,7 +29,7 @@ namespace FeatherMedals
                 return reasons;
 
             var ideo = faction.ideos?.PrimaryIdeo;
-            if (ideo != null && ideo.HasPrecept(FeatherMedalDefOf.FeatherTrophies_ScalpTaking_Forbidden))
+            if (ideo != null && ideo.HasPrecept(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Forbidden))
                 reasons.Add(ScalpGiftReason.Forbidden);
 
             if (!AnyTraderBuysScalps(faction))

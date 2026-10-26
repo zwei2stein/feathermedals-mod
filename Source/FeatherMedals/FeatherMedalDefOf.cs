@@ -52,15 +52,15 @@ namespace FeatherMedals
 
         //Scapling:
 
-        public static HediffDef TribalTrophies_Scalping_Scalped;
+        public static HediffDef TribalTrophies_Scalping_Hediff_Scalped;
         public static ThingDef TribalTrophies_Trophy_Scalping_Scalp;
-        public static JobDef FeatherTrophies_Scalping_ScalpJob;
-        public static JobDef FeatherTrophies_Scalping_ScalpInBreakJob;
-        public static DesignationDef FeatherTrophies_Scalping_ScalpDesignation;
-        public static ThoughtDef FeatherTrophies_Scalping_ScalpedMe;
-        public static ThoughtDef FeatherTrophies_Scalping_ClaimedRightOfVictor;
-        public static ThoughtDef FeatherTrophies_Scalping_WasScalped;
-        public static HistoryEventDef FeatherTrophies_Scalping_ScalpedMember;
+        public static JobDef TribalTrophies_Scalping_Job_ScalpJob;
+        public static JobDef TribalTrophies_Scalping_Job_ScalpInBreakJob;
+        public static DesignationDef TribalTrophies_Scalping_Designation_ScalpDesignation;
+        public static ThoughtDef TribalTrophies_Scalping_ThoughtSocial_ScalpedMe;
+        public static ThoughtDef TribalTrophies_Issue_Scalping_Thought_Merciless_ClaimedRightOfVictor;
+        public static ThoughtDef TribalTrophies_Scalping_Thought_IWasScalped;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_ScalpedMember;
         public static HistoryEventDef FeatherTrophies_Scalping_TookScalp;
 
         public static HistoryEventDef FeatherTrophies_Scalping_Observed_Saw_Scalped;
@@ -68,10 +68,10 @@ namespace FeatherMedals
         public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpPole;
         public static HistoryEventDef FeatherTrophies_Scalping_Observed_ScalpBelt;
 
-        public static IssueDef FeatherTrophies_ScalpTaking;
-        public static PreceptDef FeatherTrophies_ScalpTaking_Merciless;
-        public static PreceptDef FeatherTrophies_ScalpTaking_Honorable;
-        public static PreceptDef FeatherTrophies_ScalpTaking_Forbidden;
+        public static IssueDef TribalTrophies_Issue_ScalpTaking;
+        public static PreceptDef TribalTrophies_Issue_ScalpTaking_Merciless;
+        public static PreceptDef TribalTrophies_Issue_ScalpTaking_Honorable;
+        public static PreceptDef TribalTrophies_Issue_ScalpTaking_Forbidden;
 
         public static HairDef Messy;
 
@@ -82,8 +82,8 @@ namespace FeatherMedals
         public static JobDef TribalTrophies_Scalping_TakeScalpAndFlee;
         public static DutyDef TribalTrophies_Scalping_ScalpHuntDuty;
         
-        public static TaleDef TribalTrophies_Scalping_TookScalp;
-        public static TaleDef TribalTrophies_Scalping_ScalpedByEnemy;
+        public static TaleDef TribalTrophies_Scalping_Tale_TookScalp;
+        public static TaleDef TribalTrophies_Scalping_Tale_ScalpedByEnemy;
 
         // Trophy belts:
         

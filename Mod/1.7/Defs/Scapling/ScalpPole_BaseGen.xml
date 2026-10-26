@@ -3,8 +3,8 @@
 
     <!-- pushed by our patch on the settlement resolver; no minRectSize, so it can always resolve what the patch pushes -->
     <RuleDef>
-        <defName>TribalTrophies_ScalpPoles</defName>
-        <symbol>tribalTrophies_scalpPoles</symbol>
+        <defName>TribalTrophies_Worldgen_ScalpPoles</defName>
+        <symbol>tribalTrophies_worldgen_scalpPoles</symbol>
         <resolvers>
             <li Class="FeatherMedals.SymbolResolver_ScalpPoles" />
         </resolvers>
