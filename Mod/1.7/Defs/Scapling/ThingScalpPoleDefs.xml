@@ -2,12 +2,12 @@
 <Defs>
 
     <ThingDef ParentName="BuildingBase">
-        <defName>FeatherTrophies_ScalpPole</defName>
+        <defName>TribalTrophies_Scalping_Building_ScalpPole</defName>
         <label>scalp pole</label>
         <description>Wooden pole made to display taken scalps. Scalps strike terror into slaves and give a morbid focus for meditation.</description>
         <thingClass>FeatherMedals.Building_ScalpPole</thingClass>
         <graphicData>
-            <texPath>Things/Building/Misc/FeatherTrophies_ScalpPole/ScalpPole</texPath>
+            <texPath>Things/Building/Misc/TribalTrophies_Scalping_Building_ScalpPole/ScalpPole</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <drawSize>(1,1)</drawSize>

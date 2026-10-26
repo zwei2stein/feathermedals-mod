@@ -291,7 +291,7 @@ namespace FeatherMedals
             // Bloodlust gives thought, ignoring ideo stance.
             if (scalper.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true && ScalpingPrecepts.StanceOf(scalper) != ScalpStance.Merciless)
             {
-                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.TribalTrophies_Issue_ScalpinTaking_Thought_Merciless_ClaimedRightOfVictor);
+                scalper.needs?.mood?.thoughts.memories.TryGainMemory(FeatherMedalDefOf.TribalTrophies_Issue_ScalpTaking_Thought_Merciless_ClaimedRightOfVictor);
             }
 
             return scalp;

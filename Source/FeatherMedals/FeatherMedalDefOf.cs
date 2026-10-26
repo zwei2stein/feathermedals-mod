@@ -58,13 +58,13 @@ namespace FeatherMedals
         public static JobDef TribalTrophies_Scalping_Job_ScalpInBreakJob;
         public static DesignationDef TribalTrophies_Scalping_Designation_ScalpDesignation;
         public static ThoughtDef TribalTrophies_Scalping_ThoughtSocial_ScalpedMe;
-        public static ThoughtDef TribalTrophies_Issue_ScalpinTaking_Thought_Merciless_ClaimedRightOfVictor;
+        public static ThoughtDef TribalTrophies_Issue_ScalpTaking_Thought_Merciless_ClaimedRightOfVictor;
         public static ThoughtDef TribalTrophies_Scalping_Thought_IWasScalped;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_ScalpedMember;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_TookScalp;
 
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped;
-        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scap;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scalp;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt;
 
@@ -77,7 +77,7 @@ namespace FeatherMedals
 
         public static MentalStateDef MurderousRage;
 
-        public static ThingDef FeatherTrophies_ScalpPole;
+        public static ThingDef TribalTrophies_Scalping_Building_ScalpPole;
         
         public static JobDef TribalTrophies_Scalping_TakeScalpAndFlee;
         public static DutyDef TribalTrophies_Scalping_ScalpHuntDuty;
