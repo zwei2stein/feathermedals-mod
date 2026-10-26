@@ -29,7 +29,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
     private void ApplyImpl(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
-        if (jobRitual.selectedTarget.Thing is not FeatherTrophy medal) return;
+        if (jobRitual.selectedTarget.Thing is not FeatherTrophy featherTrophy) return;
         var awardee = jobRitual.assignments.FirstAssignedPawn("awardee");
         var presenter = jobRitual.assignments.FirstAssignedPawn("leader");
         if (awardee == null || presenter == null) return;
@@ -37,11 +37,11 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (Prefs.DevMode)
             Log.Message($"[TribalTrophies] Apply progress={progress:F3}");
         
-        // Interrupted (raid, leader down...) or participants gone: no award, the medal stays as it was
+        // Interrupted (raid, leader down...) or participants gone: no award, the trophy stays as it was
         if (progress < MIN_PROGRESS)
             return;
 
-        if (medal.Destroyed)
+        if (featherTrophy.Destroyed)
         {
             Messages.Message(
                 "TribalTrophies_AdorningCeremony_Message_TrophyLost".Translate(awardee.Named("PAWN")),
@@ -54,53 +54,53 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             || awardee.apparel == null || awardee.story == null)
             return;
 
-        if (!FeatherTrophyUtil.CanWearTrophy(awardee, medal))
+        if (!FeatherTrophyUtil.CanWearTrophy(awardee, featherTrophy))
         {
             Messages.Message(
-                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.TrophyLabel.Named("TROPHY")),
+                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), featherTrophy.TrophyLabel.Named("TROPHY")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
         }
 
-        if (presenter.carryTracker?.CarriedThing == medal)
-            presenter.carryTracker.innerContainer.Remove(medal);
+        if (presenter.carryTracker?.CarriedThing == featherTrophy)
+            presenter.carryTracker.innerContainer.Remove(featherTrophy);
 
-        awardee.apparel.Wear(medal, false, TribalTrophiesMod.Settings.LockTrophyUponAdorning);
+        awardee.apparel.Wear(featherTrophy, false, TribalTrophiesMod.Settings.LockTrophyUponAdorning);
 
         // Wear failed, drop trophy
-        if (!awardee.apparel.Wearing(medal))
+        if (!awardee.apparel.Wearing(featherTrophy))
         {
-            if (!medal.Spawned && medal.holdingOwner == null)
-                GenPlace.TryPlaceThing(medal, awardee.PositionHeld, awardee.MapHeld, ThingPlaceMode.Near);
+            if (!featherTrophy.Spawned && featherTrophy.holdingOwner == null)
+                GenPlace.TryPlaceThing(featherTrophy, awardee.PositionHeld, awardee.MapHeld, ThingPlaceMode.Near);
             Messages.Message(
-                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), medal.TrophyLabel.Named("TROPHY")),
+                "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(awardee.Named("PAWN"), featherTrophy.TrophyLabel.Named("TROPHY")),
                 awardee,
                 MessageTypeDefOf.NegativeEvent);
             return;
         }
         
-        medal.awardedBy = new RememberedPawn(presenter);
-        medal.awarded = EventTime.Now(jobRitual.Map);
+        featherTrophy.awardedBy = new RememberedPawn(presenter);
+        featherTrophy.awarded = EventTime.Now(jobRitual.Map);
 
-        TrophyCeremonyLedger.Instance?.Record(medal.awarded.tick);
+        TrophyCeremonyLedger.Instance?.Record(featherTrophy.awarded.tick);
 
         var attendees = AdorningQuality.CountAttendees(totalPresence.Keys, awardee);
         var totalColonists = AdorningQuality.CountPossibleAttendees(jobRitual.Map, awardee);
         var roomImpressiveness = AdorningQuality.GetRoomImpressiveness(jobRitual.selectedTarget);
-        var trophyQualityBonus = AdorningQuality.GetTrophyQualityBonus(medal);
+        var trophyQualityBonus = AdorningQuality.GetTrophyQualityBonus(featherTrophy);
         
         var qualityScore = AdorningQuality.GetQualityScore(
             attendees,
             totalColonists,
             roomImpressiveness,
-            medal.HasCitation,
+            featherTrophy.HasCitation,
             trophyQualityBonus);
         
         var stageIndex = AdorningQuality.GetStageIndex(qualityScore);
         var qualityLabel = AdorningQuality.GetQualityLabel(stageIndex);
 
-        medal.ceremonyQuality = stageIndex;
+        featherTrophy.ceremonyQuality = stageIndex;
 
         var awardedThought = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy;
         var memory = (Thought_Memory)ThoughtMaker.MakeThought(awardedThought, stageIndex);
@@ -118,26 +118,26 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
         {
-            RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee, medal);
-            RitualOutcomeTraitUtil.GiveRandomTrait(awardee, medal);
+            RitualOutcomeTraitUtil.UpdateDecoratedTrait(awardee, featherTrophy);
+            RitualOutcomeTraitUtil.GiveRandomTrait(awardee, featherTrophy);
         }
         
-        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(medal.TrophyLabel);
+        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(featherTrophy.TrophyLabel);
         var letterText = "TribalTrophies_AdorningCeremony_Letter_Adorned".Translate(
             awardee.Named("PAWN"),
-            medal.TrophyLabel.Named("TROPHY"),
+            featherTrophy.TrophyLabel.Named("TROPHY"),
             presenter.Named("PRESENTER"));
         letterText += "\n\n";
         letterText += "TribalTrophies_AdorningCeremony_Letter_Attendance"
             .Translate(awardee.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );
             
-        if (medal.HasCitation)
+        if (featherTrophy.HasCitation)
         {
             letterText += "\n\n";
-            letterText += "TribalTrophies_AdorningCeremony_Letter_Tale".Translate(medal.citation);
+            letterText += "TribalTrophies_AdorningCeremony_Letter_Tale".Translate(featherTrophy.citation);
         }
         
-        var traitText = medal.GetTraitChangeText();
+        var traitText = featherTrophy.GetTraitChangeText();
         if (!traitText.NullOrEmpty())
         {
             letterText += "\n\n";
@@ -153,6 +153,6 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
 
         TaleRecorder.RecordTale(TribalTrophiesDefOf.TribalTrophies_AdornedTrophyTale, presenter, awardee);
 
-        Find.WindowStack.Add(new Dialog_TrophyAwarded(medal, awardee));
+        Find.WindowStack.Add(new Dialog_TrophyAwarded(featherTrophy, awardee));
     }
 }

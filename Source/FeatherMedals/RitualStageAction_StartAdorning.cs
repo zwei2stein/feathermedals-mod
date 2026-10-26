@@ -12,8 +12,8 @@ public class RitualStageAction_StartAdorning : RitualStageAction
         if (leader != null && awardee != null)
         {
             if (TribalTrophiesMod.Settings.PromptForCitationDuringRitual)
-                if (ritual.selectedTarget.Thing is FeatherTrophy medal && !medal.HasCitation)
-                    Find.WindowStack.Add(new Dialog_WriteCitation(medal));
+                if (ritual.selectedTarget.Thing is FeatherTrophy featherTrophy && !featherTrophy.HasCitation)
+                    Find.WindowStack.Add(new Dialog_WriteCitation(featherTrophy));
                 
             Messages.Message(
                 "TribalTrophies_AdorningCeremony_Message_Started".Translate(leader.Named("LEADER"), awardee.Named("PAWN")),

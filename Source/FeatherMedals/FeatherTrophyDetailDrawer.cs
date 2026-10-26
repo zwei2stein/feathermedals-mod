@@ -31,7 +31,7 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
     {
         var curY = rect.y;
 
-        // Medal icon, centered
+        // Feather trophy icon, centered
         var iconSize = TrophyUIStyle.DetailIconSize;
         if (draw)
         {
@@ -40,7 +40,7 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         }
         curY += iconSize + TrophyUIStyle.DetailIconGap;
 
-        // Medal name, centered
+        // Feather trophy name, centered
         var description = _trophy.def.description;
         var hasDescription = !description.NullOrEmpty();
         Line(_trophy.TrophyLabel, GameFont.Medium, Color.white, rect, ref curY, draw,

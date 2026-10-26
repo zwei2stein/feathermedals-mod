@@ -17,9 +17,9 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherTrophy medal)
+        if (ritual?.selectedTarget.Thing is not FeatherTrophy featherTrophy)
             return "TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable".Translate();
-        return medal.TrophyLabel;
+        return featherTrophy.TrophyLabel;
     }
 
     public override QualityFactor GetQualityFactor(
@@ -29,11 +29,11 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherTrophy medal) return null;
+        if (ritualTarget.Thing is not FeatherTrophy featherTrophy) return null;
 
         var sb = new StringBuilder();
 
-        var statOffsets = medal.def.equippedStatOffsets;
+        var statOffsets = featherTrophy.def.equippedStatOffsets;
         if (statOffsets is { Count: > 0 })
         {
             foreach (var stat in statOffsets)
@@ -42,10 +42,10 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
         {
-            var ext = medal.def.GetModExtension<TrophyExtension>();
+            var ext = featherTrophy.def.GetModExtension<TrophyExtension>();
             if (ext != null)
             {
-                var traitMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(medal);
+                var traitMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(featherTrophy);
                 if (ext.removesTraits is { Count: > 0 })
                     foreach (var entry in ext.removesTraits)
                         sb.AppendLine("TribalTrophies_AdorningCeremony_Common_MayRemoveTrait"
@@ -59,7 +59,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
         return new QualityFactor
         {
-            label = medal.TrophyLabel,
+            label = featherTrophy.TrophyLabel,
             count = "",
             qualityChange = "",
             quality = 0f,
@@ -75,12 +75,12 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherTrophy medal && medal.TryGetQuality(out _);
+        ritual?.selectedTarget.Thing is FeatherTrophy featherTrophy && featherTrophy.TryGetQuality(out _);
 
     public override bool DataRequired => false;
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data) =>
-        ritual?.selectedTarget.Thing is FeatherTrophy medal ? AdorningQuality.GetTrophyQualityBonus(medal) : 0f;
+        ritual?.selectedTarget.Thing is FeatherTrophy featherTrophy ? AdorningQuality.GetTrophyQualityBonus(featherTrophy) : 0f;
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null) =>
         "TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality".Translate();
@@ -92,10 +92,10 @@ public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherTrophy medal || !medal.TryGetQuality(out var quality))
+        if (ritualTarget.Thing is not FeatherTrophy featherTrophy || !featherTrophy.TryGetQuality(out var quality))
             return null;
 
-        var bonus = AdorningQuality.GetTrophyQualityBonus(medal);
+        var bonus = AdorningQuality.GetTrophyQualityBonus(featherTrophy);
 
         return new QualityFactor
         {
@@ -207,7 +207,7 @@ public class RitualOutcomeComp_CeremonyRoom : RitualOutcomeComp
 }
 
 [HarmonyPatch(typeof(Dialog_BeginLordJob), nameof(Dialog_BeginLordJob.DoLeftColumn))]
-public static class PatchDrawMedalInRitual
+public static class PatchDrawFeatherTrophyInRitual
 {
     private static readonly AccessTools.FieldRef<Dialog_BeginRitual, TargetInfo> TargetRef =
         AccessTools.FieldRefAccess<Dialog_BeginRitual, TargetInfo>("target");
@@ -217,16 +217,16 @@ public static class PatchDrawMedalInRitual
         if (__instance is not Dialog_BeginRitual ritual) return;
         
         var target = TargetRef(ritual);
-        if (target.Thing is not FeatherTrophy medal) return;
+        if (target.Thing is not FeatherTrophy featherTrophy) return;
         
         var row = layout.NewRow(60f, marginOverride: 6f);
         var iconRect = new Rect(row.Rect.x, row.Rect.y, 50f, 50f);
-        Widgets.ThingIcon(iconRect, medal);
+        Widgets.ThingIcon(iconRect, featherTrophy);
         
         var labelRect = new Rect(iconRect.xMax + 10f, row.Rect.y, row.Rect.width - 60f, 50f);
         Text.Anchor = TextAnchor.MiddleLeft;
         Text.Font = GameFont.Medium;
-        Widgets.Label(labelRect, medal.TrophyLabel);
+        Widgets.Label(labelRect, featherTrophy.TrophyLabel);
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.UpperLeft;
     }
@@ -241,10 +241,10 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherTrophy medal)
+        if (ritual?.selectedTarget.Thing is not FeatherTrophy featherTrophy)
             return 0f;
         
-        return AdorningQuality.GetCitationScore(medal.HasCitation);
+        return AdorningQuality.GetCitationScore(featherTrophy.HasCitation);
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -259,21 +259,21 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherTrophy medal)
+        if (ritualTarget.Thing is not FeatherTrophy featherTrophy)
             return null;
 
-        var contribution = AdorningQuality.GetCitationScore(medal.HasCitation);
+        var contribution = AdorningQuality.GetCitationScore(featherTrophy.HasCitation);
         
         return new QualityFactor
         {
             label = "TribalTrophies_AdorningCeremony_RitualDialog_Tale".Translate(),
-            count = medal.HasCitation ? "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written".Translate() : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None".Translate(),
+            count = featherTrophy.HasCitation ? "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written".Translate() : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None".Translate(),
             qualityChange = $"+{contribution.ToStringPercent()}",
             quality = contribution,
-            positive = medal.HasCitation,
+            positive = featherTrophy.HasCitation,
             present = true,
-            toolTip = medal.HasCitation 
-                ? $"\"{medal.citation}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
+            toolTip = featherTrophy.HasCitation 
+                ? $"\"{featherTrophy.citation}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
                 : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
             priority = 30f
         };

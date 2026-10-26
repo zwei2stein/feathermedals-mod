@@ -150,7 +150,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         var textX = column.xMax + TrophyUIStyle.ColumnGap;
         var textWidth = GetTextWidth(rowRect.width);
 
-        // Medal name
+        // Feather trophy name
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.MiddleLeft;
         var nameHeight = Text.CalcHeight(_trophy.TrophyLabel, textWidth);

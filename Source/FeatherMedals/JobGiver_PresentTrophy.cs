@@ -24,7 +24,7 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
     {
         if (pawn.GetLord()?.LordJob is not LordJob_Ritual ritual)
             return null;
-        if (ritual.selectedTarget.Thing is not FeatherTrophy medal || medal.Destroyed)
+        if (ritual.selectedTarget.Thing is not FeatherTrophy featherTrophy || featherTrophy.Destroyed)
             return null;
 
         var standCell = pawn.mindState.duty?.focus ?? LocalTargetInfo.Invalid;
@@ -36,15 +36,15 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
             return null;
 
         // not in hands yet: it must lie where we can get it
-        var holding = pawn.carryTracker.CarriedThing == medal;
-        if (!holding && (!medal.Spawned || !pawn.CanReserveAndReach(medal, PathEndMode.ClosestTouch, Danger.Deadly)))
+        var holding = pawn.carryTracker.CarriedThing == featherTrophy;
+        if (!holding && (!featherTrophy.Spawned || !pawn.CanReserveAndReach(featherTrophy, PathEndMode.ClosestTouch, Danger.Deadly)))
             return null;
 
         var def = speech
             ? TribalTrophiesDefOf.TribalTrophies_PresentTrophySpeech
             : TribalTrophiesDefOf.TribalTrophies_PresentTrophy;
 
-        var job = JobMaker.MakeJob(def, medal, standCell, awardee);
+        var job = JobMaker.MakeJob(def, featherTrophy, standCell, awardee);
         job.count = 1;
         if (speech)
         {
