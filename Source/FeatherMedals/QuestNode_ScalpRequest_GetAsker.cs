@@ -119,8 +119,7 @@ public class QuestNode_ScalpRequest_GetRequest : QuestNode
         slate.Set(storeRewardValueAs.GetValue(slate),
             count * rewardValuePerScalp.GetValue(slate) * Mathf.Pow(rewardFactorPerStar.GetValue(slate), stars));
         slate.Set(storeGoodwillAs.GetValue(slate), count * goodwillPerScalp.GetValue(slate));
-
-        // vanilla decides who can lose goodwill
+        
         var goodwillLoss = count * goodwillLossPerScalp.GetValue(slate);
         slate.Set(storeGoodwillLossAs.GetValue(slate), goodwillLoss);
 
@@ -225,12 +224,34 @@ public class QuestNode_ScalpRequest_GoodwillReward : QuestNode
     protected override void RunInt()
     {
         var slate = QuestGen.slate;
-        QuestGen.quest.AddPart(new QuestPart_FactionGoodwillChange
+        var givingFaction = faction.GetValue(slate);
+        var amount = change.GetValue(slate);
+        var signal = QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate));
+
+        // same part vanilla Reward_Goodwill generates, wired to our fulfilled signal
+        var goodwillPart = new QuestPart_FactionGoodwillChange
         {
-            inSignal = QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)),
-            faction = faction.GetValue(slate),
-            change = change.GetValue(slate),
+            inSignal = signal,
+            faction = givingFaction,
+            change = amount,
             historyEvent = HistoryEventDefOf.QuestGoodwillReward
+        };
+        QuestGen.quest.AddPart(goodwillPart);
+
+        // single choice
+        var choice = new QuestPart_Choice.Choice();
+        choice.rewards.Add(new Reward_Goodwill
+        {
+            faction = givingFaction,
+            amount = amount
         });
+        choice.questParts.Add(goodwillPart);
+
+        var choicePart = new QuestPart_Choice
+        {
+            inSignalChoiceUsed = signal
+        };
+        choicePart.choices.Add(choice);
+        QuestGen.quest.AddPart(choicePart);
     }
 }

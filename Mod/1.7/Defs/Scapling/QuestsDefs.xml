@@ -49,11 +49,9 @@
             <rulesStrings>
                 <li>questDescription->[faction_name] of [settlement_label] wants scalps taken from its enemies, [targetFaction_name]. It asks for:
                     \n  [scalpCount]x scalp of a member of [targetFaction_name]
-                    \nAny loose scalp counts, as long as it was taken from a member of [targetFaction_name]. [delivery] Scalps can be delivered a few at a time.[rewardInfo][goodwillLossInfo]</li>
+                    \nAny loose scalp counts, as long as it was taken from a member of [targetFaction_name]. [delivery] Scalps can be delivered a few at a time.[goodwillLossInfo]</li>
                 <li>delivery(askerHostile==True,priority=1)->[faction_name] is hostile to you, so the scalps must be sent to [settlement_label] in transport pods as a gift.</li>
                 <li>delivery->Bring the scalps to [settlement_label] by caravan, or send them in transport pods as a gift.</li>
-                <li>rewardInfo(askerHostile==True,priority=1)->\n\n[faction_name] goodwill: [goodwillReward].</li>
-                <li>rewardInfo-></li>
                 <li>goodwillLossInfo(targetLosesGoodwill==True,priority=1)->\n\nIf you accept, [targetFaction_name] will learn of it, and you will lose [targetExpectedGoodwillLoss] goodwill with it.</li>
                 <li>goodwillLossInfo-></li>
             </rulesStrings>
