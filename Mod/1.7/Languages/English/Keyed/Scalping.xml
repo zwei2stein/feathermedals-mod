@@ -76,6 +76,8 @@
 
     <!-- ===== Scalp Request Quest ===== -->
 
+    <TribalTrophies_ScalpRequest_Message_TargetLearned>{FACTION} has learned that you have agreed to hunt their scalps.</TribalTrophies_ScalpRequest_Message_TargetLearned>
+
     <!-- settlement inspect pane -->
     <TribalTrophies_ScalpRequest_Inspect>Requested: scalps of {TARGET} ({DELIVERED}/{TOTAL}), {TIME} left</TribalTrophies_ScalpRequest_Inspect>
 

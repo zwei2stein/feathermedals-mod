@@ -67,6 +67,7 @@ namespace FeatherMedals
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scalp;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole;
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt;
+        public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_AcceptedScalpRequest;
 
         public static IssueDef TribalTrophies_Issue_ScalpTaking;
         public static PreceptDef TribalTrophies_Issue_ScalpTaking_Merciless;

@@ -100,10 +100,14 @@ public class QuestNode_ScalpRequest_GetRequest : QuestNode
     public SlateRef<float> rewardValuePerScalp;
     public SlateRef<float> rewardFactorPerStar;
     public SlateRef<int> goodwillPerScalp;
+    public SlateRef<int> goodwillLossPerScalp;
 
     [NoTranslate] public SlateRef<string> storeCountAs;
     [NoTranslate] public SlateRef<string> storeRewardValueAs;
     [NoTranslate] public SlateRef<string> storeGoodwillAs;
+    [NoTranslate] public SlateRef<string> storeGoodwillLossAs;
+    [NoTranslate] public SlateRef<string> storeExpectedGoodwillLossAs;
+    [NoTranslate] public SlateRef<string> storeTargetLosesGoodwillAs;
 
     private int Store(Slate slate)
     {
@@ -115,7 +119,23 @@ public class QuestNode_ScalpRequest_GetRequest : QuestNode
         slate.Set(storeRewardValueAs.GetValue(slate),
             count * rewardValuePerScalp.GetValue(slate) * Mathf.Pow(rewardFactorPerStar.GetValue(slate), stars));
         slate.Set(storeGoodwillAs.GetValue(slate), count * goodwillPerScalp.GetValue(slate));
+
+        // vanilla decides who can lose goodwill
+        var goodwillLoss = count * goodwillLossPerScalp.GetValue(slate);
+        slate.Set(storeGoodwillLossAs.GetValue(slate), goodwillLoss);
+
+        var losesGoodwill = goodwillLoss > 0 && Faction.OfPlayer.CanChangeGoodwillFor(target, -goodwillLoss);
+        var expectedLoss = losesGoodwill ? ExpectedGoodwillLoss(target, goodwillLoss) : 0;
+        slate.Set(storeExpectedGoodwillLossAs.GetValue(slate), expectedLoss);
+        slate.Set(storeTargetLosesGoodwillAs.GetValue(slate), expectedLoss > 0);
         return stars;
+    }
+    
+    private static int ExpectedGoodwillLoss(Faction target, int goodwillLoss)
+    {
+        var player = Faction.OfPlayer;
+        var adjusted = -player.CalculateAdjustedGoodwillChange(target, -goodwillLoss);
+        return Mathf.Min(adjusted, player.BaseGoodwillWith(target) + 100);
     }
 
     protected override bool TestRunInt(Slate slate)
@@ -161,6 +181,31 @@ public class QuestNode_ScalpRequest_Initiate : QuestNode
             requestDuration = duration.GetValue(slate),
             keepAfterQuestEnds = false,
             inSignal = slate.Get<string>("inSignal")
+        });
+    }
+}
+
+// Target faction learns the player took the request: goodwill loss on accept.
+public class QuestNode_ScalpRequest_TargetGoodwillLoss : QuestNode
+{
+    public SlateRef<Faction> targetFaction;
+    public SlateRef<int> goodwillLoss;
+
+    protected override bool TestRunInt(Slate slate) => true;
+
+    protected override void RunInt()
+    {
+        var slate = QuestGen.slate;
+        var target = targetFaction.GetValue(slate);
+        var loss = goodwillLoss.GetValue(slate);
+        if (target == null || loss <= 0)
+            return;
+
+        QuestGen.quest.AddPart(new QuestPart_ScalpRequestTargetGoodwillLoss
+        {
+            inSignal = slate.Get<string>("inSignal"),
+            targetFaction = target,
+            goodwillLoss = loss
         });
     }
 }
