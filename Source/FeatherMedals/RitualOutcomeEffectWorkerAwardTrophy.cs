@@ -122,7 +122,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             RitualOutcomeTraitUtil.GiveRandomTrait(awardee, featherTrophy);
         }
         
-        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(featherTrophy.TrophyLabel);
+        var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(featherTrophy.TrophyLabel.Named("TROPHY"));
         var letterText = "TribalTrophies_AdorningCeremony_Letter_Adorned".Translate(
             awardee.Named("PAWN"),
             featherTrophy.TrophyLabel.Named("TROPHY"),

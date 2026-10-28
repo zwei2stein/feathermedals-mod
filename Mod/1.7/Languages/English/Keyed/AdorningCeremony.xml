@@ -3,15 +3,15 @@
 
 	<!-- ===== Messages ===== -->
 
-	<TribalTrophies_AdorningCeremony_Message_Started>{LEADER_labelShort} has begun the adorning ceremony for {PAWN_labelShort}.</TribalTrophies_AdorningCeremony_Message_Started>
+	<TribalTrophies_AdorningCeremony_Message_Started>{PRESENTER_labelShort} has begun the adorning ceremony for {PAWN_labelShort}.</TribalTrophies_AdorningCeremony_Message_Started>
 	<TribalTrophies_AdorningCeremony_Message_TrophyLost>The trophy was lost before {PAWN_labelShort} could be adorned.</TribalTrophies_AdorningCeremony_Message_TrophyLost>
 	<TribalTrophies_AdorningCeremony_Message_CannotWear>{PAWN_labelShort} could not be adorned with {TROPHY}.</TribalTrophies_AdorningCeremony_Message_CannotWear>
 
 	<!-- ===== Letters ===== -->
 
-	<TribalTrophies_AdorningCeremony_Letter_Label>{0} trophy adorned</TribalTrophies_AdorningCeremony_Letter_Label>
-	<TribalTrophies_AdorningCeremony_Letter_Adorned>{PAWN_labelShort} has been ceremonially adorned with a {TROPHY} by {PRESENTER_labelShort}.</TribalTrophies_AdorningCeremony_Letter_Adorned>
-	<TribalTrophies_AdorningCeremony_Letter_Attendance>The {QUALITY} adorning ceremony was attended by {ATTENDEES} tribe members, and the deeds of {PAWN_labelShort} have been recognized by the tribe.</TribalTrophies_AdorningCeremony_Letter_Attendance>
+	<TribalTrophies_AdorningCeremony_Letter_Label>Adorned: {TROPHY}</TribalTrophies_AdorningCeremony_Letter_Label>
+	<TribalTrophies_AdorningCeremony_Letter_Adorned>{PAWN_labelShort} has been ceremonially adorned with {TROPHY} by {PRESENTER_labelShort}.</TribalTrophies_AdorningCeremony_Letter_Adorned>
+	<TribalTrophies_AdorningCeremony_Letter_Attendance>{ATTENDEES} of the tribe attended the {QUALITY} adorning ceremony, and the deeds of {PAWN_labelShort} have been recognized.</TribalTrophies_AdorningCeremony_Letter_Attendance>
 	<TribalTrophies_AdorningCeremony_Letter_Tale>Tale of Honor: "{0}"</TribalTrophies_AdorningCeremony_Letter_Tale>
 
 	<!-- ===== Gizmos (trophy) ===== -->
@@ -50,7 +50,7 @@
 	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written>Written</TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written>
 	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip>{QUALITY} of adorning quality. The Tale of Honor adds weight and meaning to the trophy.</TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip>
 	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_None>None</TribalTrophies_AdorningCeremony_RitualDialog_Tale_None>
-	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip>No Tale of Honor written. You will be prompted during the adorning, or write one before the adorning for a {QUALITY} bonus to adorning quality.</TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip>
+	<TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip>No Tale of Honor written. Write one before the adorning for a {QUALITY} bonus to adorning quality.</TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip>
 
 	<!-- ===== TaleDialog (write the Tale of Honor) ===== -->
 
@@ -64,6 +64,10 @@
 	<TribalTrophies_AdorningCeremony_Inspect_AdornedOn>Adorned on: {DATE}</TribalTrophies_AdorningCeremony_Inspect_AdornedOn>
 	<TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality>Adorning ceremony quality: {QUALITY}</TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality>
 
+	<!-- ===== AdornedDialog (shown after the adorning) ===== -->
+
+	<TribalTrophies_AdorningCeremony_AdornedDialog_Title>{PAWN_labelShort} adorned with:</TribalTrophies_AdorningCeremony_AdornedDialog_Title>
+
 	<!-- ===== Common (shown in several places) ===== -->
 
 	<!-- gizmo label, begin ritual dialog title -->
@@ -71,7 +75,6 @@
 	<!-- gizmo disable reason, message when the ritual dialog is confirmed -->
 	<TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>An adorning ceremony for this trophy is already in progress.</TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>
 
-	<TribalTrophies_AdorningCeremony_AdornedDialog_Title>{PAWN_labelShort} adorned with:</TribalTrophies_AdorningCeremony_AdornedDialog_Title>
 	<!-- adorned dialog, trophy tab, inspect pane -->
 	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN_nameFull}</TribalTrophies_AdorningCeremony_Common_Honoring>
 	<!-- adorned dialog, trophy tab, inspect pane, pawn Trophies tab -->

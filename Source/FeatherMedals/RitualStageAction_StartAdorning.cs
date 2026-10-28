@@ -11,12 +11,12 @@ public class RitualStageAction_StartAdorning : RitualStageAction
         var awardee = ritual.PawnWithRole("awardee");
         if (leader != null && awardee != null)
         {
-            if (TribalTrophiesMod.Settings.PromptForCitationDuringRitual)
+            if (TribalTrophiesMod.Settings.PromptForTaleDuringCeremony)
                 if (ritual.selectedTarget.Thing is FeatherTrophy featherTrophy && !featherTrophy.HasCitation)
                     Find.WindowStack.Add(new Dialog_WriteCitation(featherTrophy));
                 
             Messages.Message(
-                "TribalTrophies_AdorningCeremony_Message_Started".Translate(leader.Named("LEADER"), awardee.Named("PAWN")),
+                "TribalTrophies_AdorningCeremony_Message_Started".Translate(leader.Named("PRESENTER"), awardee.Named("PAWN")),
                 leader, // This makes the message clickable to jump to the leader
                 MessageTypeDefOf.PositiveEvent
             );

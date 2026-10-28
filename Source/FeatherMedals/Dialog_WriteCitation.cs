@@ -1,4 +1,3 @@
-using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -19,7 +18,7 @@ public class Dialog_WriteCitation : Window
     {
         this._trophy = trophy;
         
-        if (TribalTrophiesMod.Settings.AutoGenerateCitation && !trophy.HasCitation)
+        if (TribalTrophiesMod.Settings.AutoSuggestTale && !trophy.HasCitation)
             this.draft = CitationUtil.GenerateForPlayer() ?? "";
         else
             this.draft = trophy.citation ?? "";

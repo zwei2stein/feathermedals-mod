@@ -5,18 +5,20 @@
 
 	<!-- ===== Common (shown in several places) ===== -->
 
-	<TribalTrophies_Trophy_Common_NeedsCeremony>Trophies can only be given through an adorning ceremony</TribalTrophies_Trophy_Common_NeedsCeremony>
+	<!-- wear and force-wear float menu reason, wear rejection message -->
+	<TribalTrophies_Trophy_Common_NeedsCeremony>This trophy can only be worn through an adorning ceremony</TribalTrophies_Trophy_Common_NeedsCeremony>
+	<!-- wear and force-wear float menu reason, wear rejection message -->
 	<TribalTrophies_Trophy_Common_OwnedByOther>This trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot wear it</TribalTrophies_Trophy_Common_OwnedByOther>
 	<TribalTrophies_Trophy_Common_Disassemble_Label>Disassemble {ITEM}</TribalTrophies_Trophy_Common_Disassemble_Label>
-	
+
 	<!-- ===== Trophies tab (pawn) ===== -->
 
 	<TribalTrophies_Trophy_PawnTab_Label>Trophies</TribalTrophies_Trophy_PawnTab_Label>
-	
+
 	<TribalTrophies_Trophy_PawnTab_AdornedByOnDate>{PRESENTER} on {DATE}</TribalTrophies_Trophy_PawnTab_AdornedByOnDate>
 	<TribalTrophies_Trophy_PawnTab_Locked_Tooltip>This trophy is locked and cannot be removed. Click to unlock.</TribalTrophies_Trophy_PawnTab_Locked_Tooltip>
 	<TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip>This trophy is unlocked and can be removed. Click to lock.</TribalTrophies_Trophy_PawnTab_Unlocked_Tooltip>
-	
+
 	<TribalTrophies_Trophy_PawnTab_Header_One>Worn trophy</TribalTrophies_Trophy_PawnTab_Header_One>
 	<TribalTrophies_Trophy_PawnTab_Header_Many>Worn trophies</TribalTrophies_Trophy_PawnTab_Header_Many>
 
@@ -26,12 +28,12 @@
 	<TribalTrophies_Trophy_TrophyTab_Label>Trophy</TribalTrophies_Trophy_TrophyTab_Label>
 
 	<!-- ===== Skulls tab (skull, skull belt) ===== -->
-	
+
 	<TribalTrophies_Trophy_SkullTab_Label>Skulls</TribalTrophies_Trophy_SkullTab_Label>
 	<TribalTrophies_Trophy_SkullTab_Header_One>Skull</TribalTrophies_Trophy_SkullTab_Header_One>
 	<TribalTrophies_Trophy_SkullTab_Header_Many>Skulls</TribalTrophies_Trophy_SkullTab_Header_Many>
 	<TribalTrophies_Trophy_SkullTab_SkullOf>Skull of {VICTIM}</TribalTrophies_Trophy_SkullTab_SkullOf>
-	
+
 	<!-- ===== Info card ===== -->
 
 	<TribalTrophies_Trophy_InfoCard_MayGrant>May grant</TribalTrophies_Trophy_InfoCard_MayGrant>

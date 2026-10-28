@@ -31,9 +31,9 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Visitors and raiders can come bearing old scalping scars.
     [*][spoiler]New violent scalping mental breaks.[/spoiler] Keep your colonists happy.
     [*][spoiler]New raid type, "Scalp Hunt".[/spoiler] Keep your neighbors happy too.
-    [*]Scalp belt item, wearable belt made of enemy scalps.
-    [*]Visitors and raiders can come wearing scalp belts of their own.
-    [*]Skull belt item, wearable belt made of skulls.
+    [*]Scalp belt item, wearable belt made of enemy scalps. Skull belt item, wearable belt made of skulls.
+    [*]Visitors and raiders can come wearing scalp and skull belts of their own. Factions with scalp-positive ideology can spawn with scalp poles.
+    [*][spoiler]Factions can ask player to hunt for their enemies scalps.[/spoiler] Target might not be fond of that idea themselves.
 [/list]
 
 [h3]Buildings[/h3]

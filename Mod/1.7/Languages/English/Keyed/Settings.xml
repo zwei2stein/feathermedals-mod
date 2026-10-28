@@ -10,14 +10,14 @@
     <TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Label>Lock trophies upon adorning</TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Label>
     <TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Tooltip>If enabled, a trophy is locked by default once a colonist is adorned with it, and cannot be removed. This can be toggled per trophy on the Trophies tab. This setting does not affect biocoding. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Tooltip>
 
-    <TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Label>Prompt for a Tale of Honor during ceremonies</TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Label>
-    <TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip>If enabled, a dialog will appear during adorning ceremonies to enter a Tale of Honor for the trophy, if it does not have one yet. If disabled, no dialog will appear, but a Tale of Honor can still be written before the ceremony starts. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip>
+    <TribalTrophies_Settings_Trophies_Ceremony_PromptForTaleDuringCeremony_Label>Prompt for a Tale of Honor during ceremonies</TribalTrophies_Settings_Trophies_Ceremony_PromptForTaleDuringCeremony_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_PromptForTaleDuringCeremony_Tooltip>If enabled, a dialog will appear during adorning ceremonies to write a Tale of Honor for the trophy, if it does not have one yet. If disabled, no dialog will appear, but a Tale of Honor can still be written before the ceremony starts. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_PromptForTaleDuringCeremony_Tooltip>
 
-    <TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label>Suggest a Tale of Honor</TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label>
-    <TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip>If enabled, a Tale of Honor will be suggested when the dialog opens and none has been written yet. Default: OFF</TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip>
+    <TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Label>Suggest a Tale of Honor</TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Tooltip>If enabled, a Tale of Honor will be suggested when the dialog opens and none has been written yet. Default: OFF</TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Tooltip>
 
     <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>Dynamic traits</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>
-    <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>If enabled, trophies can have a dynamic effect on traits such as gaining the elder trait or losing wimp when adorned. A ceremony changes at most one trait. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>
+    <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>If enabled, being adorned with a trophy can add or remove traits, such as gaining the elder trait or losing the wimp trait. A ceremony changes at most one trait. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>
 
     <TribalTrophies_Settings_Trophies_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Trophies_Npc_Label>
 
@@ -51,13 +51,13 @@
 
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>Pawns can spawn with scalp belts</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>Pawns from other factions whose ideoligion allows scalping can spawn wearing a scalp belt. More common in low-tech and merciless factions. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>
-    
+
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Label>Pawns can spawn with skull belts</TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Label>
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Tooltip>Pawns from other factions whose ideoligion desires skullspikes can spawn wearing a skull belt. More common in low-tech factions. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Tooltip>
-    
+
     <TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label>Scalp poles spawn in other factions' settlements</TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label>
     <TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Tooltip>Settlements of factions whose ideoligion allows scalping and whose tech level is Medieval or lower can generate with scalp poles and some scalps. Default: ON</TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Tooltip>
-    
+
     <TribalTrophies_Settings_Scalping_ScalpHunts_Label>Scalp hunts (raids)</TribalTrophies_Settings_Scalping_ScalpHunts_Label>
 
     <TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Label>Raiders can come for scalps</TribalTrophies_Settings_Scalping_ScalpHunts_Enabled_Label>
@@ -68,7 +68,7 @@
 
     <TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Label>Scalp hunters can arrive by drop pod</TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Label>
     <TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Tooltip>If enabled, scalp hunts by factions able to use drop pods can arrive by drop pod. Default: ON</TribalTrophies_Settings_Scalping_ScalpHunts_DropPods_Tooltip>
-    
+
     <TribalTrophies_Settings_Scalping_ScalpRequests_Label>Scalp requests (quests)</TribalTrophies_Settings_Scalping_ScalpRequests_Label>
 
     <TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Label>Factions can ask for scalps</TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Label>
@@ -79,7 +79,7 @@
 
     <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label>Maximum distance: {TILES} tiles</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Label>
     <TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>Only settlements closer than this to your colony can ask for scalps. If you have a gravship, this limit does not apply. Default: 32</TribalTrophies_Settings_Scalping_ScalpRequests_MaxDistance_Tooltip>
-    
+
     <!-- Display tab -->
 
     <TribalTrophies_Settings_Display_Label>Display</TribalTrophies_Settings_Display_Label>
@@ -94,10 +94,10 @@
     <TribalTrophies_Settings_Display_Worn_TrophyScale_Label>Worn size: {SIZE}</TribalTrophies_Settings_Display_Worn_TrophyScale_Label>
     <TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip>Size of trophies drawn on pawns. Default: 130%</TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip>
 
-    <TribalTrophies_Settings_Display_Worn_FanOut_Label>Fanning out: {BIAS}</TribalTrophies_Settings_Display_Worn_FanOut_Label>
-    <TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>Controls how much feathers fan out. 0% - straight up, 100% - fanned out. Default: 35%</TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>
+    <TribalTrophies_Settings_Display_Worn_FanOut_Label>Fanning out: {FANOUT}</TribalTrophies_Settings_Display_Worn_FanOut_Label>
+    <TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>Controls how much feathers fan out. 0%: straight up, 100%: fully fanned out. Default: 35%</TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>
 
-    <TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>Vertical offset: {Z}</TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>
+    <TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>Vertical offset: {OFFSET}</TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>
     <TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip>Moves trophies higher or lower. Default: 0.1</TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip>
 
     <TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label>Displayed trophies: {COUNT}</TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label>

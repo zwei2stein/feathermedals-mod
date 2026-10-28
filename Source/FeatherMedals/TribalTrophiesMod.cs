@@ -73,16 +73,16 @@ namespace FeatherMedals
                  "TribalTrophies_Settings_Trophies_Ceremony_LockTrophyUponAdorning_Tooltip".Translate()
             );
             listingStandard.CheckboxLabeled(
-                 "TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Label".Translate(),
-                ref Settings.PromptForCitationDuringRitual,
-                 "TribalTrophies_Settings_Trophies_Ceremony_PromptForCitationDuringRitual_Tooltip".Translate()
+                 "TribalTrophies_Settings_Trophies_Ceremony_PromptForTaleDuringCeremony_Label".Translate(),
+                ref Settings.PromptForTaleDuringCeremony,
+                 "TribalTrophies_Settings_Trophies_Ceremony_PromptForTaleDuringCeremony_Tooltip".Translate()
             );
-            if (Settings.PromptForCitationDuringRitual)
+            if (Settings.PromptForTaleDuringCeremony)
             {
                 listingStandard.CheckboxLabeled(
-                    "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Label".Translate(),
-                    ref Settings.AutoGenerateCitation,
-                    "TribalTrophies_Settings_Trophies_Ceremony_AutoGenerateCitation_Tooltip".Translate()
+                    "TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Label".Translate(),
+                    ref Settings.AutoSuggestTale,
+                    "TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Tooltip".Translate()
                 );
             }
             listingStandard.CheckboxLabeled(
@@ -324,12 +324,12 @@ namespace FeatherMedals
 
                 Settings.FanOut = listingStandard.SliderLabeled(
                     "TribalTrophies_Settings_Display_Worn_FanOut_Label".Translate(Settings.FanOut.ToStringPercent()
-                        .Named("BIAS")),
+                        .Named("FANOUT")),
                     Settings.FanOut, 0f, 1f, 0.5f,
                     "TribalTrophies_Settings_Display_Worn_FanOut_Tooltip".Translate());
 
                 Settings.VerticalOffset = listingStandard.SliderLabeled(
-                    "TribalTrophies_Settings_Display_Worn_VerticalOffset_Label".Translate(Settings.VerticalOffset.ToStringDecimalIfSmall().Named("Z")),
+                    "TribalTrophies_Settings_Display_Worn_VerticalOffset_Label".Translate(Settings.VerticalOffset.ToStringDecimalIfSmall().Named("OFFSET")),
                     Settings.VerticalOffset, -0.2f, 0.2f, 0.5f,
                     "TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip".Translate());
 
@@ -357,8 +357,8 @@ namespace FeatherMedals
         public bool LockTrophyUponAdorning = true;
         public bool DrawTrophiesOnPawns = true;
         public bool TrophyDynamicTraits = true;
-        public bool PromptForCitationDuringRitual = true;
-        public bool AutoGenerateCitation = false;
+        public bool PromptForTaleDuringCeremony = true;
+        public bool AutoSuggestTale = false;
         public float TrophyScale = 1.3f;
         public float FanOut = 0.35f;  // 0 = all upright, 1 = fully radial
         public float VerticalOffset = 0.1f;
@@ -387,8 +387,8 @@ namespace FeatherMedals
             Scribe_Values.Look(ref LockTrophyUponAdorning, "LockTrophyUponAdorning", true);
             Scribe_Values.Look(ref DrawTrophiesOnPawns, "DrawTrophiesOnPawns", true);
             Scribe_Values.Look(ref MaxDisplayedTrophies, "MaxDisplayedTrophies", 9);
-            Scribe_Values.Look(ref PromptForCitationDuringRitual, "PromptForCitationDuringRitual", true);
-            Scribe_Values.Look(ref AutoGenerateCitation, "AutoGenerateCitation", false);
+            Scribe_Values.Look(ref PromptForTaleDuringCeremony, "PromptForTaleDuringCeremony", true);
+            Scribe_Values.Look(ref AutoSuggestTale, "AutoSuggestTale", false);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScale, "TrophyScale", 1.3f);
             Scribe_Values.Look(ref FanOut, "FanOut", 0.35f);
