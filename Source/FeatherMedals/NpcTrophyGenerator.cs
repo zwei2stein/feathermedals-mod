@@ -211,7 +211,7 @@ public static class NpcTrophyGenerator
             }
 
             // oldest first, so the newest one is the last to be worn and the one that grants the Decorated trait
-            made.Sort((a, b) => a.awarded.tick.CompareTo(b.awarded.tick));
+            made.Sort((a, b) => a.adorned.tick.CompareTo(b.adorned.tick));
 
             FeatherTrophy newest = null;
             foreach (var featherTrophy in made)
@@ -242,12 +242,12 @@ public static class NpcTrophyGenerator
             return null;
         }
 
-        featherTrophy.awarded = NpcHistoryUtility.RandomPastEvent(pawn.Faction, pawn);
+        featherTrophy.adorned = NpcHistoryUtility.RandomPastEvent(pawn.Faction, pawn);
         var presenter = pool.Count > 0 ? pool.RandomElement() : fallbackPresenter;
-        featherTrophy.awardedBy = presenter != null ? new RememberedPawn(presenter) : null;
+        featherTrophy.adornedBy = presenter != null ? new RememberedPawn(presenter) : null;
         featherTrophy.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(featherTrophy, pawn, leader);
-        featherTrophy.citation = CitationUtil.Generate(pawn.Faction, pawn, featherTrophy.awarded.tile);
+        featherTrophy.tale = CitationUtil.Generate(pawn.Faction, pawn, featherTrophy.adorned.tile);
         return featherTrophy;
     }
 

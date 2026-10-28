@@ -273,7 +273,7 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
             positive = featherTrophy.HasCitation,
             present = true,
             toolTip = featherTrophy.HasCitation 
-                ? $"\"{featherTrophy.citation}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
+                ? $"\"{featherTrophy.tale}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
                 : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
             priority = 30f
         };

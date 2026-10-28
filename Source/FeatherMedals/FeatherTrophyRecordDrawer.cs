@@ -19,7 +19,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         this.verbose = verbose;
     }
 
-    private bool HasAwardInfo() => _trophy.awardedBy != null || _trophy.awarded != null;
+    private bool HasAwardInfo() => _trophy.adornedBy != null || _trophy.adorned != null;
 
     private string GetHonoringLine()
     {
@@ -62,7 +62,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             height += Text.CalcHeight(honoring, textWidth) + TrophyUIStyle.RowLineGap;
 
         if (_trophy.HasCitation)
-            height += FeatherTrophyUI.CitationHeight(_trophy.citation, textWidth);
+            height += FeatherTrophyUI.CitationHeight(_trophy.tale, textWidth);
         else
             height += TrophyUIStyle.DescriptionLineHeight + TrophyUIStyle.RowLineGap;
 
@@ -173,7 +173,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         Text.Font = GameFont.Tiny;
         if (_trophy.HasCitation)
         {
-            FeatherTrophyUI.DrawCitation(_trophy.citation, nameRect, ref descBottom);
+            FeatherTrophyUI.DrawCitation(_trophy.tale, nameRect, ref descBottom);
         }
         else
         {

@@ -12,7 +12,7 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
     private readonly FeatherTrophy _trophy;
     private readonly string citation;
 
-    public FeatherTrophyDetailDrawer(FeatherTrophy trophy) : this(trophy, trophy.citation)
+    public FeatherTrophyDetailDrawer(FeatherTrophy trophy) : this(trophy, trophy.tale)
     {
     }
 

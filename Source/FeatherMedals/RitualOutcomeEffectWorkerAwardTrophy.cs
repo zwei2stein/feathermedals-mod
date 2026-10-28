@@ -80,10 +80,10 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             return;
         }
         
-        featherTrophy.awardedBy = new RememberedPawn(presenter);
-        featherTrophy.awarded = EventTime.Now(jobRitual.Map);
+        featherTrophy.adornedBy = new RememberedPawn(presenter);
+        featherTrophy.adorned = EventTime.Now(jobRitual.Map);
 
-        TrophyCeremonyLedger.Instance?.Record(featherTrophy.awarded.tick);
+        TrophyCeremonyLedger.Instance?.Record(featherTrophy.adorned.tick);
 
         var attendees = AdorningQuality.CountAttendees(totalPresence.Keys, awardee);
         var totalColonists = AdorningQuality.CountPossibleAttendees(jobRitual.Map, awardee);
@@ -134,7 +134,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         if (featherTrophy.HasCitation)
         {
             letterText += "\n\n";
-            letterText += "TribalTrophies_AdorningCeremony_Letter_Tale".Translate(featherTrophy.citation);
+            letterText += "TribalTrophies_AdorningCeremony_Letter_Tale".Translate(featherTrophy.tale);
         }
         
         var traitText = featherTrophy.GetTraitChangeText();

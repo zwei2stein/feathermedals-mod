@@ -16,7 +16,7 @@ public class ITab_TrophyRecord : ITab_TrophyRows
             return rows;
 
         // awarded: the record of its ceremony; not yet awarded: what it may do
-        if (featherTrophy.awarded != null)
+        if (featherTrophy.adorned != null)
             rows.Add(new FeatherTrophyRecordDrawer(featherTrophy, verbose: true));
         else
             rows.Add(new FeatherTrophyDetailDrawer(featherTrophy));

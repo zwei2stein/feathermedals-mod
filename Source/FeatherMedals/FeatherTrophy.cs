@@ -12,11 +12,11 @@ namespace FeatherMedals
         private Pawn AdornedPawn => BiocodeComp?.CodedPawn;
         private string cachedLabelPawnName;
             
-        public string citation;
+        public string tale;
         public int ceremonyQuality = -1; // -1 = not yet awarded
-        public RememberedPawn awardedBy;
+        public RememberedPawn adornedBy;
         
-        public EventTime awarded; // null = not yet awarded
+        public EventTime adorned; // null = not yet awarded
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
@@ -27,11 +27,11 @@ namespace FeatherMedals
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref citation, "citation");
+            Scribe_Values.Look(ref tale, "tale");
             Scribe_Values.Look(ref ceremonyQuality, "ceremonyQuality", -1);
-            Scribe_Deep.Look(ref awardedBy, "awardedBy");
+            Scribe_Deep.Look(ref adornedBy, "adornedBy");
             
-            Scribe_Deep.Look(ref awarded, "awarded");
+            Scribe_Deep.Look(ref adorned, "adorned");
 
             Scribe_Defs.Look(ref addedTrait, "addedTrait");
             Scribe_Values.Look(ref addedTraitDegree, "addedTraitDegree", 0);
@@ -45,7 +45,7 @@ namespace FeatherMedals
             Find.WindowStack.Add(new Dialog_WriteCitation(this));
         }
 
-        public bool HasCitation => !citation.NullOrEmpty();
+        public bool HasCitation => !tale.NullOrEmpty();
 
         public override string LabelNoCount
         {
@@ -221,14 +221,14 @@ namespace FeatherMedals
 
         public string GetAwardedByLabel()
         {
-            if (awardedBy == null)
+            if (adornedBy == null)
                 return null;
-            return "TribalTrophies_AdorningCeremony_Common_AdornedBy".Translate(awardedBy.Name.Named("PAWN"));
+            return "TribalTrophies_AdorningCeremony_Common_AdornedBy".Translate(adornedBy.Name.Named("PAWN"));
         }
         
         public string GetAwardedDateLabel()
         {
-            return awarded?.DateLabel;
+            return adorned?.DateLabel;
         }
 
         public string GetAddedTraitLabel(bool terse = false)
@@ -329,7 +329,7 @@ namespace FeatherMedals
             }
 
             // Awarded by
-            if (awardedBy != null)
+            if (adornedBy != null)
             {
                 if (sb.Length > 0) sb.AppendLine();
                 sb.Append(GetAwardedByLabel());
@@ -356,7 +356,7 @@ namespace FeatherMedals
             {
                 if (sb.Length > 0) sb.AppendLine();
                 sb.Append('"');
-                sb.Append(citation);
+                sb.Append(tale);
                 sb.Append('"');
             }
 

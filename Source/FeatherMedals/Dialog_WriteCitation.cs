@@ -21,7 +21,7 @@ public class Dialog_WriteCitation : Window
         if (TribalTrophiesMod.Settings.AutoSuggestTale && !trophy.HasCitation)
             this.draft = CitationUtil.GenerateForPlayer() ?? "";
         else
-            this.draft = trophy.citation ?? "";
+            this.draft = trophy.tale ?? "";
         
         forcePause = true;
         doCloseX = true;
@@ -99,7 +99,7 @@ public class Dialog_WriteCitation : Window
 
         if (Widgets.ButtonText(new Rect(rect.x, btnY, btnWidth, BUTTON_HEIGHT), "Confirm".Translate()))
         {
-            _trophy.citation = draft.NullOrEmpty() ? null : draft.Trim();
+            _trophy.tale = draft.NullOrEmpty() ? null : draft.Trim();
             Close();
         }
 
