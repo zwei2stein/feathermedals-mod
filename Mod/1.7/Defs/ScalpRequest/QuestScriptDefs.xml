@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+    
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_AcceptedScalpRequest</defName>
+        <label>accepted a bounty to hunt their scalps</label>
+    </HistoryEventDef>
 
     <!-- vanilla TradeRequest. -->
     <QuestScriptDef>

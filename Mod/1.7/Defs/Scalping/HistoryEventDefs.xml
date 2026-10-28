@@ -31,9 +31,4 @@
         <label>saw a scalp belt</label>
     </HistoryEventDef>
 
-    <HistoryEventDef>
-        <defName>TribalTrophies_Scalping_HistoryEvent_AcceptedScalpRequest</defName>
-        <label>accepted a bounty to hunt their scalps</label>
-    </HistoryEventDef>
-
 </Defs>
