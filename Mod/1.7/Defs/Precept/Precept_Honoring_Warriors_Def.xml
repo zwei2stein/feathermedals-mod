@@ -18,7 +18,7 @@
     <PreceptDef ParentName="TribalTrophies_Issue_HonoringWarriors_Base">
         <defName>TribalTrophies_Issue_HonoringWarriors_Forbidden</defName>
         <label>forbidden</label>
-        <description>No one may be adorned with trophies that elevate them above others or lead an adorning ceremony, and the people resent those who wear trophies.</description>
+        <description>No one may be adorned with trophies that elevate them above others, nor lead an adorning ceremony. The people resent those who wear trophies.</description>
         <impact>High</impact>
         <displayOrderInIssue>1</displayOrderInIssue>
         <defaultSelectionWeight>0.1</defaultSelectionWeight>

@@ -206,7 +206,7 @@
                 <label>wearing a disapproved trophy</label>
                 <labelAbstract>wearing a disapproved trophy</labelAbstract>
                 <baseMoodEffect>-5</baseMoodEffect>
-                <description>I am no better than my peers. I wear a trophy granted to me, but I disapprove of it.</description>
+                <description>I am no better than my peers. I was adorned with a trophy, but I disapprove of it.</description>
             </li>
         </stages>
     </ThoughtDef>

@@ -252,7 +252,7 @@
 	<ThingDef ParentName="TribalTrophies_Feather_BaseSimple">
 		<defName>TribalTrophies_Trophy_Feather_SlitThroat</defName>
 		<label>feather: slit throat of an enemy</label>
-		<description>Feather boasting slitting the throat of an enemy.</description>
+		<description>Feather boasting the slitting of an enemy's throat.</description>
 		<graphicData>
 			<texPath>Things/Feathers/SlitThroat</texPath>
 		</graphicData>
@@ -322,7 +322,7 @@
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
 		<defName>TribalTrophies_Trophy_Feather_TouchedAnEnemy5Times</defName>
 		<label>feather: touched an enemy five times</label>
-		<description>Feather boasting five coups at distinct times. A coup is touching an enemy in combat without being hurt.</description>
+		<description>Feather boasting five coups on separate occasions. A coup is touching an enemy in combat without being hurt.</description>
 		<graphicData>
 			<texPath>Things/Feathers/TouchedAnEnemy5Times</texPath>
 		</graphicData>
@@ -359,7 +359,7 @@
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
 		<defName>TribalTrophies_Trophy_Feather_Struck4BlowsInCombat</defName>
 		<label>feather: struck an enemy four times in combat</label>
-		<description>Feather boasting striking an enemy four times in combat.</description>
+		<description>Feather boasting four blows struck against an enemy in combat.</description>
 		<graphicData>
 			<texPath>Things/Feathers/Struck4BlowsInCombat</texPath>
 		</graphicData>
@@ -438,7 +438,7 @@
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
 		<defName>TribalTrophies_Trophy_Feather_Protection</defName>
 		<label>feather: protection</label>
-		<description>Feather boasting protection by archotech spirits.</description>
+		<description>Feather boasting the protection of archotech spirits.</description>
 		<graphicData>
 			<texPath>Things/Feathers/Protection</texPath>
 		</graphicData>

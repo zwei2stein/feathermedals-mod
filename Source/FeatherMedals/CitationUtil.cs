@@ -10,7 +10,7 @@ public static class CitationUtil
     
     public static string Generate(Faction faction, Pawn pawn = null, PlanetTile tile = default)
     {
-        var rulePack = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_NpcCitation;
+        var rulePack = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor;
         if (rulePack == null)
             return null;
 
@@ -20,7 +20,7 @@ public static class CitationUtil
         request.Rules.Add(new Rule_String("settlement_name", SettlementName(faction, tile)));
         request.Rules.Add(new Rule_String("pawn_name", PawnName(pawn)));
         request.Rules.Add(new Rule_String("pawn_adj", PawnPossessive(pawn)));
-        return GrammarResolver.Resolve("r_root", request, "TribalTrophies_Trophy_Feather_Adorning_NpcCitation").CapitalizeFirst();
+        return GrammarResolver.Resolve("r_root", request, "TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor").CapitalizeFirst();
     }
 
     // Citation dialog: player faction, colony on the map being looked at

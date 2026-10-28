@@ -5,7 +5,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>TribalTrophies_Trophy_Feather_Precursor_PristineFeather</defName>
         <label>pristine feather</label>
-        <description>A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the pelts of feathered animals or obtained by butchering them.</description>
+        <description>A pristine feather, fit to be turned into a warrior's trophy by a skilled crafter. Can be refined from the leather of feathered animals or obtained by butchering them.</description>
         <graphicData>
             <texPath>Things/Feathers/Pristine</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
@@ -30,5 +30,5 @@
         <tradeability>All</tradeability>
         <techLevel>Neolithic</techLevel>
     </ThingDef>
-    
+
 </Defs>

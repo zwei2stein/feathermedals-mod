@@ -141,7 +141,7 @@
 	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_SimpleRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_SlitThroat</defName>
 		<label>feather: slit throat of an enemy</label>
-		<jobString>Crafting a feather boasting slitting the throat of an enemy.</jobString>
+		<jobString>Crafting a feather boasting the slitting of an enemy's throat.</jobString>
 		<products>
 			<TribalTrophies_Trophy_Feather_SlitThroat>1</TribalTrophies_Trophy_Feather_SlitThroat>
 		</products>
@@ -159,7 +159,7 @@
 	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_OrnateRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_TouchedAnEnemy5Times</defName>
 		<label>feather: touched an enemy five times</label>
-		<jobString>Crafting a feather boasting touching an enemy in combat without being hurt five distinct times.</jobString>
+		<jobString>Crafting a feather boasting five coups on separate occasions.</jobString>
 		<products>
 			<TribalTrophies_Trophy_Feather_TouchedAnEnemy5Times>1</TribalTrophies_Trophy_Feather_TouchedAnEnemy5Times>
 		</products>
@@ -168,7 +168,7 @@
 	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_OrnateRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_Struck4BlowsInCombat</defName>
 		<label>feather: struck an enemy four times in combat</label>
-		<jobString>Crafting a feather boasting striking an enemy four times in combat.</jobString>
+		<jobString>Crafting a feather boasting four blows struck against an enemy in combat.</jobString>
 		<products>
 			<TribalTrophies_Trophy_Feather_Struck4BlowsInCombat>1</TribalTrophies_Trophy_Feather_Struck4BlowsInCombat>
 		</products>
@@ -188,7 +188,7 @@
 	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_OrnateRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_Protection</defName>
 		<label>feather: protection</label>
-		<jobString>Crafting a feather boasting protection by archotech spirits.</jobString>
+		<jobString>Crafting a feather boasting the protection of archotech spirits.</jobString>
 		<products>
 			<TribalTrophies_Trophy_Feather_Protection>1</TribalTrophies_Trophy_Feather_Protection>
 		</products>

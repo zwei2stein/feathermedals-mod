@@ -35,7 +35,7 @@ namespace FeatherMedals
 
         public static IssueDef TribalTrophies_Issue_HonoringWarriors;
 
-        public static RulePackDef TribalTrophies_Trophy_Feather_Adorning_NpcCitation;
+        public static RulePackDef TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor;
 
         public static BackstoryDef TribalTrophies_Backstory_DisgracedElder;
         public static BackstoryDef TribalTrophies_Backstory_HonoredElder;

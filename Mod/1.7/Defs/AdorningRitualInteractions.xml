@@ -61,20 +61,25 @@
 		<rulePack>
 			<rulesStrings>
 				<li>tale_noun->[PRESENTER_nameDef] adorning [AWARDEE_nameDef] with a trophy</li>
-				<li>tale_noun->[AWARDEE_nameDef] receiving a trophy from [PRESENTER_nameDef]</li>
+				<li>tale_noun->[AWARDEE_nameDef] being adorned with a trophy by [PRESENTER_nameDef]</li>
 				<li>tale_noun->the honoring of [AWARDEE_nameDef]</li>
 
-				<li>image->[PRESENTER_nameFull] is standing firm, proudly adorning [AWARDEE_nameFull]'s head. [circumstance_group]</li>
-				<li>image->[PRESENTER_nameFull] is saluting [AWARDEE_nameFull], who is wearing a newly received trophy. [circumstance_group]</li>
-				<li>image->[AWARDEE_nameFull] looks at [PRESENTER_nameDef] while being adorned with a trophy. [circumstance_group]</li>
+				<li>image->[PRESENTER_nameFull] standing firm and proudly adorning [AWARDEE_nameFull] with a trophy [circumstance_group]</li>
+				<li>image->[PRESENTER_nameFull] saluting [AWARDEE_nameFull], who wears a new trophy, [circumstance_group]</li>
+				<li>image->[AWARDEE_nameFull] looking at [PRESENTER_nameDef] while being adorned with a trophy [circumstance_group]</li>
+				<li>image->[AWARDEE_nameFull] accepting a trophy from [PRESENTER_nameDef] [circumstance_group]</li>
 
-				<li>circumstance_phrase->The solemn tribe stands straight.</li>
-				<li>circumstance_phrase->The tribe watches in silent awe.</li>
-				<li>circumstance_phrase->The feather trophy is iridescent.</li>
-				<li>circumstance_phrase->A faint glow appears around them.</li>
+				<li>circumstance_phrase->as the solemn tribe stands straight</li>
+				<li>circumstance_phrase->while the tribe watches in silent awe</li>
+				<li>circumstance_phrase->while the tribe cheers</li>
+				<li>circumstance_phrase->as the feather shimmers with iridescence</li>
+				<li>circumstance_phrase->as a faint glow appears around them</li>
 
 				<li>desc_sentence->[AWARDEE_nameDef] looks incredibly proud.</li>
+				<li>desc_sentence->[AWARDEE_nameDef] looks humbled by this experience.</li>
+				<li>desc_sentence->[AWARDEE_nameDef]'s dignity is inspiring.</li>
 				<li>desc_sentence->[PRESENTER_nameDef] wears a solemn expression of respect.</li>
+				<li>desc_sentence->[PRESENTER_nameDef] regards [AWARDEE_nameDef] with pride.</li>
 			</rulesStrings>
 		</rulePack>
 	</TaleDef>

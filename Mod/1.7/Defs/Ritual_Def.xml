@@ -17,7 +17,7 @@
 		<defName>TribalTrophies_AdorningCeremonyPrecept</defName>
 		<issue>Ritual</issue>
 		<label>adorning ceremony</label>
-		<description>An official ceremony to adorn a deserving warrior with a trophy.</description>
+		<description>A solemn ceremony to adorn a deserving warrior with a trophy.</description>
 		<preceptClass>Precept_Ritual</preceptClass>
 		<ritualPatternBase>TribalTrophies_AdorningCeremony_Pattern</ritualPatternBase>
 		<visible>false</visible>

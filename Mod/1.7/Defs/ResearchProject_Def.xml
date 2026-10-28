@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
+
   <ResearchProjectDef>
     <defName>TribalTrophies_TribalWarriorHonor</defName>
     <label>warrior honor</label>
@@ -24,7 +24,7 @@
         <li>subject_story->participated in battle, touched an enemy and was victorious without being injured</li>
         <li>subject_story->took the scalp of a hated enemy as a trophy</li>
         <li>subject_story->was wounded in combat many times, earning the respect of tribe members</li>
-        <li>subject_story->observed a ritual where archers received feathers to honor their deeds</li>
+        <li>subject_story->observed a ritual where archers were adorned with feathers for their deeds</li>
 
         <li>subject_gerund->reciting Tales of Honor</li>
         <li>subject_gerund->honoring warriors</li>
