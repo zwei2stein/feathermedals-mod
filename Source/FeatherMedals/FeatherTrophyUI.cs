@@ -23,23 +23,22 @@ public static class FeatherTrophyUI
         return AdorningQuality.GetQualityLabel(stage).CapitalizeFirst().Colorize(CeremonyQualityColor(stage));
     }
 
-    public static float CitationHeight(string citation, float width)
+    public static float TaleHeight(string tale, float width)
     {
-        return Text.CalcHeight($"\"{citation}\"", width - TrophyUIStyle.CitationSideMargin * 2f) + TrophyUIStyle.CitationGap;
+        return Text.CalcHeight($"\"{tale}\"", width - TrophyUIStyle.TaleSideMargin * 2f) + TrophyUIStyle.TaleGap;
     }
 
-    public static void DrawCitation(string citation, Rect rect, ref float curY)
+    public static void DrawTale(string tale, Rect rect, ref float curY)
     {
         var previousAnchor = Text.Anchor;
         GUI.color = TrophyUIStyle.GoldColor;
         Text.Anchor = TextAnchor.MiddleCenter;
-        var citationText = $"\"{citation}\"";
-        var citationHeight = Text.CalcHeight(citationText, rect.width - TrophyUIStyle.CitationSideMargin * 2f);
-        var citationRect = new Rect(rect.x + TrophyUIStyle.CitationSideMargin, curY, rect.width - TrophyUIStyle.CitationSideMargin * 2f, citationHeight);
-        Widgets.Label(citationRect, citationText);
+        var taleText = $"\"{tale}\"";
+        var taleHeight = Text.CalcHeight(taleText, rect.width - TrophyUIStyle.TaleSideMargin * 2f);
+        Widgets.Label(new Rect(rect.x + TrophyUIStyle.TaleSideMargin, curY, rect.width - TrophyUIStyle.TaleSideMargin * 2f, taleHeight), taleText);
         GUI.color = Color.white;
         Text.Anchor = previousAnchor;
-        curY += citationHeight + TrophyUIStyle.CitationGap;
+        curY += taleHeight + TrophyUIStyle.TaleGap;
     }
 
     public static void DrawTraitChangeSummary(FeatherTrophy featherTrophy, float textX, Rect rect, ref float curY)

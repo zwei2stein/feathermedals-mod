@@ -9,7 +9,7 @@
 			<li Class="FeatherMedals.RitualOutcomeComp_TrophyQuality"/>
 			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyAttendance"/>
 			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyRoom"/>
-			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyCitation"/>
+			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyTale"/>
 		</comps>
 	</RitualOutcomeEffectDef>
 

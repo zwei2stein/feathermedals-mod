@@ -5,7 +5,7 @@ using Verse.Grammar;
 
 namespace FeatherMedals;
 
-public static class CitationUtil
+public static class TaleUtil
 {
     
     public static string Generate(Faction faction, Pawn pawn = null, PlanetTile tile = default)
@@ -23,7 +23,7 @@ public static class CitationUtil
         return GrammarResolver.Resolve("r_root", request, "TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor").CapitalizeFirst();
     }
 
-    // Citation dialog: player faction, colony on the map being looked at
+    // Tale dialog: player faction, colony on the map being looked at
     public static string GenerateForPlayer()
     {
         var map = Find.CurrentMap;

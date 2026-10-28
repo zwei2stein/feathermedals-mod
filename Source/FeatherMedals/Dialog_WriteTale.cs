@@ -3,7 +3,7 @@ using Verse;
 
 namespace FeatherMedals;
 
-public class Dialog_WriteCitation : Window
+public class Dialog_WriteTale : Window
 {
     private readonly FeatherTrophy _trophy;
     private string draft;
@@ -14,12 +14,12 @@ public class Dialog_WriteCitation : Window
 
     private Vector2 trophyScrollPosition;
 
-    public Dialog_WriteCitation(FeatherTrophy trophy)
+    public Dialog_WriteTale(FeatherTrophy trophy)
     {
         this._trophy = trophy;
         
-        if (TribalTrophiesMod.Settings.AutoSuggestTale && !trophy.HasCitation)
-            this.draft = CitationUtil.GenerateForPlayer() ?? "";
+        if (TribalTrophiesMod.Settings.AutoSuggestTale && !trophy.HasTale)
+            this.draft = TaleUtil.GenerateForPlayer() ?? "";
         else
             this.draft = trophy.tale ?? "";
         
@@ -105,7 +105,7 @@ public class Dialog_WriteCitation : Window
 
         if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Suggest".Translate()))
         {
-            draft = CitationUtil.GenerateForPlayer() ?? draft;
+            draft = TaleUtil.GenerateForPlayer() ?? draft;
         }
 
         if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Clear".Translate()))

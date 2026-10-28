@@ -4,7 +4,7 @@ using Verse;
 namespace FeatherMedals;
 
 // One worn/already awarded feather trophy
-// with citation
+// with tale
 // with trait change that happened
 // with ceremony that has already happened related info
 public class FeatherTrophyRecordDrawer : ITrophyRecordRow
@@ -61,8 +61,8 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         if (honoring != null)
             height += Text.CalcHeight(honoring, textWidth) + TrophyUIStyle.RowLineGap;
 
-        if (_trophy.HasCitation)
-            height += FeatherTrophyUI.CitationHeight(_trophy.tale, textWidth);
+        if (_trophy.HasTale)
+            height += FeatherTrophyUI.TaleHeight(_trophy.tale, textWidth);
         else
             height += TrophyUIStyle.DescriptionLineHeight + TrophyUIStyle.RowLineGap;
 
@@ -169,11 +169,10 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             descBottom = honoringRect.yMax;
         }
 
-        // Citation
         Text.Font = GameFont.Tiny;
-        if (_trophy.HasCitation)
+        if (_trophy.HasTale)
         {
-            FeatherTrophyUI.DrawCitation(_trophy.tale, nameRect, ref descBottom);
+            FeatherTrophyUI.DrawTale(_trophy.tale, nameRect, ref descBottom);
         }
         else
         {

@@ -9,7 +9,7 @@ public static class AdorningQuality
 {
     public const float AttendanceWeight = 0.4f;
     public const float RoomWeight = 0.4f;
-    public const float CitationWeight = 0.2f;
+    public const float TaleWeight = 0.2f;
     private const float TrophyQualityWeightStep = 0.1f;
     private const float MaxRoomImpressiveness = 170f;
     
@@ -23,7 +23,7 @@ public static class AdorningQuality
             : 0f;
     }
     
-    public static float GetQualityScore(int attendees, int totalColonists, float roomImpressiveness, bool hasCitation, float trophyQualityBonus)
+    public static float GetQualityScore(int attendees, int totalColonists, float roomImpressiveness, bool hasTale, float trophyQualityBonus)
     {
         // Attendance: 0-1 based on ratio, capped at 1.0
         var attendanceScore = GetAttendanceScore(attendees, totalColonists);
@@ -32,13 +32,12 @@ public static class AdorningQuality
         // Somewhat impressive (25) = ~0.15, Very impressive (50) = ~0.29
         // Extremely impressive (85) = ~0.5, Unbelievably impressive (170) = 1.0
         var roomScore = GetRoomScore(roomImpressiveness);
-
-        // Citation: binary
-        var citationScore = GetCitationScore(hasCitation);
+        
+        var taleScore = GetTaleScore(hasTale);
 
         return attendanceScore
                + roomScore
-               + citationScore
+               + taleScore
                + trophyQualityBonus;
     }
 
@@ -55,8 +54,8 @@ public static class AdorningQuality
     public static float GetRoomScore(float roomImpressiveness)
         => Mathf.Clamp01(roomImpressiveness / MaxRoomImpressiveness) * RoomWeight;
 
-    public static float GetCitationScore(bool hasCitation)
-        => hasCitation ? CitationWeight : 0f;
+    public static float GetTaleScore(bool hasTale)
+        => hasTale ? TaleWeight : 0f;
 
     // spectators + presenter
     public static int CountAttendees(IEnumerable<Pawn> present, Pawn awardee)

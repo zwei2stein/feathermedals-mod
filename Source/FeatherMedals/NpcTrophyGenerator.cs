@@ -247,7 +247,7 @@ public static class NpcTrophyGenerator
         featherTrophy.adornedBy = presenter != null ? new RememberedPawn(presenter) : null;
         featherTrophy.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(featherTrophy, pawn, leader);
-        featherTrophy.tale = CitationUtil.Generate(pawn.Faction, pawn, featherTrophy.adorned.tile);
+        featherTrophy.tale = TaleUtil.Generate(pawn.Faction, pawn, featherTrophy.adorned.tile);
         return featherTrophy;
     }
 

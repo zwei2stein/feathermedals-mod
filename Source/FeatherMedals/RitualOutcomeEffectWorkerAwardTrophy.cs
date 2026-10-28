@@ -94,7 +94,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
             attendees,
             totalColonists,
             roomImpressiveness,
-            featherTrophy.HasCitation,
+            featherTrophy.HasTale,
             trophyQualityBonus);
         
         var stageIndex = AdorningQuality.GetStageIndex(qualityScore);
@@ -131,7 +131,7 @@ public class RitualOutcomeEffectWorkerAwardTrophy : RitualOutcomeEffectWorker
         letterText += "TribalTrophies_AdorningCeremony_Letter_Attendance"
             .Translate(awardee.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );
             
-        if (featherTrophy.HasCitation)
+        if (featherTrophy.HasTale)
         {
             letterText += "\n\n";
             letterText += "TribalTrophies_AdorningCeremony_Letter_Tale".Translate(featherTrophy.tale);

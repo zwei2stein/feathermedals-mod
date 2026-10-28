@@ -232,7 +232,7 @@ public static class PatchDrawFeatherTrophyInRitual
     }
 }
 
-public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
+public class RitualOutcomeComp_CeremonyTale : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
         ritual?.selectedTarget.Thing is FeatherTrophy;
@@ -244,7 +244,7 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         if (ritual?.selectedTarget.Thing is not FeatherTrophy featherTrophy)
             return 0f;
         
-        return AdorningQuality.GetCitationScore(featherTrophy.HasCitation);
+        return AdorningQuality.GetTaleScore(featherTrophy.HasTale);
     }
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
@@ -262,19 +262,19 @@ public class RitualOutcomeComp_CeremonyCitation : RitualOutcomeComp
         if (ritualTarget.Thing is not FeatherTrophy featherTrophy)
             return null;
 
-        var contribution = AdorningQuality.GetCitationScore(featherTrophy.HasCitation);
+        var contribution = AdorningQuality.GetTaleScore(featherTrophy.HasTale);
         
         return new QualityFactor
         {
             label = "TribalTrophies_AdorningCeremony_RitualDialog_Tale".Translate(),
-            count = featherTrophy.HasCitation ? "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written".Translate() : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None".Translate(),
+            count = featherTrophy.HasTale ? "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written".Translate() : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None".Translate(),
             qualityChange = $"+{contribution.ToStringPercent()}",
             quality = contribution,
-            positive = featherTrophy.HasCitation,
+            positive = featherTrophy.HasTale,
             present = true,
-            toolTip = featherTrophy.HasCitation 
-                ? $"\"{featherTrophy.tale}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY"))
-                : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip".Translate(AdorningQuality.CitationWeight.ToStringPercent().Named("QUALITY")),
+            toolTip = featherTrophy.HasTale 
+                ? $"\"{featherTrophy.tale}\"\n\n" + "TribalTrophies_AdorningCeremony_RitualDialog_Tale_Written_Tooltip".Translate(AdorningQuality.TaleWeight.ToStringPercent().Named("QUALITY"))
+                : "TribalTrophies_AdorningCeremony_RitualDialog_Tale_None_Tooltip".Translate(AdorningQuality.TaleWeight.ToStringPercent().Named("QUALITY")),
             priority = 30f
         };
     }

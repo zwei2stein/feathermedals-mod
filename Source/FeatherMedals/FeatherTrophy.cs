@@ -40,12 +40,12 @@ namespace FeatherMedals
             Scribe_Values.Look(ref decoratedDegree, "decoratedDegree", -1);
         }
 
-        private void OpenCitationDialog()
+        private void OpenTaleDialog()
         {
-            Find.WindowStack.Add(new Dialog_WriteCitation(this));
+            Find.WindowStack.Add(new Dialog_WriteTale(this));
         }
 
-        public bool HasCitation => !tale.NullOrEmpty();
+        public bool HasTale => !tale.NullOrEmpty();
 
         public override string LabelNoCount
         {
@@ -98,19 +98,19 @@ namespace FeatherMedals
             
             yield return awardCeremonyBtn;
                 
-            var citationBtn = new Command_Action
+            var taleGizmo = new Command_Action
             {
-                defaultLabel = !HasCitation ? "TribalTrophies_AdorningCeremony_Gizmo_WriteTale".Translate() : "TribalTrophies_AdorningCeremony_Gizmo_EditTale".Translate(),
+                defaultLabel = !HasTale ? "TribalTrophies_AdorningCeremony_Gizmo_WriteTale".Translate() : "TribalTrophies_AdorningCeremony_Gizmo_EditTale".Translate(),
                 defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_TaleDesc".Translate(),
-                icon = TrophyTextures.CitationIcon,
-                action = OpenCitationDialog
+                icon = TrophyTextures.TaleIcon,
+                action = OpenTaleDialog
             };
 
             // the tale is part of the ceremony, it is fixed once the trophy is adorned
             if (BiocodeComp is { Biocoded: true })
-                citationBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledTaleLocked".Translate());
+                taleGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledTaleLocked".Translate());
                 
-            yield return citationBtn;
+            yield return taleGizmo;
         }
 
         private bool IsCeremonyInProgress()
@@ -351,13 +351,11 @@ namespace FeatherMedals
                     AdorningQuality.GetQualityLabel(ceremonyQuality).CapitalizeFirst().Named("QUALITY")));
             }
 
-            // Citation
-            if (HasCitation)
+            if (HasTale)
             {
-                if (sb.Length > 0) sb.AppendLine();
-                sb.Append('"');
-                sb.Append(tale);
-                sb.Append('"');
+                if (sb.Length > 0)
+                    sb.AppendLine();
+                sb.Append($"\"{tale}\"");
             }
 
             return sb.ToString();

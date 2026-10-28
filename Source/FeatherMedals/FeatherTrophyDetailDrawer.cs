@@ -4,23 +4,23 @@ using Verse;
 namespace FeatherMedals;
 
 // not yet awarded feather trophy,
-// possibly with citation,
+// possibly with tale,
 // with potential effects like trait changes that are yet to be realized
 // but no award ceremony details (it did not happen yet)
 public class FeatherTrophyDetailDrawer : ITrophyRecordRow
 {
     private readonly FeatherTrophy _trophy;
-    private readonly string citation;
+    private readonly string _tale;
 
     public FeatherTrophyDetailDrawer(FeatherTrophy trophy) : this(trophy, trophy.tale)
     {
     }
 
-    // citation being written, shown instead of the saved one
-    public FeatherTrophyDetailDrawer(FeatherTrophy trophy, string citation)
+    // tale being written, shown instead of the saved one
+    public FeatherTrophyDetailDrawer(FeatherTrophy trophy, string tale)
     {
         this._trophy = trophy;
-        this.citation = citation;
+        this._tale = tale;
     }
 
     public float Height(float width) => Layout(new Rect(0f, 0f, width, 0f), false);
@@ -50,13 +50,13 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         if (hasDescription)
             Line(description, GameFont.Tiny, TrophyUIStyle.MutedColor, rect, ref curY, draw, TrophyUIStyle.DetailSectionGap);
 
-        // Citation, gold, centered
-        if (!citation.NullOrEmpty())
+        // tale, gold, centered
+        if (!_tale.NullOrEmpty())
         {
             if (draw)
-                FeatherTrophyUI.DrawCitation(citation, rect, ref curY);
+                FeatherTrophyUI.DrawTale(_tale, rect, ref curY);
             else
-                curY += FeatherTrophyUI.CitationHeight(citation, rect.width);
+                curY += FeatherTrophyUI.TaleHeight(_tale, rect.width);
         }
 
         // Stat bonuses, green, centered
