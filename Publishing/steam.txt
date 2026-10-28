@@ -10,14 +10,14 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
     [*]Adorning ceremony to honor deserving warriors with trophies.
     [*]Ideoligion precept about Honoring Warriors.
-    [*]Visitors and raiders can come wearing trophies if their own.
+    [*]Visitors and raiders can come wearing trophies of their own.
 [/list]
 
 [h4]Crafting[/h4]
 
 [list]
     [*]Crafting trophies is unlocked by researching "Warrior Honor".
-    [*]Crafted at the Crafting Spot, Hand Tailoring Bench, or Electric Tailoring Bench.
+    [*]Crafted at the Crafting Spot, Hand Tailoring Bench or Electric Tailoring Bench.
     [*]Requires pristine feathers, obtained by butchering feathered beasts or refining their leather.
 [/list]
 
