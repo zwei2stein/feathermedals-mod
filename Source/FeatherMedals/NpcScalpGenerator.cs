@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -57,37 +56,10 @@ public static class NpcScalpGenerator
         var head = ScalpingUtility.HeadOf(pawn);
         var scalped = (Hediff_Scalped)HediffMaker.MakeHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped, pawn, head);
 
-        var scalper = PickScalper(pawn);
-        if (scalper != null)
-            scalped.scalper = new RememberedPawn(scalper);
-
         // scalped while both were adults, same as NPC scalps are taken
-        scalped.BecomeScar();
-        scalped.ageTicks = System.Math.Max(1, GenTicks.TicksGame - NpcHistoryUtility.RandomPastTick(scalper, pawn));
+        ScalpScarUtility.MakeOld(scalped, pawn, BackstorySlot.Adulthood);
 
         pawn.health.AddHediff(scalped, head);
     }
-
-    private static Pawn PickScalper(Pawn victim)
-    {
-        var faction = victim.Faction;
-        var worldPawns = Current.Game?.World?.worldPawns;
-        if (faction == null || worldPawns == null)
-            return null;
-
-        var pool = new List<Pawn>();
-        var all = worldPawns.AllPawnsAlive;
-        for (var i = 0; i < all.Count; i++)
-        {
-            var other = all[i];
-            var otherFaction = other.Faction;
-            if (otherFaction == null || otherFaction == faction || otherFaction.IsPlayer || otherFaction.Hidden)
-                continue;
-            if (!otherFaction.HostileTo(faction))
-                continue;
-            if (other.RaceProps.Humanlike && other.DevelopmentalStage.Adult())
-                pool.Add(other);
-        }
-        return pool.Count > 0 ? pool.RandomElement() : null;
-    }
+    
 }

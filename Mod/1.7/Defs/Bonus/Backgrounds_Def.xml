@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!-- ===== Feathers ===== -->
+
     <BackstoryDef>
         <defName>TribalTrophies_Backstory_DisgracedElder</defName>
         <title>disgraced elder</title>
@@ -157,6 +159,137 @@
         <possessions>
             <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
+    </BackstoryDef>
+
+    <!-- ===== Scalping ===== -->
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_Scalping_Scalper</defName>
+        <title>scalp hunter</title>
+        <titleShort>scalper</titleShort>
+        <description>[PAWN_nameDef] took scalps from [PAWN_possessive] tribe's enemies. [PAWN_pronoun] kept proudly displayed scalps as proof of [PAWN_possessive] skill and kills. Others found [PAWN_possessive] presence unsettling.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <skillGains>
+            <Melee>5</Melee>
+            <Medicine>3</Medicine>
+            <Animals>2</Animals>
+            <Cooking>3</Cooking>
+            <Social>-3</Social>
+        </skillGains>
+        <forcedTraits>
+            <Bloodlust>0</Bloodlust>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>TribalHunter</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <MeleeWeapon_Knife>1</MeleeWeapon_Knife>
+            <Leather_Human>20</Leather_Human>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_Scalping_YoungScalper</defName>
+        <title>young scalper</title>
+        <titleShort>scalper</titleShort>
+        <description>[PAWN_nameDef] was drawn into a brutal conflict, swearing revenge and tearing up as [PAWN_pronoun] took [PAWN_possessive] first scalp. Not a hero, but a victim too. The other children saw something broken in [PAWN_objective].</description>
+        <slot>Childhood</slot>
+        <skillGains>
+            <Melee>2</Melee>
+            <Medicine>2</Medicine>
+            <Cooking>1</Cooking>
+            <Social>-2</Social>
+        </skillGains>
+        <spawnCategories>
+            <li>Tribal</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <MeleeWeapon_Knife>1</MeleeWeapon_Knife>
+            <Leather_Human>5</Leather_Human>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_Scalping_ScalpedSurvivor</defName>
+        <title>scalping survivor</title>
+        <titleShort>survivor</titleShort>
+        <description>[PAWN_nameDef] was scalped and left alive to tell the tale. [PAWN_pronoun] learned to tend wounds while healing, and found refuge in study, far from the savagery of the rim. [PAWN_possessive] experience left [PAWN_objective] wary of conflict and strangers.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <skillGains>
+            <Medicine>4</Medicine>
+            <Intellectual>3</Intellectual>
+            <Artistic>3</Artistic>
+            <Social>-3</Social>
+        </skillGains>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>Outlander</li>
+        </spawnCategories>
+        <possessions>
+            <MedicineHerbal>5</MedicineHerbal>
+            <Apparel_Tuque>1</Apparel_Tuque>
+        </possessions>
+        <modExtensions>
+            <li Class="FeatherMedals.BackstoryHediffExtension">
+                <hediffs>
+                    <li>
+                        <def>TribalTrophies_Scalping_Hediff_Scalped</def>
+                        <part>Head</part>
+                    </li>
+                </hediffs>
+            </li>
+        </modExtensions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_Scalping_ScalpedChild</defName>
+        <title>scalped child</title>
+        <titleShort>scalped</titleShort>
+        <description>Raiders scalped [PAWN_nameDef] when [PAWN_pronoun] was very young. [PAWN_pronoun] still remembers the face and the name, but never learned where they came from or why. While [PAWN_possessive] wounds were tended, [PAWN_pronoun] picked up the healing arts. The other children did not mock [PAWN_possessive] scarred head, but they kept their distance, so [PAWN_pronoun] spent [PAWN_possessive] days with books instead.</description>
+        <slot>Childhood</slot>
+        <skillGains>
+            <Medicine>2</Medicine>
+            <Intellectual>2</Intellectual>
+            <Artistic>2</Artistic>
+            <Social>-2</Social>
+        </skillGains>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>Outlander</li>
+        </spawnCategories>
+        <possessions>
+            <MedicineHerbal>3</MedicineHerbal>
+            <Apparel_Tuque>1</Apparel_Tuque>
+        </possessions>
+        <modExtensions>
+            <li Class="FeatherMedals.BackstoryHediffExtension">
+                <hediffs>
+                    <li>
+                        <def>TribalTrophies_Scalping_Hediff_Scalped</def>
+                        <part>Head</part>
+                    </li>
+                </hediffs>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
 </Defs>

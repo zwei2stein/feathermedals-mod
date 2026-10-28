@@ -1,8 +1,9 @@
+using RimWorld;
 using Verse;
 
 namespace FeatherMedals
 {
-    public class Hediff_Scalped : Hediff_Injury
+    public class Hediff_Scalped : Hediff_Injury, IBackstoryHediff
     {
         // Severity to become permanent scar.
         private const float ScarSeverity = 0.1f;
@@ -40,6 +41,11 @@ namespace FeatherMedals
             {
                 comp.permanentDamageThreshold = ScarSeverity;
             }
+        }
+        
+        public void PreAddFromBackstory(Pawn victim, BackstoryDef backstory)
+        {
+            ScalpScarUtility.MakeOld(this, victim, backstory.slot);
         }
         
         public void BecomeScar()

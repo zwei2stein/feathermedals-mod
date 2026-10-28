@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
@@ -66,5 +67,45 @@ public static class NpcHistoryUtility
 
         var map = Find.CurrentMap ?? Find.AnyPlayerHomeMap;
         return map != null ? map.Tile : PlanetTile.Invalid;
+    }
+    
+    // a random historical moment of the pawn's childhood or adulthood
+    public static long RandomPastAbsTickIn(Pawn pawn, BackstorySlot slot)
+    {
+        var nowAbs = (long)GenTicks.TicksAbs;
+        var birthAbs = pawn.ageTracker.BirthAbsTicks;
+        var adultAbs = birthAbs + pawn.ageTracker.AdultMinAgeTicks;
+
+        long fromAbs;
+        long toAbs;
+        if (slot == BackstorySlot.Childhood)
+        {
+            fromAbs = birthAbs + ChildStartAgeTicks(pawn);
+            toAbs = Math.Min(adultAbs, nowAbs);
+        }
+        else
+        {
+            fromAbs = adultAbs;
+            toAbs = nowAbs;
+        }
+
+        if (fromAbs >= toAbs)
+            return Math.Min(fromAbs, nowAbs);
+        return fromAbs + (long)(Rand.Value * (toAbs - fromAbs));
+    }
+
+    public static bool WasAdultAt(Pawn pawn, long absTick)
+    {
+        return pawn.ageTracker.BirthAbsTicks + pawn.ageTracker.AdultMinAgeTicks <= absTick;
+    }
+
+    private static long ChildStartAgeTicks(Pawn pawn)
+    {
+        foreach (var stage in pawn.RaceProps.lifeStageAges)
+        {
+            if (stage.def.developmentalStage.Child())
+                return (long)(stage.minAge * GenDate.TicksPerYear);
+        }
+        return 0;
     }
 }
