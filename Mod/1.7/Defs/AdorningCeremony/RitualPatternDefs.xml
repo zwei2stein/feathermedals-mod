@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	
 	<RitualOutcomeEffectDef>
 		<defName>TribalTrophies_AdorningCeremony_TrophyOutcome</defName>
 		<description>The warrior is adorned with a trophy.</description>
@@ -187,5 +188,55 @@
 		<reportString>waiting to be adorned.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	</JobDef>
+
+	<RulePackDef>
+		<defName>TribalTrophies_AdorningCeremony_Speech_Rules</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] [speech_verb] a warrior for [their_actions].</li>
+				<li>r_logentry->[INITIATOR_nameDef] gave a [speech_adjective] speech honoring a warrior for [heroic_trait].</li>
+
+				<li>speech_verb->praised</li>
+				<li>speech_verb->commended</li>
+				<li>speech_verb->honored</li>
+				<li>speech_verb->saluted</li>
+				<li>speech_verb->elevated</li>
+				<li>speech_verb->lionized</li>
+
+				<li>speech_adjective->rousing</li>
+				<li>speech_adjective->inspiring</li>
+				<li>speech_adjective->solemn</li>
+				<li>speech_adjective->tearful</li>
+				<li>speech_adjective->passionate</li>
+				<li>speech_adjective->roaring</li>
+
+				<li>heroic_trait->skill</li>
+				<li>heroic_trait->cunning</li>
+				<li>heroic_trait->unwavering courage</li>
+				<li>heroic_trait->tireless dedication</li>
+				<li>heroic_trait->bravery</li>
+				<li>heroic_trait->contributions</li>
+
+				<li>their_actions->standing firm against the odds</li>
+				<li>their_actions->their sacrifices for the tribe</li>
+				<li>their_actions->bleeding for their fellow tribespeople</li>
+				<li>their_actions->facing the enemies of the tribe</li>
+				<li>their_actions->exemplary service</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<InteractionDef>
+		<defName>TribalTrophies_Speech_AdornTrophy</defName>
+		<label>adorning speech</label>
+		<workerClass>InteractionWorker</workerClass>
+		<symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+
+		<logRulesInitiator>
+			<include>
+				<li>TribalTrophies_AdorningCeremony_Speech_Rules</li>
+			</include>
+		</logRulesInitiator>
+	</InteractionDef>
 
 </Defs>

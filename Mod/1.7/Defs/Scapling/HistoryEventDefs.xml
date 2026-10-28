@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_ScalpedMember</defName>
+        <label>scalped a member</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_TookScalp</defName>
+        <label>took a scalp</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped</defName>
+        <label>saw a scalped person</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scalp</defName>
+        <label>saw a scalp</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole</defName>
+        <label>saw a scalp pole</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt</defName>
+        <label>saw a scalp belt</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_Scalping_HistoryEvent_AcceptedScalpRequest</defName>
+        <label>accepted a bounty to hunt their scalps</label>
+    </HistoryEventDef>
+
+</Defs>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Scalping_ThoughtSocial_ScalpedMe</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <durationDays>40</durationDays>
+        <stackLimit>1</stackLimit>
+        <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>scalped me</label>
+                <description>{0} has scalped me! I despise {0} for it.</description>
+                <baseOpinionOffset>-80</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Victim's own mood: sharp at first, then lingers while the Scalped hediff stays. -->
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Scalping_Thought_IWasScalped</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>freshly scalped</label>
+                <description>Someone took my scalp and disfigured me. The wound and the shame are still fresh.</description>
+                <baseMoodEffect>-40</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Scalping_Thought_Disfigured</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Scalped</workerClass>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>disfigured by scalping</label>
+                <description>I am disfigured and shamed by the loss of my scalp.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Merciless_ClaimedRightOfVictor</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>8</stackLimit>
+        <stackedEffectMultiplier>1</stackedEffectMultiplier>
+        <stages>
+            <li>
+                <label>claimed right of victor</label>
+                <description>I have claimed the scalps of my enemies. It thrills me.</description>
+                <baseMoodEffect>5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Scalped</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>saw a scalped person</label>
+                <description>I have witnessed the brutality of scalping: I saw a victim of scalping.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Scalp_Item_Scalp</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>saw a scalp</label>
+                <description>I have witnessed the barbarism of scalping: I saw a scalp kept as a trophy.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Scalp_Building_Pole</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>saw a scalp pole</label>
+                <description>I have witnessed the barbarism of scalping: I saw scalps displayed on a pole.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Scalp_Item_Belt</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>saw a scalp belt</label>
+                <description>I have witnessed the savagery of scalping: someone wore scalps on a belt.</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_WearingScalps</defName>
+        <workerClass>FeatherMedals.ThoughtWorker_Precept_WearingScalps</workerClass>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>wearing scalp trophies</label>
+                <description>I wear the scalps of others hung on a belt. I am a disgrace.</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

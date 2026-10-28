@@ -106,4 +106,60 @@
         </comps>
     </ThingDef>
 
+    <RulePackDef>
+        <defName>TribalTrophies_Building_NamerArt_DreamCatcher</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_art_name->[adj] [catcher]</li>
+                <li>r_art_name->[catcher] of [noun]</li>
+                <li>r_art_name->[adj] [catcher] of [noun]</li>
+                <li>r_art_name->[adj] [noun]</li>
+
+                <li>adj->Whispering</li>
+                <li>adj->Silent</li>
+                <li>adj->Restful</li>
+                <li>adj->Feathered</li>
+                <li>adj->Blessed</li>
+                <li>adj->Sacred</li>
+
+                <li>catcher->Dream Catcher</li>
+                <li>catcher->Charm</li>
+                <li>catcher->Totem</li>
+                <li>catcher->Talisman</li>
+                <li>catcher->Ward</li>
+                <li>catcher->Sleep Ward</li>
+                <li>catcher->Weave</li>
+
+                <li>noun->Dreams</li>
+                <li>noun->Visions</li>
+                <li>noun->Wishes</li>
+                <li>noun->Mirages</li>
+                <li>noun->Figments</li>
+                <li>noun->Fables</li>
+                <li>noun->Rest</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>TribalTrophies_Building_ArtDescription_DreamCatcher</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>physical_description_root->The lattice of this [catcher] [depicts] [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->The frame of this [catcher] is carved to show [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->This [catcher] is woven to show [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->The netting of this [catcher] [depicts] [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->Its feathers are arranged to show [image]. [desc_sentence_group]</li>
+
+                <li>catcher->dream catcher</li>
+                <li>catcher->charm</li>
+                <li>catcher->catcher</li>
+                <li>catcher->totem</li>
+                <li>catcher->ward</li>
+                <li>catcher->sleep ward</li>
+                <li>catcher->weave</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
 </Defs>
