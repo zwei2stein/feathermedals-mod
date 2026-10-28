@@ -13,10 +13,10 @@ namespace FeatherMedals
         private string cachedLabelPawnName;
             
         public string tale;
-        public int ceremonyQuality = -1; // -1 = not yet awarded
+        public int ceremonyQuality = -1; // -1 = not yet adorned
         public RememberedPawn adornedBy;
         
-        public EventTime adorned; // null = not yet awarded
+        public EventTime adorned; // null = not yet adorned
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
@@ -78,7 +78,7 @@ namespace FeatherMedals
             foreach (var gizmo in base.GetGizmos())
                 yield return gizmo;
 
-            var awardCeremonyBtn = new Command_Action
+            var adornCeremonyGizmo = new Command_Action
             {
                 defaultLabel = "TribalTrophies_AdorningCeremony_Common_CeremonyLabel".Translate(),
                 defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc".Translate(),
@@ -88,15 +88,15 @@ namespace FeatherMedals
             
             // first failing reason wins
             if (BiocodeComp is { Biocoded: true })
-                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned".Translate());
+                adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned".Translate());
             else if (IsCeremonyInProgress())
-                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Common_CeremonyInProgress".Translate());
+                adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Common_CeremonyInProgress".Translate());
             else if (!Spawned)
-                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround".Translate());
+                adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround".Translate());
             else if (!ColonyHasPresenter(out _))
-                awardCeremonyBtn.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
+                adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
             
-            yield return awardCeremonyBtn;
+            yield return adornCeremonyGizmo;
                 
             var taleGizmo = new Command_Action
             {
@@ -219,14 +219,14 @@ namespace FeatherMedals
             return created;
         }
 
-        public string GetAwardedByLabel()
+        public string GetAdornedByLabel()
         {
             if (adornedBy == null)
                 return null;
             return "TribalTrophies_AdorningCeremony_Common_AdornedBy".Translate(adornedBy.Name.Named("PAWN"));
         }
         
-        public string GetAwardedDateLabel()
+        public string GetAdornedDateLabel()
         {
             return adorned?.DateLabel;
         }
@@ -321,22 +321,21 @@ namespace FeatherMedals
         {
             var sb = new StringBuilder(base.GetInspectString());
 
-            // Awarded to (biocoded pawn)
+            // adorned to (biocoded pawn)
             if (BiocodeComp is { Biocoded: true, CodedPawn: not null })
             {
                 if (sb.Length > 0) sb.AppendLine();
                 sb.Append("TribalTrophies_AdorningCeremony_Common_Honoring".Translate(BiocodeComp.CodedPawn.Named("PAWN")));
             }
 
-            // Awarded by
             if (adornedBy != null)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append(GetAwardedByLabel());
+                sb.Append(GetAdornedByLabel());
             }
 
             // Date
-            var dateLabel = GetAwardedDateLabel();
+            var dateLabel = GetAdornedDateLabel();
             if (dateLabel != null)
             {
                 if (sb.Length > 0) sb.AppendLine();

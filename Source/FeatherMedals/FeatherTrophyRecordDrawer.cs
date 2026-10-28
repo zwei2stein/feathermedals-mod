@@ -3,7 +3,7 @@ using Verse;
 
 namespace FeatherMedals;
 
-// One worn/already awarded feather trophy
+// One worn/already adorned feather trophy
 // with tale
 // with trait change that happened
 // with ceremony that has already happened related info
@@ -19,7 +19,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         this.verbose = verbose;
     }
 
-    private bool HasAwardInfo() => _trophy.adornedBy != null || _trophy.adorned != null;
+    private bool HasAdorningInfo() => _trophy.adornedBy != null || _trophy.adorned != null;
 
     private string GetHonoringLine()
     {
@@ -36,10 +36,10 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             FeatherTrophyUI.CeremonyQualityLabelColored(_trophy.ceremonyQuality).Named("QUALITY")).Resolve();
     }
 
-    private string GetAwardInfo()
+    private string GetAdorningInfo()
     {
-        var presentedBy = _trophy.GetAwardedByLabel();
-        var date = _trophy.GetAwardedDateLabel();
+        var presentedBy = _trophy.GetAdornedByLabel();
+        var date = _trophy.GetAdornedDateLabel();
         if (presentedBy != null && date != null)
             return "TribalTrophies_Trophy_PawnTab_AdornedByOnDate".Translate(
                 presentedBy.Named("PRESENTER"),
@@ -70,8 +70,8 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         if (!statText.NullOrEmpty())
             height += Text.CalcHeight(statText, textWidth) + TrophyUIStyle.RowLineGap;
 
-        if (HasAwardInfo())
-            height += Text.CalcHeight(GetAwardInfo(), textWidth) + TrophyUIStyle.RowLineGap;
+        if (HasAdorningInfo())
+            height += Text.CalcHeight(GetAdorningInfo(), textWidth) + TrophyUIStyle.RowLineGap;
 
         var quality = GetCeremonyQualityLine();
         if (quality != null)
@@ -137,7 +137,7 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         if (Mouse.IsOver(rowRect))
             Widgets.DrawHighlight(rowRect);
 
-        // Lock toggle, only while worn; an awarded trophy can also lie on the ground
+        // Lock toggle, only while worn; an adorned trophy can also lie on the ground
         if (_trophy.Wearer != null)
             DrawLockToggle(rowRect);
 
@@ -198,17 +198,15 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
 
         FeatherTrophyUI.DrawTraitChangeSummary(_trophy, textX, rowRect, ref descBottom);
 
-        // Award info
-        if (HasAwardInfo())
+        if (HasAdorningInfo())
         {
             Text.Font = GameFont.Tiny;
-            var awardText = GetAwardInfo();
-            var awardHeight = Text.CalcHeight(awardText, textWidth);
-            var awardRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, awardHeight);
+            var adorningText = GetAdorningInfo();
+            var adorningRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, Text.CalcHeight(adorningText, textWidth));
             GUI.color = TrophyUIStyle.MutedColor;
-            Widgets.Label(awardRect, awardText);
+            Widgets.Label(adorningRect, adorningText);
             GUI.color = Color.white;
-            descBottom = awardRect.yMax;
+            descBottom = adorningRect.yMax;
         }
 
         // Ceremony quality, verbose only

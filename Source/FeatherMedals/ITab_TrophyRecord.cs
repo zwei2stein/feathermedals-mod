@@ -15,7 +15,7 @@ public class ITab_TrophyRecord : ITab_TrophyRows
         if (SelThing is not FeatherTrophy featherTrophy)
             return rows;
 
-        // awarded: the record of its ceremony; not yet awarded: what it may do
+        // adorned: the record of its ceremony; not yet adorned: what it may do
         if (featherTrophy.adorned != null)
             rows.Add(new FeatherTrophyRecordDrawer(featherTrophy, verbose: true));
         else

@@ -65,7 +65,7 @@ public static class NpcTrophyGenerator
                 }
             }
 
-            Award(pawn, total, false);
+            Adorn(pawn, total, false);
         }
         catch (System.Exception ex)
         {
@@ -81,7 +81,7 @@ public static class NpcTrophyGenerator
             if (!BaseEligible(leader, out _))
                 return;
 
-            Award(leader, LeaderTrophies - HonoringWarriorsUtil.WornTrophies(leader), true);
+            Adorn(leader, LeaderTrophies - HonoringWarriorsUtil.WornTrophies(leader), true);
         }
         catch (System.Exception ex)
         {
@@ -179,7 +179,7 @@ public static class NpcTrophyGenerator
         return chance;
     }
 
-    private static void Award(Pawn pawn, int count, bool leader)
+    private static void Adorn(Pawn pawn, int count, bool leader)
     {
         if (count <= 0)
             return;
@@ -188,8 +188,8 @@ public static class NpcTrophyGenerator
         var fallbackPresenter = FallbackPresenter(pawn);
 
         // lets the Wear gate and HasPartsToWear patch through, same as a ceremony
-        var previous = RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward;
-        RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = true;
+        var previous = RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning;
+        RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = true;
         try
         {
             var defs = new List<ThingDef>();
@@ -228,7 +228,7 @@ public static class NpcTrophyGenerator
         }
         finally
         {
-            RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = previous;
+            RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = previous;
         }
     }
 

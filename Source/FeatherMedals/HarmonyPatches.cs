@@ -67,7 +67,7 @@ public class HarmonyPatches
             }
 
             // The ceremony is the only way to earn a trophy, see RitualOutcomeEffectWorkerAwardTrophy
-            if (!RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
+            if (!RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning)
             {
                 Messages.Message("TribalTrophies_Trophy_Common_NeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
@@ -93,7 +93,7 @@ public class HarmonyPatches
             if (!FeatherTrophyUtil.IsFeatherTrophyDef(apparel))
                 return;
 
-            if (RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward)
+            if (RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning)
                 return;
             
             if (FeatherTrophyUtil.EvaluatingItem is { } item && item.def == apparel && FeatherTrophyUtil.IsOwnedBy(item, p))

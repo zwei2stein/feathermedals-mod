@@ -3,7 +3,7 @@
 	<RitualOutcomeEffectDef>
 		<defName>TribalTrophies_AdorningCeremony_TrophyOutcome</defName>
 		<description>The warrior is adorned with a trophy.</description>
-		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAwardTrophy</workerClass>
+		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAdornTrophy</workerClass>
 		<comps>
 			<li Class="FeatherMedals.RitualOutcomeComp_TrophyPreview"/>
 			<li Class="FeatherMedals.RitualOutcomeComp_TrophyQuality"/>
@@ -77,9 +77,9 @@
 				<allowChild>false</allowChild>
 				<mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
 			</li>
-			<li Class="FeatherMedals.RitualRole_Awardee">
-				<id>awardee</id>
-				<label>awardee</label>
+			<li Class="FeatherMedals.RitualRole_Adorned">
+				<label>adorned</label>
+				<id>adorned</id>
 				<required>True</required>
 				<maxCount>1</maxCount>
 				<countsAsParticipant>False</countsAsParticipant>
@@ -96,7 +96,7 @@
 					<li Class="StageEndTrigger_RolesArrived">
 						<roleIds>
 							<li>leader</li>
-							<li>awardee</li>
+							<li>adorned</li>
 						</roleIds>
 					</li>
 				</endTriggers>
@@ -109,7 +109,7 @@
 						</customPositions>
 					</li>
 					<li>
-						<roleId>awardee</roleId>
+						<roleId>adorned</roleId>
 						<dutyDef>TribalTrophies_AwaitAdorning</dutyDef>
 						<customPositions>
 							<li Class="RitualPosition_InFrontThingCenter"/>
@@ -118,7 +118,7 @@
 				</roleBehaviors>
 				<preAction Class="FeatherMedals.RitualStageAction_StartAdorning"/>
 				<highlightRolePawns>
-					<li>awardee</li>
+					<li>adorned</li>
 					<li>leader</li>
 				</highlightRolePawns>
 			</li>
@@ -143,7 +143,7 @@
 						</customPositions>
 					</li>
 					<li>
-						<roleId>awardee</roleId>
+						<roleId>adorned</roleId>
 						<dutyDef>TribalTrophies_AwaitAdorning</dutyDef>
 						<customPositions>
 							<li Class="RitualPosition_InFrontThingCenter"/>

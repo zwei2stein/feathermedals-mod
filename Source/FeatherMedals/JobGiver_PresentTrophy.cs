@@ -31,8 +31,8 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
         if (!standCell.IsValid)
             return null;
 
-        var awardee = ritual.assignments.FirstAssignedPawn("awardee");
-        if (awardee == null)
+        var adorned = ritual.assignments.FirstAssignedPawn(RitualRole_Adorned.ROLE_ID);
+        if (adorned == null)
             return null;
 
         // not in hands yet: it must lie where we can get it
@@ -44,7 +44,7 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
             ? TribalTrophiesDefOf.TribalTrophies_PresentTrophySpeech
             : TribalTrophiesDefOf.TribalTrophies_PresentTrophy;
 
-        var job = JobMaker.MakeJob(def, featherTrophy, standCell, awardee);
+        var job = JobMaker.MakeJob(def, featherTrophy, standCell, adorned);
         job.count = 1;
         if (speech)
         {

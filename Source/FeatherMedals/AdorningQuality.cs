@@ -58,26 +58,26 @@ public static class AdorningQuality
         => hasTale ? TaleWeight : 0f;
 
     // spectators + presenter
-    public static int CountAttendees(IEnumerable<Pawn> present, Pawn awardee)
+    public static int CountAttendees(IEnumerable<Pawn> present, Pawn adorned)
     {
         var count = 0;
         foreach (var pawn in present)
         {
-            if (pawn != awardee)
+            if (pawn != adorned)
                 count++;
         }
         return count;
     }
 
-    // free adult colonists - awardee
-    public static int CountPossibleAttendees(Map map, Pawn awardee)
+    // free adult colonists - adorned
+    public static int CountPossibleAttendees(Map map, Pawn adorned)
     {
         if (map == null)
             return 0;
         var count = 0;
         foreach (var pawn in map.mapPawns.FreeColonistsSpawned)
         {
-            if (pawn == awardee || !pawn.DevelopmentalStage.Adult())
+            if (pawn == adorned || !pawn.DevelopmentalStage.Adult())
                 continue;
             count++;
         }

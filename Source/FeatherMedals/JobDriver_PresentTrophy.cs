@@ -15,7 +15,7 @@ public class JobDriver_PresentTrophy : JobDriver
     
     private const TargetIndex TrophyInd = TargetIndex.A;
     private const TargetIndex StandInd = TargetIndex.B;
-    private const TargetIndex AwardeeInd = TargetIndex.C;
+    private const TargetIndex AdornedInd = TargetIndex.C;
 
     //vanilla speech
     private const int SocialInteractionInterval = 480;
@@ -24,7 +24,7 @@ public class JobDriver_PresentTrophy : JobDriver
 
     private FeatherTrophy Trophy => job.GetTarget(TrophyInd).Thing as FeatherTrophy;
     
-    private Pawn Awardee => job.GetTarget(AwardeeInd).Pawn;
+    private Pawn Adorned => job.GetTarget(AdornedInd).Pawn;
     
     private bool Speech => job.def == TribalTrophiesDefOf.TribalTrophies_PresentTrophySpeech;
     
@@ -78,18 +78,18 @@ public class JobDriver_PresentTrophy : JobDriver
             ritual.AddTagForPawn(pawn, StageEndTrigger_RolesArrived.ArrivalTag);
     }
 
-    private void FaceAwardee()
+    private void FaceAdorned()
     {
-        var awardee = Awardee;
-        if (awardee is { Spawned: true })
-            pawn.rotationTracker.FaceTarget(awardee);
+        var adorned = Adorned;
+        if (adorned is { Spawned: true })
+            pawn.rotationTracker.FaceTarget(adorned);
     }
 
     private Toil HoldToil()
     {
         var toil = ToilMaker.MakeToil(nameof(HoldToil));
         toil.FailOn(() => !HoldingTrophy);
-        toil.tickIntervalAction = _ => FaceAwardee();
+        toil.tickIntervalAction = _ => FaceAdorned();
         toil.defaultCompleteMode = ToilCompleteMode.Never;
         toil.handlingFacing = true;
         return toil;
@@ -111,7 +111,7 @@ public class JobDriver_PresentTrophy : JobDriver
                     ImitateWithTrophySymbol(ritual);
                 ticksTillSocialInteraction = SocialInteractionInterval;
             }
-            FaceAwardee();
+            FaceAdorned();
             ticksTillSocialInteraction -= delta;
         };
         toil.PlaySustainerOrSound(() => pawn.gender != Gender.Female ? job.speechSoundMale : job.speechSoundFemale,

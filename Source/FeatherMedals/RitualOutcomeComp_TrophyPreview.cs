@@ -122,9 +122,9 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
         if (ritual?.Map == null) return 0f;
-        var awardee = ritual.assignments.FirstAssignedPawn("awardee");
-        var attendees = AdorningQuality.CountAttendees(ritual.assignments.Participants, awardee);
-        var total = AdorningQuality.CountPossibleAttendees(ritual.Map, awardee);
+        var adorned = ritual.assignments.FirstAssignedPawn(RitualRole_Adorned.ROLE_ID);
+        var attendees = AdorningQuality.CountAttendees(ritual.assignments.Participants, adorned);
+        var total = AdorningQuality.CountPossibleAttendees(ritual.Map, adorned);
         return AdorningQuality.GetAttendanceScore(attendees, total);
     }
 
@@ -143,9 +143,9 @@ public class RitualOutcomeComp_CeremonyAttendance : RitualOutcomeComp
         var map = ritualTarget.Map ?? Find.CurrentMap;
         if (map == null) return null;
 
-        var awardee = assignments.FirstAssignedPawn("awardee");
-        var attendees = AdorningQuality.CountAttendees(assignments.Participants, awardee);
-        var total = AdorningQuality.CountPossibleAttendees(map, awardee);
+        var adorned = assignments.FirstAssignedPawn(RitualRole_Adorned.ROLE_ID);
+        var attendees = AdorningQuality.CountAttendees(assignments.Participants, adorned);
+        var total = AdorningQuality.CountPossibleAttendees(map, adorned);
         var ratio = AdorningQuality.GetAttendanceRatio(attendees, total);
         var contribution = AdorningQuality.GetAttendanceScore(attendees, total);
 

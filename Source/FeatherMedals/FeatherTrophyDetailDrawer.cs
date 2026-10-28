@@ -3,10 +3,10 @@ using Verse;
 
 namespace FeatherMedals;
 
-// not yet awarded feather trophy,
+// not yet adorned feather trophy,
 // possibly with tale,
 // with potential effects like trait changes that are yet to be realized
-// but no award ceremony details (it did not happen yet)
+// but no adorning ceremony details (it did not happen yet)
 public class FeatherTrophyDetailDrawer : ITrophyRecordRow
 {
     private readonly FeatherTrophy _trophy;

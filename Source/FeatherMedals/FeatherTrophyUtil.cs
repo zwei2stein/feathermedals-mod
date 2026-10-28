@@ -121,15 +121,15 @@ public static class FeatherTrophyUtil
             return false;
 
         // our wear gate refuses every pawn outside a ceremony
-        var previous = RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward;
-        RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = true;
+        var previous = RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning;
+        RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = true;
         try
         {
             return ApparelUtility.HasPartsToWear(pawn, trophy.def) && trophy.PawnCanWear(pawn, true);
         }
         finally
         {
-            RitualOutcomeEffectWorkerAwardTrophy.ApplyingCeremonyAward = previous;
+            RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = previous;
         }
     }
 

@@ -42,7 +42,7 @@ public static class TrophyUIStyle
 
     public const float ButtonHeight = 35f;
     public const float ButtonWidth = 120f;
-    public static readonly Vector2 AwardedDialogSize = new(480f, 360f);
+    public static readonly Vector2 AdornedDialogSize = new(480f, 360f);
     public const float TaleDialogWidth = 760f; // height same as tabs
     public const float TaleDialogFeatherColumnWidth = 320f;
 
