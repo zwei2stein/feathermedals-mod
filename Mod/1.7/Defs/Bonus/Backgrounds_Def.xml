@@ -167,7 +167,7 @@
         <defName>TribalTrophies_Backstory_Scalping_Scalper</defName>
         <title>scalp hunter</title>
         <titleShort>scalper</titleShort>
-        <description>[PAWN_nameDef] took scalps from [PAWN_possessive] tribe's enemies. [PAWN_pronoun] kept proudly displayed scalps as proof of [PAWN_possessive] skill and kills. Others found [PAWN_possessive] presence unsettling.</description>
+        <description>[PAWN_nameDef] took scalps from [PAWN_possessive] tribe's enemies. [PAWN_pronoun] proudly displayed the scalps as proof of [PAWN_possessive] skill and kills. Others found [PAWN_possessive] presence unsettling.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Male</bodyTypeMale>
         <bodyTypeFemale>Female</bodyTypeFemale>
@@ -230,7 +230,7 @@
         <defName>TribalTrophies_Backstory_Scalping_ScalpedSurvivor</defName>
         <title>scalping survivor</title>
         <titleShort>survivor</titleShort>
-        <description>[PAWN_nameDef] was scalped and left alive to tell the tale. [PAWN_pronoun] learned to tend wounds while healing, and found refuge in study, far from the savagery of the rim. [PAWN_possessive] experience left [PAWN_objective] wary of conflict and strangers.</description>
+        <description>[PAWN_nameDef] was scalped and left alive to tell the tale. [PAWN_pronoun] learned to tend wounds while healing, and found refuge in study, far from the savagery of the Rim. [PAWN_possessive] experience left [PAWN_objective] wary of conflict and strangers.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Male</bodyTypeMale>
         <bodyTypeFemale>Female</bodyTypeFemale>
@@ -264,7 +264,7 @@
         <defName>TribalTrophies_Backstory_Scalping_ScalpedChild</defName>
         <title>scalped child</title>
         <titleShort>scalped</titleShort>
-        <description>Raiders scalped [PAWN_nameDef] when [PAWN_pronoun] was very young. [PAWN_pronoun] still remembers the face and the name, but never learned where they came from or why. While [PAWN_possessive] wounds were tended, [PAWN_pronoun] picked up the healing arts. The other children did not mock [PAWN_possessive] scarred head, but they kept their distance, so [PAWN_pronoun] spent [PAWN_possessive] days with books instead.</description>
+        <description>Raiders scalped [PAWN_nameDef] when [PAWN_pronoun] was very young. [PAWN_pronoun] still remembers the name the other raiders called the scalper, but never learned where they came from or why. While [PAWN_possessive] wounds were tended, [PAWN_pronoun] picked up the healing arts. The other children did not mock [PAWN_possessive] scarred head, but they kept their distance, so [PAWN_pronoun] spent [PAWN_possessive] days with books instead.</description>
         <slot>Childhood</slot>
         <skillGains>
             <Medicine>2</Medicine>

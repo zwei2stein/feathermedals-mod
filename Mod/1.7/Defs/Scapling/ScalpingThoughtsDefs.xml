@@ -16,7 +16,7 @@
         <stages>
             <li>
                 <label>scalped me</label>
-                <description>{0} has scalped me! I despise {0} for this action.</description>
+                <description>{0} has scalped me! I despise {0} for it.</description>
                 <baseOpinionOffset>-80</baseOpinionOffset>
             </li>
         </stages>

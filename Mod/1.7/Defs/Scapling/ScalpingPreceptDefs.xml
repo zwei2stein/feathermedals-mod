@@ -6,7 +6,7 @@
     <IssueDef>
         <defName>TribalTrophies_Issue_ScalpTaking</defName>
         <label>scalp taking</label>
-        <description>Attitude towards scalping people by members. Scalping is taking a trophy by cutting off a scalp.</description>
+        <description>How the people view taking scalps as trophies.</description>
         <iconPath>UI/Issues/PreceptScalping</iconPath>
     </IssueDef>
 
@@ -44,7 +44,7 @@
     <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
         <defName>TribalTrophies_Issue_ScalpTaking_Honorable</defName>
         <label>honorable</label>
-        <description>Allows taking scalps where honor allows it: enemies and guilty prisoners.</description>
+        <description>Taking scalps where honor allows it: enemies and guilty prisoners.</description>
         <impact>Low</impact>
         <displayOrderInIssue>2</displayOrderInIssue>
         <defaultSelectionWeight>1</defaultSelectionWeight>
@@ -138,7 +138,7 @@
         <stages>
             <li>
                 <label>claimed right of victor</label>
-                <description>I have claimed the scalps of my enemies, it thrills me.</description>
+                <description>I have claimed the scalps of my enemies. It thrills me.</description>
                 <baseMoodEffect>5</baseMoodEffect>
             </li>
         </stages>
@@ -158,8 +158,8 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>brutality of scalping</label>
-                <description>I have witnessed brutality of scalping by seeing scalped victim.</description>
+                <label>saw a scalped person</label>
+                <description>I have witnessed the brutality of scalping: I saw a victim of scalping.</description>
                 <baseMoodEffect>-5</baseMoodEffect>
             </li>
         </stages>
@@ -179,8 +179,8 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>brutality of scalping</label>
-                <description>I have witnessed barbarism of scalping by seeing scalp trophy.</description>
+                <label>saw a scalp</label>
+                <description>I have witnessed the barbarism of scalping: I saw a scalp kept as a trophy.</description>
                 <baseMoodEffect>-5</baseMoodEffect>
             </li>
         </stages>
@@ -200,8 +200,8 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>brutality of scalping</label>
-                <description>I have witnessed barbarism of scalping by seeing scalp pole display.</description>
+                <label>saw a scalp pole</label>
+                <description>I have witnessed the barbarism of scalping: I saw scalps displayed on a pole.</description>
                 <baseMoodEffect>-2</baseMoodEffect>
             </li>
         </stages>
@@ -221,7 +221,7 @@
         </nullifyingHediffs>
         <stages>
             <li>
-                <label>brutality of scalping</label>
+                <label>saw a scalp belt</label>
                 <description>I have witnessed the savagery of scalping: someone wore scalps on a belt.</description>
                 <baseMoodEffect>-10</baseMoodEffect>
             </li>

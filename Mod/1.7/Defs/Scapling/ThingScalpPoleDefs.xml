@@ -4,7 +4,7 @@
     <ThingDef ParentName="BuildingBase">
         <defName>TribalTrophies_Scalping_Building_ScalpPole</defName>
         <label>scalp pole</label>
-        <description>Wooden pole made to display taken scalps. Scalps strike terror into slaves and give a morbid focus for meditation.</description>
+        <description>A wooden pole made to display taken scalps. The scalps strike terror into slaves and give a morbid focus for meditation.</description>
         <thingClass>FeatherMedals.Building_ScalpPole</thingClass>
         <graphicData>
             <texPath>Things/Building/Misc/TribalTrophies_Scalping_Building_ScalpPole/ScalpPole</texPath>

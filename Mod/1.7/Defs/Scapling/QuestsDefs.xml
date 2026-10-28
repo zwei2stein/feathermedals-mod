@@ -17,29 +17,29 @@
                 <li>questName->[bloody] [request]</li>
                 <li>questName->[reward] for [hunt]</li>
                 <li>questName->[reward] for [trophies]</li>
-                
+
                 <li>reward->Blood Money</li>
                 <li>reward->Payout</li>
-                <li>reward->[bloody] Cash</li>
-                
+                <li>reward->[bloody] Silver</li>
+
                 <li>trophies->Scalps</li>
                 <li>trophies->Trophies</li>
-                <li>trophies->Revenge Tokens</li>
+                <li>trophies->Tokens of Vengeance</li>
                 <li>trophies->[bloody] Spoils</li>
                 <li>trophies->[bloody] Keepsakes</li>
-                
+
                 <li>hunt->Scalp Hunt</li>
                 <li>hunt->Scalping</li>
                 <li>hunt->Trophy Hunt</li>
                 <li>hunt->[bloody] Hunt</li>
-                
+
                 <li>bloody->Bloody</li>
                 <li>bloody->Grim</li>
                 <li>bloody->Savage</li>
                 <li>bloody->Brutal</li>
                 <li>bloody->Uncivilized</li>
                 <li>bloody->Vengeful</li>
-                
+
                 <li>request->Request</li>
                 <li>request->Bounty</li>
                 <li>request->Demand</li>
@@ -52,7 +52,7 @@
                     \nAny loose scalp counts, as long as it was taken from a member of [targetFaction_name]. [delivery] Scalps can be delivered a few at a time.[goodwillLossInfo]</li>
                 <li>delivery(askerHostile==True,priority=1)->[faction_name] is hostile to you, so the scalps must be sent to [settlement_label] in transport pods as a gift.</li>
                 <li>delivery->Bring the scalps to [settlement_label] by caravan, or send them in transport pods as a gift.</li>
-                <li>goodwillLossInfo(targetLosesGoodwill==True,priority=1)->\n\nIf you accept, [targetFaction_name] will learn of it, and you will lose [targetExpectedGoodwillLoss] goodwill with it.</li>
+                <li>goodwillLossInfo(targetLosesGoodwill==True,priority=1)->\n\nIf you accept, [targetFaction_name] will find out, and you will lose [targetExpectedGoodwillLoss] goodwill with it.</li>
                 <li>goodwillLossInfo-></li>
             </rulesStrings>
         </questDescriptionRules>

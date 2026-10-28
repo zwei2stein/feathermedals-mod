@@ -13,16 +13,16 @@
         <rulePack>
             <rulesStrings>
                 <li>tale_noun->[SCALPER_nameDef] taking the scalp of [VICTIM_nameDef]</li>
-                
+
                 <li>image->[SCALPER_nameFull] cutting the scalp from [VICTIM_nameFull] [circumstance_group]</li>
                 <li>image->[SCALPER_nameFull] triumphant, holding up the scalp of [VICTIM_nameFull] [circumstance_group]</li>
                 <li>image->[SCALPER_nameFull] kneeling over [VICTIM_nameFull], blade in hand, [circumstance_group]</li>
-                <li>image->[SCALPER_nameFull] kneeling over [VICTIM_nameFull], holding bloodied blade, [circumstance_group]</li>
-                
+                <li>image->[SCALPER_nameFull] kneeling over [VICTIM_nameFull], holding a bloodied blade, [circumstance_group]</li>
+
                 <li>circumstance_phrase->while the fight continues</li>
                 <li>circumstance_phrase->with a steady hand</li>
                 <li>circumstance_phrase->as the battle ends</li>
-                <li>circumstance_phrase->during the heated moment of an assault</li>
+                <li>circumstance_phrase->in the heat of an assault</li>
                 <li>circumstance_phrase->in a moment of quiet contemplation</li>
 
                 <li>desc_sentence->[SCALPER_nameDef] honors the defeated foe.</li>
@@ -47,18 +47,18 @@
         <rulePack>
             <rulesStrings>
                 <li>tale_noun->[SCALPER_nameDef] taking the scalp of [VICTIM_nameDef]</li>
-                
+
                 <li>image->[VICTIM_nameFull] helpless as [SCALPER_nameFull] takes [VICTIM_possessive] scalp [circumstance_group]</li>
                 <li>image->[SCALPER_nameFull] looming over [VICTIM_nameFull], blade ready, [circumstance_group]</li>
                 <li>image->[SCALPER_nameFull] looming over [VICTIM_nameFull], blade bloodied, [circumstance_group]</li>
                 <li>image->[SCALPER_nameFull] retreating with the scalp of [VICTIM_nameFull] [circumstance_group]</li>
-                
+
                 <li>circumstance_phrase->as [VICTIM_possessive] friends fight to save [VICTIM_objective]</li>
                 <li>circumstance_phrase->during the heat of battle</li>
                 <li>circumstance_phrase->on a battlefield filled with smoke and ash</li>
                 <li>circumstance_phrase->with no one able to stop it</li>
                 <li>circumstance_phrase->while the battle rages around them</li>
-                
+
                 <li>desc_sentence->[VICTIM_nameDef]'s people will not forget.</li>
                 <li>desc_sentence->[VICTIM_nameDef]'s disfigurement fills [VICTIM_possessive] people with rage.</li>
                 <li>desc_sentence->[SCALPER_nameDef] shows no mercy.</li>
@@ -68,5 +68,5 @@
             </rulesStrings>
         </rulePack>
     </TaleDef>
-    
+
 </Defs>
