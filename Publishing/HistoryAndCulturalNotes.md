@@ -22,9 +22,9 @@ Colonists later introduced and paid scalp bounties, offering rewards for the sca
 
 Warfare and bounty systems helped spread and intensify the practice.
 
-On the Rim, this is mirrored by only outlander traders and Imperial tribute collectors accepting scalps in trade.
+On the Rim, this is mirrored by the fact that only outlander traders and Imperial tribute collectors accept scalps in trade.
 
-Scalp pole building and scalp belts are claimed to have existed, but do not have reliable sources. They are included for gameplay reasons, not as a claim that these things existed.
+Scalp poles and scalp belts are claimed to have existed, but there are no reliable sources for them. They are included for gameplay reasons, not as a claim that they existed.
 
 [More reading 4](https://online.ucpress.edu/ch/article/100/2/4/196102/The-California-Indian-Scalp-Bounty-MythEvidence-of)
 
