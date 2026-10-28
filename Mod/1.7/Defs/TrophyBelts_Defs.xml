@@ -106,6 +106,9 @@
         <statBases>
             <Mass>5</Mass>
         </statBases>
+        <inspectorTabs>
+            <li>FeatherMedals.ITab_SkullRecord</li>
+        </inspectorTabs>
         <modExtensions>
             <li Class="FeatherMedals.NpcSkullBeltExtension">
                 <chance>0.1</chance>

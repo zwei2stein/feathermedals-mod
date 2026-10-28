@@ -325,7 +325,16 @@ public static class TrophyNames
         var names = SourcesOf(sources);
         return names.NullOrEmpty() ? null : names[0];
     }
+    
+    public static IReadOnlyList<string> VictimNames(Thing trophy)
+    {
+        var sources = trophy.TryGetComp<CompHasSources>();
+        if (sources == null)
+            return new List<string>();
+        return SourcesOf(sources) ?? new List<string>();
+    }
 }
+
 
 public class StatPart_TerrorFreeWearersOnly : StatPart
 {

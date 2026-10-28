@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Skull"]/inspectorTabs</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Skull"]/inspectorTabs</xpath>
+            <value>
+                <li>FeatherMedals.ITab_SkullRecord</li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Skull"]</xpath>
+            <value>
+                <inspectorTabs>
+                    <li>FeatherMedals.ITab_SkullRecord</li>
+                </inspectorTabs>
+            </value>
+        </nomatch>
+    </Operation>
+    
+</Patch>

@@ -24,6 +24,13 @@
 
 	<TribalTrophies_Trophy_TrophyTab_Header>Feather</TribalTrophies_Trophy_TrophyTab_Header>
 	<TribalTrophies_Trophy_TrophyTab_Label>Trophy</TribalTrophies_Trophy_TrophyTab_Label>
+
+	<!-- ===== Skulls tab (skull, skull belt) ===== -->
+	
+	<TribalTrophies_Trophy_SkullTab_Label>Skulls</TribalTrophies_Trophy_SkullTab_Label>
+	<TribalTrophies_Trophy_SkullTab_Header_One>Skull</TribalTrophies_Trophy_SkullTab_Header_One>
+	<TribalTrophies_Trophy_SkullTab_Header_Many>Skulls</TribalTrophies_Trophy_SkullTab_Header_Many>
+	<TribalTrophies_Trophy_SkullTab_SkullOf>Skull of {VICTIM}</TribalTrophies_Trophy_SkullTab_SkullOf>
 	
 	<!-- ===== Info card ===== -->
 

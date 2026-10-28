@@ -67,7 +67,7 @@ namespace FeatherMedals
             }
         }
 
-        // feathers first, then scalps; an empty belt holds no trophies
+        // feathers first, then scalps, then skulls; an empty belt holds no trophies
         protected override List<ITrophyRecordRow> Rows()
         {
             var rows = new List<ITrophyRecordRow>();
@@ -79,6 +79,8 @@ namespace FeatherMedals
                 rows.Add(new FeatherTrophyRecordDrawer(featherTrophy));
             foreach (var scalp in WornScalps(pawn))
                 rows.Add(new ScalpRecordDrawer(scalp));
+            foreach (var skull in WornSkulls(pawn))
+                rows.Add(new SkullRecordDrawer(skull, TrophyNames.VictimName(skull)));
             return rows;
         }
 
@@ -95,6 +97,21 @@ namespace FeatherMedals
                     continue;
                 foreach (var scalp in container.Held.OfType<Scalp>())
                     yield return scalp;
+            }
+        }
+        
+        private static IEnumerable<Thing> WornSkulls(Pawn pawn)
+        {
+            foreach (var apparel in pawn.apparel.WornApparel)
+            {
+                var container = apparel.TryGetComp<CompTrophyContainer>();
+                if (container == null)
+                    continue;
+                foreach (var held in container.Held)
+                {
+                    if (held.def == ThingDefOf.Skull)
+                        yield return held;
+                }
             }
         }
     }

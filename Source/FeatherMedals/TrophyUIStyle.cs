@@ -29,6 +29,7 @@ public static class TrophyUIStyle
 
     public const float FeatherIconSize = 80f;
     public const float ScalpIconSize = 70f;
+    public const float SkullIconSize = 70f;
     public const float FeatherRowMinHeight = 90f;
 
     // ===== Detail view (one trophy) =====
@@ -55,4 +56,5 @@ public static class TrophyUIStyle
 
     public const float CitationSideMargin = 20f;
     public const float CitationGap = 12f;
+    
 }
