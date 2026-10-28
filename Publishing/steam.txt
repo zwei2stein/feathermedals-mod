@@ -4,7 +4,7 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
 
 [h2]Features[/h2] 
 
-[h3]Feather Trophies[/h3]
+[h3]Feather trophies[/h3]
 
 [list]
     [*]Wearable feather trophies immortalizing pawns' deeds and providing minor bonuses.
@@ -21,7 +21,7 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Requires pristine feathers, obtained by butchering feathered beasts or refining their leather.
 [/list]
 
-[h3]Scalp Trophies[/h3]
+[h3]Scalp trophies[/h3]
 
 [list]
     [*]Taking enemy scalps.
@@ -51,13 +51,13 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
 
 [list]
     [*]Roo's Minotaur Xenotype
-    [*]Elders Faction (Continued) - bonus content with Allergies mod
+    [*]Elders Faction (Continued): bonus content with the Allergies mod
     [*]Mashed's Ashlands
     [*]Ecotech
     [*]Pyrinth Bionics
 [/list]
 
-[h3]Pristine Feather sources[/h3]
+[h3]Pristine feather sources[/h3]
 
 These mods have birds that either drop pristine feathers when butchered or have leather that can be refined into pristine feathers.
 
@@ -120,9 +120,9 @@ Both mods do similar things and can be used alongside each other. This mod, howe
 
 [hr][/hr]
 
-[url=https://github.com/zwei2stein/feathermedals-mod]Source Code[/url]
+[url=https://github.com/zwei2stein/feathermedals-mod]Source code[/url]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426]my other mods[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426]My other mods[/url]
 
 [hr][/hr]
 

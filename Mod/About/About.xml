@@ -3,10 +3,10 @@
   <name>Tribal Trophies</name>
   <author>zwei2stein</author>
   <supportedVersions>
-	<li>1.7</li>
+    <li>1.7</li>
   </supportedVersions>
   <packageId>zwei2stein.TribalTrophies</packageId>
-  <description>Tribal trophies (feather headdresses) that can be awarded to pawns. And scalps that can be taken.</description>
+  <description>Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps that can be taken, consequences included.</description>
   <modVersion>1.0.0</modVersion>
   <modDependencies>
     <li>
@@ -22,9 +22,9 @@
   <loadAfter>
     <li>Ludeon.RimWorld.Ideology</li>
     <li>Ludeon.Rimworld.Odyssey</li>
-    
+
     <li>CETeam.CombatExtended</li>
-    
+
     <li>veterano.mythicages.megafaunabestiary</li>
     <li>Van.Beasts</li>
     <li>Erin.Auraeyl</li>
@@ -46,6 +46,6 @@
     <li>det.keshig</li>
     <li>det.dwarvenstyle</li>
     <li>pesky.bulwark</li>
-    
+
   </loadAfter>
 </ModMetaData>

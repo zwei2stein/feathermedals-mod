@@ -1,13 +1,12 @@
-
 # Tribal Trophies
 
-Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD>
+Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD>
 
 ## Quick about
 
 ### Infographic
 
-[Infographics as separate page](/Publishing/features.html)
+[Infographic as a separate page](/Publishing/features.html)
 
 ![](/Publishing/dummy.png)
 
@@ -24,7 +23,7 @@ All original artwork included is Copyright © 2026 Petr Prokop, and distributed 
 
 The full license text can be found here: http://creativecommons.org/licenses/by-sa/4.0/
 
-All other parts of the mod are Copyright © 2025 Petr Prokop, and distributed under the Free Software Foundation GNU General Public License 3.0.
+All other parts of the mod are Copyright © 2026 Petr Prokop, and distributed under the Free Software Foundation GNU General Public License 3.0.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
