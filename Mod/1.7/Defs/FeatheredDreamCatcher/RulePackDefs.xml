@@ -27,10 +27,10 @@
 
                 <li>noun->Dreams</li>
                 <li>noun->Visions</li>
-                <li>noun->Wish</li>
-                <li>noun->Mirage</li>
+                <li>noun->Wishes</li>
+                <li>noun->Mirages</li>
                 <li>noun->Figments</li>
-                <li>noun->Fable</li>
+                <li>noun->Fables</li>
                 <li>noun->Rest</li>
             </rulesStrings>
         </rulePack>
@@ -40,11 +40,12 @@
         <defName>TribalTrophies_Building_ArtDescription_DreamCatcher</defName>
         <rulePack>
             <rulesStrings>
-                <li>physical_description_root->A [catcher] lattice is [depiction] of [image]. [desc_sentence_group]</li>
-                <li>physical_description_root->Frame of [catcher] has engraved [depiction] of [image]. [desc_sentence_group]</li>
-                <li>physical_description_root->This [catcher] is woven to [depiction] of [image]. [desc_sentence_group]</li>
-                <li>physical_description_root->The netting of [catcher] [depicts] [image]. [desc_sentence_group]</li>
-                <li>physical_description_root->Feathers arranged to [depiction] of [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->The lattice of this [catcher] [depicts] [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->The frame of this [catcher] is carved to show [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->This [catcher] is woven to show [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->The netting of this [catcher] [depicts] [image]. [desc_sentence_group]</li>
+                <li>physical_description_root->Its feathers are arranged to show [image]. [desc_sentence_group]</li>
+                
                 <li>catcher->dream catcher</li>
                 <li>catcher->charm</li>
                 <li>catcher->catcher</li>

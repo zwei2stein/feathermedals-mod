@@ -6,7 +6,7 @@
     <ThingDef ParentName="BuildingBase">
         <defName>TribalTrophies_Building_FeatheredDreamCatcher_Anima</defName>
         <label>anima dream catcher</label>
-        <description>A wooden frame with an intricate anima fiber weaving, decorated with pristine feathers.\n\nWhen mounted next to a bed, it grants better sleep.\n\nIt can also be meditated to, and the anima fiber grants a stronger connection when meditating.</description>
+        <description>A wooden frame with an intricate weave of anima fiber, decorated with pristine feathers.\n\nWhen mounted next to a bed, it grants better sleep.\n\nIt can also serve as a meditation focus, and the anima fiber gives a stronger connection when meditating.</description>
         <thingClass>Building_Art</thingClass>
         <rotatable>true</rotatable>
         <graphicData>
