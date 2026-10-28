@@ -18,7 +18,7 @@
     <!-- ===== Gizmo (pawn, corpse) ===== -->
 
     <TribalTrophies_Scalping_Gizmo_Label>Scalp</TribalTrophies_Scalping_Gizmo_Label>
-    <TribalTrophies_Scalping_Gizmo_Desc>Order a colonist to scalp this person. Anyone able to cut flesh will take the job.</TribalTrophies_Scalping_Gizmo_Desc>
+    <TribalTrophies_Scalping_Gizmo_Desc>Mark for scalping. Colonists assigned to doctoring, cooking or handling (able to cut flesh) will take the job.</TribalTrophies_Scalping_Gizmo_Desc>
 
     <!-- ===== Designator (Orders) ===== -->
 
@@ -44,11 +44,6 @@
     <!-- description -->
     <TribalTrophies_Scalping_Item_TakenBy>This scalp was taken by {SCALPER}.</TribalTrophies_Scalping_Item_TakenBy>
 
-    <!-- ===== Common (shown in several places) ===== -->
-
-    <!-- float menu option suffix, work giver fail reason -->
-    <TribalTrophies_Scalping_Common_IdeoForbids>Ideoligion forbids</TribalTrophies_Scalping_Common_IdeoForbids>
-
     <!-- ===== Misc ===== -->
 
     <!-- name of an unknown victim or scalper -->
@@ -64,9 +59,9 @@
 
     <TribalTrophies_Scalping_ScalpTab_Header_One>Scalp</TribalTrophies_Scalping_ScalpTab_Header_One>
     <TribalTrophies_Scalping_ScalpTab_Header_Many>Scalps</TribalTrophies_Scalping_ScalpTab_Header_Many>
-    
+
     <TribalTrophies_Scalping_ScalpTab_Label>Scalps</TribalTrophies_Scalping_ScalpTab_Label>
-    
+
     <TribalTrophies_Scalping_ScalpTab_ScalpOf>Scalp of {VICTIM}</TribalTrophies_Scalping_ScalpTab_ScalpOf>
     <TribalTrophies_Scalping_ScalpTab_XenotypeOf>{XENOTYPE} of {FACTION}</TribalTrophies_Scalping_ScalpTab_XenotypeOf>
     <TribalTrophies_Scalping_ScalpTab_Of>of {FACTION}</TribalTrophies_Scalping_ScalpTab_Of>
@@ -75,17 +70,16 @@
     <TribalTrophies_Scalping_ScalpTab_By>Scalped by {SCALPER}</TribalTrophies_Scalping_ScalpTab_By>
 
     <!-- ===== Scalp Request Quest ===== -->
-
-    <TribalTrophies_ScalpRequest_Message_TargetLearned>{FACTION} has learned that you have agreed to hunt their scalps.</TribalTrophies_ScalpRequest_Message_TargetLearned>
+    <TribalTrophies_ScalpRequest_Message_TargetLearned>{FACTION} has learned that you agreed to hunt its people for their scalps.</TribalTrophies_ScalpRequest_Message_TargetLearned>
 
     <!-- settlement inspect pane -->
-    <TribalTrophies_ScalpRequest_Inspect>Requested: scalps of {TARGET} ({DELIVERED}/{TOTAL}), {TIME} left</TribalTrophies_ScalpRequest_Inspect>
+    <TribalTrophies_ScalpRequest_Inspect_Requested>Requested: scalps of {TARGET} ({DELIVERED}/{TOTAL}), {TIME} left</TribalTrophies_ScalpRequest_Inspect_Requested>
 
     <!-- caravan button at the settlement -->
-    <TribalTrophies_ScalpRequest_Command_Deliver_Label>Deliver scalps</TribalTrophies_ScalpRequest_Command_Deliver_Label>
-    <TribalTrophies_ScalpRequest_Command_Deliver_Desc>Hand over the scalps of {TARGET} this caravan carries, up to the number still requested.</TribalTrophies_ScalpRequest_Command_Deliver_Desc>
-    <TribalTrophies_ScalpRequest_Command_Deliver_NoScalps>The caravan carries no scalps of {TARGET}.</TribalTrophies_ScalpRequest_Command_Deliver_NoScalps>
-    <TribalTrophies_ScalpRequest_Command_Deliver_Confirm>Hand over {COUNT}x scalp of {TARGET} to {FACTION}?</TribalTrophies_ScalpRequest_Command_Deliver_Confirm>
+    <TribalTrophies_ScalpRequest_Gizmo_Deliver_Label>Deliver scalps</TribalTrophies_ScalpRequest_Gizmo_Deliver_Label>
+    <TribalTrophies_ScalpRequest_Gizmo_Deliver_Desc>Hand over the scalps of {TARGET} this caravan carries, up to the number still requested.</TribalTrophies_ScalpRequest_Gizmo_Deliver_Desc>
+    <TribalTrophies_ScalpRequest_Gizmo_Deliver_NoScalps>The caravan carries no scalps of {TARGET}.</TribalTrophies_ScalpRequest_Gizmo_Deliver_NoScalps>
+    <TribalTrophies_ScalpRequest_Gizmo_Deliver_Confirm>Hand over {COUNT}x scalp of {TARGET} to {FACTION}?</TribalTrophies_ScalpRequest_Gizmo_Deliver_Confirm>
 
     <!-- partial delivery, caravan or pods -->
     <TribalTrophies_ScalpRequest_Message_Delivered>{FACTION} received {COUNT}x scalp of {TARGET}. Delivered so far: {DELIVERED}/{TOTAL}.</TribalTrophies_ScalpRequest_Message_Delivered>

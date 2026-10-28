@@ -6,7 +6,7 @@ namespace FeatherMedals;
 
 public static class NpcScalpGenerator
 {
-    private const float MaxChance = 0.05f;
+    public const float MaxChance = 0.05f;
 
     public static void OnGearGenerated(Pawn pawn)
     {

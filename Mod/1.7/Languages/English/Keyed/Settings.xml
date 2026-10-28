@@ -47,7 +47,7 @@
     <TribalTrophies_Settings_Scalping_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Scalping_Npc_Label>
 
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label>Pawns can spawn scalped</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label>
-    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>Pawns from other factions can spawn with an old scalping scar. Chance is 5% for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>
+    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>Pawns from other factions can spawn with an old scalping scar. The chance is {BASECHANCE} for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>
 
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>Pawns can spawn with scalp belts</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>Pawns from other factions whose ideoligion allows scalping can spawn wearing a scalp belt. More common in low-tech and merciless factions. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>

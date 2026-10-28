@@ -35,7 +35,7 @@ namespace FeatherMedals
             }
             if (ScalpingPrecepts.StanceOf(pawn) == ScalpStance.Forbidden)
             {
-                JobFailReason.Is("TribalTrophies_Scalping_Common_IdeoForbids".Translate());
+                JobFailReason.Is("IdeoligionForbids".Translate());
                 return false;
             }
             if (!ScalpingUtility.CanBeScalped(t, pawn))

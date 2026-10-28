@@ -36,7 +36,7 @@ public class ScalpRequestComp : WorldObjectComp
     {
         if (!ActiveRequest)
             return null;
-        return "TribalTrophies_ScalpRequest_Inspect".Translate(
+        return "TribalTrophies_ScalpRequest_Inspect_Requested".Translate(
             TargetName.Named("TARGET"),
             deliveredCount.Named("DELIVERED"),
             requestCount.Named("TOTAL"),
@@ -68,8 +68,8 @@ public class ScalpRequestComp : WorldObjectComp
     {
         var command = new Command_Action
         {
-            defaultLabel = "TribalTrophies_ScalpRequest_Command_Deliver_Label".Translate(),
-            defaultDesc = "TribalTrophies_ScalpRequest_Command_Deliver_Desc".Translate(TargetName.Named("TARGET")),
+            defaultLabel = "TribalTrophies_ScalpRequest_Gizmo_Deliver_Label".Translate(),
+            defaultDesc = "TribalTrophies_ScalpRequest_Gizmo_Deliver_Desc".Translate(TargetName.Named("TARGET")),
             icon = DeliverCommandTex,
             action = () =>
             {
@@ -80,7 +80,7 @@ public class ScalpRequestComp : WorldObjectComp
                 }
                 var count = CountInCaravan(caravan);
                 Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                    "TribalTrophies_ScalpRequest_Command_Deliver_Confirm".Translate(
+                    "TribalTrophies_ScalpRequest_Gizmo_Deliver_Confirm".Translate(
                         count.Named("COUNT"),
                         TargetName.Named("TARGET"),
                         parent.Faction.NameColored.Named("FACTION")),
@@ -88,7 +88,7 @@ public class ScalpRequestComp : WorldObjectComp
             }
         };
         if (CountInCaravan(caravan) == 0)
-            command.Disable("TribalTrophies_ScalpRequest_Command_Deliver_NoScalps".Translate(TargetName.Named("TARGET")));
+            command.Disable("TribalTrophies_ScalpRequest_Gizmo_Deliver_NoScalps".Translate(TargetName.Named("TARGET")));
         return command;
     }
 

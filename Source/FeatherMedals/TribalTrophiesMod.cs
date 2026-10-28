@@ -183,7 +183,9 @@ namespace FeatherMedals
             listingStandard.CheckboxLabeled(
                 "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label".Translate(),
                 ref Settings.GenerateNpcScalped,
-                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip".Translate()
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip".Translate(
+                    NpcScalpGenerator.MaxChance.ToStringPercent().Named("BASECHANCE")
+                    )
             );
 
             listingStandard.CheckboxLabeled(

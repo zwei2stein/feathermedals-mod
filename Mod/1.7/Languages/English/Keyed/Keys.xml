@@ -9,6 +9,7 @@
 	<TribalTrophies_Trophy_Common_NeedsCeremony>This trophy can only be worn through an adorning ceremony</TribalTrophies_Trophy_Common_NeedsCeremony>
 	<!-- wear and force-wear float menu reason, wear rejection message -->
 	<TribalTrophies_Trophy_Common_OwnedByOther>This trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot wear it</TribalTrophies_Trophy_Common_OwnedByOther>
+	<!-- trophy belt gizmo label, float menu option -->
 	<TribalTrophies_Trophy_Common_Disassemble_Label>Disassemble {ITEM}</TribalTrophies_Trophy_Common_Disassemble_Label>
 
 	<!-- ===== Trophies tab (pawn) ===== -->
@@ -49,7 +50,7 @@
 
 	<!-- ===== Gizmo (trophy belts) ===== -->
 
-	<TribalTrophies_Trophy_Gizmo_Disassemble_Desc>Disassemble item and recover the trophies it was crafted with as well as some base material.</TribalTrophies_Trophy_Gizmo_Disassemble_Desc>
+	<TribalTrophies_Trophy_Gizmo_Disassemble_Desc>Mark for disassembly. Colonists assigned to tailoring will take the job and recover the trophies it was made with, plus some of its material.</TribalTrophies_Trophy_Gizmo_Disassemble_Desc>
 
 	<!-- ===== Inspect (trophy belts) ===== -->
 

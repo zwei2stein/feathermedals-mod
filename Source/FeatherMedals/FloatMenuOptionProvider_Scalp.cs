@@ -38,7 +38,7 @@ namespace FeatherMedals
             string label = "TribalTrophies_Scalping_FloatMenu_Scalp".Translate(target.LabelShortCap.Named("TARGET"));
             if (forbidden)
             {
-                return new FloatMenuOption(label + " (" + "TribalTrophies_Scalping_Common_IdeoForbids".Translate() + ")", null);
+                return new FloatMenuOption(label + " (" + "IdeoligionForbids".Translate() + ")", null);
             }
 
             bool angers = ScalpingUtility.WouldAngerFaction(target);
