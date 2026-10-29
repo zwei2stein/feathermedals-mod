@@ -4,7 +4,7 @@ using Verse;
 
 namespace FeatherMedals;
 
-public static class HonoringWarriorsUtil
+public static class HonoringWarriorsUtility
 {
     private const int CacheTicks = 60;
     

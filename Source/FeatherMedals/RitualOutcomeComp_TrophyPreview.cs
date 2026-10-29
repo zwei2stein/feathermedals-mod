@@ -45,7 +45,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
             var ext = featherTrophy.def.GetModExtension<TrophyExtension>();
             if (ext != null)
             {
-                var traitMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(featherTrophy);
+                var traitMultiplier = RitualOutcomeTraitUtility.GetTrophyTraitChanceMultiplier(featherTrophy);
                 if (ext.removesTraits is { Count: > 0 })
                     foreach (var entry in ext.removesTraits)
                         sb.AppendLine("TribalTrophies_AdorningCeremony_Common_MayRemoveTrait"

@@ -6,7 +6,7 @@ using Verse;
 
 namespace FeatherMedals;
 
-public static class RitualOutcomeTraitUtil
+public static class RitualOutcomeTraitUtility
 {
     private enum TraitOperation
     {

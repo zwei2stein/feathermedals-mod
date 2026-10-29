@@ -5,7 +5,7 @@ using Verse.Grammar;
 
 namespace FeatherMedals;
 
-public static class TaleUtil
+public static class TaleUtility
 {
     
     public static string Generate(Faction faction, Pawn pawn = null, PlanetTile tile = default)

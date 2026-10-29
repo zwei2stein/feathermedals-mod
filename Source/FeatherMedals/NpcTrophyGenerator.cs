@@ -30,7 +30,7 @@ public static class NpcTrophyGenerator
             var all = DefDatabase<ThingDef>.AllDefsListForReading;
             for (var i = 0; i < all.Count; i++)
             {
-                if (FeatherTrophyUtil.IsFeatherTrophyDef(all[i]))
+                if (FeatherTrophyUtility.IsFeatherTrophyDef(all[i]))
                     field.Add(all[i]);
             }
             return field;
@@ -45,7 +45,7 @@ public static class NpcTrophyGenerator
                 return;
             
             // do not regenerate trophies
-            if (HonoringWarriorsUtil.WornTrophies(pawn) > 0)
+            if (HonoringWarriorsUtility.WornTrophies(pawn) > 0)
                 return;
 
             var guaranteed = BackstoryGuaranteed(pawn);
@@ -81,7 +81,7 @@ public static class NpcTrophyGenerator
             if (!BaseEligible(leader, out _))
                 return;
 
-            Adorn(leader, LeaderTrophies - HonoringWarriorsUtil.WornTrophies(leader), true);
+            Adorn(leader, LeaderTrophies - HonoringWarriorsUtility.WornTrophies(leader), true);
         }
         catch (System.Exception ex)
         {
@@ -224,7 +224,7 @@ public static class NpcTrophyGenerator
             }
 
             if (TribalTrophiesMod.Settings.TrophyDynamicTraits && newest != null)
-                RitualOutcomeTraitUtil.UpdateDecoratedTrait(pawn, newest);
+                RitualOutcomeTraitUtility.UpdateDecoratedTrait(pawn, newest);
         }
         finally
         {
@@ -247,7 +247,7 @@ public static class NpcTrophyGenerator
         featherTrophy.adornedBy = presenter != null ? new RememberedPawn(presenter) : null;
         featherTrophy.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(featherTrophy, pawn, leader);
-        featherTrophy.tale = TaleUtil.Generate(pawn.Faction, pawn, featherTrophy.adorned.tile);
+        featherTrophy.tale = TaleUtility.Generate(pawn.Faction, pawn, featherTrophy.adorned.tile);
         return featherTrophy;
     }
 

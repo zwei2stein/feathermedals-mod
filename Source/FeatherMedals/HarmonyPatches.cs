@@ -36,7 +36,7 @@ public class HarmonyPatches
     {
         public static void Finalizer(Apparel newApparel)
         {
-            if (newApparel is FeatherTrophy) FeatherTrophyUtil.EvaluatingItem = null;
+            if (newApparel is FeatherTrophy) FeatherTrophyUtility.EvaluatingItem = null;
         }
         
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
@@ -53,7 +53,7 @@ public class HarmonyPatches
                 if (comp.CodedPawn == pawn)
                 {
                     // vanilla Wear asks HasPartsToWear about this exact item, see Patch_ApparelUtility_HasPartsToWear
-                    FeatherTrophyUtil.EvaluatingItem = featherTrophy;
+                    FeatherTrophyUtility.EvaluatingItem = featherTrophy;
                     return true;
                 }
 
@@ -90,16 +90,16 @@ public class HarmonyPatches
             if (!__result || p == null)
                 return;
             
-            if (!FeatherTrophyUtil.IsFeatherTrophyDef(apparel))
+            if (!FeatherTrophyUtility.IsFeatherTrophyDef(apparel))
                 return;
 
             if (RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning)
                 return;
             
-            if (FeatherTrophyUtil.EvaluatingItem is { } item && item.def == apparel && FeatherTrophyUtil.IsOwnedBy(item, p))
+            if (FeatherTrophyUtility.EvaluatingItem is { } item && item.def == apparel && FeatherTrophyUtility.IsOwnedBy(item, p))
                 return;
             
-            if (FeatherTrophyUtil.PawnOwnsBiocodedFeatherTrophyDef(p, apparel))
+            if (FeatherTrophyUtility.PawnOwnsBiocodedFeatherTrophyDef(p, apparel))
                 return;
 
             // only the ceremony can put a trophy on a pawn
@@ -116,18 +116,18 @@ public class HarmonyPatches
             if (clickedThing is not FeatherTrophy featherTrophy) return true;
 
             var pawn = context.FirstSelectedPawn;
-            if (FeatherTrophyUtil.IsOwnedBy(featherTrophy, pawn))
+            if (FeatherTrophyUtility.IsOwnedBy(featherTrophy, pawn))
             {
                 // vanilla runs, HasPartsToWear lets the owner through
-                FeatherTrophyUtil.EvaluatingItem = featherTrophy;
+                FeatherTrophyUtility.EvaluatingItem = featherTrophy;
                 return true;
             }
 
-            __result = FeatherTrophyUtil.BlockedWearOption(featherTrophy, FeatherTrophyUtil.WearBlockedReason(featherTrophy, pawn), false);
+            __result = FeatherTrophyUtility.BlockedWearOption(featherTrophy, FeatherTrophyUtility.WearBlockedReason(featherTrophy, pawn), false);
             return false;
         }
 
-        public static void Finalizer() => FeatherTrophyUtil.EvaluatingItem = null;
+        public static void Finalizer() => FeatherTrophyUtility.EvaluatingItem = null;
     }
     
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
@@ -137,14 +137,14 @@ public class HarmonyPatches
         {
             if (clickedThing is not FeatherTrophy { BiocodeComp: { Biocoded: true } } featherTrophy) return true;
 
-            __result = FeatherTrophyUtil.ForceWearOption(featherTrophy, context.FirstSelectedPawn);
+            __result = FeatherTrophyUtility.ForceWearOption(featherTrophy, context.FirstSelectedPawn);
             return false;
         }
 
         public static void Postfix(Thing clickedThing, ref FloatMenuOption __result)
         {
-            if (__result == null || !FeatherTrophyUtil.NeedsCeremony(clickedThing)) return;
-            __result = FeatherTrophyUtil.CeremonyOnlyForceWearOption((Apparel)clickedThing);
+            if (__result == null || !FeatherTrophyUtility.NeedsCeremony(clickedThing)) return;
+            __result = FeatherTrophyUtility.CeremonyOnlyForceWearOption((Apparel)clickedThing);
         }
     }
     
@@ -156,7 +156,7 @@ public class HarmonyPatches
             if (__result)
                 return;
             
-            if (FeatherTrophyUtil.IsFeatherTrophyDef(A) && FeatherTrophyUtil.IsFeatherTrophyDef(B)) 
+            if (FeatherTrophyUtility.IsFeatherTrophyDef(A) && FeatherTrophyUtility.IsFeatherTrophyDef(B)) 
                 __result = true;
         }
     }

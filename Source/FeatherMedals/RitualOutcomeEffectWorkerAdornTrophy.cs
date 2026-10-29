@@ -54,7 +54,7 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
             || adorned.apparel == null || adorned.story == null)
             return;
 
-        if (!FeatherTrophyUtil.CanWearTrophy(adorned, featherTrophy))
+        if (!FeatherTrophyUtility.CanWearTrophy(adorned, featherTrophy))
         {
             Messages.Message(
                 "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(adorned.Named("PAWN"), featherTrophy.TrophyLabel.Named("TROPHY")),
@@ -113,8 +113,8 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
 
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
         {
-            RitualOutcomeTraitUtil.UpdateDecoratedTrait(adorned, featherTrophy);
-            RitualOutcomeTraitUtil.GiveRandomTrait(adorned, featherTrophy);
+            RitualOutcomeTraitUtility.UpdateDecoratedTrait(adorned, featherTrophy);
+            RitualOutcomeTraitUtility.GiveRandomTrait(adorned, featherTrophy);
         }
         
         var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(featherTrophy.TrophyLabel.Named("TROPHY"));

@@ -12,13 +12,13 @@ public class RitualRole_Adorned : RitualRoleColonist
         if (!base.AppliesToPawn(pawn, out reason, selectedTarget, ritual, assignments, precept, skipReason))
             return false;
 
-        if (HonoringWarriorsUtil.ForbidsCeremony(pawn))
+        if (HonoringWarriorsUtility.ForbidsCeremony(pawn))
         {
             if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleForbiddenByPrecept".Translate(pawn.Named("PAWN"));
             return false;
         }
 
-        if (selectedTarget.Thing is FeatherTrophy trophy && !FeatherTrophyUtil.CanWearTrophy(pawn, trophy))
+        if (selectedTarget.Thing is FeatherTrophy trophy && !FeatherTrophyUtility.CanWearTrophy(pawn, trophy))
         {
             if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleCannotBeAdorned".Translate(pawn.Named("PAWN"));
             return false;

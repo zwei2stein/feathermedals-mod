@@ -78,7 +78,7 @@ public static class FeatherTrophyUI
     public static void DrawTraitsSummary(FeatherTrophy trophy, Rect rect, ref float curY)
     {
         var ext = trophy.def.GetModExtension<TrophyExtension>();
-        var chanceMultiplier = RitualOutcomeTraitUtil.GetTrophyTraitChanceMultiplier(trophy);
+        var chanceMultiplier = RitualOutcomeTraitUtility.GetTrophyTraitChanceMultiplier(trophy);
 
         Text.Font = GameFont.Tiny;
 

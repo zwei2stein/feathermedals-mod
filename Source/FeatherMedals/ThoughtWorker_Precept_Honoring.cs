@@ -9,9 +9,9 @@ public abstract class ThoughtWorker_Precept_Honoring : ThoughtWorker_Precept
 
     protected override ThoughtState ShouldHaveThought(Pawn p)
     {
-        if (!HonoringWarriorsUtil.IsEligible(p))
+        if (!HonoringWarriorsUtility.IsEligible(p))
             return ThoughtState.Inactive;
-        if (!HonoringWarriorsUtil.MeetsExpectation(p, def.minExpectationForNegativeThought))
+        if (!HonoringWarriorsUtility.MeetsExpectation(p, def.minExpectationForNegativeThought))
             return ThoughtState.Inactive;
 
         var count = Count(p);
@@ -21,22 +21,22 @@ public abstract class ThoughtWorker_Precept_Honoring : ThoughtWorker_Precept
 
 public class ThoughtWorker_Precept_TrophiesWorn : ThoughtWorker_Precept_Honoring
 {
-    protected override int Count(Pawn p) => HonoringWarriorsUtil.WornTrophies(p);
+    protected override int Count(Pawn p) => HonoringWarriorsUtility.WornTrophies(p);
 }
 
 public class ThoughtWorker_Precept_NoTrophyWorn : ThoughtWorker_Precept_Honoring
 {
-    protected override int Count(Pawn p) => HonoringWarriorsUtil.WornTrophies(p) == 0 ? 1 : 0;
+    protected override int Count(Pawn p) => HonoringWarriorsUtility.WornTrophies(p) == 0 ? 1 : 0;
 }
 
 public class ThoughtWorker_Precept_OthersWearing : ThoughtWorker_Precept_Honoring
 {
-    protected override int Count(Pawn p) => HonoringWarriorsUtil.OthersWearing(p);
+    protected override int Count(Pawn p) => HonoringWarriorsUtility.OthersWearing(p);
 }
 
 public class ThoughtWorker_Precept_OthersNotWearing : ThoughtWorker_Precept_Honoring
 {
-    protected override int Count(Pawn p) => HonoringWarriorsUtil.OthersNotWearing(p);
+    protected override int Count(Pawn p) => HonoringWarriorsUtility.OthersNotWearing(p);
 }
 
 public class ThoughtWorker_Precept_RecentCeremonies : ThoughtWorker_Precept_Honoring
@@ -55,8 +55,8 @@ public class ThoughtWorker_Precept_Social_TrophyWearer : ThoughtWorker_Precept_S
 {
     protected override ThoughtState ShouldHaveThought(Pawn p, Pawn otherPawn)
     {
-        return HonoringWarriorsUtil.IsEligible(p)
+        return HonoringWarriorsUtility.IsEligible(p)
                && otherPawn.RaceProps.Humanlike
-               && HonoringWarriorsUtil.WornTrophies(otherPawn) > 0;
+               && HonoringWarriorsUtility.WornTrophies(otherPawn) > 0;
     }
 }

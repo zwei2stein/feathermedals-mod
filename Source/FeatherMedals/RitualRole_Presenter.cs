@@ -10,7 +10,7 @@ public class RitualRole_Presenter : RitualRoleColonist
         if (!base.AppliesToPawn(p, out reason, selectedTarget, ritual, assignments, precept, skipReason))
             return false;
 
-        if (HonoringWarriorsUtil.ForbidsCeremony(p))
+        if (HonoringWarriorsUtility.ForbidsCeremony(p))
         {
             if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleForbiddenByPrecept".Translate(p.Named("PAWN"));
             return false;

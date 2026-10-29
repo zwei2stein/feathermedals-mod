@@ -133,7 +133,7 @@ namespace FeatherMedals
             if (this.Map == null) return false;
             foreach (var p in this.Map.mapPawns.FreeColonistsSpawned)
             {
-                if (SpeakerRolesUtil.IsSpeaker(p) && !HonoringWarriorsUtil.ForbidsCeremony(p))
+                if (SpeakerRolesUtil.IsSpeaker(p) && !HonoringWarriorsUtility.ForbidsCeremony(p))
                 {
                     result = p;
                     return true; 

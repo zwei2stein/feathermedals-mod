@@ -19,7 +19,7 @@ public class Dialog_WriteTale : Window
         this._trophy = trophy;
         
         if (TribalTrophiesMod.Settings.AutoSuggestTale && !trophy.HasTale)
-            this.draft = TaleUtil.GenerateForPlayer() ?? "";
+            this.draft = TaleUtility.GenerateForPlayer() ?? "";
         else
             this.draft = trophy.tale ?? "";
         
@@ -105,7 +105,7 @@ public class Dialog_WriteTale : Window
 
         if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Suggest".Translate()))
         {
-            draft = TaleUtil.GenerateForPlayer() ?? draft;
+            draft = TaleUtility.GenerateForPlayer() ?? draft;
         }
 
         if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Clear".Translate()))

@@ -49,7 +49,7 @@ public class TrophyCeremonyLedger : GameComponent
     {
         base.FinalizeInit();
         
-        HonoringWarriorsUtil.ResetCache();
+        HonoringWarriorsUtility.ResetCache();
 
         if (seeded)
             return;
