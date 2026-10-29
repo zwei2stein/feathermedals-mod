@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // A skull, or the skulls hung on a belt.
 public class ITab_SkullRecord : ITab_TrophyRows

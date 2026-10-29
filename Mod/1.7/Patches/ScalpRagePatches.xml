@@ -10,7 +10,7 @@
                     <li>TribalTrophies_Scalping_MentalState_ScalpPrisoner</li>
                 </states>
                 <subNodes>
-                    <li Class="FeatherMedals.JobGiver_ScalpRage" />
+                    <li Class="TribalTrophies.JobGiver_ScalpRage" />
                     <li Class="ThinkNode_PrioritySorter">
                         <subNodes>
                             <li Class="JobGiver_GetFood">

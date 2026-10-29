@@ -3,7 +3,7 @@ using RimWorld;
 using Verse;
 using UnityEngine;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     [StaticConstructorOnStartup]
     public static class TrophyTextures

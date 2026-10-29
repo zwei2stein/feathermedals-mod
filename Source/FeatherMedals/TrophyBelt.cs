@@ -4,7 +4,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 [HarmonyPatch(typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts))]
 public static class Patch_GenRecipe_MakeRecipeProducts

@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // See vanilla QuestPart_FactionGoodwillChange, with our own message.
 public class QuestPart_ScalpRequestTargetGoodwillLoss : QuestPart

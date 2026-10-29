@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef Name="TribalTrophies_Apparel_Belt_Base" ParentName="ApparelMakeableBase" Abstract="True">
-        <thingClass>FeatherMedals.TrophyBelt</thingClass>
+        <thingClass>TribalTrophies.TrophyBelt</thingClass>
         <graphicData>
             <texPath>Things/TrophyBelts/TrophyBelt</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -55,7 +55,7 @@
             <renderNodeProperties>
                 <li>
                     <debugLabel>Trophy belt</debugLabel>
-                    <nodeClass>FeatherMedals.PawnRenderNode_TrophyBelt</nodeClass>
+                    <nodeClass>TribalTrophies.PawnRenderNode_TrophyBelt</nodeClass>
                     <!-- applies wornGraphicData body type scale, hidden when clothes are not drawn -->
                     <workerClass>PawnRenderNodeWorker_Apparel_Body</workerClass>
                     <parentTagDef>Body</parentTagDef>
@@ -107,16 +107,16 @@
             <Mass>5</Mass>
         </statBases>
         <inspectorTabs>
-            <li>FeatherMedals.ITab_SkullRecord</li>
+            <li>TribalTrophies.ITab_SkullRecord</li>
         </inspectorTabs>
         <modExtensions>
-            <li Class="FeatherMedals.NpcSkullBeltExtension">
+            <li Class="TribalTrophies.NpcSkullBeltExtension">
                 <chance>0.1</chance>
                 <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
             </li>
         </modExtensions>
         <comps>
-            <li Class="FeatherMedals.CompProperties_TrophyContainer">
+            <li Class="TribalTrophies.CompProperties_TrophyContainer">
                 <disassembleTicks>300</disassembleTicks>
                 <disassembleEffecter>Tailor</disassembleEffecter>
                 <disassembleSound>Recipe_Tailor</disassembleSound>
@@ -163,22 +163,22 @@
             <Mass>2</Mass>
         </statBases>
         <inspectorTabs>
-            <li>FeatherMedals.ITab_ScalpRecord</li>
+            <li>TribalTrophies.ITab_ScalpRecord</li>
         </inspectorTabs>
         <!-- same buyers as scalps -->
         <tradeTags>
             <li>TribalTrophies_TradeTag_Scalp</li>
         </tradeTags>
         <modExtensions>
-            <li Class="FeatherMedals.ScalpDisplayExtension" />
-            <li Class="FeatherMedals.NpcScalpBeltExtension">
+            <li Class="TribalTrophies.ScalpDisplayExtension" />
+            <li Class="TribalTrophies.NpcScalpBeltExtension">
                 <honorableChance>0.05</honorableChance>
                 <mercilessChance>0.2</mercilessChance>
                 <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
             </li>
         </modExtensions>
         <comps>
-            <li Class="FeatherMedals.CompProperties_TrophyContainer">
+            <li Class="TribalTrophies.CompProperties_TrophyContainer">
                 <disassembleTicks>300</disassembleTicks>
                 <disassembleEffecter>Tailor</disassembleEffecter>
                 <disassembleSound>Recipe_Tailor</disassembleSound>

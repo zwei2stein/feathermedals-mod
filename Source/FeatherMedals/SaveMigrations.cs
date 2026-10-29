@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // Once-per-save fixes for saves started before a mod feature existed.
 public class SaveMigrations : GameComponent

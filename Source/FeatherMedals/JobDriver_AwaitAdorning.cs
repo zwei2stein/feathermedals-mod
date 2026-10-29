@@ -4,7 +4,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
 
     public class JobGiver_AwaitAdorning : ThinkNode_JobGiver

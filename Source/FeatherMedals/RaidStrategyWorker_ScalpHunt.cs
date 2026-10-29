@@ -3,7 +3,7 @@ using RimWorld;
 using Verse;
 using Verse.AI.Group;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class RaidStrategyWorker_ScalpHunt : RaidStrategyWorker_ImmediateAttack
 {

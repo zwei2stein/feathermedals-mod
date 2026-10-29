@@ -6,7 +6,7 @@
         <defName>TribalTrophies_Worldgen_ScalpPoles</defName>
         <symbol>tribalTrophies_worldgen_scalpPoles</symbol>
         <resolvers>
-            <li Class="FeatherMedals.SymbolResolver_ScalpPoles" />
+            <li Class="TribalTrophies.SymbolResolver_ScalpPoles" />
         </resolvers>
     </RuleDef>
 

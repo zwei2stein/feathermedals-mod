@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class Graphic_RuntimeTexture : Graphic
 {

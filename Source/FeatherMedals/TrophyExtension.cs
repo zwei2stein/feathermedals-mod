@@ -3,7 +3,7 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class TrophyExtension : DefModExtension
 {

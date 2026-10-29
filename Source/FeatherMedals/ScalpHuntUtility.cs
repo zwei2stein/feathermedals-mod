@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public static class ScalpHuntUtility
 {

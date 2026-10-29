@@ -3,7 +3,7 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // A made-up victim for trophies NPCs already own; discard it once its details are taken.
 public static class NpcVictimUtility

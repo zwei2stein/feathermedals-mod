@@ -4,7 +4,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
         <value>
-            <li>FeatherMedals.Designator_Scalp</li>
+            <li>TribalTrophies.Designator_Scalp</li>
         </value>
     </Operation>
 

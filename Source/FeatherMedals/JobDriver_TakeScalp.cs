@@ -3,7 +3,7 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class JobGiver_TakeScalp : ThinkNode_JobGiver
     {

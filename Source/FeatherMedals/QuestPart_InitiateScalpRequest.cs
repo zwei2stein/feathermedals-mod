@@ -3,7 +3,7 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // See vanilla QuestPart_InitiateTradeRequest.
 public class QuestPart_InitiateScalpRequest : QuestPart

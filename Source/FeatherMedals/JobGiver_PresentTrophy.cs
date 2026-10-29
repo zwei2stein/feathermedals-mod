@@ -3,7 +3,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class JobGiver_PresentTrophy : ThinkNode_JobGiver
 {

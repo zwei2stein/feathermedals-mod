@@ -3,14 +3,14 @@
 
     <JobDef>
         <defName>TribalTrophies_Scalping_Job_ScalpJob</defName>
-        <driverClass>FeatherMedals.JobDriver_Scalp</driverClass>
+        <driverClass>TribalTrophies.JobDriver_Scalp</driverClass>
         <reportString>scalping TargetA.</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
     
     <JobDef>
         <defName>TribalTrophies_Scalping_Job_ScalpInBreakJob</defName>
-        <driverClass>FeatherMedals.JobDriver_ScalpInBreak</driverClass>
+        <driverClass>TribalTrophies.JobDriver_ScalpInBreak</driverClass>
         <reportString>scalping TargetA.</reportString>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
@@ -26,7 +26,7 @@
     <WorkGiverDef>
         <defName>TribalTrophies_Scalping_WorkGiver_Scalp_Doctor</defName>
         <label>scalp</label>
-        <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
+        <giverClass>TribalTrophies.WorkGiver_Scalp</giverClass>
         <workType>Doctor</workType>
         <verb>scalp</verb>
         <gerund>scalping</gerund>
@@ -39,7 +39,7 @@
     <WorkGiverDef>
         <defName>TribalTrophies_Scalping_WorkGiver_Scalp_Butcher</defName>
         <label>scalp</label>
-        <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
+        <giverClass>TribalTrophies.WorkGiver_Scalp</giverClass>
         <workType>Cooking</workType>
         <verb>scalp</verb>
         <gerund>scalping</gerund>
@@ -52,7 +52,7 @@
     <WorkGiverDef>
         <defName>TribalTrophies_Scalping_WorkGiver_Scalp_Slaughterer</defName>
         <label>scalp</label>
-        <giverClass>FeatherMedals.WorkGiver_Scalp</giverClass>
+        <giverClass>TribalTrophies.WorkGiver_Scalp</giverClass>
         <workType>Handling</workType>
         <verb>scalp</verb>
         <gerund>scalping</gerund>

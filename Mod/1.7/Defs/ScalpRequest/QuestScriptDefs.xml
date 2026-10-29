@@ -66,17 +66,17 @@
                 <li Class="QuestNode_GetMap">
                     <canBeSpace>true</canBeSpace>
                 </li>
-                <li Class="FeatherMedals.QuestNode_ScalpRequest_GetAsker">
+                <li Class="TribalTrophies.QuestNode_ScalpRequest_GetAsker">
                     <storeAs>settlement</storeAs>
                     <storeFactionAs>faction</storeFactionAs>
                     <storeFactionLeaderAs>asker</storeFactionLeaderAs>
                     <storeAskerHostileAs>askerHostile</storeAskerHostileAs>
                 </li>
-                <li Class="FeatherMedals.QuestNode_ScalpRequest_GetTarget">
+                <li Class="TribalTrophies.QuestNode_ScalpRequest_GetTarget">
                     <asker>$faction</asker>
                     <storeAs>targetFaction</storeAs>
                 </li>
-                <li Class="FeatherMedals.QuestNode_ScalpRequest_GetRequest">
+                <li Class="TribalTrophies.QuestNode_ScalpRequest_GetRequest">
                     <targetFaction>$targetFaction</targetFaction>
                     <countRange>3~10</countRange>
                     <extraStarAboveCount>5</extraStarAboveCount>
@@ -95,13 +95,13 @@
                     <name>timeout</name>
                     <value>3600000</value> <!-- one year to deliver -->
                 </li>
-                <li Class="FeatherMedals.QuestNode_ScalpRequest_Initiate">
+                <li Class="TribalTrophies.QuestNode_ScalpRequest_Initiate">
                     <settlement>$settlement</settlement>
                     <targetFaction>$targetFaction</targetFaction>
                     <requestedCount>$scalpCount</requestedCount>
                     <duration>$timeout</duration>
                 </li>
-                <li Class="FeatherMedals.QuestNode_ScalpRequest_TargetGoodwillLoss">
+                <li Class="TribalTrophies.QuestNode_ScalpRequest_TargetGoodwillLoss">
                     <targetFaction>$targetFaction</targetFaction>
                     <goodwillLoss>$targetGoodwillLoss</goodwillLoss>
                 </li>
@@ -165,7 +165,7 @@
                 <li Class="QuestNode_Equal">
                     <value1>$askerHostile</value1>
                     <value2>true</value2>
-                    <node Class="FeatherMedals.QuestNode_ScalpRequest_GoodwillReward">
+                    <node Class="TribalTrophies.QuestNode_ScalpRequest_GoodwillReward">
                         <inSignal>settlement.ScalpRequestFulfilled</inSignal>
                         <faction>$faction</faction>
                         <change>$goodwillReward</change>

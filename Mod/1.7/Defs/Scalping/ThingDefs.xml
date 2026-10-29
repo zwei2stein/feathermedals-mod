@@ -5,7 +5,7 @@
         <defName>TribalTrophies_Trophy_Scalping_Scalp</defName>
         <label>scalp</label>
         <description>A scalp taken from an enemy, hair still attached.</description>
-        <thingClass>FeatherMedals.Scalp</thingClass>
+        <thingClass>TribalTrophies.Scalp</thingClass>
         <category>Item</category>
         <selectable>true</selectable>
         <altitudeLayer>Item</altitudeLayer>
@@ -42,11 +42,11 @@
         </statBases>
         <comps>
             <li Class="CompProperties_Forbiddable"/>
-            <li Class="FeatherMedals.CompProperties_ScalpPrice"/>
+            <li Class="TribalTrophies.CompProperties_ScalpPrice"/>
         </comps>
         <techLevel>Neolithic</techLevel>
         <inspectorTabs>
-            <li>FeatherMedals.ITab_ScalpRecord</li>
+            <li>TribalTrophies.ITab_ScalpRecord</li>
         </inspectorTabs>
     </ThingDef>
 

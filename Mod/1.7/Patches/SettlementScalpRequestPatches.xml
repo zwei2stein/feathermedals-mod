@@ -5,7 +5,7 @@
         <xpath>Defs/WorldObjectDef[defName="Settlement"]/comps</xpath>
         <value>
             <li Class="WorldObjectCompProperties">
-                <compClass>FeatherMedals.ScalpRequestComp</compClass>
+                <compClass>TribalTrophies.ScalpRequestComp</compClass>
             </li>
         </value>
     </Operation>

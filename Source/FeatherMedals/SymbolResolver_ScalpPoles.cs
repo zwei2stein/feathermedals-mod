@@ -5,7 +5,7 @@ using RimWorld;
 using RimWorld.BaseGen;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 [HarmonyPatch(typeof(SymbolResolver_Settlement), nameof(SymbolResolver_Settlement.Resolve))]
 public static class Patch_SymbolResolver_Settlement

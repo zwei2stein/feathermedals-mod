@@ -1,7 +1,7 @@
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class Dialog_WriteTale : Window
 {

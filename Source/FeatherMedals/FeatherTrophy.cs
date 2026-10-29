@@ -4,7 +4,7 @@ using RimWorld;
 using Verse;
 using Verse.AI.Group;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class FeatherTrophy : Apparel
     {

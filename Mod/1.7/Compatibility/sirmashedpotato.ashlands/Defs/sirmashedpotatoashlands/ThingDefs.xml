@@ -16,7 +16,7 @@
 			<ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<addsTraits>
 					<li>
 						<trait>Mashed_Ashlands_AshStormLover</trait>

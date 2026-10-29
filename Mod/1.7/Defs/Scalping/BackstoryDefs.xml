@@ -87,7 +87,7 @@
             <Apparel_Tuque>1</Apparel_Tuque>
         </possessions>
         <modExtensions>
-            <li Class="FeatherMedals.BackstoryHediffExtension">
+            <li Class="TribalTrophies.BackstoryHediffExtension">
                 <hediffs>
                     <li>
                         <def>TribalTrophies_Scalping_Hediff_Scalped</def>
@@ -119,7 +119,7 @@
             <Apparel_Tuque>1</Apparel_Tuque>
         </possessions>
         <modExtensions>
-            <li Class="FeatherMedals.BackstoryHediffExtension">
+            <li Class="TribalTrophies.BackstoryHediffExtension">
                 <hediffs>
                     <li>
                         <def>TribalTrophies_Scalping_Hediff_Scalped</def>

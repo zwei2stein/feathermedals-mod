@@ -39,10 +39,10 @@
 	<!--  BASE  -->
 
 	<ThingDef ParentName="ApparelBase" Name="TribalTrophies_Feather_Base" Abstract="True">
-		<thingClass>FeatherMedals.FeatherTrophy</thingClass>
+		<thingClass>TribalTrophies.FeatherTrophy</thingClass>
 		<smeltable>false</smeltable>
 		<inspectorTabs>
-			<li>FeatherMedals.ITab_TrophyRecord</li>
+			<li>TribalTrophies.ITab_TrophyRecord</li>
 		</inspectorTabs>
 		<comps Inherit="False">
 			<li Class="CompProperties_Forbiddable"/>
@@ -81,9 +81,9 @@
 			<renderNodeProperties>
 				<li>
 					<debugLabel>Feather trophy</debugLabel>
-					<nodeClass>FeatherMedals.PawnRenderNode_Trophy</nodeClass>
+					<nodeClass>TribalTrophies.PawnRenderNode_Trophy</nodeClass>
 					<subworkerClasses>
-						<li>FeatherMedals.PawnRenderSubWorker_Trophy</li>
+						<li>TribalTrophies.PawnRenderSubWorker_Trophy</li>
 					</subworkerClasses>
 					<parentTagDef>Head</parentTagDef>
 					<overrideMeshSize>1</overrideMeshSize>
@@ -155,7 +155,7 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li MayRequire="Ludeon.RimWorld.Odyssey">
 						<trait>Delicate</trait>
@@ -217,7 +217,7 @@
 			<MedicalTendQuality>0.04</MedicalTendQuality>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -258,7 +258,7 @@
 			<PainShockThreshold>0.03</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li MayRequire="Ludeon.RimWorld.Odyssey">
 						<trait>Delicate</trait>
@@ -291,7 +291,7 @@
 			<MedicalTendQuality>0.01</MedicalTendQuality>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -323,7 +323,7 @@
 			<MoveSpeed>0.01</MoveSpeed>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Wimp</trait>
@@ -360,7 +360,7 @@
 			<MoveSpeed>0.02</MoveSpeed>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>SpeedOffset</trait>
@@ -396,7 +396,7 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Wimp</trait>
@@ -435,7 +435,7 @@
 			<MedicalTendQuality>0.01</MedicalTendQuality>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>SlowLearner</trait>
@@ -476,7 +476,7 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>

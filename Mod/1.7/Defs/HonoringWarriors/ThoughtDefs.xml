@@ -3,7 +3,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_Worn</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Jealous</li>
         </nullifyingTraits>
@@ -64,7 +64,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_OthersWearing</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_OthersWearing</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>
@@ -134,7 +134,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_RecentCeremonies</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_RecentCeremonies</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>
@@ -175,7 +175,7 @@
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Forbidden_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingTraits>
             <li>Psychopath</li>
         </nullifyingTraits>
@@ -194,7 +194,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_Worn</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Psychopath</li>
         </nullifyingTraits>
@@ -213,7 +213,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_OthersWearing</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersWearing</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_OthersWearing</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>
@@ -283,7 +283,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_RecentCeremonies</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_RecentCeremonies</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_RecentCeremonies</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>
@@ -318,7 +318,7 @@
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Disapproved_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>
@@ -334,7 +334,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_Worn</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Ascetic</li>
         </nullifyingTraits>
@@ -353,7 +353,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_NoTrophy</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
         <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
         <nullifyingTraits>
             <li>Ascetic</li>
@@ -373,7 +373,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_YearsWithoutCeremony</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
         <nullifyingTraits>
             <li>Jealous</li>
         </nullifyingTraits>
@@ -411,7 +411,7 @@
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Desired_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>
@@ -427,7 +427,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_Worn</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_TrophiesWorn</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_TrophiesWorn</workerClass>
         <nullifyingTraits>
             <li>Ascetic</li>
         </nullifyingTraits>
@@ -446,7 +446,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_NoTrophy</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_NoTrophyWorn</workerClass>
         <minExpectationForNegativeThought>Moderate</minExpectationForNegativeThought>
         <nullifyingTraits>
             <li>Ascetic</li>
@@ -466,7 +466,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_OthersNotWearing</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_OthersNotWearing</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_OthersNotWearing</workerClass>
         <minExpectationForNegativeThought>High</minExpectationForNegativeThought>
         <nullifyingTraits>
             <li>Jealous</li>
@@ -540,7 +540,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_YearsWithoutCeremony</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_YearsWithoutCeremony</workerClass>
         <nullifyingTraits>
             <li>Jealous</li>
         </nullifyingTraits>
@@ -584,7 +584,7 @@
     <ThoughtDef>
         <defName>TribalTrophies_Issue_HonoringWarriors_Thought_Required_Opinion</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_Social_TrophyWearer</workerClass>
         <nullifyingHediffs>
             <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
         </nullifyingHediffs>

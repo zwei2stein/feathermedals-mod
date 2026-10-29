@@ -17,7 +17,7 @@
                     <li>TribalTrophies_Apparel_Belt_ScalpBelt</li>
                 </thingDefs>
             </li>
-            <li Class="FeatherMedals.StatPart_TerrorFreeWearersOnly">
+            <li Class="TribalTrophies.StatPart_TerrorFreeWearersOnly">
                 <thingDefs>
                     <li>TribalTrophies_Apparel_Belt_SkullBelt</li>
                     <li>TribalTrophies_Apparel_Belt_ScalpBelt</li>

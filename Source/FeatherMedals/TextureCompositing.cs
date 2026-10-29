@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public static class TextureCompositing
 {

@@ -15,7 +15,7 @@
 			<SocialImpact>0.01</SocialImpact>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<addsTraits>
 					<li>
 						<trait>RBM_Herculean_Trait</trait>

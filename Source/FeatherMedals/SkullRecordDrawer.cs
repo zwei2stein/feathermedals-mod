@@ -1,7 +1,7 @@
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // One skull: vanilla only remembers whose it was.
 public class SkullRecordDrawer : ITrophyRecordRow

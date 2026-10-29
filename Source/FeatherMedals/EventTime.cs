@@ -3,7 +3,7 @@ using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class EventTime : IExposable
 {

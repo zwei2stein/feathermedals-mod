@@ -4,7 +4,7 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     // One class, three WorkGiverDefs (Doctor, Cooking, Handling): any of them can do the job.
     public class WorkGiver_Scalp : WorkGiver_Scanner

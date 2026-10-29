@@ -1,7 +1,7 @@
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // not yet adorned feather trophy,
 // possibly with tale,

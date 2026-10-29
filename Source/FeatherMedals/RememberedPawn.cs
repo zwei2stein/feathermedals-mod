@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     // Pawn reference plus last known name. Name survives pawn being purged; follows renames while pawn exists.
     public class RememberedPawn : IExposable

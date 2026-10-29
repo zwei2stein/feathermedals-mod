@@ -2,7 +2,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // Trigger_KidnapVictimPresent
 public class Trigger_ScalpTargetPresent : Trigger

@@ -3,7 +3,7 @@ using RimWorld.Planet;
 using Verse;
 using Verse.Grammar;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public static class TaleUtility
 {

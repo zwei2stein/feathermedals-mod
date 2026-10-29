@@ -3,7 +3,7 @@
 
     <HediffDef>
         <defName>TribalTrophies_Scalping_Hediff_Scalped</defName>
-        <hediffClass>FeatherMedals.Hediff_Scalped</hediffClass>
+        <hediffClass>TribalTrophies.Hediff_Scalped</hediffClass>
         <label>scalped</label>
         <labelNoun>a scalping</labelNoun>
         <labelNounPretty>scalped {1}</labelNounPretty>
@@ -45,7 +45,7 @@
         <renderNodeProperties>
             <li>
                 <debugLabel>Scalp</debugLabel>
-                <nodeClass>FeatherMedals.PawnRenderNode_Scalp</nodeClass>
+                <nodeClass>TribalTrophies.PawnRenderNode_Scalp</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
                 <parentTagDef>Head</parentTagDef>
                 <texPath>Things/Pawn/Humanlike/Scalped/Scalped</texPath>

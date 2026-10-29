@@ -1,7 +1,7 @@
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class ScalpRageExtension : DefModExtension
     {

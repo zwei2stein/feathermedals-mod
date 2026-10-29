@@ -35,7 +35,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Scalping_Thought_Disfigured</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Scalped</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Scalped</workerClass>
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <stages>
             <li>
@@ -146,7 +146,7 @@
 
     <ThoughtDef>
         <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_WearingScalps</defName>
-        <workerClass>FeatherMedals.ThoughtWorker_Precept_WearingScalps</workerClass>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_WearingScalps</workerClass>
         <nullifyingTraits>
             <li>Psychopath</li>
             <li>Bloodlust</li>

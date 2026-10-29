@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public static class HonoringWarriorsUtility
 {

@@ -2,7 +2,7 @@ using System.Text;
 using HarmonyLib;
 using UnityEngine;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 using RimWorld;
 using Verse;
 

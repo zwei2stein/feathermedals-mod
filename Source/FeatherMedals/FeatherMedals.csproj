@@ -4,8 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <LangVersion>14</LangVersion>
-    <AssemblyTitle>FeatherMedals</AssemblyTitle>
-    <Product>FeatherMedals</Product>
+    <AssemblyTitle>TribalTrophies</AssemblyTitle>
+    <Product>TribalTrophies</Product>
     <Copyright>Copyright © 2026</Copyright>
     <OutputPath>../../Assemblies</OutputPath>
   </PropertyGroup>

@@ -11,8 +11,8 @@
 
     <MentalStateDef ParentName="BaseMentalState">
         <defName>TribalTrophies_Scalping_MentalState_ScalpingFrenzy</defName>
-        <stateClass>FeatherMedals.MentalState_ScalpRage</stateClass>
-        <workerClass>FeatherMedals.MentalStateWorker_ScalpRage</workerClass>
+        <stateClass>TribalTrophies.MentalState_ScalpRage</stateClass>
+        <workerClass>TribalTrophies.MentalStateWorker_ScalpRage</workerClass>
         <label>scalping frenzy</label>
         <category>Aggro</category>
         <blockInteractionInitiationExcept>
@@ -35,7 +35,7 @@
         <baseInspectLine>Mental state: Scalping frenzy</baseInspectLine>
         <allowBeatfire>true</allowBeatfire>
         <modExtensions>
-            <li Class="FeatherMedals.ScalpRageExtension">
+            <li Class="TribalTrophies.ScalpRageExtension">
                 <targetColonists>true</targetColonists>
                 <targetSlaves>true</targetSlaves>
                 <targetPrisoners>true</targetPrisoners>
@@ -52,8 +52,8 @@
 
     <MentalStateDef ParentName="BaseMentalState">
         <defName>TribalTrophies_Scalping_MentalState_ScalpPrisoner</defName>
-        <stateClass>FeatherMedals.MentalState_ScalpRage</stateClass>
-        <workerClass>FeatherMedals.MentalStateWorker_ScalpRage</workerClass>
+        <stateClass>TribalTrophies.MentalState_ScalpRage</stateClass>
+        <workerClass>TribalTrophies.MentalStateWorker_ScalpRage</workerClass>
         <label>decided to scalp a prisoner</label>
         <category>Aggro</category>
         <blockInteractionInitiationExcept>
@@ -77,7 +77,7 @@
         <baseInspectLine>Mental state: Scalping a prisoner</baseInspectLine>
         <allowBeatfire>true</allowBeatfire>
         <modExtensions>
-            <li Class="FeatherMedals.ScalpRageExtension">
+            <li Class="TribalTrophies.ScalpRageExtension">
                 <targetPrisoners>true</targetPrisoners>
             </li>
         </modExtensions>

@@ -4,7 +4,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/StatDef[defName="TerrorSource"]/parts</xpath>
         <value>
-            <li Class="FeatherMedals.StatPart_ScalpPoleCount" />
+            <li Class="TribalTrophies.StatPart_ScalpPoleCount" />
         </value>
     </Operation>
 

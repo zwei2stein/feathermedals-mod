@@ -1,6 +1,6 @@
 using Verse;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class PawnRenderNode_Scalp : PawnRenderNode
     {

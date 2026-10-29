@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class ScalpHunt : IExposable
 {

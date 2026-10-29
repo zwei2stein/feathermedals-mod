@@ -4,13 +4,13 @@
 	<RitualOutcomeEffectDef>
 		<defName>TribalTrophies_AdorningCeremony_TrophyOutcome</defName>
 		<description>The warrior is adorned with a trophy.</description>
-		<workerClass>FeatherMedals.RitualOutcomeEffectWorkerAdornTrophy</workerClass>
+		<workerClass>TribalTrophies.RitualOutcomeEffectWorkerAdornTrophy</workerClass>
 		<comps>
-			<li Class="FeatherMedals.RitualOutcomeComp_TrophyPreview"/>
-			<li Class="FeatherMedals.RitualOutcomeComp_TrophyQuality"/>
-			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyAttendance"/>
-			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyRoom"/>
-			<li Class="FeatherMedals.RitualOutcomeComp_CeremonyTale"/>
+			<li Class="TribalTrophies.RitualOutcomeComp_TrophyPreview"/>
+			<li Class="TribalTrophies.RitualOutcomeComp_TrophyQuality"/>
+			<li Class="TribalTrophies.RitualOutcomeComp_CeremonyAttendance"/>
+			<li Class="TribalTrophies.RitualOutcomeComp_CeremonyRoom"/>
+			<li Class="TribalTrophies.RitualOutcomeComp_CeremonyTale"/>
 		</comps>
 	</RitualOutcomeEffectDef>
 
@@ -31,7 +31,7 @@
 		<socialModeMax>Off</socialModeMax>
 		<thinkNode Class="ThinkNode_Priority">
 			<subNodes>
-				<li Class="FeatherMedals.JobGiver_PresentTrophy" />
+				<li Class="TribalTrophies.JobGiver_PresentTrophy" />
 			</subNodes>
 		</thinkNode>
 	</DutyDef>
@@ -42,7 +42,7 @@
 		<socialModeMax>Off</socialModeMax>
 		<thinkNode Class="ThinkNode_Priority">
 			<subNodes>
-				<li Class="FeatherMedals.JobGiver_AwaitAdorning" />
+				<li Class="TribalTrophies.JobGiver_AwaitAdorning" />
 			</subNodes>
 		</thinkNode>
 	</DutyDef>
@@ -54,7 +54,7 @@
 		<ritualSpectateTarget>true</ritualSpectateTarget>
 		<thinkNode Class="ThinkNode_Priority">
 			<subNodes>
-				<li Class="FeatherMedals.JobGiver_PresentTrophy">
+				<li Class="TribalTrophies.JobGiver_PresentTrophy">
 					<speech>true</speech>
 					<soundDefMale>Speech_Funeral_Male</soundDefMale>
 					<soundDefFemale>Speech_Funeral_Female</soundDefFemale>
@@ -69,7 +69,7 @@
 		<spectatorsLabel>Spectators</spectatorsLabel>
 		<spectatorGerund>spectating</spectatorGerund>
 		<roles>
-			<li Class="FeatherMedals.RitualRole_Presenter">
+			<li Class="TribalTrophies.RitualRole_Presenter">
 				<label>presenter</label>
 				<id>leader</id>
 				<required>True</required>
@@ -78,7 +78,7 @@
 				<allowChild>false</allowChild>
 				<mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
 			</li>
-			<li Class="FeatherMedals.RitualRole_Adorned">
+			<li Class="TribalTrophies.RitualRole_Adorned">
 				<label>adorned</label>
 				<id>adorned</id>
 				<required>True</required>
@@ -117,7 +117,7 @@
 						</customPositions>
 					</li>
 				</roleBehaviors>
-				<preAction Class="FeatherMedals.RitualStageAction_StartAdorning"/>
+				<preAction Class="TribalTrophies.RitualStageAction_StartAdorning"/>
 				<highlightRolePawns>
 					<li>adorned</li>
 					<li>leader</li>
@@ -166,7 +166,7 @@
 
 	<JobDef>
 		<defName>TribalTrophies_PresentTrophy</defName>
-		<driverClass>FeatherMedals.JobDriver_PresentTrophy</driverClass>
+		<driverClass>TribalTrophies.JobDriver_PresentTrophy</driverClass>
 		<reportString>presenting TargetA.</reportString>
 		<carryThingAfterJob>true</carryThingAfterJob>
 		<dropThingBeforeJob>false</dropThingBeforeJob>
@@ -175,7 +175,7 @@
 
 	<JobDef>
 		<defName>TribalTrophies_PresentTrophySpeech</defName>
-		<driverClass>FeatherMedals.JobDriver_PresentTrophy</driverClass>
+		<driverClass>TribalTrophies.JobDriver_PresentTrophy</driverClass>
 		<reportString>honoring TargetC.</reportString>
 		<carryThingAfterJob>true</carryThingAfterJob>
 		<dropThingBeforeJob>false</dropThingBeforeJob>
@@ -184,7 +184,7 @@
 
 	<JobDef>
 		<defName>TribalTrophies_Job_AwaitAdorning</defName>
-		<driverClass>FeatherMedals.JobDriver_AwaitAdorning</driverClass>
+		<driverClass>TribalTrophies.JobDriver_AwaitAdorning</driverClass>
 		<reportString>waiting to be adorned.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	</JobDef>

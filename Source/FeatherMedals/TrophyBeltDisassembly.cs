@@ -3,7 +3,7 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // like vanilla skull extraction
 public class WorkGiver_DisassembleTrophyBelt : WorkGiver_Scanner

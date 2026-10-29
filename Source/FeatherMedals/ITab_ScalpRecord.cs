@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // A scalp, or the scalps hung on a belt or a scalp pole.
 public class ITab_ScalpRecord : ITab_TrophyRows

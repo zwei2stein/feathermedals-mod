@@ -5,7 +5,7 @@
         <defName>TribalTrophies_Scalping_Building_ScalpPole</defName>
         <label>scalp pole</label>
         <description>A wooden pole made to display taken scalps. The scalps strike terror into slaves and give a morbid focus for meditation.</description>
-        <thingClass>FeatherMedals.Building_ScalpPole</thingClass>
+        <thingClass>TribalTrophies.Building_ScalpPole</thingClass>
         <graphicData>
             <texPath>Things/Building/Misc/TribalTrophies_Scalping_Building_ScalpPole/ScalpPole</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -71,10 +71,10 @@
         </building>
         <inspectorTabs>
             <li>ITab_Storage</li>
-            <li>FeatherMedals.ITab_ScalpRecord</li>
+            <li>TribalTrophies.ITab_ScalpRecord</li>
         </inspectorTabs>
         <modExtensions>
-            <li Class="FeatherMedals.ScalpPoleExtension">
+            <li Class="TribalTrophies.ScalpPoleExtension">
                 <!-- Scalps hang one above another. x=0 , y=0, z (+/-). -->
                 <slotOffsets>
                     <li>(0.1, 0, -0.05)</li>
@@ -90,7 +90,7 @@
                     <li>Morbid</li>
                 </focusTypes>
                 <offsets>
-                    <li Class="FeatherMedals.FocusStrengthOffset_ScalpPoleScalps">
+                    <li Class="TribalTrophies.FocusStrengthOffset_ScalpPoleScalps">
                         <offset>0.05</offset>
                     </li>
                 </offsets>

@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class JobDriver_ScalpInBreak : JobDriver_Scalp
     {

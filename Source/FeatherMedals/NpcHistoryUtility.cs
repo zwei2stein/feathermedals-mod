@@ -4,7 +4,7 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public static class NpcHistoryUtility
 {

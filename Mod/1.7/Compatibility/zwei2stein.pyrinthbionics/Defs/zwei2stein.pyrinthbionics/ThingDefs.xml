@@ -17,7 +17,7 @@
 			<PyrinthBionics_HeatPerSecond>0.1</PyrinthBionics_HeatPerSecond>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<addsTraits>
 					<li>
 						<trait>Pyromaniac</trait>

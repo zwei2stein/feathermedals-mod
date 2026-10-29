@@ -3,7 +3,7 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class FloatMenuOptionProvider_Scalp : FloatMenuOptionProvider
     {

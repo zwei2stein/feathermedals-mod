@@ -17,7 +17,7 @@
 			<PlantHarvestYield>0.02</PlantHarvestYield>
 		</equippedStatOffsets>
 		<modExtensions>
-			<li Class="FeatherMedals.TrophyExtension">
+			<li Class="TribalTrophies.TrophyExtension">
 				<removesTraits>
 					<li MayRequire="phil42.allergies">
 						<trait>P42_Allergy</trait>

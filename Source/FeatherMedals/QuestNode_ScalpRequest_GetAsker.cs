@@ -5,7 +5,7 @@ using RimWorld.QuestGen;
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class QuestNode_ScalpRequest_GetAsker : QuestNode
 {

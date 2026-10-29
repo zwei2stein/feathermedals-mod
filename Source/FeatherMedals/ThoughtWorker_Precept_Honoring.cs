@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public abstract class ThoughtWorker_Precept_Honoring : ThoughtWorker_Precept
 {

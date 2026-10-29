@@ -4,7 +4,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 // LordJob_AssaultColony derived
 public class LordJob_ScalpHunt : LordJob

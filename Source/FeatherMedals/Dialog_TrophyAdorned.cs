@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace FeatherMedals;
+namespace TribalTrophies;
 
 public class Dialog_TrophyAdorned : Window
 {

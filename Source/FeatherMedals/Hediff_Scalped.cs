@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace FeatherMedals
+namespace TribalTrophies
 {
     public class Hediff_Scalped : Hediff_Injury, IBackstoryHediff
     {
