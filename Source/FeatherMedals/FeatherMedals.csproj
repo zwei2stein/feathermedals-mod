@@ -6,6 +6,8 @@
     <LangVersion>14</LangVersion>
     <AssemblyTitle>TribalTrophies</AssemblyTitle>
     <Product>TribalTrophies</Product>
+    <AssemblyName>TribalTrophies</AssemblyName>
+    <RootNamespace>TribalTrophies</RootNamespace>
     <Copyright>Copyright © 2026</Copyright>
     <OutputPath>../../Assemblies</OutputPath>
   </PropertyGroup>

@@ -16,7 +16,7 @@
 
     <RaidStrategyDef ParentName="TribalTrophies_Scalping_ScalpHuntBase">
         <defName>TribalTrophies_Scalping_ScalpHunt</defName>
-        <workerClass>FeatherMedals.RaidStrategyWorker_ScalpHunt</workerClass>
+        <workerClass>TribalTrophies.RaidStrategyWorker_ScalpHunt</workerClass>
         <selectionWeightPerPointsCurve>
             <points>
                 <li>(0, 0.3)</li>
@@ -30,7 +30,7 @@
 
     <RaidStrategyDef ParentName="TribalTrophies_Scalping_ScalpHuntBase">
         <defName>TribalTrophies_Scalping_ScalpHuntDropPods</defName>
-        <workerClass>FeatherMedals.RaidStrategyWorker_ScalpHuntDropPods</workerClass>
+        <workerClass>TribalTrophies.RaidStrategyWorker_ScalpHuntDropPods</workerClass>
         <selectionWeightPerPointsCurve>
             <points>
                 <li>(0, 0.15)</li>
@@ -46,7 +46,7 @@
 
     <JobDef>
         <defName>TribalTrophies_Scalping_TakeScalpAndFlee</defName>
-        <driverClass>FeatherMedals.JobDriver_TakeScalp</driverClass>
+        <driverClass>TribalTrophies.JobDriver_TakeScalp</driverClass>
         <reportString>scalping TargetA.</reportString>
         <!-- like vanilla kidnapping and stealing: no giving up once started, not even when shot -->
         <casualInterruptible>false</casualInterruptible>
@@ -59,7 +59,7 @@
         <alwaysShowWeapon>true</alwaysShowWeapon>
         <thinkNode Class="ThinkNode_Priority">
             <subNodes>
-                <li Class="FeatherMedals.JobGiver_TakeScalp" />
+                <li Class="TribalTrophies.JobGiver_TakeScalp" />
                 <li Class="JobGiver_AIFightEnemies">
                     <targetAcquireRadius>65</targetAcquireRadius>
                     <targetKeepRadius>72</targetKeepRadius>
