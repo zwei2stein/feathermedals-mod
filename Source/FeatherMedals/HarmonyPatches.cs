@@ -42,25 +42,21 @@ public class HarmonyPatches
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
         {
             if (newApparel is not FeatherTrophy featherTrophy) return true;
-            var comp = featherTrophy.BiocodeComp;
-            if (comp == null) return true;
 
             var pawn = __instance.pawn;
 
-            if (comp.Biocoded)
+            if (featherTrophy.IsAdorned)
             {
                 // re-wearing its own trophy (unlocked, stripped, ...) is fine, anyone else's is not
-                if (comp.CodedPawn == pawn)
+                if (featherTrophy.IsOwnedBy(pawn))
                 {
                     // vanilla Wear asks HasPartsToWear about this exact item, see Patch_ApparelUtility_HasPartsToWear
                     FeatherTrophyUtility.EvaluatingItem = featherTrophy;
                     return true;
                 }
 
-                Messages.Message("TribalTrophies_Trophy_Common_OwnedByOther".Translate(
-                        comp.CodedPawn.Named("PAWN"),
-                        pawn.Named("IMPOSTOR")),
-                    comp.CodedPawn,
+                Messages.Message(FeatherTrophyUtility.WearBlockedReason(featherTrophy, pawn),
+                    featherTrophy.AdornedPawn.Pawn,
                     MessageTypeDefOf.RejectInput,
                     false);
                 return false;
@@ -72,11 +68,6 @@ public class HarmonyPatches
                 Messages.Message("TribalTrophies_Trophy_Common_NeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
-
-            comp.CodeFor(pawn);
-
-            if (Prefs.DevMode)
-                Log.Message($"[TribalTrophies] Biocoded {featherTrophy.TrophyLabel} to {pawn.LabelShort}");
 
             return true;
         }
@@ -96,7 +87,7 @@ public class HarmonyPatches
             if (RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning)
                 return;
             
-            if (FeatherTrophyUtility.EvaluatingItem is { } item && item.def == apparel && FeatherTrophyUtility.IsOwnedBy(item, p))
+            if (FeatherTrophyUtility.EvaluatingItem is FeatherTrophy item && item.def == apparel && item.IsOwnedBy(p))
                 return;
             
             if (FeatherTrophyUtility.PawnOwnsBiocodedFeatherTrophyDef(p, apparel))
@@ -116,7 +107,7 @@ public class HarmonyPatches
             if (clickedThing is not FeatherTrophy featherTrophy) return true;
 
             var pawn = context.FirstSelectedPawn;
-            if (FeatherTrophyUtility.IsOwnedBy(featherTrophy, pawn))
+            if (featherTrophy.IsOwnedBy(pawn))
             {
                 // vanilla runs, HasPartsToWear lets the owner through
                 FeatherTrophyUtility.EvaluatingItem = featherTrophy;
@@ -135,7 +126,7 @@ public class HarmonyPatches
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherTrophy { BiocodeComp: { Biocoded: true } } featherTrophy) return true;
+            if (clickedThing is not FeatherTrophy { IsAdorned: true } featherTrophy) return true;
 
             __result = FeatherTrophyUtility.ForceWearOption(featherTrophy, context.FirstSelectedPawn);
             return false;

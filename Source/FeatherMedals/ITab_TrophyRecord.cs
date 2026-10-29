@@ -16,7 +16,7 @@ public class ITab_TrophyRecord : ITab_TrophyRows
             return rows;
 
         // adorned: the record of its ceremony; not yet adorned: what it may do
-        if (featherTrophy.adorned != null)
+        if (featherTrophy.IsAdorned)
             rows.Add(new FeatherTrophyRecordDrawer(featherTrophy, verbose: true));
         else
             rows.Add(new FeatherTrophyDetailDrawer(featherTrophy));

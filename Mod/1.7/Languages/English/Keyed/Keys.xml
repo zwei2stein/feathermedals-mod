@@ -8,7 +8,7 @@
 	<!-- wear and force-wear float menu reason, wear rejection message -->
 	<TribalTrophies_Trophy_Common_NeedsCeremony>This trophy can only be worn through an adorning ceremony</TribalTrophies_Trophy_Common_NeedsCeremony>
 	<!-- wear and force-wear float menu reason, wear rejection message -->
-	<TribalTrophies_Trophy_Common_OwnedByOther>This trophy belongs to {PAWN_labelShort}, {IMPOSTOR_labelShort} cannot wear it</TribalTrophies_Trophy_Common_OwnedByOther>
+	<TribalTrophies_Trophy_Common_OwnedByOther>This trophy belongs to {PAWN}, {IMPOSTOR_labelShort} cannot wear it</TribalTrophies_Trophy_Common_OwnedByOther>
 	<!-- trophy belt gizmo label, float menu option -->
 	<TribalTrophies_Trophy_Common_Disassemble_Label>Disassemble {ITEM}</TribalTrophies_Trophy_Common_Disassemble_Label>
 
@@ -46,7 +46,7 @@
 	<!-- ===== Misc ===== -->
 
 	<!-- label of an adorned trophy -->
-	<TribalTrophies_Trophy_Misc_AdornedLabel>{PAWN_labelShort}'s {TROPHY}</TribalTrophies_Trophy_Misc_AdornedLabel>
+	<TribalTrophies_Trophy_Misc_AdornedLabel>{PAWN}'s {TROPHY}</TribalTrophies_Trophy_Misc_AdornedLabel>
 
 	<!-- ===== Gizmo (trophy belts) ===== -->
 

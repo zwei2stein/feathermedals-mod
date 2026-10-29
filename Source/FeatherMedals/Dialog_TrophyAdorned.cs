@@ -8,14 +8,12 @@ public class Dialog_TrophyAdorned : Window
 {
 
     private readonly FeatherTrophy _trophy;
-    private readonly Pawn _adorned;
 
     private Vector2 scrollPosition;
 
-    public Dialog_TrophyAdorned(FeatherTrophy trophy, Pawn adorned)
+    public Dialog_TrophyAdorned(FeatherTrophy trophy)
     {
         this._trophy = trophy;
-        this._adorned = adorned;
         forcePause = true;
         doCloseX = true;
         absorbInputAroundWindow = true;
@@ -29,7 +27,7 @@ public class Dialog_TrophyAdorned : Window
         var titleRect = new Rect(inRect.x, inRect.y, inRect.width, TrophyUIStyle.HeaderHeight);
         Text.Font = GameFont.Medium;
         Text.Anchor = TextAnchor.UpperLeft;
-        Widgets.Label(titleRect, "TribalTrophies_AdorningCeremony_AdornedDialog_Title".Translate(_adorned.Named("PAWN")));
+        Widgets.Label(titleRect, "TribalTrophies_AdorningCeremony_AdornedDialog_Title".Translate(_trophy.AdornedPawn.ShortName.Named("PAWN")));
         Text.Font = GameFont.Small;
 
         // The trophy just adorned, with who it honors and how the ceremony went; scroll instead of overflowing

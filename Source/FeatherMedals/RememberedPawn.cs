@@ -8,6 +8,7 @@ namespace TribalTrophies
     {
         private Pawn pawn;
         private string name;
+        private string shortName;
 
         private Faction faction;
         private string factionName;
@@ -43,6 +44,15 @@ namespace TribalTrophies
             }
         }
         
+        public string ShortName
+        {
+            get
+            {
+                Refresh();
+                return shortName.NullOrEmpty() ? name : shortName;
+            }
+        }
+
         public Faction Faction => faction;
 
         public string FactionName
@@ -71,6 +81,7 @@ namespace TribalTrophies
             {
                 // get current name (if player renamed pawn...)
                 name = pawn.NameFullColored;
+                shortName = pawn.NameShortColored;
             }
         }
 
@@ -78,10 +89,16 @@ namespace TribalTrophies
         {
             // refresh last known name when saving
             if (Scribe.mode == LoadSaveMode.Saving)
+            {
                 Refresh();
+                // discarded pawn is not saveable.
+                if (pawn != null && pawn.Discarded)
+                    pawn = null;
+            }
 
-            Scribe_References.Look(ref pawn, "pawn");
+            Scribe_References.Look(ref pawn, "pawn", saveDestroyedThings: true);
             Scribe_Values.Look(ref name, "name");
+            Scribe_Values.Look(ref shortName, "shortName");
             
             Scribe_References.Look(ref faction, "faction");
             Scribe_Values.Look(ref factionName, "factionName");

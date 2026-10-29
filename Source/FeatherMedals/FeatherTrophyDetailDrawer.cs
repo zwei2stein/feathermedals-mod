@@ -66,7 +66,7 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
             curY += UIHelper.StatSummaryHeight(_trophy.def);
 
         // Trait effects, centered
-        if (TribalTrophiesMod.Settings.TrophyDynamicTraits && _trophy.BiocodeComp is not { Biocoded: true })
+        if (TribalTrophiesMod.Settings.TrophyDynamicTraits && !_trophy.IsAdorned)
         {
             if (draw)
                 FeatherTrophyUI.DrawTraitsSummary(_trophy, rect, ref curY);

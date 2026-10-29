@@ -218,7 +218,10 @@ public static class NpcTrophyGenerator
             {
                 pawn.apparel.Wear(featherTrophy, false, true);
                 if (pawn.apparel.Wearing(featherTrophy))
+                {
+                    featherTrophy.SetAdornedPawn(pawn);
                     newest = featherTrophy;
+                }
                 else if (!featherTrophy.Destroyed)
                     featherTrophy.Destroy();
             }

@@ -23,9 +23,9 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
 
     private string GetHonoringLine()
     {
-        if (!verbose || _trophy.BiocodeComp is not { Biocoded: true, CodedPawn: not null })
+        if (!verbose || !_trophy.IsAdorned)
             return null;
-        return "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(_trophy.BiocodeComp.CodedPawn.Named("PAWN"));
+        return "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(_trophy.AdornedPawn.Name.Named("PAWN"));
     }
 
     private string GetCeremonyQualityLine()

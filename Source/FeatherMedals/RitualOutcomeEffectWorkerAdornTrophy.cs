@@ -80,6 +80,7 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
             return;
         }
         
+        featherTrophy.SetAdornedPawn(adorned);
         featherTrophy.adornedBy = new RememberedPawn(presenter);
         featherTrophy.adorned = EventTime.Now(jobRitual.Map);
 
@@ -148,6 +149,6 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
 
         TaleRecorder.RecordTale(TribalTrophiesDefOf.TribalTrophies_AdornedTrophyTale, presenter, adorned);
 
-        Find.WindowStack.Add(new Dialog_TrophyAdorned(featherTrophy, adorned));
+        Find.WindowStack.Add(new Dialog_TrophyAdorned(featherTrophy));
     }
 }

@@ -9,7 +9,7 @@
         </pointsFactorCurve>
         <letterLabelEnemy>Scalp hunt</letterLabelEnemy>
         <arrivalTextEnemy>They have come for your scalps.\n\nThey will strike straight away. Every colonist who falls risks losing their scalp. Each scalper runs off the moment they have the scalp, and the raid retreats once they have enough.</arrivalTextEnemy>
-        <!-- never used: scalp hunts are hostile only, vanilla expects the fields -->
+        <!-- never used: scalp hunts are hostile only!, vanilla expects the fields -->
         <letterLabelFriendly>Friendlies</letterLabelFriendly>
         <arrivalTextFriendly>They are moving in to help you immediately.</arrivalTextFriendly>
     </RaidStrategyDef>

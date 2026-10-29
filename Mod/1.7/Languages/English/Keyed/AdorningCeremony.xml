@@ -66,7 +66,7 @@
 
 	<!-- ===== AdornedDialog (shown after the adorning) ===== -->
 
-	<TribalTrophies_AdorningCeremony_AdornedDialog_Title>{PAWN_labelShort} adorned with:</TribalTrophies_AdorningCeremony_AdornedDialog_Title>
+	<TribalTrophies_AdorningCeremony_AdornedDialog_Title>{PAWN} adorned with:</TribalTrophies_AdorningCeremony_AdornedDialog_Title>
 
 	<!-- ===== Common (shown in several places) ===== -->
 
@@ -76,7 +76,7 @@
 	<TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>An adorning ceremony for this trophy is already in progress.</TribalTrophies_AdorningCeremony_Common_CeremonyInProgress>
 
 	<!-- adorned dialog, trophy tab, inspect pane -->
-	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN_nameFull}</TribalTrophies_AdorningCeremony_Common_Honoring>
+	<TribalTrophies_AdorningCeremony_Common_Honoring>Honoring: {PAWN}</TribalTrophies_AdorningCeremony_Common_Honoring>
 	<!-- adorned dialog, trophy tab, inspect pane, pawn Trophies tab -->
 	<TribalTrophies_AdorningCeremony_Common_AdornedBy>Adorned by: {PAWN}</TribalTrophies_AdorningCeremony_Common_AdornedBy>
 
@@ -91,9 +91,9 @@
 	<TribalTrophies_AdorningCeremony_Common_Quality_Poor>poor</TribalTrophies_AdorningCeremony_Common_Quality_Poor>
 
 	<!-- trait changes, full: messages, letter, pawn Trophies tab row height -->
-	<TribalTrophies_AdorningCeremony_Common_DecoratedGained>{PAWN_labelShort} is now known as {TRAIT}.</TribalTrophies_AdorningCeremony_Common_DecoratedGained>
-	<TribalTrophies_AdorningCeremony_Common_TraitGained>{PAWN_labelShort} has gained the {TRAIT} trait through this honor.</TribalTrophies_AdorningCeremony_Common_TraitGained>
-	<TribalTrophies_AdorningCeremony_Common_TraitShed>{PAWN_labelShort} has shed the {TRAIT} trait through this honor.</TribalTrophies_AdorningCeremony_Common_TraitShed>
+	<TribalTrophies_AdorningCeremony_Common_DecoratedGained>{PAWN} is now known as {TRAIT}.</TribalTrophies_AdorningCeremony_Common_DecoratedGained>
+	<TribalTrophies_AdorningCeremony_Common_TraitGained>{PAWN} has gained the {TRAIT} trait through this honor.</TribalTrophies_AdorningCeremony_Common_TraitGained>
+	<TribalTrophies_AdorningCeremony_Common_TraitShed>{PAWN} has shed the {TRAIT} trait through this honor.</TribalTrophies_AdorningCeremony_Common_TraitShed>
 
 	<!-- trait changes, short: adorned dialog, pawn Trophies tab -->
 	<TribalTrophies_AdorningCeremony_Common_TraitAdded_Short>Added trait: {TRAIT}</TribalTrophies_AdorningCeremony_Common_TraitAdded_Short>

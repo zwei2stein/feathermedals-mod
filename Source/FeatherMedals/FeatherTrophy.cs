@@ -8,15 +8,13 @@ namespace TribalTrophies
 {
     public class FeatherTrophy : Apparel
     {
-        public CompBiocodable BiocodeComp => field ??= this.GetComp<CompBiocodable>();
-        private Pawn AdornedPawn => BiocodeComp?.CodedPawn;
-        private string cachedLabelPawnName;
-            
         public string tale;
         public int ceremonyQuality = -1; // -1 = not yet adorned
         public RememberedPawn adornedBy;
         
         public EventTime adorned; // null = not yet adorned
+
+        private RememberedPawn adornedPawn; // null = not yet adorned, see SetAdornedPawn
 
         public TraitDef addedTrait = null;
         public int addedTraitDegree = 0;
@@ -32,6 +30,7 @@ namespace TribalTrophies
             Scribe_Deep.Look(ref adornedBy, "adornedBy");
             
             Scribe_Deep.Look(ref adorned, "adorned");
+            Scribe_Deep.Look(ref adornedPawn, "adornedPawn");
 
             Scribe_Defs.Look(ref addedTrait, "addedTrait");
             Scribe_Values.Look(ref addedTraitDegree, "addedTraitDegree", 0);
@@ -46,15 +45,28 @@ namespace TribalTrophies
         }
 
         public bool HasTale => !tale.NullOrEmpty();
+        
+        public RememberedPawn AdornedPawn => adornedPawn;
+
+        public bool IsAdorned => adornedPawn != null;
+
+        public bool IsOwnedBy(Pawn pawn) => pawn != null && adornedPawn?.Pawn == pawn;
+
+        // the one place a trophy gets its owner; biocode mirrors it so vanilla Wear keeps everyone else out
+        public void SetAdornedPawn(Pawn pawn)
+        {
+            adornedPawn = new RememberedPawn(pawn);
+            GetComp<CompBiocodable>()?.CodeFor(pawn);
+
+            if (Prefs.DevMode)
+                Log.Message($"[TribalTrophies] Biocoded {TrophyLabel} to {pawn.LabelShort}");
+        }
 
         public override string LabelNoCount
         {
             get
             {
-                if (BiocodeComp is not { Biocoded: true, CodedPawn: not null }) return base.LabelNoCount;
-
-                var pawnName = AdornedPawn.LabelShort;
-                if (field != null && cachedLabelPawnName == pawnName) return field;
+                if (!IsAdorned) return base.LabelNoCount;
 
                 var cleanLabel = GenLabel.ThingLabel(this.def, this.Stuff, 1);
                 if (AllComps != null)
@@ -65,13 +77,11 @@ namespace TribalTrophies
                         cleanLabel = comp.TransformLabel(cleanLabel);
                     }
                 }
-                field = "TribalTrophies_Trophy_Misc_AdornedLabel".Translate(
-                    AdornedPawn.Named("PAWN"),
+                return "TribalTrophies_Trophy_Misc_AdornedLabel".Translate(
+                    adornedPawn.ShortName.Named("PAWN"),
                     cleanLabel.Named("TROPHY")).Resolve();
-                cachedLabelPawnName = pawnName;
-                return field;
             }
-        } = null;
+        }
             
         public override IEnumerable<Gizmo> GetGizmos()
         {
@@ -87,7 +97,7 @@ namespace TribalTrophies
             };
             
             // first failing reason wins
-            if (BiocodeComp is { Biocoded: true })
+            if (IsAdorned)
                 adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned".Translate());
             else if (IsCeremonyInProgress())
                 adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Common_CeremonyInProgress".Translate());
@@ -107,7 +117,7 @@ namespace TribalTrophies
             };
 
             // the tale is part of the ceremony, it is fixed once the trophy is adorned
-            if (BiocodeComp is { Biocoded: true })
+            if (IsAdorned)
                 taleGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledTaleLocked".Translate());
                 
             yield return taleGizmo;
@@ -235,12 +245,12 @@ namespace TribalTrophies
         {
             if (addedTrait == null)
                 return null;
-            if (terse || this.AdornedPawn == null)
+            if (terse || !this.IsAdorned)
                 return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
                     this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
             return "TribalTrophies_AdorningCeremony_Common_TraitGained".Translate(
-                this.AdornedPawn.Named("PAWN"),
+                this.AdornedPawn.ShortName.Named("PAWN"),
                 this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")).Resolve();
         }
 
@@ -248,12 +258,12 @@ namespace TribalTrophies
         {
             if (removedTrait == null)
                 return null;
-            if (terse || this.AdornedPawn == null)
+            if (terse || !this.IsAdorned)
                 return "TribalTrophies_AdorningCeremony_Common_TraitRemoved_Short".Translate(
                     this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
             return "TribalTrophies_AdorningCeremony_Common_TraitShed".Translate(
-                this.AdornedPawn.Named("PAWN"),
+                this.AdornedPawn.ShortName.Named("PAWN"),
                 this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")).Resolve();
         }
         
@@ -261,12 +271,12 @@ namespace TribalTrophies
         {
             if (decoratedDegree < 0)
                 return null;
-            if (terse || this.AdornedPawn == null)
+            if (terse || !this.IsAdorned)
                 return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
                     TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
                         ).CapitalizeFirst().Resolve();
             return "TribalTrophies_AdorningCeremony_Common_DecoratedGained".Translate(
-                this.AdornedPawn.Named("PAWN"),
+                this.AdornedPawn.ShortName.Named("PAWN"),
                 TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
         }
 
@@ -312,20 +322,16 @@ namespace TribalTrophies
                         }
                 }
             }
-            
-            
-            
         }
         
         public override string GetInspectString()
         {
             var sb = new StringBuilder(base.GetInspectString());
-
-            // adorned to (biocoded pawn)
-            if (BiocodeComp is { Biocoded: true, CodedPawn: not null })
+            
+            if (IsAdorned)
             {
                 if (sb.Length > 0) sb.AppendLine();
-                sb.Append("TribalTrophies_AdorningCeremony_Common_Honoring".Translate(BiocodeComp.CodedPawn.Named("PAWN")));
+                sb.Append("TribalTrophies_AdorningCeremony_Common_Honoring".Translate(adornedPawn.Name.Named("PAWN")));
             }
 
             if (adornedBy != null)

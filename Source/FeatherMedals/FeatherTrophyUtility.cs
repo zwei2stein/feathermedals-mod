@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -13,13 +12,10 @@ public static class FeatherTrophyUtility
     
     public static bool IsFeatherTrophyDef(ThingDef def) => def?.thingClass == typeof(FeatherTrophy);
 
-    public static bool IsOwnedBy(Thing thing, Pawn pawn)
-        => thing is FeatherTrophy { BiocodeComp: { Biocoded: true } comp } && comp.CodedPawn == pawn;
-
     public static string WearBlockedReason(FeatherTrophy trophy, Pawn pawn)
     {
-        if (trophy.BiocodeComp is { Biocoded: true, CodedPawn: { } owner } && owner != pawn)
-            return "TribalTrophies_Trophy_Common_OwnedByOther".Translate(owner.Named("PAWN"), pawn.Named("IMPOSTOR"));
+        if (trophy.IsAdorned && !trophy.IsOwnedBy(pawn))
+            return "TribalTrophies_Trophy_Common_OwnedByOther".Translate(trophy.AdornedPawn.ShortName.Named("PAWN"), pawn.Named("IMPOSTOR"));
 
         return "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst();
     }
@@ -62,7 +58,7 @@ public static class FeatherTrophyUtility
         void Reject(string reason)
             => Messages.Message(BlockedWearText(trophy, reason, true), targetPawn, MessageTypeDefOf.RejectInput, false);
 
-        if (!IsOwnedBy(trophy, targetPawn))
+        if (!trophy.IsOwnedBy(targetPawn))
         {
             Reject(WearBlockedReason(trophy, targetPawn));
             return;
@@ -113,7 +109,7 @@ public static class FeatherTrophyUtility
         => BlockedWearOption(apparel, "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst(), true);
 
     public static bool NeedsCeremony(Thing thing)
-        => thing is FeatherTrophy { BiocodeComp: not { Biocoded: true } };
+        => thing is FeatherTrophy { IsAdorned: false };
     
     public static bool CanWearTrophy(Pawn pawn, FeatherTrophy trophy)
     {
@@ -141,7 +137,7 @@ public static class FeatherTrophyUtility
             for (var i = 0; i < worn.Count; i++)
             {
                 if (worn[i].def != apparelDef) continue;
-                if (worn[i] is FeatherTrophy featherTrophy && featherTrophy.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+                if (worn[i] is FeatherTrophy featherTrophy && featherTrophy.IsOwnedBy(p))
                     return true;
             }
         }
@@ -150,7 +146,7 @@ public static class FeatherTrophyUtility
         for (var i = 0; i < inv.Count; i++)
         {
             if (inv[i].def != apparelDef) continue;
-            if (inv[i] is FeatherTrophy featherTrophy && featherTrophy.BiocodeComp is { Biocoded: true } b && b.CodedPawn == p)
+            if (inv[i] is FeatherTrophy featherTrophy && featherTrophy.IsOwnedBy(p))
                 return true;
         }
         return false;
