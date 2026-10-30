@@ -188,8 +188,8 @@ public static class NpcTrophyGenerator
         var fallbackPresenter = FallbackPresenter(pawn);
 
         // lets the Wear gate and HasPartsToWear patch through, same as a ceremony
-        var previous = RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning;
-        RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = true;
+        var previous = FeatherTrophyUtility.ApplyingCeremonyAdorning;
+        FeatherTrophyUtility.ApplyingCeremonyAdorning = true;
         try
         {
             var defs = new List<ThingDef>();
@@ -231,7 +231,7 @@ public static class NpcTrophyGenerator
         }
         finally
         {
-            RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = previous;
+            FeatherTrophyUtility.ApplyingCeremonyAdorning = previous;
         }
     }
 

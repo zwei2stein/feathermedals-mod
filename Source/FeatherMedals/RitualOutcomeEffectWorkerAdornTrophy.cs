@@ -6,8 +6,6 @@ namespace TribalTrophies;
 
 public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
 {
-    public static bool ApplyingCeremonyAdorning;
-
     public RitualOutcomeEffectWorkerAdornTrophy()
     {
     }
@@ -21,10 +19,10 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
 
     public override void Apply(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
-        var previous = ApplyingCeremonyAdorning;
-        ApplyingCeremonyAdorning = true;
+        var previous = FeatherTrophyUtility.ApplyingCeremonyAdorning;
+        FeatherTrophyUtility.ApplyingCeremonyAdorning = true;
         try { ApplyImpl(progress, totalPresence, jobRitual); }
-        finally { ApplyingCeremonyAdorning = previous; }
+        finally { FeatherTrophyUtility.ApplyingCeremonyAdorning = previous; }
     }
 
     private void ApplyImpl(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)

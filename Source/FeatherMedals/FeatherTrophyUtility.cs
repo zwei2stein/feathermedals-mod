@@ -9,6 +9,8 @@ public static class FeatherTrophyUtility
 {
     // float menu helper
     public static Apparel EvaluatingItem;
+
+    public static bool ApplyingCeremonyAdorning;
     
     public static bool IsFeatherTrophyDef(ThingDef def) => def?.thingClass == typeof(FeatherTrophy);
 
@@ -117,15 +119,15 @@ public static class FeatherTrophyUtility
             return false;
 
         // our wear gate refuses every pawn outside a ceremony
-        var previous = RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning;
-        RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = true;
+        var previous = ApplyingCeremonyAdorning;
+        ApplyingCeremonyAdorning = true;
         try
         {
             return ApparelUtility.HasPartsToWear(pawn, trophy.def) && trophy.PawnCanWear(pawn, true);
         }
         finally
         {
-            RitualOutcomeEffectWorkerAdornTrophy.ApplyingCeremonyAdorning = previous;
+            ApplyingCeremonyAdorning = previous;
         }
     }
 
