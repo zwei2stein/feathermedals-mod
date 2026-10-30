@@ -8,7 +8,13 @@ Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD
 
 [Infographic as a separate page](/Publishing/features.html)
 
-![](/Publishing/dummy.png)
+![](/Publishing/features/pristine.png)
+![](/Publishing/features/feathers_01.png)
+![](/Publishing/features/feathers_02.png)
+![](/Publishing/features/feathers_03.png)
+
+![](/Publishing/features/buildings.png)
+![](/Publishing/features/scalps.png)
 
 ### Steam mod page info
 

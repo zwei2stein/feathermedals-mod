@@ -17,9 +17,9 @@
         .crafting-table tr:nth-child(even) { background: rgba(248,244,232,0.8); }
         .crafting-table .col-graphic { width: 64px; text-align: center; }
         .crafting-table .col-graphic div { width: 64px; height: 64px; background-size: contain; background-repeat: no-repeat; background-position: center; margin: 0 auto; }
-        .crafting-table .col-name { width: 220px; color: #3a3a3a; font-weight: 500; }
+        .crafting-table .col-name { width: 220px; }
         .crafting-table .col-costs { width: 180px; }
-        .crafting-table .col-features { color: #4a4a4a; }
+        .crafting-table .col-features { }
         .stats-list { margin: 0; padding: 0; list-style: none; }
         .stats-list li { padding: 2px 0; position: relative; padding-left: 16px; }
         .stats-list li::before { content: '\2022'; position: absolute; left: 0; color: #8b4513; font-size: 1.2em; line-height: 1; }
@@ -37,6 +37,21 @@
         .crafting-table .col-graphic .belt-render { position: relative; overflow: hidden; }
         .crafting-table .col-graphic .belt-render div { position: absolute; margin: 0; background-size: 100% 100%; }
         .crafting-table .col-graphic .belt-render .belt { left: 0; top: 0; width: 100%; height: 100%; }
+    </style>
+    <style>
+        .section {
+            border: 2px solid #a8834e; border-radius: 8px; overflow: hidden;
+            outline: 2px dashed #b4834f; outline-offset: -7px;
+        }
+        .section h2 { margin: 0; padding: 14px 16px 2px; background: #e8d8b0; }
+        .crafting-table { border: none; border-radius: 0; }
+        .crafting-table thead tr { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='15'%3E%3Cpath fill='%238fc1b8' d='M0.3 0.3h2.4v2.4h-2.4zM3.3 0.3h2.4v2.4h-2.4zM9.3 0.3h2.4v2.4h-2.4zM12.3 0.3h2.4v2.4h-2.4zM15.3 0.3h2.4v2.4h-2.4zM18.3 0.3h2.4v2.4h-2.4zM21.3 0.3h2.4v2.4h-2.4zM24.3 0.3h2.4v2.4h-2.4zM27.3 0.3h2.4v2.4h-2.4zM0.3 3.3h2.4v2.4h-2.4zM12.3 3.3h2.4v2.4h-2.4zM15.3 3.3h2.4v2.4h-2.4zM18.3 3.3h2.4v2.4h-2.4zM24.3 3.3h2.4v2.4h-2.4zM27.3 3.3h2.4v2.4h-2.4zM15.3 6.3h2.4v2.4h-2.4zM27.3 6.3h2.4v2.4h-2.4zM0.3 9.3h2.4v2.4h-2.4zM12.3 9.3h2.4v2.4h-2.4zM15.3 9.3h2.4v2.4h-2.4zM18.3 9.3h2.4v2.4h-2.4zM24.3 9.3h2.4v2.4h-2.4zM27.3 9.3h2.4v2.4h-2.4zM0.3 12.3h2.4v2.4h-2.4zM3.3 12.3h2.4v2.4h-2.4zM9.3 12.3h2.4v2.4h-2.4zM12.3 12.3h2.4v2.4h-2.4zM15.3 12.3h2.4v2.4h-2.4zM18.3 12.3h2.4v2.4h-2.4zM21.3 12.3h2.4v2.4h-2.4zM24.3 12.3h2.4v2.4h-2.4zM27.3 12.3h2.4v2.4h-2.4z'/%3E%3Cpath fill='%23a8322a' d='M6.3 0.3h2.4v2.4h-2.4zM3.3 3.3h2.4v2.4h-2.4zM9.3 3.3h2.4v2.4h-2.4zM0.3 6.3h2.4v2.4h-2.4zM12.3 6.3h2.4v2.4h-2.4zM21.3 6.3h2.4v2.4h-2.4zM3.3 9.3h2.4v2.4h-2.4zM9.3 9.3h2.4v2.4h-2.4zM6.3 12.3h2.4v2.4h-2.4z'/%3E%3Cpath fill='%23d39a2c' d='M6.3 3.3h2.4v2.4h-2.4zM3.3 6.3h2.4v2.4h-2.4zM9.3 6.3h2.4v2.4h-2.4zM6.3 9.3h2.4v2.4h-2.4z'/%3E%3Cpath fill='%23f3ead6' d='M21.3 3.3h2.4v2.4h-2.4zM18.3 6.3h2.4v2.4h-2.4zM24.3 6.3h2.4v2.4h-2.4zM21.3 9.3h2.4v2.4h-2.4z'/%3E%3Cpath fill='%232a1d14' d='M6.3 6.3h2.4v2.4h-2.4z'/%3E%3C/svg%3E") left bottom / 30px 15px repeat-x, #e8d8b0; }
+        .crafting-table th { background: transparent; border-bottom: none; padding-bottom: 27px; }
+        .crafting-table tbody tr { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8'%3E%3Cg stroke='%232e2621' stroke-width='0.6'%3E%3Cpath d='M0 8 L6 0 L12 8 Z' fill='%23c99a2e'/%3E%3Cpath d='M6 0 L18 0 L12 8 Z' fill='%234f6b62'/%3E%3Cpath d='M12 8 L18 0 L24 8 Z' fill='%239c3b23'/%3E%3Cpath d='M18 0 L24 0 L24 8 Z M0 0 L6 0 L0 8 Z' fill='%234f6b62'/%3E%3C/g%3E%3C/svg%3E") left bottom / 24px 8px repeat-x; }
+        .crafting-table tbody tr:nth-child(even) { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8'%3E%3Cg stroke='%232e2621' stroke-width='0.6'%3E%3Cpath d='M0 8 L6 0 L12 8 Z' fill='%23c99a2e'/%3E%3Cpath d='M6 0 L18 0 L12 8 Z' fill='%234f6b62'/%3E%3Cpath d='M12 8 L18 0 L24 8 Z' fill='%239c3b23'/%3E%3Cpath d='M18 0 L24 0 L24 8 Z M0 0 L6 0 L0 8 Z' fill='%234f6b62'/%3E%3C/g%3E%3C/svg%3E") left bottom / 24px 8px repeat-x, rgba(248,244,232,0.8); }
+        .crafting-table tbody tr:last-child { background-image: none; }
+        .crafting-table td { border-bottom: none; padding-bottom: 18px; }
+        .crafting-table tr:last-child td { padding-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -93,7 +108,6 @@
 </div>
 
 <div class="section">
-    <h2>Simple trophies</h2>
     <table class="crafting-table">
         <thead>
         <tr>
@@ -243,7 +257,6 @@
 </div>
 
 <div class="section">
-    <h2>Ornate trophies</h2>
     <table class="crafting-table">
         <thead>
         <tr>
@@ -396,7 +409,6 @@
 </div>
 
 <div class="section">
-    <h2>Trophies from other mods</h2>
     <table class="crafting-table">
         <thead>
         <tr>
@@ -408,7 +420,7 @@
         </thead>
         <tbody>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/raecotech/Textures/Things/Feathers/TerratechAncestry_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/ra.ecotech/Textures/Things/Feathers/TerratechAncestry_Feather.png');"></div></td>
             <td class="col-name"><strong>Terratech Bloodline</strong><br/>
                 <small class="ornate">Mod: Ecotech</small></td>
             <td class="col-costs">
@@ -430,7 +442,7 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/sirmashedpotatoashlands/Textures/Things/Feathers/Mashed_Ashlands_AshStormLover_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/sirmashedpotato.ashlands/Textures/Things/Feathers/Mashed_Ashlands_AshStormLover_Feather.png');"></div></td>
             <td class="col-name"><strong>Braved Ash Storm</strong><br/>
                 <small class="ornate">Mod: Mashed's Ashlands</small></td>
             <td class="col-costs">
@@ -453,7 +465,7 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/tugminotaur/Textures/Things/Feathers/RBM_Herculean_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/tug.minotaur/Textures/Things/Feathers/RBM_Herculean_Feather.png');"></div></td>
             <td class="col-name"><strong>Herculean Strength</strong><br/>
                 <small class="ornate">Mod: Roo's Minotaur Xenotype</small></td>
             <td class="col-costs">
@@ -475,7 +487,7 @@
             </td>
         </tr>
         <tr>
-            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/zaleldersfaction/Textures/Things/Feathers/NatureHarmony_Feather.png');"></div></td>
+            <td class="col-graphic"><div style="background-image: url('../Mod/1.7/Compatibility/zal.eldersfaction/Textures/Things/Feathers/NatureHarmony_Feather.png');"></div></td>
             <td class="col-name"><strong>In Harmony With Nature</strong><br/>
                 <small class="ornate">Mod: Elders Faction (Continued)</small></td>
             <td class="col-costs">
@@ -528,7 +540,6 @@
 </div>
 
 <div class="section">
-    <h2>Buildings</h2>
     <table class="crafting-table">
         <thead>
         <tr>
@@ -602,7 +613,6 @@
 </div>
 
 <div class="section">
-    <h2>Scalps</h2>
     <table class="crafting-table">
         <thead>
         <tr>
