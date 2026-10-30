@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -26,6 +27,13 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         if (!verbose || !_trophy.IsAdorned)
             return null;
         return "TribalTrophies_AdorningCeremony_Common_Honoring".Translate(_trophy.AdornedPawn.Name.Named("PAWN"));
+    }
+
+    private string GetCraftsmanshipLine()
+    {
+        if (!verbose)
+            return null;
+        return _trophy.GetCraftsmanshipLabel();
     }
 
     private string GetCeremonyQualityLine()
@@ -66,19 +74,22 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         else
             height += TrophyUIStyle.DescriptionLineHeight + TrophyUIStyle.RowLineGap;
 
-        var statText = UIHelper.GetStatSummary(_trophy.def);
-        if (!statText.NullOrEmpty())
-            height += Text.CalcHeight(statText, textWidth) + TrophyUIStyle.RowLineGap;
+        var statLines = UIHelper.StatOffsetLines(_trophy.def).ToList();
+        if (statLines.Count > 0)
+            height += TrophyUIStyle.RowLineGap + UIHelper.CompactLinesHeight(statLines, textWidth);
 
         if (HasAdorningInfo())
             height += Text.CalcHeight(GetAdorningInfo(), textWidth) + TrophyUIStyle.RowLineGap;
+
+        var craftsmanship = GetCraftsmanshipLine();
+        if (craftsmanship != null)
+            height += Text.CalcHeight(craftsmanship, textWidth) + TrophyUIStyle.RowLineGap;
 
         var quality = GetCeremonyQualityLine();
         if (quality != null)
             height += Text.CalcHeight(quality, textWidth) + TrophyUIStyle.RowLineGap;
 
-        int lineCount = _trophy.GetTraitChangeText()?.Split('\n').Length ?? 0;
-        height += lineCount * TrophyUIStyle.FixedLineHeight;
+        height += FeatherTrophyUI.TraitChangeSummaryHeight(_trophy, textWidth);
 
         Text.Font = GameFont.Small;
         height += TrophyUIStyle.RowPadding * 2f;
@@ -184,19 +195,15 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         }
 
         // Stat bonuses summary
-        var statText = UIHelper.GetStatSummary(_trophy.def);
-        if (!statText.NullOrEmpty())
+        var statLines = UIHelper.StatOffsetLines(_trophy.def).ToList();
+        if (statLines.Count > 0)
         {
-            Text.Font = GameFont.Tiny;
-            var statHeight = Text.CalcHeight(statText, textWidth);
-            var statsRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, statHeight);
-            GUI.color = TrophyUIStyle.GreenColor;
-            Widgets.Label(statsRect, statText);
-            GUI.color = Color.white;
-            descBottom = statsRect.yMax;
+            descBottom += TrophyUIStyle.RowLineGap;
+            var statsArea = new Rect(textX, rowRect.y, textWidth, rowRect.height);
+            UIHelper.DrawCompactLines(statLines, TrophyUIStyle.GreenColor, TextAnchor.MiddleLeft, statsArea, ref descBottom);
         }
 
-        FeatherTrophyUI.DrawTraitChangeSummary(_trophy, textX, rowRect, ref descBottom);
+        FeatherTrophyUI.DrawTraitChangeSummary(_trophy, new Rect(textX, rowRect.y, textWidth, rowRect.height), ref descBottom, TextAnchor.MiddleLeft);
 
         if (HasAdorningInfo())
         {
@@ -207,6 +214,17 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
             Widgets.Label(adorningRect, adorningText);
             GUI.color = Color.white;
             descBottom = adorningRect.yMax;
+        }
+
+        var craftsmanship = GetCraftsmanshipLine();
+        if (craftsmanship != null)
+        {
+            Text.Font = GameFont.Tiny;
+            var craftsmanshipHeight = Text.CalcHeight(craftsmanship, textWidth);
+            var craftsmanshipRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, craftsmanshipHeight);
+            // muted as text, not by GUI.color, so the quality word keeps its own color
+            Widgets.Label(craftsmanshipRect, craftsmanship.Colorize(TrophyUIStyle.MutedColor));
+            descBottom = craftsmanshipRect.yMax;
         }
 
         // Ceremony quality, verbose only

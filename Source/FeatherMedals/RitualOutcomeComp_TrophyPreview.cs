@@ -33,28 +33,13 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
         var sb = new StringBuilder();
 
-        var statOffsets = featherTrophy.def.equippedStatOffsets;
-        if (statOffsets is { Count: > 0 })
-        {
-            foreach (var stat in statOffsets)
-                sb.AppendLine(UIHelper.StatOffsetLine(stat));
-        }
+        foreach (var line in UIHelper.StatOffsetLines(featherTrophy.def))
+            sb.AppendLine(line);
 
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
         {
-            var ext = featherTrophy.def.GetModExtension<TrophyExtension>();
-            if (ext != null)
-            {
-                var traitMultiplier = RitualOutcomeTraitUtility.GetTrophyTraitChanceMultiplier(featherTrophy);
-                if (ext.removesTraits is { Count: > 0 })
-                    foreach (var entry in ext.removesTraits)
-                        sb.AppendLine("TribalTrophies_AdorningCeremony_Common_MayRemoveTrait"
-                            .Translate(entry.Label.CapitalizeFirst(), (entry.chance * traitMultiplier).ToStringPercent()));
-                if (ext.addsTraits is { Count: > 0 })
-                    foreach (var entry in ext.addsTraits)
-                        sb.AppendLine("TribalTrophies_AdorningCeremony_Common_MayGrantTrait"
-                            .Translate(entry.Label.CapitalizeFirst(), (entry.chance * traitMultiplier).ToStringPercent()));
-            }
+            foreach (var line in featherTrophy.GetTraitChanceLabels())
+                sb.AppendLine(line);
         }
 
         return new QualityFactor

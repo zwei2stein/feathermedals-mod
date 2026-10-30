@@ -41,9 +41,15 @@ public static class FeatherTrophyUI
         curY += taleHeight + TrophyUIStyle.TaleGap;
     }
 
-    public static void DrawTraitChangeSummary(FeatherTrophy featherTrophy, float textX, Rect rect, ref float curY)
+    public static float TraitChangeSummaryHeight(FeatherTrophy featherTrophy, float width)
     {
-        DrawTraitChangeSummary(featherTrophy, new Rect(textX, rect.y, rect.xMax - textX, rect.height), ref curY, TextAnchor.MiddleLeft);
+        var height = 0f;
+        foreach (var text in new[] { featherTrophy.GetDecoratedTraitLabel(true), featherTrophy.GetAddedTraitLabel(true), featherTrophy.GetRemovedTraitLabel(true) })
+        {
+            if (text != null)
+                height += UIHelper.CompactLineHeight(text, width);
+        }
+        return height;
     }
 
     public static void DrawTraitChangeSummary(FeatherTrophy featherTrophy, Rect area, ref float curY, TextAnchor anchor)
@@ -57,63 +63,6 @@ public static class FeatherTrophyUI
     {
         if (text == null) return;
 
-        Text.Font = GameFont.Tiny;
-        GUI.color = color;
-        Text.Anchor = anchor;
-        Widgets.Label(new Rect(area.x, curY, area.width, TrophyUIStyle.FixedLineHeight), text);
-        GUI.color = Color.white;
-        curY += TrophyUIStyle.FixedLineHeight;
-        Text.Font = GameFont.Small;
-    }
-
-    public static float TraitsSummaryHeight(FeatherTrophy trophy)
-    {
-        var ext = trophy.def.GetModExtension<TrophyExtension>();
-        if (ext == null)
-            return 0f;
-        var count = (ext.removesTraits?.Count ?? 0) + (ext.addsTraits?.Count ?? 0);
-        return count * TrophyUIStyle.FixedLineHeight;
-    }
-
-    public static void DrawTraitsSummary(FeatherTrophy trophy, Rect rect, ref float curY)
-    {
-        var ext = trophy.def.GetModExtension<TrophyExtension>();
-        var chanceMultiplier = RitualOutcomeTraitUtility.GetTrophyTraitChanceMultiplier(trophy);
-
-        Text.Font = GameFont.Tiny;
-
-        if (ext != null && ((ext.removesTraits is { Count: > 0 }) || (ext.addsTraits is { Count: > 0 })))
-        {
-            Text.Anchor = TextAnchor.MiddleCenter;
-            if (ext.removesTraits != null)
-            {
-                foreach (var entry in ext.removesTraits)
-                {
-                    var label = entry.Label;
-                    GUI.color = TrophyUIStyle.MutedColor;
-                    var line = "TribalTrophies_AdorningCeremony_Common_MayRemoveTrait".Translate(
-                        label.CapitalizeFirst(),
-                        (entry.chance * chanceMultiplier).ToStringPercent());
-                    Widgets.Label(new Rect(rect.x, curY, rect.width, TrophyUIStyle.FixedLineHeight), line);
-                    curY += TrophyUIStyle.FixedLineHeight;
-                }
-            }
-            if (ext.addsTraits != null)
-            {
-                foreach (var entry in ext.addsTraits)
-                {
-                    var label = entry.Label;
-                    GUI.color = TrophyUIStyle.MutedColor;
-                    var line = "TribalTrophies_AdorningCeremony_Common_MayGrantTrait".Translate(
-                        label.CapitalizeFirst(),
-                        (entry.chance * chanceMultiplier).ToStringPercent());
-                    Widgets.Label(new Rect(rect.x, curY, rect.width, TrophyUIStyle.FixedLineHeight), line);
-                    curY += TrophyUIStyle.FixedLineHeight;
-                }
-            }
-        }
-
-        GUI.color = Color.white;
-        Text.Font = GameFont.Small;
+        UIHelper.DrawCompactLine(text, color, anchor, area, ref curY);
     }
 }

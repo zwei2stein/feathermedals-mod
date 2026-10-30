@@ -51,7 +51,6 @@ public static class TrophyUIStyle
     public const float RowLineGap = 2f; // compact rows
     public const float DetailLineGap = 4f; // detail view
     public const float BlockGap = 8f; // between groups of lines
-    public const float FixedLineHeight = 24f; // stat and trait lines
     public const float DescriptionLineHeight = 20f; // one truncated description line
 
     public const float TaleSideMargin = 20f;

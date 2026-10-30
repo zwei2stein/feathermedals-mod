@@ -8,29 +8,6 @@ namespace TribalTrophies;
 
 public static class RitualOutcomeTraitUtility
 {
-    private enum TraitOperation
-    {
-        Add,
-        Remove
-    }
-
-    private readonly struct Candidate
-    {
-        public readonly TrophyDynamicTrait Entry;
-        public readonly TraitOperation Operation;
-
-        public Candidate(TrophyDynamicTrait entry, TraitOperation operation)
-        {
-            Entry = entry;
-            Operation = operation;
-        }
-        
-        public override string ToString()
-        {
-            return $"{Operation}: {Entry}";
-        }
-    }
-    
     // Trait chance multiplier (awful x0.5, legendary x2)
     private const float TrophyTraitChanceStep = 0.25f;
 
@@ -63,10 +40,10 @@ public static class RitualOutcomeTraitUtility
         var picked = candidates.RandomElementByWeight(candidate => candidate.Entry.chance);
         switch (picked.Operation)
         {
-            case TraitOperation.Add:
+            case TrophyTraitOperation.Add:
                 Add(pawn, picked, trophy);
                 break;
-            case TraitOperation.Remove:
+            case TrophyTraitOperation.Remove:
                 Remove(pawn, picked, trophy);
                 break;
             default:
@@ -74,28 +51,19 @@ public static class RitualOutcomeTraitUtility
         }
     }
 
-    private static IEnumerable<Candidate> BuildCandidates(Pawn pawn, FeatherTrophy trophy)
+    private static IEnumerable<TrophyTraitChange> BuildCandidates(Pawn pawn, FeatherTrophy trophy)
     {
         var ext = trophy.def.GetModExtension<TrophyExtension>();
         if (ext == null)
             yield break;
-        
-        if (ext.removesTraits != null)
-        {
-            foreach (var entry in ext.removesTraits)
-            {
-                if (CanRemove(pawn.story.traits, entry))
-                    yield return new Candidate(entry, TraitOperation.Remove);
-            }
-        }
 
-        if (ext.addsTraits != null)
+        foreach (var change in ext.TraitChanges())
         {
-            foreach (var entry in ext.addsTraits)
-            {
-                if (CanAdd(pawn.story.traits, entry))
-                    yield return new Candidate(entry, TraitOperation.Add);
-            }
+            var possible = change.Operation == TrophyTraitOperation.Add
+                ? CanAdd(pawn.story.traits, change.Entry)
+                : CanRemove(pawn.story.traits, change.Entry);
+            if (possible)
+                yield return change;
         }
     }
 
@@ -120,7 +88,7 @@ public static class RitualOutcomeTraitUtility
         return !traits.allTraits.Any(t => t.def.ConflictsWith(probe));
     }
 
-    private static void Remove(Pawn pawn, Candidate picked, FeatherTrophy trophy)
+    private static void Remove(Pawn pawn, TrophyTraitChange picked, FeatherTrophy trophy)
     {
         var existing =  pawn.story.traits.allTraits.FirstOrDefault(t => t.def == picked.Entry.trait && t.Degree == picked.Entry.degree);
         pawn.story.traits.RemoveTrait(existing);
@@ -139,7 +107,7 @@ public static class RitualOutcomeTraitUtility
 
     }
 
-    private static void Add(Pawn pawn, Candidate picked, FeatherTrophy trophy)
+    private static void Add(Pawn pawn, TrophyTraitChange picked, FeatherTrophy trophy)
     {
         var newTrait = new Trait(picked.Entry.trait, picked.Entry.degree);
         pawn.story.traits.GainTrait(newTrait);

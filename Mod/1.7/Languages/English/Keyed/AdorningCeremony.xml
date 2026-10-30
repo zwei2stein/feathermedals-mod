@@ -55,7 +55,7 @@
 	<!-- ===== TaleDialog (write the Tale of Honor) ===== -->
 
 	<TribalTrophies_AdorningCeremony_TaleDialog_Title>Tale of Honor</TribalTrophies_AdorningCeremony_TaleDialog_Title>
-	<TribalTrophies_AdorningCeremony_TaleDialog_Desc>Tell the Tale of Honor, recounting the deeds of a warrior. The tale cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_TaleDialog_Desc>
+	<TribalTrophies_AdorningCeremony_TaleDialog_Desc>Tell the Tale of Honor, recounting the deeds of a warrior.\nThe tale cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_TaleDialog_Desc>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Suggest>Suggest</TribalTrophies_AdorningCeremony_TaleDialog_Suggest>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Clear>Clear</TribalTrophies_AdorningCeremony_TaleDialog_Clear>
 
@@ -81,8 +81,8 @@
 	<TribalTrophies_AdorningCeremony_Common_AdornedBy>Adorned by: {PAWN}</TribalTrophies_AdorningCeremony_Common_AdornedBy>
 
 	<!-- ritual dialog trophy row tooltip, trophy tab -->
-	<TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>May remove {0} ({1})</TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>
-	<TribalTrophies_AdorningCeremony_Common_MayGrantTrait>May grant {0} ({1})</TribalTrophies_AdorningCeremony_Common_MayGrantTrait>
+	<TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>May remove {TRAIT} ({CHANCE})</TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>
+	<TribalTrophies_AdorningCeremony_Common_MayGrantTrait>May grant {TRAIT} ({CHANCE})</TribalTrophies_AdorningCeremony_Common_MayGrantTrait>
 
 	<!-- ceremony quality words: letter, trophy tab, inspect pane -->
 	<TribalTrophies_AdorningCeremony_Common_Quality_Legendary>legendary</TribalTrophies_AdorningCeremony_Common_Quality_Legendary>

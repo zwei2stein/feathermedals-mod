@@ -46,41 +46,44 @@ public static class UIHelper
     public static string StatOffsetLine(StatModifier mod)
         => $"{mod.stat.LabelCap}: {mod.ValueToStringAsOffset}";
 
-    public static float StatSummaryHeight(ThingDef def)
+    public static IEnumerable<string> StatOffsetLines(ThingDef def)
     {
-        var statOffsets = def.equippedStatOffsets;
-        if (statOffsets is not { Count: > 0 })
-            return 0f;
-        return statOffsets.Count * TrophyUIStyle.FixedLineHeight + TrophyUIStyle.BlockGap;
+        if (def.equippedStatOffsets == null)
+            yield break;
+        foreach (var mod in def.equippedStatOffsets)
+            yield return StatOffsetLine(mod);
     }
 
-    public static void DrawStatSummary(ThingDef def, Rect rect, ref float curY)
+    public static float CompactLinesHeight(IEnumerable<string> lines, float width)
     {
-        var statOffsets = def.equippedStatOffsets;
-        if (statOffsets is { Count: > 0 })
-        {
-            Text.Font = GameFont.Tiny;
-            GUI.color = TrophyUIStyle.GreenColor;
-            Text.Anchor = TextAnchor.MiddleCenter;
-            foreach (var stat in statOffsets)
-            {
-                Widgets.Label(new Rect(rect.x, curY, rect.width, TrophyUIStyle.FixedLineHeight), StatOffsetLine(stat));
-                curY += TrophyUIStyle.FixedLineHeight;
-            }
-            GUI.color = Color.white;
-            curY += TrophyUIStyle.BlockGap;
-            Text.Font = GameFont.Small;
-        }
+        var height = 0f;
+        foreach (var line in lines)
+            height += CompactLineHeight(line, width);
+        return height;
     }
 
-    public static string GetStatSummary(ThingDef def)
+    public static float CompactLineHeight(string text, float width)
     {
-        var offsets = def.equippedStatOffsets;
-        if (offsets == null || offsets.Count == 0) return null;
+        Text.Font = GameFont.Tiny;
+        var height = Text.CalcHeight(text, width);
+        Text.Font = GameFont.Small;
+        return height;
+    }
 
-        var lines = new List<string>();
-        foreach (var mod in offsets)
-            lines.Add(StatOffsetLine(mod));
-        return string.Join(", ", lines);
+    public static void DrawCompactLines(IEnumerable<string> lines, Color color, TextAnchor anchor, Rect area, ref float curY)
+    {
+        foreach (var line in lines)
+            DrawCompactLine(line, color, anchor, area, ref curY);
+    }
+
+    public static void DrawCompactLine(string text, Color color, TextAnchor anchor, Rect area, ref float curY)
+    {
+        var height = CompactLineHeight(text, area.width);
+        Text.Font = GameFont.Tiny;
+        Text.Anchor = anchor;
+        // colored as text, not by GUI.color, so colored words inside (quality colors) keep their own color
+        Widgets.Label(new Rect(area.x, curY, area.width, height), text.Colorize(color));
+        curY += height;
+        Text.Font = GameFont.Small;
     }
 }

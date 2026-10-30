@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -60,18 +61,28 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         }
 
         // Stat bonuses, green, centered
-        if (draw)
-            UIHelper.DrawStatSummary(_trophy.def, rect, ref curY);
-        else
-            curY += UIHelper.StatSummaryHeight(_trophy.def);
+        var statLines = UIHelper.StatOffsetLines(_trophy.def).ToList();
+        if (statLines.Count > 0)
+        {
+            if (draw)
+                UIHelper.DrawCompactLines(statLines, TrophyUIStyle.GreenColor, TextAnchor.MiddleCenter, rect, ref curY);
+            else
+                curY += UIHelper.CompactLinesHeight(statLines, rect.width);
+            curY += TrophyUIStyle.BlockGap;
+        }
+
+        var craftsmanship = _trophy.GetCraftsmanshipLabel();
+        if (craftsmanship != null)
+            Line(craftsmanship, GameFont.Tiny, TrophyUIStyle.MutedColor, rect, ref curY, draw);
 
         // Trait effects, centered
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits && !_trophy.IsAdorned)
         {
+            var traitLines = _trophy.GetTraitChanceLabels().ToList();
             if (draw)
-                FeatherTrophyUI.DrawTraitsSummary(_trophy, rect, ref curY);
+                UIHelper.DrawCompactLines(traitLines, TrophyUIStyle.MutedColor, TextAnchor.MiddleCenter, rect, ref curY);
             else
-                curY += FeatherTrophyUI.TraitsSummaryHeight(_trophy);
+                curY += UIHelper.CompactLinesHeight(traitLines, rect.width);
         }
 
         Text.Font = GameFont.Small;

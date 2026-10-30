@@ -8,6 +8,8 @@ namespace TribalTrophies
 {
     public class FeatherTrophy : Apparel
     {
+        public RememberedPawn AdornedPawn => adornedPawn;
+            
         public string tale;
         public int ceremonyQuality = -1; // -1 = not yet adorned
         public RememberedPawn adornedBy;
@@ -45,8 +47,6 @@ namespace TribalTrophies
         }
 
         public bool HasTale => !tale.NullOrEmpty();
-        
-        public RememberedPawn AdornedPawn => adornedPawn;
 
         public bool IsAdorned => adornedPawn != null;
 
@@ -68,7 +68,8 @@ namespace TribalTrophies
             {
                 if (!IsAdorned) return base.LabelNoCount;
 
-                var cleanLabel = GenLabel.ThingLabel(this.def, this.Stuff, 1);
+                // vanilla thing label: style, quality, hit points, worn by corpse
+                var cleanLabel = GenLabel.ThingLabel(this, 1);
                 if (AllComps != null)
                 {
                     foreach (var comp in AllComps)
@@ -236,6 +237,14 @@ namespace TribalTrophies
             return "TribalTrophies_AdorningCeremony_Common_AdornedBy".Translate(adornedBy.Name.Named("PAWN"));
         }
         
+        public string GetCraftsmanshipLabel()
+        {
+            if (!this.TryGetQuality(out var quality))
+                return null;
+            return "TribalTrophies_Trophy_Common_Craftsmanship".Translate(
+                quality.GetLabel().CapitalizeFirst().Named("QUALITY")).Resolve();
+        }
+
         public string GetAdornedDateLabel()
         {
             return adorned?.DateLabel;
@@ -245,39 +254,50 @@ namespace TribalTrophies
         {
             if (addedTrait == null)
                 return null;
-            if (terse || !this.IsAdorned)
-                return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
-                    this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")
-                        ).CapitalizeFirst().Resolve();
-            return "TribalTrophies_AdorningCeremony_Common_TraitGained".Translate(
-                this.AdornedPawn.ShortName.Named("PAWN"),
-                this.addedTrait.DataAtDegree(this.addedTraitDegree).label.Named("TRAIT")).Resolve();
+            return TraitChangeLabel("TribalTrophies_AdorningCeremony_Common_TraitAdded_Short", "TribalTrophies_AdorningCeremony_Common_TraitGained",
+                addedTrait.DataAtDegree(addedTraitDegree).label, terse);
         }
 
         public string GetRemovedTraitLabel(bool terse = false)
         {
             if (removedTrait == null)
                 return null;
-            if (terse || !this.IsAdorned)
-                return "TribalTrophies_AdorningCeremony_Common_TraitRemoved_Short".Translate(
-                    this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")
-                        ).CapitalizeFirst().Resolve();
-            return "TribalTrophies_AdorningCeremony_Common_TraitShed".Translate(
-                this.AdornedPawn.ShortName.Named("PAWN"),
-                this.removedTrait.DataAtDegree(this.removedTraitDegree).label.Named("TRAIT")).Resolve();
+            return TraitChangeLabel("TribalTrophies_AdorningCeremony_Common_TraitRemoved_Short", "TribalTrophies_AdorningCeremony_Common_TraitShed",
+                removedTrait.DataAtDegree(removedTraitDegree).label, terse);
         }
         
         public string GetDecoratedTraitLabel(bool terse = false)
         {
             if (decoratedDegree < 0)
                 return null;
-            if (terse || !this.IsAdorned)
-                return "TribalTrophies_AdorningCeremony_Common_TraitAdded_Short".Translate(
-                    TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")
-                        ).CapitalizeFirst().Resolve();
-            return "TribalTrophies_AdorningCeremony_Common_DecoratedGained".Translate(
-                this.AdornedPawn.ShortName.Named("PAWN"),
-                TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(this.decoratedDegree).label.CapitalizeFirst().Named("TRAIT")).Resolve();
+            // Decorated degrees are titles, capitalized in full sentences too
+            return TraitChangeLabel("TribalTrophies_AdorningCeremony_Common_TraitAdded_Short", "TribalTrophies_AdorningCeremony_Common_DecoratedGained",
+                TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(decoratedDegree).label.CapitalizeFirst(), terse);
+        }
+
+        private string TraitChangeLabel(string shortKey, string fullKey, string traitLabel, bool terse)
+        {
+            if (terse || !IsAdorned)
+                return shortKey.Translate(traitLabel.CapitalizeFirst().Named("TRAIT")).CapitalizeFirst().Resolve();
+            return fullKey.Translate(AdornedPawn.ShortName.Named("PAWN"), traitLabel.Named("TRAIT")).Resolve();
+        }
+
+        public IEnumerable<string> GetTraitChanceLabels()
+        {
+            var ext = def.GetModExtension<TrophyExtension>();
+            if (ext == null)
+                yield break;
+
+            var chanceMultiplier = RitualOutcomeTraitUtility.GetTrophyTraitChanceMultiplier(this);
+            foreach (var change in ext.TraitChanges())
+            {
+                var key = change.Operation == TrophyTraitOperation.Add
+                    ? "TribalTrophies_AdorningCeremony_Common_MayGrantTrait"
+                    : "TribalTrophies_AdorningCeremony_Common_MayRemoveTrait";
+                yield return key.Translate(
+                    change.Entry.Label.CapitalizeFirst().Named("TRAIT"),
+                    (change.Entry.chance * chanceMultiplier).ToStringPercent().Named("CHANCE")).Resolve();
+            }
         }
 
         public string GetTraitChangeText()
@@ -300,26 +320,17 @@ namespace TribalTrophies
             {
                 if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
                 {
-                    if (ext.addsTraits != null)
-                        foreach (var trait in ext.addsTraits)
-                        {
-                            yield return new StatDrawEntry(
-                                StatCategoryDefOf.Apparel,
-                                (string)"TribalTrophies_Trophy_InfoCard_MayGrant".Translate(),
-                                trait.Label.CapitalizeFirst(),
-                                (string)"TribalTrophies_Trophy_InfoCard_MayGrant_Desc".Translate(trait.Label.Named("TRAIT")),
-                                3752);
-                        }
-                    if (ext.removesTraits != null)
-                        foreach (var trait in ext.removesTraits)
-                        {
-                            yield return new StatDrawEntry(
-                                StatCategoryDefOf.Apparel,
-                                (string)"TribalTrophies_Trophy_InfoCard_MayRemove".Translate(),
-                                trait.Label.CapitalizeFirst(),
-                                (string)"TribalTrophies_Trophy_InfoCard_MayRemove_Desc".Translate(trait.Label.Named("TRAIT")),
-                                3753);
-                        }
+                    foreach (var change in ext.TraitChanges())
+                    {
+                        var grants = change.Operation == TrophyTraitOperation.Add;
+                        // info card shows higher priority first: grants above removals
+                        yield return new StatDrawEntry(
+                            StatCategoryDefOf.Apparel,
+                            (string)(grants ? "TribalTrophies_Trophy_InfoCard_MayGrant" : "TribalTrophies_Trophy_InfoCard_MayRemove").Translate(),
+                            change.Entry.Label.CapitalizeFirst(),
+                            (string)(grants ? "TribalTrophies_Trophy_InfoCard_MayGrant_Desc" : "TribalTrophies_Trophy_InfoCard_MayRemove_Desc").Translate(change.Entry.Label.Named("TRAIT")),
+                            grants ? 3753 : 3752);
+                    }
                 }
             }
         }

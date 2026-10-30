@@ -5,11 +5,45 @@ using Verse;
 
 namespace TribalTrophies;
 
+public enum TrophyTraitOperation
+{
+    Add,
+    Remove
+}
+
+// one trait this trophy may grant or remove
+public readonly struct TrophyTraitChange
+{
+    public readonly TrophyDynamicTrait Entry;
+    public readonly TrophyTraitOperation Operation;
+
+    public TrophyTraitChange(TrophyDynamicTrait entry, TrophyTraitOperation operation)
+    {
+        Entry = entry;
+        Operation = operation;
+    }
+
+    public override string ToString()
+    {
+        return $"{Operation}: {Entry}";
+    }
+}
+
 public class TrophyExtension : DefModExtension
 {
     public List<TrophyDynamicTrait> addsTraits;
     public List<TrophyDynamicTrait> removesTraits;
-    
+
+    public IEnumerable<TrophyTraitChange> TraitChanges()
+    {
+        if (addsTraits != null)
+            foreach (var entry in addsTraits)
+                yield return new TrophyTraitChange(entry, TrophyTraitOperation.Add);
+        if (removesTraits != null)
+            foreach (var entry in removesTraits)
+                yield return new TrophyTraitChange(entry, TrophyTraitOperation.Remove);
+    }
+
     public override IEnumerable<string> ConfigErrors()
     {
         foreach (var error in CheckList(addsTraits, nameof(addsTraits)))
