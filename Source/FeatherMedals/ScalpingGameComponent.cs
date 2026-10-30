@@ -132,7 +132,7 @@ public class ScalpingGameComponent : GameComponent
     private static bool IsScalped(Pawn p)
     {
         return p is { RaceProps.Humanlike: true }
-               && p.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped, mustBeVisible: true);
+               && ScalpingUtility.IsScalped(p);
     }
 
     private static bool CanSee(Pawn observer, Thing thing)

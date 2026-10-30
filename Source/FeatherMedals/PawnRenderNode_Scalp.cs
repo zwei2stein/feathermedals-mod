@@ -32,12 +32,11 @@ namespace TribalTrophies
     {
         public override bool CanDrawNowSub(PawnRenderNode node, PawnDrawParms parms)
         {
-            HediffSet hediffs = parms.pawn?.health?.hediffSet;
-            if (hediffs == null)
+            if (parms.pawn?.health?.hediffSet == null)
             {
                 return true;
             }
-            return !hediffs.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped, mustBeVisible: true);
+            return !ScalpingUtility.IsScalped(parms.pawn);
         }
     }
 }

@@ -34,10 +34,8 @@ public static class NpcScalpGenerator
             return false;
         if (pawn.Faction is { IsPlayer: true })
             return false;
-        if (pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped))
-            return false;
 
-        return ScalpingUtility.HeadOf(pawn) != null;
+        return ScalpingUtility.HasScalpToTake(pawn);
     }
 
     private static float ChanceFor(Pawn pawn)

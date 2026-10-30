@@ -117,7 +117,7 @@ namespace TribalTrophies
             if (home == null)
                 return true;
 
-            if (home.HostileTo(scalperFaction) || pawn.HostileTo(scalperFaction))
+            if (IsHostileTo(pawn, scalperFaction))
                 return true;
 
             return false;
@@ -125,10 +125,7 @@ namespace TribalTrophies
 
         private static bool Can_PhysicallyCapableOfBeingScalped(Pawn pawn, Thing thing)
         {
-            if (pawn == null || !thing.Spawned)
-                return false;
-            
-            if (!HasScalpToTake(pawn))
+            if (!ScalpAvailable(pawn, thing))
                 return false;
             
             if (thing is Corpse corpse)
@@ -143,8 +140,7 @@ namespace TribalTrophies
             if (pawn.Faction == Faction.OfPlayer)
                 return pawn.Downed;
             
-            var home = pawn.HomeFaction;
-            if ((home != null && home.HostileTo(Faction.OfPlayer)) || pawn.HostileTo(Faction.OfPlayer))
+            if (IsHostileTo(pawn, Faction.OfPlayer))
                 return  pawn.Downed;
 
             return true;
@@ -189,10 +185,7 @@ namespace TribalTrophies
         {
             Pawn pawn = PawnOf(thing);
 
-            if (pawn == null || !thing.Spawned)
-                return false;
-
-            if (!HasScalpToTake(pawn))
+            if (!ScalpAvailable(pawn, thing))
                 return false;
 
             if (!pawn.DevelopmentalStage.Adult() && !TribalTrophiesMod.Settings.ScalpBreaksTargetChildren)
@@ -297,6 +290,25 @@ namespace TribalTrophies
             return scalp;
         }
         
+        // Hostile itself, or its home faction is (prisoners keep their home faction).
+        private static bool IsHostileTo(Pawn pawn, Faction faction)
+        {
+            var home = pawn.HomeFaction;
+            return (home != null && home.HostileTo(faction)) || pawn.HostileTo(faction);
+        }
+
+        // Pawn or corpse is on a map and its body can still give a scalp.
+        private static bool ScalpAvailable(Pawn pawn, Thing thing)
+        {
+            return pawn != null && thing.Spawned && HasScalpToTake(pawn);
+        }
+
+        // Scalped look: visible Scalped hediff (hidden hair, mood, others seeing it).
+        public static bool IsScalped(Pawn pawn)
+        {
+            return pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped, mustBeVisible: true);
+        }
+
         // Body can still give a scalp: humanlike, head present, not scalped yet.
         public static bool HasScalpToTake(Pawn pawn)
         {
