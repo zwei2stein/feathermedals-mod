@@ -8,7 +8,7 @@ namespace TribalTrophies;
 // with tale
 // with trait change that happened
 // with ceremony that has already happened related info
-public class FeatherTrophyRecordDrawer : ITrophyRecordRow
+public class FeatherTrophyRecordDrawer : TrophyRowDrawer
 {
     private readonly FeatherTrophy _trophy;
     private readonly bool verbose;
@@ -55,45 +55,103 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         return presentedBy ?? date ?? "";
     }
 
-    public float Height(float width)
+    protected override Thing IconThing => _trophy;
+
+    protected override float IconSize => TrophyUIStyle.FeatherIconSize;
+
+    protected override float ReservedRightWidth => TrophyUIStyle.ColumnGap + TrophyUIStyle.LockButtonSize;
+
+    protected override float MinHeight => TrophyUIStyle.FeatherRowMinHeight;
+
+    protected override bool CenterText => false;
+
+    protected override float LayoutText(Rect area, bool draw)
     {
-        var textWidth = GetTextWidth(width);
-        var height = TrophyUIStyle.RowPadding;
+        var curY = area.y;
 
         // each line below counts the gap drawn above it; the tale is drawn right under the line before it
-        Text.Font = GameFont.Small;
-        height += Text.CalcHeight(_trophy.TrophyLabel, textWidth);
 
-        Text.Font = GameFont.Tiny;
+        // Feather trophy name
+        UIHelper.LayoutLine(_trophy.TrophyLabel, GameFont.Small, Color.white, TextAnchor.MiddleLeft, area, ref curY, draw);
+
+        // Honoring, verbose only
         var honoring = GetHonoringLine();
         if (honoring != null)
-            height += Text.CalcHeight(honoring, textWidth) + TrophyUIStyle.RowLineGap;
+            UIHelper.LayoutLine(honoring, GameFont.Tiny, Color.white, TextAnchor.MiddleLeft, area, ref curY, draw, TrophyUIStyle.RowLineGap);
 
+        Text.Font = GameFont.Tiny;
         if (_trophy.HasTale)
-            height += FeatherTrophyUI.TaleHeight(_trophy.tale, textWidth);
+        {
+            if (draw)
+                FeatherTrophyUI.DrawTale(_trophy.tale, area, ref curY);
+            else
+                curY += FeatherTrophyUI.TaleHeight(_trophy.tale, area.width);
+        }
         else
-            height += TrophyUIStyle.DescriptionLineHeight + TrophyUIStyle.RowLineGap;
+        {
+            curY += TrophyUIStyle.RowLineGap;
+            if (draw)
+            {
+                var descRect = new Rect(area.x, curY, area.width, TrophyUIStyle.DescriptionLineHeight);
+                Text.Anchor = TextAnchor.MiddleLeft;
+                GUI.color = TrophyUIStyle.MutedColor;
+                Widgets.Label(descRect, (_trophy.def.description ?? "").Truncate(descRect.width));
+                GUI.color = Color.white;
+            }
+            curY += TrophyUIStyle.DescriptionLineHeight;
+        }
 
+        // Stat bonuses summary
         var statLines = UIHelper.StatOffsetLines(_trophy.def).ToList();
         if (statLines.Count > 0)
-            height += TrophyUIStyle.RowLineGap + UIHelper.CompactLinesHeight(statLines, textWidth);
+        {
+            curY += TrophyUIStyle.RowLineGap;
+            if (draw)
+                UIHelper.DrawCompactLines(statLines, TrophyUIStyle.GreenColor, TextAnchor.MiddleLeft, area, ref curY);
+            else
+                curY += UIHelper.CompactLinesHeight(statLines, area.width);
+        }
+
+        if (draw)
+            FeatherTrophyUI.DrawTraitChangeSummary(_trophy, area, ref curY, TextAnchor.MiddleLeft);
+        else
+            curY += FeatherTrophyUI.TraitChangeSummaryHeight(_trophy, area.width);
 
         if (HasAdorningInfo())
-            height += Text.CalcHeight(GetAdorningInfo(), textWidth) + TrophyUIStyle.RowLineGap;
+        {
+            Text.Font = GameFont.Tiny;
+            var adorningText = GetAdorningInfo();
+            curY += TrophyUIStyle.RowLineGap;
+            var adorningHeight = Text.CalcHeight(adorningText, area.width);
+            if (draw)
+            {
+                Text.Anchor = TextAnchor.MiddleLeft;
+                GUI.color = TrophyUIStyle.MutedColor;
+                Widgets.Label(new Rect(area.x, curY, area.width, adorningHeight), adorningText);
+                GUI.color = Color.white;
+            }
+            curY += adorningHeight;
+        }
 
+        // muted as text, not by GUI.color, so the quality word keeps its own color
         var craftsmanship = GetCraftsmanshipLine();
         if (craftsmanship != null)
-            height += Text.CalcHeight(craftsmanship, textWidth) + TrophyUIStyle.RowLineGap;
+            UIHelper.LayoutLine(craftsmanship, GameFont.Tiny, TrophyUIStyle.MutedColor, TextAnchor.MiddleLeft, area, ref curY, draw, TrophyUIStyle.RowLineGap);
 
+        // Ceremony quality, verbose only
+        // muted as text, not by GUI.color, so the quality word keeps its own color
         var quality = GetCeremonyQualityLine();
         if (quality != null)
-            height += Text.CalcHeight(quality, textWidth) + TrophyUIStyle.RowLineGap;
-
-        height += FeatherTrophyUI.TraitChangeSummaryHeight(_trophy, textWidth);
+            UIHelper.LayoutLine(quality, GameFont.Tiny, TrophyUIStyle.MutedColor, TextAnchor.MiddleLeft, area, ref curY, draw, TrophyUIStyle.RowLineGap);
 
         Text.Font = GameFont.Small;
-        height += TrophyUIStyle.RowPadding * 2f;
-        return Mathf.Max(TrophyUIStyle.FeatherRowMinHeight, height);
+        return curY - area.y;
+    }
+
+    protected override void DrawExtras(Rect rowRect)
+    {
+        if (_trophy.Wearer != null)
+            DrawLockToggle(rowRect);
     }
 
     private void DrawLockToggle(Rect rowRect)
@@ -133,112 +191,5 @@ public class FeatherTrophyRecordDrawer : ITrophyRecordRow
         }
         GUI.color = Color.white;
         TooltipHandler.TipRegion(lockRect, lockTip);
-    }
-
-    private static float GetTextWidth(float availableWidth)
-    {
-        return availableWidth - TrophyUIStyle.SidePadding - TrophyUIStyle.IconColumnWidth - TrophyUIStyle.ColumnGap
-               - TrophyUIStyle.ColumnGap - TrophyUIStyle.LockButtonSize - TrophyUIStyle.SidePadding;
-    }
-
-    public void Draw(Rect rowRect)
-    {
-        var rowHeight = rowRect.height;
-
-        if (Mouse.IsOver(rowRect))
-            Widgets.DrawHighlight(rowRect);
-
-        // Lock toggle, only while worn; an adorned trophy can also lie on the ground
-        if (_trophy.Wearer != null)
-            DrawLockToggle(rowRect);
-
-        // Icon, centered in its column
-        var iconSize = TrophyUIStyle.FeatherIconSize;
-        var column = new Rect(rowRect.x + TrophyUIStyle.SidePadding, rowRect.y, TrophyUIStyle.IconColumnWidth, rowHeight);
-        var iconRect = new Rect(column.center.x - iconSize / 2f, column.center.y - iconSize / 2f, iconSize, iconSize);
-        Widgets.ThingIcon(iconRect, _trophy);
-
-        var textX = column.xMax + TrophyUIStyle.ColumnGap;
-        var textWidth = GetTextWidth(rowRect.width);
-
-        // Feather trophy name
-        Text.Font = GameFont.Small;
-        Text.Anchor = TextAnchor.MiddleLeft;
-        var nameHeight = Text.CalcHeight(_trophy.TrophyLabel, textWidth);
-        var nameRect = new Rect(textX, rowRect.y + TrophyUIStyle.RowPadding, textWidth, nameHeight);
-        Widgets.Label(nameRect, _trophy.TrophyLabel);
-
-        // Honoring, verbose only
-        Text.Font = GameFont.Tiny;
-        float descBottom = nameRect.yMax;
-        var honoring = GetHonoringLine();
-        if (honoring != null)
-        {
-            var honoringHeight = Text.CalcHeight(honoring, textWidth);
-            var honoringRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, honoringHeight);
-            Widgets.Label(honoringRect, honoring);
-            descBottom = honoringRect.yMax;
-        }
-
-        Text.Font = GameFont.Tiny;
-        if (_trophy.HasTale)
-        {
-            FeatherTrophyUI.DrawTale(_trophy.tale, nameRect, ref descBottom);
-        }
-        else
-        {
-            var descRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, TrophyUIStyle.DescriptionLineHeight);
-            GUI.color = TrophyUIStyle.MutedColor;
-            Widgets.Label(descRect, (_trophy.def.description ?? "").Truncate(descRect.width));
-            GUI.color = Color.white;
-            descBottom = descRect.yMax;
-        }
-
-        // Stat bonuses summary
-        var statLines = UIHelper.StatOffsetLines(_trophy.def).ToList();
-        if (statLines.Count > 0)
-        {
-            descBottom += TrophyUIStyle.RowLineGap;
-            var statsArea = new Rect(textX, rowRect.y, textWidth, rowRect.height);
-            UIHelper.DrawCompactLines(statLines, TrophyUIStyle.GreenColor, TextAnchor.MiddleLeft, statsArea, ref descBottom);
-        }
-
-        FeatherTrophyUI.DrawTraitChangeSummary(_trophy, new Rect(textX, rowRect.y, textWidth, rowRect.height), ref descBottom, TextAnchor.MiddleLeft);
-
-        if (HasAdorningInfo())
-        {
-            Text.Font = GameFont.Tiny;
-            var adorningText = GetAdorningInfo();
-            var adorningRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, Text.CalcHeight(adorningText, textWidth));
-            GUI.color = TrophyUIStyle.MutedColor;
-            Widgets.Label(adorningRect, adorningText);
-            GUI.color = Color.white;
-            descBottom = adorningRect.yMax;
-        }
-
-        var craftsmanship = GetCraftsmanshipLine();
-        if (craftsmanship != null)
-        {
-            Text.Font = GameFont.Tiny;
-            var craftsmanshipHeight = Text.CalcHeight(craftsmanship, textWidth);
-            var craftsmanshipRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, craftsmanshipHeight);
-            // muted as text, not by GUI.color, so the quality word keeps its own color
-            Widgets.Label(craftsmanshipRect, craftsmanship.Colorize(TrophyUIStyle.MutedColor));
-            descBottom = craftsmanshipRect.yMax;
-        }
-
-        // Ceremony quality, verbose only
-        var quality = GetCeremonyQualityLine();
-        if (quality != null)
-        {
-            Text.Font = GameFont.Tiny;
-            var qualityHeight = Text.CalcHeight(quality, textWidth);
-            var qualityRect = new Rect(textX, descBottom + TrophyUIStyle.RowLineGap, textWidth, qualityHeight);
-            // muted as text, not by GUI.color, so the quality word keeps its own color
-            Widgets.Label(qualityRect, quality.Colorize(TrophyUIStyle.MutedColor));
-        }
-
-        Text.Font = GameFont.Small;
-        Text.Anchor = TextAnchor.UpperLeft;
     }
 }

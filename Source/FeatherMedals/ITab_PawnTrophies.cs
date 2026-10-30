@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
 using Verse;
 
 namespace TribalTrophies
@@ -90,28 +89,29 @@ namespace TribalTrophies
 
         private static IEnumerable<Scalp> WornScalps(Pawn pawn)
         {
-            foreach (var apparel in pawn.apparel.WornApparel)
+            foreach (var container in WornContainers(pawn))
             {
-                var container = apparel.TryGetComp<CompTrophyContainer>();
-                if (container == null)
-                    continue;
-                foreach (var scalp in container.Held.OfType<Scalp>())
+                foreach (var scalp in container.Scalps)
                     yield return scalp;
             }
         }
         
         private static IEnumerable<Thing> WornSkulls(Pawn pawn)
         {
+            foreach (var container in WornContainers(pawn))
+            {
+                foreach (var skull in container.Skulls)
+                    yield return skull;
+            }
+        }
+
+        private static IEnumerable<CompTrophyContainer> WornContainers(Pawn pawn)
+        {
             foreach (var apparel in pawn.apparel.WornApparel)
             {
                 var container = apparel.TryGetComp<CompTrophyContainer>();
-                if (container == null)
-                    continue;
-                foreach (var held in container.Held)
-                {
-                    if (held.def == ThingDefOf.Skull)
-                        yield return held;
-                }
+                if (container != null)
+                    yield return container;
             }
         }
     }

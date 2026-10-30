@@ -35,10 +35,9 @@ public class ITab_ScalpRecord : ITab_TrophyRows
 
         var container = thing?.TryGetComp<CompTrophyContainer>();
         if (container != null)
-            foreach (var held in container.Held)
+            foreach (var heldScalp in container.Scalps)
             {
-                if (held is Scalp heldScalp)
-                    yield return heldScalp;
+                yield return heldScalp;
             }
     }
 }

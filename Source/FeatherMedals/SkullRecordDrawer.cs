@@ -4,7 +4,7 @@ using Verse;
 namespace TribalTrophies;
 
 // One skull: vanilla only remembers whose it was.
-public class SkullRecordDrawer : ITrophyRecordRow
+public class SkullRecordDrawer : TrophyRowDrawer
 {
     private readonly Thing skull;
     private readonly string victimName;
@@ -21,35 +21,17 @@ public class SkullRecordDrawer : ITrophyRecordRow
         : "TribalTrophies_Trophy_SkullTab_SkullOf".Translate(
             victimName.StripTags().Colorize(TrophyUIStyle.GoldColor).Named("VICTIM")).Resolve();
 
-    public float Height(float width)
+    protected override Thing IconThing => skull;
+
+    protected override float IconSize => TrophyUIStyle.SkullIconSize;
+
+    protected override bool IconStackOfOne => true;
+
+    // title centered against the picture
+    protected override float LayoutText(Rect area, bool draw)
     {
-        var textHeight = UIHelper.LineHeight(Title, GameFont.Small, TextWidth(width), 0f);
-        return Mathf.Max(TrophyUIStyle.SkullIconSize, textHeight) + TrophyUIStyle.RowPadding * 2f;
-    }
-
-    public void Draw(Rect rect)
-    {
-        if (Mouse.IsOver(rect))
-            Widgets.DrawHighlight(rect);
-
-        // centered in its column
-        var size = TrophyUIStyle.SkullIconSize;
-        var column = new Rect(rect.x + TrophyUIStyle.SidePadding, rect.y, TrophyUIStyle.IconColumnWidth, rect.height);
-        var pictureRect = new Rect(column.center.x - size / 2f, column.center.y - size / 2f, size, size);
-        Widgets.ThingIcon(pictureRect, skull, stackOfOne: true);
-
-        // title centered against the picture
-        var title = Title;
-        var textWidth = TextWidth(rect.width);
-        var textArea = new Rect(column.xMax + TrophyUIStyle.ColumnGap, rect.y, textWidth, rect.height);
-        var curY = rect.y + (rect.height - UIHelper.LineHeight(title, GameFont.Small, textWidth, 0f)) / 2f;
-        UIHelper.DrawLine(title, GameFont.Small, Color.white, TextAnchor.MiddleCenter, textArea, ref curY, 0f);
-
-        Text.Anchor = TextAnchor.UpperLeft;
-    }
-
-    private static float TextWidth(float rowWidth)
-    {
-        return rowWidth - TrophyUIStyle.SidePadding - TrophyUIStyle.IconColumnWidth - TrophyUIStyle.ColumnGap - TrophyUIStyle.SidePadding;
+        var curY = area.y;
+        UIHelper.LayoutLine(Title, GameFont.Small, Color.white, TextAnchor.MiddleCenter, area, ref curY, draw);
+        return curY - area.y;
     }
 }

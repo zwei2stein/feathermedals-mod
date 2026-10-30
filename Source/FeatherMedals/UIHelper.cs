@@ -28,6 +28,17 @@ public static class UIHelper
         Text.Font = GameFont.Small;
     }
 
+    // one pass for measuring (draw false) and drawing: moves curY past the gap before, the line and the gap after
+    public static void LayoutLine(string text, GameFont font, Color color, TextAnchor anchor, Rect area, ref float curY, bool draw,
+        float gapBefore = 0f, float gapAfter = 0f)
+    {
+        curY += gapBefore;
+        if (draw)
+            DrawLine(text, font, color, anchor, area, ref curY, gapAfter);
+        else
+            curY += LineHeight(text, font, area.width, gapAfter);
+    }
+
     public static void DrawSeparator(float x, float y, float width)
     {
         GUI.color = TrophyUIStyle.SeparatorColor;

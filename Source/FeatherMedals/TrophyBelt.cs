@@ -166,6 +166,30 @@ public class CompTrophyContainer : ThingComp, IThingHolder
 
     public IReadOnlyList<Thing> Held => innerContainer.InnerListForReading;
 
+    public IEnumerable<Scalp> Scalps
+    {
+        get
+        {
+            foreach (var held in Held)
+            {
+                if (held is Scalp scalp)
+                    yield return scalp;
+            }
+        }
+    }
+
+    public IEnumerable<Thing> Skulls
+    {
+        get
+        {
+            foreach (var held in Held)
+            {
+                if (held.def == ThingDefOf.Skull)
+                    yield return held;
+            }
+        }
+    }
+
     public ThingOwner GetDirectlyHeldThings() => innerContainer;
 
     public void GetChildHolders(List<IThingHolder> outChildren)

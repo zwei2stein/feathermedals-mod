@@ -44,12 +44,13 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         // Feather trophy name, centered
         var description = _trophy.def.description;
         var hasDescription = !description.NullOrEmpty();
-        Line(_trophy.TrophyLabel, GameFont.Medium, Color.white, rect, ref curY, draw,
-            hasDescription ? TrophyUIStyle.DetailLineGap : TrophyUIStyle.DetailSectionGap);
+        UIHelper.LayoutLine(_trophy.TrophyLabel, GameFont.Medium, Color.white, TextAnchor.MiddleCenter, rect, ref curY, draw,
+            gapAfter: hasDescription ? TrophyUIStyle.DetailLineGap : TrophyUIStyle.DetailSectionGap);
 
         // Description, muted, centered
         if (hasDescription)
-            Line(description, GameFont.Tiny, TrophyUIStyle.MutedColor, rect, ref curY, draw, TrophyUIStyle.DetailSectionGap);
+            UIHelper.LayoutLine(description, GameFont.Tiny, TrophyUIStyle.MutedColor, TextAnchor.MiddleCenter, rect, ref curY, draw,
+                gapAfter: TrophyUIStyle.DetailSectionGap);
 
         // tale, gold, centered
         if (!_tale.NullOrEmpty())
@@ -73,7 +74,8 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
 
         var craftsmanship = _trophy.GetCraftsmanshipLabel();
         if (craftsmanship != null)
-            Line(craftsmanship, GameFont.Tiny, TrophyUIStyle.MutedColor, rect, ref curY, draw);
+            UIHelper.LayoutLine(craftsmanship, GameFont.Tiny, TrophyUIStyle.MutedColor, TextAnchor.MiddleCenter, rect, ref curY, draw,
+                gapAfter: TrophyUIStyle.DetailLineGap);
 
         // Trait effects, centered
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits && !_trophy.IsAdorned)
@@ -89,14 +91,5 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         Text.Anchor = TextAnchor.UpperLeft;
         GUI.color = Color.white;
         return curY - rect.y;
-    }
-
-    private static void Line(string text, GameFont font, Color color, Rect rect, ref float curY, bool draw,
-        float gapAfter = TrophyUIStyle.DetailLineGap)
-    {
-        if (draw)
-            UIHelper.DrawLine(text, font, color, TextAnchor.MiddleCenter, rect, ref curY, gapAfter);
-        else
-            curY += UIHelper.LineHeight(text, font, rect.width, gapAfter);
     }
 }

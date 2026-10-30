@@ -4,7 +4,7 @@ using Verse;
 
 namespace TribalTrophies;
 
-public class ScalpRecordDrawer : ITrophyRecordRow
+public class ScalpRecordDrawer : TrophyRowDrawer
 {
     private readonly Scalp scalp;
 
@@ -21,44 +21,17 @@ public class ScalpRecordDrawer : ITrophyRecordRow
         public float gapAfter = TrophyUIStyle.RowLineGap;
     }
 
-    public float Height(float width)
+    protected override Thing IconThing => scalp;
+
+    protected override float IconSize => TrophyUIStyle.ScalpIconSize;
+
+    // text block centered against the picture
+    protected override float LayoutText(Rect area, bool draw)
     {
-        return Mathf.Max(TrophyUIStyle.ScalpIconSize, TextHeight(Lines(), TextWidth(width))) + TrophyUIStyle.RowPadding * 2f;
-    }
-
-    public void Draw(Rect rect)
-    {
-        if (Mouse.IsOver(rect))
-            Widgets.DrawHighlight(rect);
-
-        // centered in its column
-        var size = TrophyUIStyle.ScalpIconSize;
-        var column = new Rect(rect.x + TrophyUIStyle.SidePadding, rect.y, TrophyUIStyle.IconColumnWidth, rect.height);
-        var pictureRect = new Rect(column.center.x - size / 2f, column.center.y - size / 2f, size, size);
-        Widgets.ThingIcon(pictureRect, scalp);
-
-        // text block centered against the picture
-        var lines = Lines();
-        var textWidth = TextWidth(rect.width);
-        var textArea = new Rect(column.xMax + TrophyUIStyle.ColumnGap, rect.y, textWidth, rect.height);
-        var curY = rect.y + (rect.height - TextHeight(lines, textWidth)) / 2f;
-        foreach (var line in lines)
-            UIHelper.DrawLine(line.text, line.font, line.color, TextAnchor.MiddleCenter, textArea, ref curY, line.gapAfter);
-
-        Text.Anchor = TextAnchor.UpperLeft;
-    }
-
-    private static float TextWidth(float rowWidth)
-    {
-        return rowWidth - TrophyUIStyle.SidePadding - TrophyUIStyle.IconColumnWidth - TrophyUIStyle.ColumnGap - TrophyUIStyle.SidePadding;
-    }
-
-    private static float TextHeight(List<Line> lines, float width)
-    {
-        var height = 0f;
-        foreach (var line in lines)
-            height += UIHelper.LineHeight(line.text, line.font, width, line.gapAfter);
-        return height;
+        var curY = area.y;
+        foreach (var line in Lines())
+            UIHelper.LayoutLine(line.text, line.font, line.color, TextAnchor.MiddleCenter, area, ref curY, draw, gapAfter: line.gapAfter);
+        return curY - area.y;
     }
 
     // Scalp of (victim)        / (xenotype) of (faction)

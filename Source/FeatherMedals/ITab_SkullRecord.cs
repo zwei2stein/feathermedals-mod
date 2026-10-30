@@ -24,10 +24,9 @@ public class ITab_SkullRecord : ITab_TrophyRows
         // belt: every skull, named or not
         var container = thing?.TryGetComp<CompTrophyContainer>();
         if (container != null)
-            foreach (var held in container.Held)
+            foreach (var held in container.Skulls)
             {
-                if (held.def == ThingDefOf.Skull)
-                    rows.Add(new SkullRecordDrawer(held, TrophyNames.VictimName(held)));
+                rows.Add(new SkullRecordDrawer(held, TrophyNames.VictimName(held)));
             }
 
         return rows;
