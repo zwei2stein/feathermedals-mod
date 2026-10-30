@@ -58,11 +58,9 @@ public static class ScalpHuntUtility
     {
         if (!TribalTrophiesMod.Settings.ScalpHuntRaids)
             return false;
-        if (faction == null || !faction.def.humanlikeFaction || !faction.HostileTo(Faction.OfPlayer))
+        if (!ScalpingPrecepts.FactionPracticesScalping(faction, TechLevel.Undefined, TribalTrophiesMod.Settings.ScalpHuntMaxTech))
             return false;
-        if (faction.def.techLevel > TribalTrophiesMod.Settings.ScalpHuntMaxTech)
-            return false;
-        if (ScalpingPrecepts.StanceOf(faction.ideos?.PrimaryIdeo) == ScalpStance.Forbidden)
+        if (!faction.HostileTo(Faction.OfPlayer))
             return false;
         if (map == null || EligibleVictimCount(map, faction) < MinEligibleVictims)
             return false;

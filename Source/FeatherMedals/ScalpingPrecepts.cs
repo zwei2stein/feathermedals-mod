@@ -32,6 +32,16 @@ public static class ScalpingPrecepts
         return ScalpStance.Honorable;
     }
 
+    // Non-player humanlike faction in the tech range whose primary ideo does not forbid scalping.
+    public static bool FactionPracticesScalping(Faction faction, TechLevel minTech, TechLevel maxTech)
+    {
+        if (faction == null || faction.IsPlayer || !faction.def.humanlikeFaction)
+            return false;
+        if (faction.def.techLevel < minTech || faction.def.techLevel > maxTech)
+            return false;
+        return StanceOf(faction.ideos?.PrimaryIdeo) != ScalpStance.Forbidden;
+    }
+
     public static bool AnyMercilessColonist()
     {
         foreach (var ideo in Faction.OfPlayer.ideos.AllIdeos)

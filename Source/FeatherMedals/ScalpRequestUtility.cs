@@ -14,13 +14,11 @@ public static class ScalpRequestUtility
 
     public static bool CanAsk(Faction faction)
     {
-        if (faction == null || faction.IsPlayer || faction.Hidden || faction.defeated || !faction.def.humanlikeFaction)
+        if (!ScalpingPrecepts.FactionPracticesScalping(faction, TechLevel.Undefined, TribalTrophiesMod.Settings.ScalpRequestMaxTech))
+            return false;
+        if (faction.Hidden || faction.defeated)
             return false;
         if (faction.def.permanentEnemy || !faction.HasGoodwill)
-            return false;
-        if (faction.def.techLevel > TribalTrophiesMod.Settings.ScalpRequestMaxTech)
-            return false;
-        if (ScalpingPrecepts.StanceOf(faction.ideos?.PrimaryIdeo) == ScalpStance.Forbidden)
             return false;
         if (HasOpenRequest(faction))
             return false;

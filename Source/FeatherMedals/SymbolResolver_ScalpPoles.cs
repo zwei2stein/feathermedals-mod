@@ -25,16 +25,13 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
     
     private static readonly IntRange ScalpsPerPoleRange = new(0, 3);
 
+    private const TechLevel MinTechLevel = TechLevel.Undefined;
     private const TechLevel MaxTechLevel = TechLevel.Medieval;
 
     public static bool FactionShouldHaveScalpPoles(Faction faction)
     {
         return TribalTrophiesMod.Settings.ScalpPolesInBases
-               && faction != null
-               && !faction.IsPlayer
-               && faction.def.humanlikeFaction
-               && faction.def.techLevel <= MaxTechLevel
-               && ScalpingPrecepts.StanceOf(faction.ideos?.PrimaryIdeo) != ScalpStance.Forbidden;
+               && ScalpingPrecepts.FactionPracticesScalping(faction, MinTechLevel, MaxTechLevel);
     }
 
     public override bool CanResolve(ResolveParams rp)
