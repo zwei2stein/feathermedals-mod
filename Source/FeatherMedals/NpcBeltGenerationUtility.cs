@@ -1,25 +1,40 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace TribalTrophies;
 
+public abstract class NpcBeltExtension : DefModExtension
+{
+    public TechLevel zeroChanceTechLevel = TechLevel.Archotech;
+}
+
 public static class NpcBeltGenerationUtility
 {
-    
+
     public static bool IsNpcWearer(Pawn pawn)
     {
-        if (pawn == null || pawn.Dead || pawn.apparel == null)
+        if (!NpcGenerationUtility.IsGeneratedNpc(pawn) || pawn.apparel == null)
             return false;
-        if (!pawn.RaceProps.Humanlike || !pawn.DevelopmentalStage.Adult())
-            return false;
-        if (pawn.Faction == null || pawn.Faction.IsPlayer)
-            return false;
-        return true;
+        // belt stuff and chance come from the faction
+        return pawn.Faction != null;
     }
 
-    public static bool CanWear(Pawn pawn, ThingDef beltDef)
+    // picks a wearable belt def with the extension, rolls its chance and gives it filled with trophies
+    public static void TryGiveBelt<TExtension>(Pawn pawn, Func<TExtension, float> baseChance, ThingDef trophyDef, Func<Thing> makeTrophy)
+        where TExtension : NpcBeltExtension
+    {
+        if (!BeltDefs<TExtension>.All.Where(def => CanWear(pawn, def)).TryRandomElement(out var beltDef))
+            return;
+
+        var tuning = beltDef.GetModExtension<TExtension>();
+        if (Rand.Chance(NpcGenerationUtility.TechScaledChance(pawn, baseChance(tuning), tuning.zeroChanceTechLevel)))
+            GiveBelt(pawn, beltDef, trophyDef, makeTrophy);
+    }
+
+    private static bool CanWear(Pawn pawn, ThingDef beltDef)
     {
         if (!beltDef.apparel.PawnCanWear(pawn) || !ApparelUtility.HasPartsToWear(pawn, beltDef))
             return false;
@@ -32,18 +47,7 @@ public static class NpcBeltGenerationUtility
         return true;
     }
 
-    public static float ChanceFor(Pawn pawn, float baseChance, TechLevel zeroChanceTechLevel)
-    {
-        var techLevel = pawn.Faction.def.techLevel;
-        if (techLevel == TechLevel.Undefined)
-            return 0f;
-
-        var span = (float)(zeroChanceTechLevel - TechLevel.Animal);
-        var steps = (float)(zeroChanceTechLevel - techLevel);
-        return baseChance * Mathf.Clamp01(steps / span);
-    }
-
-    public static void GiveBelt(Pawn pawn, ThingDef beltDef, ThingDef trophyDef, Func<Thing> makeTrophy)
+    private static void GiveBelt(Pawn pawn, ThingDef beltDef, ThingDef trophyDef, Func<Thing> makeTrophy)
     {
         var stuff = GenStuff.RandomStuffByCommonalityFor(beltDef, pawn.Faction.def.techLevel);
         if (beltDef.MadeFromStuff && stuff == null)
@@ -70,5 +74,12 @@ public static class NpcBeltGenerationUtility
                 return cost.count;
         }
         return 0;
+    }
+
+    private static class BeltDefs<TExtension> where TExtension : NpcBeltExtension
+    {
+        public static readonly List<ThingDef> All = DefDatabase<ThingDef>.AllDefsListForReading
+            .Where(def => def.HasModExtension<TExtension>())
+            .ToList();
     }
 }

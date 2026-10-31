@@ -56,6 +56,12 @@
                 <baseLayer>62</baseLayer>
             </li>
         </renderNodeProperties>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcScalpedExtension">
+                <chance>0.05</chance>
+                <zeroChanceTechLevel>Spacer</zeroChanceTechLevel>
+            </li>
+        </modExtensions>
     </HediffDef>
 
 </Defs>

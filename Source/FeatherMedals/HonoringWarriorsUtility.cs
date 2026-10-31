@@ -14,7 +14,7 @@ public static class HonoringWarriorsUtility
 
     public static bool ForbidsCeremony(Pawn p)
     {
-        return p?.Ideo != null && p.Ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden);
+        return HonoringWarriorsPrecepts.StanceOf(p) == HonoringStance.Forbidden;
     }
 
     public static bool IsEligible(Pawn p)

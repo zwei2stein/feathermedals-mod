@@ -1,12 +1,18 @@
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace TribalTrophies;
 
+public class NpcScalpedExtension : DefModExtension
+{
+    public float chance = 0.05f;
+    public TechLevel zeroChanceTechLevel = TechLevel.Spacer;
+}
+
 public static class NpcScalpGenerator
 {
-    public const float MaxChance = 0.05f;
+    public static NpcScalpedExtension Tuning => field ??=
+        TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped.GetModExtension<NpcScalpedExtension>() ?? new NpcScalpedExtension();
 
     public static void OnGearGenerated(Pawn pawn)
     {
@@ -28,11 +34,7 @@ public static class NpcScalpGenerator
     {
         if (!TribalTrophiesMod.Settings.GenerateNpcScalped)
             return false;
-        if (pawn == null || pawn.Dead || pawn.health == null || pawn.ageTracker == null)
-            return false;
-        if (!pawn.RaceProps.Humanlike || !pawn.DevelopmentalStage.Adult())
-            return false;
-        if (pawn.Faction is { IsPlayer: true })
+        if (!NpcGenerationUtility.IsGeneratedNpc(pawn) || pawn.health == null)
             return false;
 
         return ScalpingUtility.HasScalpToTake(pawn);
@@ -40,13 +42,7 @@ public static class NpcScalpGenerator
 
     private static float ChanceFor(Pawn pawn)
     {
-        var factionDef = pawn.Faction?.def ?? pawn.kindDef?.defaultFactionDef;
-        if (factionDef == null || factionDef.techLevel == TechLevel.Undefined)
-            return 0f;
-
-        var span = (float)(TechLevel.Spacer - TechLevel.Animal);
-        var steps = (float)(TechLevel.Spacer - factionDef.techLevel);
-        return MaxChance * Mathf.Clamp01(steps / span);
+        return NpcGenerationUtility.TechScaledChance(pawn, Tuning.chance, Tuning.zeroChanceTechLevel);
     }
 
     private static void AddScar(Pawn pawn)
@@ -59,5 +55,5 @@ public static class NpcScalpGenerator
 
         pawn.health.AddHediff(scalped, head);
     }
-    
+
 }

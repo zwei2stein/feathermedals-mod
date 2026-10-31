@@ -176,6 +176,15 @@
                 <mercilessChance>0.2</mercilessChance>
                 <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
             </li>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroatAndTookScalp</trophy>
+                        <chance>1</chance>
+                    </li>
+                </trophies>
+            </li>
         </modExtensions>
         <comps>
             <li Class="TribalTrophies.CompProperties_TrophyContainer">

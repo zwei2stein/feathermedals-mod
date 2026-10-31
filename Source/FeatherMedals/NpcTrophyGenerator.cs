@@ -1,21 +1,60 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace TribalTrophies;
 
+// preferred trophy to give out
+public class NpcTrophyPick
+{
+    public ThingDef trophy;
+    public float chance = 1f;
+}
+
+// backstory or apparel guiding trophy generation
+public class NpcTrophyGuaranteeExtension : DefModExtension
+{
+    // guaranteed random feathers, the rolls of all sources add up
+    public IntRange count = new IntRange(0, 0);
+
+    // preferred trophy that can take place of RNG trophy
+    public List<NpcTrophyPick> trophies;
+
+    public override IEnumerable<string> ConfigErrors()
+    {
+        foreach (var error in base.ConfigErrors())
+            yield return error;
+
+        if (count.min < 0 || count.max < count.min)
+            yield return $"{nameof(count)} {count} is not a valid range";
+
+        if (trophies == null)
+            yield break;
+
+        foreach (var pick in trophies)
+        {
+            if (pick.trophy == null)
+                yield return $"{nameof(trophies)} has an entry without {nameof(NpcTrophyPick.trophy)}";
+            else if (!FeatherTrophyUtility.IsFeatherTrophyDef(pick.trophy))
+                yield return $"{nameof(trophies)}: {pick.trophy.defName} is not a feather trophy";
+
+            if (pick.chance < 0f || pick.chance > 1f)
+                yield return $"{nameof(trophies)}: {nameof(NpcTrophyPick.chance)} {pick.chance} is outside 0..1";
+        }
+    }
+}
+
 public static class NpcTrophyGenerator
 {
     public const int LeaderTrophies = 8;
 
-    private const float AgePerRollStep = 50f;
-    private const float ChancePerPassion = 0.1f;
-    private const float ChancePerBonus = 0.1f;
+    private const int MaxPassionRolls = 4;
     private const int HighSkill = 10;
     private const int HighAge = 50;
     private const int PickAttemptsPerTrophy = 3;
-    private const int MaxCeremonyStage = 3; // Legendary AdorningQuality 
+    private const int MaxCeremonyStage = 3; // Legendary AdorningQuality
     private const int LeaderQualitySteps = 2; // remove awful/poor for leaders
     private const int LegendaryCeremonyQualitySteps = 2; // remove awful/poor for legendary ceremony
 
@@ -43,27 +82,16 @@ public static class NpcTrophyGenerator
         {
             if (!BaseEligible(pawn, out var baseRolls))
                 return;
-            
+
             // do not regenerate trophies
             if (HonoringWarriorsUtility.WornTrophies(pawn) > 0)
                 return;
 
-            var guaranteed = BackstoryGuaranteed(pawn);
-            var total = guaranteed;
+            var total = BackstoryGuaranteed(pawn);
 
-            // every guaranteed trophy replaces one roll
-            var rolls = Mathf.FloorToInt(baseRolls * (1f + pawn.ageTracker.AgeBiologicalYearsFloat / AgePerRollStep)) - guaranteed;
-            
             // roll for rest
-            if (rolls > 0 && !pawn.WorkTagIsDisabled(WorkTags.Violent))
-            {
-                var chance = SuccessChance(pawn);
-                for (var i = 0; i < rolls; i++)
-                {
-                    if (Rand.Chance(chance))
-                        total++;
-                }
-            }
+            if (!pawn.WorkTagIsDisabled(WorkTags.Violent) && Rand.Chance(ExtraTrophiesChance(pawn)))
+                total += Rand.RangeInclusive(0, baseRolls + BonusRolls(pawn));
 
             Adorn(pawn, total, false);
         }
@@ -81,7 +109,8 @@ public static class NpcTrophyGenerator
             if (!BaseEligible(leader, out _))
                 return;
 
-            Adorn(leader, LeaderTrophies - HonoringWarriorsUtility.WornTrophies(leader), true);
+            // on top of the trophies the leader already wears
+            Adorn(leader, LeaderTrophies, true);
         }
         catch (System.Exception ex)
         {
@@ -95,88 +124,139 @@ public static class NpcTrophyGenerator
 
         if (!TribalTrophiesMod.Settings.GenerateNpcTrophies)
             return false;
-        if (pawn == null || pawn.Dead || pawn.apparel == null || pawn.story == null || pawn.skills == null || pawn.ageTracker == null)
+        if (!NpcGenerationUtility.IsGeneratedNpc(pawn))
             return false;
-        if (!pawn.RaceProps.Humanlike || !pawn.DevelopmentalStage.Adult())
-            return false;
-        if (pawn.Faction is { IsPlayer: true })
+        if (pawn.apparel == null || pawn.story == null || pawn.skills == null)
             return false;
         if (!TechAllowed(pawn))
             return false;
-        if (pawn.story.Adulthood == null && pawn.story.Childhood != TribalTrophiesDefOf.TribalTrophies_Backstory_PraisedChild)
+        // no adulthood yet, only a childhood that gives trophies counts
+        if (pawn.story.Adulthood == null && pawn.story.Childhood?.HasModExtension<NpcTrophyGuaranteeExtension>() != true)
             return false;
 
         baseRolls = BaseRolls(pawn);
-        return baseRolls > 0;
+        // highest possible guarantee, so the gate does not depend on a roll
+        return baseRolls + MaxGuaranteed(pawn) > 0;
     }
 
     private static bool TechAllowed(Pawn pawn)
     {
-        var factionDef = pawn.Faction?.def ?? pawn.kindDef?.defaultFactionDef;
+        var factionDef = NpcGenerationUtility.FactionDefFor(pawn);
         if (factionDef == null)
             return false;
 
         var level = factionDef.techLevel;
         return level >= TribalTrophiesMod.Settings.NpcTrophyMinTech && level <= TribalTrophiesMod.Settings.NpcTrophyMaxTech;
     }
-    
+
     private static int BaseRolls(Pawn pawn)
     {
         if (pawn.Faction == null)
             return 1;
 
-        var ideo = pawn.Ideo;
-        if (ideo == null)
-            return 1;
-
-        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Forbidden)
-            || ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Disapproved))
-            return 0;
-        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Required))
-            return 3;
-        if (ideo.HasPrecept(TribalTrophiesDefOf.TribalTrophies_Issue_HonoringWarriors_Desired))
-            return 2;
-        return 1;
+        return HonoringWarriorsPrecepts.StanceOf(pawn.Ideo) switch
+        {
+            HonoringStance.Forbidden or HonoringStance.Disapproved => 0,
+            HonoringStance.Neutral => 1,
+            HonoringStance.Required => 3,
+            HonoringStance.Desired => 2,
+            _ => 1
+        };
     }
 
-    private static int BackstoryGuaranteed(Pawn pawn)
+    // ideo stance chance to roll for extra trophies, 
+    private static float StanceChance(Pawn pawn)
     {
-        return Mathf.Max(GuaranteedFor(pawn.story.Adulthood), GuaranteedFor(pawn.story.Childhood));
+        // Faction == null counts as neutral
+        if (pawn.Faction == null)
+            return 0.125f;
+
+        return HonoringWarriorsPrecepts.StanceOf(pawn.Ideo) switch
+        {
+            HonoringStance.Forbidden or HonoringStance.Disapproved => 0f,
+            HonoringStance.Neutral => 0.125f,
+            HonoringStance.Desired => 0.25f,
+            HonoringStance.Required => 0.5f,
+            _ => 0.125f
+        };
     }
 
-    private static int GuaranteedFor(BackstoryDef backstory)
+    private static float ExtraTrophiesChance(Pawn pawn)
     {
-        if (backstory == null)
-            return 0;
-        if (backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_HonoredElder
-            || backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_DisgracedElder)
-            return 3;
-        if (backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_FeatheredWarrior)
-            return 2;
-        if (backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_PraisedWarrior
-            || backstory == TribalTrophiesDefOf.TribalTrophies_Backstory_PraisedChild)
-            return 1;
-        return 0;
+        var zeroChanceTechLevel = TribalTrophiesMod.Settings.NpcTrophyMaxTech + 1;
+        return NpcGenerationUtility.TechScaledChance(pawn, StanceChance(pawn), zeroChanceTechLevel);
     }
 
-    private static float SuccessChance(Pawn pawn)
+    // one roll per combat passion level, and one each for high melee, high shooting and old age
+    private static int BonusRolls(Pawn pawn)
     {
         var melee = pawn.skills.GetSkill(SkillDefOf.Melee);
         var shooting = pawn.skills.GetSkill(SkillDefOf.Shooting);
 
-        // None 0, Minor 1, Major 2, so at most 4 steps
-        var chance = ChancePerPassion * Mathf.Min(4, (int)melee.passion + (int)shooting.passion);
-        
+        // None 0, Minor 1, Major 2, so at most 4 rolls
+        var rolls = Mathf.Min(MaxPassionRolls, (int)melee.passion + (int)shooting.passion);
+
         if (melee.Level > HighSkill)
-            chance += ChancePerBonus;
-        
+            rolls++;
+
         if (shooting.Level > HighSkill)
-            chance += ChancePerBonus;
-        
+            rolls++;
+
         if (pawn.ageTracker.AgeBiologicalYearsFloat > HighAge)
-            chance += ChancePerBonus;
-        
-        return chance;
+            rolls++;
+
+        return rolls;
+    }
+
+    // the rolls of all sources add up, see NpcTrophyGuaranteeExtension
+    private static int BackstoryGuaranteed(Pawn pawn)
+    {
+        var guaranteed = 0;
+        foreach (var source in GuaranteeSources(pawn))
+            guaranteed += source.count.RandomInRange;
+        return guaranteed;
+    }
+
+    private static int MaxGuaranteed(Pawn pawn)
+    {
+        var guaranteed = 0;
+        foreach (var source in GuaranteeSources(pawn))
+            guaranteed += source.count.max;
+        return guaranteed;
+    }
+
+    // every pick that rolls its chance
+    private static IEnumerable<ThingDef> PreferredTrophies(Pawn pawn)
+    {
+        foreach (var source in GuaranteeSources(pawn))
+        {
+            if (source.trophies == null)
+                continue;
+            foreach (var pick in source.trophies)
+            {
+                if (pick.trophy != null && Rand.Chance(pick.chance))
+                    yield return pick.trophy;
+            }
+        }
+    }
+
+    // both backstories and everything worn
+    private static IEnumerable<NpcTrophyGuaranteeExtension> GuaranteeSources(Pawn pawn)
+    {
+        var adulthood = pawn.story.Adulthood?.GetModExtension<NpcTrophyGuaranteeExtension>();
+        if (adulthood != null)
+            yield return adulthood;
+
+        var childhood = pawn.story.Childhood?.GetModExtension<NpcTrophyGuaranteeExtension>();
+        if (childhood != null)
+            yield return childhood;
+
+        foreach (var apparel in pawn.apparel.WornApparel)
+        {
+            var worn = apparel.def.GetModExtension<NpcTrophyGuaranteeExtension>();
+            if (worn != null)
+                yield return worn;
+        }
     }
 
     private static void Adorn(Pawn pawn, int count, bool leader)
@@ -202,10 +282,29 @@ public static class NpcTrophyGenerator
                 return;
 
             var made = new List<FeatherTrophy>();
+
+            // preferred feathers first (leaders get a second pass)
+            var preferred = PreferredTrophies(pawn).ToList();
+            // each worn copy settles one owed pick
+            foreach (var worn in pawn.apparel.WornApparel)
+                preferred.Remove(worn.def);
+            preferred.Shuffle();
+            foreach (var def in preferred)
+            {
+                if (made.Count >= count)
+                    break;
+                if (!defs.Contains(def))
+                    continue;
+
+                var featherTrophy = CreateFeatherTrophy(pawn, def, pool, fallbackPresenter, leader);
+                if (featherTrophy != null)
+                    made.Add(featherTrophy);
+            }
+
             var attempts = count * PickAttemptsPerTrophy;
             while (made.Count < count && attempts-- > 0)
             {
-                var featherTrophy = CreateFeatherTrophy(pawn, defs, pool, fallbackPresenter, leader);
+                var featherTrophy = CreateFeatherTrophy(pawn, defs.RandomElement(), pool, fallbackPresenter, leader);
                 if (featherTrophy != null)
                     made.Add(featherTrophy);
             }
@@ -235,9 +334,8 @@ public static class NpcTrophyGenerator
         }
     }
 
-    private static FeatherTrophy CreateFeatherTrophy(Pawn pawn, List<ThingDef> defs, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
+    private static FeatherTrophy CreateFeatherTrophy(Pawn pawn, ThingDef def, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
     {
-        var def = defs.RandomElement();
         var featherTrophy = (FeatherTrophy)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
         if (!featherTrophy.PawnCanWear(pawn, true))
         {

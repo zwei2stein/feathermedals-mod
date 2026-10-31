@@ -157,10 +157,10 @@ public class HarmonyPatches
     {
         public static void Postfix(Pawn pawn)
         {
-            NpcTrophyGenerator.OnGearGenerated(pawn);
             NpcScalpGenerator.OnGearGenerated(pawn);
             NpcScalpBeltGenerator.OnGearGenerated(pawn);
             NpcSkullBeltGenerator.OnGearGenerated(pawn);
+            NpcTrophyGenerator.OnGearGenerated(pawn);
         }
     }
 

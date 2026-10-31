@@ -10,14 +10,6 @@ namespace TribalTrophies
     [DefOf]
     public class TribalTrophiesDefOf
     {
-        // Feathers
-
-        public static BackstoryDef TribalTrophies_Backstory_DisgracedElder;
-        public static BackstoryDef TribalTrophies_Backstory_HonoredElder;
-        public static BackstoryDef TribalTrophies_Backstory_FeatheredWarrior;
-        public static BackstoryDef TribalTrophies_Backstory_PraisedWarrior;
-        public static BackstoryDef TribalTrophies_Backstory_PraisedChild;
-
         // AdorningCeremony
 
         public static RitualPatternDef TribalTrophies_AdorningCeremony_Pattern;

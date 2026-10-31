@@ -184,7 +184,8 @@ namespace TribalTrophies
                 "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label".Translate(),
                 ref Settings.GenerateNpcScalped,
                 "TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip".Translate(
-                    NpcScalpGenerator.MaxChance.ToStringPercent().Named("BASECHANCE")
+                    NpcScalpGenerator.Tuning.chance.ToStringPercent().Named("BASECHANCE"),
+                    NpcScalpGenerator.Tuning.zeroChanceTechLevel.ToStringHuman().Named("ZEROTECH")
                     )
             );
 

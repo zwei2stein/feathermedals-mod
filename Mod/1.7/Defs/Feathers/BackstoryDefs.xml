@@ -31,6 +31,11 @@
         <possessions>
             <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>3~3</count>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
     <BackstoryDef>
@@ -67,6 +72,11 @@
         <possessions>
             <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>3~3</count>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
     <BackstoryDef>
@@ -100,6 +110,11 @@
         <possessions>
             <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>2~2</count>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
     <BackstoryDef>
@@ -132,6 +147,11 @@
         <possessions>
             <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~1</count>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
     <BackstoryDef>
@@ -157,6 +177,11 @@
         <possessions>
             <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~1</count>
+            </li>
+        </modExtensions>
     </BackstoryDef>
     
 </Defs>

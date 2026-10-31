@@ -16,7 +16,7 @@
     <TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Label>Suggest a Tale of Honor</TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Label>
     <TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Tooltip>If enabled, a Tale of Honor will be suggested when the dialog opens and none has been written yet. Default: OFF</TribalTrophies_Settings_Trophies_Ceremony_AutoSuggestTale_Tooltip>
 
-    <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>Dynamic traits</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>
+    <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>Trophy ceremonies may grant traits</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Label>
     <TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>If enabled, being adorned with a trophy can add or remove traits, such as gaining the elder trait or losing the wimp trait. A ceremony changes at most one trait. Default: ON</TribalTrophies_Settings_Trophies_Ceremony_TrophyDynamicTraits_Tooltip>
 
     <TribalTrophies_Settings_Trophies_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Trophies_Npc_Label>
@@ -47,7 +47,7 @@
     <TribalTrophies_Settings_Scalping_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Scalping_Npc_Label>
 
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label>Pawns can spawn scalped</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Label>
-    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>Pawns from other factions can spawn with an old scalping scar. The chance is {BASECHANCE} for animal-level factions and falls linearly to 0% for spacer-level and higher. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>
+    <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>Pawns from other factions can spawn with an old scalping scar. The chance is {BASECHANCE} for animal-level factions and falls linearly to 0% for {ZEROTECH}-level and higher. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalped_Tooltip>
 
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>Pawns can spawn with scalp belts</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Label>
     <TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>Pawns from other factions whose ideoligion allows scalping can spawn wearing a scalp belt. More common in low-tech and merciless factions. Default: ON</TribalTrophies_Settings_Scalping_Npc_GenerateNpcScalpBelts_Tooltip>

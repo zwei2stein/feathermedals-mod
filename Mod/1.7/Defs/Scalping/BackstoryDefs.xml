@@ -34,6 +34,17 @@
             <MeleeWeapon_Knife>1</MeleeWeapon_Knife>
             <Leather_Human>20</Leather_Human>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroatAndTookScalp</trophy>
+                        <chance>1</chance>
+                    </li>
+                </trophies>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
     <BackstoryDef>
@@ -62,6 +73,17 @@
             <MeleeWeapon_Knife>1</MeleeWeapon_Knife>
             <Leather_Human>5</Leather_Human>
         </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroatAndTookScalp</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </modExtensions>
     </BackstoryDef>
 
     <BackstoryDef>
