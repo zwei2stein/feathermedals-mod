@@ -15,6 +15,7 @@ public class ScalpingGameComponent : GameComponent
     private static readonly List<Thing> scalpPoles = new();
     private static readonly List<Thing> scalpBelts = new();
     private static readonly List<Thing> driedTongues = new();
+    private static readonly List<Thing> tongueNecklaces = new();
     
     public ScalpingGameComponent(Game game)
     {
@@ -45,6 +46,7 @@ public class ScalpingGameComponent : GameComponent
         CollectScalpPoles(map);
         CollectScalpBelts(map);
         CollectDriedTongues(map);
+        CollectTongueNecklaces(map);
         foreach (var observer in observers)
         {
             RecordFirstSeen(observer, scalped, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped);
@@ -52,6 +54,7 @@ public class ScalpingGameComponent : GameComponent
             RecordFirstSeen(observer, scalpPoles, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole);
             RecordFirstSeen(observer, scalpBelts, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt);
             RecordFirstSeen(observer, driedTongues, TribalTrophiesDefOf.TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue);
+            RecordFirstSeen(observer, tongueNecklaces, TribalTrophiesDefOf.TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_Necklace);
         }
         observers.Clear();
         scalped.Clear();
@@ -59,6 +62,7 @@ public class ScalpingGameComponent : GameComponent
         scalpPoles.Clear();
         scalpBelts.Clear();
         driedTongues.Clear();
+        tongueNecklaces.Clear();
     }
 
     private static void RecordFirstSeen(Pawn observer, List<Thing> things, HistoryEventDef eventDef)
@@ -139,6 +143,21 @@ public class ScalpingGameComponent : GameComponent
         foreach (var thing in map.listerThings.ThingsOfDef(TribalTrophiesDefOf.TribalTrophies_Trophy_TongueCutting_DriedTongue))
         {
             driedTongues.Add(thing);
+        }
+    }
+
+    private static void CollectTongueNecklaces(Map map)
+    {
+        tongueNecklaces.Clear();
+        foreach (var p in map.mapPawns.AllPawnsSpawned)
+        {
+            if (TongueDisplayExtension.WornBy(p))
+                tongueNecklaces.Add(p);
+        }
+        foreach (var thing in map.listerThings.ThingsInGroup(ThingRequestGroup.Apparel))
+        {
+            if (thing.def.HasModExtension<TongueDisplayExtension>())
+                tongueNecklaces.Add(thing);
         }
     }
 

@@ -56,4 +56,45 @@
         </stages>
     </ThoughtDef>
 
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Tongue_Item_Necklace</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>saw a dried tongue necklace</label>
+                <description>I have witnessed the malice of tongue cutting: someone wore dried tongues on a necklace.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_WearingTongues</defName>
+        <workerClass>TribalTrophies.ThoughtWorker_Precept_WearingTongues</workerClass>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>wearing dried tongues</label>
+                <description>I wear the tongues of others hung on a necklace. My dishonor pains me.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
 </Defs>

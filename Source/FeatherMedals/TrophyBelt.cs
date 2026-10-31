@@ -19,15 +19,13 @@ public static class Patch_GenRecipe_MakeRecipeProducts
     }
 }
 
-public class TrophyBelt : Apparel
+public class TrophyBelt : TrophyApparel
 {
     private Texture2D[] textures; // by Rot4.AsInt
     private bool composeTried;
     private Graphic_RuntimeTexture groundGraphic;
     private Graphic groundRotated; // on ground with a bit of wiggle, like vanilla apparel
     private Graphic_RuntimeTexture wornGraphic;
-
-    public CompTrophyContainer Trophies => GetComp<CompTrophyContainer>();
 
     private Texture2D[] Textures
     {
@@ -68,22 +66,6 @@ public class TrophyBelt : Apparel
 
     public override Texture UIIconOverride => Textures?[Rot4.South.AsInt];
 
-    public override string DescriptionFlavor
-    {
-        get
-        {
-            var lines = new List<string>();
-            foreach (var trophy in Trophies.Held)
-                lines.Add(trophy.LabelNoCount.CapitalizeFirst());
-
-            if (lines.Count == 0)
-                return base.DescriptionFlavor;
-            return base.DescriptionFlavor + "\n\n" + string.Join("\n", lines);
-        }
-    }
-
-    public override string DescriptionDetailed => DescriptionFlavor;
-
     public override void Notify_ColorChanged()
     {
         ReleaseGraphics();
@@ -93,8 +75,6 @@ public class TrophyBelt : Apparel
 
     public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
     {
-        if (mode != DestroyMode.Vanish && mode != DestroyMode.WillReplace && MapHeld != null)
-            Trophies.DropAll(PositionHeld, MapHeld);
         base.Destroy(mode);
         ReleaseGraphics();
         // destroyed belt falls back to def graphic/icon
@@ -174,6 +154,18 @@ public class CompTrophyContainer : ThingComp, IThingHolder
             {
                 if (held is Scalp scalp)
                     yield return scalp;
+            }
+        }
+    }
+
+    public IEnumerable<DriedTongue> DriedTongues
+    {
+        get
+        {
+            foreach (var held in Held)
+            {
+                if (held is DriedTongue tongue)
+                    yield return tongue;
             }
         }
     }
@@ -347,8 +339,8 @@ public static class TrophyNames
 
     public static string VictimName(Thing trophy)
     {
-        if (trophy is Scalp scalp)
-            return scalp.Victim.Name;
+        if (trophy is TrophyBodyPart bodyPart)
+            return bodyPart.Victim.Name;
 
         var sources = trophy.TryGetComp<CompHasSources>();
         if (sources == null)

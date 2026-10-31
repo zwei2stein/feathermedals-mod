@@ -66,7 +66,7 @@ namespace TribalTrophies
             }
         }
 
-        // feathers first, then scalps, then skulls; an empty belt holds no trophies
+        // feathers first, then necklace tongues, then belt scalps and skulls; an empty belt holds no trophies
         protected override List<ITrophyRecordRow> Rows()
         {
             var rows = new List<ITrophyRecordRow>();
@@ -76,6 +76,8 @@ namespace TribalTrophies
 
             foreach (var featherTrophy in pawn.apparel.WornApparel.OfType<FeatherTrophy>())
                 rows.Add(new FeatherTrophyRecordDrawer(featherTrophy));
+            foreach (var tongue in WornDriedTongues(pawn))
+                rows.Add(new TrophyBodyPartRecordDrawer(tongue));
             foreach (var scalp in WornScalps(pawn))
                 rows.Add(new TrophyBodyPartRecordDrawer(scalp));
             foreach (var skull in WornSkulls(pawn))
@@ -86,6 +88,15 @@ namespace TribalTrophies
         protected override string Header(int rowCount) => rowCount == 1
             ? "TribalTrophies_Trophy_PawnTab_Header_One".Translate()
             : "TribalTrophies_Trophy_PawnTab_Header_Many".Translate();
+
+        private static IEnumerable<DriedTongue> WornDriedTongues(Pawn pawn)
+        {
+            foreach (var container in WornContainers(pawn))
+            {
+                foreach (var tongue in container.DriedTongues)
+                    yield return tongue;
+            }
+        }
 
         private static IEnumerable<Scalp> WornScalps(Pawn pawn)
         {

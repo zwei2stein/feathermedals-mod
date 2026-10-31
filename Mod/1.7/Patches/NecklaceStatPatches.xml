@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- worn dried tongue necklace: quality scales its stat offsets like trophy belts scale terror; beauty is not scaled -->
+
+    <!-- TradePriceImprovement 0.05: x0.5 awful to x1.5 legendary -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StatDef[defName="TradePriceImprovement"]/parts</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="TradePriceImprovement"]/parts</xpath>
+            <value>
+                <li Class="StatPart_Quality_Offset">
+                    <offsetAwful>-0.025</offsetAwful>
+                    <offsetPoor>-0.0125</offsetPoor>
+                    <offsetNormal>0</offsetNormal>
+                    <offsetGood>0.00625</offsetGood>
+                    <offsetExcellent>0.0125</offsetExcellent>
+                    <offsetMasterwork>0.01875</offsetMasterwork>
+                    <offsetLegendary>0.025</offsetLegendary>
+                    <thingDefs>
+                        <li>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</li>
+                    </thingDefs>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="TradePriceImprovement"]</xpath>
+            <value>
+                <parts>
+                    <li Class="StatPart_Quality_Offset">
+                        <offsetAwful>-0.025</offsetAwful>
+                        <offsetPoor>-0.0125</offsetPoor>
+                        <offsetNormal>0</offsetNormal>
+                        <offsetGood>0.00625</offsetGood>
+                        <offsetExcellent>0.0125</offsetExcellent>
+                        <offsetMasterwork>0.01875</offsetMasterwork>
+                        <offsetLegendary>0.025</offsetLegendary>
+                        <thingDefs>
+                            <li>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</li>
+                        </thingDefs>
+                    </li>
+                </parts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <!-- SocialImpact 0.1: x0.5 awful to x1.5 legendary -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StatDef[defName="SocialImpact"]/parts</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="SocialImpact"]/parts</xpath>
+            <value>
+                <li Class="StatPart_Quality_Offset">
+                    <offsetAwful>-0.05</offsetAwful>
+                    <offsetPoor>-0.025</offsetPoor>
+                    <offsetNormal>0</offsetNormal>
+                    <offsetGood>0.0125</offsetGood>
+                    <offsetExcellent>0.025</offsetExcellent>
+                    <offsetMasterwork>0.0375</offsetMasterwork>
+                    <offsetLegendary>0.05</offsetLegendary>
+                    <thingDefs>
+                        <li>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</li>
+                    </thingDefs>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="SocialImpact"]</xpath>
+            <value>
+                <parts>
+                    <li Class="StatPart_Quality_Offset">
+                        <offsetAwful>-0.05</offsetAwful>
+                        <offsetPoor>-0.025</offsetPoor>
+                        <offsetNormal>0</offsetNormal>
+                        <offsetGood>0.0125</offsetGood>
+                        <offsetExcellent>0.025</offsetExcellent>
+                        <offsetMasterwork>0.0375</offsetMasterwork>
+                        <offsetLegendary>0.05</offsetLegendary>
+                        <thingDefs>
+                            <li>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</li>
+                        </thingDefs>
+                    </li>
+                </parts>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <!-- SuppressionPower 0.15: x0.5 awful to x1.5 legendary -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StatDef[defName="SuppressionPower"]/parts</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="SuppressionPower"]/parts</xpath>
+            <value>
+                <li Class="StatPart_Quality_Offset">
+                    <offsetAwful>-0.075</offsetAwful>
+                    <offsetPoor>-0.0375</offsetPoor>
+                    <offsetNormal>0</offsetNormal>
+                    <offsetGood>0.01875</offsetGood>
+                    <offsetExcellent>0.0375</offsetExcellent>
+                    <offsetMasterwork>0.05625</offsetMasterwork>
+                    <offsetLegendary>0.075</offsetLegendary>
+                    <thingDefs>
+                        <li>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</li>
+                    </thingDefs>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="SuppressionPower"]</xpath>
+            <value>
+                <parts>
+                    <li Class="StatPart_Quality_Offset">
+                        <offsetAwful>-0.075</offsetAwful>
+                        <offsetPoor>-0.0375</offsetPoor>
+                        <offsetNormal>0</offsetNormal>
+                        <offsetGood>0.01875</offsetGood>
+                        <offsetExcellent>0.0375</offsetExcellent>
+                        <offsetMasterwork>0.05625</offsetMasterwork>
+                        <offsetLegendary>0.075</offsetLegendary>
+                        <thingDefs>
+                            <li>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</li>
+                        </thingDefs>
+                    </li>
+                </parts>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

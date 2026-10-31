@@ -3,7 +3,7 @@ using Verse;
 
 namespace TribalTrophies;
 
-// A dried tongue.
+// A dried tongue, or the dried tongues on a necklace.
 public class ITab_DriedTongueRecord : ITab_TrophyRows
 {
     public ITab_DriedTongueRecord() : base("TribalTrophies_TongueCutting_TongueTab_Label")
@@ -15,6 +15,14 @@ public class ITab_DriedTongueRecord : ITab_TrophyRows
         var rows = new List<ITrophyRecordRow>();
         if (SelThing is DriedTongue tongue)
             rows.Add(new TrophyBodyPartRecordDrawer(tongue));
+
+        var container = SelThing?.TryGetComp<CompTrophyContainer>();
+        if (container != null)
+            foreach (var heldTongue in container.DriedTongues)
+            {
+                rows.Add(new TrophyBodyPartRecordDrawer(heldTongue));
+            }
+
         return rows;
     }
 

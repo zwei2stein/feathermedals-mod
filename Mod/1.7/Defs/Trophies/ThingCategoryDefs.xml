@@ -18,6 +18,12 @@
 		<label>belts</label>
 		<parent>TribalTrophies_Apparel_Trophies</parent>
 	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>TribalTrophies_Apparel_Necklaces</defName>
+		<label>necklaces</label>
+		<parent>TribalTrophies_Apparel_Trophies</parent>
+	</ThingCategoryDef>
 	
 	<ThingCategoryDef>
 		<defName>TribalTrophies_Apparel_Feathers_Precursor</defName>
