@@ -14,7 +14,7 @@ public class ITab_ScalpRecord : ITab_TrophyRows
     {
         var rows = new List<ITrophyRecordRow>();
         foreach (var scalp in Scalps(SelThing))
-            rows.Add(new ScalpRecordDrawer(scalp));
+            rows.Add(new TrophyBodyPartRecordDrawer(scalp));
         return rows;
     }
 

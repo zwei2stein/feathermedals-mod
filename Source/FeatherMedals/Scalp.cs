@@ -1,41 +1,25 @@
-using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace TribalTrophies
 {
-    public class Scalp : ThingWithComps
+    public class Scalp : TrophyBodyPart
     {
         public const float PriceFactor = 0.1f;
-        
-        private RememberedPawn victim = new("TribalTrophies_Scalping_Misc_UnknownName".Translate());
-        private RememberedPawn scalper = new("TribalTrophies_Scalping_Misc_UnknownName".Translate());
-
-        private string xenotypeName;
-
-        private EventTime scalped; // null = unknown, e.g. spawned by dev tools
 
         private Color skinColor = new(0.74f, 0.58f, 0.47f);
         private HairDef hairDef = TribalTrophiesDefOf.Messy;
         private Color hairColor = Color.black;
         private Rot4 hairFacing = Rot4.South;
 
-        private float priceBonus;
-
         private Texture2D texture;
         private bool composeTried;
         private Graphic_RuntimeTexture graphic;
         private Graphic rotated; // on ground with a bit of wiggle
-        
-        public float PriceBonus => priceBonus;
 
-        public RememberedPawn Victim => victim;
-        public RememberedPawn Scalper => scalper;
-        public EventTime Scalped => scalped;
-        public string XenotypeName => xenotypeName;
-        
+        protected override float VictimValueFactor => PriceFactor;
+
         public override void PostMake()
         {
             base.PostMake();
@@ -56,74 +40,59 @@ namespace TribalTrophies
         {
             var scalp = (Scalp)ThingMaker.MakeThing(TribalTrophiesDefOf.TribalTrophies_Trophy_Scalping_Scalp);
 
-            scalp.victim = new RememberedPawn(victim);
-            scalp.scalper = new RememberedPawn(scalper);
-            
-            if (victim.genes != null && (victim.genes.Xenotype != XenotypeDefOf.Baseliner || victim.genes.CustomXenotype != null))
-                scalp.xenotypeName = victim.genes.XenotypeLabel;
-            
-            scalp.scalped = scalped;
+            scalp.Remember(victim, scalper, scalped);
 
             scalp.skinColor = victim.story?.SkinColor ?? Color.white;
             scalp.hairDef = victim.story?.hairDef;
             scalp.hairColor = victim.story?.HairColor ?? Color.white;
 
-            scalp.priceBonus = victim.MarketValue * PriceFactor;
-
             return scalp;
         }
-        
+
         public static Scalp CreateFromTemporaryVictim(Pawn victim, Pawn scalper, EventTime scalped)
         {
             var scalp = Create(victim, scalper, scalped);
-            scalp.victim.DiscardPawn();
+            scalp.Victim.DiscardPawn();
             return scalp;
         }
 
-        private string ScalpOf
+        // ===== Texts =====
+
+        protected override string LabelOf(string victimName, string factionPart, string xenotypePart)
         {
-            get
-            {
-                if (victim == null || victim.Name.NullOrEmpty())
-                {
-                    return null;
-                }
-
-                var factionPart = victim.FactionName.NullOrEmpty()
-                    ? ""
-                    : "TribalTrophies_Scalping_Item_Label_FactionPart".Translate(victim.FactionName.Named("FACTION")).Resolve();
-
-                var xenotypePart = xenotypeName.NullOrEmpty()
-                    ? ""
-                    : "TribalTrophies_Scalping_Item_Label_XenotypePart".Translate(xenotypeName.CapitalizeFirst().Named("XENOTYPE")).Resolve();
-
-                return "TribalTrophies_Scalping_Item_Label".Translate(
-                    victim.Name.Named("VICTIM"),
-                    factionPart.Named("FACTIONPART"),
-                    xenotypePart.Named("XENOTYPEPART")).Resolve();
-            }
+            return "TribalTrophies_Scalping_Item_Label".Translate(
+                victimName.Named("VICTIM"),
+                factionPart.Named("FACTIONPART"),
+                xenotypePart.Named("XENOTYPEPART")).Resolve();
         }
 
-        public override string LabelNoCount => ScalpOf ?? base.LabelNoCount;
-
-        public override string DescriptionFlavor
+        protected override string TakenByDescription(string takerName)
         {
-            get
-            {
-                var descriptions = new List<string>();
-                
-                descriptions.Add(ScalpOf?.CapitalizeFirst());
-                descriptions.Add(base.DescriptionFlavor);
-                
-                var scalperName = scalper?.Name;
-                if (!scalperName.NullOrEmpty())
-                    descriptions.Add("TribalTrophies_Scalping_Item_TakenBy".Translate(scalperName.Named("SCALPER")));
-
-                return string.Join("\n\n", descriptions.Where(s => !string.IsNullOrEmpty(s)));
-            }
+            return "TribalTrophies_Scalping_Item_TakenBy".Translate(takerName.Named("SCALPER"));
         }
 
-        public override string DescriptionDetailed => DescriptionFlavor;
+        public override string RecordTitle(string victimName)
+        {
+            return "TribalTrophies_Scalping_ScalpTab_ScalpOf".Translate(victimName.Named("VICTIM")).Resolve();
+        }
+
+        public override string RecordTakenBy(string takerName)
+        {
+            return "TribalTrophies_Scalping_ScalpTab_By".Translate(takerName.Named("SCALPER")).Resolve();
+        }
+
+        public override string GiftKindLabel => "TribalTrophies_Scalping_Letter_GiftResented_Kind".Translate();
+
+        public override string GiftReasonText(ScalpGiftReason reason)
+        {
+            return reason switch
+            {
+                ScalpGiftReason.Forbidden => "TribalTrophies_Scalping_Letter_GiftResented_Reason_Forbidden".Translate().Resolve(),
+                ScalpGiftReason.NoScalpBountyPurchases => "TribalTrophies_Scalping_Letter_GiftResented_Reason_NoBounties".Translate().Resolve(),
+                ScalpGiftReason.Victim => "TribalTrophies_Scalping_Letter_GiftResented_Reason_Victim".Translate().Resolve(),
+                _ => null
+            };
+        }
 
         // Scalps stored on a scalp pole hang one above another.
         public override Vector3 DrawPos
@@ -137,11 +106,6 @@ namespace TribalTrophies
                 }
                 return position;
             }
-        }
-
-        public override bool CanStackWith(Thing other)
-        {
-            return false;
         }
 
         private Texture2D ScalpTextureWithHair
@@ -187,7 +151,7 @@ namespace TribalTrophies
             // destroyed scalp falls back to def graphic/icon
             composeTried = true;
         }
-        
+
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             base.Destroy(mode);
@@ -197,37 +161,11 @@ namespace TribalTrophies
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.Look(ref victim, "victim");
-            Scribe_Deep.Look(ref scalper, "scalper");
-            Scribe_Values.Look(ref xenotypeName, "xenotypeName");
-            Scribe_Deep.Look(ref scalped, "scalped");
             Scribe_Values.Look(ref skinColor, "skinColor", Color.white);
             Scribe_Defs.Look(ref hairDef, "hairDef");
             Scribe_Values.Look(ref hairColor, "hairColor", Color.white);
             Scribe_Values.Look(ref hairFacing, "hairFacing", Rot4.South);
-            Scribe_Values.Look(ref priceBonus, "priceBonus");
-        }
-    }
-    
-    
-    public class CompProperties_ScalpPrice : CompProperties
-    {
-        public CompProperties_ScalpPrice()
-        {
-            compClass = typeof(CompScalpPrice);
         }
     }
 
-    public class CompScalpPrice : ThingComp
-    {
-        public override float GetStatOffset(StatDef stat)
-        {
-            if (stat == StatDefOf.MarketValue && parent is Scalp scalp)
-            {
-                return scalp.PriceBonus;
-            }
-            return 0f;
-        }
-    }
-    
 }

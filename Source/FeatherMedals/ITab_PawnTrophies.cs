@@ -77,7 +77,7 @@ namespace TribalTrophies
             foreach (var featherTrophy in pawn.apparel.WornApparel.OfType<FeatherTrophy>())
                 rows.Add(new FeatherTrophyRecordDrawer(featherTrophy));
             foreach (var scalp in WornScalps(pawn))
-                rows.Add(new ScalpRecordDrawer(scalp));
+                rows.Add(new TrophyBodyPartRecordDrawer(scalp));
             foreach (var skull in WornSkulls(pawn))
                 rows.Add(new SkullRecordDrawer(skull, TrophyNames.VictimName(skull)));
             return rows;

@@ -27,7 +27,7 @@ namespace TribalTrophies
 
         public static Pawn PawnOf(Thing thing)
         {
-            return thing is Corpse corpse ? corpse.InnerPawn : thing as Pawn;
+            return TrophyBodyPartUtility.PawnOf(thing);
         }
 
         public static BodyPartRecord HeadOf(Pawn pawn)
@@ -103,71 +103,28 @@ namespace TribalTrophies
         // Evil from the point of view of the scalper's faction: its own people, its non-hostiles, children.
         private static bool Can_IsNotEvilToBeScalped(Pawn pawn, Faction scalperFaction)
         {
-            if (!pawn.DevelopmentalStage.Adult())
-                return false;
-
-            // Imprisoned guilty colonist is still of player faction, we must check guilt first.
-            if (pawn.IsPrisoner && pawn.HostFaction == scalperFaction && pawn.guilt.IsGuilty)
-                return true;
-
-            if (pawn.Faction == scalperFaction)
-                return false;
-    
-            Faction home = pawn.HomeFaction;
-            if (home == null)
-                return true;
-
-            if (IsHostileTo(pawn, scalperFaction))
-                return true;
-
-            return false;
+            return TrophyBodyPartUtility.IsNotEvilToTakeFrom(pawn, scalperFaction);
         }
 
         private static bool Can_PhysicallyCapableOfBeingScalped(Pawn pawn, Thing thing)
         {
             if (!ScalpAvailable(pawn, thing))
                 return false;
-            
-            if (thing is Corpse corpse)
-                return corpse.GetRotStage() == RotStage.Fresh;
-            
-            if (pawn.Dead)
-                return false;
-            
-            if (pawn.IsPrisonerOfColony || pawn.IsSlaveOfColony)
-                return true;
 
-            if (pawn.Faction == Faction.OfPlayer)
-                return pawn.Downed;
-            
-            if (IsHostileTo(pawn, Faction.OfPlayer))
-                return  pawn.Downed;
-
-            return true;
-
+            return TrophyBodyPartUtility.IsHeldStill(pawn, thing);
         }
 
         // Scalping a living non-hostile pawn angers their faction. Same condition vanilla capture uses.
         public static bool WouldAngerFaction(Thing target)
         {
-            if (!(target is Pawn pawn))
-                return false;
-
-            var faction = pawn.Faction;
-            return faction != null && faction != Faction.OfPlayer && !faction.Hidden
-                   && !faction.HostileTo(Faction.OfPlayer) && !pawn.IsPrisonerOfColony;
+            return TrophyBodyPartUtility.WouldAngerFaction(target);
         }
 
         public static void Provoke(Pawn target)
         {
             // Trying to scalp turns faction hostile.
             var faction = target.Faction;
-            var change = Faction.OfPlayer.GoodwillToMakeHostile(faction);
-            if (change != 0)
-            {
-                Faction.OfPlayer.TryAffectGoodwillWith(faction, change, false, true,
-                    TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember, (GlobalTargetInfo)target);
-            }
+            TrophyBodyPartUtility.MakeFactionHostile(target, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember);
 
             Messages.Message(
                 "TribalTrophies_Scalping_Message_Provoked".Translate(
@@ -252,49 +209,25 @@ namespace TribalTrophies
                     TribalTrophiesDefOf.TribalTrophies_Scalping_Thought_IWasScalped);
             }
 
-            var blood = victim.RaceProps.BloodDef;
-            if (blood != null && map != null)
-            {
-                FilthMaker.TryMakeFilth(pos, map, blood, victim.LabelIndefinite());
-            }
+            TrophyBodyPartUtility.MakeBlood(victim, pos, map);
 
-            if (scalper.Map == null || !GenPlace.TryPlaceThing(scalp, scalper.Position, scalper.Map, ThingPlaceMode.Near))
-            {
-                scalp.Destroy();
-                scalp = null;
-            }
+            scalp = TrophyBodyPartUtility.PlaceNear(scalp, scalper);
 
             // only the player's own scalping changes goodwill with the player
-            if (faction != null && faction != Faction.OfPlayer && scalper.Faction == Faction.OfPlayer)
-            {
-                var loss = alive ? ScalpingTuning.GoodwillLossAlive : ScalpingTuning.GoodwillLossDead;
-                faction.TryAffectGoodwillWith(Faction.OfPlayer, -loss, true, true,
-                    TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember, (GlobalTargetInfo)target);
-            }
-
-            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_TookScalp,
-                scalper.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim)));
+            var loss = alive ? ScalpingTuning.GoodwillLossAlive : ScalpingTuning.GoodwillLossDead;
+            TrophyBodyPartUtility.LoseGoodwill(faction, scalper, loss,
+                TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_ScalpedMember, target);
 
             // messages are taking sides - heroic colonist, villain raider.
-            var tale = scalper.Faction == Faction.OfPlayer
-                ? TribalTrophiesDefOf.TribalTrophies_Scalping_Tale_TookScalp
-                : TribalTrophiesDefOf.TribalTrophies_Scalping_Tale_ScalpedByEnemy;
-            TaleRecorder.RecordTale(tale, scalper, victim);
-            
+            TrophyBodyPartUtility.RecordTaking(scalper, victim,
+                TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_TookScalp,
+                TribalTrophiesDefOf.TribalTrophies_Scalping_Tale_TookScalp,
+                TribalTrophiesDefOf.TribalTrophies_Scalping_Tale_ScalpedByEnemy);
+
             // Bloodlust gives thought, ignoring ideo stance.
-            if (scalper.story?.traits?.HasTrait(TraitDefOf.Bloodlust) == true && ScalpingPrecepts.StanceOf(scalper) != ScalpStance.Merciless)
-            {
-                scalper.needs?.mood?.thoughts.memories.TryGainMemory(TribalTrophiesDefOf.TribalTrophies_Issue_ScalpTaking_Thought_Merciless_ClaimedRightOfVictor);
-            }
+            TrophyBodyPartUtility.GiveBloodlustThought(scalper);
 
             return scalp;
-        }
-        
-        // Hostile itself, or its home faction is (prisoners keep their home faction).
-        private static bool IsHostileTo(Pawn pawn, Faction faction)
-        {
-            var home = pawn.HomeFaction;
-            return (home != null && home.HostileTo(faction)) || pawn.HostileTo(faction);
         }
 
         // Pawn or corpse is on a map and its body can still give a scalp.
@@ -309,10 +242,10 @@ namespace TribalTrophies
             return pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped, mustBeVisible: true);
         }
 
-        // Body can still give a scalp: humanlike, head present, not scalped yet.
+        // Body can still give a scalp: humanlike flesh, head present, not scalped yet.
         public static bool HasScalpToTake(Pawn pawn)
         {
-            return pawn.RaceProps.Humanlike
+            return TrophyBodyPartUtility.HasTrophyBody(pawn)
                    && !pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped)
                    && HeadOf(pawn) != null;
         }

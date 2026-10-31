@@ -8,9 +8,8 @@
 
     <!-- ===== Letters ===== -->
 
-    <!-- scalp gift resented; reasons are listed in {REASONS}, one per line -->
-    <TribalTrophies_Scalping_Letter_GiftResented_Label>Scalp shipment resented</TribalTrophies_Scalping_Letter_GiftResented_Label>
-    <TribalTrophies_Scalping_Letter_GiftResented>{FACTION} did not take the recent scalp shipment well. Goodwill lost: {LOSS}\n\nReasons:\n{REASONS}</TribalTrophies_Scalping_Letter_GiftResented>
+    <!-- this kind in plural, fills {ITEMS} of the shared gift letter -->
+    <TribalTrophies_Scalping_Letter_GiftResented_Kind>scalps</TribalTrophies_Scalping_Letter_GiftResented_Kind>
     <TribalTrophies_Scalping_Letter_GiftResented_Reason_Forbidden>They do not practice the barbaric custom of scalping.</TribalTrophies_Scalping_Letter_GiftResented_Reason_Forbidden>
     <TribalTrophies_Scalping_Letter_GiftResented_Reason_NoBounties>They do not take part in scalp bounties.</TribalTrophies_Scalping_Letter_GiftResented_Reason_NoBounties>
     <TribalTrophies_Scalping_Letter_GiftResented_Reason_Victim>They do not enjoy being reminded that their own people were scalped.</TribalTrophies_Scalping_Letter_GiftResented_Reason_Victim>
@@ -38,8 +37,6 @@
 
     <!-- label built from optional parts: FactionPart and XenotypePart are empty when unknown -->
     <TribalTrophies_Scalping_Item_Label>scalp of {VICTIM}{FACTIONPART}{XENOTYPEPART}</TribalTrophies_Scalping_Item_Label>
-    <TribalTrophies_Scalping_Item_Label_FactionPart> of {FACTION}</TribalTrophies_Scalping_Item_Label_FactionPart>
-    <TribalTrophies_Scalping_Item_Label_XenotypePart>, {XENOTYPE}</TribalTrophies_Scalping_Item_Label_XenotypePart>
 
     <!-- description -->
     <TribalTrophies_Scalping_Item_TakenBy>This scalp was taken by {SCALPER}.</TribalTrophies_Scalping_Item_TakenBy>
@@ -63,10 +60,6 @@
     <TribalTrophies_Scalping_ScalpTab_Label>Scalps</TribalTrophies_Scalping_ScalpTab_Label>
 
     <TribalTrophies_Scalping_ScalpTab_ScalpOf>Scalp of {VICTIM}</TribalTrophies_Scalping_ScalpTab_ScalpOf>
-    <TribalTrophies_Scalping_ScalpTab_XenotypeOf>{XENOTYPE} of {FACTION}</TribalTrophies_Scalping_ScalpTab_XenotypeOf>
-    <TribalTrophies_Scalping_ScalpTab_Of>of {FACTION}</TribalTrophies_Scalping_ScalpTab_Of>
-    <TribalTrophies_Scalping_ScalpTab_When>{DATE}{PLACEPART}</TribalTrophies_Scalping_ScalpTab_When>
-    <TribalTrophies_Scalping_ScalpTab_At> at {SETTLEMENT}</TribalTrophies_Scalping_ScalpTab_At>
     <TribalTrophies_Scalping_ScalpTab_By>Scalped by {SCALPER}</TribalTrophies_Scalping_ScalpTab_By>
 
     <!-- ===== Scalp Request Quest ===== -->

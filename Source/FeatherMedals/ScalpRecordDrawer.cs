@@ -23,7 +23,7 @@ public class ScalpRecordDrawer : TrophyRowDrawer
 
     protected override Thing IconThing => scalp;
 
-    protected override float IconSize => TrophyUIStyle.ScalpIconSize;
+    protected override float IconSize => TrophyUIStyle.TrophyBodyPartIconSize;
 
     // text block centered against the picture
     protected override float LayoutText(Rect area, bool draw)
@@ -41,8 +41,8 @@ public class ScalpRecordDrawer : TrophyRowDrawer
     {
         var lines = new List<Line>();
         var victim = scalp.Victim;
-        var scalper = scalp.Scalper;
-        var scalped = scalp.Scalped;
+        var scalper = scalp.Taker;
+        var scalped = scalp.Taken;
 
         var victimName = victim?.Name;
         Add(lines, victimName.NullOrEmpty()

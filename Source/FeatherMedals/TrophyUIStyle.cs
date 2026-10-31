@@ -28,7 +28,7 @@ public static class TrophyUIStyle
     public const float LockButtonSize = 24f;
 
     public const float FeatherIconSize = 80f;
-    public const float ScalpIconSize = 70f;
+    public const float TrophyBodyPartIconSize = 70f;
     public const float SkullIconSize = 70f;
     public const float FeatherRowMinHeight = 90f;
 

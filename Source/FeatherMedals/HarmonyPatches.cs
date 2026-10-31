@@ -12,7 +12,7 @@ public class HarmonyPatches
     
     private static ScalpRequestComp previewRequest;
 
-    private static IEnumerable<Scalp> ScalpsToBeGiven(List<Tradeable> tradeables)
+    private static IEnumerable<TrophyBodyPart> ScalpsToBeGiven(List<Tradeable> tradeables)
     {
         foreach (Tradeable tradeable in tradeables)
         {
@@ -24,8 +24,8 @@ public class HarmonyPatches
             {
                 if (left <= 0)
                     break;
-                if (thing is Scalp scalp)
-                    yield return scalp;
+                if (thing is TrophyBodyPart trophy)
+                    yield return trophy;
                 left -= thing.stackCount;
             }
         }
@@ -179,16 +179,16 @@ public class HarmonyPatches
     {
         public static bool Prefix(Thing anyThing, Faction theirFaction, ref float __result)
         {
-            if (anyThing is not Scalp scalp)
+            if (anyThing is not TrophyBodyPart trophy)
                 return true;
 
-            if (previewRequest != null && previewRequest.Wants(scalp))
+            if (previewRequest != null && previewRequest.Wants(trophy))
             {
                 __result = 0f;
                 return false;
             }
 
-            if (ScalpGiftUtility.ReasonsFor(scalp, theirFaction).Count == 0)
+            if (ScalpGiftUtility.ReasonsFor(trophy, theirFaction).Count == 0)
                 return true;
 
             __result = 0f;
@@ -221,17 +221,17 @@ public class HarmonyPatches
         {
             giveTo.GetComponent<ScalpRequestComp>()?.TakeFromPods(pods);
 
-            var scalps = new List<Scalp>();
+            var trophies = new List<TrophyBodyPart>();
             foreach (ActiveTransporterInfo pod in pods)
             {
                 ThingOwner contents = pod.innerContainer;
                 for (int i = 0; i < contents.Count; i++)
                 {
-                    if (contents[i] is Scalp scalp)
-                        scalps.Add(scalp);
+                    if (contents[i] is TrophyBodyPart trophy)
+                        trophies.Add(trophy);
                 }
             }
-            __state = ScalpGiftUtility.Evaluate(scalps, giveTo.Faction);
+            __state = ScalpGiftUtility.Evaluate(trophies, giveTo.Faction);
         }
 
         public static void Postfix(Settlement giveTo, ScalpGiftResult __state)

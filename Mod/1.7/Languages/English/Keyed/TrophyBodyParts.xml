@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- ===== Letters ===== -->
+
+    <TribalTrophies_TrophyBodyPart_Letter_GiftResented_Label>{ITEMS} resented</TribalTrophies_TrophyBodyPart_Letter_GiftResented_Label>
+    <TribalTrophies_TrophyBodyPart_Letter_GiftResented>{FACTION} did not take the recent shipment of {ITEMS} well. Goodwill lost: {LOSS}\n\nReasons:\n{REASONS}</TribalTrophies_TrophyBodyPart_Letter_GiftResented>
+
+    <!-- ===== Item ===== -->
+
+    <!-- optional, unused when unknown -->
+    <TribalTrophies_TrophyBodyPart_Item_Label_FactionPart> of {FACTION}</TribalTrophies_TrophyBodyPart_Item_Label_FactionPart>
+    <TribalTrophies_TrophyBodyPart_Item_Label_XenotypePart>, {XENOTYPE}</TribalTrophies_TrophyBodyPart_Item_Label_XenotypePart>
+
+    <!-- ===== Record tab (trophy, and containers holding trophies) ===== -->
+
+    <TribalTrophies_TrophyBodyPart_RecordTab_XenotypeOf>{XENOTYPE} of {FACTION}</TribalTrophies_TrophyBodyPart_RecordTab_XenotypeOf>
+    <TribalTrophies_TrophyBodyPart_RecordTab_Of>of {FACTION}</TribalTrophies_TrophyBodyPart_RecordTab_Of>
+    <TribalTrophies_TrophyBodyPart_RecordTab_When>{DATE}{PLACEPART}</TribalTrophies_TrophyBodyPart_RecordTab_When>
+    <TribalTrophies_TrophyBodyPart_RecordTab_At> at {SETTLEMENT}</TribalTrophies_TrophyBodyPart_RecordTab_At>
+
+    <!-- ===== Misc ===== -->
+
+    <!-- name of an unknown victim or taker -->
+    <TribalTrophies_TrophyBodyPart_Misc_UnknownName>Unknown</TribalTrophies_TrophyBodyPart_Misc_UnknownName>
+
+</LanguageData>
