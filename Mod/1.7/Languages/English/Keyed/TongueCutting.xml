@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- ===== Messages ===== -->
+
+    <TribalTrophies_TongueCutting_Message_WillAnger>Cutting out the tongue of {TARGET_nameDef} will anger {FACTION_name}.</TribalTrophies_TongueCutting_Message_WillAnger>
+    <TribalTrophies_TongueCutting_Message_Provoked>People of {PLAYERFACTION_name} have attempted to cut out the tongue of {TARGET_nameDef}, and {TARGET_pronoun} resisted. {FACTION_name} is angered.</TribalTrophies_TongueCutting_Message_Provoked>
+
+    <!-- ===== Letters ===== -->
+
+    <!-- this kind in plural, fills {ITEMS} of the shared gift letter -->
+    <TribalTrophies_TongueCutting_Letter_GiftResented_Kind>dried tongues</TribalTrophies_TongueCutting_Letter_GiftResented_Kind>
+    <TribalTrophies_TongueCutting_Letter_GiftResented_Reason_Forbidden>They do not practice the barbaric custom of cutting out tongues.</TribalTrophies_TongueCutting_Letter_GiftResented_Reason_Forbidden>
+    <TribalTrophies_TongueCutting_Letter_GiftResented_Reason_NoBuyers>They have no use for dried tongues.</TribalTrophies_TongueCutting_Letter_GiftResented_Reason_NoBuyers>
+    <TribalTrophies_TongueCutting_Letter_GiftResented_Reason_Victim>They do not enjoy being reminded that their own people were silenced.</TribalTrophies_TongueCutting_Letter_GiftResented_Reason_Victim>
+
+    <!-- ===== Gizmo (pawn, corpse) ===== -->
+
+    <TribalTrophies_TongueCutting_Gizmo_Label>Cut out tongue</TribalTrophies_TongueCutting_Gizmo_Label>
+    <TribalTrophies_TongueCutting_Gizmo_Desc>Mark for tongue cutting. Colonists assigned to doctoring, cooking or handling (able to cut flesh) will take the job.\n\nA tongue removed by surgery does not become a trophy.</TribalTrophies_TongueCutting_Gizmo_Desc>
+
+    <!-- ===== Designator (Orders) ===== -->
+
+    <TribalTrophies_TongueCutting_Designator_Label>Cut out tongue</TribalTrophies_TongueCutting_Designator_Label>
+    <TribalTrophies_TongueCutting_Designator_Desc>Order colonists to cut out the tongue of every person and corpse in the area whose tongue can be taken.\n\nA tongue removed by surgery does not become a trophy.</TribalTrophies_TongueCutting_Designator_Desc>
+    <TribalTrophies_TongueCutting_Designator_MustDesignateCuttable>Must designate a target whose tongue can be cut out.</TribalTrophies_TongueCutting_Designator_MustDesignateCuttable>
+
+    <!-- ===== FloatMenu ===== -->
+
+    <TribalTrophies_TongueCutting_FloatMenu_CutTongue>Cut out tongue of {TARGET}</TribalTrophies_TongueCutting_FloatMenu_CutTongue>
+
+    <!-- ===== Item (dried tongue) ===== -->
+
+    <!-- label built from optional parts: FactionPart and XenotypePart are empty when unknown -->
+    <TribalTrophies_TongueCutting_Item_Label>dried tongue of {VICTIM}{FACTIONPART}{XENOTYPEPART}</TribalTrophies_TongueCutting_Item_Label>
+
+    <!-- description -->
+    <TribalTrophies_TongueCutting_Item_CutOutBy>This tongue was cut out by {CUTTER}.</TribalTrophies_TongueCutting_Item_CutOutBy>
+
+    <!-- ===== Tongue tab (dried tongue) ===== -->
+
+    <TribalTrophies_TongueCutting_TongueTab_Header_One>Dried tongue</TribalTrophies_TongueCutting_TongueTab_Header_One>
+    <TribalTrophies_TongueCutting_TongueTab_Header_Many>Dried tongues</TribalTrophies_TongueCutting_TongueTab_Header_Many>
+
+    <TribalTrophies_TongueCutting_TongueTab_Label>Tongues</TribalTrophies_TongueCutting_TongueTab_Label>
+
+    <TribalTrophies_TongueCutting_TongueTab_TongueOf>Tongue of {VICTIM}</TribalTrophies_TongueCutting_TongueTab_TongueOf>
+    <TribalTrophies_TongueCutting_TongueTab_By>Cut out by {CUTTER}</TribalTrophies_TongueCutting_TongueTab_By>
+
+</LanguageData>

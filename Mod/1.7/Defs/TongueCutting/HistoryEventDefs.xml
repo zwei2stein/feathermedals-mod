@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_TongueCutting_HistoryEvent_CutTongueOfMember</defName>
+        <label>cut out a member's tongue</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_TongueCutting_HistoryEvent_CutTongue</defName>
+        <label>cut out a tongue</label>
+    </HistoryEventDef>
+
+    <HistoryEventDef>
+        <defName>TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue</defName>
+        <label>saw a dried tongue</label>
+    </HistoryEventDef>
+
+</Defs>

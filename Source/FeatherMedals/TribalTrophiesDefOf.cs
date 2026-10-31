@@ -72,6 +72,23 @@ namespace TribalTrophies
         public static ThoughtDef TribalTrophies_Scalping_ThoughtSocial_ScalpedMe;
         public static ThoughtDef TribalTrophies_Scalping_Thought_IWasScalped;
 
+        // TongueCutting
+
+        public static ThingDef TribalTrophies_Trophy_TongueCutting_DriedTongue;
+
+        public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_CutTongue;
+        public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_CutTongueOfMember;
+        public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue;
+
+        public static JobDef TribalTrophies_TongueCutting_Job_CutTongueJob;
+        public static DesignationDef TribalTrophies_TongueCutting_Designation_CutTongueDesignation;
+
+        public static TaleDef TribalTrophies_TongueCutting_Tale_CutTongue;
+        public static TaleDef TribalTrophies_TongueCutting_Tale_TongueCutByEnemy;
+
+        public static ThoughtDef TribalTrophies_TongueCutting_ThoughtSocial_CutOutMyTongue;
+        public static ThoughtDef TribalTrophies_TongueCutting_Thought_TongueCutOut;
+
         // Scalp Hunt
 
         public static JobDef TribalTrophies_Scalping_TakeScalpAndFlee;

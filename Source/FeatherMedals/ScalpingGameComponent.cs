@@ -14,6 +14,7 @@ public class ScalpingGameComponent : GameComponent
     private static readonly List<Thing> scalps = new();
     private static readonly List<Thing> scalpPoles = new();
     private static readonly List<Thing> scalpBelts = new();
+    private static readonly List<Thing> driedTongues = new();
     
     public ScalpingGameComponent(Game game)
     {
@@ -43,18 +44,21 @@ public class ScalpingGameComponent : GameComponent
         CollectScalps(map);
         CollectScalpPoles(map);
         CollectScalpBelts(map);
+        CollectDriedTongues(map);
         foreach (var observer in observers)
         {
             RecordFirstSeen(observer, scalped, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped);
             RecordFirstSeen(observer, scalps, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Scalp);
             RecordFirstSeen(observer, scalpPoles, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Building_Pole);
             RecordFirstSeen(observer, scalpBelts, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt);
+            RecordFirstSeen(observer, driedTongues, TribalTrophiesDefOf.TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue);
         }
         observers.Clear();
         scalped.Clear();
         scalps.Clear();
         scalpPoles.Clear();
         scalpBelts.Clear();
+        driedTongues.Clear();
     }
 
     private static void RecordFirstSeen(Pawn observer, List<Thing> things, HistoryEventDef eventDef)
@@ -126,6 +130,15 @@ public class ScalpingGameComponent : GameComponent
         {
             if (thing.def.HasModExtension<ScalpDisplayExtension>())
                 scalpBelts.Add(thing);
+        }
+    }
+
+    private static void CollectDriedTongues(Map map)
+    {
+        driedTongues.Clear();
+        foreach (var thing in map.listerThings.ThingsOfDef(TribalTrophiesDefOf.TribalTrophies_Trophy_TongueCutting_DriedTongue))
+        {
+            driedTongues.Add(thing);
         }
     }
 

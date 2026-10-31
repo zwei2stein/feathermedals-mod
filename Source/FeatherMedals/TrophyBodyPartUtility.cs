@@ -1,5 +1,6 @@
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 
 namespace TribalTrophies;
@@ -7,6 +8,12 @@ namespace TribalTrophies;
 // Rules and consequences shared by every way of taking a body part as a trophy (scalping, ...).
 public static class TrophyBodyPartUtility
 {
+    // Injuries add up on a part and enough of them destroy it. Taking a trophy must leave the part on: at least this much health stays.
+    private const float MinPartHealthLeft = 1f;
+
+    // smallest injury still worth adding
+    private const float MinInjurySeverity = 0.01f;
+
     public static Pawn PawnOf(Thing thing)
     {
         return thing is Corpse corpse ? corpse.InnerPawn : thing as Pawn;
@@ -90,6 +97,18 @@ public static class TrophyBodyPartUtility
             return;
 
         victimFaction.TryAffectGoodwillWith(Faction.OfPlayer, -loss, true, true, reason, (GlobalTargetInfo)target);
+    }
+
+    // Injury that never destroys its part: takes only what the part has left, at least MinPartHealthLeft stays.
+    public static void AddInjuryLeavingPart(Pawn victim, BodyPartRecord part, HediffDef injury, float severity)
+    {
+        var room = victim.health.hediffSet.GetPartHealth(part) - MinPartHealthLeft;
+        if (room < MinInjurySeverity)
+            return;
+
+        var hediff = HediffMaker.MakeHediff(injury, victim, part);
+        hediff.Severity = Mathf.Min(severity, room);
+        victim.health.AddHediff(hediff, part);
     }
 
     public static void MakeBlood(Pawn victim, IntVec3 pos, Map map)

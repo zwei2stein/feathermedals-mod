@@ -6,7 +6,7 @@
     <IssueDef>
         <defName>TribalTrophies_Issue_ScalpTaking</defName>
         <label>scalp taking</label>
-        <description>How the people view taking scalps as trophies.</description>
+        <description>How the people view taking scalps, tongues and other body parts as trophies.</description>
         <iconPath>UI/Issues/PreceptScalping</iconPath>
     </IssueDef>
 
@@ -22,7 +22,7 @@
     <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
         <defName>TribalTrophies_Issue_ScalpTaking_Merciless</defName>
         <label>merciless</label>
-        <description>Allows taking scalps without any moral restrictions. Children, innocents, allies: all are fair game, regardless of consequences.</description>
+        <description>Allows taking scalps, tongues and other body parts as trophies without any moral restrictions. Children, innocents, allies: all are fair game, regardless of consequences.</description>
         <impact>High</impact>
         <displayOrderInIssue>1</displayOrderInIssue>
         <defaultSelectionWeight>0.25</defaultSelectionWeight>
@@ -38,13 +38,17 @@
                 <eventDef>TribalTrophies_Scalping_HistoryEvent_TookScalp</eventDef>
                 <thought>TribalTrophies_Issue_ScalpTaking_Thought_Merciless_ClaimedRightOfVictor</thought>
             </li>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>TribalTrophies_TongueCutting_HistoryEvent_CutTongue</eventDef>
+                <thought>TribalTrophies_Issue_ScalpTaking_Thought_Merciless_ClaimedRightOfVictor</thought>
+            </li>
         </comps>
     </PreceptDef>
 
     <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
         <defName>TribalTrophies_Issue_ScalpTaking_Honorable</defName>
         <label>honorable</label>
-        <description>Taking scalps where honor allows it: enemies and guilty prisoners.</description>
+        <description>Taking scalps, tongues and other body parts as trophies where honor allows it: enemies and guilty prisoners.</description>
         <impact>Low</impact>
         <displayOrderInIssue>2</displayOrderInIssue>
         <defaultSelectionWeight>1</defaultSelectionWeight>
@@ -62,7 +66,7 @@
     <PreceptDef ParentName="TribalTrophies_Issue_ScalpTaking_Base">
         <defName>TribalTrophies_Issue_ScalpTaking_Forbidden</defName>
         <label>forbidden</label>
-        <description>Forbids taking scalps at all. Members consider taking scalps barbaric and unacceptable.</description>
+        <description>Forbids taking scalps, tongues or any other body parts as trophies. Members consider it barbaric and unacceptable.</description>
         <impact>Medium</impact>
         <displayOrderInIssue>3</displayOrderInIssue>
         <defaultSelectionWeight>0.5</defaultSelectionWeight>
@@ -89,6 +93,10 @@
             <li Class="PreceptComp_SelfTookMemoryThought">
                 <eventDef>TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt</eventDef>
                 <thought>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Scalp_Item_Belt</thought>
+            </li>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue</eventDef>
+                <thought>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Tongue_Item_DriedTongue</thought>
             </li>
             <li Class="PreceptComp_SituationalThought">
                 <thought>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_WearingScalps</thought>

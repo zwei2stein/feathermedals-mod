@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-    <!-- Keshig are savage enough to buy scalps -->
+    <!-- Keshig are savage enough to buy scalps and dried tongues -->
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/TraderKindDef[defName="DV_Base_Keshig_Standard" or defName="DV_Caravan_Keshig_CombatSupplier" or defName="DV_Caravan_Keshig_PirateMerchant" or defName="DV_Caravan_Keshig_Exotic"]/stockGenerators</xpath>
         <value>
             <li Class="StockGenerator_BuyTradeTag"><tag>TribalTrophies_TradeTag_Scalp</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>TribalTrophies_TradeTag_DriedTongue</tag></li>
         </value>
     </Operation>
 </Patch> 

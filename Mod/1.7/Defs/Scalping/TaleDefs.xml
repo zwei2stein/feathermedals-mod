@@ -28,6 +28,7 @@
                 <li>desc_sentence->[SCALPER_nameDef] honors the defeated foe.</li>
                 <li>desc_sentence->[SCALPER_nameDef] shows no hesitation.</li>
                 <li>desc_sentence->[VICTIM_nameDef] lies struggling on the ground.</li>
+                <li>desc_sentence->[VICTIM_nameDef] will never grow hair again.</li>
                 <li>desc_sentence->[VICTIM_nameDef] lies bleeding, the scalp already taken.</li>
                 <li>desc_sentence->The trophy is held high for all to see.</li>
                 <li>desc_sentence->A great victory is claimed.</li>

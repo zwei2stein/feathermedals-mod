@@ -39,6 +39,9 @@
     <TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Label>Show scalp gizmo</TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Label>
     <TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Tooltip>Pawns and corpses will have a gizmo to order colonists to scalp them. Scalping is still available from the right-click menu and the Orders menu. Default: ON</TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Tooltip>
 
+    <TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Label>Show tongue cutting gizmo</TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Label>
+    <TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Tooltip>Pawns and corpses will have a gizmo to order colonists to cut out their tongue. Tongue cutting is still available from the right-click menu and the Orders menu. Default: ON</TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Tooltip>
+
     <TribalTrophies_Settings_Scalping_MentalBreaks_Label>Scalping mental breaks</TribalTrophies_Settings_Scalping_MentalBreaks_Label>
 
     <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>Scalping mental breaks can target children</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>

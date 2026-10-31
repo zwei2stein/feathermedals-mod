@@ -26,9 +26,21 @@
 	</ThingCategoryDef>
 	
 	<ThingCategoryDef>
+		<defName>TribalTrophies_Items_BodyTrophies</defName>
+		<label>body trophies</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
 		<defName>TribalTrophies_Items_Scalps</defName>
 		<label>scalps</label>
-		<parent>Items</parent>
+		<parent>TribalTrophies_Items_BodyTrophies</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>TribalTrophies_Items_DriedTongues</defName>
+		<label>dried tongues</label>
+		<parent>TribalTrophies_Items_BodyTrophies</parent>
 	</ThingCategoryDef>
 
 </Defs>

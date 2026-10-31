@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>TribalTrophies_TongueCutting_ThoughtSocial_CutOutMyTongue</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <durationDays>40</durationDays>
+        <stackLimit>1</stackLimit>
+        <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>cut out my tongue</label>
+                <description>{0} has cut out my tongue! I despise {0} for it.</description>
+                <baseOpinionOffset>-80</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Victim's own mood. The lasting loss is vanilla's: a missing tongue. -->
+
+    <ThoughtDef>
+        <defName>TribalTrophies_TongueCutting_Thought_TongueCutOut</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>tongue cut out</label>
+                <description>Someone cut out my tongue to keep as a trophy. I will never speak again. The pain and the shame are still fresh.</description>
+                <baseMoodEffect>-40</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Forbidden stance of the scalp taking precept, which covers all body part trophies -->
+
+    <ThoughtDef>
+        <defName>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Tongue_Item_DriedTongue</defName>
+        <durationDays>10</durationDays>
+        <stackLimit>1</stackLimit>
+        <nullifyingTraits>
+            <li>Psychopath</li>
+            <li>Bloodlust</li>
+            <li>Cannibal</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>saw a dried tongue</label>
+                <description>I have witnessed the malice of tongue cutting: I saw a dried tongue kept as a trophy.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

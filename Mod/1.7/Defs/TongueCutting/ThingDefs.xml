@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef>
+        <defName>TribalTrophies_Trophy_TongueCutting_DriedTongue</defName>
+        <label>dried tongue</label>
+        <description>A tongue cut out of an enemy and dried as a trophy. Only a tongue cut out by a vengeful hand becomes a trophy.</description>
+        <thingClass>TribalTrophies.DriedTongue</thingClass>
+        <category>Item</category>
+        <selectable>true</selectable>
+        <altitudeLayer>Item</altitudeLayer>
+        <drawerType>MapMeshOnly</drawerType>
+        <alwaysHaulable>true</alwaysHaulable>
+        <rotatable>false</rotatable>
+        <pathCost>14</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <stackLimit>1</stackLimit>
+        <tradeability>Sellable</tradeability>
+        <uiIconScale>1.8</uiIconScale>
+        <thingCategories>
+            <li>TribalTrophies_Items_DriedTongues</li>
+        </thingCategories>
+        <graphicData>
+            <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+            <texPath>Things/Pawn/Humanlike/DriedTongue</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>Cutout</shaderType>
+            <drawSize>1</drawSize>
+        </graphicData>
+        <soundInteract>Standard_Pickup</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <tradeTags><li>TribalTrophies_TradeTag_DriedTongue</li></tradeTags>
+        <genericMarketSellable>false</genericMarketSellable>
+        <statBases>
+            <MarketValue>10</MarketValue>
+            <RoyalFavorValue>0.2</RoyalFavorValue>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>0.1</Mass>
+            <Flammability>1</Flammability>
+            <DeteriorationRate>1</DeteriorationRate>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li Class="TribalTrophies.CompProperties_ScalpPrice"/>
+        </comps>
+        <techLevel>Neolithic</techLevel>
+        <inspectorTabs>
+            <li>TribalTrophies.ITab_DriedTongueRecord</li>
+        </inspectorTabs>
+        <modExtensions>
+            <!-- tongue cutting tunables -->
+            <li Class="TribalTrophies.TongueCuttingExtension">
+                <victimValueFactor>0.1</victimValueFactor>
+                <headCutSeverity>8</headCutSeverity>
+                <jawCutSeverity>2</jawCutSeverity>
+                <goodwillLossAlive>20</goodwillLossAlive>
+                <goodwillLossDead>10</goodwillLossDead>
+                <minDurationTicks>50</minDurationTicks>
+                <maxDurationTicks>300</maxDurationTicks>
+                <medicineXp>100</medicineXp>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

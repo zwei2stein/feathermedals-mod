@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     
-    <!-- buy royal favor with scalps of enemies. -->
+    <!-- buy royal favor with scalps and dried tongues of enemies. -->
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/TraderKindDef[defName="Empire_Caravan_TributeCollector"]/stockGenerators</xpath>
         <value>
             <li Class="StockGenerator_BuyTradeTag"><tag>TribalTrophies_TradeTag_Scalp</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>TribalTrophies_TradeTag_DriedTongue</tag></li>
         </value>
     </Operation>
 

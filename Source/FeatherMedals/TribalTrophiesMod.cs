@@ -154,6 +154,12 @@ namespace TribalTrophies
                  "TribalTrophies_Settings_Scalping_Ui_ShowScalpingGizmo_Tooltip".Translate()
             );
 
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Label".Translate(),
+                ref Settings.ShowTongueCuttingGizmo,
+                "TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Tooltip".Translate()
+            );
+
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
 
@@ -373,6 +379,7 @@ namespace TribalTrophies
         public bool GenerateNpcScalpBelts = true;
         public bool GenerateNpcSkullBelts = true;
         public bool ShowScalpingGizmo = true;
+        public bool ShowTongueCuttingGizmo = true;
         public bool ScalpBreaksTargetChildren = false;
         public bool ScalpHuntRaids = true;
         public TechLevel ScalpHuntMaxTech = TechLevel.Industrial;
@@ -403,6 +410,7 @@ namespace TribalTrophies
             Scribe_Values.Look(ref GenerateNpcScalpBelts, "GenerateNpcScalpBelts", true);
             Scribe_Values.Look(ref GenerateNpcSkullBelts, "GenerateNpcSkullBelts", true);
             Scribe_Values.Look(ref ShowScalpingGizmo, "ShowScalpingGizmo", true);
+            Scribe_Values.Look(ref ShowTongueCuttingGizmo, "ShowTongueCuttingGizmo", true);
             Scribe_Values.Look(ref ScalpBreaksTargetChildren, "ScalpBreaksTargetChildren", false);
             Scribe_Values.Look(ref ScalpHuntRaids, "ScalpHuntRaids", true);
             Scribe_Values.Look(ref ScalpHuntMaxTech, "ScalpHuntMaxTech", TechLevel.Industrial);

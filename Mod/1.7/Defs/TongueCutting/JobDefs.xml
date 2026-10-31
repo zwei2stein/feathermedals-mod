@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>TribalTrophies_TongueCutting_Job_CutTongueJob</defName>
+        <driverClass>TribalTrophies.JobDriver_CutTongue</driverClass>
+        <reportString>cutting out the tongue of TargetA.</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+    <DesignationDef>
+        <defName>TribalTrophies_TongueCutting_Designation_CutTongueDesignation</defName>
+        <texturePath>UI/Designators/CutTongue</texturePath>
+        <targetType>Thing</targetType>
+    </DesignationDef>
+
+    <!-- medical, butchering or slaughter can cut out tongues. -->
+
+    <WorkGiverDef>
+        <defName>TribalTrophies_TongueCutting_WorkGiver_CutTongue_Doctor</defName>
+        <label>cut out tongue</label>
+        <giverClass>TribalTrophies.WorkGiver_CutTongue</giverClass>
+        <workType>Doctor</workType>
+        <verb>cut out the tongue of</verb>
+        <gerund>cutting out the tongue of</gerund>
+        <priorityInType>5</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+    <WorkGiverDef>
+        <defName>TribalTrophies_TongueCutting_WorkGiver_CutTongue_Butcher</defName>
+        <label>cut out tongue</label>
+        <giverClass>TribalTrophies.WorkGiver_CutTongue</giverClass>
+        <workType>Cooking</workType>
+        <verb>cut out the tongue of</verb>
+        <gerund>cutting out the tongue of</gerund>
+        <priorityInType>5</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+    <WorkGiverDef>
+        <defName>TribalTrophies_TongueCutting_WorkGiver_CutTongue_Slaughterer</defName>
+        <label>cut out tongue</label>
+        <giverClass>TribalTrophies.WorkGiver_CutTongue</giverClass>
+        <workType>Handling</workType>
+        <verb>cut out the tongue of</verb>
+        <gerund>cutting out the tongue of</gerund>
+        <priorityInType>5</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+</Defs>
