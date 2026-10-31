@@ -13,6 +13,10 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Visitors and raiders can come wearing trophies of their own.
 [/list]
 
+[img=https://i.imgur.com/70Qyduq.png]
+
+[img=https://i.imgur.com/vCsKiHM.png]
+
 [h4]Crafting[/h4]
 
 [list]
@@ -20,6 +24,8 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Crafted at the Crafting Spot, Hand Tailoring Bench or Electric Tailoring Bench.
     [*]Requires pristine feathers, obtained by butchering feathered beasts or refining their leather.
 [/list]
+
+[img=https://i.imgur.com/hekTsVn.png]
 
 [h3]Scalp trophies[/h3]
 
@@ -36,12 +42,16 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*][spoiler]Factions can ask you to hunt their enemies for scalps.[/spoiler] The target faction might not be fond of the idea.
 [/list]
 
+[img=https://i.imgur.com/nBVOX9E.png]
+
 [h3]Buildings[/h3]
 
 [list]
     [*]Feathered Dream Catcher, a wall-mounted building that grants better sleep. Available for Totemic, Rustic and Animalist styles.
     [*]Scalp Pole, a storage and display building for scalps.
 [/list]
+
+[img=https://i.imgur.com/pSElbz3.png]
 
 [hr][/hr]
 
@@ -56,6 +66,8 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Ecotech
     [*]Pyrinth Bionics
 [/list]
+
+[img=https://i.imgur.com/mz9PKEr.png]
 
 [h3]Pristine feather sources[/h3]
 
@@ -98,6 +110,19 @@ These mods have merchants that will buy scalps:
 
 [list]
     [*]Anima Dream Catcher with Elders Faction (Continued): made of anima fiber, a stronger meditation focus.
+[/list]
+
+[h3]NPC Spawning[/h3]
+
+These mods backstories are in sync with feathers being awarded to NPCs (raiders, visitors)
+
+[list]
+    [*]Seren, from Stardust [Biotech Fork]
+    [*]Quest for the Lost City
+    [*]Roo's Minotaur Xenotype Expanded
+    [*]Roo's Faun Xenotype
+    [*]Roo's Satyr and Faun Xenotypes Expanded
+    [*]Ecotech
 [/list]
 
 [hr][/hr]

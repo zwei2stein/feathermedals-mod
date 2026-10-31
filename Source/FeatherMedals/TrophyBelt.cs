@@ -216,6 +216,13 @@ public class CompTrophyContainer : ThingComp, IThingHolder
             innerContainer.TryAdd(trophy.SplitOff(1), canMergeWithExistingStacks: false);
         innerContainer.TryAdd(trophy, canMergeWithExistingStacks: false);
     }
+    
+    public override void PostDestroy(DestroyMode mode, Map previousMap)
+    {
+        base.PostDestroy(mode, previousMap);
+        // to clear textures and prevent mem leak.
+        innerContainer.ClearAndDestroyContents();
+    }
 
     public void DropAll(IntVec3 cell, Map map)
     {

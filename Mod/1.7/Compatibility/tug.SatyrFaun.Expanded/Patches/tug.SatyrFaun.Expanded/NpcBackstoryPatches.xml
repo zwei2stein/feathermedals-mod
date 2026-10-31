@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Satyr and faun adulthood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_Sentinel"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Struck4BlowsInCombat</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_Shaman"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_Trickster"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_Fifer"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_Faunstar"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Satyr and faun childhood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_Duffer"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="RBSFE_MysteriousHealer"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

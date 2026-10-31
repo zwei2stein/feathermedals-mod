@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Seren adulthood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenFormerPsychic"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~2</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_LedWarparty</trophy>
+                        <chance>1</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenSoldier"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenPOW"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedInCombat</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenUprisingSniper"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.75</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenCombatMedic"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedInCombat</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenPriest"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenImperialMurderer"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroat</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenMystic"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenDiplomat"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenThief"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Seren childhood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenProphecyChild"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="SerenPriestChild"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

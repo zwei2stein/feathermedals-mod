@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    
+    <!-- Core tribal adulthood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Warrior94"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedInCombat</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Archer25"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Brave88"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Struck4BlowsInCombat</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Scout59"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TouchedAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="VengefulHunter32"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroat</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="MuffaloShaman95"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="LoreKeeper51"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Healer46"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Tamer79"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Herder33"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Hunter74"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Banished68"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Core tribal childhood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="VengefulChild43"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Bully70"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Struck4BlowsInCombat</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Herder19"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Core solid (named) tribal adulthood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="WarChief97"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~2</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_LedWarparty</trophy>
+                        <chance>1</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ShamanOfShadows47"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~2</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_LedWarparty</trophy>
+                        <chance>1</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ForestProwler15"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_LedWarparty</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroat</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="BushSniper94"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.75</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="DromedaryKnight37"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TouchedAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Hunter73"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Healer35"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Core solid (named) tribal childhood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="TribalThunderer45"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="AccursedChild88"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ApprenticeOracle83"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Core medieval offworld adulthood, for medieval factions -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="MedievalLord57"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_LedWarparty</trophy>
+                        <chance>1</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="MessageCarrier77"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TouchedAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Blacksmith72"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="MedievalSailor97"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

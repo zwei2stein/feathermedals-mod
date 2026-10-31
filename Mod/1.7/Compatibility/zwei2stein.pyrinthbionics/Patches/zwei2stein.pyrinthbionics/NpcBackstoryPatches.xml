@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    
+    <!-- Core childhood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="Pyromaniac18"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Pyrinth</trophy>
+                        <chance>0.9</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

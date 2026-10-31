@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Terratech adulthood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Grovetender"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~2</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_LedWarparty</trophy>
+                        <chance>1</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
+                        <chance>1</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_EliteWarrior"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Scribe"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Inquisitor"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_SlitThroat</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_SpaceWorker"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Evolutionist"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Geosmith"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Ambassador"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_SleeperAgent"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Alchemist"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Terratech childhood -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_Scribling"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/BackstoryDef[defName="ET_AdoptedChild"]</xpath>
+        <value>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
+                        <chance>0.25</chance>
+                    </li>
+                </trophies>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

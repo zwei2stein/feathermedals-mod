@@ -38,5 +38,12 @@
         <li IfModActive="det.keshig">1.7/Compatibility/det.keshig</li>
         <li IfModActive="det.dwarvenstyle">1.7/Compatibility/det.dwarvenstyle</li>
         
+        <!-- backstories -->
+
+        <li IfModActive="odysseylotus.serenbiotech">1.7/Compatibility/odysseylotus.serenbiotech</li>
+        <li IfModActive="zoarak.teocuitlatl">1.7/Compatibility/zoarak.teocuitlatl</li>
+        <li IfModActive="tug.SatyrFaun.Expanded">1.7/Compatibility/tug.SatyrFaun.Expanded</li>
+        <li IfModActive="V.Rooboid.Faun">1.7/Compatibility/V.Rooboid.Faun</li>
+        
     </v1.7>
 </loadFolders>
