@@ -20,8 +20,18 @@ Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD
 
 [Steam blurb text is in this repo](/Publishing/steam.txt)
 
-![](/Publishing/dummy.png)
-
+![](/Publishing//screens/01_feather_basics.png)
+![](/Publishing//screens/02_ritual.png)
+![](/Publishing//screens/03_npcs.png)
+![](/Publishing//screens/04_scalp_basics.png)
+![](/Publishing//screens/05_scalppole.png)
+![](/Publishing//screens/06_dreamcatcher.png)
+![](/Publishing//screens/07_scalp_oops.png)
+![](/Publishing//screens/08_scalp_tempations.png)
+![](/Publishing//screens/09_ideo.png)
+![](/Publishing//screens/10_settings_1.png)
+![](/Publishing//screens/12_settings_2.png)
+![](/Publishing//screens/13_settings_3.png)
 
 ## License
 
