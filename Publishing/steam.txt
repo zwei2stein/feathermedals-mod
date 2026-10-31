@@ -17,7 +17,7 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
 
 [img=https://i.imgur.com/vCsKiHM.png]
 
-[h4]Crafting[/h4]
+[h3]Crafting[/h3]
 
 [list]
     [*]Crafting trophies is unlocked by researching "Warrior Honor".
