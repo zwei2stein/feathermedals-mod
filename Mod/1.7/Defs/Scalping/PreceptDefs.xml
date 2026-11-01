@@ -102,6 +102,10 @@
                 <eventDef>TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_Necklace</eventDef>
                 <thought>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Tongue_Item_Necklace</thought>
             </li>
+            <li Class="PreceptComp_SelfTookMemoryThought">
+                <eventDef>TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Building_Basket</eventDef>
+                <thought>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_Saw_Tongue_Building_Basket</thought>
+            </li>
             <li Class="PreceptComp_SituationalThought">
                 <thought>TribalTrophies_Issue_ScalpTaking_Thought_Forbidden_WearingScalps</thought>
             </li>

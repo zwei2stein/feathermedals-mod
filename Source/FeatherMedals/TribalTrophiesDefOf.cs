@@ -80,6 +80,7 @@ namespace TribalTrophies
         public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_CutTongueOfMember;
         public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue;
         public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_Necklace;
+        public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Building_Basket;
 
         public static JobDef TribalTrophies_TongueCutting_Job_CutTongueJob;
         public static JobDef TribalTrophies_TongueCutting_Job_CutTongueInBreakJob;
@@ -107,6 +108,10 @@ namespace TribalTrophies
         // Scalp Pole
 
         public static ThingDef TribalTrophies_Scalping_Building_ScalpPole;
+
+        // Tongue Basket
+
+        public static ThingDef TribalTrophies_TongueCutting_Building_TongueBasket;
 
         // Vanilla
 

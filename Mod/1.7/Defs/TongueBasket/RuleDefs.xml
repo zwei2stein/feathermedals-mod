@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RuleDef>
+        <defName>TribalTrophies_Worldgen_TongueBaskets</defName>
+        <symbol>tribalTrophies_worldgen_tongueBaskets</symbol>
+        <resolvers>
+            <li Class="TribalTrophies.SymbolResolver_TongueBaskets" />
+        </resolvers>
+    </RuleDef>
+
+</Defs>

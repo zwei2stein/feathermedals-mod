@@ -16,6 +16,7 @@ public class ScalpingGameComponent : GameComponent
     private static readonly List<Thing> scalpBelts = new();
     private static readonly List<Thing> driedTongues = new();
     private static readonly List<Thing> tongueNecklaces = new();
+    private static readonly List<Thing> tongueBaskets = new();
     
     public ScalpingGameComponent(Game game)
     {
@@ -47,6 +48,7 @@ public class ScalpingGameComponent : GameComponent
         CollectScalpBelts(map);
         CollectDriedTongues(map);
         CollectTongueNecklaces(map);
+        CollectTongueBaskets(map);
         foreach (var observer in observers)
         {
             RecordFirstSeen(observer, scalped, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Saw_Scalped);
@@ -55,6 +57,7 @@ public class ScalpingGameComponent : GameComponent
             RecordFirstSeen(observer, scalpBelts, TribalTrophiesDefOf.TribalTrophies_Scalping_HistoryEvent_Observed_Scalp_Item_Belt);
             RecordFirstSeen(observer, driedTongues, TribalTrophiesDefOf.TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_DriedTongue);
             RecordFirstSeen(observer, tongueNecklaces, TribalTrophiesDefOf.TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_Necklace);
+            RecordFirstSeen(observer, tongueBaskets, TribalTrophiesDefOf.TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Building_Basket);
         }
         observers.Clear();
         scalped.Clear();
@@ -63,6 +66,7 @@ public class ScalpingGameComponent : GameComponent
         scalpBelts.Clear();
         driedTongues.Clear();
         tongueNecklaces.Clear();
+        tongueBaskets.Clear();
     }
 
     private static void RecordFirstSeen(Pawn observer, List<Thing> things, HistoryEventDef eventDef)
@@ -111,6 +115,12 @@ public class ScalpingGameComponent : GameComponent
         {
             scalps.Add(thing);
         }
+        // scalps on a pole are inside it, but on display
+        foreach (var thing in map.listerThings.ThingsOfDef(TribalTrophiesDefOf.TribalTrophies_Scalping_Building_ScalpPole))
+        {
+            if (thing is Building_ScalpPole pole && pole.ScalpCount > 0)
+                scalps.Add(thing);
+        }
     }
 
     private static void CollectScalpPoles(Map map)
@@ -158,6 +168,17 @@ public class ScalpingGameComponent : GameComponent
         {
             if (thing.def.HasModExtension<TongueDisplayExtension>())
                 tongueNecklaces.Add(thing);
+        }
+    }
+
+    // An empty basket is just a basket.
+    private static void CollectTongueBaskets(Map map)
+    {
+        tongueBaskets.Clear();
+        foreach (var thing in map.listerThings.ThingsOfDef(TribalTrophiesDefOf.TribalTrophies_TongueCutting_Building_TongueBasket))
+        {
+            if (thing is Building_TongueBasket basket && basket.TrophyCount > 0)
+                tongueBaskets.Add(thing);
         }
     }
 

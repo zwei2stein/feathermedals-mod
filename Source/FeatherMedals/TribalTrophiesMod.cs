@@ -219,6 +219,12 @@ namespace TribalTrophies
                 "TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Tooltip".Translate()
             );
 
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_Npc_TongueBasketsInBases_Label".Translate(),
+                ref Settings.TongueBasketsInBases,
+                "TribalTrophies_Settings_Scalping_Npc_TongueBasketsInBases_Tooltip".Translate()
+            );
+
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
 
@@ -403,6 +409,7 @@ namespace TribalTrophies
         public int ScalpRequestMaxDistance = 32;
 
         public bool ScalpPolesInBases = true;
+        public bool TongueBasketsInBases = true;
 
         // This method saves and loads the setting
         public override void ExposeData()
@@ -435,6 +442,7 @@ namespace TribalTrophies
             Scribe_Values.Look(ref ScalpRequestMaxTech, "ScalpRequestMaxTech", TechLevel.Industrial);
             Scribe_Values.Look(ref ScalpRequestMaxDistance, "ScalpRequestMaxDistance", 32);
             Scribe_Values.Look(ref ScalpPolesInBases, "ScalpPolesInBases", true);
+            Scribe_Values.Look(ref TongueBasketsInBases, "TongueBasketsInBases", true);
         }
     }
 

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>TribalTrophies_TongueCutting_Building_TongueBasket</defName>
+        <label>tongue basket</label>
+        <description>A woven hay basket with leather rim, made to store dried tongue trophies. The tongues inside give a morbid focus for meditation.</description>
+        <thingClass>TribalTrophies.Building_TongueBasket</thingClass>
+        <graphicData>
+            <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>Standable</passability>
+        <pathCost>0</pathCost>
+        <fillPercent>0.3</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <surfaceType>Item</surfaceType>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsMisc</li>
+        </thingCategories>
+        <size>(1,1)</size>
+        <rotatable>false</rotatable>
+        <defaultPlacingRot>North</defaultPlacingRot>
+        <designationCategory>Ideology</designationCategory>
+        <uiOrder>3002</uiOrder>
+        <statBases>
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToBuild>1600</WorkToBuild>
+            <Flammability>1.0</Flammability>
+            <Mass>5</Mass>
+            <Beauty>-1</Beauty>
+            <MeditationFocusStrength>0.0</MeditationFocusStrength>
+        </statBases>
+        <stuffCategories>
+            <li>Leathery</li>
+        </stuffCategories>
+        <costStuffCount>10</costStuffCount>
+        <costList>
+            <Hay>40</Hay>
+        </costList>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <building>
+            <paintable>true</paintable>
+            <!-- capacity -->
+            <maxItemsInCell>10</maxItemsInCell>
+            <blueprintClass>Blueprint_Storage</blueprintClass>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TribalTrophies_Items_DriedTongues</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Important</priority>
+                <filter>
+                    <categories>
+                        <li>TribalTrophies_Items_DriedTongues</li>
+                    </categories>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+        <inspectorTabs>
+            <li>ITab_Storage</li>
+            <li>TribalTrophies.ITab_DriedTongueRecord</li>
+        </inspectorTabs>
+        <modExtensions>
+            <li Class="TribalTrophies.FillGraphicsExtension">
+                <fillGraphics>
+                    <li>
+                        <minCount>0</minCount>
+                        <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket_Empty</texPath>
+                    </li>
+                    <li>
+                        <minCount>1</minCount>
+                        <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket_One</texPath>
+                    </li>
+                    <li>
+                        <minCount>2</minCount>
+                        <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket_Few</texPath>
+                    </li>
+                    <li>
+                        <minCount>10</minCount>
+                        <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket_Full</texPath>
+                    </li>
+                </fillGraphics>
+            </li>
+            <!-- NPC settlements -->
+            <li Class="TribalTrophies.SettlementSpawnExtension">
+                <countRange>1~2</countRange>
+                <trophiesRange>0~10</trophiesRange>
+                <maxTechLevel>Medieval</maxTechLevel>
+            </li>
+        </modExtensions>
+        <comps>
+            <li Class="CompProperties_MeditationFocus">
+                <statDef>MeditationFocusStrength</statDef>
+                <focusTypes>
+                    <li>Morbid</li>
+                </focusTypes>
+                <offsets>
+                    <li Class="TribalTrophies.FocusStrengthOffset_TongueBasketTongues">
+                        <offset>0.05</offset>
+                    </li>
+                </offsets>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

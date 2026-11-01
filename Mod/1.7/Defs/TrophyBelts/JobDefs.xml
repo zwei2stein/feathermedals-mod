@@ -9,7 +9,7 @@
 
     <WorkGiverDef>
         <defName>TribalTrophies_Apparel_Belt_WorkGiver_Disassemble</defName>
-        <label>disassemble trophy belts</label>
+        <label>disassemble trophy apparel</label>
         <giverClass>TribalTrophies.WorkGiver_DisassembleTrophyBelt</giverClass>
         <workType>Tailoring</workType>
         <verb>disassemble</verb>

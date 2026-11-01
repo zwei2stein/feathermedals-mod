@@ -21,4 +21,9 @@
         <label>saw a dried tongue necklace</label>
     </HistoryEventDef>
 
+    <HistoryEventDef>
+        <defName>TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Building_Basket</defName>
+        <label>saw a tongue basket</label>
+    </HistoryEventDef>
+
 </Defs>

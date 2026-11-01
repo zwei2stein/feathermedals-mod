@@ -13,6 +13,8 @@
             <drawSize>(1,1)</drawSize>
         </graphicData>
         <altitudeLayer>Building</altitudeLayer>
+        <!-- scalps inside are drawn by the pole -->
+        <drawerType>MapMeshAndRealTime</drawerType>
         <passability>Standable</passability>
         <pathCost>0</pathCost>
         <fillPercent>0.4</fillPercent>
@@ -75,11 +77,11 @@
         </inspectorTabs>
         <modExtensions>
             <li Class="TribalTrophies.ScalpPoleExtension">
-                <!-- Scalps hang one above another. x=0 , y=0, z (+/-). -->
+                <!-- Scalps hang one above another, centered on the pole. x, y (above the pole), z (+/-). -->
                 <slotOffsets>
-                    <li>(0.1, 0, -0.05)</li>
-                    <li>(0, 0, 0.00)</li>
-                    <li>(-0.1, 0, 0.05)</li>
+                    <li>(0, 0, 0.35)</li>
+                    <li>(0, 0, 0.10)</li>
+                    <li>(0, 0, -0.15)</li>
                 </slotOffsets>
             </li>
         </modExtensions>

@@ -94,20 +94,6 @@ namespace TribalTrophies
             };
         }
 
-        // Scalps stored on a scalp pole hang one above another.
-        public override Vector3 DrawPos
-        {
-            get
-            {
-                Vector3 position = base.DrawPos;
-                if (Spawned && this.StoringThing() is Building_ScalpPole pole)
-                {
-                    position += pole.DrawOffsetFor(this);
-                }
-                return position;
-            }
-        }
-
         private Texture2D ScalpTextureWithHair
         {
             get

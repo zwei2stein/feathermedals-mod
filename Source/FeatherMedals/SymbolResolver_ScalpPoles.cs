@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.BaseGen;
@@ -49,7 +48,7 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
         var count = PoleCountRange.RandomInRange;
         for (; spots.Count > 0 && count > 0; count--)
         {
-            var spot = FarthestFromUsed(spots, usedSpots);
+            var spot = TrophyBaseGenUtility.FarthestFromUsed(spots, usedSpots);
             spots.Remove(spot);
             usedSpots.Add(spot);
 
@@ -101,21 +100,6 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
         return spots;
     }
 
-    private static IntVec3 FarthestFromUsed(List<IntVec3> spots, List<IntVec3> usedSpots)
-    {
-        return spots.MaxBy(spot =>
-        {
-            var nearest = float.PositiveInfinity;
-            foreach (var used in usedSpots)
-            {
-                var distance = used.DistanceTo(spot);
-                if (distance < nearest)
-                    nearest = distance;
-            }
-            return nearest;
-        });
-    }
-
     private static void HangScalps(Thing pole, Faction faction)
     {
         var count = ScalpsPerPoleRange.RandomInRange;
@@ -125,25 +109,16 @@ public class SymbolResolver_ScalpPoles : SymbolResolver
         
         for (var i = 0; i < count; i++)
         {
-            var scalp = NpcScalpUtility.MakeScalp(faction, RandomScalper(pole.Map, faction));
+            var scalp = NpcScalpUtility.MakeScalp(faction, TrophyBaseGenUtility.RandomTaker(pole.Map, faction));
             
             if (scalp == null)
                 return;
             
-            if (!GenPlace.TryPlaceThing(scalp, pole.Position, pole.Map, ThingPlaceMode.Direct))
+            if (pole is not Building_ScalpPole scalpPole || !scalpPole.TryStore(scalp))
             {
                 scalp.Destroy();
                 return;
             }
         }
-    }
-
-    private static Pawn RandomScalper(Map map, Faction faction)
-    {
-        return map.mapPawns.SpawnedPawnsInFaction(faction)
-            .Where(pawn => pawn.RaceProps.Humanlike
-                           && pawn.DevelopmentalStage.Adult()
-                           && ScalpingPrecepts.StanceOf(pawn) != ScalpStance.Forbidden)
-            .RandomElementWithFallback();
     }
 }

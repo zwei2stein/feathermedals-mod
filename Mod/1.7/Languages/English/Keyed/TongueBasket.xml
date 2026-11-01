@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- ===== Label ===== -->
+
+    <TribalTrophies_TongueBasket_Label_OneTongue>{BASKET} with {VICTIM}'s tongue</TribalTrophies_TongueBasket_Label_OneTongue>
+    <TribalTrophies_TongueBasket_Label_ManyTongues>{BASKET} ({COUNT} dried tongues)</TribalTrophies_TongueBasket_Label_ManyTongues>
+
+    <!-- ===== Meditation (focus explanation) ===== -->
+
+    <TribalTrophies_TongueBasket_Meditation_FocusOffset>Stored dried tongues ({COUNT} of {MAX}, {PERTONGUE} each): {VALUE}</TribalTrophies_TongueBasket_Meditation_FocusOffset>
+    <!-- not built yet / info card -->
+    <TribalTrophies_TongueBasket_Meditation_FocusOffsetAbstract>Stored dried tongues (up to {MAX}, {PERTONGUE} each): +0-{VALUE}</TribalTrophies_TongueBasket_Meditation_FocusOffsetAbstract>
+
+</LanguageData>

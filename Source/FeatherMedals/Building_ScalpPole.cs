@@ -27,64 +27,44 @@ namespace TribalTrophies
             return null;
         }
     }
-    
-    public class FocusStrengthOffset_ScalpPoleScalps : FocusStrengthOffset
+
+    public class FocusStrengthOffset_ScalpPoleScalps : FocusStrengthOffset_StoredTrophies
     {
-        private int Capacity => TribalTrophiesDefOf.TribalTrophies_Scalping_Building_ScalpPole.building.maxItemsInCell;
+        protected override ThingDef StorageDef => TribalTrophiesDefOf.TribalTrophies_Scalping_Building_ScalpPole;
 
-        public override float GetOffset(Thing parent, Pawn user = null)
+        protected override string Explanation(int count, int max, string perTrophy, string value)
         {
-            if (parent is Building_ScalpPole pole)
-                return offset * pole.ScalpCount;
-            
-            return 0f;
-        }
-
-        public override float MaxOffset(Thing parent = null)
-        {
-            return offset * Capacity;
-        }
-
-        public override string GetExplanation(Thing parent)
-        {
-            if (!parent.Spawned || parent is not Building_ScalpPole pole)
-                return GetExplanationAbstract(parent.def);
-
             return "TribalTrophies_ScalpPole_Meditation_FocusOffset".Translate(
-                       pole.ScalpCount.Named("COUNT"),
-                       Capacity.Named("MAX"),
-                       offset.ToString("0%").Named("PERSCALP"),
-                        GetOffset(parent).ToStringWithSign("0%").Named("VALUE")
+                       count.Named("COUNT"),
+                       max.Named("MAX"),
+                       perTrophy.Named("PERSCALP"),
+                       value.Named("VALUE")
                        ).Resolve();
         }
 
-        public override string GetExplanationAbstract(ThingDef def = null)
+        protected override string ExplanationAbstract(int max, string perTrophy, string value)
         {
             return "TribalTrophies_ScalpPole_Meditation_FocusOffsetAbstract".Translate(
-                Capacity.Named("MAX"),
-                offset.ToString("0%").Named("PERSCALP"),
-                MaxOffset().ToString("0%").Named("VALUE")
+                max.Named("MAX"),
+                perTrophy.Named("PERSCALP"),
+                value.Named("VALUE")
             ).Resolve();
         }
     }
 
 
-    public class Building_ScalpPole : Building_Storage
+    public class Building_ScalpPole : Building_TrophyContainer
     {
         public List<Scalp> StoredScalps()
         {
             var scalps = new List<Scalp>();
 
-            if (!Spawned) return
-                scalps;
-            
-            foreach (Thing thing in slotGroup.HeldThings)
+            foreach (var trophy in StoredTrophies())
             {
-                if (thing is Scalp scalp)
+                if (trophy is Scalp scalp)
                     scalps.Add(scalp);
             }
 
-            scalps.Sort((a, b) => a.thingIDNumber.CompareTo(b.thingIDNumber));
             return scalps;
         }
 
@@ -103,44 +83,27 @@ namespace TribalTrophies
             return extension.slotOffsets[index];
         }
 
-        public override string LabelNoCount
+        // Scalps hang on the pole one above another, drawn by the pole (see vanilla Building_Bookcase drawing its books).
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            get
+            base.DrawAt(drawLoc, flip);
+            foreach (var scalp in StoredScalps())
             {
-                var scalps = StoredScalps();
-                var poleLabel = GenLabel.ThingLabel(def, Stuff);
-
-                if (scalps.Count == 1 && !scalps[0].Victim.Name.NullOrEmpty())
-                    return "TribalTrophies_ScalpPole_Label_OneScalp"
-                        .Translate(poleLabel.Named("POLE"), scalps[0].Victim.Name.Named("VICTIM")).Resolve();
-
-                if (scalps.Count > 0)
-                    return "TribalTrophies_ScalpPole_Label_ManyScalps"
-                        .Translate(poleLabel.Named("POLE"), scalps.Count.Named("COUNT")).Resolve();
-
-                return base.LabelNoCount;
+                scalp.Graphic.Draw(drawLoc + DrawOffsetFor(scalp), Rot4.North, scalp);
             }
         }
 
-        public override string DescriptionFlavor
+        protected override string LabelWithOne(string storageLabel, string victimName)
         {
-            get
-            {
-                var scalps = StoredScalps();
-                if (scalps.Count == 0)
-                    return base.DescriptionFlavor;
-
-                var lines = new List<string>();
-                foreach (Scalp scalp in scalps)
-                {
-                    lines.Add(scalp.LabelNoCount);
-                }
-
-                return base.DescriptionFlavor + "\n\n" + string.Join("\n", lines);
-            }
+            return "TribalTrophies_ScalpPole_Label_OneScalp"
+                .Translate(storageLabel.Named("POLE"), victimName.Named("VICTIM")).Resolve();
         }
 
-        public override string DescriptionDetailed => DescriptionFlavor;
+        protected override string LabelWithMany(string storageLabel, int count)
+        {
+            return "TribalTrophies_ScalpPole_Label_ManyScalps"
+                .Translate(storageLabel.Named("POLE"), count.Named("COUNT")).Resolve();
+        }
     }
 
 }
