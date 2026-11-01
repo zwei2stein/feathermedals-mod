@@ -41,11 +41,6 @@
     <!-- description -->
     <TribalTrophies_Scalping_Item_TakenBy>This scalp was taken by {SCALPER}.</TribalTrophies_Scalping_Item_TakenBy>
 
-    <!-- ===== Misc ===== -->
-
-    <!-- name of an unknown victim or scalper -->
-    <TribalTrophies_Scalping_Misc_UnknownName>Unknown</TribalTrophies_Scalping_Misc_UnknownName>
-
     <!-- ===== Scalp Hunt Raid ===== -->
 
     <TribalTrophies_ScalpHunt_Message_Scalping>{SCALPER_labelShort} is scalping {VICTIM_labelShort}.</TribalTrophies_ScalpHunt_Message_Scalping>
