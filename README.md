@@ -16,6 +16,8 @@ Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD
 ![](/Publishing/features/buildings.png)
 ![](/Publishing/features/scalps.png)
 
+![](/Publishing/features/dried_tongues.png)
+
 ### Steam mod page info
 
 [Steam blurb text is in this repo](/Publishing/steam.txt)
@@ -29,6 +31,7 @@ Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD
 ![](/Publishing//screens/07_scalp_oops.png)
 ![](/Publishing//screens/08_scalp_tempations.png)
 ![](/Publishing//screens/09_ideo.png)
+![](/Publishing//screens/14_tongue_basics.png)
 ![](/Publishing//screens/10_settings_1.png)
 ![](/Publishing//screens/12_settings_2.png)
 ![](/Publishing//screens/13_settings_3.png)

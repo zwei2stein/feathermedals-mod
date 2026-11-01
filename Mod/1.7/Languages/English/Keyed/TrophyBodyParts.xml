@@ -22,7 +22,7 @@
     <!-- ===== Inspect (trophy containers: scalp pole, tongue basket) ===== -->
 
     <TribalTrophies_TrophyBodyPart_Inspect_Stored>Stored: {COUNT} / {MAX}</TribalTrophies_TrophyBodyPart_Inspect_Stored>
-    
+
     <!-- ===== Misc ===== -->
 
     <!-- name of an unknown victim or taker -->

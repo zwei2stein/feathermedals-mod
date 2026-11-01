@@ -50,7 +50,7 @@
     <ThingDef ParentName="TribalTrophies_Apparel_Necklace_Base">
         <defName>TribalTrophies_Apparel_Necklace_DriedTongueNecklace</defName>
         <label>dried tongue necklace</label>
-        <description>A morbid necklace made from ripped out tongues and a leather strip.\n\nIt improves the wearer's social skill, trade skill and reduces beauty. It also increases the fear slaves have, so they're less likely to revolt.</description>
+        <description>A morbid necklace made from ripped-out tongues and a fabric strip.\n\nIt improves the wearer's social skill and trade skill, and reduces beauty. It also increases the fear slaves have, so they're less likely to revolt.</description>
         <graphicData>
             <texPath>Things/DriedTongueNecklace/DriedTongueNecklace</texPath>
             <graphicClass>Graphic_Single</graphicClass>

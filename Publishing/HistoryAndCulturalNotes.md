@@ -30,18 +30,18 @@ Scalp poles and scalp belts are claimed to have existed, but there are no reliab
 
 [More reading 5](https://www.thecollector.com/history-scalping/)
 
-[More reading 6](https://www.si.edu/object/siris_sil_913150)
+[More reading 6](https://www.si.edu/object/siris_sil_913150): James Axtell and William C. Sturtevant, "The Unkindest Cut, or Who Invented Scalping?", *The William and Mary Quarterly* 37, no. 3 (July 1980).
 
 ## Tongue Cutting
 
-There is no historical evidence of human tongues worn as a necklace, but taking tongues as a trophy is historical fact:
+There is no historical evidence of human tongues worn as a necklace, but taking tongues as trophies is historical fact:
 
-* Apa Tani ropi ceremony of taking an enemy’s tongue and burying it in a bamboo receptacle.
+* The Apa Tani ropi ceremony of taking an enemy's tongue and burying it in a bamboo receptacle.
 
-* Konyak Naga headhunting ceremonies, tongue then being ritually disposed of.
+* Konyak Naga headhunting ceremonies, in which the tongue was then ritually disposed of.
 
-Both located in northeast India.
+Both practicing cultures are located in northeast India.
 
-[More reading 7](https://www.scribd.com/document/1070197202/BOOK-1-1962The-Apa-Tanis-and-Their-Neighbours-A-Primitive-Civilization-of-the-Eastern-Himalayas-by-Furer-Haimendorf-s)
+[More reading 7](https://www.scribd.com/document/1070197202/BOOK-1-1962The-Apa-Tanis-and-Their-Neighbours-A-Primitive-Civilization-of-the-Eastern-Himalayas-by-Furer-Haimendorf-s): Christoph von Fürer-Haimendorf, *The Apa Tanis and Their Neighbours: A Primitive Civilization of the Eastern Himalayas* (London: Routledge & Kegan Paul, 1962). Also free to read on the [Internet Archive](https://archive.org/details/apatanisandtheir032711mbp).
 
-[More reading 8](https://wwwe.lib.cam.ac.uk/nagas/record/r90402.html)
+[More reading 8](https://wwwe.lib.cam.ac.uk/nagas/record/r90402.html): extract from Christoph von Fürer-Haimendorf, *The Konyak Nagas: An Indian Frontier Tribe* (New York: Holt, Rinehart and Winston, 1969), in the University of Cambridge Naga database.

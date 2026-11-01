@@ -48,7 +48,7 @@
     <TribalTrophies_TongueCutting_TongueTab_By>Cut out by {CUTTER}</TribalTrophies_TongueCutting_TongueTab_By>
 
     <!-- ===== Tongue Request Quest ===== -->
-    <TribalTrophies_TongueRequest_Message_TargetLearned>{FACTION} has learned that you agreed to silence its people.</TribalTrophies_TongueRequest_Message_TargetLearned>
+    <TribalTrophies_TongueRequest_Message_TargetLearned>{FACTION} has learned that you agreed to hunt its people for their tongues.</TribalTrophies_TongueRequest_Message_TargetLearned>
 
     <!-- settlement inspect pane -->
     <TribalTrophies_TongueRequest_Inspect_Requested>Requested: dried tongues of {TARGET} ({DELIVERED}/{TOTAL}), {TIME} left</TribalTrophies_TongueRequest_Inspect_Requested>

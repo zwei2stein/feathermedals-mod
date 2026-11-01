@@ -4,7 +4,7 @@
     <ThingDef ParentName="BuildingBase">
         <defName>TribalTrophies_TongueCutting_Building_TongueBasket</defName>
         <label>tongue basket</label>
-        <description>A woven ritual basket with leather rim, made to store dried tongue trophies. The tongues inside give a morbid focus for meditation.</description>
+        <description>A woven ritual basket with a leather rim, made to store dried tongue trophies. The tongues inside give a morbid focus for meditation.</description>
         <thingClass>TribalTrophies.Building_TongueBasket</thingClass>
         <graphicData>
             <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket</texPath>

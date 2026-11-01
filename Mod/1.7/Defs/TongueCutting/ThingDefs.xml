@@ -4,7 +4,7 @@
     <ThingDef>
         <defName>TribalTrophies_Trophy_TongueCutting_DriedTongue</defName>
         <label>dried tongue</label>
-        <description>A tongue cut out of an enemy and dried as a trophy. Only a tongue cut out by a vengeful hand becomes a trophy.</description>
+        <description>A tongue cut from an enemy and dried as a trophy.\n\nOne removed by surgery is no trophy.</description>
         <thingClass>TribalTrophies.DriedTongue</thingClass>
         <category>Item</category>
         <selectable>true</selectable>

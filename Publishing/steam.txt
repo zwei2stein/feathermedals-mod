@@ -51,17 +51,19 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
     [*]Outlander factions and Imperial tribute collectors will buy dried tongues. [spoiler]Giving dried tongues as a gift might not be appreciated.[/spoiler]
     [*]Governed by the ideoligion precept about taking scalps.
     [*][spoiler]New violent tongue cutting mental break.[/spoiler] Keep your colonists happy.
-    [*]Dried tongue necklace item, wearable amulet made of dried tongue trophies.
-    [*]Visitors and raiders can come wearing tongue necklaces of their own. Settlements of factions whose ideoligion allows scalping can have tongue baskets with trophies.
+    [*]Dried tongue necklace item, wearable amulet made of dried tongues.
+    [*]Visitors and raiders can come wearing dried tongue necklaces of their own. Settlements of factions whose ideoligion allows scalp taking can have tongue baskets with dried tongues.
     [*][spoiler]Factions can ask you for dried tongues of their enemies.[/spoiler] The target faction might not be fond of the idea.
 [/list]
+
+[img=https://i.imgur.com/xybP0wg.png]
 
 [h3]Buildings[/h3]
 
 [list]
     [*]Feathered Dream Catcher, a wall-mounted building that grants better sleep. Available for Totemic, Rustic and Animalist styles.
     [*]Scalp Pole, a storage and display building for scalps.
-    [*]Tongue Basket, ritual storage of taken enemy tongues.
+    [*]Tongue Basket, a ritual storage building for dried tongues.
 [/list]
 
 [img=https://i.imgur.com/pSElbz3.png]
@@ -110,7 +112,7 @@ These mods have styles that are patched to include this mod's style buildings.
     [*]Det's Xenotypes - Keshig
 [/list]
 
-[h3]Scalps[/h3]
+[h3]Scalps and dried tongues[/h3]
 
 These mods have merchants that will buy scalps and dried tongues:
 

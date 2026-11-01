@@ -7,7 +7,7 @@
   </supportedVersions>
   <packageId>zwei2stein.TribalTrophies</packageId>
   <url>https://github.com/zwei2stein/feathermedals-mod</url>
-  <description>Tribal trophies (feather headdresses) that pawns can be adorned with. Scalps and tongues that can be taken, consequences included.</description>
+  <description>Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps and tongues that can be taken, consequences included.</description>
   <modVersion>1.1.0</modVersion>
   <modDependencies>
     <li>

@@ -249,7 +249,7 @@
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
 		<defName>TribalTrophies_Trophy_Feather_CutOutTongue</defName>
-		<label>feather: cut out enemy tongue</label>
+		<label>feather: cut out tongue of an enemy</label>
 		<description>Feather for cutting out the tongue of an enemy.</description>
 		<graphicData>
 			<texPath>Things/Feathers/CutOutTongue</texPath>

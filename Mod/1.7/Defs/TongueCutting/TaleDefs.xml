@@ -14,7 +14,7 @@
             <rulesStrings>
                 <li>tale_noun->[CUTTER_nameDef] cutting out the tongue of [VICTIM_nameDef]</li>
 
-                <li>image->[CUTTER_nameFull] prying open the mouth of [VICTIM_nameFull] violently [circumstance_group]</li>
+                <li>image->[CUTTER_nameFull] forcing open the mouth of [VICTIM_nameFull] [circumstance_group]</li>
                 <li>image->[CUTTER_nameFull] holding up the bleeding tongue of [VICTIM_nameFull] [circumstance_group]</li>
                 <li>image->[CUTTER_nameFull] kneeling over [VICTIM_nameFull], blade in hand, [circumstance_group]</li>
                 <li>image->[CUTTER_nameFull] wiping a bloodied blade beside [VICTIM_nameFull] [circumstance_group]</li>
@@ -61,7 +61,7 @@
                 <li>circumstance_phrase->while the battle rages around them</li>
 
                 <li>desc_sentence->[VICTIM_nameDef]'s people will not forget.</li>
-                <li>desc_sentence->[VICTIM_nameDef]'s disfigurement fills [VICTIM_possessive] people with rage.</li>
+                <li>desc_sentence->[VICTIM_nameDef]'s mutilation fills [VICTIM_possessive] people with rage.</li>
                 <li>desc_sentence->[VICTIM_nameDef]'s silence fills [VICTIM_possessive] people with shame.</li>
                 <li>desc_sentence->[CUTTER_nameDef] shows no mercy.</li>
                 <li>desc_sentence->[CUTTER_nameDef] will not be shown mercy.</li>
