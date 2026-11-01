@@ -27,6 +27,7 @@ public class BackstoryHediff
     public BodyPartDef part; // null: whole body
     public float? severity;
     public float? chance;
+    public bool skipIfAlreadyExists = true;
 }
 
 public interface IBackstoryHediff
@@ -57,7 +58,7 @@ public static class BackstoryHediffUtility
                 continue;
             if (entry.chance.HasValue && !Rand.Chance(entry.chance.Value))
                 continue;
-            if (pawn.health.hediffSet.HasHediff(entry.def))
+            if (entry.skipIfAlreadyExists && AlreadyHas(pawn, entry))
                 continue;
 
             // a wanted part the pawn does not have: nothing to put it on
@@ -75,6 +76,19 @@ public static class BackstoryHediffUtility
             (hediff as IBackstoryHediff)?.PreAddFromBackstory(pawn, backstory);
             pawn.health.AddHediff(hediff, part);
         }
+    }
+
+    private static bool AlreadyHas(Pawn pawn, BackstoryHediff entry)
+    {
+        if (entry.part == null)
+            return pawn.health.hediffSet.HasHediff(entry.def);
+
+        foreach (var hediff in pawn.health.hediffSet.hediffs)
+        {
+            if (hediff.def == entry.def && hediff.Part?.def == entry.part)
+                return true;
+        }
+        return false;
     }
 }
 

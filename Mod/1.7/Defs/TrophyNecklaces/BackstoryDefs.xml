@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_TongueCutting_TongueCutter</defName>
+        <title>tongue cutter</title>
+        <titleShort>cutter</titleShort>
+        <description>[PAWN_nameDef] was a scout for [PAWN_possessive] tribe. [PAWN_pronoun] ambushed an enemy spy by chance, cut out the spy's tongue and carried it home as proof that an attack was coming. The warning saved the tribe, and the trophy made [PAWN_objective] feared.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <skillGains>
+            <Shooting>4</Shooting>
+            <Melee>3</Melee>
+            <Plants>2</Plants>
+            <Animals>2</Animals>
+            <Social>-2</Social>
+        </skillGains>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>TribalHunter</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>1~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CutOutTongue</trophy>
+                        <chance>1</chance>
+                    </li>
+                </trophies>
+            </li>
+        </modExtensions>
+        <possessions>
+            <MeleeWeapon_Knife>1</MeleeWeapon_Knife>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_TongueCutting_YoungTongueCutter</defName>
+        <title>young tongue cutter</title>
+        <titleShort>cutter</titleShort>
+        <description>When raiders blinded [PAWN_nameDef]'s father, [PAWN_pronoun] sought revenge. [PAWN_pronoun] crept into their camp and cut out the tongue of one of the raiders. Later the grandmother told [PAWN_objective] the blinding was itself revenge for another wrong, another bead on string of feuds that no one living remembers reason for. [PAWN_pronoun] has regretted it ever since.</description>
+        <slot>Childhood</slot>
+        <skillGains>
+            <Melee>2</Melee>
+            <Medicine>1</Medicine>
+            <Intellectual>1</Intellectual>
+            <Social>-1</Social>
+        </skillGains>
+        <spawnCategories>
+            <li>Tribal</li>
+        </spawnCategories>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <count>0~1</count>
+                <trophies>
+                    <li>
+                        <trophy>TribalTrophies_Trophy_Feather_CutOutTongue</trophy>
+                        <chance>0.5</chance>
+                    </li>
+                </trophies>
+            </li>
+        </modExtensions>
+        <possessions>
+            <MeleeWeapon_Knife>1</MeleeWeapon_Knife>
+        </possessions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_TongueCutting_SilencedSurvivor</defName>
+        <title>silenced survivor</title>
+        <titleShort>silenced</titleShort>
+        <description>[PAWN_nameDef]'s tongue was cut out by enemies who wanted [PAWN_objective] punished and silenced. [PAWN_pronoun] learned to speak through [PAWN_possessive] deeds and creations and [PAWN_possessive] art shouted. </description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <skillGains>
+            <Crafting>4</Crafting>
+            <Artistic>6</Artistic>
+            <Plants>2</Plants>
+            <Social>-4</Social>
+        </skillGains>
+        <forcedTraits>
+            <TorturedArtist />
+        </forcedTraits>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>Outlander</li>
+        </spawnCategories>
+        <modExtensions>
+            <li Class="TribalTrophies.BackstoryHediffExtension">
+                <hediffs>
+                    <li>
+                        <def>MissingBodyPart</def>
+                        <part>Tongue</part>
+                    </li>
+                </hediffs>
+            </li>
+        </modExtensions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_TongueCutting_SilencedChild</defName>
+        <title>silenced child</title>
+        <titleShort>silenced</titleShort>
+        <description>As a small child, [PAWN_nameDef] saw something heinous [PAWN_pronoun] should not have, and elder made sure [PAWN_pronoun] could never tell anyone. Unable to speak, [PAWN_pronoun] grew up watching instead of talking, and learned to draw what [PAWN_pronoun] could not say and saw that elder exiled from tribe in disgrace.</description>
+        <slot>Childhood</slot>
+        <skillGains>
+            <Artistic>4</Artistic>
+            <Crafting>2</Crafting>
+            <Social>-1</Social>
+        </skillGains>
+        <spawnCategories>
+            <li>Tribal</li>
+            <li>Outlander</li>
+        </spawnCategories>
+        <modExtensions>
+            <li Class="TribalTrophies.BackstoryHediffExtension">
+                <hediffs>
+                    <li>
+                        <def>MissingBodyPart</def>
+                        <part>Tongue</part>
+                    </li>
+                </hediffs>
+            </li>
+        </modExtensions>
+    </BackstoryDef>
+
+</Defs>

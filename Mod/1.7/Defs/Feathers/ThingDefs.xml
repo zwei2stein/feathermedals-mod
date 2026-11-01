@@ -248,6 +248,48 @@
 	</ThingDef>
 
 	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Feather_CutOutTongue</defName>
+		<label>feather: cut out enemy tongue</label>
+		<description>Feather boasting getting trophy by cutting out tongue of an enemy.</description>
+		<graphicData>
+			<texPath>Things/Feathers/CutOutTongue</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<MeleeHitChance>0.02</MeleeHitChance>
+			<MedicalSurgerySuccessChance>0.01</MedicalSurgerySuccessChance>
+			<MedicalTendQuality>0.02</MedicalTendQuality>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<removesTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-1</degree> <!-- Nervous -->
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>1</degree> <!-- Steadfast -->
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>Bloodlust</trait>
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Feather_BaseOrnate">
 		<defName>TribalTrophies_Trophy_Feather_WoundedManyTimes</defName>
 		<label>feather: wounded in combat many times</label>
 		<description>Feather boasting numerous combat wounds.</description>
