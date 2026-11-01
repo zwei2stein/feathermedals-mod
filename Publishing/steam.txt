@@ -49,7 +49,7 @@ Tribal trophies (feather headdresses) that pawns can be adorned with, and scalps
 [list]
     [*]Cutting out enemy tongues as a trophy.
     [*]Outlander factions and Imperial tribute collectors will buy dried tongues. [spoiler]Giving dried tongues as a gift might not be appreciated.[/spoiler]
-    [*]Governed by the ideoligion precept about taking scalps
+    [*]Governed by the ideoligion precept about taking scalps.
     [*][spoiler]New violent tongue cutting mental break.[/spoiler] Keep your colonists happy.
     [*]Dried tongue necklace item, wearable amulet made of dried tongue trophies.
     [*]Visitors and raiders can come wearing tongue necklaces of their own. Settlements of factions whose ideoligion allows scalping can have tongue baskets with trophies.
@@ -112,7 +112,7 @@ These mods have styles that are patched to include this mod's style buildings.
 
 [h3]Scalps[/h3]
 
-These mods have merchants that will buy scalps:
+These mods have merchants that will buy scalps and dried tongues:
 
 [list]
     [*]Det's Xenotypes - Keshig
