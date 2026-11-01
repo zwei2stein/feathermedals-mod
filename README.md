@@ -1,6 +1,6 @@
 # Tribal Trophies
 
-Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TBD>
+Steam Workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=3830931781>
 
 ## Quick about
 
