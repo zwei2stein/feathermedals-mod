@@ -47,7 +47,7 @@
         <defName>TribalTrophies_Backstory_TongueCutting_YoungTongueCutter</defName>
         <title>young tongue cutter</title>
         <titleShort>cutter</titleShort>
-        <description>When raiders blinded [PAWN_nameDef]'s father, [PAWN_pronoun] sought revenge. [PAWN_pronoun] crept into their camp and cut out the tongue of one of the raiders. Later the grandmother told [PAWN_objective] the blinding was itself revenge for another wrong, another bead on string of feuds that no one living remembers reason for. [PAWN_pronoun] has regretted it ever since.</description>
+        <description>When raiders blinded [PAWN_nameDef]'s father, [PAWN_pronoun] sought revenge. [PAWN_pronoun] crept into their camp and cut out the tongue of one of the raiders. Later [PAWN_possessive] grandmother told [PAWN_objective] the blinding was itself revenge for another wrong, another bead on a string of feuds whose cause no one living remembers. [PAWN_pronoun] has regretted it ever since.</description>
         <slot>Childhood</slot>
         <skillGains>
             <Melee>2</Melee>
@@ -81,7 +81,7 @@
         <defName>TribalTrophies_Backstory_TongueCutting_SilencedSurvivor</defName>
         <title>silenced survivor</title>
         <titleShort>silenced</titleShort>
-        <description>[PAWN_nameDef]'s tongue was cut out by enemies who wanted [PAWN_objective] punished and silenced. [PAWN_pronoun] learned to speak through [PAWN_possessive] deeds and creations and [PAWN_possessive] art shouted. </description>
+        <description>[PAWN_nameDef]'s tongue was cut out by enemies who wanted [PAWN_objective] punished and silenced. [PAWN_pronoun] learned to speak through [PAWN_possessive] deeds and creations, and [PAWN_possessive] art shouted.</description>
         <slot>Adulthood</slot>
         <bodyTypeMale>Male</bodyTypeMale>
         <bodyTypeFemale>Female</bodyTypeFemale>
@@ -114,7 +114,7 @@
         <defName>TribalTrophies_Backstory_TongueCutting_SilencedChild</defName>
         <title>silenced child</title>
         <titleShort>silenced</titleShort>
-        <description>As a small child, [PAWN_nameDef] saw something heinous [PAWN_pronoun] should not have, and elder made sure [PAWN_pronoun] could never tell anyone. Unable to speak, [PAWN_pronoun] grew up watching instead of talking, and learned to draw what [PAWN_pronoun] could not say and saw that elder exiled from tribe in disgrace.</description>
+        <description>As a small child, [PAWN_nameDef] saw something heinous [PAWN_pronoun] should not have, and an elder made sure [PAWN_pronoun] could never tell anyone. Unable to speak, [PAWN_pronoun] grew up watching instead of talking, and learned to draw what [PAWN_pronoun] could not say. In the end, [PAWN_possessive] drawings saw that elder exiled from the tribe in disgrace.</description>
         <slot>Childhood</slot>
         <skillGains>
             <Artistic>4</Artistic>
