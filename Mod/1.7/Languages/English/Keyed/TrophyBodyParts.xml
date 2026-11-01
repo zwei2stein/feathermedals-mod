@@ -23,6 +23,11 @@
 
     <TribalTrophies_TrophyBodyPart_Inspect_Stored>Stored: {COUNT} / {MAX}</TribalTrophies_TrophyBodyPart_Inspect_Stored>
 
+    <!-- ===== Contents tab (trophy containers: scalp pole, tongue basket) ===== -->
+
+    <TribalTrophies_TrophyBodyPart_ContentsTab_Desc>Trophies kept in this building.</TribalTrophies_TrophyBodyPart_ContentsTab_Desc>
+    <TribalTrophies_TrophyBodyPart_ContentsTab_Drop>Take this trophy out and drop it nearby. It will be forbidden.</TribalTrophies_TrophyBodyPart_ContentsTab_Drop>
+
     <!-- ===== Misc ===== -->
 
     <!-- name of an unknown victim or taker -->

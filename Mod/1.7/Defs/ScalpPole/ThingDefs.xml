@@ -11,6 +11,11 @@
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <drawSize>(1,1)</drawSize>
+            <!-- the pole sticks up from the middle of its tile -->
+            <drawOffset>(0, 0, 0.45)</drawOffset>
+            <shadowData>
+                <volume>(0.15, 0.6, 0.15)</volume>
+            </shadowData>
         </graphicData>
         <altitudeLayer>Building</altitudeLayer>
         <!-- scalps inside are drawn by the pole -->
@@ -73,15 +78,16 @@
         </building>
         <inspectorTabs>
             <li>ITab_Storage</li>
+            <li>TribalTrophies.ITab_ContentsTrophies</li>
             <li>TribalTrophies.ITab_ScalpRecord</li>
         </inspectorTabs>
         <modExtensions>
             <li Class="TribalTrophies.ScalpPoleExtension">
-                <!-- Scalps hang one above another, centered on the pole. x, y (above the pole), z (+/-). -->
+                <!-- Scalps hang one above another, measured from the pole as drawn (its drawOffset). x, y (above the pole), z (+/-). -->
                 <slotOffsets>
-                    <li>(0, 0, 0.35)</li>
-                    <li>(0, 0, 0.10)</li>
-                    <li>(0, 0, -0.15)</li>
+                    <li>(0, 0.02, 0.35)</li>
+                    <li>(0, 0.02, 0.10)</li>
+                    <li>(0, 0.02, -0.15)</li>
                 </slotOffsets>
             </li>
         </modExtensions>

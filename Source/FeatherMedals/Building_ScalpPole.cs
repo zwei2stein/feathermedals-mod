@@ -84,12 +84,14 @@ namespace TribalTrophies
         }
 
         // Scalps hang on the pole one above another, drawn by the pole (see vanilla Building_Bookcase drawing its books).
+        // Slots are measured from the pole as drawn, so they follow the pole's draw offset.
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
+            var poleCenter = drawLoc + def.graphicData.DrawOffsetForRot(Rotation);
             foreach (var scalp in StoredScalps())
             {
-                scalp.Graphic.Draw(drawLoc + DrawOffsetFor(scalp), Rot4.North, scalp);
+                scalp.Graphic.Draw(poleCenter + DrawOffsetFor(scalp), Rot4.North, scalp);
             }
         }
 

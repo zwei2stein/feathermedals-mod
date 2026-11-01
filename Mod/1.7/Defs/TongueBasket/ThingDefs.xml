@@ -4,13 +4,16 @@
     <ThingDef ParentName="BuildingBase">
         <defName>TribalTrophies_TongueCutting_Building_TongueBasket</defName>
         <label>tongue basket</label>
-        <description>A woven hay basket with leather rim, made to store dried tongue trophies. The tongues inside give a morbid focus for meditation.</description>
+        <description>A woven ritual basket with leather rim, made to store dried tongue trophies. The tongues inside give a morbid focus for meditation.</description>
         <thingClass>TribalTrophies.Building_TongueBasket</thingClass>
         <graphicData>
             <texPath>Things/Building/Misc/TribalTrophies_TongueCutting_Building_TongueBasket/TongueBasket</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <drawSize>(1,1)</drawSize>
+            <shadowData>
+                <volume>(0.6, 0.35, 0.5)</volume>
+            </shadowData>
         </graphicData>
         <altitudeLayer>Building</altitudeLayer>
         <passability>Standable</passability>
@@ -66,6 +69,7 @@
         </building>
         <inspectorTabs>
             <li>ITab_Storage</li>
+            <li>TribalTrophies.ITab_ContentsTrophies</li>
             <li>TribalTrophies.ITab_DriedTongueRecord</li>
         </inspectorTabs>
         <modExtensions>
