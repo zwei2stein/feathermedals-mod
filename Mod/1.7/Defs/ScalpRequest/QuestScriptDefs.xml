@@ -72,18 +72,18 @@
                     <storeFactionLeaderAs>asker</storeFactionLeaderAs>
                     <storeAskerHostileAs>askerHostile</storeAskerHostileAs>
                 </li>
-                <li Class="TribalTrophies.QuestNode_ScalpRequest_GetTarget">
+                <li Class="TribalTrophies.QuestNode_TrophyRequest_GetTarget">
                     <asker>$faction</asker>
                     <storeAs>targetFaction</storeAs>
                 </li>
-                <li Class="TribalTrophies.QuestNode_ScalpRequest_GetRequest">
+                <li Class="TribalTrophies.QuestNode_TrophyRequest_GetRequest">
                     <targetFaction>$targetFaction</targetFaction>
                     <countRange>3~10</countRange>
                     <extraStarAboveCount>5</extraStarAboveCount>
-                    <rewardValuePerScalp>400</rewardValuePerScalp>
+                    <rewardValuePerTrophy>400</rewardValuePerTrophy>
                     <rewardFactorPerStar>1.05</rewardFactorPerStar>
-                    <goodwillPerScalp>5</goodwillPerScalp>
-                    <goodwillLossPerScalp>2</goodwillLossPerScalp>
+                    <goodwillPerTrophy>5</goodwillPerTrophy>
+                    <goodwillLossPerTrophy>2</goodwillLossPerTrophy>
                     <storeCountAs>scalpCount</storeCountAs>
                     <storeRewardValueAs>scalpRewardValue</storeRewardValueAs>
                     <storeGoodwillAs>goodwillReward</storeGoodwillAs>
@@ -165,7 +165,7 @@
                 <li Class="QuestNode_Equal">
                     <value1>$askerHostile</value1>
                     <value2>true</value2>
-                    <node Class="TribalTrophies.QuestNode_ScalpRequest_GoodwillReward">
+                    <node Class="TribalTrophies.QuestNode_TrophyRequest_GoodwillReward">
                         <inSignal>settlement.ScalpRequestFulfilled</inSignal>
                         <faction>$faction</faction>
                         <change>$goodwillReward</change>

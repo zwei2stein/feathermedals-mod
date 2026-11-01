@@ -47,4 +47,19 @@
     <TribalTrophies_TongueCutting_TongueTab_TongueOf>Tongue of {VICTIM}</TribalTrophies_TongueCutting_TongueTab_TongueOf>
     <TribalTrophies_TongueCutting_TongueTab_By>Cut out by {CUTTER}</TribalTrophies_TongueCutting_TongueTab_By>
 
+    <!-- ===== Tongue Request Quest ===== -->
+    <TribalTrophies_TongueRequest_Message_TargetLearned>{FACTION} has learned that you agreed to silence its people.</TribalTrophies_TongueRequest_Message_TargetLearned>
+
+    <!-- settlement inspect pane -->
+    <TribalTrophies_TongueRequest_Inspect_Requested>Requested: dried tongues of {TARGET} ({DELIVERED}/{TOTAL}), {TIME} left</TribalTrophies_TongueRequest_Inspect_Requested>
+
+    <!-- caravan button at the settlement -->
+    <TribalTrophies_TongueRequest_Gizmo_Deliver_Label>Deliver dried tongues</TribalTrophies_TongueRequest_Gizmo_Deliver_Label>
+    <TribalTrophies_TongueRequest_Gizmo_Deliver_Desc>Hand over the dried tongues of {TARGET} this caravan carries, up to the number still requested.</TribalTrophies_TongueRequest_Gizmo_Deliver_Desc>
+    <TribalTrophies_TongueRequest_Gizmo_Deliver_NoTongues>The caravan carries no dried tongues of {TARGET}.</TribalTrophies_TongueRequest_Gizmo_Deliver_NoTongues>
+    <TribalTrophies_TongueRequest_Gizmo_Deliver_Confirm>Hand over {COUNT}x dried tongue of {TARGET} to {FACTION}?</TribalTrophies_TongueRequest_Gizmo_Deliver_Confirm>
+
+    <!-- partial delivery, caravan or pods -->
+    <TribalTrophies_TongueRequest_Message_Delivered>{FACTION} received {COUNT}x dried tongue of {TARGET}. Delivered so far: {DELIVERED}/{TOTAL}.</TribalTrophies_TongueRequest_Message_Delivered>
+
 </LanguageData>

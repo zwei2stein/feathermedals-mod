@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
 namespace TribalTrophies;
 
-public static class ScalpRequestUtility
+// Rules shared by quests where a faction asks for body part trophies of its enemies (scalps, dried tongues).
+public static class TrophyRequestUtility
 {
     private const int MaxTechDistance = 1;
 
@@ -58,6 +60,7 @@ public static class ScalpRequestUtility
         return found;
     }
 
+    // One open request per faction, whatever trophy it asks for.
     public static bool HasOpenRequest(Faction faction)
     {
         foreach (var quest in Find.QuestManager.QuestsListForReading)
@@ -66,7 +69,7 @@ public static class ScalpRequestUtility
                 continue;
             foreach (var part in quest.PartsListForReading)
             {
-                if (part is QuestPart_InitiateScalpRequest request && request.settlement?.Faction == faction)
+                if (part is QuestPart_InitiateTrophyRequest request && request.settlement?.Faction == faction)
                     return true;
             }
         }
@@ -90,8 +93,28 @@ public static class ScalpRequestUtility
         return stars;
     }
 
-    public static bool IsScalpOf(Thing thing, Faction target)
+    public static bool IsTrophyOf<T>(Thing thing, Faction target) where T : TrophyBodyPart
     {
-        return target != null && thing is Scalp scalp && scalp.Victim?.Faction == target;
+        return target != null && thing is T trophy && trophy.Victim?.Faction == target;
+    }
+
+    public static IEnumerable<TrophyRequestComp> RequestsOf(Settlement settlement)
+    {
+        foreach (var comp in settlement.AllComps)
+        {
+            if (comp is TrophyRequestComp request)
+                yield return request;
+        }
+    }
+
+    // Thing goes to a request of the settlement, not counted as a gift.
+    public static bool AnyRequestWants(Settlement settlement, Thing thing)
+    {
+        foreach (var request in RequestsOf(settlement))
+        {
+            if (request.Wants(thing))
+                return true;
+        }
+        return false;
     }
 }

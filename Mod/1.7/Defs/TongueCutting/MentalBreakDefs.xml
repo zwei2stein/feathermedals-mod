@@ -31,7 +31,7 @@
         <moodRecoveryThought>Catharsis</moodRecoveryThought>
         <blockNormalThoughts>true</blockNormalThoughts>
         <recoveryMessage>{0} is no longer set on cutting out a prisoner's tongue.</recoveryMessage>
-        <beginLetter>{0} has had enough and decided to silence one of prisoners for good by cutting out their tongue.\n\n[PAWN_pronoun] is going for {1}.</beginLetter>
+        <beginLetter>{0} has had enough and decided to silence one of the prisoners for good by cutting out their tongue.\n\n[PAWN_pronoun] is going for {1}.</beginLetter>
         <beginLetterDef>ThreatSmall</beginLetterDef>
         <baseInspectLine>Mental state: Cutting out a prisoner's tongue</baseInspectLine>
         <allowBeatfire>true</allowBeatfire>

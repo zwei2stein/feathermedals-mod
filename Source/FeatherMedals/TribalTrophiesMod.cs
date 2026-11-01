@@ -265,7 +265,13 @@ namespace TribalTrophies
                 "TribalTrophies_Settings_Scalping_ScalpRequests_Enabled_Tooltip".Translate()
             );
  
-            if (Settings.ScalpRequestQuests)
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_ScalpRequests_TongueEnabled_Label".Translate(),
+                ref Settings.TongueRequestQuests,
+                "TribalTrophies_Settings_Scalping_ScalpRequests_TongueEnabled_Tooltip".Translate()
+            );
+ 
+            if (Settings.ScalpRequestQuests || Settings.TongueRequestQuests)
             {
                 Settings.ScalpRequestMaxTech = DrawTechLevelSlider(listingStandard,
                     "TribalTrophies_Settings_Scalping_ScalpRequests_MaxTech_Label",
@@ -392,6 +398,7 @@ namespace TribalTrophies
         public TechLevel ScalpHuntMaxTech = TechLevel.Industrial;
         public bool ScalpHuntDropPods = true;
         public bool ScalpRequestQuests = true;
+        public bool TongueRequestQuests = true;
         public TechLevel ScalpRequestMaxTech = TechLevel.Industrial;
         public int ScalpRequestMaxDistance = 32;
 
@@ -424,6 +431,7 @@ namespace TribalTrophies
             Scribe_Values.Look(ref ScalpHuntMaxTech, "ScalpHuntMaxTech", TechLevel.Industrial);
             Scribe_Values.Look(ref ScalpHuntDropPods, "ScalpHuntDropPods", true);
             Scribe_Values.Look(ref ScalpRequestQuests, "ScalpRequestQuests", true);
+            Scribe_Values.Look(ref TongueRequestQuests, "TongueRequestQuests", true);
             Scribe_Values.Look(ref ScalpRequestMaxTech, "ScalpRequestMaxTech", TechLevel.Industrial);
             Scribe_Values.Look(ref ScalpRequestMaxDistance, "ScalpRequestMaxDistance", 32);
             Scribe_Values.Look(ref ScalpPolesInBases, "ScalpPolesInBases", true);

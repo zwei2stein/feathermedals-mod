@@ -10,7 +10,7 @@ namespace TribalTrophies;
 public class HarmonyPatches
 {
     
-    private static ScalpRequestComp previewRequest;
+    private static Settlement previewSettlement;
 
     private static IEnumerable<TrophyBodyPart> ScalpsToBeGiven(List<Tradeable> tradeables)
     {
@@ -183,7 +183,7 @@ public class HarmonyPatches
             if (anyThing is not TrophyBodyPart trophy)
                 return true;
 
-            if (previewRequest != null && previewRequest.Wants(trophy))
+            if (previewSettlement != null && TrophyRequestUtility.AnyRequestWants(previewSettlement, trophy))
             {
                 __result = 0f;
                 return false;
@@ -204,12 +204,12 @@ public class HarmonyPatches
     {
         public static void Prefix(Settlement giveTo)
         {
-            previewRequest = giveTo?.GetComponent<ScalpRequestComp>();
+            previewSettlement = giveTo;
         }
 
         public static void Finalizer()
         {
-            previewRequest = null;
+            previewSettlement = null;
         }
     }
 
@@ -220,7 +220,8 @@ public class HarmonyPatches
     {
         public static void Prefix(List<ActiveTransporterInfo> pods, Settlement giveTo, out ScalpGiftResult __state)
         {
-            giveTo.GetComponent<ScalpRequestComp>()?.TakeFromPods(pods);
+            foreach (var request in TrophyRequestUtility.RequestsOf(giveTo))
+                request.TakeFromPods(pods);
 
             var trophies = new List<TrophyBodyPart>();
             foreach (ActiveTransporterInfo pod in pods)

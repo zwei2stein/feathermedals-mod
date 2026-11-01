@@ -100,6 +100,10 @@ namespace TribalTrophies
 
         public static HistoryEventDef TribalTrophies_Scalping_HistoryEvent_AcceptedScalpRequest;
 
+        // Tongue Request
+
+        public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_AcceptedTongueRequest;
+
         // Scalp Pole
 
         public static ThingDef TribalTrophies_Scalping_Building_ScalpPole;
