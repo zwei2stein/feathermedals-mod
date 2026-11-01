@@ -82,6 +82,7 @@ namespace TribalTrophies
         public static HistoryEventDef TribalTrophies_TongueCutting_HistoryEvent_Observed_Tongue_Item_Necklace;
 
         public static JobDef TribalTrophies_TongueCutting_Job_CutTongueJob;
+        public static JobDef TribalTrophies_TongueCutting_Job_CutTongueInBreakJob;
         public static DesignationDef TribalTrophies_TongueCutting_Designation_CutTongueDesignation;
 
         public static TaleDef TribalTrophies_TongueCutting_Tale_CutTongue;

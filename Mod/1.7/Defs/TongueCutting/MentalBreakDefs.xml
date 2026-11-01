@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- the only tongue cutting break, and a rare one: prisoners only -->
+    <MentalBreakDef>
+        <defName>TribalTrophies_TongueCutting_MentalBreak_CutPrisonerTongue</defName>
+        <mentalState>TribalTrophies_TongueCutting_MentalState_CutPrisonerTongue</mentalState>
+        <intensity>Major</intensity>
+        <baseCommonality>0.2</baseCommonality>
+    </MentalBreakDef>
+
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>TribalTrophies_TongueCutting_MentalState_CutPrisonerTongue</defName>
+        <stateClass>TribalTrophies.MentalState_TongueRage</stateClass>
+        <workerClass>TribalTrophies.MentalStateWorker_TongueRage</workerClass>
+        <label>decided to cut out a prisoner's tongue</label>
+        <category>Aggro</category>
+        <blockInteractionInitiationExcept>
+            <li>Insult</li>
+        </blockInteractionInitiationExcept>
+        <blockInteractionRecipientExcept>
+            <li>Insult</li>
+        </blockInteractionRecipientExcept>
+        <blockRandomInteraction>true</blockRandomInteraction>
+        <colonistsOnly>true</colonistsOnly>
+        <prisonersCanDo>false</prisonersCanDo>
+        <minTicksBeforeRecovery>100000</minTicksBeforeRecovery>
+        <maxTicksBeforeRecovery>100000</maxTicksBeforeRecovery>
+        <recoverFromSleep>true</recoverFromSleep>
+        <nameColor>(0.9,0.2,0.5)</nameColor>
+        <moodRecoveryThought>Catharsis</moodRecoveryThought>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <recoveryMessage>{0} is no longer set on cutting out a prisoner's tongue.</recoveryMessage>
+        <beginLetter>{0} has had enough and decided to silence one of prisoners for good by cutting out their tongue.\n\n[PAWN_pronoun] is going for {1}.</beginLetter>
+        <beginLetterDef>ThreatSmall</beginLetterDef>
+        <baseInspectLine>Mental state: Cutting out a prisoner's tongue</baseInspectLine>
+        <allowBeatfire>true</allowBeatfire>
+        <modExtensions>
+            <li Class="TribalTrophies.TongueRageExtension">
+                <targetPrisoners>true</targetPrisoners>
+            </li>
+        </modExtensions>
+    </MentalStateDef>
+
+</Defs>

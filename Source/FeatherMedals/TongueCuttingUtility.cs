@@ -52,6 +52,41 @@ public static class TongueCuttingUtility
         return ScalpingPrecepts.AnyMercilessColonist() && CanPhysicallyBeCut(TrophyBodyPartUtility.PawnOf(thing), thing);
     }
 
+    // Tongue cutting in a mental break, ideo and other rules.
+    // Criteria:
+    // * Humanlike flesh with its own natural tongue
+    // * Children and babies only if enabled in settings
+    // * If dead, corpse must be fresh
+    // * No other (like must be downed) rules
+    public static bool CanBeTargetedInBreak(Thing thing)
+    {
+        var pawn = TrophyBodyPartUtility.PawnOf(thing);
+
+        if (pawn == null || !thing.Spawned || !HasTongueToTake(pawn))
+            return false;
+
+        if (!pawn.DevelopmentalStage.Adult() && !TribalTrophiesMod.Settings.ScalpBreaksTargetChildren)
+            return false;
+
+        if (thing is Corpse corpse)
+            return corpse.GetRotStage() == RotStage.Fresh;
+
+        return !pawn.Dead;
+    }
+
+    // Same as above, at the moment of cutting: the dead, prisoners and slaves are held already, others must be downed
+    public static bool CanBeCutInBreak(Thing thing)
+    {
+        if (!CanBeTargetedInBreak(thing))
+            return false;
+
+        var pawn = TrophyBodyPartUtility.PawnOf(thing);
+        if (pawn.Dead || pawn.IsPrisoner || pawn.IsSlave)
+            return true;
+
+        return pawn.Downed;
+    }
+
     private static bool CanPhysicallyBeCut(Pawn pawn, Thing thing)
     {
         if (pawn == null || !thing.Spawned || !HasTongueToTake(pawn))
@@ -90,10 +125,10 @@ public static class TongueCuttingUtility
             target, MessageTypeDefOf.NegativeEvent);
     }
 
-    public static DriedTongue DoCutTongue(Pawn cutter, Thing target)
+    public static DriedTongue DoCutTongue(Pawn cutter, Thing target, bool inBreak = false)
     {
         var victim = TrophyBodyPartUtility.PawnOf(target);
-        if (victim == null || !CanBeCut(target, cutter))
+        if (victim == null || !(inBreak ? CanBeCutInBreak(target) : CanBeCut(target, cutter)))
             return null;
 
         var alive = !victim.Dead;

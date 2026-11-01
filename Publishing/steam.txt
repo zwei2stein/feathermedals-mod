@@ -129,6 +129,12 @@ These mods backstories are in sync with feathers being awarded to NPCs (raiders,
 
 [h2]Disclaimers[/h2]
 
+[h3]Dried Tongue Necklace[/h3]
+
+The author of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2584954976]Dried Tongue Necklace[/url] has given permission to use its graphics and concept.
+
+Many thanks to [i]The Weakness[/i] for the OG mod and for allowing it to be integrated into Tribal Trophies!
+
 [h3]Fork[/h3]
 
 This mod is a heavily modified fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3692393053]Rocket's Medals[/url]. No original graphics are left, and the original code is more of an inspiration at this point. 

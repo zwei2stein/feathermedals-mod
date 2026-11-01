@@ -8,6 +8,13 @@
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
 
+    <JobDef>
+        <defName>TribalTrophies_TongueCutting_Job_CutTongueInBreakJob</defName>
+        <driverClass>TribalTrophies.JobDriver_CutTongueInBreak</driverClass>
+        <reportString>cutting out the tongue of TargetA.</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
     <DesignationDef>
         <defName>TribalTrophies_TongueCutting_Designation_CutTongueDesignation</defName>
         <texturePath>UI/Designators/CutTongue</texturePath>

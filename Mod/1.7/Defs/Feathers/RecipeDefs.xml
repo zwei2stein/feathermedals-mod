@@ -190,7 +190,7 @@
 	<RecipeDef ParentName="TribalTrophies_Trophy_Feather_OrnateRecipeBase">
 		<defName>TribalTrophies_Trophy_Feather_Recipe_CutOutTongue</defName>
 		<label>feather: cut out enemy tongue</label>
-		<jobString>Crafting a feather boasting cutting out an enemy’s tongue.</jobString>
+		<jobString>Crafting a feather for cutting out the tongue of an enemy.</jobString>
 		<products>
 			<TribalTrophies_Trophy_Feather_CutOutTongue>1</TribalTrophies_Trophy_Feather_CutOutTongue>
 		</products>

@@ -6,13 +6,21 @@ using Verse.AI;
 
 namespace TribalTrophies;
 
+public class JobDriver_CutTongueInBreak : JobDriver_CutTongue
+{
+    protected override bool InBreak => true;
+}
+
 public class JobDriver_CutTongue : JobDriver
 {
     private Thing Target => job.targetA.Thing;
 
+    // Mental break breaks ideology rules.
+    protected virtual bool InBreak => false;
+
     private bool CanCutTarget()
     {
-        return TongueCuttingUtility.CanBeCut(Target, pawn);
+        return InBreak ? TongueCuttingUtility.CanBeCutInBreak(Target) : TongueCuttingUtility.CanBeCut(Target, pawn);
     }
 
     private int DurationTicks()
@@ -63,7 +71,9 @@ public class JobDriver_CutTongue : JobDriver
         {
             Thing target = Target;
             Map map = target.Map;
-            TongueCuttingUtility.DoCutTongue(pawn, target);
+            TongueCuttingUtility.DoCutTongue(pawn, target, InBreak);
+            if (InBreak)
+                (pawn.MentalState as MentalState_TongueRage)?.Notify_Cut();
             pawn.skills?.Learn(SkillDefOf.Medicine, TongueCuttingUtility.Tuning.medicineXp);
             map?.designationManager.TryRemoveDesignationOn(target, TribalTrophiesDefOf.TribalTrophies_TongueCutting_Designation_CutTongueDesignation);
         });

@@ -42,10 +42,10 @@
     <TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Label>Show tongue cutting gizmo</TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Label>
     <TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Tooltip>Pawns and corpses will have a gizmo to order colonists to cut out their tongue. Tongue cutting is still available from the right-click menu and the Orders menu. Default: ON</TribalTrophies_Settings_Scalping_Ui_ShowTongueCuttingGizmo_Tooltip>
 
-    <TribalTrophies_Settings_Scalping_MentalBreaks_Label>Scalping mental breaks</TribalTrophies_Settings_Scalping_MentalBreaks_Label>
+    <TribalTrophies_Settings_Scalping_MentalBreaks_Label>Scalping and tongue cutting mental breaks</TribalTrophies_Settings_Scalping_MentalBreaks_Label>
 
-    <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>Scalping mental breaks can target children</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>
-    <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip>The scalping frenzy and prisoner scalping mental breaks can target children and babies. Default: OFF</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip>
+    <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>Scalping and tongue cutting mental breaks can target children</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Label>
+    <TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip>The scalping frenzy, prisoner scalping and prisoner tongue cutting mental breaks can target children and babies. Default: OFF</TribalTrophies_Settings_Scalping_MentalBreaks_ScalpBreaksTargetChildren_Tooltip>
 
     <TribalTrophies_Settings_Scalping_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Scalping_Npc_Label>
 
