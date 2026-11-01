@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
@@ -46,6 +47,20 @@ public static class NpcVictimUtility
     public static void Discard(Pawn victim)
     {
         Find.WorldPawns.PassToWorld(victim, PawnDiscardDecideMode.Discard);
+    }
+
+    // A body part trophy from a made-up victim of the taker's enemies; the trophy keeps only the victim's details.
+    public static T MakeTrophyFromTemporaryVictim<T>(Faction takerFaction, Pawn taker, Func<Pawn, Pawn, EventTime, T> create)
+        where T : TrophyBodyPart
+    {
+        var victim = GenerateTemporaryVictim(takerFaction);
+
+        // taken while both were adults, where the victim's people live
+        var trophy = create(victim, taker, NpcHistoryUtility.RandomPastEvent(victim.Faction, taker, victim));
+        trophy.Victim.DiscardPawn();
+
+        Discard(victim);
+        return trophy;
     }
 
     // vanilla gibbet cage (SymbolResolver_TerrorBuildings)

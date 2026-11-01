@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- "Accessories" is a common layer name for mods, we use whatever is defined, this patch fallbacks our. -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ApparelLayerDef[defName="Accessories"]</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs</xpath>
+            <value>
+                <ApparelLayerDef>
+                    <defName>Accessories</defName>
+                    <label>accessories</label>
+                    <drawOrder>350</drawOrder>
+                </ApparelLayerDef>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

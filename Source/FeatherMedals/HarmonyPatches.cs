@@ -160,6 +160,7 @@ public class HarmonyPatches
             NpcScalpGenerator.OnGearGenerated(pawn);
             NpcScalpBeltGenerator.OnGearGenerated(pawn);
             NpcSkullBeltGenerator.OnGearGenerated(pawn);
+            NpcTongueNecklaceGenerator.OnGearGenerated(pawn);
             NpcTrophyGenerator.OnGearGenerated(pawn);
         }
     }

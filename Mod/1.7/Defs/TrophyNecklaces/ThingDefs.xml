@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ApparelLayerDef>
-        <defName>Accessories</defName>
-        <label>accessories</label>
-        <drawOrder>350</drawOrder>
-    </ApparelLayerDef>
-    
     <ThingDef Name="TribalTrophies_Apparel_Necklace_Base" ParentName="ApparelMakeableBase" Abstract="True">
         <thingClass>TribalTrophies.TrophyApparel</thingClass>
         <techLevel>Neolithic</techLevel>
@@ -41,7 +35,7 @@
         </thingCategories>
         <apparel>
             <bodyPartGroups>
-                <li>Neck</li> 
+                <li>Neck</li>
             </bodyPartGroups>
             <!-- Jewelry mod's layer, ours when it is not loaded -->
             <layers>
@@ -85,6 +79,11 @@
         </tradeTags>
         <modExtensions>
             <li Class="TribalTrophies.TongueDisplayExtension" />
+            <li Class="TribalTrophies.NpcTongueNecklaceExtension">
+                <honorableChance>0.05</honorableChance>
+                <mercilessChance>0.2</mercilessChance>
+                <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
+            </li>
         </modExtensions>
         <comps>
             <li Class="TribalTrophies.CompProperties_TrophyContainer">

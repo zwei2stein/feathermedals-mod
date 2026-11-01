@@ -206,6 +206,12 @@ namespace TribalTrophies
                 ref Settings.GenerateNpcSkullBelts,
                 "TribalTrophies_Settings_Scalping_Npc_GenerateNpcSkullBelts_Tooltip".Translate()
             );
+
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcTongueNecklaces_Label".Translate(),
+                ref Settings.GenerateNpcTongueNecklaces,
+                "TribalTrophies_Settings_Scalping_Npc_GenerateNpcTongueNecklaces_Tooltip".Translate()
+            );
             
             listingStandard.CheckboxLabeled(
                 "TribalTrophies_Settings_Scalping_Npc_ScalpPolesInBases_Label".Translate(),
@@ -378,6 +384,7 @@ namespace TribalTrophies
         public bool GenerateNpcScalped = true;
         public bool GenerateNpcScalpBelts = true;
         public bool GenerateNpcSkullBelts = true;
+        public bool GenerateNpcTongueNecklaces = true;
         public bool ShowScalpingGizmo = true;
         public bool ShowTongueCuttingGizmo = true;
         public bool ScalpBreaksTargetChildren = false;
@@ -409,6 +416,7 @@ namespace TribalTrophies
             Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref GenerateNpcScalpBelts, "GenerateNpcScalpBelts", true);
             Scribe_Values.Look(ref GenerateNpcSkullBelts, "GenerateNpcSkullBelts", true);
+            Scribe_Values.Look(ref GenerateNpcTongueNecklaces, "GenerateNpcTongueNecklaces", true);
             Scribe_Values.Look(ref ShowScalpingGizmo, "ShowScalpingGizmo", true);
             Scribe_Values.Look(ref ShowTongueCuttingGizmo, "ShowTongueCuttingGizmo", true);
             Scribe_Values.Look(ref ScalpBreaksTargetChildren, "ScalpBreaksTargetChildren", false);
