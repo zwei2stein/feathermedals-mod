@@ -24,6 +24,8 @@
         <li IfModActive="dorbo.arcos">1.7/Compatibility/dorbo.arcos</li>
         <li IfModActive="tyrannidae.birdsoftheworld">1.7/Compatibility/tyrannidae.birdsoftheworld</li>
         <li IfModActive="11Bullets.ExtinctEngineered">1.7/Compatibility/11Bullets.ExtinctEngineered</li>
+        <li IfModActive="aiecy.avianencyclopedia">1.7/Compatibility/aiecy.avianencyclopedia</li>
+        <li IfModActive="aiecy.poultryencyclopedia">1.7/Compatibility/aiecy.poultryencyclopedia</li>
         
         <!-- feathers -->
         

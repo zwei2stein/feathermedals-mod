@@ -101,6 +101,8 @@ These mods have birds that either drop pristine feathers when butchered or have 
     [*]Project Arcos
     [*]Birds of the World!
     [*]More Birds - Extinct & Engineered
+    [*]Poultry Encyclopedia - Birds
+    [*]Poultry Encyclopedia - Chickens
 [/list]
 
 [h3]Style[/h3]

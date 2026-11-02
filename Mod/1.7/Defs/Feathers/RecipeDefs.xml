@@ -39,6 +39,7 @@
 						<li MayRequire="BiomesTeam.BiomesCore">BiomesIslands_Leather_Flamingo</li>
 						<li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Raptorkhan</li>
 						<li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Harpeagle</li>
+						<li MayRequire="aiecy.avianencyclopedia">PBE_Down</li>
 
 					</thingDefs>
 				</filter>
@@ -55,6 +56,7 @@
 				<li MayRequire="BiomesTeam.BiomesCore">BiomesIslands_Leather_Flamingo</li>
 				<li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Raptorkhan</li>
 				<li MayRequire="veterano.mythicages.megafaunabestiary">MA_Leather_Harpeagle</li>
+				<li MayRequire="aiecy.avianencyclopedia">PBE_Down</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
