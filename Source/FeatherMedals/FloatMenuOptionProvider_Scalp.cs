@@ -31,30 +31,24 @@ namespace TribalTrophies
             // Forbidden by ideology: still listed (disabled) when it would be allowed otherwise.
             bool forbidden = ScalpingPrecepts.StanceOf(actor) == ScalpStance.Forbidden;
             if (!(forbidden ? ScalpingUtility.CanBeScalped(target) : ScalpingUtility.CanBeScalped(target, actor)))
-            {
                 return null;
-            }
 
             string label = "TribalTrophies_Scalping_FloatMenu_Scalp".Translate(target.LabelShortCap.Named("TARGET"));
             if (forbidden)
-            {
                 return new FloatMenuOption(label + " (" + "IdeoligionForbids".Translate() + ")", null);
-            }
+
+            label += TrophyRuleUtility.LabelSuffix(TrophyRuleUtility.RuleFor(ScalpingUtility.PawnOf(target), actor));
 
             bool angers = ScalpingUtility.WouldAngerFaction(target);
             if (angers)
-            {
                 label += ": " + "AngersFaction".Translate().CapitalizeFirst();
-            }
 
             if (actor.WorkTagIsDisabled(WorkTags.Violent))
-            {
                 return new FloatMenuOption(label + " (" + "IsIncapableOfViolenceShort".Translate((NamedArgument)(Thing)actor) + ")", null);
-            }
+            
             if (!actor.CanReach(target, PathEndMode.Touch, Danger.Deadly))
-            {
                 return new FloatMenuOption(label + " (" + "NoPath".Translate() + ")", null);
-            }
+            
 
             return FloatMenuUtility.DecoratePrioritizedTask(
                 new FloatMenuOption(label, () =>

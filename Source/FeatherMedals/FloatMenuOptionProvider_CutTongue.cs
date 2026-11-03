@@ -36,6 +36,8 @@ public class FloatMenuOptionProvider_CutTongue : FloatMenuOptionProvider
         if (forbidden)
             return new FloatMenuOption(label + " (" + "IdeoligionForbids".Translate() + ")", null);
 
+        label += TrophyRuleUtility.LabelSuffix(TrophyRuleUtility.RuleFor(TrophyBodyPartUtility.PawnOf(target), actor));
+
         bool angers = TrophyBodyPartUtility.WouldAngerFaction(target);
         if (angers)
             label += ": " + "AngersFaction".Translate().CapitalizeFirst();
