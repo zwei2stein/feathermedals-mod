@@ -35,10 +35,17 @@ namespace TribalTrophies
             if (!Designated && !TongueCuttingUtility.CanBeCutByAnyone(parent))
                 yield break;
 
-            yield return new Command_Toggle
+            var rule = TrophyRuleUtility.RuleForColony(TrophyBodyPartUtility.PawnOf(parent));
+            var ruleDesc = TrophyRuleUtility.Description(rule);
+
+            yield return new Command_TrophyToggle
             {
                 defaultLabel = "TribalTrophies_TongueCutting_Gizmo_Label".Translate(),
-                defaultDesc = "TribalTrophies_TongueCutting_Gizmo_Desc".Translate(),
+                defaultDesc = ruleDesc.NullOrEmpty()
+                    ? "TribalTrophies_TongueCutting_Gizmo_Desc".Translate().Resolve()
+                    : "TribalTrophies_TongueCutting_Gizmo_Desc".Translate().Resolve() + "\n\n" + ruleDesc,
+                backgroundTint = rule == TrophyRule.Merciless ? (Color?)TrophyUIStyle.MercilessGizmoTint : null,
+                groupKey = (int)rule,
                 icon = Icon,
                 isActive = () => Designated,
                 toggleAction = Toggle,

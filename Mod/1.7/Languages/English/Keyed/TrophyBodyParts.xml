@@ -23,6 +23,11 @@
 
     <TribalTrophies_TrophyBodyPart_Inspect_Stored>Stored: {COUNT} / {MAX}</TribalTrophies_TrophyBodyPart_Inspect_Stored>
 
+    <!-- ===== Rule (gizmo description; prefixed by the precept stance label, "Honorable: ...") ===== -->
+
+    <TribalTrophies_TrophyBodyPart_Rule_Honorable_Desc>Any colonist whose ideoligion allows scalp taking will do it.</TribalTrophies_TrophyBodyPart_Rule_Honorable_Desc>
+    <TribalTrophies_TrophyBodyPart_Rule_Merciless_Desc>Only colonists whose ideoligion has the merciless scalp taking precept will do it. Colonists with the honorable precept will refuse.</TribalTrophies_TrophyBodyPart_Rule_Merciless_Desc>
+
     <!-- ===== Misc ===== -->
 
     <!-- name of an unknown victim or taker -->

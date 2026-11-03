@@ -35,10 +35,17 @@ namespace TribalTrophies
             if (!Designated && !ScalpingUtility.CanBeScalpedByAnyone(parent))
                 yield break;
             
-            yield return new Command_Toggle
+            var rule = TrophyRuleUtility.RuleForColony(ScalpingUtility.PawnOf(parent));
+            var ruleDesc = TrophyRuleUtility.Description(rule);
+
+            yield return new Command_TrophyToggle
             {
                 defaultLabel = "TribalTrophies_Scalping_Gizmo_Label".Translate(),
-                defaultDesc = "TribalTrophies_Scalping_Gizmo_Desc".Translate(),
+                defaultDesc = ruleDesc.NullOrEmpty()
+                    ? "TribalTrophies_Scalping_Gizmo_Desc".Translate().Resolve()
+                    : "TribalTrophies_Scalping_Gizmo_Desc".Translate().Resolve() + "\n\n" + ruleDesc,
+                backgroundTint = rule == TrophyRule.Merciless ? (Color?)TrophyUIStyle.MercilessGizmoTint : null,
+                groupKey = (int)rule,
                 icon = Icon,
                 isActive = () => Designated,
                 toggleAction = Toggle,
