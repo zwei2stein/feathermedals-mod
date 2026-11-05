@@ -78,6 +78,16 @@ namespace TribalTrophies
             return PainCategory.HighPain;
         }
 
+        // A gene that leaves no skin on the head grows over the scar: the scalping is gone, silently.
+        public override bool ShouldRemove => base.ShouldRemove || ScalpingUtility.ScalpImmuneGeneOf(pawn) != null;
+
+        // hair comes back
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
         public override void TickInterval(int delta)
         {
             base.TickInterval(delta);

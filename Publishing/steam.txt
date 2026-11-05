@@ -123,6 +123,13 @@ These mods have merchants that will buy scalps and dried tongues:
     [*]Pesky's Bulwark Xenotype
 [/list]
 
+These mods have genes that make pawn immune to scalping:
+
+[list]
+    [*]Det's Xenotypes - Keshig
+    [*]Rim-Shek - Biotech
+[/list]
+
 [h3]Buildings[/h3]
 
 [list]

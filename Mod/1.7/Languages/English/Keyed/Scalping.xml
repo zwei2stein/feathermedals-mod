@@ -28,6 +28,7 @@
     <!-- ===== FloatMenu ===== -->
 
     <TribalTrophies_Scalping_FloatMenu_Scalp>Scalp {TARGET}</TribalTrophies_Scalping_FloatMenu_Scalp>
+    <TribalTrophies_Scalping_FloatMenu_Disabled>Disabled: {REASON}</TribalTrophies_Scalping_FloatMenu_Disabled>
 
     <!-- ===== Hediff (scalped pawn health tooltip) ===== -->
 

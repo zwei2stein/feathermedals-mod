@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/GeneDef[defName="Headbone_ShekHorns"]</xpath>
+        <value>
+            <li Class="TribalTrophies.ScalpImmuneGeneExtension" />
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/GeneDef[defName="Headbone_ShekHorns"]/customEffectDescriptions</xpath>
+
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/GeneDef[defName="Headbone_ShekHorns"]/customEffectDescriptions</xpath>
+            <value>
+                <li>Immunity to being scalped</li>
+            </value>
+        </match>
+
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/GeneDef[defName="Headbone_ShekHorns"]</xpath>
+            <value>
+                <customEffectDescriptions>
+                    <li>Immunity to being scalped</li>
+                </customEffectDescriptions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

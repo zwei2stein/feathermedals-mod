@@ -30,12 +30,28 @@ namespace TribalTrophies
             Pawn actor = context.FirstSelectedPawn;
             // Forbidden by ideology: still listed (disabled) when it would be allowed otherwise.
             bool forbidden = ScalpingPrecepts.StanceOf(actor) == ScalpStance.Forbidden;
-            if (!(forbidden ? ScalpingUtility.CanBeScalped(target) : ScalpingUtility.CanBeScalped(target, actor)))
+            // Same for a gene makes scalping impossible, and for a pawn scalped already.
+            var targetPawn = ScalpingUtility.PawnOf(target);
+            var immuneGene = targetPawn != null ? ScalpingUtility.ScalpImmuneGeneOf(targetPawn) : null;
+            var scalped = targetPawn != null && ScalpingUtility.IsAlreadyScalped(targetPawn);
+            if (!(forbidden
+                    ? ScalpingUtility.CanBeScalped(target, ignoreShownReasons: true)
+                    : ScalpingUtility.CanBeScalped(target, actor, ignoreShownReasons: true)))
                 return null;
 
             string label = "TribalTrophies_Scalping_FloatMenu_Scalp".Translate(target.LabelShortCap.Named("TARGET"));
-            if (forbidden)
-                return new FloatMenuOption(label + " (" + "IdeoligionForbids".Translate() + ")", null);
+            if (scalped || immuneGene != null || forbidden)
+            {
+                if (scalped)
+                    label += " (" + "TribalTrophies_Scalping_FloatMenu_Disabled".Translate(
+                        TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped.label.Named("REASON")).Resolve() + ")";
+                if (immuneGene != null)
+                    label += " (" + "TribalTrophies_Scalping_FloatMenu_Disabled".Translate(immuneGene.Label.Named("REASON")).Resolve() + ")";
+                if (forbidden)
+                    label += " (" + "IdeoligionForbids".Translate().Resolve() + ")";
+                
+                return new FloatMenuOption(label, null);
+            }
 
             label += TrophyRuleUtility.LabelSuffix(TrophyRuleUtility.RuleFor(ScalpingUtility.PawnOf(target), actor));
 

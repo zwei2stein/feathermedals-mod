@@ -35,7 +35,7 @@ namespace TribalTrophies
             return pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault(x => x.def == BodyPartDefOf.Head);
         }
 
-        public static bool CanBeScalped(Thing thing)
+        public static bool CanBeScalped(Thing thing, bool ignoreShownReasons = false)
         {
             Pawn pawn = PawnOf(thing);
             
@@ -51,7 +51,7 @@ namespace TribalTrophies
             // * Pawn missing head
             // * Pawn with Scalped hediff
             // * Rotten corpse or dessicated corpse.
-            if (!Can_PhysicallyCapableOfBeingScalped(pawn, thing))
+            if (!Can_PhysicallyCapableOfBeingScalped(pawn, thing, ignoreShownReasons))
                 return false;
 
             // Every rule that disqualifies target from being scalped based on it being evil act.
@@ -73,11 +73,11 @@ namespace TribalTrophies
         }
 
         // What this scalper's ideology allows. Honorable: evil check applies. Merciless: no evil check. Forbidden: nothing.
-        public static bool CanBeScalped(Thing thing, Pawn scalper)
+        public static bool CanBeScalped(Thing thing, Pawn scalper, bool ignoreShownReasons = false)
         {
             Pawn pawn = PawnOf(thing);
 
-            if (!Can_PhysicallyCapableOfBeingScalped(pawn, thing))
+            if (!Can_PhysicallyCapableOfBeingScalped(pawn, thing, ignoreShownReasons))
                 return false;
 
             switch (ScalpingPrecepts.StanceOf(scalper))
@@ -106,9 +106,9 @@ namespace TribalTrophies
             return TrophyBodyPartUtility.IsNotEvilToTakeFrom(pawn, scalperFaction);
         }
 
-        private static bool Can_PhysicallyCapableOfBeingScalped(Pawn pawn, Thing thing)
+        private static bool Can_PhysicallyCapableOfBeingScalped(Pawn pawn, Thing thing, bool ignoreShownReasons = false)
         {
-            if (!ScalpAvailable(pawn, thing))
+            if (!ScalpAvailable(pawn, thing, ignoreShownReasons))
                 return false;
 
             return TrophyBodyPartUtility.IsHeldStill(pawn, thing);
@@ -231,9 +231,9 @@ namespace TribalTrophies
         }
 
         // Pawn or corpse is on a map and its body can still give a scalp.
-        private static bool ScalpAvailable(Pawn pawn, Thing thing)
+        private static bool ScalpAvailable(Pawn pawn, Thing thing, bool ignoreShownReasons = false)
         {
-            return pawn != null && thing.Spawned && HasScalpToTake(pawn);
+            return pawn != null && thing.Spawned && HasScalpToTake(pawn, ignoreShownReasons);
         }
 
         // Scalped look: visible Scalped hediff (hidden hair, mood, others seeing it).
@@ -242,12 +242,33 @@ namespace TribalTrophies
             return pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped, mustBeVisible: true);
         }
 
-        // Body can still give a scalp: humanlike flesh, head present, not scalped yet.
-        public static bool HasScalpToTake(Pawn pawn)
+        // Body can still give a scalp: humanlike flesh, head present, not scalped yet, no conflicting gene.
+        // ignoreShownReasons: as if not scalped and without the gene, the reasons the menu shows to the player.
+        public static bool HasScalpToTake(Pawn pawn, bool ignoreShownReasons = false)
         {
             return TrophyBodyPartUtility.HasTrophyBody(pawn)
-                   && !pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped)
-                   && HeadOf(pawn) != null;
+                   && (ignoreShownReasons || !IsAlreadyScalped(pawn))
+                   && HeadOf(pawn) != null
+                   && (ignoreShownReasons || ScalpImmuneGeneOf(pawn) == null);
+        }
+
+        public static bool IsAlreadyScalped(Pawn pawn)
+        {
+            return pawn.health.hediffSet.HasHediff(TribalTrophiesDefOf.TribalTrophies_Scalping_Hediff_Scalped);
+        }
+
+        public static Gene ScalpImmuneGeneOf(Pawn pawn)
+        {
+            if (pawn.genes == null)
+                return null;
+
+            //we only care about ANY conflicting gene. Usually, pawn will only have one head changing gene anyway.
+            foreach (var gene in pawn.genes.GenesListForReading)
+            {
+                if (gene.Active && gene.def.HasModExtension<ScalpImmuneGeneExtension>())
+                    return gene;
+            }
+            return null;
         }
         
     }

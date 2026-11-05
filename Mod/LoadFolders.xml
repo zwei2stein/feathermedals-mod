@@ -47,5 +47,9 @@
         <li IfModActive="tug.SatyrFaun.Expanded">1.7/Compatibility/tug.SatyrFaun.Expanded</li>
         <li IfModActive="V.Rooboid.Faun">1.7/Compatibility/V.Rooboid.Faun</li>
         
+        <!-- genes -->
+
+        <li IfModActive="VexedTrees980.RimShekBiotech">1.7/Compatibility/VexedTrees980.RimShekBiotech</li>
+        
     </v1.7>
 </loadFolders>
