@@ -19,15 +19,15 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
 
     public override void Apply(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
-        var previous = FeatherTrophyUtility.ApplyingCeremonyAdorning;
-        FeatherTrophyUtility.ApplyingCeremonyAdorning = true;
+        var previous = AwardedTrophyUtility.ApplyingCeremonyAdorning;
+        AwardedTrophyUtility.ApplyingCeremonyAdorning = true;
         try { ApplyImpl(progress, totalPresence, jobRitual); }
-        finally { FeatherTrophyUtility.ApplyingCeremonyAdorning = previous; }
+        finally { AwardedTrophyUtility.ApplyingCeremonyAdorning = previous; }
     }
 
     private void ApplyImpl(float progress, Dictionary<Pawn, int> totalPresence, LordJob_Ritual jobRitual)
     {
-        if (jobRitual.selectedTarget.Thing is not FeatherTrophy featherTrophy) return;
+        if (jobRitual.selectedTarget.Thing is not AwardedTrophy featherTrophy) return;
         var adorned = jobRitual.assignments.FirstAssignedPawn(RitualRole_Adorned.ROLE_ID);
         var presenter = jobRitual.assignments.FirstAssignedPawn("leader");
         if (adorned == null || presenter == null) return;
@@ -52,7 +52,7 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
             || adorned.apparel == null || adorned.story == null)
             return;
 
-        if (!FeatherTrophyUtility.CanWearTrophy(adorned, featherTrophy))
+        if (!AwardedTrophyUtility.CanWearTrophy(adorned, featherTrophy))
         {
             Messages.Message(
                 "TribalTrophies_AdorningCeremony_Message_CannotWear".Translate(adorned.Named("PAWN"), featherTrophy.TrophyLabel.Named("TROPHY")),

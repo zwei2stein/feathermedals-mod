@@ -5,7 +5,7 @@ namespace TribalTrophies;
 
 public class Dialog_WriteTale : Window
 {
-    private readonly FeatherTrophy _trophy;
+    private readonly AwardedTrophy _trophy;
     private string draft;
     private const int MAX_LENGTH = 300;
     private const float TROPHY_COLUMN_WIDTH = TrophyUIStyle.TaleDialogFeatherColumnWidth;
@@ -14,7 +14,7 @@ public class Dialog_WriteTale : Window
 
     private Vector2 trophyScrollPosition;
 
-    public Dialog_WriteTale(FeatherTrophy trophy)
+    public Dialog_WriteTale(AwardedTrophy trophy)
     {
         this._trophy = trophy;
         
@@ -49,7 +49,7 @@ public class Dialog_WriteTale : Window
     private void DrawTrophyColumn(Rect rect)
     {
         // the trophy as it will be adorned, with the tale being written; scroll instead of overflowing
-        var row = new FeatherTrophyDetailDrawer(_trophy, draft);
+        var row = new AwardedTrophyDetailDrawer(_trophy, draft);
         var viewWidth = rect.width - TrophyUIStyle.ScrollbarWidth;
         var viewRect = new Rect(0f, 0f, viewWidth, row.Height(viewWidth));
         Widgets.BeginScrollView(rect, ref trophyScrollPosition, viewRect);

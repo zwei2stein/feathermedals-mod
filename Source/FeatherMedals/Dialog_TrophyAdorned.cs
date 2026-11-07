@@ -7,11 +7,11 @@ namespace TribalTrophies;
 public class Dialog_TrophyAdorned : Window
 {
 
-    private readonly FeatherTrophy _trophy;
+    private readonly AwardedTrophy _trophy;
 
     private Vector2 scrollPosition;
 
-    public Dialog_TrophyAdorned(FeatherTrophy trophy)
+    public Dialog_TrophyAdorned(AwardedTrophy trophy)
     {
         this._trophy = trophy;
         forcePause = true;

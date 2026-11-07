@@ -9,7 +9,7 @@ using Verse;
 public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherTrophy;
+        ritual?.selectedTarget.Thing is AwardedTrophy;
 
     public override bool DataRequired => false;
 
@@ -17,7 +17,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherTrophy featherTrophy)
+        if (ritual?.selectedTarget.Thing is not AwardedTrophy featherTrophy)
             return "TribalTrophies_AdorningCeremony_RitualDialog_TrophyUnavailable".Translate();
         return featherTrophy.TrophyLabel;
     }
@@ -29,7 +29,7 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherTrophy featherTrophy) return null;
+        if (ritualTarget.Thing is not AwardedTrophy featherTrophy) return null;
 
         var sb = new StringBuilder();
 
@@ -60,12 +60,12 @@ public class RitualOutcomeComp_TrophyPreview : RitualOutcomeComp
 public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherTrophy featherTrophy && featherTrophy.TryGetQuality(out _);
+        ritual?.selectedTarget.Thing is AwardedTrophy featherTrophy && featherTrophy.TryGetQuality(out _);
 
     public override bool DataRequired => false;
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data) =>
-        ritual?.selectedTarget.Thing is FeatherTrophy featherTrophy ? AdorningQuality.GetTrophyQualityBonus(featherTrophy) : 0f;
+        ritual?.selectedTarget.Thing is AwardedTrophy featherTrophy ? AdorningQuality.GetTrophyQualityBonus(featherTrophy) : 0f;
 
     public override string GetDesc(LordJob_Ritual ritual = null, RitualOutcomeComp_Data data = null) =>
         "TribalTrophies_AdorningCeremony_RitualDialog_TrophyQuality".Translate();
@@ -77,7 +77,7 @@ public class RitualOutcomeComp_TrophyQuality : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherTrophy featherTrophy || !featherTrophy.TryGetQuality(out var quality))
+        if (ritualTarget.Thing is not AwardedTrophy featherTrophy || !featherTrophy.TryGetQuality(out var quality))
             return null;
 
         var bonus = AdorningQuality.GetTrophyQualityBonus(featherTrophy);
@@ -202,7 +202,7 @@ public static class PatchDrawFeatherTrophyInRitual
         if (__instance is not Dialog_BeginRitual ritual) return;
         
         var target = TargetRef(ritual);
-        if (target.Thing is not FeatherTrophy featherTrophy) return;
+        if (target.Thing is not AwardedTrophy featherTrophy) return;
         
         var row = layout.NewRow(60f, marginOverride: 6f);
         var iconRect = new Rect(row.Rect.x, row.Rect.y, 50f, 50f);
@@ -220,13 +220,13 @@ public static class PatchDrawFeatherTrophyInRitual
 public class RitualOutcomeComp_CeremonyTale : RitualOutcomeComp
 {
     public override bool Applies(LordJob_Ritual ritual) =>
-        ritual?.selectedTarget.Thing is FeatherTrophy;
+        ritual?.selectedTarget.Thing is AwardedTrophy;
 
     public override bool DataRequired => false;
 
     public override float QualityOffset(LordJob_Ritual ritual, RitualOutcomeComp_Data data)
     {
-        if (ritual?.selectedTarget.Thing is not FeatherTrophy featherTrophy)
+        if (ritual?.selectedTarget.Thing is not AwardedTrophy featherTrophy)
             return 0f;
         
         return AdorningQuality.GetTaleScore(featherTrophy.HasTale);
@@ -244,7 +244,7 @@ public class RitualOutcomeComp_CeremonyTale : RitualOutcomeComp
         RitualRoleAssignments assignments,
         RitualOutcomeComp_Data data)
     {
-        if (ritualTarget.Thing is not FeatherTrophy featherTrophy)
+        if (ritualTarget.Thing is not AwardedTrophy featherTrophy)
             return null;
 
         var contribution = AdorningQuality.GetTaleScore(featherTrophy.HasTale);

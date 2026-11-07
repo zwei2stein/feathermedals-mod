@@ -5,16 +5,16 @@ using Verse.AI;
 
 namespace TribalTrophies;
 
-public static class FeatherTrophyUtility
+public static class AwardedTrophyUtility
 {
     // float menu helper
     public static Apparel EvaluatingItem;
 
     public static bool ApplyingCeremonyAdorning;
     
-    public static bool IsFeatherTrophyDef(ThingDef def) => def?.thingClass == typeof(FeatherTrophy);
+    public static bool IsAwardedTrophyDef(ThingDef def) => def?.thingClass == typeof(AwardedTrophy);
 
-    public static string WearBlockedReason(FeatherTrophy trophy, Pawn pawn)
+    public static string WearBlockedReason(AwardedTrophy trophy, Pawn pawn)
     {
         if (trophy.IsAdorned && !trophy.IsOwnedBy(pawn))
             return "TribalTrophies_Trophy_Common_OwnedByOther".Translate(trophy.AdornedPawn.ShortName.Named("PAWN"), pawn.Named("IMPOSTOR"));
@@ -35,7 +35,7 @@ public static class FeatherTrophyUtility
         => new(BlockedWearText(apparel, reason, forcingOtherPawn), null);
 
     // "force <pawn> to wear" for a trophy that already belongs to somebody
-    public static FloatMenuOption ForceWearOption(FeatherTrophy trophy, Pawn dresser)
+    public static FloatMenuOption ForceWearOption(AwardedTrophy trophy, Pawn dresser)
     {
         if (!dresser.CanReach(trophy, PathEndMode.ClosestTouch, Danger.Deadly))
             return BlockedWearOption(trophy, "NoPath".Translate().CapitalizeFirst(), true);
@@ -53,7 +53,7 @@ public static class FeatherTrophyUtility
             dresser, trophy);
     }
 
-    private static void ForceWearTargetChosen(FeatherTrophy trophy, Pawn dresser, LocalTargetInfo target, bool queueOrder)
+    private static void ForceWearTargetChosen(AwardedTrophy trophy, Pawn dresser, LocalTargetInfo target, bool queueOrder)
     {
         if (!target.TryGetPawn(out var targetPawn) || targetPawn.apparel == null) return;
 
@@ -111,9 +111,9 @@ public static class FeatherTrophyUtility
         => BlockedWearOption(apparel, "TribalTrophies_Trophy_Common_NeedsCeremony".Translate().CapitalizeFirst(), true);
 
     public static bool NeedsCeremony(Thing thing)
-        => thing is FeatherTrophy { IsAdorned: false };
+        => thing is AwardedTrophy { IsAdorned: false };
     
-    public static bool CanWearTrophy(Pawn pawn, FeatherTrophy trophy)
+    public static bool CanWearTrophy(Pawn pawn, AwardedTrophy trophy)
     {
         if (pawn?.apparel == null)
             return false;
@@ -131,7 +131,7 @@ public static class FeatherTrophyUtility
         }
     }
 
-    public static bool PawnOwnsBiocodedFeatherTrophyDef(Pawn p, ThingDef apparelDef)
+    public static bool PawnOwnsBiocodedAwardedTrophyDef(Pawn p, ThingDef apparelDef)
     {
         var worn = p.apparel?.WornApparel;
         if (worn != null)
@@ -139,7 +139,7 @@ public static class FeatherTrophyUtility
             for (var i = 0; i < worn.Count; i++)
             {
                 if (worn[i].def != apparelDef) continue;
-                if (worn[i] is FeatherTrophy featherTrophy && featherTrophy.IsOwnedBy(p))
+                if (worn[i] is AwardedTrophy featherTrophy && featherTrophy.IsOwnedBy(p))
                     return true;
             }
         }
@@ -148,14 +148,14 @@ public static class FeatherTrophyUtility
         for (var i = 0; i < inv.Count; i++)
         {
             if (inv[i].def != apparelDef) continue;
-            if (inv[i] is FeatherTrophy featherTrophy && featherTrophy.IsOwnedBy(p))
+            if (inv[i] is AwardedTrophy featherTrophy && featherTrophy.IsOwnedBy(p))
                 return true;
         }
         return false;
     }
 
 
-    public static bool TryGetDisplaySlot(Pawn pawn, FeatherTrophy trophy, out int index, out int count)
+    public static bool TryGetDisplaySlot(Pawn pawn, AwardedTrophy trophy, out int index, out int count)
     {
         index = -1;
         count = 0;
@@ -170,7 +170,7 @@ public static class FeatherTrophyUtility
 
         for (var i = 0; i < worn.Count; i++)
         {
-            if (worn[i] is not FeatherTrophy other)
+            if (worn[i] is not AwardedTrophy other)
                 continue;
             if (seen++ >= maxDisplayed)
                 break;

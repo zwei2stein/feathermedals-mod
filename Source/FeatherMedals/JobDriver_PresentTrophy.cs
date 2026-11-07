@@ -22,7 +22,7 @@ public class JobDriver_PresentTrophy : JobDriver
 
     private int ticksTillSocialInteraction = 60;
 
-    private FeatherTrophy Trophy => job.GetTarget(TrophyInd).Thing as FeatherTrophy;
+    private AwardedTrophy Trophy => job.GetTarget(TrophyInd).Thing as AwardedTrophy;
     
     private Pawn Adorned => job.GetTarget(AdornedInd).Pawn;
     

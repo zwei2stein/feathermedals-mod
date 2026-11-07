@@ -18,7 +18,7 @@ public static class RitualOutcomeTraitUtility
             : 1f;
     }
     
-    public static void GiveRandomTrait(Pawn pawn, FeatherTrophy trophy)
+    public static void GiveRandomTrait(Pawn pawn, AwardedTrophy trophy)
     {
         var candidates = BuildCandidates(pawn, trophy).ToList();
 
@@ -51,7 +51,7 @@ public static class RitualOutcomeTraitUtility
         }
     }
 
-    private static IEnumerable<TrophyTraitChange> BuildCandidates(Pawn pawn, FeatherTrophy trophy)
+    private static IEnumerable<TrophyTraitChange> BuildCandidates(Pawn pawn, AwardedTrophy trophy)
     {
         var ext = trophy.def.GetModExtension<TrophyExtension>();
         if (ext == null)
@@ -88,7 +88,7 @@ public static class RitualOutcomeTraitUtility
         return !traits.allTraits.Any(t => t.def.ConflictsWith(probe));
     }
 
-    private static void Remove(Pawn pawn, TrophyTraitChange picked, FeatherTrophy trophy)
+    private static void Remove(Pawn pawn, TrophyTraitChange picked, AwardedTrophy trophy)
     {
         var existing =  pawn.story.traits.allTraits.FirstOrDefault(t => t.def == picked.Entry.trait && t.Degree == picked.Entry.degree);
         pawn.story.traits.RemoveTrait(existing);
@@ -107,7 +107,7 @@ public static class RitualOutcomeTraitUtility
 
     }
 
-    private static void Add(Pawn pawn, TrophyTraitChange picked, FeatherTrophy trophy)
+    private static void Add(Pawn pawn, TrophyTraitChange picked, AwardedTrophy trophy)
     {
         var newTrait = new Trait(picked.Entry.trait, picked.Entry.degree);
         pawn.story.traits.GainTrait(newTrait);
@@ -129,13 +129,13 @@ public static class RitualOutcomeTraitUtility
     private const int TROPHIES_HONORED = 5;
     private const int TROPHIES_EXALTED = 7;
     
-    public static void UpdateDecoratedTrait(Pawn pawn, FeatherTrophy trophy)
+    public static void UpdateDecoratedTrait(Pawn pawn, AwardedTrophy trophy)
     {
         var traits = pawn.story?.traits;
         if (traits == null || pawn.apparel == null)
             return;
 
-        var trophyCount = pawn.apparel.WornApparel.Count(a => a is FeatherTrophy);
+        var trophyCount = pawn.apparel.WornApparel.Count(a => a is AwardedTrophy);
         var targetDegree = trophyCount switch
         {
             >= TROPHIES_EXALTED => 2,

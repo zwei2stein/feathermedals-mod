@@ -74,7 +74,7 @@ namespace TribalTrophies
             if (pawn?.apparel == null)
                 return rows;
 
-            foreach (var featherTrophy in pawn.apparel.WornApparel.OfType<FeatherTrophy>())
+            foreach (var featherTrophy in pawn.apparel.WornApparel.OfType<AwardedTrophy>())
                 rows.Add(new FeatherTrophyRecordDrawer(featherTrophy));
             foreach (var tongue in WornDriedTongues(pawn))
                 rows.Add(new TrophyBodyPartRecordDrawer(tongue));

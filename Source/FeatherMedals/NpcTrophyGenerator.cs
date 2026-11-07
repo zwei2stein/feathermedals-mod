@@ -37,7 +37,7 @@ public class NpcTrophyGuaranteeExtension : DefModExtension
         {
             if (pick.trophy == null)
                 yield return $"{nameof(trophies)} has an entry without {nameof(NpcTrophyPick.trophy)}";
-            else if (!FeatherTrophyUtility.IsFeatherTrophyDef(pick.trophy))
+            else if (!AwardedTrophyUtility.IsAwardedTrophyDef(pick.trophy))
                 yield return $"{nameof(trophies)}: {pick.trophy.defName} is not a feather trophy";
 
             if (pick.chance < 0f || pick.chance > 1f)
@@ -69,7 +69,7 @@ public static class NpcTrophyGenerator
             var all = DefDatabase<ThingDef>.AllDefsListForReading;
             for (var i = 0; i < all.Count; i++)
             {
-                if (FeatherTrophyUtility.IsFeatherTrophyDef(all[i]))
+                if (AwardedTrophyUtility.IsAwardedTrophyDef(all[i]))
                     field.Add(all[i]);
             }
             return field;
@@ -268,8 +268,8 @@ public static class NpcTrophyGenerator
         var fallbackPresenter = FallbackPresenter(pawn);
 
         // lets the Wear gate and HasPartsToWear patch through, same as a ceremony
-        var previous = FeatherTrophyUtility.ApplyingCeremonyAdorning;
-        FeatherTrophyUtility.ApplyingCeremonyAdorning = true;
+        var previous = AwardedTrophyUtility.ApplyingCeremonyAdorning;
+        AwardedTrophyUtility.ApplyingCeremonyAdorning = true;
         try
         {
             var defs = new List<ThingDef>();
@@ -281,7 +281,7 @@ public static class NpcTrophyGenerator
             if (defs.Count == 0)
                 return;
 
-            var made = new List<FeatherTrophy>();
+            var made = new List<AwardedTrophy>();
 
             // preferred feathers first (leaders get a second pass)
             var preferred = PreferredTrophies(pawn).ToList();
@@ -312,7 +312,7 @@ public static class NpcTrophyGenerator
             // oldest first, so the newest one is the last to be worn and the one that grants the Decorated trait
             made.Sort((a, b) => a.adorned.tick.CompareTo(b.adorned.tick));
 
-            FeatherTrophy newest = null;
+            AwardedTrophy newest = null;
             foreach (var featherTrophy in made)
             {
                 pawn.apparel.Wear(featherTrophy, false, true);
@@ -330,13 +330,13 @@ public static class NpcTrophyGenerator
         }
         finally
         {
-            FeatherTrophyUtility.ApplyingCeremonyAdorning = previous;
+            AwardedTrophyUtility.ApplyingCeremonyAdorning = previous;
         }
     }
 
-    private static FeatherTrophy CreateFeatherTrophy(Pawn pawn, ThingDef def, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
+    private static AwardedTrophy CreateFeatherTrophy(Pawn pawn, ThingDef def, List<Pawn> pool, Pawn fallbackPresenter, bool leader)
     {
-        var featherTrophy = (FeatherTrophy)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
+        var featherTrophy = (AwardedTrophy)ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
         if (!featherTrophy.PawnCanWear(pawn, true))
         {
             featherTrophy.Destroy();
@@ -352,7 +352,7 @@ public static class NpcTrophyGenerator
         return featherTrophy;
     }
 
-    private static void SetTrophyQuality(FeatherTrophy trophy, Pawn pawn, bool leader)
+    private static void SetTrophyQuality(AwardedTrophy trophy, Pawn pawn, bool leader)
     {
         var comp = trophy.TryGetComp<CompQuality>();
         if (comp == null)

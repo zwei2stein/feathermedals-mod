@@ -8,17 +8,17 @@ namespace TribalTrophies;
 // possibly with tale,
 // with potential effects like trait changes that are yet to be realized
 // but no adorning ceremony details (it did not happen yet)
-public class FeatherTrophyDetailDrawer : ITrophyRecordRow
+public class AwardedTrophyDetailDrawer : ITrophyRecordRow
 {
-    private readonly FeatherTrophy _trophy;
+    private readonly AwardedTrophy _trophy;
     private readonly string _tale;
 
-    public FeatherTrophyDetailDrawer(FeatherTrophy trophy) : this(trophy, trophy.tale)
+    public AwardedTrophyDetailDrawer(AwardedTrophy trophy) : this(trophy, trophy.tale)
     {
     }
 
     // tale being written, shown instead of the saved one
-    public FeatherTrophyDetailDrawer(FeatherTrophy trophy, string tale)
+    public AwardedTrophyDetailDrawer(AwardedTrophy trophy, string tale)
     {
         this._trophy = trophy;
         this._tale = tale;
@@ -56,9 +56,9 @@ public class FeatherTrophyDetailDrawer : ITrophyRecordRow
         if (!_tale.NullOrEmpty())
         {
             if (draw)
-                FeatherTrophyUI.DrawTale(_tale, rect, ref curY);
+                AwardedTrophyUI.DrawTale(_tale, rect, ref curY);
             else
-                curY += FeatherTrophyUI.TaleHeight(_tale, rect.width);
+                curY += AwardedTrophyUI.TaleHeight(_tale, rect.width);
         }
 
         // Stat bonuses, green, centered

@@ -12,14 +12,14 @@ public class ITab_TrophyRecord : ITab_TrophyRows
     protected override List<ITrophyRecordRow> Rows()
     {
         var rows = new List<ITrophyRecordRow>();
-        if (SelThing is not FeatherTrophy featherTrophy)
+        if (SelThing is not AwardedTrophy featherTrophy)
             return rows;
 
         // adorned: the record of its ceremony; not yet adorned: what it may do
         if (featherTrophy.IsAdorned)
             rows.Add(new FeatherTrophyRecordDrawer(featherTrophy, verbose: true));
         else
-            rows.Add(new FeatherTrophyDetailDrawer(featherTrophy));
+            rows.Add(new AwardedTrophyDetailDrawer(featherTrophy));
         return rows;
     }
 

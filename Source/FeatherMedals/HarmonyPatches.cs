@@ -32,16 +32,16 @@ public class HarmonyPatches
     }
     
     [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.Wear))]
-    public static class PatchFeatherTrophyBiocodeManualWear
+    public static class PatchAwardedTrophyBiocodeManualWear
     {
         public static void Finalizer(Apparel newApparel)
         {
-            if (newApparel is FeatherTrophy) FeatherTrophyUtility.EvaluatingItem = null;
+            if (newApparel is AwardedTrophy) AwardedTrophyUtility.EvaluatingItem = null;
         }
         
         public static bool Prefix(Pawn_ApparelTracker __instance, Apparel newApparel)
         {
-            if (newApparel is not FeatherTrophy featherTrophy) return true;
+            if (newApparel is not AwardedTrophy featherTrophy) return true;
 
             var pawn = __instance.pawn;
 
@@ -51,11 +51,11 @@ public class HarmonyPatches
                 if (featherTrophy.IsOwnedBy(pawn))
                 {
                     // vanilla Wear asks HasPartsToWear about this exact item, see Patch_ApparelUtility_HasPartsToWear
-                    FeatherTrophyUtility.EvaluatingItem = featherTrophy;
+                    AwardedTrophyUtility.EvaluatingItem = featherTrophy;
                     return true;
                 }
 
-                Messages.Message(FeatherTrophyUtility.WearBlockedReason(featherTrophy, pawn),
+                Messages.Message(AwardedTrophyUtility.WearBlockedReason(featherTrophy, pawn),
                     featherTrophy.AdornedPawn.Pawn,
                     MessageTypeDefOf.RejectInput,
                     false);
@@ -63,7 +63,7 @@ public class HarmonyPatches
             }
 
             // The ceremony is the only way to earn a trophy, see RitualOutcomeEffectWorkerAdornTrophy
-            if (!FeatherTrophyUtility.ApplyingCeremonyAdorning)
+            if (!AwardedTrophyUtility.ApplyingCeremonyAdorning)
             {
                 Messages.Message("TribalTrophies_Trophy_Common_NeedsCeremony".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
@@ -81,16 +81,16 @@ public class HarmonyPatches
             if (!__result || p == null)
                 return;
             
-            if (!FeatherTrophyUtility.IsFeatherTrophyDef(apparel))
+            if (!AwardedTrophyUtility.IsAwardedTrophyDef(apparel))
                 return;
 
-            if (FeatherTrophyUtility.ApplyingCeremonyAdorning)
+            if (AwardedTrophyUtility.ApplyingCeremonyAdorning)
                 return;
             
-            if (FeatherTrophyUtility.EvaluatingItem is FeatherTrophy item && item.def == apparel && item.IsOwnedBy(p))
+            if (AwardedTrophyUtility.EvaluatingItem is AwardedTrophy item && item.def == apparel && item.IsOwnedBy(p))
                 return;
             
-            if (FeatherTrophyUtility.PawnOwnsBiocodedFeatherTrophyDef(p, apparel))
+            if (AwardedTrophyUtility.PawnOwnsBiocodedAwardedTrophyDef(p, apparel))
                 return;
 
             // only the ceremony can put a trophy on a pawn
@@ -104,21 +104,21 @@ public class HarmonyPatches
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherTrophy featherTrophy) return true;
+            if (clickedThing is not AwardedTrophy featherTrophy) return true;
 
             var pawn = context.FirstSelectedPawn;
             if (featherTrophy.IsOwnedBy(pawn))
             {
                 // vanilla runs, HasPartsToWear lets the owner through
-                FeatherTrophyUtility.EvaluatingItem = featherTrophy;
+                AwardedTrophyUtility.EvaluatingItem = featherTrophy;
                 return true;
             }
 
-            __result = FeatherTrophyUtility.BlockedWearOption(featherTrophy, FeatherTrophyUtility.WearBlockedReason(featherTrophy, pawn), false);
+            __result = AwardedTrophyUtility.BlockedWearOption(featherTrophy, AwardedTrophyUtility.WearBlockedReason(featherTrophy, pawn), false);
             return false;
         }
 
-        public static void Finalizer() => FeatherTrophyUtility.EvaluatingItem = null;
+        public static void Finalizer() => AwardedTrophyUtility.EvaluatingItem = null;
     }
     
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DressOtherPawn), "GetSingleOptionFor", typeof(Thing), typeof(FloatMenuContext))]
@@ -126,28 +126,28 @@ public class HarmonyPatches
     {
         public static bool Prefix(Thing clickedThing, FloatMenuContext context, ref FloatMenuOption __result)
         {
-            if (clickedThing is not FeatherTrophy { IsAdorned: true } featherTrophy) return true;
+            if (clickedThing is not AwardedTrophy { IsAdorned: true } featherTrophy) return true;
 
-            __result = FeatherTrophyUtility.ForceWearOption(featherTrophy, context.FirstSelectedPawn);
+            __result = AwardedTrophyUtility.ForceWearOption(featherTrophy, context.FirstSelectedPawn);
             return false;
         }
 
         public static void Postfix(Thing clickedThing, ref FloatMenuOption __result)
         {
-            if (__result == null || !FeatherTrophyUtility.NeedsCeremony(clickedThing)) return;
-            __result = FeatherTrophyUtility.CeremonyOnlyForceWearOption((Apparel)clickedThing);
+            if (__result == null || !AwardedTrophyUtility.NeedsCeremony(clickedThing)) return;
+            __result = AwardedTrophyUtility.CeremonyOnlyForceWearOption((Apparel)clickedThing);
         }
     }
     
     [HarmonyPatch(typeof(ApparelUtility), nameof(ApparelUtility.CanWearTogether))]
-    public static class PatchFeatherTrophyConflict
+    public static class PatchAwardedTrophyConflict
     {
         public static void Postfix(ThingDef A, ThingDef B, BodyDef body, ref bool __result)
         {
             if (__result)
                 return;
             
-            if (FeatherTrophyUtility.IsFeatherTrophyDef(A) && FeatherTrophyUtility.IsFeatherTrophyDef(B)) 
+            if (AwardedTrophyUtility.IsAwardedTrophyDef(A) && AwardedTrophyUtility.IsAwardedTrophyDef(B)) 
                 __result = true;
         }
     }

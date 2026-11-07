@@ -3,7 +3,7 @@ using Verse;
 
 namespace TribalTrophies;
 
-public static class FeatherTrophyUI
+public static class AwardedTrophyUI
 {
     // ceremony stages: 0 poor, 1 decent, 2 grand, 3 legendary
     public static Color CeremonyQualityColor(int stage)
@@ -41,10 +41,10 @@ public static class FeatherTrophyUI
         curY += taleHeight + TrophyUIStyle.TaleGap;
     }
 
-    public static float TraitChangeSummaryHeight(FeatherTrophy featherTrophy, float width)
+    public static float TraitChangeSummaryHeight(AwardedTrophy awardedTrophy, float width)
     {
         var height = 0f;
-        foreach (var text in new[] { featherTrophy.GetDecoratedTraitLabel(true), featherTrophy.GetAddedTraitLabel(true), featherTrophy.GetRemovedTraitLabel(true) })
+        foreach (var text in new[] { awardedTrophy.GetDecoratedTraitLabel(true), awardedTrophy.GetAddedTraitLabel(true), awardedTrophy.GetRemovedTraitLabel(true) })
         {
             if (text != null)
                 height += UIHelper.CompactLineHeight(text, width);
@@ -52,11 +52,11 @@ public static class FeatherTrophyUI
         return height;
     }
 
-    public static void DrawTraitChangeSummary(FeatherTrophy featherTrophy, Rect area, ref float curY, TextAnchor anchor)
+    public static void DrawTraitChangeSummary(AwardedTrophy awardedTrophy, Rect area, ref float curY, TextAnchor anchor)
     {
-        DrawTraitChangeLine(featherTrophy.GetDecoratedTraitLabel(true), TrophyUIStyle.GoldColor, area, ref curY, anchor);
-        DrawTraitChangeLine(featherTrophy.GetAddedTraitLabel(true), Color.green, area, ref curY, anchor);
-        DrawTraitChangeLine(featherTrophy.GetRemovedTraitLabel(true), Color.red, area, ref curY, anchor);
+        DrawTraitChangeLine(awardedTrophy.GetDecoratedTraitLabel(true), TrophyUIStyle.GoldColor, area, ref curY, anchor);
+        DrawTraitChangeLine(awardedTrophy.GetAddedTraitLabel(true), Color.green, area, ref curY, anchor);
+        DrawTraitChangeLine(awardedTrophy.GetRemovedTraitLabel(true), Color.red, area, ref curY, anchor);
     }
 
     private static void DrawTraitChangeLine(string text, Color color, Rect area, ref float curY, TextAnchor anchor)

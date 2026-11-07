@@ -12,7 +12,7 @@ public class RitualStageAction_StartAdorning : RitualStageAction
         if (leader != null && adorned != null)
         {
             if (TribalTrophiesMod.Settings.PromptForTaleDuringCeremony)
-                if (ritual.selectedTarget.Thing is FeatherTrophy featherTrophy && !featherTrophy.HasTale)
+                if (ritual.selectedTarget.Thing is AwardedTrophy featherTrophy && !featherTrophy.HasTale)
                     Find.WindowStack.Add(new Dialog_WriteTale(featherTrophy));
                 
             Messages.Message(

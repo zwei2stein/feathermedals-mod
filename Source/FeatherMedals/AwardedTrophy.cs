@@ -6,7 +6,7 @@ using Verse.AI.Group;
 
 namespace TribalTrophies
 {
-    public class FeatherTrophy : Apparel
+    public class AwardedTrophy : Apparel
     {
         public RememberedPawn AdornedPawn => adornedPawn;
             

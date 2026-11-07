@@ -10,11 +10,11 @@ namespace TribalTrophies;
 // with ceremony that has already happened related info
 public class FeatherTrophyRecordDrawer : TrophyRowDrawer
 {
-    private readonly FeatherTrophy _trophy;
+    private readonly AwardedTrophy _trophy;
     private readonly bool verbose;
 
     // verbose: also who it honors and how the ceremony went, for views of this one trophy
-    public FeatherTrophyRecordDrawer(FeatherTrophy trophy, bool verbose = false)
+    public FeatherTrophyRecordDrawer(AwardedTrophy trophy, bool verbose = false)
     {
         this._trophy = trophy;
         this.verbose = verbose;
@@ -41,7 +41,7 @@ public class FeatherTrophyRecordDrawer : TrophyRowDrawer
         if (!verbose || _trophy.ceremonyQuality < 0)
             return null;
         return "TribalTrophies_AdorningCeremony_Inspect_CeremonyQuality".Translate(
-            FeatherTrophyUI.CeremonyQualityLabelColored(_trophy.ceremonyQuality).Named("QUALITY")).Resolve();
+            AwardedTrophyUI.CeremonyQualityLabelColored(_trophy.ceremonyQuality).Named("QUALITY")).Resolve();
     }
 
     private string GetAdorningInfo()
@@ -83,9 +83,9 @@ public class FeatherTrophyRecordDrawer : TrophyRowDrawer
         if (_trophy.HasTale)
         {
             if (draw)
-                FeatherTrophyUI.DrawTale(_trophy.tale, area, ref curY);
+                AwardedTrophyUI.DrawTale(_trophy.tale, area, ref curY);
             else
-                curY += FeatherTrophyUI.TaleHeight(_trophy.tale, area.width);
+                curY += AwardedTrophyUI.TaleHeight(_trophy.tale, area.width);
         }
         else
         {
@@ -113,9 +113,9 @@ public class FeatherTrophyRecordDrawer : TrophyRowDrawer
         }
 
         if (draw)
-            FeatherTrophyUI.DrawTraitChangeSummary(_trophy, area, ref curY, TextAnchor.MiddleLeft);
+            AwardedTrophyUI.DrawTraitChangeSummary(_trophy, area, ref curY, TextAnchor.MiddleLeft);
         else
-            curY += FeatherTrophyUI.TraitChangeSummaryHeight(_trophy, area.width);
+            curY += AwardedTrophyUI.TraitChangeSummaryHeight(_trophy, area.width);
 
         if (HasAdorningInfo())
         {
