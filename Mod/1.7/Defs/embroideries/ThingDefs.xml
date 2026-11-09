@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<!--  BASE  -->
+
+	<ThingDef ParentName="ApparelBase" Name="TribalTrophies_Embroidery_Base" Abstract="True">
+		<thingClass>TribalTrophies.EmbroideryTrophy</thingClass>
+		<smeltable>false</smeltable>
+		<inspectorTabs>
+			<li>TribalTrophies.ITab_TrophyRecord</li>
+		</inspectorTabs>
+		<comps Inherit="False">
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Biocodable"/>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<equippedStatOffsets>
+			<PawnBeauty>0.1</PawnBeauty>
+		</equippedStatOffsets>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Mass>0.01</Mass>
+			<EquipDelay>0.5</EquipDelay>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Bulk MayRequire="CETeam.CombatExtended">0.1</Bulk>
+			<WornBulk MayRequire="CETeam.CombatExtended">0</WornBulk>
+		</statBases>
+		<thingCategories Inherit="False">
+			<li>TribalTrophies_Apparel_Embroideries</li>
+		</thingCategories>
+		<apparel>
+			<renderSkipFlags><li>None</li></renderSkipFlags>
+			<wearPerDay>0</wearPerDay>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<layers><li>TribalTrophies_TrophyLayer</li></layers>
+			<bodyPartGroups><li>Torso</li></bodyPartGroups>
+			<scoreOffset>-1000</scoreOffset>
+			<renderNodeProperties>
+				<li>
+					<debugLabel>Embroidery trophy</debugLabel>
+					<nodeClass>TribalTrophies.PawnRenderNode_Trophy</nodeClass>
+					<subworkerClasses>
+						<li>TribalTrophies.PawnRenderSubWorker_Trophy</li>
+					</subworkerClasses>
+					<parentTagDef>Torso</parentTagDef>
+					<overrideMeshSize>1</overrideMeshSize>
+					<drawSize>0.45</drawSize>
+					<baseLayer>80</baseLayer>
+					<drawData>
+						<dataNorth>
+							<flip>true</flip>
+							<offset>(0, 0.08, 0.08)</offset>
+						</dataNorth>
+						<dataEast>
+							<flip>true</flip>
+							<offset>(0, 0, 0.08)</offset>
+						</dataEast>
+						<dataWest>
+							<flip>true</flip>
+							<offset>(0, 0, 0.08)</offset>
+						</dataWest>
+						<dataSouth>
+							<layer>45</layer>
+							<offset>(0, -0.08, 0.08)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+	</ThingDef>
+
+	<!--  TIER BASES  -->
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_Base" Name="TribalTrophies_Embroidery_BaseSimple" Abstract="True">
+		<statBases>
+			<MarketValue>100</MarketValue>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_Base" Name="TribalTrophies_Embroidery_BassOrnate" Abstract="True">
+		<statBases>
+			<MarketValue>200</MarketValue>
+		</statBases>
+	</ThingDef>
+
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewThrumbo</defName>
+		<label>embroidery: thrumbo slayer</label>
+		<description>Embroidery depicting slaying the wild thrumbo.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewThrumbo</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

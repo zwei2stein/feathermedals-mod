@@ -23,6 +23,8 @@ namespace TribalTrophies
         public TraitDef removedTrait = null;
         public int removedTraitDegree = 0;
         public int decoratedDegree = -1; // Decorated trait degree, -1 = unchanged
+
+        public TrophyKindDef Kind => field ??= AwardedTrophyUtility.KindOf(def);
             
         public override void ExposeData()
         {
@@ -92,7 +94,7 @@ namespace TribalTrophies
             var adornCeremonyGizmo = new Command_Action
             {
                 defaultLabel = "TribalTrophies_AdorningCeremony_Common_CeremonyLabel".Translate(),
-                defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc".Translate(),
+                defaultDesc = "TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc".Translate(Kind.HonoreeIndefinite.Named("HONOREE")),
                 icon = this.def.uiIcon, 
                 action = StartTrophyAdorningRitual
             };
@@ -165,7 +167,7 @@ namespace TribalTrophies
         private void StartTrophyAdorningRitual()
         {
             if (!ColonyHasPresenter(out Pawn presenter)) return;
-            var pattern = TribalTrophiesDefOf.TribalTrophies_AdorningCeremony_Pattern;
+            var pattern = Kind.ceremonyPrecept.ritualPatternBase;
 
             var safeMap = this.Map ?? this.MapHeld;
             if (safeMap == null) return;
@@ -173,7 +175,7 @@ namespace TribalTrophies
             var ritualTarget = new TargetInfo(this);
 
             // A real precept: it lives, and is saved, in the ideo, so the running ritual can find it again after a reload
-            var ritual = GetCeremonyPrecept(presenter.Ideo);
+            var ritual = GetCeremonyPrecept(presenter.Ideo, Kind.ceremonyPrecept);
             var ceremonyName = "TribalTrophies_AdorningCeremony_Common_CeremonyLabel".Translate();
             
             Dialog_BeginRitual.PawnFilter filter = (pawn, voluntary, allowOtherIdeos) => pawn.GetLord() == null;
@@ -218,9 +220,8 @@ namespace TribalTrophies
             ));
         }
         
-        private static Precept_Ritual GetCeremonyPrecept(Ideo ideo)
+        private static Precept_Ritual GetCeremonyPrecept(Ideo ideo, PreceptDef def)
         {
-            var def = TribalTrophiesDefOf.TribalTrophies_AdorningCeremonyPrecept;
             if (ideo.GetPrecept(def) is Precept_Ritual existing)
                 return existing;
 
@@ -268,11 +269,12 @@ namespace TribalTrophies
         
         public string GetDecoratedTraitLabel(bool terse = false)
         {
-            if (decoratedDegree < 0)
+            var trait = Kind.decoratedTrait;
+            if (decoratedDegree < 0 || trait == null)
                 return null;
             // Decorated degrees are titles, capitalized in full sentences too
             return TraitChangeLabel("TribalTrophies_AdorningCeremony_Common_TraitAdded_Short", "TribalTrophies_AdorningCeremony_Common_DecoratedGained",
-                TribalTrophiesDefOf.TribalTrophies_Decorated.DataAtDegree(decoratedDegree).label.CapitalizeFirst(), terse);
+                trait.DataAtDegree(decoratedDegree).label.CapitalizeFirst(), terse);
         }
 
         private string TraitChangeLabel(string shortKey, string fullKey, string traitLabel, bool terse)

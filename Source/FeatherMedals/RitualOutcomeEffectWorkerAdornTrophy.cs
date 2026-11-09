@@ -101,13 +101,15 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
 
         featherTrophy.ceremonyQuality = stageIndex;
 
-        var memory = (Thought_Memory)ThoughtMaker.MakeThought(TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy, stageIndex);
+        var kind = featherTrophy.Kind;
+
+        var memory = (Thought_Memory)ThoughtMaker.MakeThought(kind.adornedThought, stageIndex);
         adorned.needs?.mood?.thoughts.memories.TryGainMemory(memory);
 
         foreach (var pawn in totalPresence.Keys)
         {
             if (pawn == adorned) continue;
-            pawn.needs?.mood?.thoughts.memories.TryGainMemory(TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed);
+            pawn.needs?.mood?.thoughts.memories.TryGainMemory(kind.witnessedThought);
         }
 
         if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
@@ -123,7 +125,7 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
             presenter.Named("PRESENTER"));
         letterText += "\n\n";
         letterText += "TribalTrophies_AdorningCeremony_Letter_Attendance"
-            .Translate(adorned.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES") );
+            .Translate(adorned.Named("PAWN"), qualityLabel.Named("QUALITY"), attendees.Named("ATTENDEES"), kind.communityLabel.Named("COMMUNITY"));
             
         if (featherTrophy.HasTale)
         {
@@ -145,7 +147,7 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
             lookTargets: adorned
         );
 
-        TaleRecorder.RecordTale(TribalTrophiesDefOf.TribalTrophies_AdornedTrophyTale, presenter, adorned);
+        TaleRecorder.RecordTale(kind.adornedTale, presenter, adorned);
 
         Find.WindowStack.Add(new Dialog_TrophyAdorned(featherTrophy));
     }

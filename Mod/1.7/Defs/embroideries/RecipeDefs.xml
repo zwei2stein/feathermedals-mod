@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--  RECIPE BASE  -->
+
+	<RecipeDef Name="TribalTrophies_Trophy_Embroidery_RecipeBase" Abstract="True">
+		<workAmount>800</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>TribalTrophies_MedievalHeroicEmbroidery</li>
+		</researchPrerequisites>
+	</RecipeDef>
+
+	<!--  TIER RECIPE BASES  -->
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_RecipeBase" Name="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase" Abstract="True">
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_RecipeBase" Name="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase" Abstract="True">
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<!--  SIMPLE RECIPES  -->
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_RecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewThrumbot</defName>
+		<label>embroidery: thrumbo slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the wild thrumbo.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewThrumbo>1</TribalTrophies_Trophy_Embroidery_SlewThrumbo>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Silver</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Leather_Thrumbo</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>ThrumboHorn</li></thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Silver</li>
+				<li>Leather_Thrumbo</li>
+				<li>Dye</li>
+				<li>ThrumboHorn</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+
+</Defs>

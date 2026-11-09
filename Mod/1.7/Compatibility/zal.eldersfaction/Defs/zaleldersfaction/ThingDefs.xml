@@ -18,6 +18,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li MayRequire="phil42.allergies">
 						<trait>P42_Allergy</trait>

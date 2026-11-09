@@ -11,12 +11,12 @@
 
 	<TribalTrophies_AdorningCeremony_Letter_Label>Adorned: {TROPHY}</TribalTrophies_AdorningCeremony_Letter_Label>
 	<TribalTrophies_AdorningCeremony_Letter_Adorned>{PAWN_labelShort} has been ceremonially adorned with {TROPHY} by {PRESENTER_labelShort}.</TribalTrophies_AdorningCeremony_Letter_Adorned>
-	<TribalTrophies_AdorningCeremony_Letter_Attendance>{ATTENDEES} of the tribe attended the {QUALITY} adorning ceremony, and the deeds of {PAWN_labelShort} have been recognized.</TribalTrophies_AdorningCeremony_Letter_Attendance>
+	<TribalTrophies_AdorningCeremony_Letter_Attendance>{ATTENDEES} of the {COMMUNITY} attended the {QUALITY} adorning ceremony, and the deeds of {PAWN_labelShort} have been recognized.</TribalTrophies_AdorningCeremony_Letter_Attendance>
 	<TribalTrophies_AdorningCeremony_Letter_Tale>Tale of Honor: "{0}"</TribalTrophies_AdorningCeremony_Letter_Tale>
 
 	<!-- ===== Gizmos (trophy) ===== -->
 
-	<TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc>Gather colonists to adorn a warrior with this trophy.</TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc>
+	<TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc>Gather colonists to adorn {HONOREE} with this trophy.</TribalTrophies_AdorningCeremony_Gizmo_CeremonyDesc>
 	<TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned>Someone has already been adorned with this trophy.</TribalTrophies_AdorningCeremony_Gizmo_DisabledAlreadyAdorned>
 	<TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround>The trophy must be put down before starting an adorning ceremony.</TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround>
 	<TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter>Requires a colonist holding one of these roles: {SPEAKERS}.</TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter>
@@ -55,7 +55,7 @@
 	<!-- ===== TaleDialog (write the Tale of Honor) ===== -->
 
 	<TribalTrophies_AdorningCeremony_TaleDialog_Title>Tale of Honor</TribalTrophies_AdorningCeremony_TaleDialog_Title>
-	<TribalTrophies_AdorningCeremony_TaleDialog_Desc>Tell the Tale of Honor, recounting the deeds of a warrior.\nThe tale cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_TaleDialog_Desc>
+	<TribalTrophies_AdorningCeremony_TaleDialog_Desc>Tell the Tale of Honor, recounting the deeds of {HONOREE}.\nThe tale cannot be changed after the adorning.</TribalTrophies_AdorningCeremony_TaleDialog_Desc>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Suggest>Suggest</TribalTrophies_AdorningCeremony_TaleDialog_Suggest>
 	<TribalTrophies_AdorningCeremony_TaleDialog_Clear>Clear</TribalTrophies_AdorningCeremony_TaleDialog_Clear>
 
@@ -101,10 +101,8 @@
 
 	<!-- ===== Misc ===== -->
 
-	<!-- Tale of Honor generator fallbacks -->
-	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultName>Warrior</TribalTrophies_AdorningCeremony_Misc_TaleDefaultName>
+	<!-- Tale of Honor generator fallbacks, name and faction fallbacks are in TrophyKindDef -->
 	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultPossessive>their</TribalTrophies_AdorningCeremony_Misc_TaleDefaultPossessive>
 	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultSettlement>Hearth</TribalTrophies_AdorningCeremony_Misc_TaleDefaultSettlement>
-	<TribalTrophies_AdorningCeremony_Misc_TaleDefaultFaction>Tribe</TribalTrophies_AdorningCeremony_Misc_TaleDefaultFaction>
 
 </LanguageData>

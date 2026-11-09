@@ -31,6 +31,9 @@ public readonly struct TrophyTraitChange
 
 public class TrophyExtension : DefModExtension
 {
+    // awarded trophy type
+    public TrophyKindDef kind;
+
     public List<TrophyDynamicTrait> addsTraits;
     public List<TrophyDynamicTrait> removesTraits;
 

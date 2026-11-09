@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- feather trophies -->
+	<TribalTrophies.TrophyKindDef>
+		<defName>TribalTrophies_TrophyKind_Feather</defName>
+		<label>feather trophy</label>
+
+		<!-- ceremony -->
+		<ceremonyPrecept>TribalTrophies_AdorningCeremonyPrecept</ceremonyPrecept>
+		<speechInteraction>TribalTrophies_Speech_AdornTrophy</speechInteraction>
+		<adornedThought>TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy</adornedThought>
+		<witnessedThought>TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed</witnessedThought>
+		<adornedTale>TribalTrophies_AdornedTrophyTale</adornedTale>
+		<taleOfHonorRulePack>TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor</taleOfHonorRulePack>
+
+		<!-- wording -->
+		<communityLabel>tribe</communityLabel>
+		<honoreeLabel>warrior</honoreeLabel>
+
+		<!-- title trait: degree 0, 1, 2 at this many worn feathers -->
+		<decoratedTrait>TribalTrophies_Decorated</decoratedTrait>
+		<decoratedThresholds>
+			<li>3</li>
+			<li>5</li>
+			<li>7</li>
+		</decoratedThresholds>
+
+		<!-- fan over the head, tuned in mod settings -->
+		<layoutWorkerClass>TribalTrophies.TrophyLayoutWorker_Feathers</layoutWorkerClass>
+
+		<npcTrophies>true</npcTrophies>
+	</TribalTrophies.TrophyKindDef>
+
+</Defs>

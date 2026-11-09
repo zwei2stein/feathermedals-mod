@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- embroideries trophies -->
+	<TribalTrophies.TrophyKindDef>
+		<defName>TribalTrophies_TrophyKind_Embroidery</defName>
+		<label>embroidery trophy</label>
+
+		<!-- ceremony -->
+		<ceremonyPrecept>TribalTrophies_AdorningCeremonyPrecept</ceremonyPrecept>
+		<speechInteraction>TribalTrophies_Speech_AdornTrophy</speechInteraction>
+		<adornedThought>TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy</adornedThought>
+		<witnessedThought>TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed</witnessedThought>
+		<adornedTale>TribalTrophies_AdornedTrophyTale</adornedTale>
+		<taleOfHonorRulePack>TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor</taleOfHonorRulePack>
+
+		<!-- wording -->
+		<communityLabel>settlement</communityLabel>
+		<honoreeLabel>hero</honoreeLabel>
+
+		<!-- title trait: degree 0, 1, 2 at this many worn feathers -->
+		<decoratedTrait>TribalTrophies_Heroism</decoratedTrait>
+		<decoratedThresholds>
+			<li>3</li>
+			<li>5</li>
+			<li>7</li>
+		</decoratedThresholds>
+
+		<!-- follows sash diagonally over body, starting at shoulder, tuned in mod settings -->
+		<layoutWorkerClass>TribalTrophies.TrophyLayoutWorker_Embroideries</layoutWorkerClass>
+
+	</TribalTrophies.TrophyKindDef>
+
+</Defs>

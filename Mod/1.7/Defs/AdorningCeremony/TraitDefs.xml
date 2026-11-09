@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	
+	<!-- feathers, tribal -->
+	
 	<TraitDef>
 		<defName>TribalTrophies_Decorated</defName>
 		<commonality>0</commonality>
@@ -25,6 +28,43 @@
 			<li>
 				<label>elder</label>
 				<description>[PAWN_nameDef] stands among the most celebrated figures the tribe has ever known. [PAWN_possessive] name carries weight, and [PAWN_possessive] presence alone is enough to steady the nerves of those around [PAWN_objective].</description>
+				<degree>2</degree>
+				<statOffsets>
+					<SocialImpact>0.3</SocialImpact>
+					<MentalBreakThreshold>-0.15</MentalBreakThreshold>
+					<NegotiationAbility>0.02</NegotiationAbility>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	<!-- embroideries, medieval -->
+
+	<TraitDef>
+		<defName>TribalTrophies_Heroism</defName>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>brave</label>
+				<description>[PAWN_nameDef] has shown bravery in the face of danger. [PAWN_possessive] demeanor reflects the quiet confidence of someone who has proven themselves under pressure.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+			<li>
+				<label>courageous</label>
+				<description>[PAWN_nameDef] has been recognized repeatedly for exceptional courage and prowess. [PAWN_possessive] reputation precedes [PAWN_objective], and others in the settlement look to [PAWN_objective] for strength in difficult times.</description>
+				<degree>1</degree>
+				<statOffsets>
+					<SocialImpact>0.2</SocialImpact>
+					<MentalBreakThreshold>-0.1</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+			<li>
+				<label>heroic</label>
+				<description>[PAWN_nameDef] stands among the most celebrated figures the settlement has ever known. [PAWN_possessive] name carries weight, and [PAWN_possessive] presence alone is enough to steady the nerves of those around [PAWN_objective].</description>
 				<degree>2</degree>
 				<statOffsets>
 					<SocialImpact>0.3</SocialImpact>

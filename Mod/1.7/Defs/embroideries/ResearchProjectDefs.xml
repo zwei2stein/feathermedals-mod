@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>TribalTrophies_MedievalHeroicEmbroidery</defName>
+    <label>heroic embroidery</label>
+    <description>Intricate embroideries for honoring heroes with a sash depicting their deeds.</description>
+    <baseCost>200</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>1.80</researchViewY>
+    <prerequisites>
+      <li>TribalTrophies_TribalWarriorHonor</li>
+      <li>ComplexClothing</li>
+    </prerequisites>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->bravery</li>
+        <li>subject->embroideries</li>
+        <li>subject->Tale of Honor</li>
+
+        <li>subject_story->composed a Tale of Honor</li>
+        <li>subject_story->wrote an epic about heroic deeds</li>
+        <li>subject_story->discussed ways to exalt knights</li>
+        <li>subject_story->participated in battle, slain beast unscathed</li>
+        <li>subject_story->took the horn of a beast as a trophy</li>
+        <li>subject_story->was mortally wounded in combat, earning the respect of peers</li>
+        <li>subject_story->observed a ritual where heroes were adorned with embroideries depicting their deeds</li>
+
+        <li>subject_gerund->reciting Tales of Honor</li>
+        <li>subject_gerund->honoring heroes</li>
+        <li>subject_gerund->declaring heroic deeds</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+</Defs>

@@ -156,6 +156,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li MayRequire="Ludeon.RimWorld.Odyssey">
 						<trait>Delicate</trait>
@@ -187,6 +188,11 @@
 			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
 			<RangedCooldownFactor>-0.01</RangedCooldownFactor>
 		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
+			</li>
+		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
@@ -201,6 +207,11 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 			<MeleeHitChance>0.02</MeleeHitChance>
 		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
+			</li>
+		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
@@ -218,6 +229,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -261,6 +273,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -301,6 +314,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li MayRequire="Ludeon.RimWorld.Odyssey">
 						<trait>Delicate</trait>
@@ -334,6 +348,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -366,6 +381,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>Wimp</trait>
@@ -403,6 +419,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>SpeedOffset</trait>
@@ -439,6 +456,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>Wimp</trait>
@@ -478,6 +496,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>SlowLearner</trait>
@@ -519,6 +538,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
 					<li>
 						<trait>Nerves</trait>
@@ -556,6 +576,11 @@
 			<PainShockThreshold>0.02</PainShockThreshold>
 			<MentalBreakThreshold>-0.05</MentalBreakThreshold>
 		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
+			</li>
+		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
@@ -572,6 +597,11 @@
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
+			</li>
+		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 
@@ -588,6 +618,11 @@
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
 		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
+			</li>
+		</modExtensions>
 		<uiOrder>20</uiOrder>
 	</ThingDef>
 

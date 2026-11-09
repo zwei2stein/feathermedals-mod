@@ -19,7 +19,7 @@ public class Dialog_WriteTale : Window
         this._trophy = trophy;
         
         if (TribalTrophiesMod.Settings.AutoSuggestTale && !trophy.HasTale)
-            this.draft = TaleUtility.GenerateForPlayer() ?? "";
+            this.draft = TaleUtility.GenerateForPlayer(trophy.Kind) ?? "";
         else
             this.draft = trophy.tale ?? "";
         
@@ -72,7 +72,7 @@ public class Dialog_WriteTale : Window
         var instrRect = new Rect(rect.x, headerRect.yMax + 4f, rect.width, 36f);
         GUI.color = TrophyUIStyle.MutedColor;
         Text.Font = GameFont.Tiny;
-        Widgets.Label(instrRect, "TribalTrophies_AdorningCeremony_TaleDialog_Desc".Translate());
+        Widgets.Label(instrRect, "TribalTrophies_AdorningCeremony_TaleDialog_Desc".Translate(_trophy.Kind.HonoreeIndefinite.Named("HONOREE")));
         GUI.color = Color.white;
 
         // Text area — fills all space between instructions and the button row
@@ -105,7 +105,7 @@ public class Dialog_WriteTale : Window
 
         if (Widgets.ButtonText(new Rect(rect.x + btnWidth + 10f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Suggest".Translate()))
         {
-            draft = TaleUtility.GenerateForPlayer() ?? draft;
+            draft = TaleUtility.GenerateForPlayer(_trophy.Kind) ?? draft;
         }
 
         if (Widgets.ButtonText(new Rect(rect.x + (btnWidth + 10f) * 2f, btnY, btnWidth, BUTTON_HEIGHT), "TribalTrophies_AdorningCeremony_TaleDialog_Clear".Translate()))

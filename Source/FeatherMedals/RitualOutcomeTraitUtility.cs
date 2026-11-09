@@ -125,28 +125,23 @@ public static class RitualOutcomeTraitUtility
         );
     }
 
-    private const int TROPHIES_DECORATED = 3;
-    private const int TROPHIES_HONORED = 5;
-    private const int TROPHIES_EXALTED = 7;
-    
     public static void UpdateDecoratedTrait(Pawn pawn, AwardedTrophy trophy)
     {
         var traits = pawn.story?.traits;
         if (traits == null || pawn.apparel == null)
             return;
 
-        var trophyCount = pawn.apparel.WornApparel.Count(a => a is AwardedTrophy);
-        var targetDegree = trophyCount switch
-        {
-            >= TROPHIES_EXALTED => 2,
-            >= TROPHIES_HONORED => 1,
-            >= TROPHIES_DECORATED => 0,
-            _ => -1
-        };
+        // each kind has its own title trait, counted from its own trophies
+        var kind = trophy.Kind;
+        var def = kind.decoratedTrait;
+        if (def == null)
+            return;
+
+        var trophyCount = pawn.apparel.WornApparel.Count(a => a is AwardedTrophy other && other.Kind == kind);
+        var targetDegree = kind.DecoratedDegreeFor(trophyCount);
         if (targetDegree < 0)
             return;
 
-        var def = TribalTrophiesDefOf.TribalTrophies_Decorated;
         var existing = traits.GetTrait(def);
         if (existing != null && existing.Degree >= targetDegree)
             return;

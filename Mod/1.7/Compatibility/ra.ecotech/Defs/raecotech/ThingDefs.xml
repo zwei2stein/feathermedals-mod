@@ -16,6 +16,7 @@
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<addsTraits>
 					<li>
 						<trait>ET_SkytouchedTrait</trait>

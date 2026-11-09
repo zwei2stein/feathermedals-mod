@@ -49,7 +49,7 @@ public class JobGiver_PresentTrophy : ThinkNode_JobGiver
         if (speech)
         {
             job.showSpeechBubbles = true;
-            job.interaction = TribalTrophiesDefOf.TribalTrophies_Speech_AdornTrophy;
+            job.interaction = featherTrophy.Kind.speechInteraction;
             job.speechSoundMale = soundDefMale ?? SoundDefOf.Speech_Leader_Male;
             job.speechSoundFemale = soundDefFemale ?? SoundDefOf.Speech_Leader_Female;
         }

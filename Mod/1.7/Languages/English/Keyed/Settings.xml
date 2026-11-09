@@ -97,21 +97,33 @@
 
     <TribalTrophies_Settings_Display_Rendering_Label>Pawn rendering</TribalTrophies_Settings_Display_Rendering_Label>
 
-    <TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Label>Draw trophies on pawns</TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Label>
-    <TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip>If enabled, worn trophies will be drawn on pawns. Default: ON</TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip>
+    <TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Label>Draw feather trophies on pawns</TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Label>
+    <TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Tooltip>If enabled, worn feather trophies will be drawn on pawns. Default: ON</TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Tooltip>
 
-    <TribalTrophies_Settings_Display_Worn_Label>Worn trophies</TribalTrophies_Settings_Display_Worn_Label>
+    <TribalTrophies_Settings_Display_Rendering_Embroideries_DrawTrophiesOnPawns_Label>Draw embroidery trophies on pawns</TribalTrophies_Settings_Display_Rendering_Embroideries_DrawTrophiesOnPawns_Label>
+    <TribalTrophies_Settings_Display_Rendering_Embroideries_DrawTrophiesOnPawns_Tooltip>If enabled, worn embroidery trophies will be drawn on pawns. Default: ON</TribalTrophies_Settings_Display_Rendering_Embroideries_DrawTrophiesOnPawns_Tooltip>
 
-    <TribalTrophies_Settings_Display_Worn_TrophyScale_Label>Worn size: {SIZE}</TribalTrophies_Settings_Display_Worn_TrophyScale_Label>
-    <TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip>Size of trophies drawn on pawns. Default: 130%</TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip>
+    <TribalTrophies_Settings_Display_Worn_Feathers_Label>Worn feather trophies</TribalTrophies_Settings_Display_Worn_Feathers_Label>
 
+    <TribalTrophies_Settings_Display_Worn_Feathers_TrophyScale_Label>Worn feathers size: {SIZE}</TribalTrophies_Settings_Display_Worn_Feathers_TrophyScale_Label>
+    <TribalTrophies_Settings_Display_Worn_Feathers_TrophyScale_Tooltip>Size of trophies drawn on pawns. Default: 130%</TribalTrophies_Settings_Display_Worn_Feathers_TrophyScale_Tooltip>
+    
     <TribalTrophies_Settings_Display_Worn_FanOut_Label>Fanning out: {FANOUT}</TribalTrophies_Settings_Display_Worn_FanOut_Label>
     <TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>Controls how much feathers fan out. 0%: straight up, 100%: fully fanned out. Default: 35%</TribalTrophies_Settings_Display_Worn_FanOut_Tooltip>
 
     <TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>Vertical offset: {OFFSET}</TribalTrophies_Settings_Display_Worn_VerticalOffset_Label>
     <TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip>Moves trophies higher or lower. Default: 0.1</TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip>
 
-    <TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label>Displayed trophies: {COUNT}</TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label>
-    <TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Tooltip>Number of trophies drawn on a pawn. Trophies over this count are still worn, but not drawn. Default: 9</TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Tooltip>
+    <TribalTrophies_Settings_Display_Worn_Feathers_MaxDisplayedTrophies_Label>Displayed feather trophies: {COUNT}</TribalTrophies_Settings_Display_Worn_Feathers_MaxDisplayedTrophies_Label>
+    <TribalTrophies_Settings_Display_Worn_Feathers_MaxDisplayedTrophies_Tooltip>Number of feather trophies drawn on a pawn. Trophies over this count are still worn, but not drawn. Default: 9</TribalTrophies_Settings_Display_Worn_Feathers_MaxDisplayedTrophies_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Embroideries_Label>Worn embroidery trophies</TribalTrophies_Settings_Display_Worn_Embroideries_Label>
+    
+    <TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Label>Worn embroideries size: {SIZE}</TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Label>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip>Size of embroideries drawn on pawns. Default: 100%</TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Label>Displayed embroidery trophies: {COUNT}</TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Label>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Tooltip>Number of embroidery trophies drawn on a pawn. Trophies over this count are still worn, but not drawn. Default: 9</TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Tooltip>
+
 
 </LanguageData>

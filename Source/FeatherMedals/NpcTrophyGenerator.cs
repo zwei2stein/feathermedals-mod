@@ -38,7 +38,7 @@ public class NpcTrophyGuaranteeExtension : DefModExtension
             if (pick.trophy == null)
                 yield return $"{nameof(trophies)} has an entry without {nameof(NpcTrophyPick.trophy)}";
             else if (!AwardedTrophyUtility.IsAwardedTrophyDef(pick.trophy))
-                yield return $"{nameof(trophies)}: {pick.trophy.defName} is not a feather trophy";
+                yield return $"{nameof(trophies)}: {pick.trophy.defName} is not an awarded trophy";
 
             if (pick.chance < 0f || pick.chance > 1f)
                 yield return $"{nameof(trophies)}: {nameof(NpcTrophyPick.chance)} {pick.chance} is outside 0..1";
@@ -312,21 +312,25 @@ public static class NpcTrophyGenerator
             // oldest first, so the newest one is the last to be worn and the one that grants the Decorated trait
             made.Sort((a, b) => a.adorned.tick.CompareTo(b.adorned.tick));
 
-            AwardedTrophy newest = null;
+            // each worn trophy type can have its own propgression trait
+            var newest = new Dictionary<TrophyKindDef, AwardedTrophy>();
             foreach (var featherTrophy in made)
             {
                 pawn.apparel.Wear(featherTrophy, false, true);
                 if (pawn.apparel.Wearing(featherTrophy))
                 {
                     featherTrophy.SetAdornedPawn(pawn);
-                    newest = featherTrophy;
+                    newest[featherTrophy.Kind] = featherTrophy;
                 }
                 else if (!featherTrophy.Destroyed)
                     featherTrophy.Destroy();
             }
 
-            if (TribalTrophiesMod.Settings.TrophyDynamicTraits && newest != null)
-                RitualOutcomeTraitUtility.UpdateDecoratedTrait(pawn, newest);
+            if (TribalTrophiesMod.Settings.TrophyDynamicTraits)
+            {
+                foreach (var newestOfKind in newest.Values)
+                    RitualOutcomeTraitUtility.UpdateDecoratedTrait(pawn, newestOfKind);
+            }
         }
         finally
         {
@@ -348,7 +352,7 @@ public static class NpcTrophyGenerator
         featherTrophy.adornedBy = presenter != null ? new RememberedPawn(presenter) : null;
         featherTrophy.ceremonyQuality = Rand.RangeInclusive(0, MaxCeremonyStage);
         SetTrophyQuality(featherTrophy, pawn, leader);
-        featherTrophy.tale = TaleUtility.Generate(pawn.Faction, pawn, featherTrophy.adorned.tile);
+        featherTrophy.tale = TaleUtility.Generate(featherTrophy.Kind, pawn.Faction, pawn, featherTrophy.adorned.tile);
         return featherTrophy;
     }
 

@@ -12,7 +12,10 @@ public static class AwardedTrophyUtility
 
     public static bool ApplyingCeremonyAdorning;
     
-    public static bool IsAwardedTrophyDef(ThingDef def) => def?.thingClass == typeof(AwardedTrophy);
+    public static bool IsAwardedTrophyDef(ThingDef def) =>
+        def?.thingClass != null && typeof(AwardedTrophy).IsAssignableFrom(def.thingClass);
+
+    public static TrophyKindDef KindOf(ThingDef def) => def?.GetModExtension<TrophyExtension>()?.kind;
 
     public static string WearBlockedReason(AwardedTrophy trophy, Pawn pawn)
     {
@@ -164,13 +167,15 @@ public static class AwardedTrophyUtility
         if (worn == null)
             return false;
 
-        var maxDisplayed = TribalTrophiesMod.Settings.MaxDisplayedTrophies;
+        // each kind has its own slots
+        var kind = trophy.Kind;
+        var maxDisplayed = kind.LayoutWorker.MaxDisplayed;
         var groups = trophy.def.apparel.bodyPartGroups;
         var seen = 0;
 
         for (var i = 0; i < worn.Count; i++)
         {
-            if (worn[i] is not AwardedTrophy other)
+            if (worn[i] is not AwardedTrophy other || other.Kind != kind)
                 continue;
             if (seen++ >= maxDisplayed)
                 break;

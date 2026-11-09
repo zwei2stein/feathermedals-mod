@@ -326,9 +326,15 @@ namespace TribalTrophies
             listingStandard.ColumnWidth -= gapWidth;
 
             listingStandard.CheckboxLabeled(
-                "TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Label".Translate(),
-                ref Settings.DrawTrophiesOnPawns,
+                "TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Label".Translate(),
+                ref Settings.DrawFeatherTrophiesOnPawns,
                 "TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip".Translate()
+            );
+            
+            listingStandard.CheckboxLabeled(
+                "TribalTrophies_Settings_Display_Rendering_Embroideries_DrawTrophiesOnPawns_Label".Translate(),
+                ref Settings.DrawEmbroideryTrophiesOnPawns,
+                "TribalTrophies_Settings_Display_Rendering_Embroideries_DrawTrophiesOnPawns_Tooltip".Translate()
             );
 
             listingStandard.Outdent(gapWidth);
@@ -336,18 +342,17 @@ namespace TribalTrophies
 
             listingStandard.GapLine();
 
-            if (Settings.DrawTrophiesOnPawns)
+            if (Settings.DrawFeatherTrophiesOnPawns)
             {
-
-                listingStandard.Label("TribalTrophies_Settings_Display_Worn_Label".Translate());
+                listingStandard.Label("TribalTrophies_Settings_Display_Worn_Feathers_Label".Translate());
 
                 listingStandard.Indent(gapWidth);
                 listingStandard.ColumnWidth -= gapWidth;
 
-                Settings.TrophyScale = listingStandard.SliderLabeled(
-                    "TribalTrophies_Settings_Display_Worn_TrophyScale_Label".Translate(Settings.TrophyScale.ToStringPercent().Named("SIZE")),
-                    Settings.TrophyScale, 0.1f, 2f, 0.5f,
-                    "TribalTrophies_Settings_Display_Worn_TrophyScale_Tooltip".Translate());
+                Settings.TrophyScaleFeather = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Feathers_TrophyScale_Label".Translate(Settings.TrophyScaleFeather.ToStringPercent().Named("SIZE")),
+                    Settings.TrophyScaleFeather, 0.1f, 2f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Feathers_TrophyScale_Tooltip".Translate());
 
                 Settings.FanOut = listingStandard.SliderLabeled(
                     "TribalTrophies_Settings_Display_Worn_FanOut_Label".Translate(Settings.FanOut.ToStringPercent()
@@ -360,17 +365,42 @@ namespace TribalTrophies
                     Settings.VerticalOffset, -0.2f, 0.2f, 0.5f,
                     "TribalTrophies_Settings_Display_Worn_VerticalOffset_Tooltip".Translate());
 
-                Settings.MaxDisplayedTrophies = Mathf.RoundToInt(listingStandard.SliderLabeled(
-                    "TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Label".Translate(
-                        Settings.MaxDisplayedTrophies.Named("COUNT")),
-                    Settings.MaxDisplayedTrophies, 1f, 20f, 0.5f,
-                    "TribalTrophies_Settings_Display_Worn_MaxDisplayedTrophies_Tooltip".Translate()));
+                Settings.MaxDisplayedTrophiesFeathers = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Feathers_MaxDisplayedTrophies_Label".Translate(
+                        Settings.MaxDisplayedTrophiesFeathers.Named("COUNT")),
+                    Settings.MaxDisplayedTrophiesFeathers, 1f, 20f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Feathers_MaxDisplayedTrophies_Tooltip".Translate()));
 
                 listingStandard.Outdent(gapWidth);
                 listingStandard.ColumnWidth += gapWidth;
 
                 listingStandard.GapLine();
 
+            }
+
+            if (Settings.DrawEmbroideryTrophiesOnPawns)
+            {
+                listingStandard.Label("TribalTrophies_Settings_Display_Worn_Embroideries_Label".Translate());
+
+                listingStandard.Indent(gapWidth);
+                listingStandard.ColumnWidth -= gapWidth;
+                
+                Settings.TrophyScaleEmbroidery = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Label".Translate(Settings.TrophyScaleEmbroidery.ToStringPercent().Named("SIZE")),
+                    Settings.TrophyScaleEmbroidery, 0.1f, 2f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip".Translate());
+                
+                Settings.MaxDisplayedTrophiesEmbroideries = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Label".Translate(
+                        Settings.MaxDisplayedTrophiesEmbroideries.Named("COUNT")),
+                    Settings.MaxDisplayedTrophiesEmbroideries, 1f, 20f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Tooltip".Translate()));
+                
+                listingStandard.Outdent(gapWidth);
+                listingStandard.ColumnWidth += gapWidth;
+
+                listingStandard.GapLine();
+                
             }
 
             listingStandard.End();
@@ -382,14 +412,17 @@ namespace TribalTrophies
     {
         // Default it to true so your intended behavior is the standard
         public bool LockTrophyUponAdorning = true;
-        public bool DrawTrophiesOnPawns = true;
+        public bool DrawFeatherTrophiesOnPawns = true;
+        public bool DrawEmbroideryTrophiesOnPawns = true;
         public bool TrophyDynamicTraits = true;
         public bool PromptForTaleDuringCeremony = true;
         public bool AutoSuggestTale = false;
-        public float TrophyScale = 1.3f;
+        public float TrophyScaleFeather = 1.3f;
+        public float TrophyScaleEmbroidery = 1.0f;
         public float FanOut = 0.35f;  // 0 = all upright, 1 = fully radial
         public float VerticalOffset = 0.1f;
-        public int MaxDisplayedTrophies = 9;
+        public int MaxDisplayedTrophiesFeathers = 9;
+        public int MaxDisplayedTrophiesEmbroideries = 9;
         public bool GenerateNpcTrophies = true;
         public TechLevel NpcTrophyMinTech = TechLevel.Animal;
         public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
@@ -416,12 +449,15 @@ namespace TribalTrophies
         {
             base.ExposeData();
             Scribe_Values.Look(ref LockTrophyUponAdorning, "LockTrophyUponAdorning", true);
-            Scribe_Values.Look(ref DrawTrophiesOnPawns, "DrawTrophiesOnPawns", true);
-            Scribe_Values.Look(ref MaxDisplayedTrophies, "MaxDisplayedTrophies", 9);
+            Scribe_Values.Look(ref DrawFeatherTrophiesOnPawns, "DrawFeatherTrophiesOnPawns", true);
+            Scribe_Values.Look(ref DrawEmbroideryTrophiesOnPawns, "DrawEmbroideryTrophiesOnPawns", true);
+            Scribe_Values.Look(ref MaxDisplayedTrophiesFeathers, "MaxDisplayedTrophiesFeathers", 9);
+            Scribe_Values.Look(ref MaxDisplayedTrophiesEmbroideries, "MaxDisplayedTrophiesEmbroideries", 9);
             Scribe_Values.Look(ref PromptForTaleDuringCeremony, "PromptForTaleDuringCeremony", true);
             Scribe_Values.Look(ref AutoSuggestTale, "AutoSuggestTale", false);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
-            Scribe_Values.Look(ref TrophyScale, "TrophyScale", 1.3f);
+            Scribe_Values.Look(ref TrophyScaleFeather, "TrophyScaleFeather", 1.3f);
+            Scribe_Values.Look(ref TrophyScaleEmbroidery, "TrophyScaleEmbroidery", 1.0f);
             Scribe_Values.Look(ref FanOut, "FanOut", 0.35f);
             Scribe_Values.Look(ref VerticalOffset, "VerticalOffset", 0.1f);
             Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);

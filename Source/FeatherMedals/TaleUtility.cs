@@ -8,32 +8,32 @@ namespace TribalTrophies;
 public static class TaleUtility
 {
     
-    public static string Generate(Faction faction, Pawn pawn = null, PlanetTile tile = default)
+    public static string Generate(TrophyKindDef kind, Faction faction, Pawn pawn = null, PlanetTile tile = default)
     {
-        var rulePack = TribalTrophiesDefOf.TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor;
+        var rulePack = kind.taleOfHonorRulePack;
         if (rulePack == null)
             return null;
 
         var request = default(GrammarRequest);
         request.Includes.Add(rulePack);
-        request.Rules.Add(new Rule_String("faction_name", FactionName(faction)));
+        request.Rules.Add(new Rule_String("faction_name", FactionName(kind, faction)));
         request.Rules.Add(new Rule_String("settlement_name", SettlementName(faction, tile)));
-        request.Rules.Add(new Rule_String("pawn_name", PawnName(pawn)));
+        request.Rules.Add(new Rule_String("pawn_name", PawnName(kind, pawn)));
         request.Rules.Add(new Rule_String("pawn_adj", PawnPossessive(pawn)));
-        return GrammarResolver.Resolve("r_root", request, "TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor").CapitalizeFirst();
+        return GrammarResolver.Resolve("r_root", request, rulePack.defName).CapitalizeFirst();
     }
 
     // Tale dialog: player faction, colony on the map being looked at
-    public static string GenerateForPlayer()
+    public static string GenerateForPlayer(TrophyKindDef kind)
     {
         var map = Find.CurrentMap;
-        return Generate(Faction.OfPlayer, null, map != null ? map.Tile : PlanetTile.Invalid);
+        return Generate(kind, Faction.OfPlayer, null, map != null ? map.Tile : PlanetTile.Invalid);
     }
 
-    private static string FactionName(Faction faction)
+    private static string FactionName(TrophyKindDef kind, Faction faction)
     {
         var name = faction?.Name;
-        return name.NullOrEmpty() ? "TribalTrophies_AdorningCeremony_Misc_TaleDefaultFaction".Translate().ToString() : name;
+        return name.NullOrEmpty() ? kind.communityLabel.CapitalizeFirst() : name;
     }
 
     private static string SettlementName(Faction faction, PlanetTile tile)
@@ -47,10 +47,10 @@ public static class TaleUtility
         return "TribalTrophies_AdorningCeremony_Misc_TaleDefaultSettlement".Translate().ToString();
     }
 
-    private static string PawnName(Pawn pawn)
+    private static string PawnName(TrophyKindDef kind, Pawn pawn)
     {
         var name = pawn?.Name?.ToStringShort;
-        return name.NullOrEmpty() ? "TribalTrophies_AdorningCeremony_Misc_TaleDefaultName".Translate().ToString() : name;
+        return name.NullOrEmpty() ? kind.honoreeLabel.CapitalizeFirst() : name;
     }
 
     private static string PawnPossessive(Pawn pawn)

@@ -18,9 +18,9 @@ public static class TrophyLayout
 
     private static void Slot(int index, int count, out int row, out float phiDeg)
     {
-        var maxPerRow = TribalTrophiesMod.Settings.MaxDisplayedTrophies;
+        var maxPerRow = TribalTrophiesMod.Settings.MaxDisplayedTrophiesFeathers;
         
-        var scale = TribalTrophiesMod.Settings.TrophyScale;
+        var scale = TribalTrophiesMod.Settings.TrophyScaleFeather;
         var reverseIndex = (count - 1) - index;
         row = reverseIndex / maxPerRow;
         var col = reverseIndex % maxPerRow;
@@ -39,7 +39,7 @@ public static class TrophyLayout
     public static Vector3 OffsetFor(int index, int count, Rot4 facing)
     {
         Slot(index, count, out var row, out var phiDeg);
-        var ring = row * RingStep * TribalTrophiesMod.Settings.TrophyScale;
+        var ring = row * RingStep * TribalTrophiesMod.Settings.TrophyScaleFeather;
         var phi = phiDeg * Mathf.Deg2Rad;
         var x = (RadiusX + ring) * Mathf.Sin(phi);
         var z = TribalTrophiesMod.Settings.VerticalOffset + (RadiusZ + ring) * Mathf.Cos(phi);

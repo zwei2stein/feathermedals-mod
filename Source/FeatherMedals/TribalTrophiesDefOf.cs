@@ -10,23 +10,11 @@ namespace TribalTrophies
     [DefOf]
     public class TribalTrophiesDefOf
     {
-        // AdorningCeremony
+        // AdorningCeremony, defs that differ per trophy kind are in TrophyKindDef
 
-        public static RitualPatternDef TribalTrophies_AdorningCeremony_Pattern;
-        public static PreceptDef TribalTrophies_AdorningCeremonyPrecept;
         public static JobDef TribalTrophies_PresentTrophy;
         public static JobDef TribalTrophies_PresentTrophySpeech;
         public static JobDef TribalTrophies_Job_AwaitAdorning;
-        public static InteractionDef TribalTrophies_Speech_AdornTrophy;
-
-        public static RulePackDef TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor;
-
-        public static TaleDef TribalTrophies_AdornedTrophyTale;
-
-        public static ThoughtDef TribalTrophies_Trophy_Feather_Adorning_Thought_AdornedTrophy;
-        public static ThoughtDef TribalTrophies_Trophy_Feather_Adorning_Thought_Witnessed;
-
-        public static TraitDef TribalTrophies_Decorated;
 
         // HonoringWarriors
 
