@@ -33,6 +33,7 @@
         </possessions>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>3~3</count>
             </li>
         </modExtensions>
@@ -74,6 +75,7 @@
         </possessions>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>3~3</count>
             </li>
         </modExtensions>
@@ -112,6 +114,7 @@
         </possessions>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>2~2</count>
             </li>
         </modExtensions>
@@ -149,6 +152,7 @@
         </possessions>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~1</count>
             </li>
         </modExtensions>
@@ -179,6 +183,7 @@
         </possessions>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~1</count>
             </li>
         </modExtensions>

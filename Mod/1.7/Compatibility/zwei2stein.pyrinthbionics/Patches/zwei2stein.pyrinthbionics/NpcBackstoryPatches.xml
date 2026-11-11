@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="Pyromaniac18"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Pyrinth</trophy>

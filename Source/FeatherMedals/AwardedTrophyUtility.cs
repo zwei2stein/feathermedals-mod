@@ -17,6 +17,21 @@ public static class AwardedTrophyUtility
 
     public static TrophyKindDef KindOf(ThingDef def) => def?.GetModExtension<TrophyExtension>()?.kind;
 
+    public static int WornCount(Pawn pawn, TrophyKindDef kind)
+    {
+        var worn = pawn?.apparel?.WornApparel;
+        if (worn == null)
+            return 0;
+
+        var count = 0;
+        for (var i = 0; i < worn.Count; i++)
+        {
+            if (worn[i] is AwardedTrophy trophy && trophy.Kind == kind)
+                count++;
+        }
+        return count;
+    }
+
     public static string WearBlockedReason(AwardedTrophy trophy, Pawn pawn)
     {
         if (trophy.IsAdorned && !trophy.IsOwnedBy(pawn))

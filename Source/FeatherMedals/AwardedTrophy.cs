@@ -107,7 +107,7 @@ namespace TribalTrophies
             else if (!Spawned)
                 adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledNotOnGround".Translate());
             else if (!ColonyHasPresenter(out _))
-                adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS")));
+                adornCeremonyGizmo.Disable("TribalTrophies_AdorningCeremony_Gizmo_DisabledRequiresPresenter".Translate(Kind.PresenterRolesLabel.Named("SPEAKERS")));
             
             yield return adornCeremonyGizmo;
                 
@@ -146,7 +146,7 @@ namespace TribalTrophies
             if (this.Map == null) return false;
             foreach (var p in this.Map.mapPawns.FreeColonistsSpawned)
             {
-                if (SpeakerRolesUtil.IsSpeaker(p) && !HonoringWarriorsUtility.ForbidsCeremony(p))
+                if (Kind.IsPresenter(p) && !HonoringWarriorsUtility.ForbidsCeremony(p))
                 {
                     result = p;
                     return true; 

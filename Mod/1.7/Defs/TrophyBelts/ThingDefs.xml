@@ -177,6 +177,7 @@
                 <zeroChanceTechLevel>Archotech</zeroChanceTechLevel>
             </li>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~1</count>
                 <trophies>
                     <li>

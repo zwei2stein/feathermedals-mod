@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Chiliarch"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~2</count>
                 <trophies>
                     <li>
@@ -26,6 +27,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Heavyweight"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -45,6 +47,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Athlete"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -64,6 +67,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Oracle"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -83,6 +87,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Misthios"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
@@ -101,6 +106,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Scrapper"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedManyTimes</trophy>
@@ -119,6 +125,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Traitor"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
@@ -133,6 +140,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Philosopher"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -147,6 +155,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Rhetorician"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -161,6 +170,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Bullsmith"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
@@ -179,6 +189,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Peddler"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
@@ -193,6 +204,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_AdultPeasant"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Herculean</trophy>
@@ -207,6 +219,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Rickshaw"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Herculean</trophy>
@@ -223,6 +236,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_GalacticInmate"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
@@ -241,6 +255,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_Knave"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
@@ -261,6 +276,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_MilitaryCalf"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
@@ -275,6 +291,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBME_ChildPeasant"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Struck4BlowsInCombat</trophy>

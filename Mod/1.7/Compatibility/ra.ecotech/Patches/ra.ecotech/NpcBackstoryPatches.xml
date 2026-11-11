@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Grovetender"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~2</count>
                 <trophies>
                     <li>
@@ -26,6 +27,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_EliteWarrior"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -45,6 +47,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Scribe"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -64,6 +67,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Inquisitor"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_SlitThroat</trophy>
@@ -82,6 +86,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_SpaceWorker"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>
@@ -100,6 +105,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Evolutionist"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
@@ -114,6 +120,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Geosmith"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_TerratechAncestry</trophy>
@@ -128,6 +135,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Ambassador"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -142,6 +150,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_SleeperAgent"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -156,6 +165,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Alchemist"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
@@ -172,6 +182,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_Scribling"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -186,6 +197,7 @@
         <xpath>/Defs/BackstoryDef[defName="ET_AdoptedChild"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>

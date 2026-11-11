@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenFormerPsychic"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~2</count>
                 <trophies>
                     <li>
@@ -26,6 +27,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenSoldier"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -41,6 +43,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenPOW"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -56,6 +59,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenUprisingSniper"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -71,6 +75,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenCombatMedic"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -90,6 +95,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenPriest"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -109,6 +115,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenImperialMurderer"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_SlitThroat</trophy>
@@ -123,6 +130,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenMystic"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -137,6 +145,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenDiplomat"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -151,6 +160,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenThief"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
@@ -167,6 +177,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenProphecyChild"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
@@ -181,6 +192,7 @@
         <xpath>/Defs/BackstoryDef[defName="SerenPriestChild"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>

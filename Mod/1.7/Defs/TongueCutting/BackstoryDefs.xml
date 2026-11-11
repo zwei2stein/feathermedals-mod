@@ -29,6 +29,7 @@
         </requiredWorkTags>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~1</count>
                 <trophies>
                     <li>
@@ -63,6 +64,7 @@
         </requiredWorkTags>
         <modExtensions>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>

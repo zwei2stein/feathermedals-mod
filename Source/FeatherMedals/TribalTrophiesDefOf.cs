@@ -103,10 +103,6 @@ namespace TribalTrophies
 
         // Vanilla
 
-        public static PreceptDef IdeoRole_ShootingSpecialist;
-        public static PreceptDef IdeoRole_MeleeSpecialist;
-        public static PreceptDef IdeoRole_ResearchSpecialist;
-        public static PreceptDef IdeoRole_MedicalSpecialist;
         public static PreceptDef Skullspike_Desired;
 
         public static HairDef Messy;
@@ -114,36 +110,6 @@ namespace TribalTrophies
         public static MentalStateDef MurderousRage;
 
         static TribalTrophiesDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(TribalTrophiesDefOf));
-    }
-    
-    public static class SpeakerRolesUtil
-    {
-   
-        private static List<PreceptDef> speakerRoles;
-        private static string speakerRolesLabel;
-
-        private static List<PreceptDef> SpeakerRoles => speakerRoles ??= new List<PreceptDef>
-        {
-            PreceptDefOf.IdeoRole_Leader,
-            PreceptDefOf.IdeoRole_Moralist,
-            TribalTrophiesDefOf.IdeoRole_ShootingSpecialist,
-            TribalTrophiesDefOf.IdeoRole_MeleeSpecialist,
-            TribalTrophiesDefOf.IdeoRole_ResearchSpecialist,
-            TribalTrophiesDefOf.IdeoRole_MedicalSpecialist
-        };
-
-        public static string SpeakerRolesLabel => speakerRolesLabel ??=
-            string.Join(", ", SpeakerRoles.Select(role => role.LabelCap.Resolve()));
-
-        public static bool IsSpeaker(Pawn pawn)
-        {
-            var role = pawn.Ideo?.GetRole(pawn);
-            if (role == null)
-                return false;
-
-            return SpeakerRoles.Contains(role.def);
-        }
-        
     }
 
 }

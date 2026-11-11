@@ -21,7 +21,7 @@
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>0.85</drawSize>
+			<drawSize>0.55</drawSize>
 		</graphicData>
 		<equippedStatOffsets>
 			<PawnBeauty>0.1</PawnBeauty>

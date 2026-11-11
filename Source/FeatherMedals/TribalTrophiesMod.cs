@@ -101,29 +101,13 @@ namespace TribalTrophies
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
 
-            listingStandard.CheckboxLabeled(
-                "TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Label".Translate(),
-                ref Settings.GenerateNpcTrophies,
-                "TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Tooltip".Translate()
-            );
+            DrawNpcTrophySettings(listingStandard, "TribalTrophies_Settings_Trophies_Npc_Feathers",
+                ref Settings.GenerateNpcFeatherTrophies, ref Settings.NpcFeatherTrophyMinTech, ref Settings.NpcFeatherTrophyMaxTech);
 
-            if (Settings.GenerateNpcTrophies)
-            {
-                // moving one slider past the other pushes the other along
-                Settings.NpcTrophyMinTech = DrawTechLevelSlider(listingStandard,
-                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Label",
-                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Tooltip",
-                    Settings.NpcTrophyMinTech);
-                if (Settings.NpcTrophyMaxTech < Settings.NpcTrophyMinTech)
-                    Settings.NpcTrophyMaxTech = Settings.NpcTrophyMinTech;
+            listingStandard.Gap();
 
-                Settings.NpcTrophyMaxTech = DrawTechLevelSlider(listingStandard,
-                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Label",
-                    "TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Tooltip",
-                    Settings.NpcTrophyMaxTech);
-                if (Settings.NpcTrophyMinTech > Settings.NpcTrophyMaxTech)
-                    Settings.NpcTrophyMinTech = Settings.NpcTrophyMaxTech;
-            }
+            DrawNpcTrophySettings(listingStandard, "TribalTrophies_Settings_Trophies_Npc_Embroideries",
+                ref Settings.GenerateNpcEmbroideryTrophies, ref Settings.NpcEmbroideryTrophyMinTech, ref Settings.NpcEmbroideryTrophyMaxTech);
 
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
@@ -300,6 +284,35 @@ namespace TribalTrophies
         }
 
 
+        // one trophy kind: spawn toggle and faction tech range, keys built from the prefix
+        private static void DrawNpcTrophySettings(Listing_Standard listing, string keyPrefix,
+            ref bool generate, ref TechLevel minTech, ref TechLevel maxTech)
+        {
+            listing.CheckboxLabeled(
+                (keyPrefix + "_GenerateNpcTrophies_Label").Translate(),
+                ref generate,
+                (keyPrefix + "_GenerateNpcTrophies_Tooltip").Translate()
+            );
+
+            if (!generate)
+                return;
+
+            // moving one slider past the other pushes the other along
+            minTech = DrawTechLevelSlider(listing,
+                keyPrefix + "_NpcTrophyMinTech_Label",
+                keyPrefix + "_NpcTrophyMinTech_Tooltip",
+                minTech);
+            if (maxTech < minTech)
+                maxTech = minTech;
+
+            maxTech = DrawTechLevelSlider(listing,
+                keyPrefix + "_NpcTrophyMaxTech_Label",
+                keyPrefix + "_NpcTrophyMaxTech_Tooltip",
+                maxTech);
+            if (minTech > maxTech)
+                minTech = maxTech;
+        }
+
         private static TechLevel DrawTechLevelSlider(Listing_Standard listing, string labelKey, string tooltipKey, TechLevel current)
         {
             var value = listing.SliderLabeled(
@@ -328,7 +341,7 @@ namespace TribalTrophies
             listingStandard.CheckboxLabeled(
                 "TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Label".Translate(),
                 ref Settings.DrawFeatherTrophiesOnPawns,
-                "TribalTrophies_Settings_Display_Rendering_DrawTrophiesOnPawns_Tooltip".Translate()
+                "TribalTrophies_Settings_Display_Rendering_Feathers_DrawTrophiesOnPawns_Tooltip".Translate()
             );
             
             listingStandard.CheckboxLabeled(
@@ -423,9 +436,12 @@ namespace TribalTrophies
         public float VerticalOffset = 0.1f;
         public int MaxDisplayedTrophiesFeathers = 9;
         public int MaxDisplayedTrophiesEmbroideries = 9;
-        public bool GenerateNpcTrophies = true;
-        public TechLevel NpcTrophyMinTech = TechLevel.Animal;
-        public TechLevel NpcTrophyMaxTech = TechLevel.Medieval;
+        public bool GenerateNpcFeatherTrophies = true;
+        public TechLevel NpcFeatherTrophyMinTech = TechLevel.Animal;
+        public TechLevel NpcFeatherTrophyMaxTech = TechLevel.Medieval;
+        public bool GenerateNpcEmbroideryTrophies = true;
+        public TechLevel NpcEmbroideryTrophyMinTech = TechLevel.Medieval;
+        public TechLevel NpcEmbroideryTrophyMaxTech = TechLevel.Industrial;
         public bool GenerateNpcScalped = true;
         public bool GenerateNpcScalpBelts = true;
         public bool GenerateNpcSkullBelts = true;
@@ -460,9 +476,12 @@ namespace TribalTrophies
             Scribe_Values.Look(ref TrophyScaleEmbroidery, "TrophyScaleEmbroidery", 1.0f);
             Scribe_Values.Look(ref FanOut, "FanOut", 0.35f);
             Scribe_Values.Look(ref VerticalOffset, "VerticalOffset", 0.1f);
-            Scribe_Values.Look(ref GenerateNpcTrophies, "GenerateNpcTrophies", true);
-            Scribe_Values.Look(ref NpcTrophyMinTech, "NpcTrophyMinTech", TechLevel.Animal);
-            Scribe_Values.Look(ref NpcTrophyMaxTech, "NpcTrophyMaxTech", TechLevel.Medieval);
+            Scribe_Values.Look(ref GenerateNpcFeatherTrophies, "GenerateNpcFeatherTrophies", true);
+            Scribe_Values.Look(ref NpcFeatherTrophyMinTech, "NpcFeatherTrophyMinTech", TechLevel.Animal);
+            Scribe_Values.Look(ref NpcFeatherTrophyMaxTech, "NpcFeatherTrophyMaxTech", TechLevel.Medieval);
+            Scribe_Values.Look(ref GenerateNpcEmbroideryTrophies, "GenerateNpcEmbroideryTrophies", true);
+            Scribe_Values.Look(ref NpcEmbroideryTrophyMinTech, "NpcEmbroideryTrophyMinTech", TechLevel.Medieval);
+            Scribe_Values.Look(ref NpcEmbroideryTrophyMaxTech, "NpcEmbroideryTrophyMaxTech", TechLevel.Industrial);
             Scribe_Values.Look(ref GenerateNpcScalped, "GenerateNpcScalped", true);
             Scribe_Values.Look(ref GenerateNpcScalpBelts, "GenerateNpcScalpBelts", true);
             Scribe_Values.Look(ref GenerateNpcSkullBelts, "GenerateNpcSkullBelts", true);
@@ -479,6 +498,8 @@ namespace TribalTrophies
             Scribe_Values.Look(ref ScalpRequestMaxDistance, "ScalpRequestMaxDistance", 32);
             Scribe_Values.Look(ref ScalpPolesInBases, "ScalpPolesInBases", true);
             Scribe_Values.Look(ref TongueBasketsInBases, "TongueBasketsInBases", true);
+
+            SettingsLegacyKeys.LoadRenamed(this);
         }
     }
 

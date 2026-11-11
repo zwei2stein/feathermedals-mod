@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="TeocuitlatlAdulthood"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>1~2</count>
                 <trophies>
                     <li>

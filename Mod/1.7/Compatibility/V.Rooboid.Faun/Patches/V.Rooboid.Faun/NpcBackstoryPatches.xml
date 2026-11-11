@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_GameArcher"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -22,6 +23,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_CupBearer"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
             </li>
         </value>
@@ -31,6 +33,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_Stargazer"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -45,6 +48,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_Riddler"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -59,6 +63,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_SnowyScout"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
@@ -73,6 +78,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_FireworkMaker"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
@@ -89,6 +95,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_Saint"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -104,6 +111,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_Clairvoyant"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -118,6 +126,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_ArcherFaun"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
@@ -132,6 +141,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_UnlikelyBandit"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
@@ -150,6 +160,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSF_FlowerChild"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_WoundedOrKilledAnEnemy</trophy>

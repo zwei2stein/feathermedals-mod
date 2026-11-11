@@ -21,12 +21,18 @@ public class TrophyKindDef : Def
     public string communityLabel;
     public string honoreeLabel;
 
+    // ideo roles that can present the trophy in the ceremony
+    public List<PreceptDef> presenterRoles;
+
     // title trait
     public TraitDef decoratedTrait;
     public List<int> decoratedThresholds;
 
     // drawing on pawns
     public Type layoutWorkerClass;
+
+    // NPC pawns spawning with this kind, none = never
+    public TrophyNpcGeneration npcGeneration;
 
     [Unsaved] private TrophyLayoutWorker layoutWorkerInt;
 
@@ -44,6 +50,18 @@ public class TrophyKindDef : Def
     }
 
     public string HonoreeIndefinite => Find.ActiveLanguageWorker.WithIndefiniteArticle(honoreeLabel);
+
+    public string PresenterRolesLabel => field ??=
+        string.Join(", ", presenterRoles.Select(role => role.LabelCap.Resolve()));
+
+    public bool IsPresenter(Pawn pawn)
+    {
+        var role = pawn.Ideo?.GetRole(pawn);
+        if (role == null)
+            return false;
+
+        return presenterRoles.Contains(role.def);
+    }
 
     // highest degree reached, -1 = none
     public int DecoratedDegreeFor(int trophyCount)
@@ -86,8 +104,25 @@ public class TrophyKindDef : Def
         if (honoreeLabel.NullOrEmpty())
             yield return $"{nameof(honoreeLabel)} is missing";
 
+        if (presenterRoles.NullOrEmpty())
+            yield return $"{nameof(presenterRoles)} is missing";
+        else
+        {
+            foreach (var role in presenterRoles)
+            {
+                if (role?.preceptClass == null || !typeof(Precept_Role).IsAssignableFrom(role.preceptClass))
+                    yield return $"{nameof(presenterRoles)}: {role?.defName} is not an ideo role";
+            }
+        }
+
         if (layoutWorkerClass == null || !typeof(TrophyLayoutWorker).IsAssignableFrom(layoutWorkerClass))
             yield return $"{nameof(layoutWorkerClass)} {layoutWorkerClass} is not a {nameof(TrophyLayoutWorker)}";
+
+        if (npcGeneration != null)
+        {
+            foreach (var error in npcGeneration.ConfigErrors())
+                yield return $"{nameof(npcGeneration)}: {error}";
+        }
 
         if (decoratedTrait != null && decoratedThresholds.NullOrEmpty())
             yield return $"{nameof(decoratedTrait)} {decoratedTrait.defName} has no {nameof(decoratedThresholds)}";

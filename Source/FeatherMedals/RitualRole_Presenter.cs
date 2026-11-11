@@ -16,12 +16,17 @@ public class RitualRole_Presenter : RitualRoleColonist
             return false;
         }
 
-        if (SpeakerRolesUtil.IsSpeaker(p))
+        // presenter roles come from the kind of the trophy being adorned
+        var kind = (selectedTarget.Thing as AwardedTrophy ?? ritual?.selectedTarget.Thing as AwardedTrophy)?.Kind;
+        if (kind == null)
+            return false;
+
+        if (kind.IsPresenter(p))
         {
             reason = null;
             return true;
         }
-        if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleMustBeSpeaker".Translate(SpeakerRolesUtil.SpeakerRolesLabel.Named("SPEAKERS"));
+        if (!skipReason) reason = "TribalTrophies_AdorningCeremony_RitualDialog_RoleMustBeSpeaker".Translate(kind.PresenterRolesLabel.Named("SPEAKERS"));
         return false;
     }
 }

@@ -21,14 +21,23 @@
 
     <TribalTrophies_Settings_Trophies_Npc_Label>Pawns from other factions</TribalTrophies_Settings_Trophies_Npc_Label>
 
-    <TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Label>Pawns can spawn with trophies</TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Label>
-    <TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with trophies. Existing pawns are not changed. Default: ON</TribalTrophies_Settings_Trophies_Npc_GenerateNpcTrophies_Tooltip>
+    <TribalTrophies_Settings_Trophies_Npc_Feathers_GenerateNpcTrophies_Label>Pawns can spawn with feather trophies</TribalTrophies_Settings_Trophies_Npc_Feathers_GenerateNpcTrophies_Label>
+    <TribalTrophies_Settings_Trophies_Npc_Feathers_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with feather trophies. Existing pawns are not changed. Default: ON</TribalTrophies_Settings_Trophies_Npc_Feathers_GenerateNpcTrophies_Tooltip>
 
-    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Label>Lowest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Label>
-    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Tooltip>Lowest tech level of factions whose pawns can spawn with trophies. Default: Animal</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMinTech_Tooltip>
+    <TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMinTech_Label>Lowest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMinTech_Label>
+    <TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMinTech_Tooltip>Lowest tech level of factions whose pawns can spawn with feather trophies. Default: Animal</TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMinTech_Tooltip>
 
-    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Label>Highest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Label>
-    <TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Tooltip>Highest tech level of factions whose pawns can spawn with trophies. Default: Medieval</TribalTrophies_Settings_Trophies_Npc_NpcTrophyMaxTech_Tooltip>
+    <TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMaxTech_Label>Highest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMaxTech_Label>
+    <TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMaxTech_Tooltip>Highest tech level of factions whose pawns can spawn with feather trophies. Default: Medieval</TribalTrophies_Settings_Trophies_Npc_Feathers_NpcTrophyMaxTech_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Npc_Embroideries_GenerateNpcTrophies_Label>Pawns can spawn with embroidery trophies</TribalTrophies_Settings_Trophies_Npc_Embroideries_GenerateNpcTrophies_Label>
+    <TribalTrophies_Settings_Trophies_Npc_Embroideries_GenerateNpcTrophies_Tooltip>Pawns from other factions can spawn already adorned with embroidery trophies. Existing pawns are not changed. Default: ON</TribalTrophies_Settings_Trophies_Npc_Embroideries_GenerateNpcTrophies_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMinTech_Label>Lowest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMinTech_Label>
+    <TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMinTech_Tooltip>Lowest tech level of factions whose pawns can spawn with embroidery trophies. Default: Medieval</TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMinTech_Tooltip>
+
+    <TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMaxTech_Label>Highest faction tech level: {LEVEL}</TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMaxTech_Label>
+    <TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMaxTech_Tooltip>Highest tech level of factions whose pawns can spawn with embroidery trophies. Default: Industrial</TribalTrophies_Settings_Trophies_Npc_Embroideries_NpcTrophyMaxTech_Tooltip>
 
     <!-- Scalping tab -->
 

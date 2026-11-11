@@ -18,6 +18,16 @@
 		<communityLabel>settlement</communityLabel>
 		<honoreeLabel>hero</honoreeLabel>
 
+		<!-- ideo roles that can present the trophy -->
+		<presenterRoles>
+			<li>IdeoRole_Leader</li>
+			<li>IdeoRole_Moralist</li>
+			<li>IdeoRole_ShootingSpecialist</li>
+			<li>IdeoRole_MeleeSpecialist</li>
+			<li>IdeoRole_ResearchSpecialist</li>
+			<li>IdeoRole_MedicalSpecialist</li>
+		</presenterRoles>
+
 		<!-- title trait: degree 0, 1, 2 at this many worn feathers -->
 		<decoratedTrait>TribalTrophies_Heroism</decoratedTrait>
 		<decoratedThresholds>
@@ -28,6 +38,35 @@
 
 		<!-- follows sash diagonally over body, starting at shoulder, tuned in mod settings -->
 		<layoutWorkerClass>TribalTrophies.TrophyLayoutWorker_Embroideries</layoutWorkerClass>
+
+		<!-- NPCs spawning with embroideries -->
+		<npcGeneration>
+			<!-- toggle and faction tech range in mod settings -->
+			<settingsWorkerClass>TribalTrophies.TrophyNpcSettingsWorker_Embroideries</settingsWorkerClass>
+
+			<!-- chance of extra trophies at Neutral stance, by faction tech level; a level not listed = none -->
+			<techChances>
+				<li><techLevel>Medieval</techLevel><chance>0.05</chance></li>
+				<li><techLevel>Industrial</techLevel><chance>0.01</chance></li>
+			</techChances>
+
+			<!-- Honoring Warriors stance: factor on the chance above, base rolls -->
+			<stances>
+				<li><stance>Forbidden</stance><chanceFactor>0</chanceFactor><baseRolls>0</baseRolls></li>
+				<li><stance>Disapproved</stance><chanceFactor>0</chanceFactor><baseRolls>0</baseRolls></li>
+				<li><stance>Neutral</stance><chanceFactor>1</chanceFactor><baseRolls>1</baseRolls></li>
+				<li><stance>Desired</stance><chanceFactor>2</chanceFactor><baseRolls>2</baseRolls></li>
+				<li><stance>Required</stance><chanceFactor>4</chanceFactor><baseRolls>3</baseRolls></li>
+			</stances>
+
+			<!-- extra trophies of a new faction leader -->
+			<leaderTrophies>8</leaderTrophies>
+
+			<!-- bonus rolls: one per combat passion level up to maxPassionRolls, one each for melee and shooting above highSkill, one when older than highAge -->
+			<maxPassionRolls>4</maxPassionRolls>
+			<highSkill>10</highSkill>
+			<highAge>50</highAge>
+		</npcGeneration>
 
 	</TribalTrophies.TrophyKindDef>
 

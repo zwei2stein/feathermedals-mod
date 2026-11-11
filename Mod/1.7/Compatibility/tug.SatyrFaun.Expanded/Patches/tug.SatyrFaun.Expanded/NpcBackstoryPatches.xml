@@ -7,6 +7,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_Sentinel"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -26,6 +27,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_Shaman"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <count>0~1</count>
                 <trophies>
                     <li>
@@ -41,6 +43,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_Trickster"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_CunningAndWisdom</trophy>
@@ -55,6 +58,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_Fifer"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_KilledAnEnemy</trophy>
@@ -69,6 +73,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_Faunstar"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_TookWeapon</trophy>
@@ -85,6 +90,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_Duffer"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_StoleHorses</trophy>
@@ -99,6 +105,7 @@
         <xpath>/Defs/BackstoryDef[defName="RBSFE_MysteriousHealer"]</xpath>
         <value>
             <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Feather</kind>
                 <trophies>
                     <li>
                         <trophy>TribalTrophies_Trophy_Feather_Protection</trophy>
