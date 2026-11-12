@@ -5,7 +5,7 @@
         <defName>TribalTrophies_Trophy_Feather_Adorning_TaleOfHonor</defName>
         <rulePack>
             <rulesStrings>
-                <li>r_root->[place] has [speech_verb] a warrior for [heroic_trait].</li>
+                <li>r_root->[place] has [speech_verb] [honoree_indefinite] for [heroic_trait].</li>
                 <li>r_root->[speech_verb] by [place] for [their_actions].</li>
                 <li>r_root->[speech_verb] for [pawn_adj] [heroic_trait].</li>
                 <li>r_root->[pawn_adj] [heroic_trait] was [speech_verb] by [place].</li>

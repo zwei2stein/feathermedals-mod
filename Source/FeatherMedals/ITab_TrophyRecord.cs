@@ -23,5 +23,5 @@ public class ITab_TrophyRecord : ITab_TrophyRows
         return rows;
     }
 
-    protected override string Header(int rowCount) => "TribalTrophies_Trophy_TrophyTab_Header".Translate();
+    protected override string Header(int rowCount) => (SelThing as AwardedTrophy)?.Kind?.labelShort.CapitalizeFirst();
 }

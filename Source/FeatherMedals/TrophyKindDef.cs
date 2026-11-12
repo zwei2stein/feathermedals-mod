@@ -9,6 +9,12 @@ namespace TribalTrophies;
 // A family of awarded trophies (Feather, Embroidery...)
 public class TrophyKindDef : Def
 {
+    // short name, trophy tab header ("feather")
+    public string labelShort;
+
+    // order of kinds in the pawn's trophies tab
+    public int uiOrder;
+
     // ceremony
     public PreceptDef ceremonyPrecept;
     public InteractionDef speechInteraction;
@@ -48,6 +54,9 @@ public class TrophyKindDef : Def
             return layoutWorkerInt;
         }
     }
+
+    public static List<TrophyKindDef> AllInUiOrder => field ??=
+        DefDatabase<TrophyKindDef>.AllDefsListForReading.OrderBy(kind => kind.uiOrder).ThenBy(kind => kind.defName).ToList();
 
     public string HonoreeIndefinite => Find.ActiveLanguageWorker.WithIndefiniteArticle(honoreeLabel);
 
@@ -98,6 +107,9 @@ public class TrophyKindDef : Def
             yield return $"{nameof(adornedTale)} is missing";
         if (taleOfHonorRulePack == null)
             yield return $"{nameof(taleOfHonorRulePack)} is missing";
+
+        if (labelShort.NullOrEmpty())
+            yield return $"{nameof(labelShort)} is missing";
 
         if (communityLabel.NullOrEmpty())
             yield return $"{nameof(communityLabel)} is missing";

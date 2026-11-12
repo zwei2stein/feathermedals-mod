@@ -8,10 +8,13 @@ public abstract class TrophyLayoutWorker
 {
     public TrophyKindDef def;
 
+    // trophies of this kind are drawn on pawns at all
+    public abstract bool DrawOnPawns { get; }
+
     // how many trophies of this kind are drawn on one pawn
     public abstract int MaxDisplayed { get; }
 
-    public abstract float ScaleFeather { get; }
+    public abstract float Scale { get; }
 
     public abstract Vector3 OffsetFor(int index, int count, Rot4 facing);
 
@@ -22,9 +25,11 @@ public abstract class TrophyLayoutWorker
 // Feathers: fan over the head, tuned in mod settings
 public class TrophyLayoutWorker_Feathers : TrophyLayoutWorker
 {
+    public override bool DrawOnPawns => TribalTrophiesMod.Settings.DrawFeatherTrophiesOnPawns;
+
     public override int MaxDisplayed => TribalTrophiesMod.Settings.MaxDisplayedTrophiesFeathers;
 
-    public override float ScaleFeather => TribalTrophiesMod.Settings.TrophyScaleFeather;
+    public override float Scale => TribalTrophiesMod.Settings.TrophyScaleFeather;
 
     public override Vector3 OffsetFor(int index, int count, Rot4 facing) => TrophyLayout.OffsetFor(index, count, facing);
 
@@ -34,9 +39,11 @@ public class TrophyLayoutWorker_Feathers : TrophyLayoutWorker
 // Embroideries: follows sash diagonally over body, starting at shoulder
 public class TrophyLayoutWorker_Embroideries : TrophyLayoutWorker
 {
+    public override bool DrawOnPawns => TribalTrophiesMod.Settings.DrawEmbroideryTrophiesOnPawns;
+
     public override int MaxDisplayed => TribalTrophiesMod.Settings.MaxDisplayedTrophiesEmbroideries;
     
-    public override float ScaleFeather => TribalTrophiesMod.Settings.TrophyScaleEmbroidery;
+    public override float Scale => TribalTrophiesMod.Settings.TrophyScaleEmbroidery;
     
     // offset to control spacing/overlap.
     public override Vector3 OffsetFor(int index, int count, Rot4 facing)

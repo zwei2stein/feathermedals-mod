@@ -9,6 +9,7 @@
                 <xpath>/Defs/ThingDef[defName="Building_OutfitStand"]/building/fixedStorageSettings/filter/disallowedCategories</xpath>
                 <value>
                     <li>TribalTrophies_Apparel_Feathers</li>
+                    <li>TribalTrophies_Apparel_Embroideries</li>
                 </value>
             </match>
             <nomatch Class="PatchOperationAdd">
@@ -16,6 +17,7 @@
                 <value>
                     <disallowedCategories>
                         <li>TribalTrophies_Apparel_Feathers</li>
+                        <li>TribalTrophies_Apparel_Embroideries</li>
                     </disallowedCategories>
                 </value>
             </nomatch>

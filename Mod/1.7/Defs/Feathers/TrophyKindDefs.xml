@@ -5,6 +5,8 @@
 	<TribalTrophies.TrophyKindDef>
 		<defName>TribalTrophies_TrophyKind_Feather</defName>
 		<label>feather trophy</label>
+		<labelShort>feather</labelShort>
+		<uiOrder>0</uiOrder>
 
 		<!-- ceremony -->
 		<ceremonyPrecept>TribalTrophies_AdorningCeremonyPrecept</ceremonyPrecept>

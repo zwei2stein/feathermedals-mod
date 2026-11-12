@@ -87,13 +87,12 @@
 		</statBases>
 	</ThingDef>
 
-	<ThingDef ParentName="TribalTrophies_Embroidery_Base" Name="TribalTrophies_Embroidery_BassOrnate" Abstract="True">
+	<ThingDef ParentName="TribalTrophies_Embroidery_Base" Name="TribalTrophies_Embroidery_BaseOrnate" Abstract="True">
 		<statBases>
 			<MarketValue>200</MarketValue>
 		</statBases>
 	</ThingDef>
-
-
+	
 	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
 		<defName>TribalTrophies_Trophy_Embroidery_SlewThrumbo</defName>
 		<label>embroidery: thrumbo slayer</label>
@@ -108,6 +107,53 @@
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
 				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewMegasloth</defName>
+		<label>embroidery: megasloth slayer</label>
+		<description>Embroidery depicting slaying the megasloth.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewMegasloth</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>SpeedOffset</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>SpeedOffset</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
 			</li>
 		</modExtensions>
 		<uiOrder>20</uiOrder>

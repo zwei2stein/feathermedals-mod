@@ -20,6 +20,9 @@ public static class TaleUtility
         request.Rules.Add(new Rule_String("settlement_name", SettlementName(faction, tile)));
         request.Rules.Add(new Rule_String("pawn_name", PawnName(kind, pawn)));
         request.Rules.Add(new Rule_String("pawn_adj", PawnPossessive(pawn)));
+        request.Rules.Add(new Rule_String("community", kind.communityLabel));
+        request.Rules.Add(new Rule_String("honoree", kind.honoreeLabel));
+        request.Rules.Add(new Rule_String("honoree_indefinite", kind.HonoreeIndefinite));
         return GrammarResolver.Resolve("r_root", request, rulePack.defName).CapitalizeFirst();
     }
 

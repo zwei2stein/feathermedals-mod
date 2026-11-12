@@ -66,7 +66,7 @@ namespace TribalTrophies
             }
         }
 
-        // feathers first, then necklace tongues, then belt scalps and skulls; an empty belt holds no trophies
+        // awarded trophies by kind (feathers, embroideries, ...), then necklace tongues, then belt scalps and skulls; an empty belt holds no trophies
         protected override List<ITrophyRecordRow> Rows()
         {
             var rows = new List<ITrophyRecordRow>();
@@ -74,8 +74,14 @@ namespace TribalTrophies
             if (pawn?.apparel == null)
                 return rows;
 
-            foreach (var featherTrophy in pawn.apparel.WornApparel.OfType<AwardedTrophy>())
-                rows.Add(new FeatherTrophyRecordDrawer(featherTrophy));
+            foreach (var kind in TrophyKindDef.AllInUiOrder)
+            {
+                foreach (var featherTrophy in pawn.apparel.WornApparel.OfType<AwardedTrophy>())
+                {
+                    if (featherTrophy.Kind == kind)
+                        rows.Add(new FeatherTrophyRecordDrawer(featherTrophy));
+                }
+            }
             foreach (var tongue in WornDriedTongues(pawn))
                 rows.Add(new TrophyBodyPartRecordDrawer(tongue));
             foreach (var scalp in WornScalps(pawn))

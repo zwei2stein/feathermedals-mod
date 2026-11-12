@@ -34,8 +34,8 @@
 
 	<!--  SIMPLE RECIPES  -->
 
-	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_RecipeBase">
-		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewThrumbot</defName>
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewThrumbo</defName>
 		<label>embroidery: thrumbo slayer</label>
 		<jobString>Crafting an embroidery depicting slaying the wild thrumbo.</jobString>
 		<products>
@@ -79,5 +79,42 @@
 		</fixedIngredientFilter>
 	</RecipeDef>
 
-
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewMegasloth</defName>
+		<label>embroidery: megasloth slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the megasloth.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewMegasloth>1</TribalTrophies_Trophy_Embroidery_SlewMegasloth>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Silver</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoolMegasloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Silver</li>
+				<li>WoolMegasloth</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
 </Defs>

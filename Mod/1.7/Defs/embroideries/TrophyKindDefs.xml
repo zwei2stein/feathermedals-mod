@@ -5,6 +5,8 @@
 	<TribalTrophies.TrophyKindDef>
 		<defName>TribalTrophies_TrophyKind_Embroidery</defName>
 		<label>embroidery trophy</label>
+		<labelShort>embroidery</labelShort>
+		<uiOrder>10</uiOrder>
 
 		<!-- ceremony -->
 		<ceremonyPrecept>TribalTrophies_AdorningCeremonyPrecept</ceremonyPrecept>
@@ -28,7 +30,7 @@
 			<li>IdeoRole_MedicalSpecialist</li>
 		</presenterRoles>
 
-		<!-- title trait: degree 0, 1, 2 at this many worn feathers -->
+		<!-- title trait: degree 0, 1, 2 at this many worn embroideries -->
 		<decoratedTrait>TribalTrophies_Heroism</decoratedTrait>
 		<decoratedThresholds>
 			<li>3</li>
