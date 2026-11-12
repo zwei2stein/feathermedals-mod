@@ -116,5 +116,43 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewMegasloth</defName>
+		<label>embroidery: grizzly bear slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the grizzly bear.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewGrizzly>1</TribalTrophies_Trophy_Embroidery_SlewGrizzly>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Silver</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Leather_Bear</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Silver</li>
+				<li>Leather_Bear</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
 	
 </Defs>

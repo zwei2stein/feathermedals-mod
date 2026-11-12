@@ -71,7 +71,22 @@
 						</dataWest>
 						<dataSouth>
 							<layer>45</layer>
-							<offset>(0, -0.08, 0.08)</offset>
+							<!-- position comes from the sash curve, see SashLayoutExtension -->
+						</dataSouth>
+					</drawData>
+				</li>
+				<li>
+					<debugLabel>Embroidery sash</debugLabel>
+					<nodeClass>TribalTrophies.PawnRenderNode_TrophySash</nodeClass>
+					<subworkerClasses>
+						<li>TribalTrophies.PawnRenderSubWorker_TrophySash</li>
+					</subworkerClasses>
+					<parentTagDef>Torso</parentTagDef>
+					<!-- under the embroideries, they add their layer step on top -->
+					<baseLayer>80</baseLayer>
+					<drawData>
+						<dataSouth>
+							<layer>45</layer>
 						</dataSouth>
 					</drawData>
 				</li>
@@ -151,6 +166,39 @@
 					<li>
 						<trait>SpeedOffset</trait>
 						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewGrizzly</defName>
+		<label>embroidery: grizzly bear slayer</label>
+		<description>Embroidery depicting slaying the grizzly bear.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewGrizzly</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
 						<chance>0.1</chance>
 					</li>
 				</addsTraits>

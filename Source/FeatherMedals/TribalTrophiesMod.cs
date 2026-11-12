@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 using UnityEngine;
@@ -323,8 +323,17 @@ namespace TribalTrophies
             return (TechLevel)Mathf.RoundToInt(value);
         }
 
+        // every display setting, to notice a change
+        private static (bool, bool, float, float, float, int, float, int, float, float, float, bool) DisplaySettings() =>
+            (Settings.DrawFeatherTrophiesOnPawns, Settings.DrawEmbroideryTrophiesOnPawns,
+                Settings.TrophyScaleFeather, Settings.FanOut, Settings.VerticalOffset, Settings.MaxDisplayedTrophiesFeathers,
+                Settings.TrophyScaleEmbroidery, Settings.MaxDisplayedTrophiesEmbroideries, Settings.EmbroiderySpacing,
+                Settings.EmbroideryFollowSash, Settings.EmbroiderySashOffset, Settings.EmbroiderySideways);
+
         private static void DrawDisplayTab(Rect rect)
         {
+            var displayBefore = DisplaySettings();
+
             var listingStandard = new Listing_Standard();
 
             var gapWidth = 12f;
@@ -408,6 +417,27 @@ namespace TribalTrophies
                         Settings.MaxDisplayedTrophiesEmbroideries.Named("COUNT")),
                     Settings.MaxDisplayedTrophiesEmbroideries, 1f, 20f, 0.5f,
                     "TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Tooltip".Translate()));
+
+                Settings.EmbroiderySpacing = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_Spacing_Label".Translate(Settings.EmbroiderySpacing.ToStringPercent().Named("SPACING")),
+                    Settings.EmbroiderySpacing, -0.75f, 1f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_Spacing_Tooltip".Translate());
+
+                Settings.EmbroideryFollowSash = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_FollowSash_Label".Translate(Settings.EmbroideryFollowSash.ToStringPercent().Named("FOLLOW")),
+                    Settings.EmbroideryFollowSash, 0f, 1f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_FollowSash_Tooltip".Translate());
+
+                listingStandard.CheckboxLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_Sideways_Label".Translate(),
+                    ref Settings.EmbroiderySideways,
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_Sideways_Tooltip".Translate()
+                );
+
+                Settings.EmbroiderySashOffset = listingStandard.SliderLabeled(
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_SashOffset_Label".Translate(Settings.EmbroiderySashOffset.ToStringDecimalIfSmall().Named("OFFSET")),
+                    Settings.EmbroiderySashOffset, -0.2f, 0.2f, 0.5f,
+                    "TribalTrophies_Settings_Display_Worn_Embroideries_SashOffset_Tooltip".Translate());
                 
                 listingStandard.Outdent(gapWidth);
                 listingStandard.ColumnWidth += gapWidth;
@@ -417,6 +447,9 @@ namespace TribalTrophies
             }
 
             listingStandard.End();
+
+            if (DisplaySettings() != displayBefore)
+                TrophyRenderUtility.RecacheWornTrophies();
         }
 
     }
@@ -431,11 +464,15 @@ namespace TribalTrophies
         public bool PromptForTaleDuringCeremony = true;
         public bool AutoSuggestTale = false;
         public float TrophyScaleFeather = 1.3f;
-        public float TrophyScaleEmbroidery = 1.0f;
+        public float TrophyScaleEmbroidery = 0.5f;
         public float FanOut = 0.35f;  // 0 = all upright, 1 = fully radial
         public float VerticalOffset = 0.1f;
         public int MaxDisplayedTrophiesFeathers = 9;
         public int MaxDisplayedTrophiesEmbroideries = 9;
+        public float EmbroiderySpacing = -0.1f;
+        public float EmbroideryFollowSash = 1f;
+        public bool EmbroiderySideways = false;
+        public float EmbroiderySashOffset = 0f;
         public bool GenerateNpcFeatherTrophies = true;
         public TechLevel NpcFeatherTrophyMinTech = TechLevel.Animal;
         public TechLevel NpcFeatherTrophyMaxTech = TechLevel.Medieval;
@@ -469,11 +506,15 @@ namespace TribalTrophies
             Scribe_Values.Look(ref DrawEmbroideryTrophiesOnPawns, "DrawEmbroideryTrophiesOnPawns", true);
             Scribe_Values.Look(ref MaxDisplayedTrophiesFeathers, "MaxDisplayedTrophiesFeathers", 9);
             Scribe_Values.Look(ref MaxDisplayedTrophiesEmbroideries, "MaxDisplayedTrophiesEmbroideries", 9);
+            Scribe_Values.Look(ref EmbroiderySpacing, "EmbroiderySpacing", -0.1f);
+            Scribe_Values.Look(ref EmbroideryFollowSash, "EmbroideryFollowSash", 1f);
+            Scribe_Values.Look(ref EmbroiderySideways, "EmbroiderySideways", false);
+            Scribe_Values.Look(ref EmbroiderySashOffset, "EmbroiderySashOffset", 0f);
             Scribe_Values.Look(ref PromptForTaleDuringCeremony, "PromptForTaleDuringCeremony", true);
             Scribe_Values.Look(ref AutoSuggestTale, "AutoSuggestTale", false);
             Scribe_Values.Look(ref TrophyDynamicTraits, "TrophyDynamicTraits", true);
             Scribe_Values.Look(ref TrophyScaleFeather, "TrophyScaleFeather", 1.3f);
-            Scribe_Values.Look(ref TrophyScaleEmbroidery, "TrophyScaleEmbroidery", 1.0f);
+            Scribe_Values.Look(ref TrophyScaleEmbroidery, "TrophyScaleEmbroidery", 0.5f);
             Scribe_Values.Look(ref FanOut, "FanOut", 0.35f);
             Scribe_Values.Look(ref VerticalOffset, "VerticalOffset", 0.1f);
             Scribe_Values.Look(ref GenerateNpcFeatherTrophies, "GenerateNpcFeatherTrophies", true);

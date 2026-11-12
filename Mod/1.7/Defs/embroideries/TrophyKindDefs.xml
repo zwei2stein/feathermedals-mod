@@ -70,6 +70,80 @@
 			<highAge>50</highAge>
 		</npcGeneration>
 
+		<modExtensions>
+			<!-- sash under the embroideries and the curve they follow -->
+			<li Class="TribalTrophies.SashLayoutExtension">
+				<!-- vanilla sash, _<BodyType>_<facing> is added -->
+				<texPath>Things/Pawn/Humanlike/Apparel/Sash/Sash</texPath>
+				<!-- when no embroidery has a leather or fabric material -->
+				<defaultColor>(1, 1, 1)</defaultColor>
+				<!-- body types without a curve below -->
+				<fallbackBodyType>Male</fallbackBodyType>
+				<!-- first embroidery center: half an embroidery from the shoulder end, plus this -->
+				<startOffset>0</startOffset>
+				<!-- layers above the sash shared by all embroideries, the shoulder end on top; sash layer + this stays under the head (50) -->
+				<layerSpread>4</layerSpread>
+				<!-- shoulder to belt, facing south, offsets from the body center (adult body mesh is 1.5 wide); traced from the sash textures -->
+				<curves>
+					<li>
+						<bodyType>Fat</bodyType>
+						<south>
+							<li>(0.25, 0, 0.22)</li>
+							<li>(0.23, 0, 0.08)</li>
+							<li>(0.15, 0, -0.06)</li>
+							<li>(0.02, 0, -0.20)</li>
+							<li>(-0.21, 0, -0.34)</li>
+							<li>(-0.38, 0, -0.48)</li>
+						</south>
+					</li>
+					<li>
+						<bodyType>Female</bodyType>
+						<south>
+							<li>(0.16, 0, 0.16)</li>
+							<li>(0.15, 0, 0.05)</li>
+							<li>(0.11, 0, -0.06)</li>
+							<li>(0.01, 0, -0.18)</li>
+							<li>(-0.13, 0, -0.28)</li>
+							<li>(-0.23, 0, -0.40)</li>
+						</south>
+					</li>
+					<li>
+						<bodyType>Hulk</bodyType>
+						<south>
+							<li>(0.33, 0, 0.23)</li>
+							<li>(0.32, 0, 0.08)</li>
+							<li>(0.25, 0, -0.06)</li>
+							<li>(0.12, 0, -0.21)</li>
+							<li>(-0.09, 0, -0.35)</li>
+							<li>(-0.26, 0, -0.50)</li>
+						</south>
+					</li>
+					<li>
+						<bodyType>Male</bodyType>
+						<south>
+							<li>(0.25, 0, 0.18)</li>
+							<li>(0.23, 0, 0.07)</li>
+							<li>(0.18, 0, -0.04)</li>
+							<li>(0.09, 0, -0.14)</li>
+							<li>(-0.08, 0, -0.25)</li>
+							<li>(-0.21, 0, -0.35)</li>
+						</south>
+					</li>
+					<li>
+						<bodyType>Thin</bodyType>
+						<south>
+							<li>(0.13, 0, 0.18)</li>
+							<li>(0.13, 0, 0.06)</li>
+							<li>(0.10, 0, -0.07)</li>
+							<li>(0.04, 0, -0.19)</li>
+							<li>(-0.06, 0, -0.32)</li>
+							<li>(-0.13, 0, -0.43)</li>
+						</south>
+					</li>
+				</curves>
+			</li>
+		</modExtensions>
+
 	</TribalTrophies.TrophyKindDef>
 
 </Defs>

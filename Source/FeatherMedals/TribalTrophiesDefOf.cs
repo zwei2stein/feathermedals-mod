@@ -16,6 +16,11 @@ namespace TribalTrophies
         public static JobDef TribalTrophies_PresentTrophySpeech;
         public static JobDef TribalTrophies_Job_AwaitAdorning;
 
+        // Trophy kinds
+
+        public static TrophyKindDef TribalTrophies_TrophyKind_Embroidery;
+        public static TrophyKindDef TribalTrophies_TrophyKind_Feather;
+
         // HonoringWarriors
 
         public static IssueDef TribalTrophies_Issue_HonoringWarriors;

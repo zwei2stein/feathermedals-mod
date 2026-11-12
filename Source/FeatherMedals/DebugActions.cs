@@ -21,4 +21,21 @@ public class DebugActions
             pawn.jobs.StartJob(job, JobCondition.InterruptForced);
         }
     }
+
+    public static class DebugActionsEmbroideries
+    {
+        private const int TrophyCount = 10;
+
+        [DebugAction("Tribal Trophies", "Adorn with 10 random embroideries", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void AdornWithRandomEmbroideries(Pawn pawn)
+        {
+            NpcTrophyGenerator.AdornForDebug(pawn, TribalTrophiesDefOf.TribalTrophies_TrophyKind_Embroidery, TrophyCount);
+        }
+        
+        [DebugAction("Tribal Trophies", "Adorn with 10 random feathers", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void AdornWithRandomFeathers(Pawn pawn)
+        {
+            NpcTrophyGenerator.AdornForDebug(pawn, TribalTrophiesDefOf.TribalTrophies_TrophyKind_Feather, TrophyCount);
+        }
+    }
 }

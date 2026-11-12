@@ -129,10 +129,22 @@
     <TribalTrophies_Settings_Display_Worn_Embroideries_Label>Worn embroidery trophies</TribalTrophies_Settings_Display_Worn_Embroideries_Label>
     
     <TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Label>Worn embroideries size: {SIZE}</TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Label>
-    <TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip>Size of embroideries drawn on pawns. Default: 100%</TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip>Size of embroideries drawn on pawns. Default: 40%</TribalTrophies_Settings_Display_Worn_Embroideries_TrophyScale_Tooltip>
 
     <TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Label>Displayed embroidery trophies: {COUNT}</TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Label>
     <TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Tooltip>Number of embroidery trophies drawn on a pawn. Trophies over this count are still worn, but not drawn. Default: 9</TribalTrophies_Settings_Display_Worn_Embroideries_MaxDisplayedTrophies_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Embroideries_Spacing_Label>Embroideries spacing: {SPACING}</TribalTrophies_Settings_Display_Worn_Embroideries_Spacing_Label>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_Spacing_Tooltip>Space between embroideries on the sash, as a share of their size. Below 0% they overlap, the one closer to the shoulder on top. Embroideries past the end of the sash are not drawn. Default: -10%</TribalTrophies_Settings_Display_Worn_Embroideries_Spacing_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Embroideries_FollowSash_Label>Embroideries follow sash: {FOLLOW}</TribalTrophies_Settings_Display_Worn_Embroideries_FollowSash_Label>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_FollowSash_Tooltip>How much embroideries turn along the sash. 0%: upright, 100%: along the sash. Default: 100%</TribalTrophies_Settings_Display_Worn_Embroideries_FollowSash_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Embroideries_Sideways_Label>Embroideries sideways</TribalTrophies_Settings_Display_Worn_Embroideries_Sideways_Label>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_Sideways_Tooltip>If enabled, embroideries are turned a quarter left: their side follows the sash instead of their top. Default: OFF</TribalTrophies_Settings_Display_Worn_Embroideries_Sideways_Tooltip>
+
+    <TribalTrophies_Settings_Display_Worn_Embroideries_SashOffset_Label>Embroideries offset from sash: {OFFSET}</TribalTrophies_Settings_Display_Worn_Embroideries_SashOffset_Label>
+    <TribalTrophies_Settings_Display_Worn_Embroideries_SashOffset_Tooltip>Moves embroideries off the middle of the sash, sideways to it. Positive toward its upper edge, negative toward its lower edge. Default: 0</TribalTrophies_Settings_Display_Worn_Embroideries_SashOffset_Tooltip>
 
 
 </LanguageData>

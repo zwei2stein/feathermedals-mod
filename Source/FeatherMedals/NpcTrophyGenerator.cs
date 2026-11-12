@@ -261,6 +261,15 @@ public static class NpcTrophyGenerator
         }
     }
 
+    // dev tool: trophies of a kind, as if adorned in the past; no settings or eligibility checks
+    public static void AdornForDebug(Pawn pawn, TrophyKindDef kind, int count)
+    {
+        if (pawn?.apparel == null || pawn.story == null)
+            return;
+
+        Adorn(pawn, kind, count, false);
+    }
+
     private static void Adorn(Pawn pawn, TrophyKindDef kind, int count, bool leader)
     {
         if (count <= 0)
