@@ -83,7 +83,9 @@
 				<startOffset>0</startOffset>
 				<!-- layers above the sash shared by all embroideries, the shoulder end on top; sash layer + this stays under the head (50) -->
 				<layerSpread>4</layerSpread>
-				<!-- shoulder to belt, facing south, offsets from the body center (adult body mesh is 1.5 wide); traced from the sash textures -->
+				<!-- offsets from the body center (adult body mesh is 1.5 wide), traced from the sash textures;
+				     south: shoulder to belt; west: top of the shoulder toward the front (east sash texture mirrored);
+				     facings without points (north, east) show the sash only -->
 				<curves>
 					<li>
 						<bodyType>Fat</bodyType>
@@ -95,6 +97,13 @@
 							<li>(-0.21, 0, -0.34)</li>
 							<li>(-0.38, 0, -0.48)</li>
 						</south>
+						<west>
+							<li>(0.15, 0, 0.16)</li>
+							<li>(0.01, 0, 0.15)</li>
+							<li>(-0.14, 0, 0.08)</li>
+							<li>(-0.28, 0, -0.03)</li>
+							<li>(-0.42, 0, -0.10)</li>
+						</west>
 					</li>
 					<li>
 						<bodyType>Female</bodyType>
@@ -106,6 +115,13 @@
 							<li>(-0.13, 0, -0.28)</li>
 							<li>(-0.23, 0, -0.40)</li>
 						</south>
+						<west>
+							<li>(0.14, 0, 0.13)</li>
+							<li>(0.06, 0, 0.12)</li>
+							<li>(-0.02, 0, 0.04)</li>
+							<li>(-0.09, 0, -0.05)</li>
+							<li>(-0.18, 0, -0.08)</li>
+						</west>
 					</li>
 					<li>
 						<bodyType>Hulk</bodyType>
@@ -117,6 +133,13 @@
 							<li>(-0.09, 0, -0.35)</li>
 							<li>(-0.26, 0, -0.50)</li>
 						</south>
+						<west>
+							<li>(0.19, 0, 0.15)</li>
+							<li>(0.07, 0, 0.13)</li>
+							<li>(-0.06, 0, 0.04)</li>
+							<li>(-0.19, 0, -0.13)</li>
+							<li>(-0.30, 0, -0.16)</li>
+						</west>
 					</li>
 					<li>
 						<bodyType>Male</bodyType>
@@ -128,6 +151,13 @@
 							<li>(-0.08, 0, -0.25)</li>
 							<li>(-0.21, 0, -0.35)</li>
 						</south>
+						<west>
+							<li>(0.06, 0, 0.12)</li>
+							<li>(-0.01, 0, 0.10)</li>
+							<li>(-0.08, 0, 0.04)</li>
+							<li>(-0.15, 0, -0.04)</li>
+							<li>(-0.22, 0, -0.08)</li>
+						</west>
 					</li>
 					<li>
 						<bodyType>Thin</bodyType>
@@ -139,6 +169,13 @@
 							<li>(-0.06, 0, -0.32)</li>
 							<li>(-0.13, 0, -0.43)</li>
 						</south>
+						<west>
+							<li>(0.11, 0, 0.13)</li>
+							<li>(0.05, 0, 0.12)</li>
+							<li>(-0.02, 0, -0.02)</li>
+							<li>(-0.09, 0, -0.04)</li>
+							<li>(-0.15, 0, -0.04)</li>
+						</west>
 					</li>
 				</curves>
 			</li>

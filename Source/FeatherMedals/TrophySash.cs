@@ -56,6 +56,8 @@ public class SashLayoutExtension : DefModExtension
                 yield return $"{nameof(curves)}: {nameof(SashCurve.bodyType)} is missing";
             if (curve.south == null || curve.south.Count < 2)
                 yield return $"{nameof(curves)}: {curve.bodyType?.defName} needs at least 2 {nameof(SashCurve.south)} points";
+            if (curve.west != null && curve.west.Count < 2)
+                yield return $"{nameof(curves)}: {curve.bodyType?.defName} needs at least 2 {nameof(SashCurve.west)} points";
         }
 
         if (fallbackBodyType == null)
@@ -74,16 +76,36 @@ public class SashCurve
 
     public List<Vector3> south;
 
-    public bool TryGetPoint(float distance, out Vector3 point, out Vector3 direction)
+    // from the top of the shoulder toward the front; no points = no trophies facing west
+    public List<Vector3> west;
+
+    // embroideries are drawn only in facings with points
+    public List<Vector3> PointsFor(Rot4 facing)
     {
-        point = south[0];
-        direction = (south[1] - south[0]).normalized;
+        if (facing == Rot4.South)
+            return south;
+        if (facing == Rot4.West)
+            return west;
+        return null;
+    }
+
+    public bool TryGetPoint(Rot4 facing, float distance, out Vector3 point, out Vector3 direction)
+    {
+        point = Vector3.zero;
+        direction = Vector3.zero;
+
+        var points = PointsFor(facing);
+        if (points == null || points.Count < 2)
+            return false;
+
+        point = points[0];
+        direction = (points[1] - points[0]).normalized;
         if (distance <= 0f)
             return true;
 
-        for (var i = 1; i < south.Count; i++)
+        for (var i = 1; i < points.Count; i++)
         {
-            var segment = south[i] - south[i - 1];
+            var segment = points[i] - points[i - 1];
             var length = segment.magnitude;
             if (length <= 0f)
                 continue;
@@ -91,7 +113,7 @@ public class SashCurve
             if (distance <= length)
             {
                 direction = segment / length;
-                point = south[i - 1] + direction * distance;
+                point = points[i - 1] + direction * distance;
                 return true;
             }
             distance -= length;
@@ -218,9 +240,8 @@ public class PawnRenderSubWorker_TrophySash : PawnRenderSubWorker
         if (node.apparel is not AwardedTrophy trophy)
             return false;
 
-        var layout = trophy.Kind.LayoutWorker;
-        return layout.DrawOnPawns
-               && layout.DrawsFacing(parms.facing)
+        // every facing, also those without embroideries
+        return trophy.Kind.LayoutWorker.DrawOnPawns
                && AwardedTrophyUtility.TryGetDisplaySlot(parms.pawn, trophy, out var index, out _)
                && index == 0;
     }

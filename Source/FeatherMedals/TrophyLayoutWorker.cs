@@ -58,9 +58,6 @@ public class TrophyLayoutWorker_Embroideries : TrophyLayoutWorker
 
     private SashLayoutExtension Sash => field ??= def.GetModExtension<SashLayoutExtension>();
 
-    // only south for now
-    public override bool DrawsFacing(Rot4 facing) => facing == Rot4.South;
-
     // trophies past the belt end are not drawn
     public override bool Fits(PawnRenderNode node, PawnDrawParms parms, int index, int count) =>
         TryPlace(node, parms, index, out _, out _);
@@ -104,7 +101,8 @@ public class TrophyLayoutWorker_Embroideries : TrophyLayoutWorker
 
         // children have a smaller body mesh, curves are for adults
         var bodyFactor = HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(parms.pawn) / SashLayoutExtension.AdultBodyWidth;
-        if (!curve.TryGetPoint(distance / bodyFactor, out point, out direction))
+        // facings without curve points (north, east) get no embroideries
+        if (!curve.TryGetPoint(parms.facing, distance / bodyFactor, out point, out direction))
             return false;
 
         var normal = new Vector3(direction.z, 0f, -direction.x);

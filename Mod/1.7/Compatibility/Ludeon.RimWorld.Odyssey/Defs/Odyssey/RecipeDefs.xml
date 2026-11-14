@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewMastodon</defName>
+		<label>embroidery: mastodon slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the mastodon.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewMastodon>1</TribalTrophies_Trophy_Embroidery_SlewMastodon>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Silver</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Leather_Mastodon</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MastodonTusk</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Silver</li>
+				<li>Leather_Mastodon</li>
+				<li>MastodonTusk</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewGreatwolf</defName>
+		<label>embroidery: greatwolf slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the greatwolf.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewGreatwolf>1</TribalTrophies_Trophy_Embroidery_SlewGreatwolf>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Silver</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Leather_Wolf</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Silver</li>
+				<li>Leather_Wolf</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewScimitarCat</defName>
+		<label>embroidery: scimitar cat slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the scimitar cat.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewScimitarCat>1</TribalTrophies_Trophy_Embroidery_SlewScimitarCat>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Silver</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Leather_Panthera</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Silver</li>
+				<li>Leather_Panthera</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewAlphaThrumbo</defName>
+		<label>embroidery: alpha thrumbo slayer</label>
+		<jobString>Crafting an embroidery depicting slaying the alpha thrumbo.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_SlewAlphaThrumbo>1</TribalTrophies_Trophy_Embroidery_SlewAlphaThrumbo>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Gold</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Leather_AlphaThrumbo</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AlphaThrumboHorn</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Gold</li>
+				<li>Leather_AlphaThrumbo</li>
+				<li>AlphaThrumboHorn</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+</Defs>

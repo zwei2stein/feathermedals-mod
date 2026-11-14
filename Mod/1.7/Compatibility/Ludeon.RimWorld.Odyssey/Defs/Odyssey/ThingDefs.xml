@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewMastodon</defName>
+		<label>embroidery: mastodon slayer</label>
+		<description>Embroidery depicting slaying the mastodon.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewMastodon</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewGreatwolf</defName>
+		<label>embroidery: greatwolf slayer</label>
+		<description>Embroidery depicting slaying the greatwolf.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewGreatwolf</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewScimitarCat</defName>
+		<label>embroidery: scimitar cat slayer</label>
+		<description>Embroidery depicting slaying the scimitar cat.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewScimitarCat</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_SlewAlphaThrumbo</defName>
+		<label>embroidery: alpha thrumbo slayer</label>
+		<description>Embroidery depicting slaying the alpha thrumbo.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/SlewAlphaThrumbo</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<SocialImpact>0.10</SocialImpact>
+			<PainShockThreshold>0.02</PainShockThreshold>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Wimp</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Brawler</trait>
+						<degree>0</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>
