@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- embroideries are "stuff" so that we can pick them as stuff -->
+    <StuffCategoryDef>
+        <defName>TribalTrophies_Embroidery_StuffCategory</defName>
+        <label>embroideries</label>
+        <noun>embroidery</noun>
+    </StuffCategoryDef>
+
+</Defs>

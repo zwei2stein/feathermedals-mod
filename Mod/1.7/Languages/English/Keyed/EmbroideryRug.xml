@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- ===== Label ===== -->
+
+    <!-- RUG: labelShort of the rug def, see EmbroideryRugExtension -->
+    <TribalTrophies_Embroidery_Rug_Label>{RUG} ({EMBROIDERY})</TribalTrophies_Embroidery_Rug_Label>
+
+    <!-- ===== Build menu ===== -->
+
+    <TribalTrophies_Embroidery_Rug_NoEmbroideries>No embroideries to lay down as a rug.</TribalTrophies_Embroidery_Rug_NoEmbroideries>
+
+</LanguageData>

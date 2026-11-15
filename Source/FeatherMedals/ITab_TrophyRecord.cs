@@ -9,10 +9,14 @@ public class ITab_TrophyRecord : ITab_TrophyRows
     {
     }
 
+    // the selected trophy, or the embroidery a rug is made of
+    private AwardedTrophy SelTrophy => SelThing as AwardedTrophy ?? (SelThing as Building_EmbroideryRug)?.Embroidery;
+
     protected override List<ITrophyRecordRow> Rows()
     {
         var rows = new List<ITrophyRecordRow>();
-        if (SelThing is not AwardedTrophy featherTrophy)
+        var featherTrophy = SelTrophy;
+        if (featherTrophy == null)
             return rows;
 
         // adorned: the record of its ceremony; not yet adorned: what it may do
@@ -23,5 +27,5 @@ public class ITab_TrophyRecord : ITab_TrophyRows
         return rows;
     }
 
-    protected override string Header(int rowCount) => (SelThing as AwardedTrophy)?.Kind?.labelShort.CapitalizeFirst();
+    protected override string Header(int rowCount) => SelTrophy?.Kind?.labelShort.CapitalizeFirst();
 }

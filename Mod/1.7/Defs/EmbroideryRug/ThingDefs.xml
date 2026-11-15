@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--  BASE  -->
+
+    <ThingDef ParentName="BuildingBase" Name="TribalTrophies_Embroidery_Building_RugBase" Abstract="True">
+        <thingClass>TribalTrophies.Building_EmbroideryRug</thingClass>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Cutout</shaderType>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <altitudeLayer>FloorEmplacement</altitudeLayer>
+        <passability>Standable</passability>
+        <pathCost>0</pathCost>
+        <rotatable>true</rotatable>
+        <useHitPoints>true</useHitPoints>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsFurniture</li>
+        </thingCategories>
+        <designationCategory>Floors</designationCategory>
+        <researchPrerequisites>
+            <li>TribalTrophies_MedievalHeroicEmbroidery</li>
+            <li>CarpetMaking</li>
+        </researchPrerequisites>
+        <statBases>
+            <Flammability>1.0</Flammability>
+            <Mass>0.5</Mass>
+        </statBases>
+        <!-- the only material: one embroidery, picked in the build menu -->
+        <stuffCategories>
+            <li>TribalTrophies_Embroidery_StuffCategory</li>
+        </stuffCategories>
+        <costStuffCount>1</costStuffCount>
+        <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <building>
+            <isEdifice>false</isEdifice>
+            <blueprintClass>TribalTrophies.Blueprint_EmbroideryRug</blueprintClass>
+        </building>
+        <placeWorkers>
+            <li>TribalTrophies.PlaceWorker_EmbroideryRug</li>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
+        <inspectorTabs>
+            <li>TribalTrophies.ITab_TrophyRecord</li>
+        </inspectorTabs>
+    </ThingDef>
+
+    <!--  SIZES  -->
+
+    <ThingDef ParentName="TribalTrophies_Embroidery_Building_RugBase">
+        <defName>TribalTrophies_Embroidery_Building_Rug</defName>
+        <label>rug (embroidery)</label>
+        <description>Rug with an embroidery sewn on it.\n\nIs beautiful and provides comfort to beds.\n\nshow off achievements of a hero or of a whole settlement.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/TribalTrophies_Embroidery_Building_Rug/EmbroideryRug</texPath>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <uiOrder>3003</uiOrder>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <WorkToBuild>200</WorkToBuild>
+            <Beauty>4</Beauty>
+        </statBases>
+        <modExtensions>
+            <li Class="TribalTrophies.EmbroideryRugExtension">
+                <labelShort>rug</labelShort>
+            </li>
+        </modExtensions>
+        <comps>
+            <!-- comfort, see Patches/EmbroideryRugPatches.xml -->
+            <li Class="CompProperties_Facility">
+                <statOffsets>
+                    <Comfort>0.02</Comfort>
+                </statOffsets>
+                <maxSimultaneous>4</maxSimultaneous>
+                <mustBePlacedAdjacent>false</mustBePlacedAdjacent>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="TribalTrophies_Embroidery_Building_RugBase">
+        <defName>TribalTrophies_Embroidery_Building_RugLarge</defName>
+        <label>large rug (embroidery)</label>
+        <description>Large rug with an embroidery sewn on it.\n\nIs beautiful and provides comfort to beds.\n\nshow off achievements of a hero or of a whole settlement.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/TribalTrophies_Embroidery_Building_Rug/EmbroideryRugLarge</texPath>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <size>(2,2)</size>
+        <uiOrder>3004</uiOrder>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToBuild>300</WorkToBuild>
+            <Beauty>6</Beauty>
+        </statBases>
+        <modExtensions>
+            <li Class="TribalTrophies.EmbroideryRugExtension">
+                <labelShort>large rug</labelShort>
+            </li>
+        </modExtensions>
+        <comps>
+            <!-- comfort, see Patches/EmbroideryRugPatches.xml -->
+            <li Class="CompProperties_Facility">
+                <statOffsets>
+                    <Comfort>0.03</Comfort>
+                </statOffsets>
+                <maxSimultaneous>2</maxSimultaneous>
+                <mustBePlacedAdjacent>false</mustBePlacedAdjacent>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

@@ -21,7 +21,10 @@
     </li>
   </modDependencies>
   <loadAfter>
+    <li>Ludeon.RimWorld.Royalty</li>
     <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
     <li>Ludeon.Rimworld.Odyssey</li>
 
     <li>CETeam.CombatExtended</li>
@@ -54,6 +57,17 @@
     <li>V.Rooboid.Faun</li>
     <li>aiecy.avianencyclopedia</li>
     <li>aiecy.poultryencyclopedia</li>
+
+    <!-- stats and traits of these mods are used by trophies when the mod is active -->
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li> <!-- Vanilla Expanded Framework -->
+    <li>BiomesTeam.BiomesBees</li> <!-- Biomes! Bees -->
+    <li>Dubwise.DubsBadHygiene</li> <!-- Dubs Bad Hygiene -->
+    <li>ilyvion.colonymanagerredux</li> <!-- Colony Manager Redux -->
+    <li>PeteTimesSix.ResearchReinvented</li> <!-- Research Reinvented -->
+    <li>Xylthixlm.Xenotypes</li> <!-- Xyl's Xenotypes -->
+    <li>DimonSever000.FactionLanguages</li> <!-- Cybrarian languages -->
+    <li>forti.workplaceaccidents</li> <!-- Workplace accidents -->
+    <li>Rocam.CozyUnderRoof</li> <!-- Weather is cozy -->
 
   </loadAfter>
 </ModMetaData>

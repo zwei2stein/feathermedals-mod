@@ -9,7 +9,7 @@
    id="svg1"
    sodipodi:docname="embroideries.svg"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
-   inkscape:export-filename="SlewScimitarCat.png"
+   inkscape:export-filename="SlewGrizzly.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xml:space="preserve"
@@ -29,13 +29,13 @@
      inkscape:document-units="px"
      inkscape:zoom="6.112823"
      inkscape:cx="8.5885032"
-     inkscape:cy="87.929914"
+     inkscape:cy="88.093504"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g33"
+     inkscape:current-layer="g11"
      showguides="false"
      showgrid="false" /><defs
      id="defs1"><pattern
@@ -220,7 +220,7 @@
      inkscape:groupmode="layer"
      id="g11"
      inkscape:label="SlewGrizzly"
-     style="display:none"><rect
+     style="display:inline"><rect
        style="display:inline;fill:#705241;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
        id="rect8"
        width="32.279171"
@@ -253,11 +253,11 @@
        width="15.875"
        height="16.756945"
        preserveAspectRatio="none"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAmCAYAAACsyDmTAAAABHNCSVQICAgIfAhkiAAABNVJREFU&#10;WIXNmD9oG1ccxz+SXEqg+I52McXVjW4TI4cMDhR0QwcLCuqoDpWn2h6KM3qKR1NKhoJrQUDFQ1EX&#10;awoWHa4UF07CWCYxkcgg16FBqrECIXDuImJBXgfduzyd7iQbbNMvHD69+733+7zf+/sz/M8UUd6n&#10;gK8Azf1tA79fgc8pYF75XQKqfqMJoAYI37N2yTCZAB8OcFcayAhtAMuappFIJACo1+ucnp7KHiwB&#10;L92KBpAATJ8zw2381P3dpBflklu3AGQB4vE4hmHQbDZptVoALbe+JwcQ2WxWdDod0el0hGVZQtM0&#10;2QvZuL9353kclOhns1nRbrdFp9MRjUZDtburRkgAWJaFab7reLPZJJPJUK/XvbJkMolpmhiGgWG8&#10;65TsMUCtVqNUKlEul73vmqZRLBb72geYm5uTdl8DRVkuAGFZlhch+bTbbZFIJEQikfB6dt6n3W6L&#10;bDYrNE0Te3t7gTbJZLJvvkZdoFNCpOs6lmWFfR4qXde9+jMzM6PMmyqQDVAqlYZCySG5iNLpdCiM&#10;4zjqsNZVoBLA9vZ2aMO6rp+nlwPyzxlVuVxOvrZw96K+CLVaraFQlynHcVQgb7+TQIe4UVpZWbkW&#10;oFwuJ/e5FvCzH8iTupSvGshV32mgApnQm4TXofl57zhLBAHdxT1Uh03Cy5TScfWg9YA06J0xw1aS&#10;bds4jnMpQKZpomma9O0drhLIgOHzZ3FxkVQqRSaToVarDXVWKBSYmprixo0bFAqFUDt5kKMMWx/Q&#10;sOGSm2a5XCaVSoVGyrZtlpaW5CkeutkC6mh4kRhYZWFSesP8/Dy6rofauUMBwPLycmibqp3U2HmB&#10;isWiF/579+6F2um6TrVapVAoYJrmhReJBBp5SOm6PhRElWEYrK6uXghESg5ZE5A757VJuWfZ8kW9&#10;5DvxeFw7PDy8NqCJiQkZBI9DndSlVqvFxsbGtcCsra1JmF/Vcn8a1ADI5/Pq1n7pqtVqpFIpCfQp&#10;vcMdgJhi9xp4DzBt22Z2dvZKDlofTI5eNuIpElDHBpIADx48CF1ZjuOwsrLSd4vUdZ10Oh0aXdu2&#10;yWQyEqZML097Kb8fHx+HdwT34p9MJkWj0Ri4nFuWFZj2pNPpwMv+/fv3VbsaveS0Ty9evAgFgl4o&#10;vUby+fyAI5+TwMxkb29PxONx1c4GPg5yeJ4VvoSbRAKBkVLSmMA0yQezBnwQ5uzZs2cjgXRgUkIF&#10;DcfW1pY3tP5v+Xxehfmcd//ICNTBwQE8efJkFNRHwDey4a2trQHHQUAnJydqKv4Q+HCUo2q1SvTs&#10;7IzHjx/z9OnTMLvXwB9AHnr3oqOjI87Ozuh2uzx69Ajorbput0u32+XNmzcsLCzI1fQv8CPw/iig&#10;brcLlUqF3d1d9vf3OTg46MvjfboJ/AOIW7duiaOjI/H8+XMxPT3tDcvOzo549eqVWF9fV4fqW+CT&#10;UTCVSoVKpUKkUql4hWNjY8RiMe+vegdy9SXwG8D4+Djj4+N9e8fk5CSpVIrNzU1ZtA78BPw9DERV&#10;ZKAgEvGA5OMD+w5YBj4b0elfgO+Bv4I+7u7u8vbt24HyASAVTAJFo1FisRi3b9+Wn2/SyxZmgS98&#10;VU+AH4A/gcB1HOZzKJAqCRWNRolEIkSjUe7cuTOy3kVApP4DEtMafNmngNcAAAAASUVORK5CYII=&#10;"
-       id="image1-7"
+       xlink:href="data:image/png;base64,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&#10;Hh+jCgAAAABJRU5ErkJggg==&#10;"
+       id="image1-73"
        x="8.9958334"
        y="8.5548611"
-       style="mix-blend-mode:darken;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.6;stroke-opacity:1" /></g><g
+       style="stroke-width:0.6" /></g><g
      inkscape:groupmode="layer"
      id="g15"
      inkscape:label="SlewRhino"
@@ -302,7 +302,7 @@
      inkscape:groupmode="layer"
      id="g19"
      inkscape:label="SlewMastodon"
-     style="display:inline"><rect
+     style="display:none"><rect
        style="display:inline;fill:#664834;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
        id="rect16"
        width="32.279171"
@@ -353,7 +353,7 @@
      inkscape:groupmode="layer"
      id="g29"
      inkscape:label="SlewGreatwolf"
-     style="display:inline"><rect
+     style="display:none"><rect
        style="display:inline;fill:#5a5552;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
        id="rect25"
        width="32.279171"
@@ -401,7 +401,7 @@
      inkscape:groupmode="layer"
      id="g33"
      inkscape:label="SlewScimitarCat"
-     style="display:inline"><rect
+     style="display:none"><rect
        style="display:inline;fill:#b1b0ae;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
        id="rect29"
        width="32.279171"

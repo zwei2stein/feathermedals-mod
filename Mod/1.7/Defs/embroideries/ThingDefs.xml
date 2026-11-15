@@ -37,6 +37,14 @@
 		<thingCategories Inherit="False">
 			<li>TribalTrophies_Apparel_Embroideries</li>
 		</thingCategories>
+		<!-- material of the embroidery rug only, see Defs/EmbroideryRug -->
+		<stuffProps>
+			<categories>
+				<li>TribalTrophies_Embroidery_StuffCategory</li>
+			</categories>
+			<color>(1, 1, 1)</color>
+			<allowedInStuffGeneration>false</allowedInStuffGeneration>
+		</stuffProps>
 		<apparel>
 			<renderSkipFlags><li>None</li></renderSkipFlags>
 			<wearPerDay>0</wearPerDay>
