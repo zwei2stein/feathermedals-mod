@@ -84,7 +84,13 @@ public class Building_EmbroideryRug : Building, IThingHolder
     {
         // god mode, dev spawn: a new embroidery is spawned
         if (!respawningAfterLoad && Embroidery == null && AwardedTrophyUtility.IsAwardedTrophyDef(Stuff))
-            innerContainer.TryAdd(ThingMaker.MakeThing(Stuff));
+        {
+            var embroidery = ThingMaker.MakeThing(Stuff);
+            embroidery.TryGetComp<CompArt>()?.InitializeArt(ArtGenerationContext.Colony);
+            innerContainer.TryAdd(embroidery);
+        }
+
+        GetComp<CompArt_EmbroideryRug>()?.SyncTitle();
 
         base.SpawnSetup(map, respawningAfterLoad);
     }

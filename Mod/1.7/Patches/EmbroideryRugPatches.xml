@@ -10,4 +10,23 @@
         </value>
     </Operation>
 
+    <!-- rug beauty follows the quality of its embroidery -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/StatDef[defName="Beauty"]/parts</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="Beauty"]/parts</xpath>
+            <value>
+                <li Class="TribalTrophies.StatPart_EmbroideryRugQuality" />
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/StatDef[defName="Beauty"]</xpath>
+            <value>
+                <parts>
+                    <li Class="TribalTrophies.StatPart_EmbroideryRugQuality" />
+                </parts>
+            </value>
+        </nomatch>
+    </Operation>
+
 </Patch>

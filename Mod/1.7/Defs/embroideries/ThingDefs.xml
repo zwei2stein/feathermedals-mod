@@ -10,12 +10,18 @@
 		<smeltable>false</smeltable>
 		<inspectorTabs>
 			<li>TribalTrophies.ITab_TrophyRecord</li>
+			<li>ITab_Art</li>
 		</inspectorTabs>
 		<comps Inherit="False">
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_Biocodable"/>
 			<li>
 				<compClass>CompQuality</compClass>
+			</li>
+			<!-- image on the rim, by its maker; viewed for joy only as a rug, see Defs/EmbroideryRug -->
+			<li Class="CompProperties_Art">
+				<nameMaker>TribalTrophies_Trophy_Embroidery_NamerArt</nameMaker>
+				<descriptionMaker>TribalTrophies_Trophy_Embroidery_ArtDescription</descriptionMaker>
 			</li>
 		</comps>
 		<graphicData>

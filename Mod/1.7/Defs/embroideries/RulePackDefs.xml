@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<RulePackDef>
+		<defName>TribalTrophies_Trophy_Embroidery_NamerArt</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>r_art_name->[adj] [rim]</li>
+				<li>r_art_name->[rim] of [noun]</li>
+				<li>r_art_name->[adj] [rim] of [noun]</li>
+				<li>r_art_name->[adj] [noun]</li>
+				<li>r_art_name->[rim] of [adj] [noun]</li>
+				<li>r_art_name->[noun] in [rim]</li>
+
+				<li>adj->Gilded</li>
+				<li>adj->Silver</li>
+				<li>adj->Boasting</li>
+				<li>adj->Bragging</li>
+				<li>adj->Proud</li>
+				<li>adj->Heroic</li>
+				<li>adj->Grand</li>
+				<li>adj->Humble</li>
+
+				<li>rim->Border</li>
+				<li>rim->Hem</li>
+				<li>rim->Rim</li>
+				<li>rim->Margin</li>
+				<li>rim->Marginalia</li>
+				<li>rim->Inscription</li>
+				<li>rim->Annotation</li>
+				<li>rim->Skirt</li>
+				<li>rim->Notes</li>
+
+				<li>noun->Bravado</li>
+				<li>noun->Pomp</li>
+				<li>noun->Honor</li>
+				<li>noun->Glory</li>
+				<li>noun->Dignity</li>
+				<li>noun->Valor</li>
+				<li>noun->Reputation</li>
+				<li>noun->Distinction</li>
+				
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>TribalTrophies_Trophy_Embroidery_ArtDescription</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>physical_description_root->The [rim] of this embroidery [display] [image]. [desc_sentence_group]</li>
+				<li>physical_description_root->Fine thread along the [rim] of this embroidery [depicts] [image]. [desc_sentence_group]</li>
+				<li>physical_description_root->This embroidery has [rim] that [depicts] [image]. [desc_sentence_group]</li>
+				
+				<li>display->[depicts]</li>
+				<li>display->is stitched to show</li>
+				<li>display->is worked to show</li>
+				<li>display->is threaded to show</li>
+				<li>display->is patched to depict</li>
+
+				<li>rim->border</li>
+				<li>rim->hem</li>
+				<li>rim->rim</li>
+				<li>rim->margin</li>
+				<li>rim->marginalia</li>
+				<li>rim->inscription</li>
+				<li>rim->annotation</li>
+				<li>rim->skirt</li>
+				<li>rim->notes</li>
+				
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+</Defs>

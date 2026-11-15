@@ -6,6 +6,10 @@
     <!-- RUG: labelShort of the rug def, see EmbroideryRugExtension -->
     <TribalTrophies_Embroidery_Rug_Label>{RUG} ({EMBROIDERY})</TribalTrophies_Embroidery_Rug_Label>
 
+    <!-- ===== Beauty stat explanation ===== -->
+
+    <TribalTrophies_Embroidery_Rug_StatsReport_Quality>Embroidery quality ({QUALITY})</TribalTrophies_Embroidery_Rug_StatsReport_Quality>
+
     <!-- ===== Build menu ===== -->
 
     <TribalTrophies_Embroidery_Rug_NoEmbroideries>No embroideries to lay down as a rug.</TribalTrophies_Embroidery_Rug_NoEmbroideries>

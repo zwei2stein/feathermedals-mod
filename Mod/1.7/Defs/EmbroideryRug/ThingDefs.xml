@@ -46,7 +46,14 @@
         </placeWorkers>
         <inspectorTabs>
             <li>TribalTrophies.ITab_TrophyRecord</li>
+            <li>ITab_Art</li>
         </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Art">
+                <compClass>TribalTrophies.CompArt_EmbroideryRug</compClass>
+                <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+            </li>
+        </comps>
     </ThingDef>
 
     <!--  SIZES  -->
