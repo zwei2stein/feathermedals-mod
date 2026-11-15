@@ -52,7 +52,7 @@
 					<subworkerClasses>
 						<li>TribalTrophies.PawnRenderSubWorker_Trophy</li>
 					</subworkerClasses>
-					<parentTagDef>Torso</parentTagDef>
+					<parentTagDef>ApparelBody</parentTagDef>
 					<overrideMeshSize>1</overrideMeshSize>
 					<drawSize>0.45</drawSize>
 					<baseLayer>80</baseLayer>
@@ -82,7 +82,7 @@
 					<subworkerClasses>
 						<li>TribalTrophies.PawnRenderSubWorker_TrophySash</li>
 					</subworkerClasses>
-					<parentTagDef>Torso</parentTagDef>
+					<parentTagDef>ApparelBody</parentTagDef>
 					<!-- under the embroideries, they add their layer spread on top -->
 					<baseLayer>45</baseLayer>
 					<drawData>
@@ -120,6 +120,8 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<HuntingStealth>0.05</HuntingStealth>
+			<VEF_VerbRangeFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.05</VEF_VerbRangeFactor>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -153,6 +155,8 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<AimingDelayFactor>-0.05</AimingDelayFactor>
+			<MoveSpeed>0.05</MoveSpeed>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -186,20 +190,22 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<IncomingDamageFactor>-0.05</IncomingDamageFactor>
+			<TameAnimalChance>0.02</TameAnimalChance>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
 				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
 				<removesTraits>
 					<li>
-						<trait>Wimp</trait>
-						<degree>0</degree>
+						<trait>Nerves</trait>
+						<degree>-2</degree>
 						<chance>0.1</chance>
 					</li>
 				</removesTraits>
 				<addsTraits>
 					<li>
-						<trait>Brawler</trait>
+						<trait>Nimble</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
 					</li>
@@ -219,21 +225,183 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<TrainAnimalChance>0.05</TrainAnimalChance>
+			<MeleeDodgeChance>0.02</MeleeDodgeChance>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
 				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
 				<removesTraits>
 					<li>
-						<trait>Wimp</trait>
-						<degree>0</degree>
+						<trait>Neurotic</trait>
+						<degree>1</degree>
 						<chance>0.1</chance>
 					</li>
 				</removesTraits>
 				<addsTraits>
 					<li>
-						<trait>Brawler</trait>
+						<trait>ShootingAccuracy</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+	
+	
+	<!-- orders -->
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfGoldenHam</defName>
+		<label>embroidery: order of golden ham</label>
+		<description>Embroidery depicting order of golden ham, awarded to an excellent cooks.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfGoldenHam</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<CookSpeed>0.10</CookSpeed>
+			<ButcheryFleshEfficiency>0.05</ButcheryFleshEfficiency>
+			<BMT_HoneyHarvestFailChance MayRequire="BiomesTeam.BiomesBees">-0.05</BMT_HoneyHarvestFailChance>
+			<WorkSpeedGlobal>0.02</WorkSpeedGlobal>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>-2</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">
+						<trait>Hygienic</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Gourmand</trait>
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">
+						<trait>Hygienic</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfGoldenSpoon</defName>
+		<label>embroidery: order of golden spoon</label>
+		<description>Embroidery depicting order of golden spoon, awarded to an excellent cooks.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfGoldenSpoon</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<CookSpeed>0.05</CookSpeed>
+			<DrugCookingSpeed>0.10</DrugCookingSpeed>
+			<DrugSynthesisSpeed>0.05</DrugSynthesisSpeed>
+			<WorkSpeedGlobal>0.02</WorkSpeedGlobal>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>-2</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">
+						<trait>Hygienic</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Gourmand</trait>
+						<chance>0.2</chance>
+					</li>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>2</degree>
+						<chance>0.05</chance>
+					</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">
+						<trait>Hygienic</trait>
+						<degree>1</degree>
+						<chance>0.1</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfTheMicePelt</defName>
+		<label>embroidery: order of mice pelt</label>
+		<description>Embroidery depicting order of mice pelt, awarded to an unseen worker.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfTheMicePelt</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<CleaningSpeed>0.10</CleaningSpeed>
+			<FixBrokenDownBuildingSuccessChance>0.10</FixBrokenDownBuildingSuccessChance>
+			<GeneralLaborSpeed>0.05</GeneralLaborSpeed>
+			<JoyFallRateFactor>-0.02</JoyFallRateFactor>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li MayRequire="forti.workplaceaccidents">
+						<trait>WorkplaceAccidents_Carefulness</trait>
+						<degree>-1</degree>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>Industriousness</trait>
+						<degree>-2</degree>
+						<chance>0.1</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li MayRequire="Rocam.CozyUnderRoof">
+						<trait>Pluviophile</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Ascetic</trait>
 						<degree>0</degree>
+						<chance>0.05</chance>
+					</li>
+					<li MayRequire="forti.workplaceaccidents">
+						<trait>WorkplaceAccidents_Carefulness</trait>
+						<degree>1</degree>
 						<chance>0.1</chance>
 					</li>
 				</addsTraits>

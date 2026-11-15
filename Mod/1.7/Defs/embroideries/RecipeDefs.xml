@@ -118,7 +118,7 @@
 	</RecipeDef>
 
 	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
-		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewMegasloth</defName>
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_SlewGrizzly</defName>
 		<label>embroidery: grizzly bear slayer</label>
 		<jobString>Crafting an embroidery depicting slaying the grizzly bear.</jobString>
 		<products>
@@ -188,6 +188,120 @@
 			<thingDefs>
 				<li>Silver</li>
 				<li>Leather_Rhinoceros</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_OrderOfGoldenHam</defName>
+		<label>embroidery: order of golden ham</label>
+		<jobString>Crafting an embroidery depicting order of golden ham.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_OrderOfGoldenHam>1</TribalTrophies_Trophy_Embroidery_OrderOfGoldenHam>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Gold</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>DevilstrandCloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Gold</li>
+				<li>DevilstrandCloth</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_OrderOfGoldenSpoon</defName>
+		<label>embroidery: order of golden spoon</label>
+		<jobString>Crafting an embroidery depicting order of golden spoon.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_OrderOfGoldenSpoon>1</TribalTrophies_Trophy_Embroidery_OrderOfGoldenSpoon>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Gold</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>DevilstrandCloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Gold</li>
+				<li>DevilstrandCloth</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_OrderOfTheMicePelt</defName>
+		<label>embroidery: order of mice pelt</label>
+		<jobString>Crafting an embroidery depicting order of mice pelt.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_OrderOfTheMicePelt>1</TribalTrophies_Trophy_Embroidery_OrderOfTheMicePelt>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Gold</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Gold</li>
+				<li>Cloth</li>
 				<li>Dye</li>
 			</thingDefs>
 		</fixedIngredientFilter>

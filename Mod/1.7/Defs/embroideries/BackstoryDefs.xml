@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_BraveSquire</defName>
+        <title>brave squire</title>
+        <titleShort>brave</titleShort>
+        <description>[PAWN_nameDef] served as a squire and became noted for [PAWN_possessive] bravery. [PAWN_pronoun] picked up [PAWN_possessive] mentors blade and continued to fight in their stead, earning respect of every knight.</description>
+        <slot>Childhood</slot>
+        <skillGains>
+            <Shooting>1</Shooting>
+            <Melee>4</Melee>
+            <Medicine>2</Medicine>
+        </skillGains>
+        <forcedTraits>
+            <TribalTrophies_Heroism>0</TribalTrophies_Heroism>
+        </forcedTraits>
+        <spawnCategories>
+            <li>ImperialFighter</li>
+            <li>Offworld</li>
+        </spawnCategories>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <possessions>
+            <TribalTrophies_Trophy_Feather_Precursor_PristineFeather>1</TribalTrophies_Trophy_Feather_Precursor_PristineFeather>
+        </possessions>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Embroidery</kind>
+                <count>1~1</count>
+            </li>
+        </modExtensions>
+    </BackstoryDef>
+    
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_CourageousKnight</defName>
+        <title>courageous knight</title>
+        <titleShort>courageous</titleShort>
+        <description>[PAWN_nameDef] became example of knighthood ideals. [PAWN_pronoun] served [PAWN_possessive] liege with honor and.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <skillGains>
+            <Shooting>1</Shooting>
+            <Melee>5</Melee>
+            <Social>3</Social>
+        </skillGains>
+        <forcedTraits>
+            <TribalTrophies_Heroism>0</TribalTrophies_Heroism>
+        </forcedTraits>
+        <spawnCategories>
+            <li>ImperialFighter</li>
+            <li>DwarfCommon</li>
+            <li>Offworld</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Embroidery</kind>
+                <count>1~3</count>
+            </li>
+        </modExtensions>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>TribalTrophies_Backstory_FallenKnight</defName>
+        <title>fallen knight</title>
+        <titleShort>fallen</titleShort>
+        <description>[PAWN_nameDef] refused to follow orders and became vilified by liege lord. [PAWN_possessive] titles were stripped, but [PAWN_pronoun] still maintains [PAWN_possessive] acts were honorable and that following unjust orders by unjust leader is wrong.</description>
+        <slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <skillGains>
+            <Melee>4</Melee>
+            <Social>3</Social>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <forcedTraits>
+            <TribalTrophies_Heroism>0</TribalTrophies_Heroism>
+        </forcedTraits>
+        <spawnCategories>
+            <li>ImperialFighter</li>
+            <li>DwarfCommon</li>
+            <li>Offworld</li>
+        </spawnCategories>
+        <disallowedTraits>
+            <Wimp/>
+            <Delicate MayRequire="Ludeon.RimWorld.Odyssey"/>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <modExtensions>
+            <li Class="TribalTrophies.NpcTrophyGuaranteeExtension">
+                <kind>TribalTrophies_TrophyKind_Embroidery</kind>
+                <count>1~3</count>
+            </li>
+        </modExtensions>
+    </BackstoryDef>
+    
+</Defs>

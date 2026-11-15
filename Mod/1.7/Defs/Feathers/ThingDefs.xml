@@ -270,6 +270,8 @@
 			<MeleeHitChance>0.02</MeleeHitChance>
 			<MedicalSurgerySuccessChance>0.01</MedicalSurgerySuccessChance>
 			<MedicalTendQuality>0.02</MedicalTendQuality>
+			<ButcheryFleshEfficiency>0.05</ButcheryFleshEfficiency>
+			<ButcheryFleshSpeed>0.02</ButcheryFleshSpeed>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -493,6 +495,9 @@
 		<equippedStatOffsets>
 			<ResearchSpeed>0.05</ResearchSpeed>
 			<MedicalTendQuality>0.01</MedicalTendQuality>
+			<EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">0.05</EntityStudyRate>
+			<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+			<FieldResearchSpeedMultiplier MayRequire="PeteTimesSix.ResearchReinvented">0.10</FieldResearchSpeedMultiplier>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -535,6 +540,7 @@
 		<equippedStatOffsets>
 			<MedicalTendQuality>0.01</MedicalTendQuality>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<StaggerDurationFactor>-0.05</StaggerDurationFactor>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -575,6 +581,8 @@
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
 			<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+			<ManagingSpeed MayRequire="ilyvion.colonymanagerredux">0.05</ManagingSpeed>
+			<LanguageLearningAbility MayRequire="DimonSever000.FactionLanguages">0.05</LanguageLearningAbility>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -596,6 +604,7 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<ArrestSuccessChance>0.05</ArrestSuccessChance>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
@@ -617,6 +626,7 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
+			<ArrestSuccessChance>0.05</ArrestSuccessChance>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">

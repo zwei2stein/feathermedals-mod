@@ -13,6 +13,7 @@
 			<MeleeHitChance>0.02</MeleeHitChance>
 			<MiningSpeed>0.05</MiningSpeed>
 			<SocialImpact>0.01</SocialImpact>
+			<MeleeDoorDamageFactor MayRequire="Ludeon.RimWorld.Biotech">0.05</MeleeDoorDamageFactor>
 		</equippedStatOffsets>
 		<modExtensions>
 			<li Class="TribalTrophies.TrophyExtension">
