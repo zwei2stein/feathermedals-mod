@@ -37,6 +37,10 @@ public class TrophyExtension : DefModExtension
     public List<TrophyDynamicTrait> addsTraits;
     public List<TrophyDynamicTrait> removesTraits;
 
+    // see TrophyHonorUtility; 0 = none
+    public int honorOnAdorning;
+    public FactionDef honorFaction;
+
     public IEnumerable<TrophyTraitChange> TraitChanges()
     {
         if (addsTraits != null)
@@ -53,6 +57,13 @@ public class TrophyExtension : DefModExtension
             yield return error;
         foreach (var error in CheckList(removesTraits, nameof(removesTraits)))
             yield return error;
+
+        if (honorOnAdorning < 0)
+            yield return $"{nameof(honorOnAdorning)} {honorOnAdorning} is negative";
+        if (honorOnAdorning > 0 && honorFaction == null)
+            yield return $"{nameof(honorOnAdorning)} is set but {nameof(honorFaction)} is missing (typo, or faction from a mod that is not loaded?)";
+        if (honorFaction != null && honorFaction.RoyalTitlesAwardableInSeniorityOrderForReading.Count == 0)
+            yield return $"{nameof(honorFaction)} {honorFaction.defName} has no royal titles, it cannot hold honor";
     }
 
     private static IEnumerable<string> CheckList(List<TrophyDynamicTrait> list, string listName)

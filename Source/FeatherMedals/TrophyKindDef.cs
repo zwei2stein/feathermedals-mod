@@ -34,6 +34,9 @@ public class TrophyKindDef : Def
     public TraitDef decoratedTrait;
     public List<int> decoratedThresholds;
 
+    public float honorCeremonyBonus = 0.25f;
+    public float honorTrophyQualityBonus = 0.25f;
+
     // drawing on pawns
     public Type layoutWorkerClass;
 
@@ -135,6 +138,11 @@ public class TrophyKindDef : Def
             foreach (var error in npcGeneration.ConfigErrors())
                 yield return $"{nameof(npcGeneration)}: {error}";
         }
+
+        if (honorCeremonyBonus < 0f)
+            yield return $"{nameof(honorCeremonyBonus)} {honorCeremonyBonus} is negative";
+        if (honorTrophyQualityBonus < 0f)
+            yield return $"{nameof(honorTrophyQualityBonus)} {honorTrophyQualityBonus} is negative";
 
         if (decoratedTrait != null && decoratedThresholds.NullOrEmpty())
             yield return $"{nameof(decoratedTrait)} {decoratedTrait.defName} has no {nameof(decoratedThresholds)}";

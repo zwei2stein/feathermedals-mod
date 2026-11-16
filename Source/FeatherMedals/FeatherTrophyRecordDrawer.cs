@@ -112,10 +112,25 @@ public class FeatherTrophyRecordDrawer : TrophyRowDrawer
                 curY += UIHelper.CompactLinesHeight(statLines, area.width);
         }
 
-        if (draw)
-            AwardedTrophyUI.DrawTraitChangeSummary(_trophy, area, ref curY, TextAnchor.MiddleLeft);
-        else
-            curY += AwardedTrophyUI.TraitChangeSummaryHeight(_trophy, area.width);
+        var honor = _trophy.GetHonorGrantedLabel();
+        if (honor != null)
+        {
+            curY += TrophyUIStyle.RowLineGap;
+            if (draw)
+                UIHelper.DrawCompactLine(honor, TrophyUIStyle.PaleGoldColor, TextAnchor.MiddleLeft, area, ref curY);
+            else
+                curY += UIHelper.CompactLineHeight(honor, area.width);
+        }
+
+        var traitChangesHeight = AwardedTrophyUI.TraitChangeSummaryHeight(_trophy, area.width);
+        if (traitChangesHeight > 0f)
+        {
+            curY += TrophyUIStyle.RowLineGap;
+            if (draw)
+                AwardedTrophyUI.DrawTraitChangeSummary(_trophy, area, ref curY, TextAnchor.MiddleLeft);
+            else
+                curY += traitChangesHeight;
+        }
 
         if (HasAdorningInfo())
         {

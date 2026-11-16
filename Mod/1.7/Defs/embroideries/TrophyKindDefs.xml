@@ -38,6 +38,9 @@
 			<li>7</li>
 		</decoratedThresholds>
 
+		<honorCeremonyBonus>0.25</honorCeremonyBonus>
+		<honorTrophyQualityBonus>0.25</honorTrophyQualityBonus>
+
 		<!-- follows sash diagonally over body, starting at shoulder, tuned in mod settings -->
 		<layoutWorkerClass>TribalTrophies.TrophyLayoutWorker_Embroideries</layoutWorkerClass>
 

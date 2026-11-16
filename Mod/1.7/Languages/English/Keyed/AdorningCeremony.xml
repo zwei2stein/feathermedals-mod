@@ -13,6 +13,12 @@
 	<TribalTrophies_AdorningCeremony_Letter_Adorned>{PAWN_labelShort} has been ceremonially adorned with {TROPHY} by {PRESENTER_labelShort}.</TribalTrophies_AdorningCeremony_Letter_Adorned>
 	<TribalTrophies_AdorningCeremony_Letter_Attendance>{ATTENDEES} of the {COMMUNITY} attended the {QUALITY} adorning ceremony, and the deeds of {PAWN_labelShort} have been recognized.</TribalTrophies_AdorningCeremony_Letter_Attendance>
 	<TribalTrophies_AdorningCeremony_Letter_Tale>Tale of Honor: "{0}"</TribalTrophies_AdorningCeremony_Letter_Tale>
+	
+	<!-- honor (Royalty); Raised or Lowered follows in the same paragraph when quality changed the trophy's number -->
+	
+	<TribalTrophies_AdorningCeremony_Letter_Honor>{PAWN} has gained {HONOR} honor with {FACTION}.</TribalTrophies_AdorningCeremony_Letter_Honor>
+	<TribalTrophies_AdorningCeremony_Letter_HonorRaised>The quality of the trophy and/or of the ceremony raised it from {BASE}.</TribalTrophies_AdorningCeremony_Letter_HonorRaised>
+	<TribalTrophies_AdorningCeremony_Letter_HonorLowered>The quality of the trophy and/or of the ceremony lowered it from {BASE}.</TribalTrophies_AdorningCeremony_Letter_HonorLowered>
 
 	<!-- ===== Gizmos (trophy) ===== -->
 
@@ -83,6 +89,11 @@
 	<!-- ritual dialog trophy row tooltip, trophy tab -->
 	<TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>May remove {TRAIT} ({CHANCE})</TribalTrophies_AdorningCeremony_Common_MayRemoveTrait>
 	<TribalTrophies_AdorningCeremony_Common_MayGrantTrait>May grant {TRAIT} ({CHANCE})</TribalTrophies_AdorningCeremony_Common_MayGrantTrait>
+
+	<!-- honor (Royalty): trophy tab before the adorning, the trophy's own number -->
+	<TribalTrophies_AdorningCeremony_Common_HonorOnAdorning>Honor on adorning: {HONOR} with {FACTION}</TribalTrophies_AdorningCeremony_Common_HonorOnAdorning>
+	<!-- adorned dialog, trophy tab, pawn Trophies tab: what the ceremony gave -->
+	<TribalTrophies_AdorningCeremony_Common_HonorGranted>Honor gained: {HONOR} with {FACTION}</TribalTrophies_AdorningCeremony_Common_HonorGranted>
 
 	<!-- ceremony quality words: letter, trophy tab, inspect pane -->
 	<TribalTrophies_AdorningCeremony_Common_Quality_Legendary>legendary</TribalTrophies_AdorningCeremony_Common_Quality_Legendary>

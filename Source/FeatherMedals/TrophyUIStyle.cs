@@ -8,6 +8,7 @@ public static class TrophyUIStyle
 
     public static readonly Color GreenColor = new(0.5f, 0.8f, 0.5f);
     public static readonly Color GoldColor = new(0.9f, 0.85f, 0.4f);
+    public static readonly Color PaleGoldColor = new(0.93f, 0.88f, 0.65f); // honor
     public static readonly Color MutedColor = new(0.7f, 0.7f, 0.7f);
     public static readonly Color SeparatorColor = new(1f, 1f, 1f, 0.15f);
     public static readonly Color MercilessGizmoTint = new(1f, 0.2f, 0.2f, 0.5f); // red wash over the gizmo background

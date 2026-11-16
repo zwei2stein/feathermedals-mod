@@ -60,7 +60,6 @@ public class AwardedTrophyDetailDrawer : ITrophyRecordRow
             else
                 curY += AwardedTrophyUI.TaleHeight(_tale, rect.width);
         }
-
         // Stat bonuses, green, centered
         var statLines = UIHelper.StatOffsetLines(_trophy.def).ToList();
         if (statLines.Count > 0)
@@ -71,21 +70,38 @@ public class AwardedTrophyDetailDrawer : ITrophyRecordRow
                 curY += UIHelper.CompactLinesHeight(statLines, rect.width);
             curY += TrophyUIStyle.BlockGap;
         }
+        
+        if (!_trophy.IsAdorned)
+        {
+            var honor = _trophy.GetHonorOnAdorningLabel();
+            if (honor != null)
+            {
+                if (draw)
+                    UIHelper.DrawCompactLine(honor, TrophyUIStyle.PaleGoldColor, TextAnchor.MiddleCenter, rect, ref curY);
+                else
+                    curY += UIHelper.CompactLineHeight(honor, rect.width);
+                curY += TrophyUIStyle.BlockGap;
+            }
+        }
+        
+        // Trait effects, centered
+        if (TribalTrophiesMod.Settings.TrophyDynamicTraits && !_trophy.IsAdorned)
+        {
+            var traitLines = _trophy.GetTraitChanceLabels().ToList();
+            if (traitLines.Count > 0)
+            {
+                if (draw)
+                    UIHelper.DrawCompactLines(traitLines, TrophyUIStyle.MutedColor, TextAnchor.MiddleCenter, rect, ref curY);
+                else
+                    curY += UIHelper.CompactLinesHeight(traitLines, rect.width);
+                curY += TrophyUIStyle.BlockGap;
+            }
+        }
 
         var craftsmanship = _trophy.GetCraftsmanshipLabel();
         if (craftsmanship != null)
             UIHelper.LayoutLine(craftsmanship, GameFont.Tiny, TrophyUIStyle.MutedColor, TextAnchor.MiddleCenter, rect, ref curY, draw,
                 gapAfter: TrophyUIStyle.DetailLineGap);
-
-        // Trait effects, centered
-        if (TribalTrophiesMod.Settings.TrophyDynamicTraits && !_trophy.IsAdorned)
-        {
-            var traitLines = _trophy.GetTraitChanceLabels().ToList();
-            if (draw)
-                UIHelper.DrawCompactLines(traitLines, TrophyUIStyle.MutedColor, TextAnchor.MiddleCenter, rect, ref curY);
-            else
-                curY += UIHelper.CompactLinesHeight(traitLines, rect.width);
-        }
 
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.UpperLeft;

@@ -24,6 +24,9 @@ namespace TribalTrophies
         public int removedTraitDegree = 0;
         public int decoratedDegree = -1; // Decorated trait degree, -1 = unchanged
 
+        public int honorGranted; // honor gained in the ceremony, 0 = none.
+        public Faction honorGrantedFaction; // with this faction
+
         public TrophyKindDef Kind => field ??= AwardedTrophyUtility.KindOf(def);
             
         public override void ExposeData()
@@ -41,6 +44,9 @@ namespace TribalTrophies
             Scribe_Defs.Look(ref removedTrait, "removedTrait");
             Scribe_Values.Look(ref removedTraitDegree, "removedTraitDegree", 0);
             Scribe_Values.Look(ref decoratedDegree, "decoratedDegree", -1);
+
+            Scribe_Values.Look(ref honorGranted, "honorGranted", 0);
+            Scribe_References.Look(ref honorGrantedFaction, "honorGrantedFaction");
         }
 
         private void OpenTaleDialog()
@@ -309,6 +315,68 @@ namespace TribalTrophies
             if (this.addedTrait != null) lines.Add(GetAddedTraitLabel());
             if (this.removedTrait != null) lines.Add(GetRemovedTraitLabel());
             return lines.Count == 0 ? null : string.Join("\n", lines);
+        }
+
+        public string GetHonorOnAdorningLabel()
+        {
+            var honor = TrophyHonorUtility.BaseHonor(this);
+            
+            if (honor <= 0)
+                return null;
+
+            // the faction that would give it, a hostile one is shown too
+            var toBeGranted = TrophyHonorUtility.FindHonorFaction(TrophyHonorUtility.HonorFactionDef(this), allowHostile: true);
+
+            // vanilla relation colors, hostile is red; no such faction in this world: the def's name
+            var factionName = toBeGranted != null
+                ? toBeGranted.Name.Colorize(toBeGranted.PlayerRelationKind.GetColor())
+                : TrophyHonorUtility.HonorFactionDef(this)?.LabelCap.Resolve();
+
+            return "TribalTrophies_AdorningCeremony_Common_HonorOnAdorning".Translate(
+                HonorNumberColored(honor).Named("HONOR"),
+                (factionName ?? "").Named("FACTION")).Resolve();
+        }
+
+        public string GetHonorGrantedLabel()
+        {
+            if (honorGranted <= 0)
+                return null;
+
+            return "TribalTrophies_AdorningCeremony_Common_HonorGranted".Translate(
+                HonorNumberColored(honorGranted).Named("HONOR"),
+                (HonorGrantedFactionNameColored() ?? "").Named("FACTION")).Resolve();
+        }
+
+        // the rest of an honor line is TrophyUIStyle.PaleGoldColor, set by whoever draws it
+        private static string HonorNumberColored(int honor) => honor.ToString().Colorize(TrophyUIStyle.GoldColor);
+
+        // in the faction's own color; faction gone: the def's name
+        private string HonorGrantedFactionNameColored()
+        {
+            return honorGrantedFaction != null
+                ? honorGrantedFaction.Name.Colorize(honorGrantedFaction.Color)
+                : TrophyHonorUtility.HonorFactionDef(this)?.LabelCap.Resolve();
+        }
+
+        public string GetHonorGrantedText()
+        {
+            if (honorGranted <= 0 || !IsAdorned || honorGrantedFaction == null)
+                return null;
+
+            var text = "TribalTrophies_AdorningCeremony_Letter_Honor".Translate(
+                AdornedPawn.ShortName.Named("PAWN"),
+                HonorNumberColored(honorGranted).Named("HONOR"),
+                HonorGrantedFactionNameColored().Named("FACTION")).Resolve();
+
+            var baseHonor = TrophyHonorUtility.BaseHonor(this);
+            if (honorGranted != baseHonor)
+            {
+                var key = honorGranted > baseHonor
+                    ? "TribalTrophies_AdorningCeremony_Letter_HonorRaised"
+                    : "TribalTrophies_AdorningCeremony_Letter_HonorLowered";
+                text += " " + key.Translate(baseHonor.Named("BASE")).Resolve();
+            }
+            return text;
         }
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()

@@ -117,6 +117,8 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
             RitualOutcomeTraitUtility.UpdateDecoratedTrait(adorned, featherTrophy);
             RitualOutcomeTraitUtility.GiveRandomTrait(adorned, featherTrophy);
         }
+
+        TrophyHonorUtility.AwardHonor(adorned, featherTrophy, stageIndex);
         
         var letterLabel = "TribalTrophies_AdorningCeremony_Letter_Label".Translate(featherTrophy.TrophyLabel.Named("TROPHY"));
         var letterText = "TribalTrophies_AdorningCeremony_Letter_Adorned".Translate(
@@ -138,6 +140,13 @@ public class RitualOutcomeEffectWorkerAdornTrophy : RitualOutcomeEffectWorker
         {
             letterText += "\n\n";
             letterText += traitText;
+        }
+
+        var honorText = featherTrophy.GetHonorGrantedText();
+        if (!honorText.NullOrEmpty())
+        {
+            letterText += "\n\n";
+            letterText += honorText.Colorize(TrophyUIStyle.PaleGoldColor);
         }
 
         Find.LetterStack.ReceiveLetter(
