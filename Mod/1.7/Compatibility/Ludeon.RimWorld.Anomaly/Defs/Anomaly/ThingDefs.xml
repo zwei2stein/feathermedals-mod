@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_BadgeOfTheCube</defName>
+		<label>embroidery: badge of the cube</label>
+		<description>Embroidery depicting badge of the cube, awarded to a veteran researcher.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/BadgeOfTheCube</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<StudyEfficiency>0.05</StudyEfficiency>
+			<EntityStudyRate>0.10</EntityStudyRate>
+			<ReadingSpeed>0.05</ReadingSpeed>
+			<FieldResearchSpeedMultiplier MayRequire="PeteTimesSix.ResearchReinvented">0.10</FieldResearchSpeedMultiplier>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>BodyPurist</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>SlowLearner</trait>
+						<chance>0.05</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Occultist</trait>
+						<chance>0.02</chance>
+					</li>
+					<li>
+						<trait>GreatMemory</trait>
+						<chance>0.1</chance>
+					</li>
+					<li>
+						<trait>VoidFascination</trait>
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_BadgeOfTheObelisk</defName>
+		<label>embroidery: badge of the obelisk</label>
+		<description>Embroidery depicting badge of the obelisk, awarded to a junior researcher.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/BadgeOfTheObelisk</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<ActivitySuppressionRate>0.10</ActivitySuppressionRate>
+			<EntityStudyRate>0.075</EntityStudyRate>
+			<ReadingSpeed>0.03</ReadingSpeed>
+			<ResearchSpeed>0.02</ResearchSpeed>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<removesTraits>
+					<li>
+						<trait>DrugDesire</trait>
+						<degree>-1</degree>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-2</degree>
+						<chance>0.05</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>FastLearner</trait>
+						<chance>0.02</chance>
+					</li>
+					<li>
+						<trait>Psychopath</trait>
+						<chance>0.02</chance>
+					</li>
+					<li>
+						<trait>VoidFascination</trait>
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

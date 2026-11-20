@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfTheGoldenFleece</defName>
+		<label>embroidery: order of the golden fleece</label>
+		<description>Embroidery depicting order of the golden fleece, awarded to a skilled politician and negotiator.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfTheGoldenFleece</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<NegotiationAbility>0.10</NegotiationAbility>
+			<SocialImpact>0.10</SocialImpact>
+			<ConversionPower>0.05</ConversionPower>
+			<SocialIdeoSpreadFrequencyFactor>0.1</SocialIdeoSpreadFrequencyFactor>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<honorOnAdorning>2</honorOnAdorning>
+				<honorFaction>Empire</honorFaction>
+				<removesTraits>
+					<li>
+						<trait>AnnoyingVoice</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Abrasive</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>CreepyBreathing</trait>
+						<chance>0.02</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Greedy</trait>
+						<chance>0.02</chance>
+					</li>
+					<li MayRequire="forti.DimonSever000.FactionLanguages">
+						<trait>Polyglot</trait>
+						<chance>0.1</chance>
+					</li>
+					<li MayRequire="Xylthixlm.Xenotypes">
+						<trait>XylFlirt</trait>
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseOrnate">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfTheGrater</defName>
+		<label>embroidery: order of the grater</label>
+		<description>Embroidery depicting order of the grater, awarded to a skilled politician and negotiator.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfTheGrater</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<AnimalProductsSellImprovement>0.02</AnimalProductsSellImprovement>
+			<NegotiationAbility>0.10</NegotiationAbility>
+			<SocialImpact>0.10</SocialImpact>
+			<ManagingSpeed MayRequire="ilyvion.colonymanagerredux">0.10</ManagingSpeed>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<honorOnAdorning>2</honorOnAdorning>
+				<honorFaction>Empire</honorFaction>
+				<removesTraits>
+					<li>
+						<trait>AnnoyingVoice</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Abrasive</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Ascetic</trait>
+						<chance>0.02</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Jealous</trait>
+						<chance>0.02</chance>
+					</li>
+					<li MayRequire="forti.DimonSever000.FactionLanguages">
+						<trait>Polyglot</trait>
+						<chance>0.1</chance>
+					</li>
+					<li MayRequire="Xylthixlm.Xenotypes">
+						<trait>XylFlirt</trait>
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfTheBand</defName>
+		<label>embroidery: order of the band</label>
+		<description>Embroidery depicting order of the band, awarded to a skilled knight.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfTheBand</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<MeleeArmorPenetration>0.05</MeleeArmorPenetration>
+			<MeleeCooldownFactor>-0.10</MeleeCooldownFactor>
+			<ConversionPower>0.05</ConversionPower>
+			<SocialIdeoSpreadFrequencyFactor>0.1</SocialIdeoSpreadFrequencyFactor>
+			<RimKata_CooldownMultiplier MayRequire="krwf.rimkata">-0.05</RimKata_CooldownMultiplier>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<honorOnAdorning>2</honorOnAdorning>
+				<honorFaction>Empire</honorFaction>
+				<removesTraits>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<trait>Delicate</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Wimp</trait>
+						<chance>0.05</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Bloodlust</trait>
+						<chance>0.02</chance>
+					</li>
+					<li>
+						<trait>Tough</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Abrasive</trait>
+						<chance>0.02</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
+		<defName>TribalTrophies_Trophy_Embroidery_OrderOfTheStar</defName>
+		<label>embroidery: order of the start</label>
+		<description>Embroidery depicting order of the star, awarded to a skilled knight.</description>
+		<graphicData>
+			<texPath>Things/Embroideries/OrderOfTheStar</texPath>
+		</graphicData>
+		<equippedStatOffsets>
+			<RangedCooldownFactor>-0.05</RangedCooldownFactor>
+			<AimingDelayFactor>-0.10</AimingDelayFactor>
+			<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.05</VEF_RangedDodgeChance>
+			<ArrestSuccessChance>0.1</ArrestSuccessChance>
+			<RimKata_CooldownMultiplier MayRequire="krwf.rimkata">-0.05</RimKata_CooldownMultiplier>
+		</equippedStatOffsets>
+		<modExtensions>
+			<li Class="TribalTrophies.TrophyExtension">
+				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
+				<honorOnAdorning>2</honorOnAdorning>
+				<honorFaction>Empire</honorFaction>
+				<removesTraits>
+					<li>
+						<trait>Nerves</trait>
+						<degree>-1</degree>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Wimp</trait>
+						<chance>0.05</chance>
+					</li>
+				</removesTraits>
+				<addsTraits>
+					<li>
+						<trait>Bloodlust</trait>
+						<chance>0.02</chance>
+					</li>
+					<li>
+						<trait>Tough</trait>
+						<chance>0.05</chance>
+					</li>
+					<li>
+						<trait>Nerves</trait>
+						<chance>1</chance>
+						<chance>0.05</chance>
+					</li>
+				</addsTraits>
+			</li>
+		</modExtensions>
+		<uiOrder>20</uiOrder>
+	</ThingDef>
+
+</Defs>

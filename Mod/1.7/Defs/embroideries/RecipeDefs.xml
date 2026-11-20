@@ -306,5 +306,95 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_OrderOfTheHammer</defName>
+		<label>embroidery: order of the hammer</label>
+		<jobString>Crafting an embroidery depicting order of the hammer.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_OrderOfTheHammer>1</TribalTrophies_Trophy_Embroidery_OrderOfTheHammer>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Gold</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Steel</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Gold</li>
+				<li>Steel</li>
+				<li>Cloth</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+		<defName>TribalTrophies_Trophy_Embroidery_Recipe_OrderOfTheGardener</defName>
+		<label>embroidery: order of the gardener</label>
+		<jobString>Crafting an embroidery depicting order of the gardener.</jobString>
+		<products>
+			<TribalTrophies_Trophy_Embroidery_OrderOfTheGardener>1</TribalTrophies_Trophy_Embroidery_OrderOfTheGardener>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs><li>Gold</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Rice</li></thingDefs>
+				</filter>
+				<count>10</count> <!-- actually 100 -->
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs><li>Dye</li></thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Gold</li>
+				<li>Rice</li>
+				<li>Cloth</li>
+				<li>Dye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
 	
 </Defs>

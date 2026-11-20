@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+        <defName>TribalTrophies_Trophy_Embroidery_Recipe_BadgeOfTheCube</defName>
+        <label>embroidery: badge of the cube</label>
+        <jobString>Crafting an embroidery depicting badge of the cube.</jobString>
+        <products>
+            <TribalTrophies_Trophy_Embroidery_BadgeOfTheCube>1</TribalTrophies_Trophy_Embroidery_BadgeOfTheCube>
+        </products>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs><li>Silver</li></thingDefs>
+                </filter>
+                <count>10</count> <!-- actually 100 -->
+            </li>
+            <li>
+                <filter>
+                    <thingDefs><li>Shard</li></thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Leather_Dread</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs><li>Dye</li></thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Gold</li>
+                <li>Shard</li>
+                <li>Leather_Dread</li>
+                <li>Dye</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+
+    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+        <defName>TribalTrophies_Trophy_Embroidery_Recipe_BadgeOfTheObelisk</defName>
+        <label>embroidery: badge of the obelisk</label>
+        <jobString>Crafting an embroidery depicting badge of the obelisk.</jobString>
+        <products>
+            <TribalTrophies_Trophy_Embroidery_BadgeOfTheObelisk>1</TribalTrophies_Trophy_Embroidery_BadgeOfTheObelisk>
+        </products>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs><li>Gold</li></thingDefs>
+                </filter>
+                <count>10</count> <!-- actually 100 -->
+            </li>
+            <li>
+                <filter>
+                    <thingDefs><li>Bioferrite</li></thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Leather_Dread</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs><li>Dye</li></thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Silver</li>
+                <li>Bioferrite</li>
+                <li>Leather_Dread</li>
+                <li>Dye</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+    
+</Defs>

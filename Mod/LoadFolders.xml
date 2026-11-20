@@ -35,6 +35,10 @@
         <li IfModActive="ra.ecotech">1.7/Compatibility/ra.ecotech</li>
         <li IfModActive="zwei2stein.pyrinthbionics">1.7/Compatibility/zwei2stein.pyrinthbionics</li>
         
+        <!-- badges -->
+
+        <li IfModActive="Ludeon.RimWorld.Anomaly">1.7/Compatibility/Ludeon.RimWorld.Anomaly</li>
+        
         <!-- styles -->
         
         <li IfModActive="det.keshig">1.7/Compatibility/det.keshig</li>
