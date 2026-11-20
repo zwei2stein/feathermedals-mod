@@ -158,7 +158,7 @@
 			<li Class="TribalTrophies.TrophyExtension">
 				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
-					<li MayRequire="Ludeon.RimWorld.Odyssey">
+					<li MayRequire="Ludeon.RimWorld.Biotech">
 						<trait>Delicate</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>
@@ -318,7 +318,7 @@
 			<li Class="TribalTrophies.TrophyExtension">
 				<kind>TribalTrophies_TrophyKind_Feather</kind>
 				<removesTraits>
-					<li MayRequire="Ludeon.RimWorld.Odyssey">
+					<li MayRequire="Ludeon.RimWorld.Biotech">
 						<trait>Delicate</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>

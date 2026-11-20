@@ -53,8 +53,7 @@
 			<li Class="TribalTrophies.TrophyExtension">
 				<kind>TribalTrophies_TrophyKind_Embroidery</kind>
 				<removesTraits>
-					<!-- Odyssey trait, this folder loads with Odyssey only -->
-					<li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
 						<trait>Delicate</trait>
 						<degree>0</degree>
 						<chance>0.1</chance>

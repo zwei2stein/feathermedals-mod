@@ -20,7 +20,7 @@
                 <filter>
                     <thingDefs><li>Silver</li></thingDefs>
                 </filter>
-                <count>5</count> <!-- actually 10 -->
+                <count>5</count> <!-- actually 50 -->
             </li>
             <li>
                 <filter>
@@ -65,7 +65,7 @@
                 <filter>
                     <thingDefs><li>Silver</li></thingDefs>
                 </filter>
-                <count>5</count> <!-- actually 10 -->
+                <count>5</count> <!-- actually 50 -->
             </li>
             <li>
                 <filter>
@@ -110,7 +110,7 @@
                 <filter>
                     <thingDefs><li>Steel</li></thingDefs>
                 </filter>
-                <count>10</count> <!-- actually 100 -->
+                <count>50</count>
             </li>
             <li>
                 <filter>
@@ -131,6 +131,51 @@
             <thingDefs>
                 <li>Silver</li>
                 <li>Steel</li>
+                <li>Cloth</li>
+                <li>Dye</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+
+    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+        <defName>TribalTrophies_Trophy_Embroidery_Recipe_OrderOfTheStar</defName>
+        <label>embroidery: order of the star</label>
+        <jobString>Crafting an embroidery depicting order of the star.</jobString>
+        <products>
+            <TribalTrophies_Trophy_Embroidery_OrderOfTheStar>1</TribalTrophies_Trophy_Embroidery_OrderOfTheStar>
+        </products>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs><li>Silver</li></thingDefs>
+                </filter>
+                <count>10</count> <!-- actually 100 -->
+            </li>
+            <li>
+                <filter>
+                    <thingDefs><li>Plasteel</li></thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Cloth</li>
+                    </thingDefs>
+                </filter>
+                <count>100</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs><li>Dye</li></thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Silver</li>
+                <li>Plasteel</li>
                 <li>Cloth</li>
                 <li>Dye</li>
             </thingDefs>

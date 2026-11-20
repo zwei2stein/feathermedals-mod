@@ -11,7 +11,7 @@
         <ingredients>
             <li>
                 <filter>
-                    <thingDefs><li>Silver</li></thingDefs>
+                    <thingDefs><li>Gold</li></thingDefs>
                 </filter>
                 <count>10</count> <!-- actually 100 -->
             </li>
@@ -56,7 +56,7 @@
         <ingredients>
             <li>
                 <filter>
-                    <thingDefs><li>Gold</li></thingDefs>
+                    <thingDefs><li>Silver</li></thingDefs>
                 </filter>
                 <count>10</count> <!-- actually 100 -->
             </li>
