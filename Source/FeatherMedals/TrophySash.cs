@@ -54,10 +54,12 @@ public class SashLayoutExtension : DefModExtension
         {
             if (curve.bodyType == null)
                 yield return $"{nameof(curves)}: {nameof(SashCurve.bodyType)} is missing";
-            if (curve.south == null || curve.south.Count < 2)
-                yield return $"{nameof(curves)}: {curve.bodyType?.defName} needs at least 2 {nameof(SashCurve.south)} points";
-            if (curve.west != null && curve.west.Count < 2)
-                yield return $"{nameof(curves)}: {curve.bodyType?.defName} needs at least 2 {nameof(SashCurve.west)} points";
+            if (curve.south == null)
+                yield return $"{nameof(curves)}: {curve.bodyType?.defName} {nameof(SashCurve.south)} is missing";
+            else if (curve.south.Length <= 0f)
+                yield return $"{nameof(curves)}: {curve.bodyType?.defName} {nameof(SashCurve.south)} has no length, {nameof(SashBezier.start)} = {nameof(SashBezier.end)}";
+            if (curve.west != null && curve.west.Length <= 0f)
+                yield return $"{nameof(curves)}: {curve.bodyType?.defName} {nameof(SashCurve.west)} has no length, {nameof(SashBezier.start)} = {nameof(SashBezier.end)}";
         }
 
         if (fallbackBodyType == null)
@@ -74,13 +76,14 @@ public class SashCurve
 {
     public BodyTypeDef bodyType;
 
-    public List<Vector3> south;
+    // shoulder to belt, facing south
+    public SashBezier south;
 
-    // from the top of the shoulder toward the front; no points = no trophies facing west
-    public List<Vector3> west;
+    // from the shoulder toward the front
+    public SashBezier west;
 
-    // embroideries are drawn only in facings with points
-    public List<Vector3> PointsFor(Rot4 facing)
+    // embroideries are drawn only in facings with a path
+    public SashBezier PathFor(Rot4 facing)
     {
         if (facing == Rot4.South)
             return south;
@@ -94,31 +97,78 @@ public class SashCurve
         point = Vector3.zero;
         direction = Vector3.zero;
 
-        var points = PointsFor(facing);
-        if (points == null || points.Count < 2)
-            return false;
+        var path = PathFor(facing);
+        return path != null && path.TryGetPoint(distance, out point, out direction);
+    }
+}
 
-        point = points[0];
-        direction = (points[1] - points[0]).normalized;
-        if (distance <= 0f)
-            return true;
+public class SashBezier
+{
+    // pieces the path is measured in
+    private const int Segments = 32;
 
-        for (var i = 1; i < points.Count; i++)
+    public Vector3 start;
+    public Vector3 control;
+    public Vector3 end;
+
+    public float Length => Lengths[Segments];
+
+    private Vector3 PointAt(float t)
+    {
+        var u = 1f - t;
+        return u * u * start + 2f * u * t * control + t * t * end;
+    }
+
+    // not normalized, may be zero
+    private Vector3 TangentAt(float t) => 2f * (1f - t) * (control - start) + 2f * t * (end - control);
+
+    private float[] Lengths
+    {
+        get
         {
-            var segment = points[i] - points[i - 1];
-            var length = segment.magnitude;
-            if (length <= 0f)
-                continue;
+            if (field != null)
+                return field;
 
-            if (distance <= length)
+            field = new float[Segments + 1];
+            var previous = PointAt(0f);
+            for (var i = 1; i <= Segments; i++)
             {
-                direction = segment / length;
-                point = points[i - 1] + direction * distance;
-                return true;
+                var current = PointAt((float)i / Segments);
+                field[i] = field[i - 1] + (current - previous).magnitude;
+                previous = current;
             }
-            distance -= length;
+            return field;
         }
-        return false;
+    }
+    
+    public bool TryGetPoint(float distance, out Vector3 point, out Vector3 direction)
+    {
+        var all = Lengths;
+        var t = 0f;
+        if (distance > 0f)
+        {
+            if (distance > all[Segments])
+            {
+                point = Vector3.zero;
+                direction = Vector3.zero;
+                return false;
+            }
+
+            var i = 1;
+            while (i < Segments && all[i] < distance)
+                i++;
+
+            var piece = all[i] - all[i - 1];
+            var within = piece > 0f ? (distance - all[i - 1]) / piece : 0f;
+            t = (i - 1 + within) / Segments;
+        }
+
+        point = PointAt(t);
+        direction = TangentAt(t);
+        if (direction.sqrMagnitude <= 0f)
+            direction = end - start;
+        direction = direction.normalized;
+        return true;
     }
 }
 

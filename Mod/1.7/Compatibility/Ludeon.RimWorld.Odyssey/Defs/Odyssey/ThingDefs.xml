@@ -81,7 +81,7 @@
 		<equippedStatOffsets>
 			<SocialImpact>0.10</SocialImpact>
 			<PainShockThreshold>0.02</PainShockThreshold>
-			<MeleeArmorPenetration>0.10</MeleeArmorPenetration>
+			<MeleeDamageFactor>0.10</MeleeDamageFactor>
 			<MeleeHitChance>0.02</MeleeHitChance>
 		</equippedStatOffsets>
 		<modExtensions>

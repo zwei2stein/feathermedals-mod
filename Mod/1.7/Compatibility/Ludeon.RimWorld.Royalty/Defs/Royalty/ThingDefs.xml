@@ -112,7 +112,7 @@
 			<texPath>Things/Embroideries/OrderOfTheBand</texPath>
 		</graphicData>
 		<equippedStatOffsets>
-			<MeleeArmorPenetration>0.05</MeleeArmorPenetration>
+			<MeleeDamageFactor>0.05</MeleeDamageFactor>
 			<MeleeCooldownFactor>-0.10</MeleeCooldownFactor>
 			<ConversionPower>0.05</ConversionPower>
 			<SocialIdeoSpreadFrequencyFactor>0.1</SocialIdeoSpreadFrequencyFactor>

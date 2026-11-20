@@ -87,102 +87,73 @@
 				<!-- layers above the sash shared by all embroideries, the shoulder end on top; sash layer + this stays under the head (50) -->
 				<layerSpread>4</layerSpread>
 				<!-- offsets from the body center (adult body mesh is 1.5 wide), traced from the sash textures;
-				     south: shoulder to belt; west: from just behind the top of the shoulder, so the first embroidery sits on top of it, toward the front (east sash texture mirrored);
-				     facings without points (north, east) show the sash only -->
+				     south: smooth curve shoulder to belt, bent toward control (it does not pass through it);
+				     west: the same, shoulder toward the front (east sash texture mirrored); control halfway = straight line;
+				     facings without a path (north, east) show the sash only -->
 				<curves>
 					<li>
 						<bodyType>Fat</bodyType>
 						<south>
-							<li>(0.25, 0, 0.22)</li>
-							<li>(0.23, 0, 0.08)</li>
-							<li>(0.15, 0, -0.06)</li>
-							<li>(0.02, 0, -0.20)</li>
-							<li>(-0.21, 0, -0.34)</li>
-							<li>(-0.38, 0, -0.48)</li>
+							<start>(0.25, 0, 0.22)</start>
+							<control>(0.26, 0, -0.10)</control>
+							<end>(-0.38, 0, -0.48)</end>
 						</south>
 						<west>
-							<li>(0.26, 0, 0.13)</li>
-							<li>(0.15, 0, 0.16)</li>
-							<li>(0.01, 0, 0.15)</li>
-							<li>(-0.14, 0, 0.08)</li>
-							<li>(-0.28, 0, -0.03)</li>
-							<li>(-0.42, 0, -0.10)</li>
+							<start>(-0.08, 0, 0.015)</start>
+							<control>(-0.25, 0, -0.043)</control>
+							<end>(-0.42, 0, -0.10)</end>
 						</west>
 					</li>
 					<li>
 						<bodyType>Female</bodyType>
 						<south>
-							<li>(0.16, 0, 0.16)</li>
-							<li>(0.15, 0, 0.05)</li>
-							<li>(0.11, 0, -0.06)</li>
-							<li>(0.01, 0, -0.18)</li>
-							<li>(-0.13, 0, -0.28)</li>
-							<li>(-0.23, 0, -0.40)</li>
+							<start>(0.16, 0, 0.16)</start>
+							<control>(0.19, 0, -0.06)</control>
+							<end>(-0.23, 0, -0.40)</end>
 						</south>
 						<west>
-							<li>(0.24, 0, 0.08)</li>
-							<li>(0.14, 0, 0.13)</li>
-							<li>(0.06, 0, 0.12)</li>
-							<li>(-0.02, 0, 0.04)</li>
-							<li>(-0.09, 0, -0.05)</li>
-							<li>(-0.20, 0, -0.09)</li>
+							<start>(0.02, 0, -0.005)</start>
+							<control>(-0.09, 0, -0.048)</control>
+							<end>(-0.20, 0, -0.09)</end>
 						</west>
 					</li>
 					<li>
 						<bodyType>Hulk</bodyType>
 						<south>
-							<li>(0.33, 0, 0.23)</li>
-							<li>(0.32, 0, 0.08)</li>
-							<li>(0.25, 0, -0.06)</li>
-							<li>(0.12, 0, -0.21)</li>
-							<li>(-0.09, 0, -0.35)</li>
-							<li>(-0.26, 0, -0.50)</li>
+							<start>(0.33, 0, 0.23)</start>
+							<control>(0.37, 0, -0.09)</control>
+							<end>(-0.26, 0, -0.50)</end>
 						</south>
 						<west>
-							<li>(0.30, 0, 0.11)</li>
-							<li>(0.19, 0, 0.15)</li>
-							<li>(0.07, 0, 0.13)</li>
-							<li>(-0.06, 0, 0.04)</li>
-							<li>(-0.19, 0, -0.13)</li>
-							<li>(-0.31, 0, -0.16)</li>
+							<start>(-0.005, 0, -0.02)</start>
+							<control>(-0.158, 0, -0.09)</control>
+							<end>(-0.31, 0, -0.16)</end>
 						</west>
 					</li>
 					<li>
 						<bodyType>Male</bodyType>
 						<south>
-							<li>(0.25, 0, 0.18)</li>
-							<li>(0.23, 0, 0.07)</li>
-							<li>(0.18, 0, -0.04)</li>
-							<li>(0.09, 0, -0.14)</li>
-							<li>(-0.08, 0, -0.25)</li>
-							<li>(-0.21, 0, -0.35)</li>
+							<start>(0.25, 0, 0.18)</start>
+							<control>(0.25, 0, -0.09)</control>
+							<end>(-0.21, 0, -0.35)</end>
 						</south>
 						<west>
-							<li>(0.16, 0, 0.07)</li>
-							<li>(0.06, 0, 0.12)</li>
-							<li>(-0.01, 0, 0.10)</li>
-							<li>(-0.08, 0, 0.04)</li>
-							<li>(-0.15, 0, -0.04)</li>
-							<li>(-0.28, 0, -0.11)</li>
+							<start>(-0.06, 0, -0.02)</start>
+							<control>(-0.17, 0, -0.065)</control>
+							<end>(-0.28, 0, -0.11)</end>
 						</west>
 					</li>
 					<li>
 						<bodyType>Thin</bodyType>
 						<south>
-							<li>(0.13, 0, 0.18)</li>
-							<li>(0.13, 0, 0.06)</li>
-							<li>(0.10, 0, -0.07)</li>
-							<li>(0.04, 0, -0.19)</li>
-							<li>(-0.06, 0, -0.32)</li>
-							<li>(-0.13, 0, -0.43)</li>
+							<start>(0.13, 0, 0.18)</start>
+							<control>(0.16, 0, -0.09)</control>
+							<end>(-0.13, 0, -0.43)</end>
 						</south>
 						<west>
-							<li>(0.21, 0, 0.07)</li>
-							<li>(0.11, 0, 0.13)</li>
-							<li>(0.05, 0, 0.12)</li>
-							<li>(-0.02, 0, -0.02)</li>
-							<li>(-0.09, 0, -0.06)</li>
-							<li>(-0.21, 0, -0.10)</li>
+							<start>(0.0, 0, -0.015)</start>
+							<control>(-0.105, 0, -0.058)</control>
+							<end>(-0.21, 0, -0.10)</end>
 						</west>
 					</li>
 				</curves>
