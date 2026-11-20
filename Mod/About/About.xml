@@ -68,6 +68,7 @@
     <li>DimonSever000.FactionLanguages</li> <!-- Cybrarian languages -->
     <li>forti.workplaceaccidents</li> <!-- Workplace accidents -->
     <li>Rocam.CozyUnderRoof</li> <!-- Weather is cozy -->
+    <li>krwf.rimkata</li> <!-- RimKata -->
 
   </loadAfter>
 </ModMetaData>

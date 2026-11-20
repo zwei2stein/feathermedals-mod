@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     
-    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
+    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
         <defName>TribalTrophies_Trophy_Embroidery_Recipe_BadgeOfTheCube</defName>
         <label>embroidery: badge of the cube</label>
         <jobString>Crafting an embroidery depicting badge of the cube.</jobString>
@@ -46,7 +46,7 @@
         </fixedIngredientFilter>
     </RecipeDef>
 
-    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_OrnateRecipeBase">
+    <RecipeDef ParentName="TribalTrophies_Trophy_Embroidery_SimpleRecipeBase">
         <defName>TribalTrophies_Trophy_Embroidery_Recipe_BadgeOfTheObelisk</defName>
         <label>embroidery: badge of the obelisk</label>
         <jobString>Crafting an embroidery depicting badge of the obelisk.</jobString>

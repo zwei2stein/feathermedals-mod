@@ -6,7 +6,7 @@
         
         <!-- scalps -->
 
-        <li IfModActive="Ludeon.RimWorld.Royalty">1.7/Compatibility/Ludeon.RimWorld.Royalty</li>
+        <li IfModActive="Ludeon.RimWorld.Royalty">1.7/Compatibility/Ludeon.RimWorld.Royalty</li> <!-- also embroideries -->
         <li IfModActive="pesky.bulwark">1.7/Compatibility/pesky.bulwark</li>
 
         <!-- animals -->
@@ -35,7 +35,7 @@
         <li IfModActive="ra.ecotech">1.7/Compatibility/ra.ecotech</li>
         <li IfModActive="zwei2stein.pyrinthbionics">1.7/Compatibility/zwei2stein.pyrinthbionics</li>
         
-        <!-- badges -->
+        <!-- embroideries -->
 
         <li IfModActive="Ludeon.RimWorld.Anomaly">1.7/Compatibility/Ludeon.RimWorld.Anomaly</li>
         

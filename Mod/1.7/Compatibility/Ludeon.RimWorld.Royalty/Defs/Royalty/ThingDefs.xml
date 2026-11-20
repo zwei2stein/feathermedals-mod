@@ -39,7 +39,7 @@
 						<trait>Greedy</trait>
 						<chance>0.02</chance>
 					</li>
-					<li MayRequire="forti.DimonSever000.FactionLanguages">
+					<li MayRequire="DimonSever000.FactionLanguages">
 						<trait>Polyglot</trait>
 						<chance>0.1</chance>
 					</li>
@@ -90,7 +90,7 @@
 						<trait>Jealous</trait>
 						<chance>0.02</chance>
 					</li>
-					<li MayRequire="forti.DimonSever000.FactionLanguages">
+					<li MayRequire="DimonSever000.FactionLanguages">
 						<trait>Polyglot</trait>
 						<chance>0.1</chance>
 					</li>
@@ -154,7 +154,7 @@
 
 	<ThingDef ParentName="TribalTrophies_Embroidery_BaseSimple">
 		<defName>TribalTrophies_Trophy_Embroidery_OrderOfTheStar</defName>
-		<label>embroidery: order of the start</label>
+		<label>embroidery: order of the star</label>
 		<description>Embroidery depicting order of the star, awarded to a skilled knight.</description>
 		<graphicData>
 			<texPath>Things/Embroideries/OrderOfTheStar</texPath>
@@ -193,7 +193,7 @@
 					</li>
 					<li>
 						<trait>Nerves</trait>
-						<chance>1</chance>
+						<degree>1</degree>
 						<chance>0.05</chance>
 					</li>
 				</addsTraits>
